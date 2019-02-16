@@ -1,6 +1,8 @@
 # bobo
 
-#mettre un cadre qui detoure la webcam
 
-#bouton en ajax, =====> prendre une capture decran avec python
+
+#mettre du ajax mais ca marche pas... du coup ben quand ca prend une photo on redirige vers une page qui met des cadres de tete
+
+#mais c grave horrible.... fais ajax 
 
