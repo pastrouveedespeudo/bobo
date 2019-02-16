@@ -1,7 +1,6 @@
 # bobo
 
-#mettre un cadre qui detoure la webcam)
+#mettre un cadre qui detoure la webcam
 
-#relier le bouton prendre photo avec le truk photo et l'enregistrer dans une base de donnée
+#bouton en ajax, =====> prendre une capture decran avec python
 
-#jve une chaise oeuf
