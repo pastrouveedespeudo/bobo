@@ -37,4 +37,19 @@ def photo():
 
 
     
-photo()
+def capture():
+    
+    img = ImageGrab.grab()
+    image1 = img.save('coucou.jpg')
+    img.show()
+
+
+
+
+
+
+
+
+
+
+    
