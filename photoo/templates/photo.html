@@ -30,16 +30,28 @@
     <style>
     #containner {
         margin: 0px auto;
-        width: 500px;
-        height: 375px;
-        border: 10px #333 solid;
+        width: 400px;
+        height: 400px;
+     
     }
 
 
     #videoElement {
-        width: 500px;
-        height: 375px;
-        background-color: #666;
+        width: 400px;
+        height: 400px;
+        position:relative;
+    }
+
+    #patron{
+      margin-left:105px;
+      margin-top:100px;
+      width: 200px;
+      height: 200px;
+      border: 2px solid red;
+      border-radius:50%;
+      position:absolute ;
+      z-index:1;
+
     }
     </style>
 
@@ -56,9 +68,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#services">Services</a>
           </li>
@@ -106,13 +115,12 @@
 
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="text-white mt-0">Veuillez mettre votre figure dans le cadre</h2>
+          <h2 class="text-white mt-0">Veuillez mettre votre visage dans le cadre</h2>
         
 
           <div id="containner">
-              <video autoplay="true" id="videoElement"><font></font>
-              
-              </video>
+              <div id="patron"></div>
+              <video autoplay="true" id="videoElement"></video>
           </div>
 
   
@@ -350,6 +358,25 @@
         console.log("Something went wrong!");
       });
     }
+
+
+
+    $(document).ready(function){
+      $("form").on("submit", function(e){
+
+                $.ajax({
+                    data:{
+                        data:$("#idRecupInfo").val(),
+
+                    },
+                    type:"POST",
+                    url:"/data"
+
+                })
+
+
+
+                
     </script>
 
 
