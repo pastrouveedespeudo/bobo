@@ -126,14 +126,21 @@
   
 
           
-
-      
-          <br><br>
-          <form method="POST">
           
-          <input type="submit" value="Prendre la photo" <a class="btn btn-light btn-xl js-scroll-trigger"></a>
+         <script>
+    
 
+         </script>
+
+            
+          <br><br>
+       
+          <form action="photo" method="POST" id="cc">
+          {% csrf_token %}
+          <input type="HIDDEN" value="image" name="im">
+          <input type="submit" id="yo" value="Prendre la photo"<a class="btn btn-light btn-xl js-scroll-trigger"></a>
           </form>
+      
           
         </div>
       </div>
@@ -144,7 +151,15 @@
 
 
 
-
+  <form action="..." method="post" enctype="multipart/form-data"> 
+    <!-- Pour une image (appareil photo) --> 
+    <input type="file" name="image" accept="image/*" capture> 
+    <!-- Pour une vidéo (caméra) --> 
+    <input type="file" name="video" accept="video/*" capture> 
+    <!-- Pour un son (micro) --> 
+    <input type="file" name="son" accept="audio/*" capture> 
+    <input type="submit" value="Upload"> 
+</form>
 
 
 
@@ -358,28 +373,7 @@
         console.log("Something went wrong!");
       });
     }
-
-
-
-    $(document).ready(function){
-      $("form").on("submit", function(e){
-
-                $.ajax({
-                    data:{
-                        data:$("#idRecupInfo").val(),
-
-                    },
-                    type:"POST",
-                    url:"/data"
-
-                })
-
-
-
-                
     </script>
-
-
 
 
 
