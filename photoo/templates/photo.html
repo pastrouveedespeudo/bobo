@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +25,25 @@
   <link href="/static/css/creative.min.css" rel="stylesheet">
 
 </head>
+
+
+    <style>
+    #containner {
+        margin: 0px auto;
+        width: 500px;
+        height: 375px;
+        border: 10px #333 solid;
+    }
+
+
+    #videoElement {
+        width: 500px;
+        height: 375px;
+        background-color: #666;
+    }
+    </style>
+
+
 
 <body id="page-top">
 
@@ -84,28 +104,23 @@
     <div class="container">
 
 
-
-    
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-        
           <h2 class="text-white mt-0">Veuillez mettre votre figure dans le cadre</h2>
+        
 
-
-          <div>
-
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
-
-
+          <div id="containner">
+              <video autoplay="true" id="videoElement"><font></font>
+              
+              </video>
           </div>
 
-      
+  
 
+          
+
+      
+          <br><br>
           <form method="POST">
           
           <input type="submit" value="Prendre la photo" <a class="btn btn-light btn-xl js-scroll-trigger"></a>
@@ -320,5 +335,34 @@
   <script src="/static/js/creative.min.js"></script>
 
 </body>
+
+
+
+    <script>
+    var video = document.querySelector("#videoElement");
+
+    if (navigator.mediaDevices.getUserMedia) {     
+        navigator.mediaDevices.getUserMedia({video: true})
+      .then(function(stream) {
+        video.srcObject = stream;
+      })
+      .catch(function(err0r) {
+        console.log("Something went wrong!");
+      });
+    }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </html>
