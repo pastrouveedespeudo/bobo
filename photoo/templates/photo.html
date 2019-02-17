@@ -85,7 +85,7 @@
 
 
          
-          <a class="btn btn-primary btn-xl js-scroll-trigger" onclick="button1()"  href="#about">Figure pour les vetements</a>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" onclick="button1()" href="#about">Figure pour les vetements</a>
           
           
           <a class="btn btn-primary btn-xl js-scroll-trigger" onclick="button2()"  href="#about">Figure pour la coupe de cheveux</a>
@@ -136,6 +136,9 @@
 
 
     <script>
+
+        OPTION = [2]
+        
         function button1(){
             
             document.getElementById("patron").style.width = '90px';
@@ -144,6 +147,12 @@
             document.getElementById("patron").style.marginTop = '50px';
             document.getElementById("patron").style.position = 'absolute';
             document.getElementById("patron").style.zIndex = '1';
+            OPTION.push(1);
+            var a = OPTION[OPTION.length-1];
+            var b = document.getElementById("hidden").value = OPTION[OPTION.length-1];
+            alert(b);
+            alert(OPTION[OPTION.length-1]);
+            
         };
 
 
@@ -154,7 +163,8 @@
             document.getElementById("patron").style.marginTop = '100px';
             document.getElementById("patron").style.position = 'absolute';
             document.getElementById("patron").style.zIndex = '1';
-        };
+            OPTION.push(2)
+        };  
         
     </script>
 
@@ -179,7 +189,7 @@
           <br><br>
           <form action="photo" method="POST" id="cc">
               <input type="hidden" name="csrfmiddlewaretoken" value="hCsDoCbOI5WQh4CYKUQEPwkbTgEittUJgieBqNKPJE37pvwjtXsFpi1CzMa9qEs1">
-              <input type="HIDDEN" value="image" name="im">
+              <input type="HIDDEN" value="coucoucoucou" name="im" id="hidden">
               <input type="submit" id="yo" value="Prendre la photo" <a class="btn btn-light btn-xl js-scroll-trigger"></a>
           </form>
       
