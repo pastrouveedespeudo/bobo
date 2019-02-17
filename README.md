@@ -43,3 +43,5 @@
 #sinon tete avec cheveux sans cheveux on fait la soustration et on met l'image mais faut pleins dimage sinon 5 coupes c nul
 
 #sinon haarscacade yeux, on mesure le front du mec a partir de l'oeil jusqu'a trait rouge(en demande met la fin de tes cheveux au rond)
+
+#pouvoir faire librement la taille de la coupe genre j'etire détire et l'image reste nette
