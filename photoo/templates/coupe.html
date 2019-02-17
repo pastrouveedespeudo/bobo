@@ -116,7 +116,7 @@
       
         <div class="col-lg-4 col-sm-6">
         
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">
+          <a class="btn btn-primary btn-xl js-scroll-trigger" onclick="image()" href="#about">
             <img class="img-fluid" src="/static/img/portfolio/thumbnails/1.jpg" alt="">
 
             
@@ -144,26 +144,6 @@
   </section>
 
 
-    <style>
-        #carre1{
-            height:400px;
-            width :200px;
-            background: red;
-        }
-
-        
-        #carre2{
-            height:200px;
-            width :200px;
-            background: red;
-        }
-
-        #carre3{
-            height:400px;
-            width :200px;
-            background: red;
-        }
-    </style>
 
 
   <!-- About Section -->
@@ -178,23 +158,103 @@
       </div>
 
 
+
+
+    <script>
+
+        function image(){
+            
+            document.getElementById("image1").src  = src="/static/img/portfolio/thumbnails/1.jpg";
+        
+            }
+
+    </script>
+
+
+
+
+
     <br><br><br><br><br>
 
     <div class="container">
         <div class="row">
         
-          <div class="col-lg-4" id="1" style="border:1px solid red">
-            <div id="carre1"></div>
+          <div class="col-lg-2" id="1" style="border:1px solid red">
+            <div id="carre1">Coupe de cheveux
+
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+                
+
+            </ul>
+
+
+
+            </div>
          </div>
+
+
+
+        <style>
+
+            #image1{
+                margin-top:100px;
+                width:250px;
+                height:250px;
+
+            }
+            
+        #carre1{
+            height:400px;
+            width :200px;
+            background: red;
+            overflow: scroll;
+        }
+
+        
+        #carre3{
+            height:400px;
+            width :200px;
+            background: red;
+            overflow: scroll;
+        }
+        </style>
+
 
 
         
-         <div class="col-lg-4" style="border:1px solid red">
-            <center><div id="carre2"></div></center>
+         <div class="col-lg-8">
+            <div id="carre2"><center><img src="/static/img/portfolio/thumbnails/2.jpg" id="image1"/></center></div>
          </div>
 
-         <div class="col-lg-4" id="3" style="border:1px solid red">
-            <div id="carre3"></div>
+         <div class="col-lg-2" id="3" style="border:1px solid red">
+            <div id="carre3">Coupe de cheveux
+
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+                
+
+            </ul>
+            
+            </div>
 
          </div>
          
