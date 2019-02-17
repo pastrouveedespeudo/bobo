@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .photo import *
-
+import os
 
 def mes_images(request):
     return render(request, 'mes_images.html')
@@ -10,12 +10,21 @@ def mes_images(request):
 
 def photo(request):
     if request.method == "POST":
-
+        
         recherche = request.POST.get('im')
         print(recherche,"000000000000000000000000000000000000000000000000000")
-        a = capture()
-        print(a,)
-        return render(request, 'mes_images.html', {'a':a})
+        capturee = capture()
+        print(capturee)
+        os.chdir(r"C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo")
+        liste = os.listdir()
+        print(liste)
+        a = liste[0]
+        b = liste[1]
+        c = liste[2]
+        d = liste[3]
+        e = liste[4]
+        f = liste[5]
+        return render(request, 'mes_images.html', {'capture':capturee,'a':a,'b':b,'c':c,'d':d,'e':e,'f':f }) 
 
 
     
@@ -24,3 +33,26 @@ def photo(request):
 
 def essais(request):
     return render(request, 'essais.html')
+
+def coupe(request):
+    return render(request, 'coupe.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
