@@ -1,6 +1,8 @@
 from PIL import ImageGrab
 from PIL import *
 import cv2
+import os
+
 
 def photo():
 
@@ -40,7 +42,15 @@ def photo():
 def capture():
     
     img = ImageGrab.grab()
-    image1 = img.save('coucou.jpg')
+
+    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\photo\photo')
+    liste = os.listdir()
+    for i in liste:
+        print(i[0])
+
+    new = int(i[0]) + 1
+    new = str(new)
+    image1 = img.save(str(new) + '.jpg')
     img.show()
 
 
