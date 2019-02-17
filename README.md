@@ -1,6 +1,6 @@
 # bobo
 
-
+#je le sais que c nul, j'ai matté pleins de video sur les voitures, les image et les ia, pour etre hyper fort faut des connaissances en math jvai devoir bosser
 
 #-----ok touche plus a rien c ok comme ca-----
 
