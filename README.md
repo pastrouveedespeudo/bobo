@@ -1,6 +1,8 @@
 # bobo
 
-#jme suis pris en photo ca m'a foutu la gerbe pause
+#jme suis pris en photo ca m'a foutu la gerbe pause du coup on a potentiellement un utilisateur fatigué faut que ce soit simple
+
+#en emem temps c inversé jpars sur la gauche ca part sur la droite
 
 #-----ok touche plus a rien c ok comme ca-----
 
