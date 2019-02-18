@@ -1,9 +1,10 @@
 # bobo
 
-#jaurai pas du parler a un mec des ia y m'a pt ... BON travailler les images mtn ne prendre que la coupe
+#travailler les images mtn ne prendre que la coupe
 
-#et trouve le moyen de les superposer avec ta gueule snas cheveux tout en sachant que sans serre tete j'en ai chié pour appuyer sur 
-#prendre la photo (coté utilisateur)
+#et trouve le moyen de les superposer avec ta gueule 
+
+#prendre la photo (coté utilisateur sa,s cheveux dire prend avec serre tete ou ficelle ou tu met souris sur la tete tout  en tenant tes cheuve)
 
 #ce projet la est un sécuritaire
 
@@ -20,6 +21,9 @@
 #pouvoir déplacer l'image librement dans la zone
 
 #finir le dossier UML
+
+
+
 
 #-----ok touche plus a rien c ok comme ca-----
 
@@ -54,3 +58,9 @@
 #sinon haarscacade yeux, on mesure le front du mec a partir de l'oeil jusqu'a trait rouge(en demande met la fin de tes cheveux au rond)
 
 #pouvoir faire librement la taille de la coupe genre j'etire détire et l'image reste nette
+
+#integrer une sorte devaluation mais risque de mechanceté régler ca
+
+#integrer un partage
+
+#integrer des solutions
