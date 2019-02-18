@@ -1,6 +1,9 @@
 # bobo
 
-#hé ouais maggle je serai ptetre pas professeur a princetone MAIS j'aurai au moins fais un site beauté  u_u
+#jaurai pas du parler a un mec des ia y m'a pt ... BON travailler les images mtn ne prendre que la coupe
+
+#et trouve le moyen de les superposer avec ta gueule snas cheveux tout en sachant que sans serre tete j'en ai chié pour appuyer sur 
+#prendre la photo (coté utilisateur)
 
 #ce projet la est un sécuritaire
 
