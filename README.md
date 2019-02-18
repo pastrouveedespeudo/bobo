@@ -1,5 +1,7 @@
 # bobo
 
+#hé ouais maggle je serai ptetre pas professeur a princetone MAIS j'aurai au moins fais un site beauté  u_u
+
 #ce projet la est un sécuritaire
 
 #si bien chui entrain de jouer ma vie sur cette descision
