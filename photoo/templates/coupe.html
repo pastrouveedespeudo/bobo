@@ -1,6 +1,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +28,13 @@
   <link href="/static/css/creative.min.css" rel="stylesheet">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
 
-  
+
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 </head>
 
 
@@ -169,50 +176,46 @@
             }
 
     </script>
-
-
+    
 
 
 
     <br><br><br><br><br>
 
-    <div class="container">
+    <div class="container"style="border:1px solid red">
         <div class="row">
         
-          <div class="col-lg-2" id="1" style="border:1px solid red">
+          <div class="col-lg-2" id="1" >
             <div id="carre1">Coupe de cheveux
 
             <ul>
+                <li><img src="/static/img/portfolio/coupe/image_coiffure%20face0.jpg" /></li>
                 <li></li>
                 <li></li>
                 <li></li>
                 <li></li>
                 <li></li>
                 <li></li>
-
                 <li></li>
                 <li></li>
-                <li></li>
-                
-
             </ul>
 
 
-
+       
             </div>
          </div>
 
 
 
-        <style>
+    <style>
 
-            #image1{
-                margin-top:100px;
-                width:250px;
-                height:250px;
+        #image1{
+            margin-top:100px;
+            width:250px;
+            height:250px;
 
-            }
-            
+        }
+        
         #carre1{
             height:400px;
             width :200px;
@@ -226,17 +229,54 @@
             width :200px;
             background: red;
             overflow: scroll;
-        }
-        </style>
+
+          
+        #draggable { width: 150px; height: 150px; padding: 0.5em; }
+
+    </style>
+              
 
 
-
+      <script>
+      $( function() {
+        $("#draggable").draggable();
+      } );
+      </script>
+            
         
          <div class="col-lg-8">
-            <div id="carre2"><center><img src="/static/img/portfolio/thumbnails/2.jpg" id="image1"/></center></div>
+            <div id="carre2"><center><img src="/static/img/portfolio/thumbnails/2.jpg" id="image1"/>
+            </center></div>
+
+             <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+              <link rel="stylesheet" href="/resources/demos/style.css">
+              <style>
+              #draggable { width: 150px; height: 150px; padding: 0.5em; }
+              </style>
+              <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+              <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+              <script>
+              $( function() {
+                $( "#draggable" ).draggable();
+              } );
+              </script>
+            </head>
+            <body>
+             
+            <div id="draggable" class="ui-widget-content">
+              <p>Drag me around</p>
+            </div>
+             
+             
+
+
+
+
+      
+             
          </div>
 
-         <div class="col-lg-2" id="3" style="border:1px solid red">
+         <div class="col-lg-2" id="3">
             <div id="carre3">Coupe de cheveux
 
             <ul>
@@ -246,12 +286,9 @@
                 <li></li>
                 <li></li>
                 <li></li>
-
                 <li></li>
                 <li></li>
                 <li></li>
-                
-
             </ul>
             
             </div>
@@ -267,6 +304,17 @@
       </div>
     </div>
   </section>
+
+
+  
+
+  
+
+
+
+
+
+
 
 
 
@@ -374,7 +422,7 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="/static/vendor/jquery/jquery.min.js"></script>
+ 
   <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
