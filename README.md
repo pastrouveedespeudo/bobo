@@ -1,5 +1,15 @@
 # bobo
 
+#ce projet la est un sécuritaire
+
+#les recruteur regarde le projet final, projet sur l'ecologie vs projet sur un site web de meuf...
+
+#mais l'ecologie c bcp trop dur et il me reste 3mois... chui obligé de faire ca, nik que je doive coder toute ma vie les sites internet
+
+#de carrouf nik je coderai au moins fin mec t'as mis 4 mois a etre au p9 ils vont te trouver un truk cool jsp ^^ bon ben c parti pour la 
+
+#mode^^ et si je fini avant les 2 mois au p13 alors je ferai lecologie en projet final mais ce projet la est un sécuritaire
+
 #traiter la premeire coupe
 
 #mettre un lien dans coupe de cheveux, si tu met la souris dessus ca montre l'image
