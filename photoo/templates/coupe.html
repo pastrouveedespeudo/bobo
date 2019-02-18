@@ -35,6 +35,11 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 </head>
 
 
@@ -153,16 +158,22 @@
 
 
 
-  <!-- About Section -->
-  <section class="page-section bg-primary" id="about">
-    <div class="container">
 
 
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="text-white mt-0"><center>Essayons quelques choses</center></h2>
-      </div>
-      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -177,40 +188,10 @@
 
     </script>
     
-
-
-
-    <br><br><br><br><br>
-
-    <div class="container"style="border:1px solid red">
-        <div class="row">
-        
-          <div class="col-lg-2" id="1" >
-            <div id="carre1">Coupe de cheveux
-
-            <ul>
-                <li><img src="/static/img/portfolio/coupe/image_coiffure%20face0.jpg" /></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-
-
-       
-            </div>
-         </div>
-
-
-
     <style>
 
         #image1{
-            margin-top:100px;
+            margin-top:500px;
             width:250px;
             height:250px;
 
@@ -223,85 +204,105 @@
             overflow: scroll;
         }
 
-        
-        #carre3{
-            height:400px;
-            width :200px;
-            background: red;
-            overflow: scroll;
-
-          
+        #draggable1,
+        #draggable2,
+        #draggable3,
+        #draggable4,
+        #draggable5, 
         #draggable { width: 150px; height: 150px; padding: 0.5em; }
+
+        #image{
+            margin-top:-450px;
+            
+        }
+        #coupe_gauche{
+             margin-top:-400px;
+        }
+    
+        #coupe_droite{
+             margin-top:-600px;
+             margin-left:900px;
+        }
 
     </style>
               
 
 
       <script>
-      $( function() {
-        $("#draggable").draggable();
+
+
+    $( function() {
+        $("#draggable1, #draggable, #draggable2, #draggable3, #draggable4, #draggable5").draggable();
       } );
       </script>
             
-        
-         <div class="col-lg-8">
-            <div id="carre2"><center><img src="/static/img/portfolio/thumbnails/2.jpg" id="image1"/>
-            </center></div>
 
-             <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-              <link rel="stylesheet" href="/resources/demos/style.css">
-              <style>
-              #draggable { width: 150px; height: 150px; padding: 0.5em; }
-              </style>
-              <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-              <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-              <script>
-              $( function() {
-                $( "#draggable" ).draggable();
-              } );
-              </script>
-            </head>
-            <body>
-             
-            <div id="draggable" class="ui-widget-content">
-              <p>Drag me around</p>
+
+
+
+
+
+
+
+
+  <!-- About Section -->
+  <section class="page-section bg-primary" id="about">
+    <div class="container">
+
+
+      <div class="row justify-content-center">
+        <div class="col-lg-12 text-center">
+          <h2 class="text-white mt-0"><center>Essayons quelques choses</center></h2>
+  
+            <div id="image">
+                <img src="/static/img/portfolio/thumbnails/2.jpg" id="image1"/>
             </div>
-             
-             
 
-
-
-
-      
-             
-         </div>
-
-         <div class="col-lg-2" id="3">
-            <div id="carre3">Coupe de cheveux
-
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
             
+            
+            <div id="coupe_gauche">
+                <div id="draggable" class="ui-widget-content">
+                    <img src="/static/img/portfolio/coupe/image_coiffure%20face0.jpg" />
+                </div>
+                
+                <div id="draggable1" class="ui-widget-content">
+                    <img src="/static/img/portfolio/coupe/image_coiffure%20face0.jpg" />
+                </div>
+
+                <div id="draggable2" class="ui-widget-content">
+                    <img src="/static/img/portfolio/coupe/image_coiffure%20face0.jpg" />
+                </div>
+                
+                <div id="draggable3" class="ui-widget-content">
+                    <img src="/static/img/portfolio/coupe/image_coiffure%20face0.jpg" />
+                </div>
             </div>
+            <div id='coupe_droite'>
+                <div id="draggable4" class="ui-widget-content">
+                    <img src="/static/img/portfolio/coupe/image_coiffure%20face0.jpg" />
+                </div>
 
-         </div>
-         
-        </div>
+                <div id="draggable5" class="ui-widget-content">
+                    <img src="/static/img/portfolio/coupe/image_coiffure%20face0.jpg" />
+                </div>
+                
+                <div id="draggable5" class="ui-widget-content">
+                    <img src="/static/img/portfolio/coupe/image_coiffure%20face0.jpg" />
+                </div>
 
- 
-      
-    
+                <div id="draggable5" class="ui-widget-content">
+                    <img src="/static/img/portfolio/coupe/image_coiffure%20face0.jpg" />
+                </div>
+
+                <div id="draggable5" class="ui-widget-content">
+                    <img src="/static/img/portfolio/coupe/image_coiffure%20face0.jpg" />
+                </div>
+
+
+                
+            </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
-      </div>
     </div>
   </section>
 
@@ -309,9 +310,6 @@
   
 
   
-
-
-
 
 
 
