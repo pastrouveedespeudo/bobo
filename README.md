@@ -1,16 +1,10 @@
 # bobo
 
-#travailler les images mtn ne prendre que la coupe
-
-#et trouve le moyen de les superposer avec ta gueule 
-
-#prendre la photo (coté utilisateur sa,s cheveux dire prend avec serre tete ou ficelle ou tu met souris sur la tete tout  en tenant tes cheuve)
-
 #ce projet la est un sécuritaire
 
-#si bien chui entrain de jouer ma vie sur cette descision
 
-#traiter la premeire coupe
+#pouvoir redimensionner l'image avec la souris mtn
+
 
 #mettre un lien dans coupe de cheveux, si tu met la souris dessus ca montre l'image
 
