@@ -58,3 +58,5 @@
 #integrer un partage
 
 #integrer des solutions
+
+#faire la zone magique, suivant, ok suppr, zone texte, transpa ok, mettre l'image, enregistrer 2d.png MAIS en python
