@@ -55,6 +55,15 @@ def capture():
 
 
 
+def cropage(para):
+
+    
+    img = cv2.imread(para)
+    
+    crop = img[320:515, 580:780]
+    cv2.imwrite("gueuledemacaccropé.jpg", crop)
+
+
 
 
 
