@@ -4,9 +4,18 @@
 
 
 
-#c de la grosse merde mdr
+#faire le coté vetements et commentcer la redirection vers les ecommerces mais sans le lien je sais pas si g le droit
 
-#travaille le coté esthétique trouve le trk qui rend le truk jolie
+#réfléchir sur un algorith a mettre derriere sinon c pas classe.... 
+
+#mieux qualibrer les ronds, sinon les coupes seront keni
+
+#macguyvert et refaire projet ==> y mettre une ia j'ai compris ce que c'etait jcrois
+
+
+#réfléchir pour mieux faire la coupe
+
+#les coupes gars aussi ca va eetre plus dur ca...
 
 #pouvoir redimensionner l'image avec la souris mtn
 
