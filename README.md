@@ -2,6 +2,9 @@
 
 #ce projet la est un sécuritaire
 
+#c de la grosse merde mdr
+
+#travaille le coté esthétique trouve le trk qui rend le truk jolie
 
 #pouvoir redimensionner l'image avec la souris mtn
 
