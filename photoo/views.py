@@ -15,6 +15,7 @@ def photo(request):
         print(recherche,"000000000000000000000000000000000000000000000000000")
         capturee = capture()
         print(capturee)
+        cropage()
         os.chdir(r"C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo")
         liste = os.listdir()
         print(liste)
@@ -35,6 +36,10 @@ def essais(request):
     return render(request, 'essais.html')
 
 def coupe(request):
+    if request.method == "POST":
+        recherche = request.POST.get('coupedecheveux')
+        print(recherche)
+        print(recherche, "56666666666666666666666666666666666666666666")
     return render(request, 'coupe.html')
 
 
