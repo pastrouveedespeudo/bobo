@@ -2,6 +2,9 @@
 
 #ce projet la est un sécuritaire ...
 
+#ou is ben t'as 30 videos de 3h en moyenne syr les ia, jfais avvec ce que j'ai compris j'ai pas trop le temps...
+
+#5 mois chui pépére en vrai de tout bien faire et jmettrai les 3 projets dans le projets final nik
 
 #ok mtn on propose(invente pour l'instant) des tenu SELON la coupe de cheveux du genre les meufs avec bbbb portent :
 
