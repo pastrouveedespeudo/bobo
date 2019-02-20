@@ -11,6 +11,9 @@ BLEU = [0,0,255]
 
 TRAITEMENT = []
 POIDS = 0
+VETEMENT = {}
+
+DICTIONNAIRE = {}
 
 #ici vetement selon la coupe
 #selon le site
@@ -41,7 +44,8 @@ class vetement:
 
     def reinitialisation(self):
         POIDS = 0
-
+        DICTIONNAIRE = {}
+        
     def search_data(self):
         pass
 
@@ -50,7 +54,9 @@ class vetement:
 
         os.chdir(r"C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\vetement\pantalon")
         liste = os.listdir()
-
+        
+        for i in liste:
+            DICTIONNAIRE[i] = 0
         dico = {}
         
         for i in liste:
@@ -69,6 +75,8 @@ class vetement:
 
         if ajustage == "BLEU":
             POIDS += 1 #normalement ici on met genre pas bleu mais un autre truk
+            COULEUR_VETEMENT.append(i)
+            
         elif ajustage != "BLEU":
             POIDS -= 1
         
