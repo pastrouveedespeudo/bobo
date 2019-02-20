@@ -2,6 +2,14 @@
 
 #ce projet la est un sécuritaire ...
 
+
+#ok mtn on propose(invente pour l'instant) des tenu SELON la coupe de cheveux du genre les meufs avec bbbb portent :
+
+#on peut décuoper des images et mettre des chignon filles avec des habits
+
+#faire le truk patron habit
+
+
 #assure toi que toutes les coupes ailles aussi bien que bbbb.png pour les prochaine fais les vetements faudrait que les coiffures se
 
 #collent automatiquement et sadapte selon la couleur... faudrait que ca marche passe au vetement et fait truk pollution
