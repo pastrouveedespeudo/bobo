@@ -2,7 +2,9 @@
 
 #ce projet la est un sécuritaire ...
 
-#ok bvr et pas rvb c comme ca que t'as ouvert autant de video et tu les regarderas jamais ^^
+#apres jaimerai bien point par point dans l'image trouver des logo de marques mais pas obligé ah javcais oublié heuresement que
+
+#jmarque tous ca jme serais lancé dans ca en oubliant le skin detector ouf
 
 #fini et fais le haut bas (skin detector via la figure tu crop l'image au niveau des bras et au pire
 
