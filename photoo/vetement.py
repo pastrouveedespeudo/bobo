@@ -20,16 +20,25 @@ DICTIONNAIRE = {}
 
 #faudra ajuster les para ex: chignon ou frange
 
-def ajustage_couleur(bleu):
+def ajustage_couleur(dico):
 
     ok = "BLEU"
     pas_ok = "PAS BLUWW"
-    if bleu[0] >= 0 or bleu[0] <= 86\
-       and bleu[1] >= 0 or bleu[1] <= 140\
-       and bleu[2] >= 187 and bleu[2] <= 255:
-        return ok
-    else:
-        return pas_ok
+
+    liste = []
+
+    for x in range(im.shape[0]):
+        for y in range(im.shape[1]):
+            if im[x,y][1] <= 80 and im[x,y][1] >= 0\
+               and im[x,y][2] >= 40 and im[x,y][2] <= 120:
+                
+                  
+             
+                return ok
+     
+            else:
+                return pas_ok
+        
     
     #ne marche que pour le bleu et les autre peut etre
       #0     0    255
@@ -57,30 +66,32 @@ class vetement:
         
         for i in liste:
             DICTIONNAIRE[i] = 0
-        dico = {}
+
         
         for i in liste:
+            dico = {}
             im = Image.open(str(i))
             for value in im.getdata(): 
                 if value in dico.keys():
                     dico[value] += 1
                 else:
                     dico[value] = 1
-                break
+               
+
+            ajustage = ajustage_couleur(dico)
+       
+            if ajustage == "BLEU":
             
-  
-        couleur_max = max(dico)
+                #normalement ici on met genre pas bleu mais un autre truk
+                DICTIONNAIRE[i] += 1
+                
+            elif ajustage != "BLEU":
+           
+                DICTIONNAIRE[i] -= 1
 
-        ajustage = ajustage_couleur(couleur_max)
-
-        if ajustage == "BLEU":
-            POIDS += 1 #normalement ici on met genre pas bleu mais un autre truk
-            COULEUR_VETEMENT.append(i)
-            
-        elif ajustage != "BLEU":
-            POIDS -= 1
-        
-
+                
+        print(DICTIONNAIRE)
+ 
     #1/-1/0
 
     def search_sexe(self):
