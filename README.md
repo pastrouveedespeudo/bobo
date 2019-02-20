@@ -2,7 +2,7 @@
 
 #ce projet la est un sécuritaire ...
 
-#ok bvr et pas rvb ca ma donné la gerbe en vrai tarrete de racconter ta vie ? grosse pedale ohohoho ! jvai creer un blog
+#ok bvr et pas rvb c comme ca que t'as ouvert autant de video et tu les regarderas jamais ^^
 
 #fini et fais le haut bas (skin detector via la figure tu crop l'image au niveau des bras et au pire
 
