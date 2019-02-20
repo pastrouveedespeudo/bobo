@@ -2,6 +2,10 @@
 
 #ce projet la est un sécuritaire ...
 
+#assure toi que toutes les coupes ailles aussi bien que bbbb.png pour les prochaine fais les vetements faudrait que les coiffures se
+
+#collent automatiquement et sadapte selon la couleur... faudrait que ca marche passe au vetement et fait truk pollution
+
 
 
 #faire le coté vetements et commentcer la redirection vers les ecommerces mais sans le lien je sais pas si g le droit
