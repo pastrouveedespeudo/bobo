@@ -2,16 +2,18 @@
 
 #ce projet la est un sécuritaire ...
 
-#ou is ben t'as 30 videos de 3h en moyenne syr les ia, jfais avvec ce que j'ai compris j'ai pas trop le temps...
+#ok bvr et pas rvb ca ma donné la gerbe en vrai tarrete de racconter ta vie ? grosse pedale ohohoho ! jvai creer un blog
 
-#5 mois chui pépére en vrai de tout bien faire et jmettrai les 3 projets dans le projets final nik
+#fini et fais le haut bas (skin detector via la figure tu crop l'image au niveau des bras et au pire
 
-#ok mtn on propose(invente pour l'instant) des tenu SELON la coupe de cheveux du genre les meufs avec bbbb portent :
+#tu fais un détourage avec les mask, si c un ligne de pts un ligne alors c le bras, et tu regardes la couleur 
 
-#on peut décuoper des images et mettre des chignon filles avec des habits
+#si ca corresp a la peau c un tshirt sinon non ATTENTION il faut que couleur peau soit a plus de 50% du bras (la main))
+
+
+
 
 #faire le truk patron habit
-
 
 #assure toi que toutes les coupes ailles aussi bien que bbbb.png pour les prochaine fais les vetements faudrait que les coiffures se
 
