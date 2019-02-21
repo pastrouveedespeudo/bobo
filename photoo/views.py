@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .photo import *
+from .coupenom import *
 import os
 
 def mes_images(request):
@@ -38,8 +39,11 @@ def essais(request):
 def coupe(request):
     if request.method == "POST":
         recherche = request.POST.get('coupedecheveux')
-        print(recherche)
-        print(recherche, "56666666666666666666666666666666666666666666")
+        tenu = coupe_de_cheveux_nom(recherche)
+        choix_fichier_haut(tenu[0])
+        choix_fichier_haut(tenu[1])
+
+
     return render(request, 'coupe.html')
 
 
