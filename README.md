@@ -2,52 +2,46 @@
 
 #ce projet la est un sécuritaire ...
 
-#ok c'etait juste pour voir si ca pouvait marcher, focus toi, tu n'as juste a faire deux dossier un tshirt, l'autre jean
+#ok trouve d'un facon ou d'une autre comment intégrer tout le truk davant
 
-#la mec met je veux un chignon. D'aprés  ce chignon, il y aura une sortie. Cette sortie c'est : thisrt rouge, jean bleu.
+#afficher les vetements draggable sur un nouvelle page ==> traite les images avec la tete avec la coupe et dessine un patron
 
-#tu vas dans le dossier jean. Tu cherches les images bleus. Tu vas dans le dossier tshirt, tu cherches du rouge
-
-#tu les fais apparaitre au mec. Disons que tes truks la ca sera pour les sites ou des images OU un autre projet ou tu demandes
-
-#thirt ou pull ? ^^ t'as le truk pluie a faire oua l'uml m'aa appris a bien écrire. De fait, t'as 2 autres projets a foture la dedans gros
+#faut trouver comment les coupes deviennet pas moche avec les copues en couleur
 
 
 
+
+
+
+---a finir---
 #fini et fais le haut bas (skin detector via la figure tu crop l'image au niveau des bras et au pire
-
 #tu fais un détourage avec les mask, si c un ligne de pts un ligne alors c le bras, et tu regardes la couleur 
-
 #si ca corresp a la peau c un tshirt sinon non ATTENTION il faut que couleur peau soit a plus de 50% du bras (la main))
 
 
 
 
-#faire le truk patron habit
-
-#assure toi que toutes les coupes ailles aussi bien que bbbb.png pour les prochaine fais les vetements faudrait que les coiffures se
-
-#collent automatiquement et sadapte selon la couleur... faudrait que ca marche passe au vetement et fait truk pollution
+#pouvoir redimensionner l'image avec la souris mtn
 
 
+#mettre un lien dans coupe de cheveux, si tu met la souris dessus ca montre l'image
+#mieux ranger les perruques
 
-#faire le coté vetements et commentcer la redirection vers les ecommerces mais sans le lien je sais pas si g le droit
 
-#réfléchir sur un algorith a mettre derriere sinon c pas classe.... 
+
 
 #mieux qualibrer les ronds, sinon les coupes seront keni
 
 #macguyvert et refaire projet ==> y mettre une ia j'ai compris ce que c'etait jcrois
 
 
-#réfléchir pour mieux faire la coupe
+
 
 #les coupes gars aussi ca va eetre plus dur ca...
 
-#pouvoir redimensionner l'image avec la souris mtn
 
 
-#mettre un lien dans coupe de cheveux, si tu met la souris dessus ca montre l'image
+
 
 #faire un zimage et absolute et relative
 
