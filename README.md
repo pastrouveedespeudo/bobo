@@ -2,6 +2,7 @@
 
 #ce projet la est un sécuritaire ...
 
+#sinon faire des dossier pull tshoirt pantalon non ?
 
 #et si tu tombes sur de la barbe ? ben on va devoir faire pleins de pts sapprocher de l'ecran tellement c petit
 
