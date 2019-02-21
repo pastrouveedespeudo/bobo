@@ -2,14 +2,15 @@
 
 #ce projet la est un sécuritaire ...
 
-#sinon faire des dossier pull tshoirt pantalon non ?
+#ok c'etait juste pour voir si ca pouvait marcher, focus toi, tu n'as juste a faire deux dossier un tshirt, l'autre jean
 
-#et si tu tombes sur de la barbe ? ben on va devoir faire pleins de pts sapprocher de l'ecran tellement c petit
+#la mec met je veux un chignon. D'aprés  ce chignon, il y aura une sortie. Cette sortie c'est : thisrt rouge, jean bleu.
 
-#rien voir, la sauvegarder se demander si c save ou imwrite, se perdre dans les fichier, ouvrir zoomer et faire 
+#tu vas dans le dossier jean. Tu cherches les images bleus. Tu vas dans le dossier tshirt, tu cherches du rouge
 
-#ca pendant des heures et chercher l'axe de la barbe pfffff nik de la barbe on prend que des mecs sans bebar
+#tu les fais apparaitre au mec. Disons que tes truks la ca sera pour les sites ou des images OU un autre projet ou tu demandes
 
+#thirt ou pull ? ^^ t'as le truk pluie a faire oua l'uml m'aa appris a bien écrire. De fait, t'as 2 autres projets a foture la dedans gros
 
 
 
