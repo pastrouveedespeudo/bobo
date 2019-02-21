@@ -45,12 +45,8 @@ def coupe(request):
         tenu = coupe_de_cheveux_nom(recherche)
         a = choix_fichier_haut(tenu[0])
         b = choix_fichier_haut(tenu[1])
-
-        print(type(a))
-
-
-   
-        return render(request, 'habits.html', {'one':a, 'two':b} )
+  
+        return render(request, 'habits.html', {'a':a, 'b':b} )
 
 
 
