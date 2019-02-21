@@ -2,9 +2,15 @@
 
 #ce projet la est un sécuritaire ...
 
-#apres jaimerai bien point par point dans l'image trouver des logo de marques mais pas obligé ah javcais oublié heuresement que
 
-#jmarque tous ca jme serais lancé dans ca en oubliant le skin detector ouf
+#et si tu tombes sur de la barbe ? ben on va devoir faire pleins de pts sapprocher de l'ecran tellement c petit
+
+#rien voir, la sauvegarder se demander si c save ou imwrite, se perdre dans les fichier, ouvrir zoomer et faire 
+
+#ca pendant des heures et chercher l'axe de la barbe pfffff nik de la barbe on prend que des mecs sans bebar
+
+
+
 
 #fini et fais le haut bas (skin detector via la figure tu crop l'image au niveau des bras et au pire
 
