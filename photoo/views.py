@@ -37,18 +37,24 @@ def essais(request):
     return render(request, 'essais.html')
 
 def coupe(request):
+
+    
     if request.method == "POST":
+        
         recherche = request.POST.get('coupedecheveux')
+        
         tenu = coupe_de_cheveux_nom(recherche)
-        choix_fichier_haut(tenu[0])
-        choix_fichier_haut(tenu[1])
-
-
+        a = choix_fichier_haut(tenu[0])
+       
+        #choix_fichier_haut(tenu[1])
+        return render(request, 'habits.html')
+        
     return render(request, 'coupe.html')
 
 
 
-
+def habits(request):
+    return render(request, 'habits.html')
 
 
 
