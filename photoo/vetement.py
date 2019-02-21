@@ -21,7 +21,7 @@ DICTIONNAIRE = {}
 
 #faudra ajuster les para ex: chignon ou frange
 
-def ajustage_couleur(image):
+def ajustage_couleur(image):#ici faudra faire genre si tu veux du vert l'ajuster
 
     ok = "BLEU"
     pas_ok = "PAS BLUWW"
@@ -36,8 +36,6 @@ def ajustage_couleur(image):
                and im[x,y][2] >= 40 and im[x,y][2] <= 120\
                and im[x,y][0] > [x,y][1] + 40 and im[x,y][0]> im[x,y][2] + 40:
                
-
-
                 liste.append("ok")
 
     if liste != [ ]:
@@ -51,7 +49,26 @@ def ajustage_couleur(image):
       #86     140  187
     
 
-    
+def ajustage_couleur_2(image, couleur, vertmin, vermax, rougemin, rougemax):
+
+    ok = couleur
+    pas_ok = "NOPE"
+
+    liste = []
+    im = cv2.imread(str(image))
+
+    for x in range(im.shape[0]):
+        for y in range(im.shape[1]):
+
+            if im[x,y][1] <= vertmin and im[x,y][1] >= vermax\
+               and im[x,y][2] >= rougemin and im[x,y][2] <= rougemax\
+               and im[x,y][0] > [x,y][1] + 40 and im[x,y][0]> im[x,y][2] + 40:
+               
+                liste.append("ok")
+    if liste != [ ]:
+        return ok
+    else:
+        return pas_ok
     
 
 
@@ -65,7 +82,7 @@ class vetement:
         pass
 
 
-    def search_couleur(self):
+    def search_couleur(self):#ici faudra mettre le type de vetement genre pull et ca va dans le dossier pull
 
         os.chdir(r"C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\vetement\pantalon")
         liste = os.listdir()
@@ -98,6 +115,23 @@ class vetement:
 
     def haut_bas(self):
         pass
+
+
+
+
+
+
+
+
+
+
+
+
+    #enfete ici on aura une catégorie tshirt et pull donc...
+
+
+
+
     #comment reconnaitre un tshirt d'un pull?
     #forme pts image
     #on montre un fois on fait les poids
