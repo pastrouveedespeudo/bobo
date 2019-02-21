@@ -26,7 +26,7 @@ def photo(request):
         d = liste[3]
         e = liste[4]
         f = liste[5]
-        return render(request, 'mes_images.html', {'capture':capturee,'a':a,'b':b,'c':c,'d':d,'e':e,'f':f }) 
+        return render(request, 'mes_images.html', {'capture':capturee,'a':a,'b':b,'c':c,'d':d,'e':e,'f':f } ) 
 
 
     
@@ -38,17 +38,24 @@ def essais(request):
 
 def coupe(request):
 
-    
     if request.method == "POST":
         
         recherche = request.POST.get('coupedecheveux')
         
         tenu = coupe_de_cheveux_nom(recherche)
         a = choix_fichier_haut(tenu[0])
-       
-        #choix_fichier_haut(tenu[1])
-        return render(request, 'habits.html')
-        
+        b = choix_fichier_haut(tenu[1])
+
+        print(type(a))
+
+
+   
+        return render(request, 'habits.html', {'one':a, 'two':b} )
+
+
+
+
+    
     return render(request, 'coupe.html')
 
 
