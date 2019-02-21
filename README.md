@@ -2,7 +2,9 @@
 
 #ce projet la est un sécuritaire ...
 
-#ok trouve d'un facon ou d'une autre comment intégrer tout le truk davant
+#voila pk faut pas bouffer deux crepes l'une sur l'autre apres un gros 4heures... apres t'en chis sur des truk a chier...
+
+#2heures a utiliser la meme liste ca afficher le truk davant... {{i}} dans l'url putin et a oui "variable a appeler":valeur pfff
 
 #afficher les vetements draggable sur un nouvelle page ==> traite les images avec la tete avec la coupe et dessine un patron
 
@@ -81,6 +83,8 @@
 
 
 #------------------------------
+
+#ok trouve d'un facon ou d'une autre comment intégrer tout le truk davant pour recherche internet site
 
 #sinon tete avec cheveux sans cheveux on fait la soustration et on met l'image mais faut pleins dimage sinon 5 coupes c nul
 
