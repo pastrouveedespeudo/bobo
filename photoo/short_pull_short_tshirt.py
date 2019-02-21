@@ -7,9 +7,8 @@ class pull_tshit_short_panta:
 
 
     def take_visage(self, image):
-        PATH = r"C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\essais\{}".format(image)
-
         
+        PATH = r"C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\essais\{}".format(image)
         img = cv2.imread(str(PATH))
 
         face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -27,7 +26,7 @@ class pull_tshit_short_panta:
         img = "visageone.jpg"
         return img
     
-    def couleur_visage(self, img):
+    def point_visage(self, img):
         
         im = cv2.imread(str(img))
         img = Image.open(str(img))
@@ -39,34 +38,43 @@ class pull_tshit_short_panta:
         b  = int(round(im.shape[0] *0.45))
         c  = int(round(im.shape[0] *0.70))
 
-        
-      
-        pts1 = im[a,a] = 0,0,255#1
-        pts2 = im[a,b] = 0,0,255#1
-        pts3 = im[a,c] = 0,0,255#1
+        pts1 = im[a,a]
+        pts2 = im[a,b]
+        pts3 = im[a,c]
 
-        pts4 = im[b,b] = 0,0,255#1
-        pts5 = im[c,b] = 0,0,255#1
+        pts4 = im[b,b]
+        pts5 = im[c,b]
 
-        pts6 = im[b,a] = 0,0,255#1
-        pts7 = im[b,c] = 0,0,255#1
-
-
-
-        cv2.imshow("lala.png", im)
-
+        pts6 = im[b,a]
+        pts7 = im[b,c]
 
         cv2.imwrite("visageonepts.jpg", im)
-        cv2.imshow("lala.png", im)
+
+        return pts1, pts2, pts3, pts4, pts5, pts6 ,pts7
+
+
+
+    def couleur_des_pts(self, pts1, pts2, pts3, pts4, pts5, pts6 ,pts7, image):
+        
+        print(pts1, pts2, pts3, pts4, pts5, pts6 ,pts7)
+        
+        PATH = r"C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\essais\{}".format(image)
+        im = cv2.imread(str(PATH))
         
         for x in range(im.shape[0]):
             for y in range(im.shape[1]):
                 pass
 
-        
+                #balayer l'image meme princiê si la couleur +- 50 ou 100 a voir on prend
+                #le reste on le met en noir
+                #et on commence le mask
+                #ATTENTION CROP ET MASK NE SONT PAS LA MEME CHOSE
+
 yo = pull_tshit_short_panta()
 img = yo.take_visage("one.jpg")
-yo.couleur_visage(img)
+pts = yo.point_visage(img)
+
+yo.couleur_des_pts(pts[0], pts[1], pts[2],pts[3],pts[4],pts[5],pts[6], "one.jpg")
 
 
 
