@@ -1,9 +1,4 @@
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -349,6 +344,8 @@
                 height:200px;
 
               }
+
+      
             </style>
 
             
@@ -467,7 +464,7 @@
 
   var LISTECOUPE = []
   function yo() {
-  
+
     var liste = [draggable,draggable2,draggable3,draggable4,draggable5,draggable6,draggable7,draggable8,draggable9,
                  draggable10,draggable11,draggable12,draggable13,draggable14,draggable15,draggable16,draggable17,draggable18,
                  draggable19]
@@ -475,20 +472,19 @@
     for(var i = 0; i <= liste.length - 1; i++){
       var a = document.getElementById(liste[i].id).offsetLeft;
       var b = document.getElementById(liste[i].id).offsetTop;
+     
+      if(a >= 460 && a <= 580 & b >=50 && b <= 110 ){
+    
+        LISTECOUPE.push(liste[i].id)
 
+        document.getElementById("coupedecheveux").value = LISTECOUPE[LISTECOUPE.length - 1];
+      };
 
       
-      if(a >= 380 && a <= 500 & b >=50 && b <= 110 ){
-
-        LISTECOUPE.push(liste[i].id)
-        console.log(LISTECOUPE[LISTECOUPE.length - 1])
-        document.getElementById("coupedecheveux").value = LISTECOUPE[LISTECOUPE.length - 1];
-        console.log(document.getElementById("coupedecheveux").value);
-        }
-       
     };
 
   };
+  
 
 
   
@@ -506,7 +502,7 @@
           <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux">
           <input type="hidden" name="csrfmiddlewaretoken" value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">
         
-          <input type="submit" value="J'aime cette coupe" onclick="yo()"<a class="btn btn-light btn-xl js-scroll-trigger">
+          <input type="submit" id="sub" value="J'aime cette coupe" onclick="yo()"<a class="btn btn-light btn-xl js-scroll-trigger">
        </form>
     </div>
   </section>
