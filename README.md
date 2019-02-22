@@ -1,7 +1,7 @@
 # bobo
 
 
-#ouais bah une heure pour faire un mask y peuvent pas faire des x et y correcte putin et j'ai toujorus pas compris mais ca fait un carré fais chier
+#faire un truk qui quand tu rentres 255,255,255 ca dit noir ou blanc je c jms
 
 
 #staprem fais ca mais le site va pas avancé :
