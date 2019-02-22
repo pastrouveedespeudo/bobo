@@ -1,5 +1,9 @@
 # bobo
 
+
+#ouais bah une heure pour faire un mask y peuvent pas faire des x et y correcte putin et j'ai toujorus pas compris mais ca fait un carré fais chier
+
+
 #staprem fais ca mais le site va pas avancé :
 #et ton truk va servir a dire les nouvelle tendance en scrappant des sites de vente en haardcascadant les image avec le poucentage
 #de limage vis a vis de latete ok ? 
