@@ -1,5 +1,7 @@
 # bobo
 
+#fais gaffe jcrois le 2d png rajoute un 4 truk grrr
+
 #soit travailler les images vetements et les mettre en draggable
 
 #soit: faire tous les draggables et donc pleins de vetement et pleins de coupe homme femme
