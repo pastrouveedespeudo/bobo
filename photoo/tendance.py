@@ -116,19 +116,48 @@ class tendance:
                 diff.save("traitement_bas.jpg")
 
 
-    def pts(self):
+    def couleur(self, image):
         
-        img_haut = cv2.imread("traitement_haut.jpg")
-        img_bas = cv2.imread("traitement_bas.jpg")
-        
+        self.im = Image.open(image)
 
 
+        liste = []
+        
+        dico = {}
+        for value in self.im.getdata():
+            if value in dico.keys():
+                 dico[value] += 1
+            else:
+                 dico[value] = 1
+
+
+        liste_dico = []
+        for i in dico.values():
+            liste_dico.append(i)
+            
+        liste_dico= sorted(liste_dico, reverse = True)
+
+        for i in liste_dico:
+            liste.append([c for c,v in dico.items() if v==i])
+            if i <= 5:
+                break
+
+
+        liste_finale = []
+        for i in liste:
+            for j in i:
+                
+                if j[0] == j[1] == j[2]:
+                    pass
+                elif j[0] <= j[1] + 10 and j[0] >= j[1]-10  and\
+                     j[0] <= j[2] + 10 and j[0] >= j[2]-10:
+                    pass 
 
 
                 
+                else:
+                    print(j[0],j[1],j[2])
 
-        cv2.imshow("yoyo.jpg", img_haut)
-        cv2.imshow("yoyo.jpg", img_bas)
 
 
 
@@ -173,7 +202,7 @@ class tendance:
 
 
 
-
+#ok le but c de lui faire 
 
 
 
@@ -230,7 +259,19 @@ class tendance:
 #2 on parcours la liste des images et on ignore les fichier py
 #3 on fais un mask de l'image en haut et en bas
 #4 on fait des pts sur le haut et le bas de facon a etre sur que c sur le vetement
-#5 on récupere la couleur
+#5 on récupere les couleurs et on stock ca  et on regarde les deux couleurs a chaque fois
+        #dapres tous les pts on regarde si ca depasse pas a chaque fois du seil
+        #au moins x des valeurs
+
+        #on aura les valeurs sous formes de bvr
+
+
+
+
+
+
+
+
         
 # on regarde dans le titre si on trouve mec ou fille
 # on commence les poids du sexe des hommes
@@ -245,7 +286,8 @@ yo = tendance()
 yo.mask_haut()
 yo.mask_bas()
 
-yo.pts()
+yo.couleur("traitement_haut.jpg")
+yo.couleur("traitement_bas.jpg")
 
 
 yo.sexe(LISTE_SEXE_HOMME)
