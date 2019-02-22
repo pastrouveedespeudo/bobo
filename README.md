@@ -1,14 +1,21 @@
 # bobo
 
-#apres manger réfléchis a la base de donnée ca commence a devenir un peu chiant 15 images a faire detourage magique...
-
-#puis javais pas mis le fond transparent putin puis j'ai copié static sur le bureau ca faisait pas le meme fichier..
-
+#staprem fais ca mais le site va pas avancé :
 #et ton truk va servir a dire les nouvelle tendance en scrappant des sites de vente en haardcascadant les image avec le poucentage
-
 #de limage vis a vis de latete ok ? 
 
+
+
 #soit travailler les images vetements et les mettre en draggable
+
+
+
+
+
+#éfléchis a la base de donnée et lajout if draggable =="draggable"
+
+
+
 
 #soit: faire tous les draggables et donc pleins de vetement et pleins de coupe homme femme
 
