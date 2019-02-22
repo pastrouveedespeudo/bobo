@@ -1,14 +1,15 @@
 # bobo
 
-#ce projet la est un sécuritaire ...
+#soit travailler les images vetements et les mettre en draggable
 
-#voila pk faut pas bouffer deux crepes l'une sur l'autre apres un gros 4heures... apres t'en chis sur des truk a chier...
+#soit: faire tous les draggables et donc pleins de vetement et pleins de coupe homme femme
 
-#2heures a utiliser la meme liste ca afficher le truk davant... {{i}} dans l'url putin et a oui "variable a appeler":valeur pfff
+#soit: commencer a faire la partie conseil
 
-#afficher les vetements draggable sur un nouvelle page ==> traite les images avec la tete avec la coupe et dessine un patron
+#soit: fait la recherche sur un site via les vetement ou via google image: vetement et sur la page
+#on cherche automatiquement si c pull tshirt pantalon ect
 
-#faut trouver comment les coupes deviennet pas moche avec les copues en couleur
+#soit  rendre les coupes belles en couleurs
 
 
 
@@ -20,65 +21,6 @@
 #tu fais un détourage avec les mask, si c un ligne de pts un ligne alors c le bras, et tu regardes la couleur 
 #si ca corresp a la peau c un tshirt sinon non ATTENTION il faut que couleur peau soit a plus de 50% du bras (la main))
 
-
-
-
-#pouvoir redimensionner l'image avec la souris mtn
-
-
-#mettre un lien dans coupe de cheveux, si tu met la souris dessus ca montre l'image
-#mieux ranger les perruques
-
-
-
-
-#mieux qualibrer les ronds, sinon les coupes seront keni
-
-#macguyvert et refaire projet ==> y mettre une ia j'ai compris ce que c'etait jcrois
-
-
-
-
-#les coupes gars aussi ca va eetre plus dur ca...
-
-
-
-
-
-#faire un zimage et absolute et relative
-
-#mettre la coupe a la meme taille que la tete du mec avec PIL resizer
-
-#pouvoir déplacer l'image librement dans la zone
-
-#finir le dossier UML
-
-
-
-
-#-----ok touche plus a rien c ok comme ca-----
-
-#on prend la tete sans les cheveux, profil les deux coté gros plan
-
-#avec cheveux pour les habits
-
-#on prend un plan éloigné pour les habits (attention faut que ca colle avec l'image du body donc demande la taille avant,
-
-#selon ton manequin l'image du truk quoi t'adapte le carré)
-
-#on propose comme les sims
-
-#on met des coupe de cheveux et c le mec qui positionne les truks
-
-#on fait plusieurs coupe de chevuex et visionnage avec coupe de cheveux
-
-#habit, meme principe que la photo figure 
-
-#on prend des manequin/body (differentes tailles) 
-
-#dessus on y met les vetements et la tete actuelle, differentes coupe de l'humain
-
-#et on creer une page(mis juste la page pour le futur) ecommerce
 
 
 
