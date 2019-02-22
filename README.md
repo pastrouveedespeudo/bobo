@@ -1,6 +1,12 @@
 # bobo
 
-#fais gaffe jcrois le 2d png rajoute un 4 truk grrr
+#apres manger réfléchis a la base de donnée ca commence a devenir un peu chiant 15 images a faire detourage magique...
+
+#puis javais pas mis le fond transparent putin puis j'ai copié static sur le bureau ca faisait pas le meme fichier..
+
+#et ton truk va servir a dire les nouvelle tendance en scrappant des sites de vente en haardcascadant les image avec le poucentage
+
+#de limage vis a vis de latete ok ? 
 
 #soit travailler les images vetements et les mettre en draggable
 
