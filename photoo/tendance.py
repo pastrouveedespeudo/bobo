@@ -16,6 +16,8 @@ LISTE_SEXE_FEMME = ["femme","fille"]
 
 DEPART = ["bleu", "bleu"]
 
+FINAL = []
+
 class tendance:
 
     def internet(self):
@@ -56,65 +58,52 @@ class tendance:
 
 
 
-    def mask_haut(self):#ICI on peut faire rafractionnre ou mélanger mais bon...
+    def mask_haut(self, i):#ICI on peut faire rafractionnre ou mélanger mais bon...
                         #chui en retard et la barbe
         
-        liste = os.listdir()
+
         
-        for i in liste: 
-            if i == "requete.py" or i == "tendance.py"\
-               or i == "essais.py":
-                pass
-            else:
-                
-                img = Image.open(str(i))
-                print(i)
-                masque = Image.new('RGB', img.size, color=(255,255,255))
+        img = Image.open(str(i))
+        print(i)
+        masque = Image.new('RGB', img.size, color=(255,255,255))
 
-                a = img.size[1] 
-                b = img.size[0] / 100 * 60
+        a = img.size[1] 
+        b = img.size[0] / 100 * 60
 
-                c = 0
-                d = 0
+        c = 0
+        d = 0
 
-                coords = (a,b, c,d)
-           
-                
-                masque_draw = ImageDraw.Draw(masque)
-                masque_draw.rectangle(coords, fill=(0,0,0))
-                diff = ImageChops.lighter(img, masque)
-
-                diff.save("traitement_haut.jpg")
-
-
-    def mask_bas(self):
+        coords = (a,b, c,d)
+   
         
-        liste = os.listdir()
+        masque_draw = ImageDraw.Draw(masque)
+        masque_draw.rectangle(coords, fill=(0,0,0))
+        diff = ImageChops.lighter(img, masque)
+
+        diff.save("traitement_haut.jpg")
         
-        for i in liste: 
-            if i == "requete.py" or i == "tendance.py"\
-               or i == "essais.py":
-                pass
-            else:
-                
-                img = Image.open(str(i))
-                print(i)
-                masque = Image.new('RGB', img.size, color=(255,255,255))
 
-                a = img.size[0]
-                b = img.size[1] / 100* 60
-                c = 0
-                d = img.size[1]
+    def mask_bas(self, i):
+        
 
-                coords = (a,b, c,d)
-           
-                
-                masque_draw = ImageDraw.Draw(masque)
-                masque_draw.rectangle(coords, fill=(0,0,0))
-                diff = ImageChops.lighter(img, masque)
+        img = Image.open(str(i))
+        print(i)
+        masque = Image.new('RGB', img.size, color=(255,255,255))
 
-                diff.save("traitement_bas.jpg")
+        a = img.size[0]
+        b = img.size[1] / 100* 60
+        c = 0
+        d = img.size[1]
 
+        coords = (a,b, c,d)
+   
+        
+        masque_draw = ImageDraw.Draw(masque)
+        masque_draw.rectangle(coords, fill=(0,0,0))
+        diff = ImageChops.lighter(img, masque)
+
+        diff.save("traitement_bas.jpg")
+        FINAL.append(i)
 
     def couleur(self, image):
         
@@ -156,13 +145,10 @@ class tendance:
 
                 
                 else:
-                    print(j[0],j[1],j[2])
+                    liste_finale.append(j)
 
 
-
-
-
-
+        FINAL.append(liste_finale)
 
 
 
@@ -170,7 +156,7 @@ class tendance:
     def sexe(self, liste):
 
         self.liste = liste
-
+ 
         DICTIONNAIRE = {}
         LISTE_HOMME = []
         LISTE_FEMME = []
@@ -196,54 +182,14 @@ class tendance:
                     DICTIONNAIRE[i] += 1
            
 
-        print(DICTIONNAIRE)
-  
+        #print(DICTIONNAIRE)
+        FINAL.append(liste)#sauf que ya difference entre homme et garcon...
+        FINAL.append("   ")
 
 
 
 
 #ok le but c de lui faire 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -278,19 +224,30 @@ class tendance:
 
 
 
-        
-yo = tendance()
+if __name__ == "__main__":
 
-#yo.internet()
-
-yo.mask_haut()
-yo.mask_bas()
-
-yo.couleur("traitement_haut.jpg")
-yo.couleur("traitement_bas.jpg")
+    
+    yo = tendance()
 
 
-yo.sexe(LISTE_SEXE_HOMME)
+
+    liste = os.listdir()
+
+    for i in liste: 
+        if i == "requete.py" or i == "tendance.py"\
+           or i == "essais.py":
+            pass
+        else:
+            #yo.internet()
+
+            yo.mask_haut(i)
+            yo.mask_bas(i)
+
+            yo.couleur("traitement_haut.jpg")
+            yo.couleur("traitement_bas.jpg")
+
+
+            yo.sexe(LISTE_SEXE_HOMME)
 
 
 
