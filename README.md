@@ -1,18 +1,10 @@
 # bobo
 
 
-#faire un truk qui quand tu rentres 255,255,255 ca dit noir ou blanc je c jms
-
-
-#staprem fais ca mais le site va pas avancé :
-#et ton truk va servir a dire les nouvelle tendance en scrappant des sites de vente en haardcascadant les image avec le poucentage
-#de limage vis a vis de latete ok ? 
-
+#ok pour ce soir, finir les couleurs, et arrondir tendance jsp ya une serie ca m'a deglingue les couleurs
 
 
 #soit travailler les images vetements et les mettre en draggable
-
-
 
 
 
