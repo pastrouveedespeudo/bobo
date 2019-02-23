@@ -1,5 +1,10 @@
 #bobo
 
+
+#travailler les coupes,
+
+#faire le mask de l'image de la photo oh y'a trop de truk trop dur jve faire pollution ou mcguyvert 
+
 #faut que les images prises restent donc base de donnée... -> 1
 
 #finir les couleurs et remflouer les nuances de couleur... ->nimporte
