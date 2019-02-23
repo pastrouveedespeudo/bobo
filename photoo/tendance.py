@@ -5,7 +5,7 @@ import json
 from PIL import Image, ImageDraw, ImageChops
 import os
 import cv2
-
+from palettecouleur import *
 
 
 
@@ -87,7 +87,7 @@ class tendance:
         
 
         img = Image.open(str(i))
-        print(i)
+   
         masque = Image.new('RGB', img.size, color=(255,255,255))
 
         a = img.size[0]
@@ -146,10 +146,9 @@ class tendance:
                 
                 else:
                     liste_finale.append(j)
-
-
+                    couleur(j[0], j[1], j[2])
         FINAL.append(liste_finale)
-
+        
 
 
 
@@ -166,7 +165,7 @@ class tendance:
         for i in liste:     #on "initialise les poids" 
             if i == "requete.py" or i == "tendance.py"\
                or i == "haarcascades_haarcascade_lowerbody"\
-               or i == "essais.py":
+               or i == "essais.py" and i =="palettecouleur.py":
                 pass
             else:
                 DICTIONNAIRE[i] = 0
