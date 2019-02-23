@@ -5,6 +5,9 @@
 
 
 
+#DEMAIN FIN OJD FINI GROS c juste un mauvais temps a faire, ensuite tu pourras faire l'autre truk
+
+#entre temps tajoutera des perruques et d'autres vetements mais fais le
 
 
 
