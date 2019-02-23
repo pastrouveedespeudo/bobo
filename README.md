@@ -1,5 +1,13 @@
 #bobo
 
+#ok reflechis putin ca marche pas y'a aucune image rouge rouge ^^
+
+#faut ajouter les nouvelle couleurs... 25 72 25 y'a 18*4 images putin
+
+
+
+
+
 
 #travailler les coupes,
 
