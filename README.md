@@ -1,28 +1,29 @@
-# bobo
+#bobo
+
+#faut que les images prises restent donc base de donnée... -> 1
+
+#finir les couleurs et remflouer les nuances de couleur... ->nimporte
+
+#soit travailler les images vetements et les mettre en draggable ->2 ou 1
+
+#éfléchis a la base de donnée et lajout if draggable =="draggable"  -> chai pas c quoi ca   
+
+#soit: faire tous les draggables et donc pleins de vetement et pleins de coupe homme femme -> 3
+
+#soit: commencer a faire la partie conseil -> 4
+
+#soit  rendre les coupes belles en couleurs ->n'importe
 
 
-#ok pour ce soir, finir les couleurs, et arrondir tendance jsp ya une serie ca m'a deglingue les couleurs
 
+#pluie
 
-#soit travailler les images vetements et les mettre en draggable
+#faire les pages -> nous sommes un site responsable !
+#
 
-
-
-#éfléchis a la base de donnée et lajout if draggable =="draggable"
-
-
-
-
-#soit: faire tous les draggables et donc pleins de vetement et pleins de coupe homme femme
-
-#soit: commencer a faire la partie conseil
-
-#soit: fait la recherche sur un site via les vetement ou via google image: vetement et sur la page
-#on cherche automatiquement si c pull tshirt pantalon ect
-
-#soit  rendre les coupes belles en couleurs
-
-
+#autiste
+#Tu ne sais pas comment te tenir ? quelques conseils postures
+#ouais glisse ca comme ca
 
 
 
@@ -35,20 +36,3 @@
 
 
 
-#------------------------------
-
-#ok trouve d'un facon ou d'une autre comment intégrer tout le truk davant pour recherche internet site
-
-#sinon tete avec cheveux sans cheveux on fait la soustration et on met l'image mais faut pleins dimage sinon 5 coupes c nul
-
-#sinon haarscacade yeux, on mesure le front du mec a partir de l'oeil jusqu'a trait rouge(en demande met la fin de tes cheveux au rond)
-
-#pouvoir faire librement la taille de la coupe genre j'etire détire et l'image reste nette
-
-#integrer une sorte devaluation mais risque de mechanceté régler ca
-
-#integrer un partage
-
-#integrer des solutions
-
-#faire la zone magique, suivant, ok suppr, zone texte, transpa ok, mettre l'image, enregistrer 2d.png MAIS en python
