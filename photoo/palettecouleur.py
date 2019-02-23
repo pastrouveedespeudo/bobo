@@ -21,7 +21,6 @@ def couleur(couleur1, couleur2, couleur3):
     if couleur1 <= 250 and couleur1 >= 238\
        and couleur2 <= 219 and couleur2 >= 138 \
        and couleur3 <= 216 and couleur3 >= 128:
-
         print('rose')
 
 
@@ -88,12 +87,6 @@ def couleur(couleur1, couleur2, couleur3):
        and couleur2 <= 214 and couleur2 >= 77 \
        and couleur3 == 1 or couleur3 == 2 :
         print("jaune")
-
-    elif couleur1 >= 30 and couleur1  <= 255\
-         and couleur2 >= 100 and couleur2 <= 240\
-         and couleur3 <= 170 and\
-         couleur1 > couleur2 and couleur2 > couleur3 :
-        print("marron")
 
 
     if couleur1 <= 105 and couleur1 >= 0\
@@ -177,12 +170,35 @@ def couleur(couleur1, couleur2, couleur3):
          and couleur2 >= couleur1 - 20:
         print("marron")
 
+    elif couleur1 >= 120 and couleur1 <= 166\
+         and couleur2 >= 60 and couleur2 <=80\
+         and couleur3 == 0 \
+         and couleur1 > couleur2:
+        print("marron")
+        
+    elif couleur1 >= 30 and couleur1  <= 255\
+         and couleur2 >= 100 and couleur2 <= 240\
+         and couleur3 <= 170 and\
+         couleur1 > couleur2 and couleur2 > couleur3 :
+        print("marron")
+        
+    elif couleur1 >= 167 and couleur1 <= 255\
+         and couleur2 >= 81 and couleur2 <= 128\
+         and couleur3 == 0 and\
+         couleur1 > couleur2:
+        print("orange")
 
-
+    elif couleur1 <= 255 and\
+         couleur2 >= 129 and\
+         couleur3 > 0 and\
+         couleur1 > couleur2 and couleur2 > couleur3:
+        print("orange")
          
-couleur(200, 100, 200)
+couleur(125, 200, 0)
 #http://www.discoveryplayground.com/computer-programming-for-kids/rgb-colors/
 
+
+#couleur(125, 200, 0) vert
 
 
 
