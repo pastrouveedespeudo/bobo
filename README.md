@@ -9,7 +9,7 @@
 
 #entre temps tajoutera des perruques et d'autres vetements mais fais le
 
-
+#et ARRETE DAJOUTER DES TRUK putin photo de profil... coiffure homme tuto pfff tu vas devoir te taper des tuto beauté... ok ca j'aime bien mais bon ca va etre long... pinceau couche, teint ne pas oublier le cou préféré la marque ect...
 
 
 
