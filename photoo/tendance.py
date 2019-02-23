@@ -240,14 +240,19 @@ if __name__ == "__main__":
 
     DICTIONNAIRE_COULEUR = {}
     liste_couleur = [("bleu","bleu"),
-             ("rouge","rouge"),
-             ("bleu","rouge"),
-             ]
+                     ("rouge","rouge"),
+                     ("bleu","rouge"),
+                     ("rose", "rouge"),
+                     ("rouge","rose"),
+                     ("rouge", "bleu"),
+                     ]
 
     bleubleu=0
-    bleurouge=0
     rougerouge=0
-
+    bleurouge=0
+    roserouge=0
+    rougerose=0
+    rougebleu=0
 
 
 
@@ -275,20 +280,26 @@ if __name__ == "__main__":
                 b = yo.couleur("traitement_haut.jpg", i)
                 c = yo.couleur("traitement_bas.jpg", i)
 
-          
+             
                 compteur = 0
                 for i in liste_couleur:
-                    
+           
                     if (b,c) == liste_couleur[0]:
                         bleubleu+=1
-                    elif (b,c) == liste_couleur[1]:
-                        bleurouge+=1
-                    elif (b,c) == liste_couleur[2]:
-                        rougerouge += 1
+                    if (b,c) == liste_couleur[1]:
+                        rougerouge+=1
+                    if (b,c) == liste_couleur[2]:
+                        bleurouge += 1
+                    if (b,c) == liste_couleur[3]:
+                        roserouge += 1
+                    if (b,c) == liste_couleur[4]:
+                        rougerose += 1
+                    if (b,c) == liste_couleur[5]:
+                        rougebleu += 1
             except:
-                print("va falloir trouver gros nul nik purée c nul pas le gout de faire")
+                pass
 
                 
-    print(bleubleu, bleurouge, rougerouge)
+    print(bleubleu/6, rougerouge/6, bleurouge/6,roserouge/6,rougerose/6,rougebleu/6)
 
 
