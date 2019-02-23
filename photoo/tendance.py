@@ -6,8 +6,8 @@ from PIL import Image, ImageDraw, ImageChops
 import os
 import cv2
 from palettecouleur import *
-
-
+import time
+#RELIS ET COMPREND TOUT ET PENSE A QUOI FAIRE
 
 LISTE = ["femme","fille","homme","garcon"]#sert au telechargement d'image
 
@@ -18,7 +18,15 @@ DEPART = ["bleu", "bleu"]
 
 FINAL = []
 
+
+
+
+
+
+
+
 class tendance:
+
 
     def internet(self):
         
@@ -48,108 +56,14 @@ class tendance:
                     b = str(liste).find(str('" width='))
                     
                     url = liste[0][a+2:b-3]
-                    image = str("image"+str(image)+str(i)+".jpg")
-
+                    print(image)
+                    imagee = str(image)+ str(i)+".jpg"
+                    print(imagee)
                     liste[0] = liste[0][b:-3]
 
-                    urllib.request.urlretrieve(str(url), image)
+                    urllib.request.urlretrieve(str(url), imagee)
                 except:
                     pass
-
-
-
-    def mask_haut(self, i):#ICI on peut faire rafractionnre ou mélanger mais bon...
-                        #chui en retard et la barbe
-        
-
-        
-        img = Image.open(str(i))
-        print(i)
-        masque = Image.new('RGB', img.size, color=(255,255,255))
-
-        a = img.size[1] 
-        b = img.size[0] / 100 * 60
-
-        c = 0
-        d = 0
-
-        coords = (a,b, c,d)
-   
-        
-        masque_draw = ImageDraw.Draw(masque)
-        masque_draw.rectangle(coords, fill=(0,0,0))
-        diff = ImageChops.lighter(img, masque)
-
-        diff.save("traitement_haut.jpg")
-        
-
-    def mask_bas(self, i):
-        
-
-        img = Image.open(str(i))
-   
-        masque = Image.new('RGB', img.size, color=(255,255,255))
-
-        a = img.size[0]
-        b = img.size[1] / 100* 60
-        c = 0
-        d = img.size[1]
-
-        coords = (a,b, c,d)
-   
-        
-        masque_draw = ImageDraw.Draw(masque)
-        masque_draw.rectangle(coords, fill=(0,0,0))
-        diff = ImageChops.lighter(img, masque)
-
-        diff.save("traitement_bas.jpg")
-        FINAL.append(i)
-
-    def couleur(self, image):
-        
-        self.im = Image.open(image)
-
-
-        liste = []
-        
-        dico = {}
-        for value in self.im.getdata():
-            if value in dico.keys():
-                 dico[value] += 1
-            else:
-                 dico[value] = 1
-
-
-        liste_dico = []
-        for i in dico.values():
-            liste_dico.append(i)
-            
-        liste_dico= sorted(liste_dico, reverse = True)
-
-        for i in liste_dico:
-            liste.append([c for c,v in dico.items() if v==i])
-            if i <= 5:
-                break
-
-
-        liste_finale = []
-        for i in liste:
-            for j in i:
-                
-                if j[0] == j[1] == j[2]:
-                    pass
-                elif j[0] <= j[1] + 10 and j[0] >= j[1]-10  and\
-                     j[0] <= j[2] + 10 and j[0] >= j[2]-10:
-                    pass 
-
-
-                
-                else:
-                    liste_finale.append(j)
-                    couleur(j[0], j[1], j[2])
-        FINAL.append(liste_finale)
-        
-
 
 
     def sexe(self, liste):
@@ -181,14 +95,119 @@ class tendance:
                     DICTIONNAIRE[i] += 1
            
 
-        #print(DICTIONNAIRE)
-        FINAL.append(liste)#sauf que ya difference entre homme et garcon...
-        FINAL.append("   ")
+        return DICTIONNAIRE
 
 
+    def mask_haut(self, i):#ICI on peut faire rafractionnre ou mélanger mais bon...
+                        #chui en retard et la barbe
+        
+
+        
+        img = Image.open(str(i))
+
+        masque = Image.new('RGB', img.size, color=(255,255,255))
+
+        a = img.size[1] 
+        b = img.size[0] / 100 * 60
+
+        c = 0
+        d = 0
+
+        coords = (a,b, c,d)
+   
+        
+        masque_draw = ImageDraw.Draw(masque)
+        masque_draw.rectangle(coords, fill=(0,0,0))
+        diff = ImageChops.lighter(img, masque)
+
+        diff.save("traitement_haut.jpg")
+  
+
+    def mask_bas(self, i):
+        
+
+        img = Image.open(str(i))
+   
+        masque = Image.new('RGB', img.size, color=(255,255,255))
+
+        a = img.size[0]
+        b = img.size[1] / 100* 60
+        c = 0
+        d = img.size[1]
+
+        coords = (a,b, c,d)
+   
+        
+        masque_draw = ImageDraw.Draw(masque)
+        masque_draw.rectangle(coords, fill=(0,0,0))
+        diff = ImageChops.lighter(img, masque)
+
+        diff.save("traitement_bas.jpg")
+
+ 
+       
+
+    def couleur(self, image, yo):
+        
+        self.im = Image.open(image)
 
 
-#ok le but c de lui faire 
+        liste = []
+        
+        dico = {}
+        for value in self.im.getdata():
+            if value in dico.keys():
+                 dico[value] += 1
+            else:
+                 dico[value] = 1
+
+
+        liste_dico = []
+        for i in dico.values():
+            liste_dico.append(i)
+            
+        liste_dico= sorted(liste_dico, reverse = True)
+
+        for i in liste_dico:
+            liste.append([c for c,v in dico.items() if v==i])
+            if i <= 5:
+                break
+
+        lliste =  []
+        liste_finale = []
+        for i in liste:
+            for j in i:
+                
+                if j[0] == j[1] == j[2]:
+                    pass
+                elif j[0] <= j[1] + 10 and j[0] >= j[1]-10  and\
+                     j[0] <= j[2] + 10 and j[0] >= j[2]-10:
+                    pass 
+
+                else:
+                    a = couleur(j[0], j[1], j[2])
+                    lliste.append(a)
+
+        
+        c = 0
+        a = ""
+      
+        for i in lliste:
+            try:
+  
+                if a == lliste[c]:
+                    pass
+                else:
+                    liste_finale.append(lliste[c])
+                c += 1
+            except:
+                liste_finale.append("None")
+            break
+                
+
+        return str(liste_finale[0])
+        
+
 
 
 
@@ -211,13 +230,6 @@ class tendance:
         #on aura les valeurs sous formes de bvr
 
 
-
-
-
-
-
-
-        
 # on regarde dans le titre si on trouve mec ou fille
 # on commence les poids du sexe des hommes
 
@@ -225,39 +237,58 @@ class tendance:
 
 if __name__ == "__main__":
 
-    
+
+    DICTIONNAIRE_COULEUR = {}
+    liste_couleur = [("bleu","bleu"),
+             ("rouge","rouge"),
+             ("bleu","rouge"),
+             ]
+
+    bleubleu=0
+    bleurouge=0
+    rougerouge=0
+
+
+
+
+
+
     yo = tendance()
-
-
-
+    #yo.internet()
+    a = yo.sexe(LISTE)
+    
     liste = os.listdir()
+
+    print(a)
 
     for i in liste: 
         if i == "requete.py" or i == "tendance.py"\
-           or i == "essais.py":
+           or i == "essais.py" or i == 'palettecouleur.py' or i =="__pycache__"\
+           or i == "traitement_bas.jpg" or i == "traitement_haut.jpg":
+
             pass
         else:
-            #yo.internet()
+            try:
+                yo.mask_haut(i)
+                yo.mask_bas(i)
+                
+                b = yo.couleur("traitement_haut.jpg", i)
+                c = yo.couleur("traitement_bas.jpg", i)
 
-            yo.mask_haut(i)
-            yo.mask_bas(i)
+          
+                compteur = 0
+                for i in liste_couleur:
+                    
+                    if (b,c) == liste_couleur[0]:
+                        bleubleu+=1
+                    elif (b,c) == liste_couleur[1]:
+                        bleurouge+=1
+                    elif (b,c) == liste_couleur[2]:
+                        rougerouge += 1
+            except:
+                print("va falloir trouver gros nul nik purée c nul pas le gout de faire")
 
-            yo.couleur("traitement_haut.jpg")
-            yo.couleur("traitement_bas.jpg")
-
-
-            yo.sexe(LISTE_SEXE_HOMME)
-
-
-
-
-
-
-
-
-
-
-
-
+                
+    print(bleubleu, bleurouge, rougerouge)
 
 
