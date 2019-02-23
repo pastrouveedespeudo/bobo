@@ -1,8 +1,7 @@
 #bobo
 
-#ok bon on va faire pollution hin mdr oh merde sinon faut que jme tape le detecteur de couleur et que jajoute si y'a pas couleurcouleur
-
-#et serieux les dico c mieux pour ce truk mais c grave dur purée jcroyais sté nul les dico mais c ouaaaaaa mais c super dur
+#https://www.science-emergence.com/Ar...t-avec-python/
+#https://pypi.org/project/colour/
 
 
 
