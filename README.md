@@ -1,8 +1,10 @@
 #bobo
 
-#ok reflechis putin ca marche pas y'a aucune image rouge rouge ^^
+#ok bon on va faire pollution hin mdr oh merde sinon faut que jme tape le detecteur de couleur et que jajoute si y'a pas couleurcouleur
 
-#faut ajouter les nouvelle couleurs... 25 72 25 y'a 18*4 images putin
+#et serieux les dico c mieux pour ce truk mais c grave dur purée jcroyais sté nul les dico mais c ouaaaaaa mais c super dur
+
+
 
 
 
