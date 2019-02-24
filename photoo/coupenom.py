@@ -1,7 +1,7 @@
 import os
 import cv2
 from colour import Color
-
+from PIL import Image
 
 
 
@@ -142,7 +142,7 @@ def coupe_de_cheveux_nom(para):
 
     
     elif para == "draggable19" :
-        CHIGNON_HAUT = {"haut":"t-shirt ", "hautcouleur": "rouge"}
+        CHIGNON_HAUT = {"haut":"t-shirt ", "hautcouleur": "noir"}
         CHIGNON_BAS = {"bas":"jean", "couleurbas":"bleu"}
 
         return CHIGNON_HAUT, CHIGNON_BAS
@@ -187,7 +187,7 @@ def ajustage_couleur(image, couleur):
                  
                     validation = True
                 
-    if couleur == "rouge":
+    elif couleur == "rouge":
 
         for x in range(im.shape[0]):
             for y in range(im.shape[1]):
@@ -197,13 +197,62 @@ def ajustage_couleur(image, couleur):
                    and im[x,y][2] > [x,y][1] + 40 and im[x,y][2]> im[x,y][0] + 40:
 
                     validation = True
-                    break
+                    
                 
+
+
+
+
+    elif couleur == "noir":
+       
+
+   
+        crop = im[ int(round(im.shape[1] / 100*60)) : im.shape[1], 0:im.shape[0]]
+
+
+        a = crop[0, int(round(crop.shape[1]/2))]
+        b = crop[10, int(round(crop.shape[1]/2))]
+        c = crop[20, int(round(crop.shape[1]/2))]
+        d = crop[30, int(round(crop.shape[1]/2))]
+        print(a,b,c,d)
+        
+        compteur = 0
+
+        if a[0] <= 50\
+           and a[1] <= 50\
+           and a[2] <= 50:
+            compteur += 1
+
+        if b[0] <= 50\
+           and b[1] <= 50\
+           and b[2] <= 50:
+            compteur += 1
+
+
+        if c[0] <= 50\
+           and c[1] <= 50\
+           and c[2] <= 50:
+            compteur += 1
+
+        if d[0] <= 50\
+           and d[1] <= 50\
+           and d[2] <= 50:
+            compteur += 1
+
+        print(compteur)
+        if compteur >= 3:
+            validation = True
+                
+
+
+
+
         if validation == True:
 
             liste.append(image)
         else:
             validation == False
+
 
             
     return validation
