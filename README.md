@@ -3,6 +3,13 @@
 #https://www.science-emergence.com/Ar...t-avec-python/
 #https://pypi.org/project/colour/
 
+#fais chier ca prend que le premeir element de la liste, fais un truk qui repere la position comme coupe
+
+#retourn la liste dans le script ison a le droit
+
+#numerote les div des images si on clique sur ex:50px:50px et c la 2eme image donc position2:
+
+#on remplace une des draggable par src + position2
 
 #finir les habits les mettres en draggable, 5 de chaques couleur et les varier selon la draggable et fini presque
 #les chat ont une patte domiannte, la patte gauche pour les hommes la pattes droite pour les femelles
