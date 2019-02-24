@@ -3,7 +3,7 @@
 #https://www.science-emergence.com/Ar...t-avec-python/
 #https://pypi.org/project/colour/
 
-
+#en vrai tu fais le pro la mais ^^ t'as juste pris une page et tu l'as juste modifier ^^
 
 #faut faire des choix, prendre ces habits en photo et tout faut laisser ca sinon j'aurai jms le temps
 
