@@ -5,11 +5,18 @@
 
 
 
-#DEMAIN FIN OJD FINI GROS c juste un mauvais temps a faire, ensuite tu pourras faire l'autre truk
+#faut faire des choix, prendre ces habits en photo et tout faut laisser ca sinon j'aurai jms le temps
 
-#entre temps tajoutera des perruques et d'autres vetements mais fais le
+#mettre la figure du mec avec les habits laisse ca aussi
 
-#et ARRETE DAJOUTER DES TRUK putin photo de profil... coiffure homme tuto pfff tu vas devoir te taper des tuto beauté... ok ca j'aime bien mais bon ca va etre long... pinceau couche, teint ne pas oublier le cou préféré la marque ect...
+
+#ok juste faire: ajout vetement, les mettre en draggable, quelques coupe mec et stop 
+
+#quelquesvetement rouge, vert, bleu ect et stop
+
+#et... le mec va devoir charger toutes les images ? comment je trouve ces images a lui dans son pc ? ou c moi qui lui envoie les images
+
+#et comment on fiat ca ? base de donnée ?
 
 
 
