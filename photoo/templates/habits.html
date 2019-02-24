@@ -209,8 +209,27 @@
 
 
 
+  <script>
+  $( function() {
+    $( "#draggable, #1" ).draggable();
+  } );
+  </script>
 
+  <script>
+  
+    function yo(){
+      var a = document.getElementById("cache").value;
+      var c = '<img src=/static/img/portfolio/vetement/t-shirt/'+ a + '>'
+      console.log("<img src=/static/img/portfolio/vetement/t-shirt/na.png/>")
+      console.log(c)
+      var b = document.getElementById("1").innerHTML = c;
+      document.getElementById("1").style.width = "0px";
+      document.getElementById("1").style.height= "0px";
+      document.getElementById("1").classList.add('class="ui-widget-content"');
+     
+      };
 
+  </script>
 
 
 
@@ -219,20 +238,32 @@
   <section class="page-section bg-primary" id="about">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
+        <div class="col-lg-12 text-center">
           <h2 class="text-white mt-0"></h2>
           <hr class="divider light my-4">
           <p class="text-white-50 mb-4">Voici une sélection des habits fait par nos experts qui vont le mieux avec cette coupe</p>
-          
-       
-            {% for i in a%}<img src="/static/img/portfolio/vetement/t-shirt/{{i}}">{% endfor %}
-   
 
+
+
+                
+        <style>#draggable{width:0px; height:0px;}</style>
+
+         {% for i in a%}
+         <input type="hidden" value={{i}} id="cache">
+          <input type="image" onclick="yo()" src="/static/img/portfolio/vetement/t-shirt/{{i}}">    
+         {% endfor %}
         
-         
-            {% for i in b%}<img src="/static/img/portfolio/vetement/jean/{{i}}">{% endfor %}
+  
         
- 
+          {% for i in b%}
+          <input type="image" src="/static/img/portfolio/vetement/jean/{{i}}">
+          {% endfor %}
+        
+            
+
+          <div id="1"><div>
+
+
 
 
           
@@ -240,7 +271,6 @@
       </div>
     </div>
   </section>
-
 
 
 
@@ -460,8 +490,7 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="/static/vendor/jquery/jquery.min.js"></script>
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 
   <!-- Plugin JavaScript -->
   <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
