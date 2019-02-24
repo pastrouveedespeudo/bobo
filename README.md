@@ -3,7 +3,14 @@
 #https://www.science-emergence.com/Ar...t-avec-python/
 #https://pypi.org/project/colour/
 
-#en vrai tu fais le pro la mais ^^ t'as juste pris une page et tu l'as juste modifier ^^ m'en fou c mon troisieme site et premier site en solo chui refais il a de la gueule par contre pour les deux autres site imbriquer change totalement de ton ! et recupere macguvert depuis ton disque dur ou chai pas quoi
+
+#finir les habits les mettres en draggable, 5 de chaques couleur et les varier selon la draggable et fini presque
+#les chat ont une patte domiannte, la patte gauche pour les hommes la pattes droite pour les femelles
+
+
+
+
+
 
 #faut faire des choix, prendre ces habits en photo et tout faut laisser ca sinon j'aurai jms le temps
 
