@@ -260,7 +260,7 @@
             overflow: scroll;
         }
 
-        #draggable1,
+
         #draggable2,
         #draggable3,
         #draggable4,
@@ -272,7 +272,7 @@
         #draggable10,
         #draggable11,
         #draggable12,
-        #draggable13,
+
         #draggable14,
         #draggable15,
         #draggable16,
@@ -302,7 +302,7 @@
 
 
     $( function() {
-        $("#draggable1, #draggable, #draggable2, #draggable3, #draggable4, #draggable5").draggable();
+        $("#draggable, #draggable2, #draggable3, #draggable4, #draggable5").draggable();
       } );
 
 
@@ -312,7 +312,7 @@
 
 
     $( function() {
-        $("#draggable12, #draggable13, #draggable14, #draggable15, #draggable16, #draggable17, #draggable18, #draggable19").draggable();
+        $("#draggable12, #draggable14, #draggable15, #draggable16, #draggable17, #draggable18, #draggable19").draggable();
       } );
 
 
@@ -372,19 +372,19 @@
                 </div>
 
                 <style>#coupe6{width:130px; height:300px;}</style>
-                <div id="draggable5" class="ui-widget-content">
+                <div id="draggable6" class="ui-widget-content">
                     <img src="/static/img/portfolio/coupe/coucou3.png" id="coupe6"/>
                 </div>
 
 
                 <style>#coupe22{width:70px; height:100px;}</style>
-                <div id="draggable1" class="ui-widget-content">
+                <div id="draggable7" class="ui-widget-content">
                     <img src="/static/img/portfolio/coupe/coucou22.png" id="coupe22"/>
                 </div>
 
 
                 <style>#coupe8{width:70px; height:50px;}</style>
-                <div id="draggable1" class="ui-widget-content">
+                <div id="draggable8" class="ui-widget-content">
                     <img src="/static/img/portfolio/coupe/coucou22.png" id="coupe8"/>
                 </div>
 
@@ -399,7 +399,7 @@
             <div id='coupe_droite'>
 
                 <style>#coupe9{width:140px; height:160px;}</style>
-                <div id="draggable7" class="ui-widget-content">
+                <div id="draggable9" class="ui-widget-content">
                     <img src="/static/img/portfolio/coupe/coif.png" id="coupe9"/>
                 </div>
 
@@ -472,13 +472,14 @@
   function yo() {
 
     var liste = [draggable,draggable2,draggable3,draggable4,draggable5,draggable6,draggable7,draggable8,draggable9,
-                 draggable10,draggable11,draggable12,draggable13,draggable14,draggable15,draggable16,draggable17,draggable18,
+                 draggable10,draggable11,draggable12,draggable14,draggable15,draggable16,draggable17,draggable18,
                  draggable19]
     
     for(var i = 0; i <= liste.length - 1; i++){
+   
       var a = document.getElementById(liste[i].id).offsetLeft;
       var b = document.getElementById(liste[i].id).offsetTop;
-     
+    
       if(a >= 460 && a <= 580 & b >=50 && b <= 110 ){
     
         LISTECOUPE.push(liste[i].id)
