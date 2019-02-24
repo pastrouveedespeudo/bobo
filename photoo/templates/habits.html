@@ -25,6 +25,12 @@
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="/static/css/creative.min.css" rel="stylesheet">
 
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 </head>
 
 
@@ -158,11 +164,11 @@
 
           
            <style>#im13{width:100px; height:100px;margin-left:50px;}</style>
-           <a href=""><img src = "/static/img/portfolio/icone/tshirt.png"/ id="im10"></a>
+           <a href="t-shirt"><img src = "/static/img/portfolio/icone/tshirt.png"/ id="im10"></a>
    
      
             <style>#im14{width:100px; height:100px;margin-left:100px;}</style>
-            <a href=""><img src = "/static/img/portfolio/icone/pantalon.png"/ id="im11"></a>
+            <a href="pantalon"><img src = "/static/img/portfolio/icone/pantalon.png"/ id="im11"></a>
            
             <style>#im14{width:100px; height:100px;margin-left:100px;}</style>
             <a href=""><img src = "/static/img/portfolio/icone/veste.png"/ id="im11"></a>
@@ -216,9 +222,22 @@
         <div class="col-lg-8 text-center">
           <h2 class="text-white mt-0"></h2>
           <hr class="divider light my-4">
-          <p class="text-white-50 mb-4">Voici une sélection des habits fait par nos experts qui vont le mieux avec cette coupe
-          un geek cul vissé sur une chaise qui se demande si un chat a une main dominante jcrois y ont une patte a merde</p>
-          {% for i in a%}<img src="/static/img/portfolio/vetement/t-shirt/{{i}}">{% endfor %}
+          <p class="text-white-50 mb-4">Voici une sélection des habits fait par nos experts qui vont le mieux avec cette coupe</p>
+          
+       
+            {% for i in a%}<img src="/static/img/portfolio/vetement/t-shirt/{{i}}">{% endfor %}
+   
+
+        
+         
+            {% for i in b%}<img src="/static/img/portfolio/vetement/jean/{{i}}">{% endfor %}
+        
+            <img src="/static/img/portfolio/vetement/t-shirt/blancg.png">
+             <img src="/static/img/portfolio/vetement/t-shirt/images.jpg">
+             <br>
+             <p>putin mais mais c de la merde gros</p>
+
+          
         </div>
       </div>
     </div>
