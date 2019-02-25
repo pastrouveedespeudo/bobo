@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +42,6 @@
       #my{
         width:50px;
         height:50px;
-
     }
     </style>
     
@@ -73,6 +74,20 @@
           </li>
 
 
+          <style>
+            #im2{
+              width:50px;
+              height:50px;
+              margin-left:40px;
+          }
+          </style>
+          
+          <li class="nav-item">
+           <a href = "/photo/mes_images">
+            <img src="/static/img/portfolio/icone/mes_images.png" id="im2">
+            <a class="nav-link js-scroll-trigger" href="/photo/mes_images">Mes images</a>
+            </a>
+          </li>
 
 
           <style>
@@ -92,21 +107,7 @@
 
 
 
-          
-          <style>
-            #im2{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
-          </style>
-          
-          <li class="nav-item">
-           <a href = "/photo/mes_images">
-            <img src="/static/img/portfolio/icone/mes_images.png" id="im2">
-            <a class="nav-link js-scroll-trigger" href="/photo/mes_images">Mes images</a>
-            </a>
-          </li>
+        
           
           <style>
             #im3{
@@ -139,7 +140,6 @@
   <script>
     function button1(){
       alert('cc')
-
       }
   </script>
 
@@ -150,6 +150,21 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
+        <br><br>
+
+
+          <style>#autre{margin-left:-965px;;margin-top:-100px;}</style>
+
+          <div id="autre">
+            
+            <p><center>Nos autres sites</center></p>
+        
+              <li id="lien"><a href="/polution/polution">Polution</a></li>
+              <li id="lien"></li>
+       
+          </div>
+
+          
           <h1 class="text-uppercase text-white font-weight-bold">Bienvenue</h1>
           <br>
           <style>#h{font:Serif; color:white;}</style> 
@@ -177,17 +192,11 @@
         width: 400px;
         height: 400px;
     }
-
-
-
-
     #videoElement {
         width: 400px;
         height: 400px;
         position:relative;
     }
-
-
     #patron{
       margin-left:105px;
       margin-top:100px;
@@ -197,7 +206,6 @@
       border-radius:50%;
       position:absolute ;
       z-index:1;
-
     }
     </style>
 
@@ -474,7 +482,6 @@
 
     <script>
     var video = document.querySelector("#videoElement");
-
     if (navigator.mediaDevices.getUserMedia) {     
         navigator.mediaDevices.getUserMedia({video: true})
       .then(function(stream) {
