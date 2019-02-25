@@ -5,6 +5,9 @@
 
 #ok mettre toute la selection des tshirt et pantalon passer a la pollution, faire un autre site mais en connection avec celui ci ou la
 
+#ah oui faut aussi mettre des tuto sinon c pas sociétale faire la partie conseils
+
+
 #refais les image de uml et fini lexplication des deux autres diagrammes et la base de donnée mettre cart
 
 
