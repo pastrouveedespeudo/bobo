@@ -38,6 +38,12 @@
 
 #----------------------
 
+#lis bien tout c comme une recette... le type prenait toutes les couleurs ^^ sauf quy'avais pas de logique
+
+#il a voulu test les droite et les carrees... mtn faut juste tracer le trait 
+
+#----------------------
+
 #une page qui upload une image
 
 #une page photo donc comme la startup va relire leur page pour comprendre comment eux ils ont fait et donc responsive
