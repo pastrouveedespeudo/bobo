@@ -38,9 +38,9 @@
 
 #----------------------
 
-#lis bien tout c comme une recette... le type prenait toutes les couleurs ^^ sauf quy'avais pas de logique
+#ouais fin une recette de dingue ouais, javais pas lu attentivement la derniere fois merde j'ai rien compris oh merde..
 
-#il a voulu test les droite et les carrees... mtn faut juste tracer le trait 
+#on va juste se connecter au ballon de paris et on va trouver un truk hin merdeee... okok  essaye mais woua... ouais ben c pas ton vieux truk de coupe la hin connard 
 
 #----------------------
 
