@@ -3,26 +3,25 @@
 #https://www.science-emergence.com/Ar...t-avec-python/
 #https://pypi.org/project/colour/
 
-#exerce toi sur jquerry
+#ok mettre toute la selection des tshirt et pantalon passer a la pollution, faire un autre site mais en connection avec celui ci ou la
 
-#finir les habits les mettres en draggable, 5 de chaques couleur et les varier selon la draggable et fini presque
-#les chat ont une patte domiannte, la patte gauche pour les hommes la pattes droite pour les femelles
-
+#refais les image de uml et fini lexplication des deux autres diagrammes et la base de donnée mettre cart
 
 
 
 
 
-#faut faire des choix, prendre ces habits en photo et tout faut laisser ca sinon j'aurai jms le temps
-
-#mettre la figure du mec avec les habits laisse ca aussi
 
 
-#ok juste faire: ajout vetement, les mettre en draggable, quelques coupe mec et stop 
 
-#quelquesvetement rouge, vert, bleu ect et stop
 
-#et... le mec va devoir charger toutes les images ? comment je trouve ces images a lui dans son pc ? ou c moi qui lui envoie les images
+
+
+
+
+
+
+
 
 #et comment on fiat ca ? base de donnée ?
 
