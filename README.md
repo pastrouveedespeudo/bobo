@@ -1,9 +1,13 @@
 #bobo
 
-
+#-------------------------------------------------important
 
 #https://www.science-emergence.com/Ar...t-avec-python/
 #https://pypi.org/project/colour/
+
+#séparer les site web, mais ca t'oblige a revenir sur vetement
+
+#--------------------------------------------------
 
 
 #A faire ce soir
