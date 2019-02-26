@@ -42,6 +42,10 @@
 
 #tout en connaissant le taux de pollution au bout d'un moment ca collera...
 
+#pour que ce soit socitale, ben met toutes les données de lyon paris, chine et d'autre ville et de l'autre coté ce truk
+
+#et pour chaque jour tu fais un constat de la semaine et c un site  de constat c tout merde c nul roo fait chier et meme si le type maccepte sur linkin ce qu'il me dira jcrompdrai rien, ibm echef ingénieur oncologue les types c des ouf faut que jtrouve un taff et que jme fasse de la thune et que jaille a paristech 
+
 #----------------------
 
 #une page qui upload une image
