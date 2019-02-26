@@ -38,13 +38,9 @@
 
 #----------------------
 
-#ben au pire c pas ca mais bon, on fait ca pendant une semaine et on dit si y'a tant de contraste alors y'a tant de pollution
+#pxque pour mon image t'as 0.034 mais t'as pas fait virgule tete de con, contre 0.17 et plus ya pollution - y'a de contraste donc c ok pour celle la mais comme t'ecoutais pas, faut un panel de plein dimage pour faire un indice de confiance ooook !! m'en fou ca marche pour la hihihi mais comme tu te voile la face t'as juste pris la derniere phrase de résumé et tu viens juste doublié toutes les formules de maths au pire avec un ton sur et tes yeux qui bougent hyper vite (jtrouve ca degueux par contre imagine tes nerfs optique semmele beurk) ben ca passera ptetre
 
-#tout en connaissant le taux de pollution au bout d'un moment ca collera...
 
-#pour que ce soit socitale, ben met toutes les données de lyon paris, chine et d'autre ville et de l'autre coté ce truk
-
-#et pour chaque jour tu fais un constat de la semaine et c un site  de constat c tout merde c nul roo fait chier et meme si le type maccepte sur linkin ce qu'il me dira jcrompdrai rien, ibm echef ingénieur oncologue les types c des ouf faut que jtrouve un taff et que jme fasse de la thune et que jaille a paristech 
 
 #----------------------
 
