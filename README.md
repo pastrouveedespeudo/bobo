@@ -38,9 +38,9 @@
 
 #----------------------
 
-#ouais fin une recette de dingue ouais, javais pas lu attentivement la derniere fois merde j'ai rien compris oh merde..
+#ben au pire c pas ca mais bon, on fait ca pendant une semaine et on dit si y'a tant de contraste alors y'a tant de pollution
 
-#on va juste se connecter au ballon de paris et on va trouver un truk hin merdeee... okok  essaye mais woua... ouais ben c pas ton vieux truk de coupe la hin connard 
+#tout en connaissant le taux de pollution au bout d'un moment ca collera...
 
 #----------------------
 
