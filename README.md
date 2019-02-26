@@ -38,11 +38,18 @@
 
 #----------------------
 
-#nickel javais préparer mon livre, jtai sur le trone et BOOOOM en gros, on va mettre des iframe OKI
+#se renseigner sur comment le truk recupere la pollution et ou elle recup ca
 
-#ensuite on va sauvegarder les données de la semaine quand il fait bo plus qu'a attendre 12h et 18h et qu'il pleuve
+#se demander en combien de temps les particules montent la ou le truk recup la pollution
 
-#ensuite on met un indien et la machine a pluie, c pas du ibm, chef ingé ou encologue mais c ok et on met des tuto responsable
+#trouver un truk qui claque
+
+
+#faire le constat avec la pluie si y'a aucun constat... et donc en combien de temps la pluie fais descendre les particules
+
+#et comment evacuer l'eau
+
+#la pluie va impacter le moral aussi hé merde et donc combien de temps faut que  ca pleuve
 
 
 #----------------------
