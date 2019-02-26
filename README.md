@@ -38,7 +38,7 @@
 
 #----------------------
 
-#pxque pour mon image t'as 0.034 mais t'as pas fait virgule tete de con, contre 0.17 et plus ya pollution - y'a de contraste donc c ok pour celle la mais comme t'ecoutais pas, faut un panel de plein dimage pour faire un indice de confiance ooook !! m'en fou ca marche pour la hihihi mais comme tu te voile la face t'as juste pris la derniere phrase de résumé et tu viens juste doublié toutes les formules de maths au pire avec un ton sur et tes yeux qui bougent hyper vite (jtrouve ca degueux par contre imagine tes nerfs optique semmele beurk) ben ca passera ptetre
+#mais jcrois jpe pas le faire le soleil nik tout ou jdevrai attendre 50 jours pour avoir 50 images du meme endroit bon ca m'arrange oui et non jvoulais que ca pete... bon trouve un autre truk qui pete autant et rassembler toutes les info des sites sur le site c ta dernier option oh puré ca fou le cafard jvai bouffer
 
 
 
