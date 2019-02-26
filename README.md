@@ -51,6 +51,7 @@
 
 #la pluie va impacter le moral aussi hé merde et donc combien de temps faut que  ca pleuve
 
+#si ca marche investir dans la mode anti pluie impermeable !
 
 #----------------------
 
