@@ -38,8 +38,11 @@
 
 #----------------------
 
-#mais jcrois jpe pas le faire le soleil nik tout ou jdevrai attendre 50 jours pour avoir 50 images du meme endroit bon ca m'arrange oui et non jvoulais que ca pete... bon trouve un autre truk qui pete autant et rassembler toutes les info des sites sur le site c ta dernier option oh puré ca fou le cafard jvai bouffer
+#nickel javais préparer mon livre, jtai sur le trone et BOOOOM en gros, on va mettre des iframe OKI
 
+#ensuite on va sauvegarder les données de la semaine quand il fait bo plus qu'a attendre 12h et 18h et qu'il pleuve
+
+#ensuite on met un indien et la machine a pluie, c pas du ibm, chef ingé ou encologue mais c ok et on met des tuto responsable
 
 
 #----------------------
