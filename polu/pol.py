@@ -13,9 +13,9 @@ class couleur_ciel:
     
     CIEL = {'bleu':0,
             'gris':0,
-            'rouge':0,   
+            'rouge':0,
+            'bleu_pollution':0,
     }
-
 
 
     def hex_to_rgb(value):
@@ -83,21 +83,28 @@ class couleur_ciel:
         for i in liste_dico:
             
             couleur = [c for c,v in dico.items() if v==i]
-            hex = couleur_ciel.rgb_to_hex((couleur[0]))
-            color = Color(hex)
-            liste_couleur.append(str(color))
-
+            liste_couleur.append(couleur[0])
+        print(liste_couleur)
         return liste_couleur
 
     def analyse_ciel_couleur(self, liste):
         self.liste = liste
         
-        print(self.liste)
+
 
         for i in self.liste:
-            #if i[0] and i[1] and i[2] >= 0 and:
+            print(i)
+
+            if  i[0] <= i[1] < i[2] and\
+                 i[1]>= i[2] - 30:
+                print("bleu pollution")
+                
+            elif i[0] <= i[1] < i[2]:
+                print("bleu")
                 #CIEL['bleu'] += 1
-            #elif:
+
+            elif i[0] == i[1] == i[2] > 200:
+                print("blanc")
             #else
             pass
             #ici faut définir les couleurs
@@ -172,3 +179,40 @@ if __name__ == "__main__":
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
