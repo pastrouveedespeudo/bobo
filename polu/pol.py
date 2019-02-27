@@ -1,21 +1,28 @@
 
 import os
 import cv2
+import json
+import requests
 from colour import Color
 from PIL import Image, ImageDraw, ImageChops
 
 PATH_DOSSIER = r"C:\Users\jeanbaptiste\bobo\bobo\polution\26 frvrier 2019\apprentissage"
 
+    
+CIEL = {'bleu':0,
+        'gris':0,
+        'blanc':0,
+        'bleu_pollution':0,
+}
 
+METEO = {'beau_temps':0,
+         'nuageux':0,
+         'pluie':0,
+}
 
 
 class couleur_ciel:
-    
-    CIEL = {'bleu':0,
-            'gris':0,
-            'rouge':0,
-            'bleu_pollution':0,
-    }
+
 
 
     def hex_to_rgb(value):
@@ -26,6 +33,7 @@ class couleur_ciel:
     def rgb_to_hex(rgb):
         return '#%02x%02x%02x' % rgb
     
+
         
     def mask(self, image):
         self.image = image
@@ -50,6 +58,8 @@ class couleur_ciel:
         diff.save("ciel.jpg")
         return "ciel.jpg"
 
+
+
     def ciel_terre(self, image):
         self.image = image
 
@@ -72,21 +82,19 @@ class couleur_ciel:
             
         liste_dico= sorted(liste_dico, reverse = True)
 
-        for i in liste_dico:
-            liste.append([c for c,v in dico.items() if v==i])
-            if i <= 5:
-                break
 
-        
-        liste_dico = liste_dico[0:50]
+
+    
         liste_couleur = []
         
         for i in liste_dico:
-            
+          
             couleur = [c for c,v in dico.items() if v==i]
             liste_couleur.append(couleur[0])
 
         return liste_couleur
+
+
 
     def analyse_ciel_couleur(self, liste):
         self.liste = liste
@@ -103,7 +111,7 @@ class couleur_ciel:
                 
             elif i[0] <= i[1] < i[2]:
                 bleu += 1
-                #CIEL['bleu'] += 1
+                
 
             elif i[0] == i[1] == i[2] > 200:
                 blanc += 1
@@ -111,16 +119,65 @@ class couleur_ciel:
             pass
             #ici faut définir les couleurs
 
-        print(bleu, blanc, bleu_pollution)
-        #ici faire le poid
+        #print(bleu, blanc, bleu_pollution)
+        total = len(liste)
+    
+    
+        if bleu * 100 / total > 2:#faut voir ici 
+            CIEL['bleu'] += 1
+        if  bleu_pollution * 100 / total > 2:
+            CIEL['bleu_pollution'] += 1
+        if blanc * 100 / total > 2:
+            CIEL['blanc'] += 1
+
+        #gris
+            
+        print(CIEL)
+
+
+
         
-class meteo:
-    METEO = {'beau_temps':0,
-             'nuageux':0,
-             'pluie':0,
-             }
+class météo:
+
+
+    def recuperation_lieu(self, image):
+        self.image = image
+
+        liste_lieu = []
+
+        lieu = str(image)
+        for i in lieu:
+            if i == " ":
+                break
+            else:
+                liste_lieu.append(i)
+                
+        liste_lieu = "".join(liste_lieu)
+        return liste_lieu
+    
+
+    def recuperation_donnée(self, lieu):
+        self.lieu = lieu
+        clé = '5a72ceae1feda40543d5844b2e04a205'
+        
+        localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(self.lieu,clé)
+
+        r = requests.get(localisation)
+
+        data=r.json()
+        print(data)
+
+        méteo = data['weather'][0]['main']
+
+        if méteo == "Rain":
+            METEO['pluie'] +=1
+        elif méteo == "Clouds":
+            METEO['nuageux'] +=1
+        elif méteo == "Clear":
+            METEO['beau_temps'] +=1
 
     
+
 class climat:
 
     CLIMAT = {'0_10':0,
@@ -168,22 +225,39 @@ if __name__ == "__main__":
 
     yo = couleur_ciel()
 
+    meteo = météo()
+
     liste_dossier = os.listdir(PATH_DOSSIER)
-    print(liste_dossier)
-    
+
     for i in liste_dossier:
-        if i == "pol.py" or i == "essais.py" or i == "ciel.png":
+        if i == "pol.py" or i == "essais.py" or i == "ciel.png"\
+           or i == "ciel.jpg":
             pass
         else:
-            mask = yo.mask(i)
-            print(i)
-            couleur_du_ciel = yo.ciel_terre(mask)
-            yo.analyse_ciel_couleur(couleur_du_ciel)
+            #mask = yo.mask(i)
+            #print(i)
+            #couleur_du_ciel = yo.ciel_terre(mask)
+            #yo.analyse_ciel_couleur(couleur_du_ciel)
+
+            position = meteo.recuperation_lieu(i)
+            meteo.recuperation_donnée(position)
 
 
+            #print(CIEL)
+            #print(METEO)
+    
+            
+        CIEL = {'bleu':0,
+                'gris':0,
+                'blanc':0,
+                'bleu_pollution':0,
+        }
 
 
-
+        METEO = {'beau_temps':0,
+         'nuageux':0,
+         'pluie':0,
+        }
 
 
 
