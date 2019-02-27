@@ -1,8 +1,7 @@
 #bobo
 
-#okok calme toi, j'avais mon ciel javais mes coordonées mais chai pas détourer....
+#reflechis a dautre petit rond et des rond apres les ronds pcque la c juste de la recup...
 
-#c toujours les memes techniques mais c pas grave j'en apprendrai d'autres fini avant ce soir hihihi LA on samuse grokon
 
 #-------------------------------------------------important
 
