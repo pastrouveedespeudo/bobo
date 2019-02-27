@@ -180,11 +180,42 @@ class météo:
 
 class climat:
 
-    CLIMAT = {'0_10':0,
+    CLIMAT = {'> 0':0,
+              '0_10':0,
               '11_20':0,
               '21_30':0,
               '31_40':0,
             }
+
+    def recuperation_donnée(self, lieu):
+        self.lieu = lieu
+        
+        clé = '5a72ceae1feda40543d5844b2e04a205'
+        
+        localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(self.lieu,clé)
+
+        r = requests.get(localisation)
+
+        data=r.json()
+
+        température = data['main']['temp']
+        température = température - 273.15
+        
+        print(str(round(température)) + ' Celsius')
+
+        if température < 0:
+            CLIMAT['> 0']+=1
+        elif température >= 0 and <= 10:
+            CLIMAT['0_10']+=1
+        elif température >= 11 and <= 20:
+            CLIMAT['11_20']+=1
+        elif température >= 21 and <= 30:
+            CLIMAT['21_30']+=1
+        elif température >= 31 and <= 40:
+            CLIMAT['31_40']+=1
+
+
+
 
 class trafique:
     
@@ -227,6 +258,8 @@ if __name__ == "__main__":
 
     meteo = météo()
 
+    température = climat()
+
     liste_dossier = os.listdir(PATH_DOSSIER)
 
     for i in liste_dossier:
@@ -240,8 +273,9 @@ if __name__ == "__main__":
             #yo.analyse_ciel_couleur(couleur_du_ciel)
 
             position = meteo.recuperation_lieu(i)
-            meteo.recuperation_donnée(position)
+            #meteo.recuperation_donnée(position)
 
+            température.recuperation_donnée(position)
 
             #print(CIEL)
             #print(METEO)
