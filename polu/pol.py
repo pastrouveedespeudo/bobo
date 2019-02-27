@@ -3,6 +3,7 @@ import os
 import cv2
 import json
 import requests
+import datetime
 from colour import Color
 from PIL import Image, ImageDraw, ImageChops
 
@@ -18,6 +19,22 @@ CIEL = {'bleu':0,
 METEO = {'beau_temps':0,
          'nuageux':0,
          'pluie':0,
+}
+
+CLIMAT = {'> 0':0,
+          '0_10':0,
+          '11_20':0,
+          '21_30':0,
+          '31_40':0,
+          '>40':0,
+}
+
+
+        
+TRAFIQUE = {'depart_routier':0,
+            'heure_pointe':0,
+            'non_heure_pointe':0,
+            'regulier jour':0,
 }
 
 
@@ -132,11 +149,8 @@ class couleur_ciel:
 
         #gris
             
-        print(CIEL)
-
-
-
         
+    
 class météo:
 
 
@@ -180,12 +194,6 @@ class météo:
 
 class climat:
 
-    CLIMAT = {'> 0':0,
-              '0_10':0,
-              '11_20':0,
-              '21_30':0,
-              '31_40':0,
-            }
 
     def recuperation_donnée(self, lieu):
         self.lieu = lieu
@@ -205,25 +213,102 @@ class climat:
 
         if température < 0:
             CLIMAT['> 0']+=1
-        elif température >= 0 and <= 10:
+        elif température >= 0 and température <= 10:
             CLIMAT['0_10']+=1
-        elif température >= 11 and <= 20:
+        elif température >= 11 and température <= 20:
             CLIMAT['11_20']+=1
-        elif température >= 21 and <= 30:
+        elif température >= 21 and température <= 30:
             CLIMAT['21_30']+=1
-        elif température >= 31 and <= 40:
+        elif température >= 31 and température <= 40:
             CLIMAT['31_40']+=1
-
+        elif température >= 41:
+            CLIMAT['41>']+=1
 
 
 
 class trafique:
     
-    TRAFIQUE = {'vacance_scolaire':0,
-                'non_vacance':0,
-                'heure_pointe':0,
-                'non_heure_pointe':0,
-                }
+
+
+    def trafique(self):
+
+        date = datetime.datetime.now()
+        
+        jour = date.day
+        mois = date.month
+        année = date.year
+
+        heure = date.hour
+        minute = date.minute
+
+
+
+        heure_pointe_semaine = [12, 18,19] #verifie grouille va bientot pleuvoir
+
+        départ_routier = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
+                          (1,3),(2,3),(8,3),(9,3),
+                          (19,4),(22,4),(26,4),(27,4),(28,4),
+                          (4,5),(5,5),(29,5),(30,5),
+                          (5,6),(6,6),(7,6),(10,6),(28,6),
+                          (5,7),(6,7),(7,7),(12,7),(13,7),(14,7),(19,7),(20,7),(21,7),(26,7),(27,7),(28,7),
+                          (2,8),(3,8),(4,8),(9,8),(10,8),(11,8),(16,8),(17,8),(18,8),(19,8),(23,8),(24,8),(25,8),(30,8),(31,8),
+                          (1,9),
+                          (18,10),(25,10),(26,10),(31,10),
+                          (3,11),(8,11),(11,11),
+                          (20,12),(21,12),(22,12),(24,12),(27,12),(28,12)
+            ]
+
+
+
+        
+        print(jour, mois, année)
+        print(str(heure) + ":" + str(minute))
+
+
+
+        dep = ""
+        pointe = ""
+        normale = ""
+        non_pointe = ""
+
+        
+        for i in départ_routier:
+            if (jour, mois) == i :
+                dep = True
+
+            elif (jour, mois) != i :
+                normale = True
+
+        for i in heure_pointe_semaine:
+            if i == heure:
+                pointe = True
+            else:
+                non_pointe == True
+            
+
+        if dep == True:
+            TRAFIQUE['depart_routier'] += 1
+
+        elif normale == True:
+            TRAFIQUE['regulier jour'] += 1
+
+            
+        if pointe == True:
+            TRAFIQUE['heure_pointe'] += 1
+            
+
+        elif non_pointe == True:
+            TRAFIQUE['non_heure_pointe jour'] += 1
+
+            
+
+
+        print("jour de départ :",dep)
+        print("normal jour: ",normale)
+
+
+
+
 
 class concentration_industrielle:
 
@@ -260,6 +345,8 @@ if __name__ == "__main__":
 
     température = climat()
 
+    trafique = trafique()
+
     liste_dossier = os.listdir(PATH_DOSSIER)
 
     for i in liste_dossier:
@@ -275,10 +362,22 @@ if __name__ == "__main__":
             position = meteo.recuperation_lieu(i)
             #meteo.recuperation_donnée(position)
 
-            température.recuperation_donnée(position)
+            #température.recuperation_donnée(position)
+
+            trafique.trafique()
+
 
             #print(CIEL)
             #print(METEO)
+            #print(CLIMAT)
+            #print(TRAFIQUE)
+
+
+
+
+
+
+
     
             
         CIEL = {'bleu':0,
@@ -289,17 +388,27 @@ if __name__ == "__main__":
 
 
         METEO = {'beau_temps':0,
-         'nuageux':0,
-         'pluie':0,
+                 'nuageux':0,
+                 'pluie':0,
+        }
+
+
+        CLIMAT = {'> 0':0,
+                  '0_10':0,
+                  '11_20':0,
+                  '21_30':0,
+                  '31_40':0,
+                  '>40':0,
         }
 
 
 
 
-
-
-
-
+        TRAFIQUE = {'depart_routier':0,
+            'heure_pointe':0,
+            'non_heure_pointe':0,
+            'regulier jour':0,
+        }
 
 
 
