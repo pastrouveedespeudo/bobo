@@ -179,7 +179,7 @@ class météo:
         r = requests.get(localisation)
 
         data=r.json()
-        print(data)
+        #print(data)
 
         méteo = data['weather'][0]['main']
 
@@ -209,7 +209,7 @@ class climat:
         température = data['main']['temp']
         température = température - 273.15
         
-        print(str(round(température)) + ' Celsius')
+        #print(str(round(température)) + ' Celsius')
 
         if température < 0:
             CLIMAT['> 0']+=1
@@ -261,8 +261,8 @@ class trafique:
 
 
         
-        print(jour, mois, année)
-        print(str(heure) + ":" + str(minute))
+        #print(jour, mois, année)
+        #print(str(heure) + ":" + str(minute))
 
 
 
@@ -303,19 +303,127 @@ class trafique:
             
 
 
-        print("jour de départ :",dep)
-        print("normal jour: ",normale)
+        #print("jour de départ :",dep)
+        #print("normal jour: ",normale)
+
+
+class particule:
+
+    def particule(self, lieu):
+        self.lieu = lieu
+
+
+        date = datetime.datetime.now()
+        
+        jour = date.day
+        mois = date.month
+        année = date.year
+
+        heure = date.hour
+        minute = date.minute
+        seconde = date.second
+
+        ajout_zero_jour = [str(jour)]
+        c = 0
+        for i in ajout_zero_jour:
+            for j in i :  
+                c+=1
+      
+
+        ajout_zero_mois = [str(mois)]
+        c1 = 0
+        for i in ajout_zero_mois:
+            for j in i :
+                c1+=1
+
+        ajout_zero_minute = [str(minute)]
+        c2 = 0
+        for i in ajout_zero_minute:
+            for j in i :
+                c2+=1
 
 
 
+        ajout_j = ""
+        ajout_min = "" 
+        ajout_m = ""
+        
+        if c < 2:
+            ajout_j = True
+
+        if c1 < 2:
+            ajout_m = True
+
+        if c2 < 2:
+            ajout_min = True
+
+        pm = {'inf50':0,
+              'inf90':0,
+              'inf110':0,
+              'inf130':0,
+            }
+
+        self.lieu = lieu
+        
+        clé = '5a72ceae1feda40543d5844b2e04a205'
+        
+        localisation = "http://api.openweathermap.org/pollution/v1/co/{0}/{1}.json&appid=={2}"
 
 
-class concentration_industrielle:
+        if ajout_j == True and ajout_m == True and ajout_min == True:
+            path = str(localisation.format(self.lieu,
+                                           (str(année) + "-0" + str(mois) + "-0" +
+                                           str(jour) + "T" + str(heure) + ":0" + str(minute)),
+                                           clé))
+            print(path,"1")
 
-    CONCENTRATRION = {'forte':0,
-                      'moyenne':0,
-                      'faible':0,
-                    }
+        elif ajout_m != True and ajout_j == True and ajout_min == True:
+            path = str(localisation.format(self.lieu,
+                                           str(année) + "-" + str(mois) +
+                                           "-0" + str(jour) + "T" + str(heure) + ":0" + str(minute),
+                                           clé))
+
+            print(path,"2")
+            
+        elif ajout_m != True and ajout_j != True and ajout_min == True:
+            path = str(localisation.format(self.lieu,
+                                           str(année) + "-" + str(mois)
+                                           + "-" + str(jour) + "T" + str(heure) + ":0" + str(minute),
+                                           clé))
+
+            print(path,"3")
+
+        elif ajout_m != True and ajout_j != True and ajout_min != True:
+            path = str(localisation.format(self.lieu,
+                                           str(année) + "-" + str(mois) +
+                                            "-" + str(jour) + "T" + str(heure) + ":" + str(minute),
+                                           clé))
+
+            print(path,"4")
+
+        elif ajout_m == True and ajout_j == True and ajout_min != True:
+            path = str(localisation.format(self.lieu,
+                                           str(année) + "-0" + str(mois) +
+                                           "-0" + str(jour) + "T" + str(heure) + ":" + str(minute),
+                                           clé))
+
+            print(path,"5")
+
+        elif ajout_m == True and ajout_j != True and ajout_min != True:
+            path = str(localisation.format(self.lieu,
+                                           str(année) + "-0" + str(mois)
+                                           + "-" + str(jour) + "T" + str(heure) + ":" +str(minute),
+                                           'f6c513bd25bac792759a7d3bbe546cb0'))
+
+
+            print(path,"6")
+        
+                       #trouve un truk ca marche pas                  
+                       
+        r = requests.get(localisation)
+
+        data=r.json()
+        print(data)
 
 
 class analyse:
@@ -324,13 +432,7 @@ class analyse:
         pass
 
 
-class fourtout:
-    
-    pm = {'inf50':0,
-          'inf90':0,
-          'inf110':0,
-          'inf130':0,
-        }
+
 
 
 
@@ -347,6 +449,8 @@ if __name__ == "__main__":
 
     trafique = trafique()
 
+    particule = particule()
+
     liste_dossier = os.listdir(PATH_DOSSIER)
 
     for i in liste_dossier:
@@ -354,24 +458,29 @@ if __name__ == "__main__":
            or i == "ciel.jpg":
             pass
         else:
+
+            print(i)
+            
             #mask = yo.mask(i)
-            #print(i)
+            
             #couleur_du_ciel = yo.ciel_terre(mask)
             #yo.analyse_ciel_couleur(couleur_du_ciel)
 
             position = meteo.recuperation_lieu(i)
+            
             #meteo.recuperation_donnée(position)
 
             #température.recuperation_donnée(position)
 
-            trafique.trafique()
+            #trafique.trafique()
 
+            particule.particule(position)
 
             #print(CIEL)
             #print(METEO)
             #print(CLIMAT)
             #print(TRAFIQUE)
-
+            #print('\n\n\n')
 
 
 
