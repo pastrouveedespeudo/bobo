@@ -25,6 +25,7 @@ class couleur_ciel:
 
     def rgb_to_hex(rgb):
         return '#%02x%02x%02x' % rgb
+    
         
     def mask(self, image):
         self.image = image
@@ -77,38 +78,41 @@ class couleur_ciel:
                 break
 
         
-        liste_dico = liste_dico[0:10]
+        liste_dico = liste_dico[0:50]
         liste_couleur = []
         
         for i in liste_dico:
             
             couleur = [c for c,v in dico.items() if v==i]
             liste_couleur.append(couleur[0])
-        print(liste_couleur)
+
         return liste_couleur
 
     def analyse_ciel_couleur(self, liste):
         self.liste = liste
         
-
+        bleu = 0
+        blanc = 0
+        bleu_pollution = 0
 
         for i in self.liste:
-            print(i)
 
             if  i[0] <= i[1] < i[2] and\
                  i[1]>= i[2] - 30:
-                print("bleu pollution")
+                 bleu_pollution += 1
                 
             elif i[0] <= i[1] < i[2]:
-                print("bleu")
+                bleu += 1
                 #CIEL['bleu'] += 1
 
             elif i[0] == i[1] == i[2] > 200:
-                print("blanc")
+                blanc += 1
             #else
             pass
             #ici faut définir les couleurs
-            
+
+        print(bleu, blanc, bleu_pollution)
+        #ici faire le poid
         
 class meteo:
     METEO = {'beau_temps':0,
