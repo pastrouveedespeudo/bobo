@@ -1,5 +1,9 @@
 #bobo
 
+#okok calme toi, j'avais mon ciel javais mes coordonées mais chai pas détourer....
+
+#c toujours les memes techniques mais c pas grave j'en apprendrai d'autres fini avant ce soir hihihi LA on samuse grokon
+
 #-------------------------------------------------important
 
 #https://www.science-emergence.com/Ar...t-avec-python/
