@@ -1,6 +1,8 @@
 #bobo
 
-#reflechis a dautre petit rond et des rond apres les ronds pcque la c juste de la recup...
+#pause, recupere les valeurs du site airpol nique ensuite ben enfete faut rajouter des petit rond et jcrois qu'il faut arrivé a lui faire dire le nombre de pm en gros ca serait ca mais faut d'autres options chai pas
+
+#bon c pas grave faut faire une courbe apres entre départ, heure pointe, non pointe et tout ca avec pluie et sans pluis
 
 
 #-------------------------------------------------important
