@@ -100,8 +100,6 @@ class couleur_ciel:
         liste_dico= sorted(liste_dico, reverse = True)
 
 
-
-    
         liste_couleur = []
         
         for i in liste_dico:
@@ -149,7 +147,14 @@ class couleur_ciel:
 
         #gris
             
-        
+        def bleu_ou_bleu_pollution(self):
+            pass
+
+        #si le bleu pollution > a bleu
+
+        def teinte_gris(self):
+            pass
+        #savoir les teintes de  gris
     
 class météo:
 
@@ -172,6 +177,8 @@ class météo:
 
     def recuperation_donnée(self, lieu):
         self.lieu = lieu
+
+        
         clé = '5a72ceae1feda40543d5844b2e04a205'
         
         localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(self.lieu,clé)
@@ -189,6 +196,11 @@ class météo:
             METEO['nuageux'] +=1
         elif méteo == "Clear":
             METEO['beau_temps'] +=1
+
+
+    def phénomene(self):
+        pass
+    #anticyclone par exemple, savoir si apres une semaine de pluie, solei ect les parti sont les meme
 
     
 
@@ -226,10 +238,17 @@ class climat:
 
 
 
+
+        def vent(self):
+            pass
+        #si y'a du vent ou pas et quel coté
+
+        
+
+
+
 class trafique:
     
-
-
     def trafique(self):
 
         date = datetime.datetime.now()
@@ -306,12 +325,69 @@ class trafique:
         #print("jour de départ :",dep)
         #print("normal jour: ",normale)
 
+        def habitude(self):
+            pass
+        #savoir quand est ce que les types de gens sortent:
+
+        def voiture_presente(self):
+            pass
+        #savoir quel type de voiture est présente sur la voie
+
+        def essence(self):
+            pass
+        #savoir dans la semaine, dans les semaines quelles type dessence a ete le plus acheter
+
+
+        def poid_lourd(self):
+            pass
+
+
+class particule:
+
+    def particule(self):
+        pass
+        #cherche sur polu direct
+
+
+
+class geographie:
+
+    def situation(self):
+        pass
+    #dans un trou entre des montagnes? pres de la mer ect
+    
+    def voisinage(self):
+        pass
+    #savoir si la ville d'a coté peux influer et donc rentre en jeu avec vent
+
+
+    def sol(self):
+        pass
+    #savoir si un sol influe
+
+    
+class socio:
+
+    def habitant(self):
+        pass
+    #type de population ok vieux = vieille voiture
+        #et pas de deplacement aux horriare de point car stratégie de leur expérience
+    #type economique region riche? vieille voiture
+    
 
 
 class analyse:
 
     def analyse(self):
-        pass
+        pass#faire les combo et prendre le meilleur sauf que y'a pas de combo a faire j'ai deja le resurtat...
+
+
+
+    
+    #sinon faire de la prédiction mais je sais pas faire
+    #en vrai j'ai juste le dessin je sais pas si ca marche ca
+
+    
 
 
 
@@ -393,13 +469,12 @@ if __name__ == "__main__":
         }
 
 
-
-
         TRAFIQUE = {'depart_routier':0,
             'heure_pointe':0,
             'non_heure_pointe':0,
             'regulier jour':0,
         }
+
 
 
 
