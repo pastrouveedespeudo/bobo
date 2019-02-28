@@ -1,194 +1,70 @@
 
-class couleur_ciel:
+import os
+import cv2
+import json
+import pyglet
+import requests
+import datetime
+import urllib.request
+from bs4 import *
+from colour import Color
+from PIL import Image, ImageDraw, ImageChops
 
-    def recherche_image_paris(self, path):
-
-        self.path = path
-        liste = []
-
-        
-        r = requests.get(path)
-
-
-        page = r.content
-        soup = BeautifulSoup(page, "html.parser")
-    
-        propriete = soup.find_all("script")
-        for i in propriete:
-            liste.append(i.get_text())
-        return liste
-
-
-
-
-    def lieu(self, lieu):
-        self.lieu = lieu
+PATH_DOSSIER = r"C:\Users\jeanbaptiste\bobo\bobo\polution\26 frvrier 2019\apprentissage"
 
     
-        if self.lieu == "Paris" or self.lieu == "paris":
-            
-            path = "https://www.viewsurf.com/univers/ville/vue/16924-france-ile-de-france-paris-la-defense"
-            couleur_ciel.recherche_image_paris(self, path)
-            image = couleur_ciel.recherche_image_paris(self, path)
-            image = image[11][628:702]
-            urllib.request.urlretrieve(image, "paris3.jpg")
-
-            return "paris.jpg"
-
-        elif self.lieu == "Marseille" or self.lieu == "marseille":
-            path = "http://films.viewsurf.com/marseille06/12/10/media_1551374405.jpg"
-            urllib.request.urlretrieve(str(path), "marseille.png")
-
-            return "marseille.png"
-
-        elif self.lieu == "Lyon" or self.lieu == "lyon":
-            
-            path = "https://fr.webcams.travel/webcam/1511302382-lyon-radisson-blu"
-            urllib.request.urlretrieve(str(path), "lyon3.png")
-
-            return "lyon.png"
 
 
+METEO = {'beau_temps':0,
+         'nuageux':0,
+         'pluie':0,
+}
 
-        elif self.lieu == "Pekin" or self.lieu == "pekin":
-            pass
+VENT = {'tres fort':0,
+        'fort':0,
+        'moyen fort':0,
+        'faible':0, 
+}
 
+CLIMAT = {'> 0':0,
+          '0_10':0,
+          '11_20':0,
+          '21_30':0,
+          '31_40':0,
+          '>40':0,
+}
 
-
-            
-    def mask(self, image):
-        self.image = image
-        
-        img = Image.open(self.image)
 
         
-        masque = Image.new('RGB', img.size, color=(255,255,255))
+TRAFIQUE = {'depart_routier':0,
+            'heure_pointe':0,
+            'non_heure_pointe':0,
+            'regulier jour':0,
+}
 
-        a = img.size[0] 
-        b = img.size[1] / 100 * 50
+PARTICULE = {'0_20':0,
+            '21_40':0,
+            '41_60':0,
+            '61_80':0,
+            '81_100':0,
+            '101_120':0,
+            '121_140':0,
+            '141_160':0,
+            '161_180':0,
+            '181_200':0,
+            '>200':0
+}
 
-        c = 0
-        d = 0
+PRESSION = {'forte':0,
+            'faible':0,
+            'normale':0,
+}
 
-        coords = (a,b, c,d)
-
-        masque_draw = ImageDraw.Draw(masque)
-        masque_draw.rectangle(coords, fill=(0,0,0))
-        diff = ImageChops.lighter(img, masque)
-
-        diff.save("ciel.jpg")
-        return "ciel.jpg"
-
-
-
-    def ciel_terre(self, image):
-        self.image = image
-
-        liste = []
-        valeur_mask = []
-
-        self.im = Image.open(self.image)
-                      
-        dico = {}
-        for value in self.im.getdata():
-            if value in dico.keys():
-                 dico[value] += 1
-            else:
-                 dico[value] = 1
-    
-
-        liste_dico = []
-        for i in dico.values():
-            liste_dico.append(i)
-            
-        liste_dico= sorted(liste_dico, reverse = True)
-
-
-        liste_couleur = []
-        
-        for i in liste_dico:
-          
-            couleur = [c for c,v in dico.items() if v==i]
-            liste_couleur.append(couleur[0])
-
-        return liste_couleur
-
-
-
-    def analyse_ciel_couleur(self, liste):
-        self.liste = liste
-        
-        self.bleu = 0
-        blanc = 0
-        self.bleu_pollution = 0
-
-        for i in self.liste:
-
-            if  i[0] <= i[1] < i[2] and\
-                 i[1]>= i[2] - 30:
-                 self.bleu_pollution += 1
-                
-            elif i[0] <= i[1] < i[2]:
-                self.bleu += 1
-                
-
-            elif i[0] == i[1] == i[2] > 200:
-                blanc += 1
-            
-
-        #print(bleu, blanc, bleu_pollution)
-        total = len(liste)
-    
-    
-        if self.bleu * 100 / total > 2:
-            CIEL['bleu'] += 1
-        if  self.bleu_pollution * 100 / total > 2:
-            CIEL['bleu_pollution'] += 1
-        if blanc * 100 / total > 2:
-            CIEL['blanc'] += 1
-
-      
-            
-        def bleu_ou_bleu_pollution(self):
-            
-            if self.bleu > self.bleu_pollution:
-                CIEL_bleu_ou_bleu_polu['bleu'] += 1
-            else:
-                CIEL_bleu_ou_bleu_polu['bleu_polu'] += 1
-                
-
-
-        def teinte_gris(self, liste):
-            self.liste = liste
-
-            if i[0] == i[1] == i[2]\
-               and i[0] == 69:
-                TEINTE_GRIS['lvl 6'] += 1
-                
-            if i[0] == i[1] == i[2]\
-               and i[0] >= 70 and i[0] <= 91:
-                TEINTE_GRIS['lvl 5'] += 1
-                
-            if i[0] == i[1] == i[2]\
-               and i[0] >= 92 and i[0] <= 120:
-                TEINTE_GRIS['lvl 4'] += 1
-
-            if i[0] == i[1] == i[2]\
-               and i[0] >= 121 and i[0] <= 145:
-                TEINTE_GRIS['lvl 3'] += 1
-                
-            if i[0] == i[1] == i[2]\
-               and i[0] >= 146 and i[0] <= 182:
-                TEINTE_GRIS['lvl 2'] += 1
-
-            if i[0] == i[1] == i[2]\
-               and i[0] >= 183 and i[0] <= 205:
-                TEINTE_GRIS['lvl 3'] += 1
-
-
-
-
-
+SAISON = {'primtemps':0,
+          'été':0,
+          'hiver':0,
+          'automne':0,
+}
     
 class météo:
 
@@ -212,6 +88,7 @@ class météo:
         self.lieu = lieu
 
         
+        
         clé = '5a72ceae1feda40543d5844b2e04a205'
         
         localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(self.lieu,clé)
@@ -219,7 +96,7 @@ class météo:
         r = requests.get(localisation)
 
         data=r.json()
-        print(data)
+        #print(data)
 
         méteo = data['weather'][0]['main']
 
@@ -230,10 +107,15 @@ class météo:
         elif méteo == "Clear":
             METEO['beau_temps'] +=1
 
+        print(data)
+        try:
+            vent_degres = data['wind']['deg']
+        except:
+            pass
 
-        vent_degres = data['wind']['deg']
+        
         vent = data['wind']['speed']
-        print(vent)
+        #print(vent)
         #0 90 180 270 300def vent m/s
 
         if vent <= 3 :
@@ -249,12 +131,32 @@ class météo:
             VENT['tres fort'] += 1
 
 
+        date = datetime.datetime.now()
+        mois = date.month
+
+        pression = data['main']['pressure']
 
 
-    def phénomene(self):
-        pass
-    #anticyclone par exemple, savoir si apres une semaine de pluie, solei ect les parti sont les meme
-    #anti aug polution
+
+        if pression >= 1035:
+            PRESSION['forte'] += 1
+
+        elif pression <= 1019:
+            PRESSION['faible'] += 1
+
+        else:
+            PRESSION['normale'] += 1
+
+        #forte pression == antycyclone= bo temps mais en hyver == tres froid
+        #plus un rond est petit plus y'a de vent
+        #dépression == pluie
+
+
+ 
+
+
+    
+
 
     
 
@@ -290,16 +192,28 @@ class climat:
         elif température >= 41:
             CLIMAT['41>']+=1
 
-
-    def durée_température(self):
-        pass
-
-    #faire hier et demain
-    #faire la semaine ex une semaine de canicule pollu ? une semaine de froit intense polu?
-
+    
  
+    def saison(self):
+        
+        date = datetime.datetime.now()
+        mois = date.month
+        jour = date.day
+
 
         
+        if jour >= 21 and mois == "décembre":
+            SAISON['hiver'] += 1
+
+        elif jour >= 20 and mois == "mars":
+            SAISON['primtemps'] += 1
+
+        elif jour >= 21 and mois == "juin":
+            SAISON['été'] += 1
+
+        elif jour >= 23 and mois == "septembre":
+            SAISON['automne'] += 1
+
 
 
 
@@ -472,9 +386,32 @@ class particule:
             PARTICULE['>200'] += 1
 
 
+    def france(self):
+        pass
+    #ici la liste des villes les plus pollués
 
-            
 
+    def industrie(self):
+        pass
+    #les site industriel les plus gros
+
+
+    def bois(self):
+        pass
+    #essais de trouver un truk sur le chauffage au bois
+    
+    def ville_fleuri(self):
+        pass
+
+
+
+    def agriculture(self):
+        pass
+    #pourcentage dans la ville
+
+    def effet_de_serre(self):
+        pass
+    #trouver ou y'a cet efet
     
 class geographie:
 
@@ -501,7 +438,9 @@ class socio:
     #type economique region riche? vieille voiture
     
 
-    
+    def asmatique(self):
+        pass
+    #taux asmatique
 
 
 
@@ -535,24 +474,17 @@ class analyse:
 
 if __name__ == "__main__":
 
-    yo = couleur_ciel()
+
     meteo = météo()
+
     température = climat()
+
     trafique = trafique()
+
     particule = particule()
-    liste_dossier = os.listdir(PATH_DOSSIER)
 
-    
-    #-----------------ici un forme genre voir donnée paris ca prend l'image et bim
-    yo.lieu("marseille")
-    #mettre un form
-    #a = form
-    #b = yo.lieu(a) et ca fait tout le bordel dapres
-    #-------------------------------------------------------
+    liste_dossier = ["lyon", "paris", "marseille"]
 
-
-    #------------------------------------------ici
-    #un autre qui apprend
 
     for i in liste_dossier:
         if i == "pol.py" or i == "essais.py" or i == "ciel.png"\
@@ -562,26 +494,32 @@ if __name__ == "__main__":
 
             print(i)
             
-            #mask = yo.mask(i) <- mask = yo.mask(b)
             
-            #couleur_du_ciel = yo.ciel_terre(mask)
-            #yo.analyse_ciel_couleur(couleur_du_ciel)
+ 
 
-            #position = meteo.recuperation_lieu(i)
+            position = meteo.recuperation_lieu(i)
             
-            #meteo.recuperation_donnée(position)
+            meteo.recuperation_donnée(position)
 
-            #température.recuperation_donnée(position)
+            température.recuperation_donnée(position)
 
-            #trafique.trafique()
+            trafique.trafique()
 
-            #particule.particule(position)
+            particule.particule(position)
 
-            #print(CIEL)
-            #print(METEO)
-            #print(CLIMAT)
-            #print(TRAFIQUE)
-            #print('\n\n\n')
+
+            print(METEO)
+            print("\n")
+            print(CLIMAT)
+            print("\n")
+            print(TRAFIQUE)
+            print("\n")
+            print(VENT)
+            print("\n")
+            print(PARTICULE)
+            print("\n")
+            print(PRESSION)
+            print('\n\n\n')
 
 
 
@@ -590,11 +528,6 @@ if __name__ == "__main__":
 
     
             
-        CIEL = {'bleu':0,
-                'gris':0,
-                'blanc':0,
-                'bleu_pollution':0,
-        }
 
 
         METEO = {'beau_temps':0,
@@ -626,13 +559,6 @@ if __name__ == "__main__":
         'faible':0, 
         }
 
-        TEINTE_GRIS = {'lvl 1':0,
-               'lvl 2':0,
-               'lvl 3':0,
-               'lvl 4':0,
-               'lvl 5':0,
-               'lvl 6':0,
-        }
 
 
 
@@ -651,6 +577,19 @@ if __name__ == "__main__":
 
 
 
+        PRESSION = {'forte':0,
+                    'faible':0,
+                    'normale':0,
+        }
+
+
+
+
+        SAISON = {'primtemps':0,
+                  'été':0,
+                  'hiver':0,
+                  'automne':0,
+        }
 
 
 
@@ -658,15 +597,4 @@ if __name__ == "__main__":
 
 
 
-
-
-
-
-
-
-
-
-
-
-    
 
