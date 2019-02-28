@@ -4,6 +4,7 @@ import cv2
 import json
 import requests
 import datetime
+from bs4 import *
 from colour import Color
 from PIL import Image, ImageDraw, ImageChops
 
@@ -16,9 +17,34 @@ CIEL = {'bleu':0,
         'bleu_pollution':0,
 }
 
+
+
+CIEL_bleu_ou_bleu_polu = {'bleu':0,
+                          'bleu_polu':0,
+}
+
+
+TEINTE_GRIS = {'lvl 1':0,
+               'lvl 2':0,
+               'lvl 3':0,
+               'lvl 4':0,
+               'lvl 5':0,
+               'lvl 6':0,
+}
+
+
+
+
+
 METEO = {'beau_temps':0,
          'nuageux':0,
          'pluie':0,
+}
+
+VENT = {'tres fort':0,
+        'fort':0,
+        'moyen fort':0,
+        'faible':0, 
 }
 
 CLIMAT = {'> 0':0,
@@ -37,21 +63,22 @@ TRAFIQUE = {'depart_routier':0,
             'regulier jour':0,
 }
 
+PARTICULE = {'0_20':0,
+            '21_40':0,
+            '41_60':0,
+            '61_80':0,
+            '81_100':0,
+            '101_120':0,
+            '121_140':0,
+            '141_160':0,
+            '161_180':0,
+            '181_200':0,
+            '>200':0
+}
+
 
 class couleur_ciel:
 
-
-
-    def hex_to_rgb(value):
-        value = value.lstrip('#')
-        lv = len(value)
-        return tuple(int(value[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))
-
-    def rgb_to_hex(rgb):
-        return '#%02x%02x%02x' % rgb
-    
-
-        
     def mask(self, image):
         self.image = image
         
@@ -114,50 +141,79 @@ class couleur_ciel:
     def analyse_ciel_couleur(self, liste):
         self.liste = liste
         
-        bleu = 0
+        self.bleu = 0
         blanc = 0
-        bleu_pollution = 0
+        self.bleu_pollution = 0
 
         for i in self.liste:
 
             if  i[0] <= i[1] < i[2] and\
                  i[1]>= i[2] - 30:
-                 bleu_pollution += 1
+                 self.bleu_pollution += 1
                 
             elif i[0] <= i[1] < i[2]:
-                bleu += 1
+                self.bleu += 1
                 
 
             elif i[0] == i[1] == i[2] > 200:
                 blanc += 1
-            #else
-            pass
-            #ici faut définir les couleurs
+            
 
         #print(bleu, blanc, bleu_pollution)
         total = len(liste)
     
     
-        if bleu * 100 / total > 2:#faut voir ici 
+        if self.bleu * 100 / total > 2:
             CIEL['bleu'] += 1
-        if  bleu_pollution * 100 / total > 2:
+        if  self.bleu_pollution * 100 / total > 2:
             CIEL['bleu_pollution'] += 1
         if blanc * 100 / total > 2:
             CIEL['blanc'] += 1
 
-        #gris
+      
             
         def bleu_ou_bleu_pollution(self):
-            pass
+            
+            if self.bleu > self.bleu_pollution:
+                CIEL_bleu_ou_bleu_polu['bleu'] += 1
+            else:
+                CIEL_bleu_ou_bleu_polu['bleu_polu'] += 1
+                
 
-        #si le bleu pollution > a bleu
 
-        def teinte_gris(self):
-            pass
-        #savoir les teintes de  gris
+        def teinte_gris(self, liste):
+            self.liste = liste
+
+            if i[0] == i[1] == i[2]\
+               and i[0] == 69:
+                TEINTE_GRIS['lvl 6'] += 1
+                
+            if i[0] == i[1] == i[2]\
+               and i[0] >= 70 and i[0] <= 91:
+                TEINTE_GRIS['lvl 5'] += 1
+                
+            if i[0] == i[1] == i[2]\
+               and i[0] >= 92 and i[0] <= 120:
+                TEINTE_GRIS['lvl 4'] += 1
+
+            if i[0] == i[1] == i[2]\
+               and i[0] >= 121 and i[0] <= 145:
+                TEINTE_GRIS['lvl 3'] += 1
+                
+
+            if i[0] == i[1] == i[2]\
+               and i[0] >= 146 and i[0] <= 182:
+                TEINTE_GRIS['lvl 2'] += 1
+
+
+            if i[0] == i[1] == i[2]\
+               and i[0] >= 183 and i[0] <= 205:
+                TEINTE_GRIS['lvl 3'] += 1
+
+
+
     
 class météo:
-
 
     def recuperation_lieu(self, image):
         self.image = image
@@ -186,7 +242,7 @@ class météo:
         r = requests.get(localisation)
 
         data=r.json()
-        #print(data)
+        print(data)
 
         méteo = data['weather'][0]['main']
 
@@ -198,9 +254,32 @@ class météo:
             METEO['beau_temps'] +=1
 
 
+        vent_degres = data['wind']['deg']
+        vent = data['wind']['speed']
+        print(vent)
+        #0 90 180 270 300def vent m/s
+
+        if vent <= 3 :
+            VENT['faible'] += 1
+            
+        elif vent <= 6 and vent > 3:
+            VENT['moyen fort'] += 1
+
+        elif vent <= 8 and vent > 6:
+            VENT['fort'] += 1
+
+        elif vent <= 12 and venet > 8:
+            VENT['tres fort'] += 1
+
+
+
+
+
+
     def phénomene(self):
         pass
     #anticyclone par exemple, savoir si apres une semaine de pluie, solei ect les parti sont les meme
+    #anti aug polution
 
     
 
@@ -237,11 +316,13 @@ class climat:
             CLIMAT['41>']+=1
 
 
+    def durée_température(self):
+        pass
 
+    #faire hier et demain
+    #faire la semaine ex une semaine de canicule pollu ? une semaine de froit intense polu?
 
-        def vent(self):
-            pass
-        #si y'a du vent ou pas et quel coté
+ 
 
         
 
@@ -262,7 +343,7 @@ class trafique:
 
 
 
-        heure_pointe_semaine = [12, 18,19] #verifie grouille va bientot pleuvoir
+        heure_pointe_semaine = [12, 18,19]
 
         départ_routier = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
                           (1,3),(2,3),(8,3),(9,3),
@@ -320,18 +401,34 @@ class trafique:
             TRAFIQUE['non_heure_pointe jour'] += 1
 
             
-
-
         #print("jour de départ :",dep)
         #print("normal jour: ",normale)
 
-        def habitude(self):
-            pass
-        #savoir quand est ce que les types de gens sortent:
+            
 
+        def habitude(self):
+            agé = [9, 15 ,18]
+            enfant = [8, 12, 14, 16, 17]
+            pointe = []#reverifie les pointes
+
+            #activité le mercredi samedi jeudi soir ?
+            #savoir quand est ce que les types de gens sortent:
+        #vieux 9 15 18
+        #jeune enfant 8 12h/14h/16 /17
+        #moyen vieux heure de pointe 
+
+
+        
         def voiture_presente(self):
             pass
         #savoir quel type de voiture est présente sur la voie
+
+
+
+        def travaux(self):
+            pass
+        #les travaux impactent ils la pollution? si oui fais chier pcque faut aussi chercher si c
+        #une rue principale
 
         def essence(self):
             pass
@@ -344,11 +441,68 @@ class trafique:
 
 class particule:
 
-    def particule(self):
-        pass
-        #cherche sur polu direct
+    def particule(self, lieu):
+        self.lieu = lieu
+
+        liste = []
+
+        path = "https://air.plumelabs.com/fr/live/{}".format(self.lieu)
+
+        r = requests.get(path)
 
 
+        page = r.content
+        soup = BeautifulSoup(page, "html.parser")
+    
+        propriete = soup.find_all("div")
+        for i in propriete:
+            liste.append(i.get_text())
+
+        phrase_clé = "a atteint un niveau élevé de pollution. Supérieur à la limite maximum pour 24h établie par l'OMS"
+        
+        recherche_taux = str(liste).find(str(phrase_clé))
+        liste_epluché = liste[20:21]
+        polution = liste_epluché[0][31:33]
+        polution = int(polution)
+
+        if polution <= 20:
+            PARTICULE['0_20'] += 1
+
+        elif polution >=21 and polution <= 40:
+            PARTICULE['21_40'] += 1
+            
+        elif polution >=41 and polution <= 60:
+            PARTICULE['41_60'] += 1
+            
+        elif polution >=61 and polution <= 80:
+            PARTICULE['61_80'] += 1
+            
+        elif polution >=81 and polution <= 100:
+            PARTICULE['81_100'] += 1
+            
+        elif polution >=101 and polution <= 120:
+            PARTICULE['101_120'] += 1
+            
+        elif polution >=121 and polution <= 140:
+            PARTICULE['121_140'] += 1
+            
+        elif polution >=141 and polution <= 160:
+            PARTICULE['141_160'] += 1
+            
+        elif polution >=161 and polution <= 180:
+            PARTICULE['161_180'] += 1
+            
+        elif polution >=181 and polution <= 200:
+            PARTICULE['181_200'] += 1
+            
+        elif polution >200:
+            PARTICULE['>200'] += 1
+
+
+
+            
+
+        
 
 class geographie:
 
@@ -375,6 +529,12 @@ class socio:
     #type economique region riche? vieille voiture
     
 
+    
+
+
+
+
+
 
 class analyse:
 
@@ -387,9 +547,13 @@ class analyse:
     #sinon faire de la prédiction mais je sais pas faire
     #en vrai j'ai juste le dessin je sais pas si ca marche ca
 
-    
 
+    def prédiction(self):
+        pass
+    #selon les truk faire des ca sera entre tant et tant de pollution
+    #tentre t'as ville et ca fait des recherches automatiquement
 
+    #nuage de pts
 
 
 
@@ -477,7 +641,52 @@ if __name__ == "__main__":
 
 
 
+        VENT = {'tres fort':0,
+        'fort':0,
+        'moyen fort':0,
+        'faible':0, 
+        }
+
+        TEINTE_GRIS = {'lvl 1':0,
+               'lvl 2':0,
+               'lvl 3':0,
+               'lvl 4':0,
+               'lvl 5':0,
+               'lvl 6':0,
+        }
+
+
+
+        PARTICULE = {'0_20':0,
+                    '21_40':0,
+                    '41_60':0,
+                    '61_80':0,
+                    '81_100':0,
+                    '101_120':0,
+                    '121_140':0,
+                    '141_160':0,
+                    '161_180':0,
+                    '181_200':0,
+                    '>200':0
+        }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
