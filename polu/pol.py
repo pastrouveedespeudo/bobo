@@ -2,8 +2,10 @@
 import os
 import cv2
 import json
+import pyglet
 import requests
 import datetime
+import urllib.request
 from bs4 import *
 from colour import Color
 from PIL import Image, ImageDraw, ImageChops
@@ -31,8 +33,6 @@ TEINTE_GRIS = {'lvl 1':0,
                'lvl 5':0,
                'lvl 6':0,
 }
-
-
 
 
 
@@ -79,6 +79,58 @@ PARTICULE = {'0_20':0,
 
 class couleur_ciel:
 
+    def recherche_video(self, lieu, path):
+        self.lieu = lieu
+        self.path = path
+        liste = []
+
+        
+        r = requests.get(path)
+
+
+        page = r.content
+        soup = BeautifulSoup(page, "html.parser")
+    
+        propriete = soup.find_all("article")
+        for i in propriete:
+            liste.append(i.get_text())
+    
+        return liste
+
+    
+    def play(self, video):
+        
+        self.video = video
+        
+        window = pyglet.window.Window(fullscreen = True)
+        #window = pyglet.window.Window(300,300)
+        player = pyglet.media.Player() 
+        MediaLoad = pyglet.media.load(self.video)  
+        player.queue(MediaLoad) 
+        player.play()
+         
+        @window.event
+        def on_draw():
+            time.sleep(0)
+            window.clear()
+            player.get_texture().blit(0,0)
+        
+        pyglet.app.run()
+
+    def lieu(self, lieu):
+        self.lieu = lieu
+
+        
+        
+        if lieu == "Paris" or lieu == "paris":
+            path = "https://www.viewsurf.com/univers/ville/vue/10358-374971054-france-ile-de-france-paris-tour-eiffel"
+            video = couleur_ciel.recherche_video(self, lieu, path)
+            video = video[1][109:172]
+            urllib.request.urlretrieve(video, "paris.mp4")
+            #on affiche l'image
+
+            couleur_ciel.play(self, "paris.mp4")
+            
     def mask(self, image):
         self.image = image
         
@@ -200,11 +252,9 @@ class couleur_ciel:
                and i[0] >= 121 and i[0] <= 145:
                 TEINTE_GRIS['lvl 3'] += 1
                 
-
             if i[0] == i[1] == i[2]\
                and i[0] >= 146 and i[0] <= 182:
                 TEINTE_GRIS['lvl 2'] += 1
-
 
             if i[0] == i[1] == i[2]\
                and i[0] >= 183 and i[0] <= 205:
@@ -270,8 +320,6 @@ class météo:
 
         elif vent <= 12 and venet > 8:
             VENT['tres fort'] += 1
-
-
 
 
 
@@ -392,11 +440,9 @@ class trafique:
         elif normale == True:
             TRAFIQUE['regulier jour'] += 1
 
-            
         if pointe == True:
             TRAFIQUE['heure_pointe'] += 1
             
-
         elif non_pointe == True:
             TRAFIQUE['non_heure_pointe jour'] += 1
 
@@ -502,8 +548,7 @@ class particule:
 
             
 
-        
-
+    
 class geographie:
 
     def situation(self):
@@ -575,6 +620,12 @@ if __name__ == "__main__":
 
     liste_dossier = os.listdir(PATH_DOSSIER)
 
+
+    #mettre un form
+
+    yo.lieu("Paris")
+
+
     for i in liste_dossier:
         if i == "pol.py" or i == "essais.py" or i == "ciel.png"\
            or i == "ciel.jpg":
@@ -588,7 +639,7 @@ if __name__ == "__main__":
             #couleur_du_ciel = yo.ciel_terre(mask)
             #yo.analyse_ciel_couleur(couleur_du_ciel)
 
-            position = meteo.recuperation_lieu(i)
+            #position = meteo.recuperation_lieu(i)
             
             #meteo.recuperation_donnée(position)
 
@@ -596,7 +647,7 @@ if __name__ == "__main__":
 
             #trafique.trafique()
 
-            particule.particule(position)
+            #particule.particule(position)
 
             #print(CIEL)
             #print(METEO)
@@ -607,7 +658,7 @@ if __name__ == "__main__":
 
 
 
-
+        #ecrire ca dans un fichier
 
     
             
