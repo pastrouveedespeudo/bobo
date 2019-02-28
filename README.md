@@ -1,15 +1,10 @@
 #bobo
 
-#pause, recupere les valeurs du site airpol nique ensuite ben enfete faut rajouter des petit rond et jcrois qu'il faut arrivé a lui faire dire le nombre de pm en gros ca serait ca mais faut d'autres options chai pas
+#le site pollution fais des prédictions essais davoir les meme queux mais avec ton truk mais si ca marche pas pas grave,
 
-#bon c pas grave faut faire une courbe apres entre départ, heure pointe, non pointe et tout ca avec pluie et sans pluis
+#souviens toi c juste un site pour dire attention la pollution et tout faut juste des graphes et des sites pour dire attention pollution
 
-#ca pourrait le faire quavec ca si je dis gand départ, tres froid, grand solel en gros tout les gros truk >200 pm
-
-#normale jprend la moyenne d'une année en pm et jmet ca
-
-#pour les heure de pointe j'ai juste a faire un moyenne personne le sait, ca marche en approximation boom c une ia 
-
+#et avance sur le site faut pas une petite averse comme staprem faut une tempete 
 
 #-------------------------------------------------important
 
