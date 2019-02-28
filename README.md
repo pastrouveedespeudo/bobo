@@ -7,7 +7,7 @@
 #https://www.science-emergence.com/Ar...t-avec-python/
 #https://pypi.org/project/colour/
 
-#séparer les site web, mais ca t'oblige a revenir sur vetement
+#séparer les site web et faire raccord entre eux, mais pas mtn  ca t'oblige a revenir sur vetement
 
 #--------------------------------------------------
 
@@ -47,7 +47,6 @@
 
 #----------------------
 
-#une page qui upload une image
 
 #comment lutter mettre 2/3 pages d'écolo 
 
@@ -56,9 +55,11 @@
 #mtn t'as plus qu'a attendre
 
 
-#Autisme ou synergo 
+# Autisme ou synergo 
 
 #-----------------
+
+#trouve
 
 #mais appelle pas ca synergo pcque ben en vrai y'a pleins de truk que je sais pas et que je crois savoir donc...
 
