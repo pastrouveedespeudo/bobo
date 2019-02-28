@@ -1,82 +1,4 @@
 
-import os
-import cv2
-import json
-import pyglet
-import requests
-import datetime
-import urllib.request
-from bs4 import *
-from colour import Color
-from PIL import Image, ImageDraw, ImageChops
-
-PATH_DOSSIER = r"C:\Users\jeanbaptiste\bobo\bobo\polution\26 frvrier 2019\apprentissage"
-
-    
-CIEL = {'bleu':0,
-        'gris':0,
-        'blanc':0,
-        'bleu_pollution':0,
-}
-
-
-
-CIEL_bleu_ou_bleu_polu = {'bleu':0,
-                          'bleu_polu':0,
-}
-
-
-TEINTE_GRIS = {'lvl 1':0,
-               'lvl 2':0,
-               'lvl 3':0,
-               'lvl 4':0,
-               'lvl 5':0,
-               'lvl 6':0,
-}
-
-
-
-METEO = {'beau_temps':0,
-         'nuageux':0,
-         'pluie':0,
-}
-
-VENT = {'tres fort':0,
-        'fort':0,
-        'moyen fort':0,
-        'faible':0, 
-}
-
-CLIMAT = {'> 0':0,
-          '0_10':0,
-          '11_20':0,
-          '21_30':0,
-          '31_40':0,
-          '>40':0,
-}
-
-
-        
-TRAFIQUE = {'depart_routier':0,
-            'heure_pointe':0,
-            'non_heure_pointe':0,
-            'regulier jour':0,
-}
-
-PARTICULE = {'0_20':0,
-            '21_40':0,
-            '41_60':0,
-            '61_80':0,
-            '81_100':0,
-            '101_120':0,
-            '121_140':0,
-            '141_160':0,
-            '161_180':0,
-            '181_200':0,
-            '>200':0
-}
-
-
 class couleur_ciel:
 
     def recherche_image_paris(self, path):
@@ -94,24 +16,9 @@ class couleur_ciel:
         propriete = soup.find_all("script")
         for i in propriete:
             liste.append(i.get_text())
-    
         return liste
 
-    def recherche_image_lyon(self, path):
 
-        self.path = path
-        liste = []
-
-        
-        r = requests.get(path)
-
-
-        page = r.content
-        soup = BeautifulSoup(page, "html.parser")
-
-
-        liste.append(str(soup))
-        return liste
 
 
     def lieu(self, lieu):
@@ -121,22 +28,25 @@ class couleur_ciel:
         if self.lieu == "Paris" or self.lieu == "paris":
             
             path = "https://www.viewsurf.com/univers/ville/vue/16924-france-ile-de-france-paris-la-defense"
+            couleur_ciel.recherche_image_paris(self, path)
             image = couleur_ciel.recherche_image_paris(self, path)
             image = image[11][628:702]
-            urllib.request.urlretrieve(image, "paris.jpg")
+            urllib.request.urlretrieve(image, "paris3.jpg")
 
             return "paris.jpg"
 
         elif self.lieu == "Marseille" or self.lieu == "marseille":
-            pass
+            path = "http://films.viewsurf.com/marseille06/12/10/media_1551374405.jpg"
+            urllib.request.urlretrieve(str(path), "marseille.png")
+
+            return "marseille.png"
 
         elif self.lieu == "Lyon" or self.lieu == "lyon":
             
             path = "https://fr.webcams.travel/webcam/1511302382-lyon-radisson-blu"
-            image = couleur_ciel.recherche_image_lyon(self, path)
-            image = image[0][23207:23291]
-            urllib.request.urlretrieve(str(image), "lyon.png")
+            urllib.request.urlretrieve(str(path), "lyon3.png")
 
+            return "lyon.png"
 
 
 
@@ -274,6 +184,8 @@ class couleur_ciel:
             if i[0] == i[1] == i[2]\
                and i[0] >= 183 and i[0] <= 205:
                 TEINTE_GRIS['lvl 3'] += 1
+
+
 
 
 
@@ -624,22 +536,23 @@ class analyse:
 if __name__ == "__main__":
 
     yo = couleur_ciel()
-
     meteo = météo()
-
     température = climat()
-
     trafique = trafique()
-
     particule = particule()
-
     liste_dossier = os.listdir(PATH_DOSSIER)
 
-    yo.lieu("lyon")
+    
+    #-----------------ici un forme genre voir donnée paris ca prend l'image et bim
+    yo.lieu("marseille")
     #mettre un form
     #a = form
-    #b = yo.lieu(a)
+    #b = yo.lieu(a) et ca fait tout le bordel dapres
+    #-------------------------------------------------------
 
+
+    #------------------------------------------ici
+    #un autre qui apprend
 
     for i in liste_dossier:
         if i == "pol.py" or i == "essais.py" or i == "ciel.png"\
@@ -756,3 +669,4 @@ if __name__ == "__main__":
 
 
     
+
