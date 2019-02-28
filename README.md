@@ -1,12 +1,6 @@
 #bobo
 
-#le site pollution fais des prédictions essais davoir les meme queux mais avec ton truk mais si ca marche pas pas grave,
 
-#souviens toi c juste un site pour dire attention la pollution et tout faut juste des graphes et des sites pour dire attention pollution
-
-#et avance sur le site faut pas une petite averse comme staprem faut une tempete fin faudra voir enfete les m cube et si y'a une baisse
-
-#et si tapell des  gens pas besoin de prendre un accent ok ? presente toi et tout mais en meme temps en physique jvoulais pas qu'ils disent que jy étais pas ^^ dailleurs j'avais pas a ma reponse jtai plusss focus sur laccent
 
 #-------------------------------------------------important
 
@@ -46,40 +40,31 @@
 
 #----------------------
 
-#se renseigner sur comment le truk recupere la pollution et ou elle recup ca
-
-#se demander en combien de temps les particules montent la ou le truk recup la pollution
-
-#trouver un truk qui claque
-
+#graphe + ville en arriere plan+ fond vert
 
 #faire le constat avec la pluie si y'a aucun constat... et donc en combien de temps la pluie fais descendre les particules
 
-#et comment evacuer l'eau
-
-#la pluie va impacter le moral aussi hé merde et donc combien de temps faut que  ca pleuve
-
-#si ca marche investir dans la mode anti pluie impermeable !
 
 #----------------------
 
 #une page qui upload une image
 
-#une page photo donc comme la startup va relire leur page pour comprendre comment eux ils ont fait et donc responsive
-
 #comment lutter mettre 2/3 pages d'écolo 
-
-#un lien vers le truk des chinetoques
-
-#une page info trafique
-
-#une méteo avec le truk cheminée ex
 
 #une page vers la machine a pluie
 
-#une page vert le lien entre pluie et particule
+#mtn t'as plus qu'a attendre
 
-#un logo pendant le chargement donc ajax 
+
+#Autisme ou synergo 
+
+#-----------------
+
+#mais appelle pas ca synergo pcque ben en vrai y'a pleins de truk que je sais pas et que je crois savoir donc...
+
+#et truk de webcam en temps reelle trop dur 
+
+
 
 
 
