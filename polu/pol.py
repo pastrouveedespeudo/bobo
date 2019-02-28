@@ -141,7 +141,7 @@ class météo:
         if pression >= 1035:
             PRESSION['forte'] += 1
 
-        elif pression <= 1019:
+        elif pression <= 1013:
             PRESSION['faible'] += 1
 
         else:
@@ -201,15 +201,14 @@ class climat:
         jour = date.day
 
 
-        
         if jour >= 21 and mois == "décembre":
-            SAISON['hiver'] += 1
+            SAISON['hiver'] += 1 #pollution au bois
 
         elif jour >= 20 and mois == "mars":
             SAISON['primtemps'] += 1
 
         elif jour >= 21 and mois == "juin":
-            SAISON['été'] += 1
+            SAISON['été'] += 1 
 
         elif jour >= 23 and mois == "septembre":
             SAISON['automne'] += 1
@@ -219,7 +218,7 @@ class climat:
 
 class trafique:
     
-    def trafique(self):
+    def trafique_circulation(self):
 
         date = datetime.datetime.now()
         
@@ -293,10 +292,13 @@ class trafique:
 
             
 
-        def habitude(self):
-            agé = [9, 15 ,18]
-            enfant = [8, 12, 14, 16, 17]
-            pointe = []#reverifie les pointes
+    def habitude(self):
+        agé = [9, 15 ,18]
+        enfant = [8, 12, 14, 16, 17]
+        pointe = []#reverifie les pointes
+
+
+
 
             #activité le mercredi samedi jeudi soir ?
             #savoir quand est ce que les types de gens sortent:
@@ -305,25 +307,56 @@ class trafique:
         #moyen vieux heure de pointe 
 
 
+    def bouchons(self, lieu):
+        self.lieu = lieu
+
+        #https://www.moncoyote.com/fr/info-trafic-bordeaux.html + accident ect
+        path = "https://www.moncoyote.com/fr/info-trafic-{}.html".format(lieu)
+        r = requests.get(path)
+
+        liste = []
+
+        page = r.content
+        soup = BeautifulSoup(page, "html.parser")
+    
+        liste.append(str(soup))
+        bouchon = liste[0][28678:28685]
+
+        liste_bouchon = []
+        for i in bouchon:
+            try:
+                i = int(i)
+                liste_bouchon.append(i)
+            except:
+                pass
+
+
+        for i in liste_bouchon:
+            i = str(i)
+
+            #trouve un truk ou y'a du bouchon met les en une seul chaine puis re int
+        print(liste_bouchon)
         
-        def voiture_presente(self):
-            pass
-        #savoir quel type de voiture est présente sur la voie
+        
+        
+    def voiture_presente(self):
+        pass
+    #savoir quel type de voiture est présente sur la voie
 
 
 
-        def travaux(self):
-            pass
-        #les travaux impactent ils la pollution? si oui fais chier pcque faut aussi chercher si c
-        #une rue principale
+    def travaux(self):
+        pass
+    #les travaux impactent ils la pollution? si oui fais chier pcque faut aussi chercher si c
+    #une rue principale
 
-        def essence(self):
-            pass
-        #savoir dans la semaine, dans les semaines quelles type dessence a ete le plus acheter
+    def essence(self):
+        pass
+    #savoir dans la semaine, dans les semaines quelles type dessence a ete le plus acheter
 
 
-        def poid_lourd(self):
-            pass
+    def poid_lourd(self):
+        pass
 
 
 class particule:
@@ -485,41 +518,41 @@ if __name__ == "__main__":
 
     liste_dossier = ["lyon", "paris", "marseille"]
 
-
+    trafique.bouchons("lyon")
     for i in liste_dossier:
         if i == "pol.py" or i == "essais.py" or i == "ciel.png"\
            or i == "ciel.jpg":
             pass
         else:
 
-            print(i)
+            #print(i)
             
             
  
 
             position = meteo.recuperation_lieu(i)
             
-            meteo.recuperation_donnée(position)
+            #meteo.recuperation_donnée(position)
 
-            température.recuperation_donnée(position)
+            #température.recuperation_donnée(position)
 
-            trafique.trafique()
+            #trafique.trafique_circulation()
+            #trafique.bouchon()
+            #particule.particule(position)
 
-            particule.particule(position)
 
-
-            print(METEO)
-            print("\n")
-            print(CLIMAT)
-            print("\n")
-            print(TRAFIQUE)
-            print("\n")
-            print(VENT)
-            print("\n")
-            print(PARTICULE)
-            print("\n")
-            print(PRESSION)
-            print('\n\n\n')
+            #print(METEO)
+            #print("\n")
+            #print(CLIMAT)
+            #print("\n")
+            #print(TRAFIQUE)
+            #print("\n")
+            #print(VENT)
+            #print("\n")
+            #print(PARTICULE)
+            #print("\n")
+            #print(PRESSION)
+            #print('\n\n\n')
 
 
 
