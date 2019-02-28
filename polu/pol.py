@@ -79,8 +79,8 @@ PARTICULE = {'0_20':0,
 
 class couleur_ciel:
 
-    def recherche_video(self, lieu, path):
-        self.lieu = lieu
+    def recherche_image(self, path):
+
         self.path = path
         liste = []
 
@@ -91,45 +91,27 @@ class couleur_ciel:
         page = r.content
         soup = BeautifulSoup(page, "html.parser")
     
-        propriete = soup.find_all("article")
+        propriete = soup.find_all("script")
         for i in propriete:
             liste.append(i.get_text())
     
         return liste
 
     
-    def play(self, video):
-        
-        self.video = video
-        
-        window = pyglet.window.Window(fullscreen = True)
-        #window = pyglet.window.Window(300,300)
-        player = pyglet.media.Player() 
-        MediaLoad = pyglet.media.load(self.video)  
-        player.queue(MediaLoad) 
-        player.play()
-         
-        @window.event
-        def on_draw():
-            time.sleep(0)
-            window.clear()
-            player.get_texture().blit(0,0)
-        
-        pyglet.app.run()
+
 
     def lieu(self, lieu):
         self.lieu = lieu
 
-        
-        
+    
         if lieu == "Paris" or lieu == "paris":
-            path = "https://www.viewsurf.com/univers/ville/vue/10358-374971054-france-ile-de-france-paris-tour-eiffel"
-            video = couleur_ciel.recherche_video(self, lieu, path)
-            video = video[1][109:172]
-            urllib.request.urlretrieve(video, "paris.mp4")
-            #on affiche l'image
+            path = "https://www.viewsurf.com/univers/ville/vue/16924-france-ile-de-france-paris-la-defense"
+            image = couleur_ciel.recherche_image(self, path)
+            image = image[11][628:702]
+            urllib.request.urlretrieve(image, "paris.jpg")
 
-            couleur_ciel.play(self, "paris.mp4")
+            return "paris.jpg"
+
             
     def mask(self, image):
         self.image = image
@@ -622,8 +604,8 @@ if __name__ == "__main__":
 
 
     #mettre un form
-
-    yo.lieu("Paris")
+    #a = form
+    #b = yo.lieu(a)
 
 
     for i in liste_dossier:
@@ -634,7 +616,7 @@ if __name__ == "__main__":
 
             print(i)
             
-            #mask = yo.mask(i)
+            #mask = yo.mask(i) <- mask = yo.mask(b)
             
             #couleur_du_ciel = yo.ciel_terre(mask)
             #yo.analyse_ciel_couleur(couleur_du_ciel)
