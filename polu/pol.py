@@ -79,7 +79,7 @@ PARTICULE = {'0_20':0,
 
 class couleur_ciel:
 
-    def recherche_image(self, path):
+    def recherche_image_paris(self, path):
 
         self.path = path
         liste = []
@@ -97,20 +97,53 @@ class couleur_ciel:
     
         return liste
 
-    
+    def recherche_image_lyon(self, path):
+
+        self.path = path
+        liste = []
+
+        
+        r = requests.get(path)
+
+
+        page = r.content
+        soup = BeautifulSoup(page, "html.parser")
+
+
+        liste.append(str(soup))
+        return liste
 
 
     def lieu(self, lieu):
         self.lieu = lieu
 
     
-        if lieu == "Paris" or lieu == "paris":
+        if self.lieu == "Paris" or self.lieu == "paris":
+            
             path = "https://www.viewsurf.com/univers/ville/vue/16924-france-ile-de-france-paris-la-defense"
-            image = couleur_ciel.recherche_image(self, path)
+            image = couleur_ciel.recherche_image_paris(self, path)
             image = image[11][628:702]
             urllib.request.urlretrieve(image, "paris.jpg")
 
             return "paris.jpg"
+
+        elif self.lieu == "Marseille" or self.lieu == "marseille":
+            pass
+
+        elif self.lieu == "Lyon" or self.lieu == "lyon":
+            
+            path = "https://fr.webcams.travel/webcam/1511302382-lyon-radisson-blu"
+            image = couleur_ciel.recherche_image_lyon(self, path)
+            image = image[0][23207:23291]
+            urllib.request.urlretrieve(str(image), "lyon.png")
+
+
+
+
+        elif self.lieu == "Pekin" or self.lieu == "pekin":
+            pass
+
+
 
             
     def mask(self, image):
@@ -602,7 +635,7 @@ if __name__ == "__main__":
 
     liste_dossier = os.listdir(PATH_DOSSIER)
 
-
+    yo.lieu("lyon")
     #mettre un form
     #a = form
     #b = yo.lieu(a)
