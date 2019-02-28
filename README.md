@@ -6,6 +6,8 @@
 
 #et avance sur le site faut pas une petite averse comme staprem faut une tempete fin faudra voir enfete les m cube et si y'a une baisse
 
+#et si tapell des  gens pas besoin de prendre un accent ok ? presente toi et tout mais en meme temps en physique jvoulais pas qu'ils disent que jy étais pas ^^ dailleurs j'avais pas a ma reponse jtai plusss focus sur laccent
+
 #-------------------------------------------------important
 
 #https://www.science-emergence.com/Ar...t-avec-python/
