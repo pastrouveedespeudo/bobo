@@ -4,7 +4,7 @@
 
 #souviens toi c juste un site pour dire attention la pollution et tout faut juste des graphes et des sites pour dire attention pollution
 
-#et avance sur le site faut pas une petite averse comme staprem faut une tempete 
+#et avance sur le site faut pas une petite averse comme staprem faut une tempete fin faudra voir enfete les m cube et si y'a une baisse
 
 #-------------------------------------------------important
 
