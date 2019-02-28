@@ -1,22 +1,10 @@
 #bobo
 
-#ok met reorganise ta pensée,
+#gros chui incollable sur les anticyclones, sur les pressions en fevrier 2018 a lyon personne me prend entre 1020 et 1038 hpa
 
-#y'a pas dapprentissage ni de sortie ni de qualibrage automatique de spoids
+#faut que jaille graille 
 
-#il faut mettre des images ET toutes tes données et donnée une sortie chiffré
-
-#ensuite selon les jours et les heures dire selon tes truks des prédictions mais va falloir apprendre et tu verras la diff
-
-#et des diagramme pluie pas pluis
-
-#trouvé des mecs a paris ok mais le type c pas sil pleut ou pas y mdis non puis oui et y c pas a quelle heure grrrrr, a lyon ok a marseille... et a pekin ... merdee y'a la webcam sinon, oki
-
-#prendre des photo reguleirement
-
-#reorganise ton code en ffonction de tt ca faut que ton site:: propose une espece de prédiction et des diagrammes
-
-#mais pas besoin des images alors si ? reflechis pose toi
+# o ublie pas de prendre la polu avant de dormir
 
 #-------------------------------------------------important
 
