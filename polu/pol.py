@@ -65,7 +65,15 @@ SAISON = {'primtemps':0,
           'hiver':0,
           'automne':0,
 }
-    
+
+BOUCHON = {'non':0,
+           'petit':0,
+           'moyen':0,
+           'grand':0,
+           'assez grand':0,
+           'tres grand':0,
+}
+        
 class météo:
 
     def recuperation_lieu(self, image):
@@ -158,7 +166,6 @@ class météo:
     
 
 
-    
 
 class climat:
 
@@ -325,18 +332,54 @@ class trafique:
         liste_bouchon = []
         for i in bouchon:
             try:
+                if i == ",":
+                    liste_bouchon.append(".")
                 i = int(i)
-                liste_bouchon.append(i)
+                liste_bouchon.append(str(i))
             except:
                 pass
 
+        liste2 = []
+        a = ','.join(liste_bouchon)
+        for i in a:
+            print(i)
+            if i == ",":
+                pass
+            else:
+                liste2.append(i)
+     
+        b = "".join(liste2)
+        try:
+            b = float(b)
+        except:
+            pass
+        try:
+            b = int(b)
+        except:
+            pass
 
-        for i in liste_bouchon:
-            i = str(i)
-
-            #trouve un truk ou y'a du bouchon met les en une seul chaine puis re int
-        print(liste_bouchon)
         
+ 
+        elif b == 0 or b == 0.0:
+            BOUCHON['non'] += 1 
+
+    
+        elif b > 0  and b <= 5:
+            BOUCHON['petit'] += 1 
+
+
+        elif b > 5 and b <= 9:
+            BOUCHON['moyen'] += 1 
+
+        elif b > 9 and b <= 15:
+            BOUCHON['grand'] += 1 
+
+        elif b > 15 and b <= 20:
+            BOUCHON['assez grand'] += 1 
+
+        elif b > 20:
+            BOUCHON['tres grand'] += 1 
+
         
         
     def voiture_presente(self):
@@ -625,6 +668,14 @@ if __name__ == "__main__":
         }
 
 
+        BOUCHON = {'non':0,
+                   'petit':0,
+                   'moyen':0,
+                   'grand':0,
+                   'assez grand':0,
+                   'tres grand':0,
+        }
+        
 
 
 
