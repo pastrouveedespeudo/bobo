@@ -45,11 +45,39 @@ mercredi 27 moyenne 15/18 degres PARIS il a fait bo
 
 
 
-#aller encore 20 data comme ca et ca peut apsser y'a eu une baisse de pollution mais y mdis gros soleil,
-#cam tour eiffel == tout gris
 
-#ensuite y dmis si il a plus des torrents jcrois c lheure mais... ca fais 5h que jme dis ca doit et relheure et que jle crois pas ^^ 
+03/*01
 
+
+
+
+4 37
+5 25
+6 25
+7 26
+8 30
+9 30
+10 28
+
+11 24
+12 21
+13 20
+14 31
+15 37
+16 42
+17 39
+18 36
+19 32
+20 46
+21 45
+22 44
+
+
+
+
+
+
+PARIS BELLE VILLE RENOM2 DANS LE MONDE 5000 enfants
 
 
 
@@ -107,7 +135,28 @@ MARSEIL il a fait bo
 22 34
 23
 
+1/03
 
+
+4 34
+5 30
+6 26
+7 22
+8 22
+9 28
+10 29
+11 31 vent
+12 37
+13 37
+14 41
+15 41
+16 39
+17 40
+18 36
+19 37
+20 39
+21 40
+22 43
 
 
 
@@ -159,6 +208,36 @@ LYON il a fait bo
 
 
 
+01/03
+
+4 25
+5 27
+6 41
+7 54
+8 50
+9 31
+10 25
+11 31
+12 31
+13 35
+14 1
+15 33 vent
+16 32 y'a eu du vent
+17 33
+18 30
+19  2
+20 21
+21 21
+22 20
+
+
+
+12-13h pluit
+16h averse lyon
+17h pluie
+
+
+
 PEKIN heure local il a fait bo
 16h 142
 17 144
@@ -204,8 +283,29 @@ PEKIN heure local il a fait bo
 6
 7
 8
+9
+10
+11
+12
+13
 
+03/01
 
+17 208
+18 226
+19 227
+20 238
+21 244
+22 257
+23 257
+24 260
+1 263
+2 261
+3 227
+4 223
+5 22
+6
+7
 
 
 
