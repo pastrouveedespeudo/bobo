@@ -105,8 +105,8 @@ ACTIVITE_EXEPTIONNELLE = {'aggissement':0,
 
 }
 
-REGION_INDUSTRIEL_POLLUEE = {'oui':0;
-                             'non':0;
+REGION_INDUSTRIEL_POLLUEE = {'oui':0,
+                             'non':0,
 }
 
 
@@ -171,7 +171,7 @@ class météo:
         elif vent <= 8 and vent > 6:
             VENT['fort'] += 1
 
-        elif vent <= 12 and venet > 8:
+        elif vent <= 12 and vent > 8:
             VENT['tres fort'] += 1
 
 
@@ -359,69 +359,72 @@ class trafique:
     def bouchons(self, lieu):
         self.lieu = lieu
 
- 
-        path = "https://www.moncoyote.com/fr/info-trafic-{}.html".format(lieu)
-        r = requests.get(path)
+        try:
+            path = "https://www.moncoyote.com/fr/info-trafic-{}.html".format(self.lieu)
+          
+            r = requests.get(path)
 
-        liste = []
+            liste = []
 
-        page = r.content
-        soup = BeautifulSoup(page, "html.parser")
-    
-        liste.append(str(soup))
-        bouchon = liste[0][28678:28685]
+            page = r.content
+            soup = BeautifulSoup(page, "html.parser")
+        
+            liste.append(str(soup))
+            bouchon = liste[0][28678:28685]
+            
 
-        liste_bouchon = []
-        for i in bouchon:
-            try:
+            liste_bouchon = []
+            for i in bouchon:
+                try:
+                    if i == ",":
+                        liste_bouchon.append(".")
+                    i = int(i)
+                    liste_bouchon.append(str(i))
+                except:
+                    pass
+
+            liste2 = []
+            a = ','.join(liste_bouchon)
+            for i in a:
+                #print(i)
                 if i == ",":
-                    liste_bouchon.append(".")
-                i = int(i)
-                liste_bouchon.append(str(i))
+                    pass
+                else:
+                    liste2.append(i)
+         
+            b = "".join(liste2)
+            try:
+                b = float(b)
+            except:
+                pass
+            try:
+                b = int(b)
             except:
                 pass
 
-        liste2 = []
-        a = ','.join(liste_bouchon)
-        for i in a:
-            #print(i)
-            if i == ",":
-                pass
-            else:
-                liste2.append(i)
-     
-        b = "".join(liste2)
-        try:
-            b = float(b)
-        except:
-            pass
-        try:
-            b = int(b)
-        except:
-            pass
+           
+            if b == 0 or b == 0.0:
+                BOUCHON['non'] += 1 
 
         
-        if b == 0 or b == 0.0:
-            BOUCHON['non'] += 1 
-
-    
-        elif b > 0  and b <= 5:
-            BOUCHON['petit'] += 1 
+            elif b > 0  and b <= 5:
+                BOUCHON['petit'] += 1 
 
 
-        elif b > 5 and b <= 9:
-            BOUCHON['moyen'] += 1 
+            elif b > 5 and b <= 9:
+                BOUCHON['moyen'] += 1 
 
-        elif b > 9 and b <= 15:
-            BOUCHON['grand'] += 1 
+            elif b > 9 and b <= 15:
+                BOUCHON['grand'] += 1 
 
-        elif b > 15 and b <= 20:
-            BOUCHON['assez grand'] += 1 
+            elif b > 15 and b <= 20:
+                BOUCHON['assez grand'] += 1 
 
-        elif b > 20:
-            BOUCHON['tres grand'] += 1 
+            elif b > 20:
+                BOUCHON['tres grand'] += 1
 
-        
+        except:
+            pass
     
     def autoroute_proximité(self):
         pass
@@ -743,8 +746,8 @@ class particule:
 
         try:
             code_postal = propriete[5649:5654]
-        
             code_postal = int(code_postal)
+            
         except:
             pass
 
@@ -787,27 +790,6 @@ class particule:
             
 
 
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-    def agriculture(self):
-        pass
-    #pourcentage dans la ville
-
-    def effet_de_serre(self):
-        pass
-    #trouver ou y'a cet efet
 
 
     
@@ -883,62 +865,62 @@ if __name__ == "__main__":
 
     particule = particule()
 
-    liste_dossier = ["lyon", "paris", "marseille"]
+    liste_dossier = ["paris","lyon","marseille"]
 
-    particule.industrie("lyon")
+    
     
     for i in liste_dossier:
-        if i == "pol.py" or i == "essais.py" or i == "ciel.png"\
-           or i == "ciel.jpg":
-            pass
-        else:
+        
+        print(i)
+        
+        
+        position = meteo.recuperation_lieu(i)
+        trafique.bouchons(i)
+        meteo.recuperation_donnée(position)
+        trafique.habitude()
 
-            #print(i)
-            
-            
-             
+        température.recuperation_donnée(position)
 
-            position = meteo.recuperation_lieu(i)
-            #trafique.bouchons("lieu")
-            #meteo.recuperation_donnée(position)
-            #trafique.habitude()
+        trafique.trafique_circulation()
 
-            #température.recuperation_donnée(position)
+        particule.particule(position)
 
-            #trafique.trafique_circulation()
-            #trafique.bouchon()
-            #particule.particule(position)
+        trafique.activité_execptionnelle(position)
 
-            #trafique.activité_execptionnelle(position)
-            #print(METEO)
-            #print("\n")
-            #print(CLIMAT)
-            #print("\n")
-            #print(TRAFIQUE)
-            #print("\n")
-            #print(VENT)
-            #print("\n")
-            #print(PRESSION)
-            #print("\n")
-            #print(SAISON)
-            #print("\n")
-            #print(BOUCHON)
-            #print("\n")
-            #print(JOUR)
-            #print("\n")
-            #print(POINTE)
-            #print("\n")
-            #print(WEEKEND)
-            #print("\n")
-            #print(VILLE_POLLUE2018)
-            #print("\n")
-            #print(POPULATION_ACTIVE_HABITANT)
-            #print("\n")
+        particule.industrie(i)
+
+        
+        print(METEO)
+        print("\n")
+        print(CLIMAT)
+        print("\n")
+        print(TRAFIQUE)
+        print("\n")
+        print(VENT)
+        print("\n")
+        print(PRESSION)
+        print("\n")
+        print(SAISON)
+        print("\n")
+        print(BOUCHON)
+        print("\n")
+        print(POINTE)
+        print("\n")
+        print(WEEKEND)
+        print("\n")
+        print(VILLE_POLLUE2018)
+        print("\n")
+        print(POPULATION_ACTIVE_HABITANT)
+        print("\n")
+        print(REGION_INDUSTRIEL_POLLUEE)
+        print("\n")
+        print(ACTIVITE_EXEPTIONNELLE)
+        print("\n")
 
 
 
-            
-            #print('\n\n\n')
+        
+        #print('\n\n\n')
 
 
 
@@ -1053,8 +1035,8 @@ if __name__ == "__main__":
         }
 
 
-        REGION_INDUSTRIEL_POLLUEE = {'oui':0;
-                                     'non':0;
+        REGION_INDUSTRIEL_POLLUEE = {'oui':0,
+                                     'non':0,
         }
 
 
