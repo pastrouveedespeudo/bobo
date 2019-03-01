@@ -240,17 +240,23 @@ class climat:
         mois = date.month
         jour = date.day
 
-
-        if jour >= 21 and mois == "décembre":
+       
+        
+        if mois == 12 or mois == 1\
+           or mois == 2:
             SAISON['hiver'] += 1 #pollution au bois
 
-        elif jour >= 20 and mois == "mars":
+        elif mois == 3 or mois == 4\
+             or mois == 5:
             SAISON['primtemps'] += 1
 
-        elif jour >= 21 and mois == "juin":
+        elif mois == 6 or mois == 7\
+             or mois == 8\
+             or mois == 9:
             SAISON['été'] += 1 
 
-        elif jour >= 23 and mois == "septembre":
+        elif mois == 10 or mois == 11\
+             or mois == 12:
             SAISON['automne'] += 1
 
 
@@ -858,13 +864,15 @@ if __name__ == "__main__":
 
 
     meteo = météo()
+    climat = climat()
 
-    température = climat()
+    
 
     trafique = trafique()
 
     particule = particule()
 
+    socio = socio()
     liste_dossier = ["paris","lyon","marseille"]
 
     
@@ -872,23 +880,25 @@ if __name__ == "__main__":
     for i in liste_dossier:
         
         print(i)
-        
-        
         position = meteo.recuperation_lieu(i)
-        trafique.bouchons(i)
         meteo.recuperation_donnée(position)
-        trafique.habitude()
 
-        température.recuperation_donnée(position)
+        
+        
+        trafique.bouchons(i)
+        
+        trafique.habitude()
+        climat.saison()
+        climat.recuperation_donnée(position)
 
         trafique.trafique_circulation()
 
         particule.particule(position)
 
         trafique.activité_execptionnelle(position)
-
+        particule.france(i)
         particule.industrie(i)
-
+        socio.habitant(i)
         
         print(METEO)
         print("\n")
