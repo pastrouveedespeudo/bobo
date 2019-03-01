@@ -1,8 +1,8 @@
 #bobo
 
-#gros chui incollable sur les anticyclones, sur les pressions en fevrier 2018 a lyon personne me prend entre 1020 et 1038 hpa
+#stop fini les truk en rouge et fait si ce combo = tant alors il se peut qu'il y est tant ainsi de suite
 
-#faut que jaille graille 
+#ok rajoute le nombre dabonnement tcl mais c tout ou un autre pass
 
 # o ublie pas de prendre la polu avant de dormir
 
