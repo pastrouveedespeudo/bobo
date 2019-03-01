@@ -2,15 +2,7 @@
 
 #a faire 1--
 
-#pour les bouchons que pour lyon y'a, sinon c'est dans autre code source et ca marche pas,
-
-#fais la recherche sur le truk du cadre enfete chai pas.... ca me tane la^^ jcroyais avoir pleins de donnée j'en ai a peine 10 bon go faire l'analyse
-
-#a faire 2-- truk des population marche pas
-
-#a faire 3-- les saisons non plus
-
-a faire4 -- y'a un truk bizzare idth au debut, on sait pas ou est bouchon
+#si tu les appeles pas aussi t'as bo refaire le code^^ bon go manger
 
 #-------------------------------------------------important
 
