@@ -73,6 +73,24 @@ BOUCHON = {'non':0,
            'assez grand':0,
            'tres grand':0,
 }
+
+POINTE = {'pointe':0,
+}
+
+WEEKEND = {'weekend':0,
+}
+
+VILLE_POLLUE2018 = {'VILLE_POLLUE2018':0,
+                    'un':0,
+                    'deux':0,
+                    'trois':0,
+                    'quattre':0,
+}
+
+POPULATION_ACTIVE_HABITANT = {'sup1M':0,
+                              'sup500K':0,
+                              'supp300K':0,
+}
         
 class météo:
 
@@ -115,7 +133,7 @@ class météo:
         elif méteo == "Clear":
             METEO['beau_temps'] +=1
 
-        print(data)
+        #print(data)
         try:
             vent_degres = data['wind']['deg']
         except:
@@ -146,11 +164,11 @@ class météo:
 
 
 
-        if pression >= 1035:
+        if pression >= 1030:#anti
             PRESSION['forte'] += 1
 
         elif pression <= 1013:
-            PRESSION['faible'] += 1
+            PRESSION['faible'] += 1#depression
 
         else:
             PRESSION['normale'] += 1
@@ -161,9 +179,6 @@ class météo:
 
 
  
-
-
-    
 
 
 
@@ -300,18 +315,28 @@ class trafique:
             
 
     def habitude(self):
-        agé = [9, 15 ,18]
-        enfant = [8, 12, 14, 16, 17]
-        pointe = []#reverifie les pointes
+
+        pointe = [8,9,16,17,18,19]#reverifie les pointes
+        jour = ['samedi', 'dimanche']
+
+        
+        date = datetime.datetime.now()
+
+        heure = date.hour
+        jour = date.weekday()
+        
+        #print(heure, jour)
+
+        for i in pointe:
+            if heure == i:
+                POINTE['pointe'] += 1
 
 
 
+        if jour == 5 or jour == 6:
+            WEEKEND['WEEKEND'] += 1
 
-            #activité le mercredi samedi jeudi soir ?
-            #savoir quand est ce que les types de gens sortent:
-        #vieux 9 15 18
-        #jeune enfant 8 12h/14h/16 /17
-        #moyen vieux heure de pointe 
+    
 
 
     def bouchons(self, lieu):
@@ -359,8 +384,7 @@ class trafique:
             pass
 
         
- 
-        elif b == 0 or b == 0.0:
+        if b == 0 or b == 0.0:
             BOUCHON['non'] += 1 
 
     
@@ -462,11 +486,40 @@ class particule:
             PARTICULE['>200'] += 1
 
 
-    def france(self):
+    def france(self, lieu):
+        self.lieu = lieu
+
+        liste = ["lyon", "marseille","paris","roubaix"]
+
+
+        c = 0
+        for i in liste:
+            if self.lieu == i:
+                VILLE_POLLUE2018['VILLE_POLLUE2018'] += 1
+                
+            if c == 1:
+                VILLE_POLLUE2018['un'] += 1
+
+            elif c == 2:
+                VILLE_POLLUE2018['deux'] += 1
+
+            elif c == 3:
+                VILLE_POLLUE2018['trois'] += 1
+
+            elif c == 4:
+                VILLE_POLLUE2018['quattre'] += 1
+
+                
+            c+=1
+        
+
+
+
+
+
+
+    def autoroute(self):
         pass
-    #ici la liste des villes les plus pollués
-
-
     def industrie(self):
         pass
     #les site industriel les plus gros
@@ -507,12 +560,23 @@ class geographie:
     
 class socio:
 
-    def habitant(self):
-        pass
-    #type de population ok vieux = vieille voiture
-        #et pas de deplacement aux horriare de point car stratégie de leur expérience
-    #type economique region riche? vieille voiture
-    
+    def habitant(self, lieu):
+        self.lieu = lieu
+
+        lyon = 328469
+        paris = 1350800 
+        marseille = 762480 
+
+        if self.lieu == 'lyon':
+            POPULATION_ACTIVE_HABITANT['supp300K'] += 1
+
+        if self.lieu == 'paris':
+            POPULATION_ACTIVE_HABITANT['sup1M'] += 1
+
+        if self.lieu == 'marseille':
+            POPULATION_ACTIVE_HABITANT['sup500K'] += 1
+
+        #population active de 15 a 59 ans
 
     def asmatique(self):
         pass
@@ -561,7 +625,8 @@ if __name__ == "__main__":
 
     liste_dossier = ["lyon", "paris", "marseille"]
 
-    trafique.bouchons("lyon")
+    
+    
     for i in liste_dossier:
         if i == "pol.py" or i == "essais.py" or i == "ciel.png"\
            or i == "ciel.jpg":
@@ -571,11 +636,12 @@ if __name__ == "__main__":
             #print(i)
             
             
- 
+             
 
             position = meteo.recuperation_lieu(i)
-            
+            #trafique.bouchons("lieu")
             #meteo.recuperation_donnée(position)
+            #trafique.habitude()
 
             #température.recuperation_donnée(position)
 
@@ -595,6 +661,25 @@ if __name__ == "__main__":
             #print(PARTICULE)
             #print("\n")
             #print(PRESSION)
+            #print("\n")
+            #print(SAISON)
+            #print("\n")
+            #print(BOUCHON)
+            #print("\n")
+            #print(JOUR)
+            #print("\n")
+            #print(POINTE)
+            #print("\n")
+            #print(WEEKEND)
+            #print("\n")
+            #print(VILLE_POLLUE2018)
+            #print("\n")
+            #print(POPULATION_ACTIVE_HABITANT)
+            #print("\n")
+
+
+
+            
             #print('\n\n\n')
 
 
@@ -678,7 +763,41 @@ if __name__ == "__main__":
         
 
 
+        POINTE = {'pointe':0,
+        }
+
+        WEEKEND = {'weekend':0,
+        }
+
+
+        VILLE_POLLUE2018 = {'VILLE_POLLUE2018':0,
+                            'un':0,
+                            'deux':0,
+                            'trois':0,
+                            'quattre':0,
+        }
+
+
+        POPULATION_ACTIVE_HABITANT = {'sup1M':0,
+                                      'sup500K':0,
+                                      'supp300K':0,
+        }
+
+
+
+#refocus le traitement pas des 3 villes mais de ville en général
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+        
