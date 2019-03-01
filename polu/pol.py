@@ -1,4 +1,3 @@
-
 #pour dnas 9 jours jb du futur, yaura un bug, pour paris pour les manif sert toi de marseille en gros essais de faire un int pour 2 chaine
 #sinon on isole le chiffre oauis fin tu verra jtm
 
@@ -106,7 +105,9 @@ ACTIVITE_EXEPTIONNELLE = {'aggissement':0,
 
 }
 
-
+REGION_INDUSTRIEL_POLLUEE = {'oui':0;
+                             'non':0;
+}
 
 
 class météo:
@@ -358,7 +359,7 @@ class trafique:
     def bouchons(self, lieu):
         self.lieu = lieu
 
-        #https://www.moncoyote.com/fr/info-trafic-bordeaux.html + accident ect
+ 
         path = "https://www.moncoyote.com/fr/info-trafic-{}.html".format(lieu)
         r = requests.get(path)
 
@@ -481,7 +482,6 @@ class trafique:
 
 
         
-
     def requete_paris_traffique(self, path):
         self.path = path
 
@@ -728,17 +728,76 @@ class particule:
         
 
 
-    def industrie(self):
-        pass
-    #les site industriel les plus gros
+    def industrie(self, lieu):
+        self.lieu = lieu
 
 
-    def bois(self):
-        pass
-    #essais de trouver un truk sur le chauffage au bois
-    
-    def ville_fleuri(self):
-        pass
+        path = "https://fr.wikipedia.org/wiki/{}".format(self.lieu) 
+
+        r = requests.get(path)
+
+        page = r.content
+        soup = BeautifulSoup(page, "html.parser")
+        propriete = soup.find('table',attrs={"class":u"infobox_v2"})
+        propriete = str(propriete)
+
+        try:
+            code_postal = propriete[5649:5654]
+        
+            code_postal = int(code_postal)
+        except:
+            pass
+
+        liste = []
+
+        path = "http://www.cartesfrance.fr/recherche/?q={}".format(code_postal)
+
+        r = requests.get(path)
+
+        page = r.content
+        soup = BeautifulSoup(page, "html.parser")
+        
+        propriete = soup.find_all('Département')
+
+
+
+
+        pole_poluant = {'1':'Nord',
+                        '2':'Bouches-du-Rhône',
+                        '3':'Moselle',
+                        '4':'Seine-Maritime',
+                        '5':'Loire-Atlantique',
+                        '6':'Haute-Normandie',
+                        '7':'Meurthe-et-Moselle',
+                        '8':'Seine-Maritime',
+                        '9':'Rhône'
+
+                        }
+
+
+        for i in pole_poluant.keys():
+            a = str(soup).find(str(pole_poluant[i]))
+        #    print(a,pole_poluant[i])
+
+        if a > 0:
+            REGION_INDUSTRIEL_POLLUEE['oui'] += 1
+
+        else:
+            REGION_INDUSTRIEL_POLLUEE['non'] += 1
+            
+
+
+
+
+
+
+
+
+
+            
+
+
+
 
 
 
@@ -781,13 +840,7 @@ class socio:
 
         if self.lieu == 'marseille':
             POPULATION_ACTIVE_HABITANT['sup500K'] += 1
-
         #population active de 15 a 59 ans
-
-
-    def asmatique(self):
-        pass
-    #taux asmatique
 
 
 
@@ -832,7 +885,7 @@ if __name__ == "__main__":
 
     liste_dossier = ["lyon", "paris", "marseille"]
 
-    trafique.activité_execptionnelle("marseille")
+    particule.industrie("lyon")
     
     for i in liste_dossier:
         if i == "pol.py" or i == "essais.py" or i == "ciel.png"\
@@ -856,7 +909,7 @@ if __name__ == "__main__":
             #trafique.bouchon()
             #particule.particule(position)
 
-
+            #trafique.activité_execptionnelle(position)
             #print(METEO)
             #print("\n")
             #print(CLIMAT)
@@ -1000,7 +1053,9 @@ if __name__ == "__main__":
         }
 
 
-
+        REGION_INDUSTRIEL_POLLUEE = {'oui':0;
+                                     'non':0;
+        }
 
 
 
