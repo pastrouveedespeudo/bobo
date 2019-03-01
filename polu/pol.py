@@ -87,6 +87,7 @@ VILLE_POLLUE2018 = {'VILLE_POLLUE2018':0,
                     'deux':0,
                     'trois':0,
                     'quattre':0,
+                    'non':0,
 }
 
 POPULATION_ACTIVE_HABITANT = {'sup1M':0,
@@ -717,9 +718,7 @@ class particule:
 
         c = 0
         for i in liste:
-            if self.lieu == i:
-                VILLE_POLLUE2018['VILLE_POLLUE2018'] += 1
-                
+
             if c == 1:
                 VILLE_POLLUE2018['un'] += 1
 
@@ -731,6 +730,9 @@ class particule:
 
             elif c == 4:
                 VILLE_POLLUE2018['quattre'] += 1
+            else:
+                VILLE_POLLUE2018['non'] += 1
+                
 
                 
             c+=1
@@ -838,8 +840,14 @@ class socio:
 class analyse:
 
     def analyse(self):
-        pass#faire les combo et prendre le meilleur sauf que y'a pas de combo a faire j'ai deja le resurtat...
 
+        
+        print(METEO)
+        print("\n")
+        print(VILLE_POLLUE2018)
+        print("\n")
+        print(TRAFIQUE)
+        print("\n")
 
 
     
@@ -848,7 +856,28 @@ class analyse:
 
 
     def prédiction(self):
-        pass
+        print(CLIMAT)
+        print("\n")
+
+        print(VENT)
+        print("\n")
+        print(PRESSION)
+        print("\n")
+        print(SAISON)
+        print("\n")
+        print(BOUCHON)
+        print("\n")
+        print(POINTE)
+        print("\n")
+        print(WEEKEND)
+        print("\n")
+
+        print(POPULATION_ACTIVE_HABITANT)
+        print("\n")
+        print(REGION_INDUSTRIEL_POLLUEE)
+        print("\n")
+        print(ACTIVITE_EXEPTIONNELLE)
+        print("\n")
     #selon les truk faire des ca sera entre tant et tant de pollution
     #tentre t'as ville et ca fait des recherches automatiquement
 
@@ -873,6 +902,9 @@ if __name__ == "__main__":
     particule = particule()
 
     socio = socio()
+
+    analyse = analyse()
+    
     liste_dossier = ["paris","lyon","marseille"]
 
     
@@ -883,8 +915,6 @@ if __name__ == "__main__":
         position = meteo.recuperation_lieu(i)
         meteo.recuperation_donnée(position)
 
-        
-        
         trafique.bouchons(i)
         
         trafique.habitude()
@@ -900,32 +930,9 @@ if __name__ == "__main__":
         particule.industrie(i)
         socio.habitant(i)
         
-        print(METEO)
-        print("\n")
-        print(CLIMAT)
-        print("\n")
-        print(TRAFIQUE)
-        print("\n")
-        print(VENT)
-        print("\n")
-        print(PRESSION)
-        print("\n")
-        print(SAISON)
-        print("\n")
-        print(BOUCHON)
-        print("\n")
-        print(POINTE)
-        print("\n")
-        print(WEEKEND)
-        print("\n")
-        print(VILLE_POLLUE2018)
-        print("\n")
-        print(POPULATION_ACTIVE_HABITANT)
-        print("\n")
-        print(REGION_INDUSTRIEL_POLLUEE)
-        print("\n")
-        print(ACTIVITE_EXEPTIONNELLE)
-        print("\n")
+
+        analyse.analyse()
+
 
 
 
@@ -1021,7 +1028,7 @@ if __name__ == "__main__":
         }
 
 
-        VILLE_POLLUE2018 = {'VILLE_POLLUE2018':0,
+        VILLE_POLLUE2018 = {'non':0,
                             'un':0,
                             'deux':0,
                             'trois':0,
@@ -1053,7 +1060,54 @@ if __name__ == "__main__":
 
 
 
+#-----------------
 
+METEO = {'beau_temps':1,
+         'nuageux':0,
+         'pluie':0,
+}
+
+CLIMAT = {'> 0':0,
+          '0_10':0,
+          '11_20':0,
+          '21_30':0,
+          '31_40':0,
+          '>40':1,
+}
+
+
+
+
+
+def fonction(dico):
+
+    for cle, valeur in dico.items():
+        if valeur == 1:
+            print(cle)
+            
+ 
+
+fonction(METEO)
+fonction(CLIMAT)
+
+
+1er == > trafic les truk puis un petit rond = recap
+
+2eme == > meteo les truk puis un petit rond = recap
+
+3eme == > villue polué les truk puis un petit rond = recap
+
+faire un truk avec chaaaque condition non reflechis encore pcque ca reviendra au meme
+
+du coup faire genre depart + 2 regulier -1 heure + 1 non heure -2
+
+beau + 2, nuage oui mais ca prend en compte les nuages de pollu ? sinon 0 et pluie -2
+
+un truk comme ca peut etre et chaque combi a son pm sup ou inf chai pas reflechis
+
+
+pcque y'a 42 sous rond et ca va faire un paquet de repetition chais pas ok reflechis
+#-----------------
 
 
 
