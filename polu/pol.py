@@ -91,7 +91,20 @@ POPULATION_ACTIVE_HABITANT = {'sup1M':0,
                               'sup500K':0,
                               'supp300K':0,
 }
-        
+
+
+
+ACTIVITE_EXEPTIONNELLE = {'aggissement':0,
+                          'manifestation':0,
+                          'circulation dense':0,
+                          'condition a polution':0,
+
+
+
+}
+
+
+    
 class météo:
 
     def recuperation_lieu(self, image):
@@ -367,7 +380,7 @@ class trafique:
         liste2 = []
         a = ','.join(liste_bouchon)
         for i in a:
-            print(i)
+            #print(i)
             if i == ",":
                 pass
             else:
@@ -405,25 +418,162 @@ class trafique:
             BOUCHON['tres grand'] += 1 
 
         
+    
+    def autoroute_proximité(self):
+        pass
+
+
+    def requete_lyon_traffique(self, path):
+        self.path = path
+
+        liste = []
+        r = requests.get(path)
+
+
+        page = r.content
+        soup = BeautifulSoup(page, "html.parser")
+    
+        propriete = soup.find('div',attrs={"class":u"news"})
         
-    def voiture_presente(self):
-        pass
-    #savoir quel type de voiture est présente sur la voie
+        
+        agissement = str(propriete).find(str("pollution"))
+        agissement2 = str(propriete).find(str("circulation différenciée"))
+
+        if agissement >= 0 and agissement2 >= 0:
+            ACTIVITE_EXEPTIONNELLE['aggissement'] += 1
 
 
 
-    def travaux(self):
-        pass
-    #les travaux impactent ils la pollution? si oui fais chier pcque faut aussi chercher si c
-    #une rue principale
+        trafic = str(propriete).find(str("circulation"))
+        trafic1 = str(propriete).find(str("dense"))
+        trafic2 = str(propriete).find(str("très dense"))
 
-    def essence(self):
-        pass
-    #savoir dans la semaine, dans les semaines quelles type dessence a ete le plus acheter
+        if trafic >= 0 and trafic1 >= 0 or trafic2 >= 0:
+            ACTIVITE_EXEPTIONNELLE['circulation dense'] += 1
+
+        manif = str(propriete).find(str("Manifestation"))
+        manif1 = str(propriete).find(str("manifestation"))
+  
+
+        if manif >= 0 or manif1 >=0 :
+            ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
+
+        news = [str(propriete)]
+        nombre = news[0][160:165]
+        nombre2 = []
+        for i in nombre:
+            
+            try:
+                i = int(i)
+                nombre2.append(i)
+
+            except:
+                pass
+
+        
+        if nombre2[0] > 0:
+            ACTIVITE_EXEPTIONNELLE['condition a polution'] += 1
 
 
-    def poid_lourd(self):
-        pass
+
+
+        
+
+    def requete_paris_traffique(self, path):
+        self.path = path
+
+        semaine = {'lundi':0, 'mardi':1, 'mercredi':2, 'jeudi':3, 'vendredi':4, 'samedi':5,
+                   'dimanche':6}
+
+        liste = [[],[]]
+        
+        date = datetime.datetime.now()
+        jour = date.day
+        jour_semaine = date.weekday()
+
+
+        liste = []
+        r = requests.get(path)
+        
+
+        page = r.content
+        soup = BeautifulSoup(page, "html.parser")
+    
+        propriete = soup.find_all("table")
+       
+
+        for i in propriete:
+            date = soup.find('span',attrs={"class":u"wday"})
+        
+
+
+        date = str(date)
+
+        lundi = str(date).find("lundi")
+        mardi = str(date).find("mardi")
+        mercredi = str(date).find("mercredi")
+        jeudi = str(date).find("jeudi")
+        vendredi = str(date).find("vendredi")
+        samedi = str(date).find("samedi")
+        dimanche = str(date).find("dimanche")
+        
+        if lundi > 0 :
+            a = 0
+        if mardi > 0 :
+            a = 1
+        if mercredi > 0 :
+            a = 2
+        if jeudi > 0 :
+            a = 3
+        if vendredi > 0 :
+            a = 4
+        if samedi > 0 :
+            a = 5
+        if dimanche > 0 :
+            a = 6
+
+        numero_mois = [date]
+        
+        numero_mois = numero_mois[0][33:35]
+        print(type(numero_mois))
+
+        num = []
+        for i in numero_mois:
+            try:
+                i = int(i)
+                num.append(i)
+                
+            except:
+                pass
+
+        print(a)
+        print(jour, jour_semaine)
+
+
+
+
+
+    def activité_execptionnelle(self, lieu):
+        self.lieu = lieu
+
+        
+        if self.lieu == "lyon":
+            path = "https://www.onlymoov.com/trafic/"
+            trafique.requete_lyon_traffique(path)
+
+            
+
+        elif self.lieu == "paris":
+            path = "https://paris.demosphere.net/manifestations-paris"
+            trafique.requete_paris_traffique(path)
+
+        elif self.lieu == "marseille":
+            path = ""
+            trafique.requete(path)
+
+
+
+
 
 
 class particule:
@@ -514,12 +664,6 @@ class particule:
         
 
 
-
-
-
-
-    def autoroute(self):
-        pass
     def industrie(self):
         pass
     #les site industriel les plus gros
@@ -541,6 +685,8 @@ class particule:
     def effet_de_serre(self):
         pass
     #trouver ou y'a cet efet
+
+
     
 class geographie:
 
@@ -548,14 +694,10 @@ class geographie:
         pass
     #dans un trou entre des montagnes? pres de la mer ect
     
-    def voisinage(self):
-        pass
-    #savoir si la ville d'a coté peux influer et donc rentre en jeu avec vent
 
 
-    def sol(self):
-        pass
-    #savoir si un sol influe
+
+
 
     
 class socio:
@@ -577,6 +719,7 @@ class socio:
             POPULATION_ACTIVE_HABITANT['sup500K'] += 1
 
         #population active de 15 a 59 ans
+
 
     def asmatique(self):
         pass
@@ -625,7 +768,7 @@ if __name__ == "__main__":
 
     liste_dossier = ["lyon", "paris", "marseille"]
 
-    
+    trafique.activité_execptionnelle("paris")
     
     for i in liste_dossier:
         if i == "pol.py" or i == "essais.py" or i == "ciel.png"\
@@ -658,8 +801,6 @@ if __name__ == "__main__":
             #print("\n")
             #print(VENT)
             #print("\n")
-            #print(PARTICULE)
-            #print("\n")
             #print(PRESSION)
             #print("\n")
             #print(SAISON)
@@ -685,8 +826,9 @@ if __name__ == "__main__":
 
 
 
-        #ecrire ca dans un fichier
-
+        #a comparer avec
+        #print(PARTICULE)
+     
     
             
 
@@ -784,8 +926,15 @@ if __name__ == "__main__":
         }
 
 
+        ACTIVITE_EXEPTIONNELLE = {'aggisement':0,
+                                  'manifestation':0,
+                                  'circulation dense':0,
+                                  'condition a polution':0,
 
-#refocus le traitement pas des 3 villes mais de ville en général
+
+
+        }
+
 
 
 
