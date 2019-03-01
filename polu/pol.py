@@ -1,4 +1,7 @@
-t'as oublié lheure putin nonnnnnnnnnnnnnnnnnnnnnnn chui en digestion en plus la
+
+#pour dnas 9 jours jb du futur, yaura un bug, pour paris pour les manif sert toi de marseille en gros essais de faire un int pour 2 chaine
+#sinon on isole le chiffre oauis fin tu verra jtm
+
 import os
 import cv2
 import json
@@ -346,7 +349,6 @@ class trafique:
                 POINTE['pointe'] += 1
 
 
-
         if jour == 5 or jour == 6:
             WEEKEND['WEEKEND'] += 1
 
@@ -556,9 +558,64 @@ class trafique:
         #a dans 9 jours hihi faut faire pour le 10 par ex
 
 
+    def requete_marseille_traffique(self, path):
+        r = requests.get(path)
+
+        date = datetime.datetime.now()
+        jour = date.day
+        jour_semaine = date.weekday()
+        
+        
+        page = r.content
+        soup = BeautifulSoup(page, "html.parser")
+    
+        date = soup.find('div',attrs={"class":u"ml-agenda-date-page"})
+       
+        date = str(date)
+        
+        a = 0
+        lundi = str(date).find("lundi")
+        mardi = str(date).find("mardi")
+        mercredi = str(date).find("mercredi")
+        jeudi = str(date).find("jeudi")
+        vendredi = str(date).find("vendredi")
+        samedi = str(date).find("samedi")
+        dimanche = str(date).find("dimanche")
+        
+        if lundi > 0 :
+            a = 0
+        if mardi > 0 :
+            a = 1
+        if mercredi > 0 :
+            a = 2
+        if jeudi > 0 :
+            a = 3
+        if vendredi > 0 :
+            a = 4
+        if samedi > 0 :
+            a = 5
+        if dimanche > 0 :
+            a = 6
 
 
+        numero = soup.find('div',attrs={"class":u"ml-agenda-date-page"})
+        numero = str(numero)
+        numero = numero[42:44]
+        try:
+            numero = int(numero)
+        except:
+            liste = []
+            numero = str(numero)
 
+            for i in numero:
+                try:
+                    i = int(i)
+                    liste.append(i)
+                except:
+                    pass
+
+        if a == jour_semaine and liste[0] == jour:
+            ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
 
     def activité_execptionnelle(self, lieu):
         self.lieu = lieu
@@ -575,8 +632,8 @@ class trafique:
             trafique.requete_paris_traffique(path)
 
         elif self.lieu == "marseille":
-            path = ""
-            trafique.requete(path)
+            path = "https://mars-infos.org/spip.php?page=agenda"
+            trafique.requete_marseille_traffique(path)
 
 
 
@@ -775,7 +832,7 @@ if __name__ == "__main__":
 
     liste_dossier = ["lyon", "paris", "marseille"]
 
-    trafique.activité_execptionnelle("paris")
+    trafique.activité_execptionnelle("marseille")
     
     for i in liste_dossier:
         if i == "pol.py" or i == "essais.py" or i == "ciel.png"\
