@@ -1,4 +1,4 @@
-
+t'as oublié lheure putin nonnnnnnnnnnnnnnnnnnnnnnn chui en digestion en plus la
 import os
 import cv2
 import json
@@ -104,7 +104,8 @@ ACTIVITE_EXEPTIONNELLE = {'aggissement':0,
 }
 
 
-    
+
+
 class météo:
 
     def recuperation_lieu(self, image):
@@ -535,7 +536,7 @@ class trafique:
         numero_mois = [date]
         
         numero_mois = numero_mois[0][33:35]
-        print(type(numero_mois))
+  
 
         num = []
         for i in numero_mois:
@@ -546,8 +547,14 @@ class trafique:
             except:
                 pass
 
-        print(a)
-        print(jour, jour_semaine)
+        #print(type(num[0]))
+  
+
+        if a == jour_semaine and num[0] == jour:
+            ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
+
+        #a dans 9 jours hihi faut faire pour le 10 par ex
+
 
 
 
