@@ -1,10 +1,10 @@
 #bobo
 
-#a faire 1--
+#oki lyon c correlée hihihi lyon paris amrseille MAIS mtn faut faire tous les chemins et mettre un chiffre puis les pm
 
-#et si c l'heure et que c un départ ? oups
+#par contre jpourrais jamais vraiment verifier des chemins qui arriveront jamais et je saurai pas si un jour, par exemple a lexamen 
 
-#reflechis
+#et faut chai pas mais chui refais ok mettre les pm mtn et pas dire 48 pm mais entre 40 et 50 pm 
 
 #-------------------------------------------------important
 
