@@ -1,4 +1,4 @@
-#pour dnas 9 jours jb du futur, yaura un bug, pour paris pour les manif sert toi de marseille en gros essais de faire un int pour 2 chaine
+#pour dnas 8 jours jb du futur, yaura un bug, pour paris pour les manif sert toi de marseille en gros essais de faire un int pour 2 chaine
 #sinon on isole le chiffre oauis fin tu verra jtm
 
 import os
@@ -366,7 +366,8 @@ class trafique:
     def bouchons(self, lieu):
         self.lieu = lieu
 
-        try:
+      
+        if self.lieu == "lyon":
             path = "https://www.moncoyote.com/fr/info-trafic-{}.html".format(self.lieu)
           
             r = requests.get(path)
@@ -430,8 +431,59 @@ class trafique:
             elif b > 20:
                 BOUCHON['tres grand'] += 1
 
-        except:
+        elif self.lieu == "marseille":
             pass
+
+
+    elif self.lieu == "paris":
+        
+        path = "http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html#"
+
+        r = requests.get(path)
+
+        liste = []
+
+        page = r.content
+        soup = BeautifulSoup(page, "html.parser")
+
+        liste.append(str(soup))
+        bouchon = liste[0][1874:1877]
+        bouchon = str(bouchon)
+
+        kmbouchon = []
+        liste = []
+        for i in bouchon:
+            try:
+                i = int(i)
+                kmbouchon.append(str(i))
+            except:
+                pass
+
+        kmbouchon = "".join(kmbouchon)
+        kmbouchon = int(kmbouchon)
+
+        if b == 0 or b == 0.0:
+            BOUCHON['non'] += 1 
+
+    
+        elif b > 0  and b <= 5:
+            BOUCHON['petit'] += 1 
+
+
+        elif b > 5 and b <= 9:
+            BOUCHON['moyen'] += 1 
+
+        elif b > 9 and b <= 15:
+            BOUCHON['grand'] += 1 
+
+        elif b > 15 and b <= 20:
+            BOUCHON['assez grand'] += 1 
+
+        elif b > 20:
+            BOUCHON['tres grand'] += 1
+                   
+
+
     
     def autoroute_proximité(self):
         pass
@@ -839,7 +891,29 @@ class socio:
 
 class analyse:
 
-    def analyse(self):
+    def analyse(self, dico):
+        self.dico = dico
+
+        for cle, valeur in self.dico.items():
+            if valeur == 1:
+                print(cle)
+
+        return cle
+     
+
+
+
+
+    
+
+
+    def prédiction(self):
+        pass
+
+
+
+
+    def print(self):
 
         
         print(METEO)
@@ -848,14 +922,7 @@ class analyse:
         print("\n")
         print(TRAFIQUE)
         print("\n")
-
-
-    
-    #sinon faire de la prédiction mais je sais pas faire
-    #en vrai j'ai juste le dessin je sais pas si ca marche ca
-
-
-    def prédiction(self):
+        
         print(CLIMAT)
         print("\n")
 
@@ -878,10 +945,6 @@ class analyse:
         print("\n")
         print(ACTIVITE_EXEPTIONNELLE)
         print("\n")
-    #selon les truk faire des ca sera entre tant et tant de pollution
-    #tentre t'as ville et ca fait des recherches automatiquement
-
-    #nuage de pts
 
 
 
@@ -893,9 +956,8 @@ if __name__ == "__main__":
 
 
     meteo = météo()
-    climat = climat()
-
     
+    climat = climat()
 
     trafique = trafique()
 
@@ -912,32 +974,50 @@ if __name__ == "__main__":
     for i in liste_dossier:
         
         print(i)
+        
         position = meteo.recuperation_lieu(i)
+
+
+        
         meteo.recuperation_donnée(position)
 
         trafique.bouchons(i)
-        
         trafique.habitude()
+        trafique.trafique_circulation()
+        trafique.activité_execptionnelle(position)
+        
         climat.saison()
         climat.recuperation_donnée(position)
 
-        trafique.trafique_circulation()
-
         particule.particule(position)
-
-        trafique.activité_execptionnelle(position)
         particule.france(i)
         particule.industrie(i)
+        
         socio.habitant(i)
         
 
-        analyse.analyse()
+
+        analyse.fonction(TRAFIQUE)
+        analyse.fonction(WEEKEND)
+        analyse.fonction(POINTE)
+        analyse.fonction(BOUCHON)
+    
 
 
+        analyse.fonction(METEO)
+        analyse.fonction(VENT)
+        analyse.fonction(SAISON)
+        analyse.fonction(CLIMAT)
+        analyse.fonction(PRESSION)
 
 
-        
-        #print('\n\n\n')
+        analyse.fonction(VILLE_POLLUE2018)
+        analyse.fonction(ACTIVITE_EXEPTIONNELLE)
+        analyse.fonction(POPULATION_ACTIVE_HABITANT)
+        analyse.fonction(REGION_INDUSTRIEL_POLLUEE)
+  
+
+
 
 
 
@@ -1060,54 +1140,15 @@ if __name__ == "__main__":
 
 
 
-#-----------------
-
-METEO = {'beau_temps':1,
-         'nuageux':0,
-         'pluie':0,
-}
-
-CLIMAT = {'> 0':0,
-          '0_10':0,
-          '11_20':0,
-          '21_30':0,
-          '31_40':0,
-          '>40':1,
-}
 
 
 
 
 
-def fonction(dico):
-
-    for cle, valeur in dico.items():
-        if valeur == 1:
-            print(cle)
-            
- 
-
-fonction(METEO)
-fonction(CLIMAT)
 
 
-1er == > trafic les truk puis un petit rond = recap
-
-2eme == > meteo les truk puis un petit rond = recap
-
-3eme == > villue polué les truk puis un petit rond = recap
-
-faire un truk avec chaaaque condition non reflechis encore pcque ca reviendra au meme
-
-du coup faire genre depart + 2 regulier -1 heure + 1 non heure -2
-
-beau + 2, nuage oui mais ca prend en compte les nuages de pollu ? sinon 0 et pluie -2
-
-un truk comme ca peut etre et chaque combi a son pm sup ou inf chai pas reflechis
 
 
-pcque y'a 42 sous rond et ca va faire un paquet de repetition chais pas ok reflechis
-#-----------------
 
 
 
