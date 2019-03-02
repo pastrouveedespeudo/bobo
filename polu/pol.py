@@ -40,7 +40,7 @@ CLIMAT = {'> 0':0,
         
 
 TRAFIQUE = {'depart_routier':0,
-    'regulier jour':0,
+            'regulier jour':0,
 }
 
 HEURE = {'heure_pointe':0,
@@ -113,6 +113,92 @@ ACTIVITE_EXEPTIONNELLE = {'aggissement':0,
 REGION_INDUSTRIEL_POLLUEE = {'oui':0,
                              'non':0,
 }
+
+
+
+TRAFIQUE_chemin = {'depart_routier':2,
+                 'regulier jour':-2,
+    }
+
+HEURE_chemin = {'heure_pointe':1,
+                'non_heure_pointe':-1,
+                }
+
+BOUCHON_chemin = {'non':0,
+           'petit':0.5,
+           'moyen':0.75,
+           'grand':1,
+           'assez grand':1.5,
+           'tres grand':2,
+}
+
+VENT_chemin = {'tres fort':-2,
+        'fort':-1,
+        'moyen fort':-0.5,
+        'faible':2, 
+}
+
+POINTE_chemin = {'pointe':2,
+}
+
+WEEKEND_chemin = {'weekend':-2,
+}
+#---
+
+
+METEO_chemin = {'beau_temps':1,
+                'nuageux':0,
+                'pluie':-2,
+}
+
+SAISON_chemin = {'primtemps':1,
+          'été':2,
+          'hiver':2,
+          'automne':-1,
+}
+CLIMAT_chemin = {'> 0':1,
+                '0_10':-1,
+                '11_20':-1,
+                '21_30':2,
+                '31_40':2,
+                '>40':2,
+}
+
+PRESSION_chemin = {'forte':2,
+            'faible':-2,
+            'normale':0,
+}
+
+#---
+
+VILLE_POLLUE2018_chemin = {'non':-1,
+                            'un':2,
+                            'deux':2,
+                            'trois':2,
+                            'quattre':2,
+}
+
+
+POPULATION_ACTIVE_HABITANT_chemin = {'sup1M':2,
+                              'sup500K':1,
+                              'supp300K':1,
+}
+
+
+ACTIVITE_EXEPTIONNELLE_chemin = {'aggisement':-2,
+                                  'manifestation':1,
+                                  'circulation dense':2,
+                                  'condition a polution':2,
+
+
+
+}
+
+
+REGION_INDUSTRIEL_POLLUEE_chemin = {'oui':2,
+                                 'non':-1,
+}
+
 
 
 class météo:
@@ -221,6 +307,8 @@ class climat:
 
         température = data['main']['temp']
         température = température - 273.15
+
+        print(température)
         
         #print(str(round(température)) + ' Celsius')
 
@@ -228,13 +316,13 @@ class climat:
             CLIMAT['> 0']+=1
         elif température >= 0 and température <= 10:
             CLIMAT['0_10']+=1
-        elif température >= 11 and température <= 20:
+        elif température >= 10 and température <= 20:
             CLIMAT['11_20']+=1
-        elif température >= 21 and température <= 30:
+        elif température >= 20 and température <= 30:
             CLIMAT['21_30']+=1
-        elif température >= 31 and température <= 40:
+        elif température >= 30 and température <= 40:
             CLIMAT['31_40']+=1
-        elif température >= 41:
+        elif température >= 40:
             CLIMAT['41>']+=1
 
     
@@ -906,107 +994,27 @@ class analyse:
     def analyse(self, dico):
         self.dico = dico
 
+        a = ""
+
         for cle, valeur in self.dico.items():
             if valeur == 1:
-                print(cle)
-
-        return dico, cle
+                a = cle
+        
+        return a
      
 
     def point(self, dico, cle):
         self.dico = dico
         self.cle = cle
 
-    
-        return METEO_chemin[str(self.cle)]
+   
+        a = self.dico[str(self.cle)]
+        print(a)
+        return a
+     
 
-
-
-
-
-    def score(self):
-
-        
-        TRAFIC_chemin = {'départ':2,
-                         'régulier':-2,
-            }
-
-        HEURE_chemin = {'heure':1,
-                        'non heure':-1,
-                        }
-
-        BOUCHON_chemin = {'non':0,
-                   'petit':0.5,
-                   'moyen':0.75,
-                   'grand':1,
-                   'assez grand':1.5,
-                   'tres grand':2,
-        }
-        
-
-
-        POINTE_chemin = {'pointe':2,
-        }
-
-        WEEKEND_chemin = {'weekend':-2,
-        }
-        #---
-
-
-        METEO_chemin = {'beau_temps':1,
-                 'nuageux':0,
-                 'pluie':-2,
-        }
-        
-        SAISON_chemin = {'primtemps':1,
-                  'été':2,
-                  'hiver':2,
-                  'automne':-1,
-        }
-        CLIMAT_chemin = {'> 0':1,
-                  '0_10':-1,
-                  '11_20':-1,
-                  '21_30':2,
-                  '31_40':2,
-                  '>40':2,
-        }
-
-        PRESSION_chemin = {'forte':2,
-                    'faible':-2,
-                    'normale':0,
-        }
-
-        #---
-
-        VILLE_POLLUE2018_chemin = {'non':-1,
-                                    'un':2,
-                                    'deux':2,
-                                    'trois':2,
-                                    'quattre':2,
-        }
-
-
-        POPULATION_ACTIVE_HABITANT_chemin = {'sup1M':2,
-                                      'sup500K':1,
-                                      'supp300K':1,
-        }
-
-
-        ACTIVITE_EXEPTIONNELLE_chemin = {'aggisement':-2,
-                                          'manifestation':1,
-                                          'circulation dense':2,
-                                          'condition a polution':2,
-
-
-
-        }
-
-
-        REGION_INDUSTRIEL_POLLUEE_chemin = {'oui':2,
-                                         'non':-1,
-        }
-
-
+    def point_palier(self):
+        pass
         
     def print(self):
 
@@ -1065,7 +1073,7 @@ if __name__ == "__main__":
     liste_dossier = ["paris","lyon","marseille"]
 
     
-    détail = input("tu veux une analyse ?")
+    #détail = input("tu veux une analyse ?")
 
     #if detail == "non":
     for i in liste_dossier:
@@ -1095,7 +1103,7 @@ if __name__ == "__main__":
         socio.habitant(i)
         
 
-
+        
         a = analyse.analyse(TRAFIQUE)
         analyse.point(TRAFIQUE_chemin, a)
         
@@ -1112,20 +1120,44 @@ if __name__ == "__main__":
         analyse.point(BOUCHON_chemin, e)
     
 
+        palier1 = a + b + c + d + e
+
 
         f = analyse.analyse(METEO)
+        analyse.point(METEO_chemin, f)
+        
         g = analyse.analyse(VENT)
+        analyse.point(VENT_chemin, g)
+        
         h = analyse.analyse(SAISON)
+        analyse.point(SAISON_chemin, h)
+        
         i = analyse.analyse(CLIMAT)
+        analyse.point(CLIMAT_chemin, i)
+        
         j = analyse.analyse(PRESSION)
+        analyse.point(PRESSION_chemin, j)
 
+
+        palier2 = f + g + h + i + j
+        
 
         k = analyse.analyse(VILLE_POLLUE2018)
+        analyse.point(VILLE_POLLUE2018_chemin, k)
+        
         l = analyse.analyse(ACTIVITE_EXEPTIONNELLE)
+        analyse.point(ACTIVITE_EXEPTIONNELLE_chemin, l)
+        
         m = analyse.analyse(POPULATION_ACTIVE_HABITANT)
+        analyse.point(POPULATION_ACTIVE_HABITANT_chemin, m)
+        
         n = analyse.analyse(REGION_INDUSTRIEL_POLLUEE)
+        analyse.point(REGION_INDUSTRIEL_POLLUEE_chemin, n)
   
 
+        palier3 = k + l + m + n
+
+        print(palier1, palier2, palier3)
         print("\n\n\n")
 
 
