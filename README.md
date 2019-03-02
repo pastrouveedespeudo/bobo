@@ -1,10 +1,6 @@
 #bobo
 
-#oki lyon c correlée hihihi lyon paris amrseille MAIS mtn faut faire tous les chemins et mettre un chiffre puis les pm
-
-#par contre jpourrais jamais vraiment verifier des chemins qui arriveront jamais et je saurai pas si un jour, par exemple a lexamen 
-
-#et faut chai pas mais chui refais ok mettre les pm mtn et pas dire 48 pm mais entre 40 et 50 pm 
+#bon ok met des valeurs aux hasard et ensuite essaie que ca colle fini ce machin, sur le site met toutes les info et fini flask et prepare ton controle les additions m'ont tué en plus ca sert a rien et y'a un bug a chaque essais
 
 #-------------------------------------------------important
 
