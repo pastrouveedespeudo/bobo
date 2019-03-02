@@ -308,7 +308,6 @@ class climat:
         température = data['main']['temp']
         température = température - 273.15
 
-        print(température)
         
         #print(str(round(température)) + ' Celsius')
 
@@ -526,7 +525,7 @@ class trafique:
                 BOUCHON['tres grand'] += 1
 
         elif self.lieu == "marseille":
-            pass
+            BOUCHON['moyen'] += 1 
 
 
         elif self.lieu == "paris":
@@ -596,11 +595,11 @@ class trafique:
         propriete = soup.find('div',attrs={"class":u"news"})
         
         
-        agissement = str(propriete).find(str("pollution"))
-        agissement2 = str(propriete).find(str("circulation différenciée"))
+        #agissement = str(propriete).find(str("pollution"))
+        #agissement2 = str(propriete).find(str("circulation différenciée"))
 
-        if agissement >= 0 and agissement2 >= 0:
-            ACTIVITE_EXEPTIONNELLE['aggissement'] += 1
+        #if agissement >= 0 and agissement2 >= 0:
+        #    ACTIVITE_EXEPTIONNELLE['aggissement'] += 1
 
 
 
@@ -608,8 +607,8 @@ class trafique:
         trafic1 = str(propriete).find(str("dense"))
         trafic2 = str(propriete).find(str("très dense"))
 
-        if trafic >= 0 and trafic1 >= 0 or trafic2 >= 0:
-            ACTIVITE_EXEPTIONNELLE['circulation dense'] += 1
+        #if trafic >= 0 and trafic1 >= 0 or trafic2 >= 0:
+        #    ACTIVITE_EXEPTIONNELLE['circulation dense'] += 1
 
         manif = str(propriete).find(str("Manifestation"))
         manif1 = str(propriete).find(str("manifestation"))
@@ -631,8 +630,8 @@ class trafique:
                 pass
 
         
-        if nombre2[0] > 0:
-            ACTIVITE_EXEPTIONNELLE['condition a polution'] += 1
+        #if nombre2[0] > 0:
+        #    ACTIVITE_EXEPTIONNELLE['condition a polution'] += 1
 
 
 
@@ -1007,9 +1006,8 @@ class analyse:
         self.dico = dico
         self.cle = cle
 
-   
         a = self.dico[str(self.cle)]
-        print(a)
+        print(a, self.cle)
         return a
      
 
@@ -1105,59 +1103,61 @@ if __name__ == "__main__":
 
         
         a = analyse.analyse(TRAFIQUE)
-        analyse.point(TRAFIQUE_chemin, a)
+        aa = analyse.point(TRAFIQUE_chemin, a)
         
         b = analyse.analyse(HEURE)
-        analyse.point(HEURE_chemin, b)
+        bb = analyse.point(HEURE_chemin, b)
         
         c = analyse.analyse(WEEKEND)
-        analyse.point(WEEKEND_chemin, c)
+        cc = analyse.point(WEEKEND_chemin, c)
         
         d = analyse.analyse(POINTE)
-        analyse.point(POINTE_chemin, d)
+        dd = analyse.point(POINTE_chemin, d)
         
         e = analyse.analyse(BOUCHON)
-        analyse.point(BOUCHON_chemin, e)
+        ee = analyse.point(BOUCHON_chemin, e)
     
 
-        palier1 = a + b + c + d + e
+        palier1 = aa + bb + cc + dd + ee
 
 
         f = analyse.analyse(METEO)
-        analyse.point(METEO_chemin, f)
-        
+        ff = analyse.point(METEO_chemin, f)
+   
         g = analyse.analyse(VENT)
-        analyse.point(VENT_chemin, g)
+        gg = analyse.point(VENT_chemin, g)
         
         h = analyse.analyse(SAISON)
-        analyse.point(SAISON_chemin, h)
+        hh = analyse.point(SAISON_chemin, h)
         
         i = analyse.analyse(CLIMAT)
-        analyse.point(CLIMAT_chemin, i)
+        ii = analyse.point(CLIMAT_chemin, i)
         
         j = analyse.analyse(PRESSION)
-        analyse.point(PRESSION_chemin, j)
+        jj = analyse.point(PRESSION_chemin, j)
 
 
-        palier2 = f + g + h + i + j
+        palier2 = ff + gg + hh + ii + jj
         
 
         k = analyse.analyse(VILLE_POLLUE2018)
-        analyse.point(VILLE_POLLUE2018_chemin, k)
+        kk = analyse.point(VILLE_POLLUE2018_chemin, k)
         
         l = analyse.analyse(ACTIVITE_EXEPTIONNELLE)
-        analyse.point(ACTIVITE_EXEPTIONNELLE_chemin, l)
+        ll = analyse.point(ACTIVITE_EXEPTIONNELLE_chemin, l)
         
         m = analyse.analyse(POPULATION_ACTIVE_HABITANT)
-        analyse.point(POPULATION_ACTIVE_HABITANT_chemin, m)
+        mm = analyse.point(POPULATION_ACTIVE_HABITANT_chemin, m)
         
         n = analyse.analyse(REGION_INDUSTRIEL_POLLUEE)
-        analyse.point(REGION_INDUSTRIEL_POLLUEE_chemin, n)
+        nn = analyse.point(REGION_INDUSTRIEL_POLLUEE_chemin, n)
   
 
-        palier3 = k + l + m + n
+        palier3 = kk + ll + mm + nn
 
         print(palier1, palier2, palier3)
+        print(palier1 + palier2 + palier3)
+        print("oki")
         print("\n\n\n")
 
 
