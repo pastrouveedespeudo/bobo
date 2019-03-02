@@ -116,8 +116,10 @@ REGION_INDUSTRIEL_POLLUEE = {'oui':0,
 
 
 
+
+
 TRAFIQUE_chemin = {'depart_routier':2,
-                 'regulier jour':-2,
+                    'regulier jour':-2,
     }
 
 HEURE_chemin = {'heure_pointe':1,
@@ -132,11 +134,7 @@ BOUCHON_chemin = {'non':0,
            'tres grand':2,
 }
 
-VENT_chemin = {'tres fort':-2,
-        'fort':-1,
-        'moyen fort':-0.5,
-        'faible':2, 
-}
+
 
 POINTE_chemin = {'pointe':2,
 }
@@ -172,6 +170,14 @@ PRESSION_chemin = {'forte':2,
             'faible':-2,
             'normale':0,
 }
+
+VENT_chemin = {'tres fort':-2,
+        'fort':-1,
+        'moyen fort':-0.5,
+        'faible':2, 
+}
+
+
 
 #---
 
@@ -415,12 +421,14 @@ class trafique:
             else:
                 non_pointe == True
             
-
+        
         if dep == True:
             TRAFIQUE['depart_routier'] += 1
-
-        elif normale == True:
+     
+        elif dep != True and normale == True: 
             TRAFIQUE['regulier jour'] += 1
+    
+           
 
         if pointe == True:
             HEURE['heure_pointe'] += 1
@@ -457,7 +465,7 @@ class trafique:
         if jour == 5 or jour == 6:
             WEEKEND['weekend'] += 1
 
-    
+
 
 
     def bouchons(self, lieu):
@@ -1006,127 +1014,20 @@ class analyse:
 
         for cle, valeur in self.dico.items():
             if valeur == 1:
-                a = cle
+                print(cle)
+                break
         
-        return a
+        return cle
      
 
     def point(self, dico, cle):
         self.dico = dico
         self.cle = cle
-
+  
         a = self.dico[str(self.cle)]
-        print(a, self.cle)
         return a
      
 
-    def point_palier_1(self, score):
-        self.score = score
-        #t'as mélanger jcrois soit c 2 truks de rond soit c 5 voir plus suite de rond...
-
-        if self.score == 3:
-            pass
-
-        elif self.score == 3.5:
-            pass
-
-        elif self.score == 3.75:
-            pass
-            
-        elif self.score == 4.5:
-            pass
-
-        elif self.score == 5:
-            pass
-
-        elif self.score == 1:
-            pass
-
-        elif self.score == 1.5:
-            pass
-
-        
-        elif self.score == 1.75:
-            pass
-
-        
-        elif self.score == 2.5:
-            pass
-
-        
-        elif self.score == 3:
-            pass
-            
-        elif self.score == 5:
-            pass
-        
-        elif self.score == 5.5:
-            pass
-        
-        elif self.score == 5.75:
-            pass
-        
-        elif self.score == 6.5:
-            pass
-        
-        elif self.score == 7:
-            pass
-        
-        elif self.score == -1:
-            pass
-        
-        elif self.score == -1.5:
-            pass
-        
-        elif self.score == -1.75:
-            pass
-        
-        elif self.score == -0.5:
-            pass
-        
-        elif self.score == 1:
-            pass
-        
-        elif self.score == -3:
-            pass
-        
-        elif self.score == -2.5:
-            pass
-        
-        elif self.score == -2.25:
-            pass
-        
-        elif self.score == -1.5:
-            pass
-        
-        elif self.score == -1:
-            pass
-            
-        elif self.score == -5:
-            pass
-        
-        elif self.score == -4.5:
-            pass
-
-        elif self.score == -4.25:
-            pass
-
-        elif self.score == -3.5:
-            pass
-
-        elif self.score == -3:
-            pass
-
-
-
-
-
-
-
-
-
-
-            
         
     def point_palier_2(self, score):
         self.score = score
@@ -1212,9 +1113,9 @@ if __name__ == "__main__":
     
     détail = input("tu veux une analyse ?")
 
-    if detail == "non":
+    if détail == "non":
         for i in liste_dossier:
-            
+  
             print(i)
             
             position = meteo.recuperation_lieu(i)
@@ -1242,6 +1143,7 @@ if __name__ == "__main__":
 
             
             a = analyse.analyse(TRAFIQUE)
+            print(a,'8498999999999')
             aa = analyse.point(TRAFIQUE_chemin, a)
             
             b = analyse.analyse(HEURE)
@@ -1256,7 +1158,7 @@ if __name__ == "__main__":
             e = analyse.analyse(BOUCHON)
             ee = analyse.point(BOUCHON_chemin, e)
         
-
+            
             palier1 = aa + bb + cc + dd + ee
 
 
@@ -1286,6 +1188,7 @@ if __name__ == "__main__":
             ll = analyse.point(ACTIVITE_EXEPTIONNELLE_chemin, l)
             
             m = analyse.analyse(POPULATION_ACTIVE_HABITANT)
+
             mm = analyse.point(POPULATION_ACTIVE_HABITANT_chemin, m)
             
             n = analyse.analyse(REGION_INDUSTRIEL_POLLUEE)
@@ -1294,9 +1197,14 @@ if __name__ == "__main__":
 
             palier3 = kk + ll + mm + nn
 
+
+            print(aa,bb,cc,dd,ee)
+            print(ff,gg,hh,ii,jj)
+            print(kk,ll,mm,nn)
+        
             print(palier1, palier2, palier3)
             print(palier1 + palier2 + palier3)
-            print("oki")
+            
             print("\n\n\n")
 
 
@@ -1417,8 +1325,8 @@ if __name__ == "__main__":
 
 
 
-        elif detail == "oui":
-            pass
+    elif détail == "oui":
+        pass
 
 
 
