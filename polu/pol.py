@@ -665,8 +665,10 @@ class trafique:
 
 
         numero = soup.find('div',attrs={"class":u"ml-agenda-date-page"})
+        #print(numero)
         numero = str(numero)
-        numero = numero[42:44]
+        numero = numero[20:]
+        
         try:
             numero = int(numero)
         except:
@@ -679,7 +681,7 @@ class trafique:
                     liste.append(i)
                 except:
                     pass
-
+        #print(a)
         if a == jour_semaine and liste[0] == jour:
             ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
 
@@ -775,16 +777,16 @@ class particule:
         c = 0
         for i in liste:
 
-            if c == 1:
+            if i == liste[0]:
                 VILLE_POLLUE2018['un'] += 1
 
-            elif c == 2:
+            elif c == liste[1]:
                 VILLE_POLLUE2018['deux'] += 1
 
-            elif c == 3:
+            elif c == liste[2]:
                 VILLE_POLLUE2018['trois'] += 1
 
-            elif c == 4:
+            elif c == liste[3]:
                 VILLE_POLLUE2018['quattre'] += 1
             else:
                 VILLE_POLLUE2018['non'] += 1
@@ -1044,7 +1046,7 @@ if __name__ == "__main__":
 
     analyse = analyse()
     
-    liste_dossier = ["paris","lyon","marseille"]
+    liste_dossier = ["marseille","paris","lyon"]
 
     
     
