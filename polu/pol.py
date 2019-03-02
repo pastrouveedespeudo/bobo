@@ -38,11 +38,15 @@ CLIMAT = {'> 0':0,
 
 
         
+
 TRAFIQUE = {'depart_routier':0,
-            'heure_pointe':0,
-            'non_heure_pointe':0,
-            'regulier jour':0,
+    'regulier jour':0,
 }
+
+HEURE = {'heure_pointe':0,
+        'non_heure_pointe':0,
+}
+
 
 PARTICULE = {'0_20':0,
             '21_40':0,
@@ -278,7 +282,7 @@ class trafique:
 
 
 
-        heure_pointe_semaine = [12, 18,19]
+        heure_pointe_semaine = [7,8,9,16,17,18,19]
 
         départ_routier = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
                           (1,3),(2,3),(8,3),(9,3),
@@ -328,10 +332,12 @@ class trafique:
             TRAFIQUE['regulier jour'] += 1
 
         if pointe == True:
-            TRAFIQUE['heure_pointe'] += 1
+            HEURE['heure_pointe'] += 1
+            
             
         elif non_pointe == True:
-            TRAFIQUE['non_heure_pointe jour'] += 1
+            HEURE['non_heure_pointe jour'] += 1
+       
 
             
         #print("jour de départ :",dep)
@@ -904,22 +910,32 @@ class analyse:
             if valeur == 1:
                 print(cle)
 
-        return cle
+        return dico, cle
      
+
+    def point(self, dico, cle):
+        self.dico = dico
+        self.cle = cle
+
+    
+        return METEO_chemin[str(self.cle)]
 
 
 
 
 
     def score(self):
-        trafic_chemin = {'départ':2,
-                         'heure':1,
-                         'non heure':-1,
+
+        
+        TRAFIC_chemin = {'départ':2,
                          'régulier':-2,
             }
 
+        HEURE_chemin = {'heure':1,
+                        'non heure':-1,
+                        }
 
-        bouchon_chemin = {'non':0,
+        BOUCHON_chemin = {'non':0,
                    'petit':0.5,
                    'moyen':0.75,
                    'grand':1,
@@ -929,25 +945,25 @@ class analyse:
         
 
 
-        pointe_chemin = {'pointe':2,
+        POINTE_chemin = {'pointe':2,
         }
 
-        weekend_chemin = {'weekend':-2,
+        WEEKEND_chemin = {'weekend':-2,
         }
         #---
 
 
-        METEO = {'beau_temps':1,
+        METEO_chemin = {'beau_temps':1,
                  'nuageux':0,
                  'pluie':-2,
         }
         
-        SAISON = {'primtemps':1,
+        SAISON_chemin = {'primtemps':1,
                   'été':2,
                   'hiver':2,
                   'automne':-1,
         }
-        CLIMAT = {'> 0':1,
+        CLIMAT_chemin = {'> 0':1,
                   '0_10':-1,
                   '11_20':-1,
                   '21_30':2,
@@ -955,39 +971,39 @@ class analyse:
                   '>40':2,
         }
 
-        PRESSION = {'forte':2,
+        PRESSION_chemin = {'forte':2,
                     'faible':-2,
                     'normale':0,
         }
 
         #---
 
-        VILLE_POLLUE2018 = {'non':-1,
-                            'un':2,
-                            'deux':2,
-                            'trois':2,
-                            'quattre':2,
+        VILLE_POLLUE2018_chemin = {'non':-1,
+                                    'un':2,
+                                    'deux':2,
+                                    'trois':2,
+                                    'quattre':2,
         }
 
 
-        POPULATION_ACTIVE_HABITANT = {'sup1M':2,
+        POPULATION_ACTIVE_HABITANT_chemin = {'sup1M':2,
                                       'sup500K':1,
                                       'supp300K':1,
         }
 
 
-        ACTIVITE_EXEPTIONNELLE = {'aggisement':-2,
-                                  'manifestation':1,
-                                  'circulation dense':2,
-                                  'condition a polution':2,
+        ACTIVITE_EXEPTIONNELLE_chemin = {'aggisement':-2,
+                                          'manifestation':1,
+                                          'circulation dense':2,
+                                          'condition a polution':2,
 
 
 
         }
 
 
-        REGION_INDUSTRIEL_POLLUEE = {'oui':2,
-                                     'non':-1,
+        REGION_INDUSTRIEL_POLLUEE_chemin = {'oui':2,
+                                         'non':-1,
         }
 
 
@@ -1046,10 +1062,12 @@ if __name__ == "__main__":
 
     analyse = analyse()
     
-    liste_dossier = ["marseille","paris","lyon"]
+    liste_dossier = ["paris","lyon","marseille"]
 
     
-    
+    détail = input("tu veux une analyse ?")
+
+    #if detail == "non":
     for i in liste_dossier:
         
         print(i)
@@ -1064,6 +1082,8 @@ if __name__ == "__main__":
         trafique.habitude()
         trafique.trafique_circulation()
         trafique.activité_execptionnelle(position)
+     
+
         
         climat.saison()
         climat.recuperation_donnée(position)
@@ -1076,27 +1096,37 @@ if __name__ == "__main__":
         
 
 
-        analyse.analyse(TRAFIQUE)
-        analyse.analyse(WEEKEND)
-        analyse.analyse(POINTE)
-        analyse.analyse(BOUCHON)
+        a = analyse.analyse(TRAFIQUE)
+        analyse.point(TRAFIQUE_chemin, a)
+        
+        b = analyse.analyse(HEURE)
+        analyse.point(HEURE_chemin, b)
+        
+        c = analyse.analyse(WEEKEND)
+        analyse.point(WEEKEND_chemin, c)
+        
+        d = analyse.analyse(POINTE)
+        analyse.point(POINTE_chemin, d)
+        
+        e = analyse.analyse(BOUCHON)
+        analyse.point(BOUCHON_chemin, e)
     
 
 
-        analyse.analyse(METEO)
-        analyse.analyse(VENT)
-        analyse.analyse(SAISON)
-        analyse.analyse(CLIMAT)
-        analyse.analyse(PRESSION)
+        f = analyse.analyse(METEO)
+        g = analyse.analyse(VENT)
+        h = analyse.analyse(SAISON)
+        i = analyse.analyse(CLIMAT)
+        j = analyse.analyse(PRESSION)
 
 
-        analyse.analyse(VILLE_POLLUE2018)
-        analyse.analyse(ACTIVITE_EXEPTIONNELLE)
-        analyse.analyse(POPULATION_ACTIVE_HABITANT)
-        analyse.analyse(REGION_INDUSTRIEL_POLLUEE)
+        k = analyse.analyse(VILLE_POLLUE2018)
+        l = analyse.analyse(ACTIVITE_EXEPTIONNELLE)
+        m = analyse.analyse(POPULATION_ACTIVE_HABITANT)
+        n = analyse.analyse(REGION_INDUSTRIEL_POLLUEE)
   
 
-
+        print("\n\n\n")
 
 
         #a comparer avec
@@ -1106,11 +1136,13 @@ if __name__ == "__main__":
         
 
         TRAFIQUE = {'depart_routier':0,
-            'heure_pointe':0,
-            'non_heure_pointe':0,
             'regulier jour':0,
         }
 
+        HEURE = {
+            'heure_pointe':0,
+            'non_heure_pointe':0,
+        }
 
 
         VENT = {'tres fort':0,
