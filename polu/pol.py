@@ -143,6 +143,10 @@ POINTE_chemin = {'pointe':2,
 
 WEEKEND_chemin = {'weekend':-2,
 }
+
+
+
+
 #---
 
 
@@ -863,26 +867,31 @@ class particule:
 
     def france(self, lieu):
         self.lieu = lieu
-
+  
         liste = ["lyon", "marseille","paris","roubaix"]
 
 
         c = 0
         for i in liste:
 
-            if i == liste[0]:
+            if self.lieu == liste[0]:
                 VILLE_POLLUE2018['un'] += 1
+                break
 
-            elif c == liste[1]:
+            elif self.lieu == liste[1]:
                 VILLE_POLLUE2018['deux'] += 1
+                break
 
-            elif c == liste[2]:
+            elif self.lieu == liste[2]:
                 VILLE_POLLUE2018['trois'] += 1
+                break
 
-            elif c == liste[3]:
+            elif self.lieu == liste[3]:
                 VILLE_POLLUE2018['quattre'] += 1
+                break
             else:
                 VILLE_POLLUE2018['non'] += 1
+                break
                 
 
                 
@@ -1011,8 +1020,130 @@ class analyse:
         return a
      
 
-    def point_palier(self):
-        pass
+    def point_palier_1(self, score):
+        self.score = score
+        #t'as mélanger jcrois soit c 2 truks de rond soit c 5 voir plus suite de rond...
+
+        if self.score == 3:
+            pass
+
+        elif self.score == 3.5:
+            pass
+
+        elif self.score == 3.75:
+            pass
+            
+        elif self.score == 4.5:
+            pass
+
+        elif self.score == 5:
+            pass
+
+        elif self.score == 1:
+            pass
+
+        elif self.score == 1.5:
+            pass
+
+        
+        elif self.score == 1.75:
+            pass
+
+        
+        elif self.score == 2.5:
+            pass
+
+        
+        elif self.score == 3:
+            pass
+            
+        elif self.score == 5:
+            pass
+        
+        elif self.score == 5.5:
+            pass
+        
+        elif self.score == 5.75:
+            pass
+        
+        elif self.score == 6.5:
+            pass
+        
+        elif self.score == 7:
+            pass
+        
+        elif self.score == -1:
+            pass
+        
+        elif self.score == -1.5:
+            pass
+        
+        elif self.score == -1.75:
+            pass
+        
+        elif self.score == -0.5:
+            pass
+        
+        elif self.score == 1:
+            pass
+        
+        elif self.score == -3:
+            pass
+        
+        elif self.score == -2.5:
+            pass
+        
+        elif self.score == -2.25:
+            pass
+        
+        elif self.score == -1.5:
+            pass
+        
+        elif self.score == -1:
+            pass
+            
+        elif self.score == -5:
+            pass
+        
+        elif self.score == -4.5:
+            pass
+
+        elif self.score == -4.25:
+            pass
+
+        elif self.score == -3.5:
+            pass
+
+        elif self.score == -3:
+            pass
+
+
+
+
+
+
+
+
+
+
+            
+        
+    def point_palier_2(self, score):
+        self.score = score
+
+
+
+
+
+    def point_palier_3(self, score):
+        self.score = score
+
+
+
+
+
+
+
         
     def print(self):
 
@@ -1047,7 +1178,15 @@ class analyse:
         print(ACTIVITE_EXEPTIONNELLE)
         print("\n")
 
-
+        if self.score == 5.75:
+            pm = 32
+            
+        elif self.score == 11.75:
+            pm = 46
+            
+        elif self.score == 8:
+            pm = 37     
+        
 
 
 
@@ -1071,155 +1210,155 @@ if __name__ == "__main__":
     liste_dossier = ["paris","lyon","marseille"]
 
     
-    #détail = input("tu veux une analyse ?")
+    détail = input("tu veux une analyse ?")
 
-    #if detail == "non":
-    for i in liste_dossier:
-        
-        print(i)
-        
-        position = meteo.recuperation_lieu(i)
-
-
-        
-        meteo.recuperation_donnée(position)
-
-        trafique.bouchons(i)
-        trafique.habitude()
-        trafique.trafique_circulation()
-        trafique.activité_execptionnelle(position)
-     
-
-        
-        climat.saison()
-        climat.recuperation_donnée(position)
-
-        particule.particule(position)
-        particule.france(i)
-        particule.industrie(i)
-        
-        socio.habitant(i)
-        
-
-        
-        a = analyse.analyse(TRAFIQUE)
-        aa = analyse.point(TRAFIQUE_chemin, a)
-        
-        b = analyse.analyse(HEURE)
-        bb = analyse.point(HEURE_chemin, b)
-        
-        c = analyse.analyse(WEEKEND)
-        cc = analyse.point(WEEKEND_chemin, c)
-        
-        d = analyse.analyse(POINTE)
-        dd = analyse.point(POINTE_chemin, d)
-        
-        e = analyse.analyse(BOUCHON)
-        ee = analyse.point(BOUCHON_chemin, e)
-    
-
-        palier1 = aa + bb + cc + dd + ee
+    if detail == "non":
+        for i in liste_dossier:
+            
+            print(i)
+            
+            position = meteo.recuperation_lieu(i)
 
 
-        f = analyse.analyse(METEO)
-        ff = analyse.point(METEO_chemin, f)
-   
-        g = analyse.analyse(VENT)
-        gg = analyse.point(VENT_chemin, g)
-        
-        h = analyse.analyse(SAISON)
-        hh = analyse.point(SAISON_chemin, h)
-        
-        i = analyse.analyse(CLIMAT)
-        ii = analyse.point(CLIMAT_chemin, i)
-        
-        j = analyse.analyse(PRESSION)
-        jj = analyse.point(PRESSION_chemin, j)
+            
+            meteo.recuperation_donnée(position)
 
+            trafique.bouchons(i)
+            trafique.habitude()
+            trafique.trafique_circulation()
+            trafique.activité_execptionnelle(position)
+         
 
-        palier2 = ff + gg + hh + ii + jj
+            
+            climat.saison()
+            climat.recuperation_donnée(position)
+
+            particule.particule(position)
+            particule.france(i)
+            particule.industrie(i)
+            
+            socio.habitant(i)
+            
+
+            
+            a = analyse.analyse(TRAFIQUE)
+            aa = analyse.point(TRAFIQUE_chemin, a)
+            
+            b = analyse.analyse(HEURE)
+            bb = analyse.point(HEURE_chemin, b)
+            
+            c = analyse.analyse(WEEKEND)
+            cc = analyse.point(WEEKEND_chemin, c)
+            
+            d = analyse.analyse(POINTE)
+            dd = analyse.point(POINTE_chemin, d)
+            
+            e = analyse.analyse(BOUCHON)
+            ee = analyse.point(BOUCHON_chemin, e)
         
 
-        k = analyse.analyse(VILLE_POLLUE2018)
-        kk = analyse.point(VILLE_POLLUE2018_chemin, k)
+            palier1 = aa + bb + cc + dd + ee
+
+
+            f = analyse.analyse(METEO)
+            ff = analyse.point(METEO_chemin, f)
+       
+            g = analyse.analyse(VENT)
+            gg = analyse.point(VENT_chemin, g)
+            
+            h = analyse.analyse(SAISON)
+            hh = analyse.point(SAISON_chemin, h)
+            
+            i = analyse.analyse(CLIMAT)
+            ii = analyse.point(CLIMAT_chemin, i)
+            
+            j = analyse.analyse(PRESSION)
+            jj = analyse.point(PRESSION_chemin, j)
+
+
+            palier2 = ff + gg + hh + ii + jj
+            
+
+            k = analyse.analyse(VILLE_POLLUE2018)
+            kk = analyse.point(VILLE_POLLUE2018_chemin, k)
+            
+            l = analyse.analyse(ACTIVITE_EXEPTIONNELLE)
+            ll = analyse.point(ACTIVITE_EXEPTIONNELLE_chemin, l)
+            
+            m = analyse.analyse(POPULATION_ACTIVE_HABITANT)
+            mm = analyse.point(POPULATION_ACTIVE_HABITANT_chemin, m)
+            
+            n = analyse.analyse(REGION_INDUSTRIEL_POLLUEE)
+            nn = analyse.point(REGION_INDUSTRIEL_POLLUEE_chemin, n)
+      
+
+            palier3 = kk + ll + mm + nn
+
+            print(palier1, palier2, palier3)
+            print(palier1 + palier2 + palier3)
+            print("oki")
+            print("\n\n\n")
+
+
+            #a comparer avec
+            #print(PARTICULE)
+         
         
-        l = analyse.analyse(ACTIVITE_EXEPTIONNELLE)
-        ll = analyse.point(ACTIVITE_EXEPTIONNELLE_chemin, l)
-        
-        m = analyse.analyse(POPULATION_ACTIVE_HABITANT)
-        mm = analyse.point(POPULATION_ACTIVE_HABITANT_chemin, m)
-        
-        n = analyse.analyse(REGION_INDUSTRIEL_POLLUEE)
-        nn = analyse.point(REGION_INDUSTRIEL_POLLUEE_chemin, n)
-  
+            
 
-        palier3 = kk + ll + mm + nn
+            TRAFIQUE = {'depart_routier':0,
+                'regulier jour':0,
+            }
 
-        print(palier1, palier2, palier3)
-        print(palier1 + palier2 + palier3)
-        print("oki")
-        print("\n\n\n")
+            HEURE = {
+                'heure_pointe':0,
+                'non_heure_pointe':0,
+            }
 
 
-        #a comparer avec
-        #print(PARTICULE)
-     
-    
-        
-
-        TRAFIQUE = {'depart_routier':0,
-            'regulier jour':0,
-        }
-
-        HEURE = {
-            'heure_pointe':0,
-            'non_heure_pointe':0,
-        }
-
-
-        VENT = {'tres fort':0,
-        'fort':0,
-        'moyen fort':0,
-        'faible':0, 
-        }
+            VENT = {'tres fort':0,
+            'fort':0,
+            'moyen fort':0,
+            'faible':0, 
+            }
 
 
 
-        METEO = {'beau_temps':0,
-                 'nuageux':0,
-                 'pluie':0,
-        }
-        
-        SAISON = {'primtemps':0,
-                  'été':0,
-                  'hiver':0,
-                  'automne':0,
-        }
-        CLIMAT = {'> 0':0,
-                  '0_10':0,
-                  '11_20':0,
-                  '21_30':0,
-                  '31_40':0,
-                  '>40':0,
-        }
+            METEO = {'beau_temps':0,
+                     'nuageux':0,
+                     'pluie':0,
+            }
+            
+            SAISON = {'primtemps':0,
+                      'été':0,
+                      'hiver':0,
+                      'automne':0,
+            }
+            CLIMAT = {'> 0':0,
+                      '0_10':0,
+                      '11_20':0,
+                      '21_30':0,
+                      '31_40':0,
+                      '>40':0,
+            }
 
-        PRESSION = {'forte':0,
-                    'faible':0,
-                    'normale':0,
-        } 
+            PRESSION = {'forte':0,
+                        'faible':0,
+                        'normale':0,
+            } 
 
-        PARTICULE = {'0_20':0,
-                    '21_40':0,
-                    '41_60':0,
-                    '61_80':0,
-                    '81_100':0,
-                    '101_120':0,
-                    '121_140':0,
-                    '141_160':0,
-                    '161_180':0,
-                    '181_200':0,
-                    '>200':0
-        }
+            PARTICULE = {'0_20':0,
+                        '21_40':0,
+                        '41_60':0,
+                        '61_80':0,
+                        '81_100':0,
+                        '101_120':0,
+                        '121_140':0,
+                        '141_160':0,
+                        '161_180':0,
+                        '181_200':0,
+                        '>200':0
+            }
 
 
 
@@ -1231,54 +1370,55 @@ if __name__ == "__main__":
 
 
 
-        BOUCHON = {'non':0,
-                   'petit':0,
-                   'moyen':0,
-                   'grand':0,
-                   'assez grand':0,
-                   'tres grand':0,
-        }
-        
+            BOUCHON = {'non':0,
+                       'petit':0,
+                       'moyen':0,
+                       'grand':0,
+                       'assez grand':0,
+                       'tres grand':0,
+            }
+            
 
 
-        POINTE = {'pointe':0,
-        }
+            POINTE = {'pointe':0,
+            }
 
-        WEEKEND = {'weekend':0,
-        }
-
-
-        VILLE_POLLUE2018 = {'non':0,
-                            'un':0,
-                            'deux':0,
-                            'trois':0,
-                            'quattre':0,
-        }
+            WEEKEND = {'weekend':0,
+            }
 
 
-        POPULATION_ACTIVE_HABITANT = {'sup1M':0,
-                                      'sup500K':0,
-                                      'supp300K':0,
-        }
+            VILLE_POLLUE2018 = {'non':0,
+                                'un':0,
+                                'deux':0,
+                                'trois':0,
+                                'quattre':0,
+            }
 
 
-        ACTIVITE_EXEPTIONNELLE = {'aggisement':0,
-                                  'manifestation':0,
-                                  'circulation dense':0,
-                                  'condition a polution':0,
+            POPULATION_ACTIVE_HABITANT = {'sup1M':0,
+                                          'sup500K':0,
+                                          'supp300K':0,
+            }
 
 
-
-        }
-
-
-        REGION_INDUSTRIEL_POLLUEE = {'oui':0,
-                                     'non':0,
-        }
+            ACTIVITE_EXEPTIONNELLE = {'aggisement':0,
+                                      'manifestation':0,
+                                      'circulation dense':0,
+                                      'condition a polution':0,
 
 
 
+            }
 
+
+            REGION_INDUSTRIEL_POLLUEE = {'oui':0,
+                                         'non':0,
+            }
+
+
+
+        elif detail == "oui":
+            pass
 
 
 
