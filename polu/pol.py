@@ -1,4 +1,4 @@
-#pour dnas 8 jours jb du futur, yaura un bug, pour paris pour les manif sert toi de marseille en gros essais de faire un int pour 2 chaine
+#pour dnas 9 jours jb du futur, yaura un bug, pour paris pour les manif sert toi de marseille en gros essais de faire un int pour 2 chaine
 #sinon on isole le chiffre oauis fin tu verra jtm
 
 import os
@@ -358,7 +358,7 @@ class trafique:
 
 
         if jour == 5 or jour == 6:
-            WEEKEND['WEEKEND'] += 1
+            WEEKEND['weekend'] += 1
 
     
 
@@ -435,53 +435,53 @@ class trafique:
             pass
 
 
-    elif self.lieu == "paris":
+        elif self.lieu == "paris":
         
-        path = "http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html#"
+            path = "http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html#"
 
-        r = requests.get(path)
+            r = requests.get(path)
 
-        liste = []
+            liste = []
 
-        page = r.content
-        soup = BeautifulSoup(page, "html.parser")
+            page = r.content
+            soup = BeautifulSoup(page, "html.parser")
 
-        liste.append(str(soup))
-        bouchon = liste[0][1874:1877]
-        bouchon = str(bouchon)
+            liste.append(str(soup))
+            bouchon = liste[0][1874:1877]
+            bouchon = str(bouchon)
 
-        kmbouchon = []
-        liste = []
-        for i in bouchon:
-            try:
-                i = int(i)
-                kmbouchon.append(str(i))
-            except:
-                pass
+            kmbouchon = []
+            liste = []
+            for i in bouchon:
+                try:
+                    i = int(i)
+                    kmbouchon.append(str(i))
+                except:
+                    pass
 
-        kmbouchon = "".join(kmbouchon)
-        kmbouchon = int(kmbouchon)
+            kmbouchon = "".join(kmbouchon)
+            kmbouchon = int(kmbouchon)
 
-        if b == 0 or b == 0.0:
-            BOUCHON['non'] += 1 
+            b = kmbouchon
 
-    
-        elif b > 0  and b <= 5:
-            BOUCHON['petit'] += 1 
+            if b == 0 or b == 0.0:
+                BOUCHON['non'] += 1 
 
+            elif b > 0  and b <= 5:
+                BOUCHON['petit'] += 1 
 
-        elif b > 5 and b <= 9:
-            BOUCHON['moyen'] += 1 
+            elif b > 5 and b <= 9:
+                BOUCHON['moyen'] += 1 
 
-        elif b > 9 and b <= 15:
-            BOUCHON['grand'] += 1 
+            elif b > 9 and b <= 15:
+                BOUCHON['grand'] += 1 
 
-        elif b > 15 and b <= 20:
-            BOUCHON['assez grand'] += 1 
+            elif b > 15 and b <= 20:
+                BOUCHON['assez grand'] += 1 
 
-        elif b > 20:
-            BOUCHON['tres grand'] += 1
-                   
+            elif b > 20:
+                BOUCHON['tres grand'] += 1
+                       
 
 
     
@@ -573,6 +573,7 @@ class trafique:
 
 
         date = str(date)
+    
 
         lundi = str(date).find("lundi")
         mardi = str(date).find("mardi")
@@ -599,10 +600,11 @@ class trafique:
 
         numero_mois = [date]
         
-        numero_mois = numero_mois[0][33:35]
+        numero_mois = numero_mois[0][23:42]
   
 
         num = []
+       
         for i in numero_mois:
             try:
                 i = int(i)
@@ -612,11 +614,13 @@ class trafique:
                 pass
 
         #print(type(num[0]))
+        #print(num)
+        #print(a)
   
 
         if a == jour_semaine and num[0] == jour:
             ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
-
+           
         #a dans 9 jours hihi faut faire pour le 10 par ex
 
 
@@ -904,15 +908,88 @@ class analyse:
 
 
 
-    
+
+    def score(self):
+        trafic_chemin = {'départ':2,
+                         'heure':1,
+                         'non heure':-1,
+                         'régulier':-2,
+            }
 
 
-    def prédiction(self):
-        pass
+        bouchon_chemin = {'non':0,
+                   'petit':0.5,
+                   'moyen':0.75,
+                   'grand':1,
+                   'assez grand':1.5,
+                   'tres grand':2,
+        }
+        
+
+
+        pointe_chemin = {'pointe':2,
+        }
+
+        weekend_chemin = {'weekend':-2,
+        }
+        #---
+
+
+        METEO = {'beau_temps':1,
+                 'nuageux':0,
+                 'pluie':-2,
+        }
+        
+        SAISON = {'primtemps':1,
+                  'été':2,
+                  'hiver':2,
+                  'automne':-1,
+        }
+        CLIMAT = {'> 0':1,
+                  '0_10':-1,
+                  '11_20':-1,
+                  '21_30':2,
+                  '31_40':2,
+                  '>40':2,
+        }
+
+        PRESSION = {'forte':2,
+                    'faible':-2,
+                    'normale':0,
+        }
+
+        #---
+
+        VILLE_POLLUE2018 = {'non':-1,
+                            'un':2,
+                            'deux':2,
+                            'trois':2,
+                            'quattre':2,
+        }
+
+
+        POPULATION_ACTIVE_HABITANT = {'sup1M':2,
+                                      'sup500K':1,
+                                      'supp300K':1,
+        }
+
+
+        ACTIVITE_EXEPTIONNELLE = {'aggisement':-2,
+                                  'manifestation':1,
+                                  'circulation dense':2,
+                                  'condition a polution':2,
 
 
 
+        }
 
+
+        REGION_INDUSTRIEL_POLLUEE = {'oui':2,
+                                     'non':-1,
+        }
+
+
+        
     def print(self):
 
         
@@ -997,27 +1074,25 @@ if __name__ == "__main__":
         
 
 
-        analyse.fonction(TRAFIQUE)
-        analyse.fonction(WEEKEND)
-        analyse.fonction(POINTE)
-        analyse.fonction(BOUCHON)
+        analyse.analyse(TRAFIQUE)
+        analyse.analyse(WEEKEND)
+        analyse.analyse(POINTE)
+        analyse.analyse(BOUCHON)
     
 
 
-        analyse.fonction(METEO)
-        analyse.fonction(VENT)
-        analyse.fonction(SAISON)
-        analyse.fonction(CLIMAT)
-        analyse.fonction(PRESSION)
+        analyse.analyse(METEO)
+        analyse.analyse(VENT)
+        analyse.analyse(SAISON)
+        analyse.analyse(CLIMAT)
+        analyse.analyse(PRESSION)
 
 
-        analyse.fonction(VILLE_POLLUE2018)
-        analyse.fonction(ACTIVITE_EXEPTIONNELLE)
-        analyse.fonction(POPULATION_ACTIVE_HABITANT)
-        analyse.fonction(REGION_INDUSTRIEL_POLLUEE)
+        analyse.analyse(VILLE_POLLUE2018)
+        analyse.analyse(ACTIVITE_EXEPTIONNELLE)
+        analyse.analyse(POPULATION_ACTIVE_HABITANT)
+        analyse.analyse(REGION_INDUSTRIEL_POLLUEE)
   
-
-
 
 
 
@@ -1026,23 +1101,7 @@ if __name__ == "__main__":
         #print(PARTICULE)
      
     
-            
-
-
-        METEO = {'beau_temps':0,
-                 'nuageux':0,
-                 'pluie':0,
-        }
-
-
-        CLIMAT = {'> 0':0,
-                  '0_10':0,
-                  '11_20':0,
-                  '21_30':0,
-                  '31_40':0,
-                  '>40':0,
-        }
-
+        
 
         TRAFIQUE = {'depart_routier':0,
             'heure_pointe':0,
@@ -1060,6 +1119,28 @@ if __name__ == "__main__":
 
 
 
+        METEO = {'beau_temps':0,
+                 'nuageux':0,
+                 'pluie':0,
+        }
+        
+        SAISON = {'primtemps':0,
+                  'été':0,
+                  'hiver':0,
+                  'automne':0,
+        }
+        CLIMAT = {'> 0':0,
+                  '0_10':0,
+                  '11_20':0,
+                  '21_30':0,
+                  '31_40':0,
+                  '>40':0,
+        }
+
+        PRESSION = {'forte':0,
+                    'faible':0,
+                    'normale':0,
+        } 
 
         PARTICULE = {'0_20':0,
                     '21_40':0,
@@ -1076,19 +1157,12 @@ if __name__ == "__main__":
 
 
 
-        PRESSION = {'forte':0,
-                    'faible':0,
-                    'normale':0,
-        }
 
 
 
 
-        SAISON = {'primtemps':0,
-                  'été':0,
-                  'hiver':0,
-                  'automne':0,
-        }
+
+
 
 
         BOUCHON = {'non':0,
