@@ -1,5 +1,13 @@
 #bobo
 
+#ok faire le rapprochement entre habits et pollution en gros pour habits == poid lourds donc circulation donc pollution
+
+#synergologie ca enfete chai pas... quand je serai plus vieux jacheterai un truk vr et je ferai mon truk avec plus de temps
+
+#la peut etre pas faire 3 sites OU faire un site qui aide les vieux ge nre une extension a les aider a niviguer sur internet avec leur mot ginette sera refaite
+
+
+
 #continue de relevé les truk chaques jours et chaque heure les truks fini le site 
 
 #bon ben ojd ca marche pas avec paris... pas grave 
