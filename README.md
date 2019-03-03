@@ -1,6 +1,9 @@
 #bobo
 
-#bon ok met des valeurs aux hasard et ensuite essaie que ca colle fini ce machin, sur le site met toutes les info et fini flask et prepare ton controle les additions m'ont tué en plus ca sert a rien et y'a un bug a chaque essais
+#continue de relevé les truk chaques jours et chaque heure les truks fini le site 
+
+#bon ben ojd ca marche pas avec paris... pas grave 
+
 
 #-------------------------------------------------important
 
