@@ -2,6 +2,10 @@
 
 #au pire que je dise 52.0000000 de polution ou de 10 a 1000 c la meme chose ca prévoit et c correcdte donc c juste merde
 
+#merde jcomprend rien au video des poids et ajustement automatiques mais ca doit etre cool en vrai oui c cool pas autant que my_profil mais bon ouffffff le site a reactualiser ces donénes sté pas 31 c 19 pas mal grokon 
+
+#ok fini le truk pizzeria avant la soutenance et fini les sites et au pire refais flask avec l'api genre deux versions
+
 #ok faire le rapprochement entre habits et pollution en gros pour habits == poid lourds donc circulation donc pollution
 
 #synergologie ca enfete chai pas... quand je serai plus vieux jacheterai un truk vr et je ferai mon truk avec plus de temps
