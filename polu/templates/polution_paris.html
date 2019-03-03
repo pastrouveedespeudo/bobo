@@ -220,16 +220,20 @@
 
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
-          <h2 class="text-white mt-0"></h2>
+      
           
  
           <div style="text-align:center;padding:1em 0;">
             <h2>
               <a style="text-decoration:none;" href="https://www.zeitverschiebung.net/fr/city/2988507"></a>
-               
+             
             </h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=fr&size=large&timezone=Europe%2FParis"
               width="100%" height="140" frameborder="0" seamless>
             </iframe>
+          
+
+            <style>#ensavoirplusheure{color:black;}</style>
+            <a class="navbar-brand js-scroll-trigger" href="#portfolio" id="ensavoirplusheure">Pourquoi l'heure est elle si importante ?</a>
           </div>
 
           <br><br><br>
@@ -241,8 +245,11 @@
     
           <div class="col-sm-4">
             <br><br><br><br><br><br>
+            
             <p id="titre">Taux de pollution de particules fines à Paris</p>
-
+            
+            
+            
             <style>
               #outdiv { height: 200px; overflow: hidden; position: relative; width: 250px;} 
               #iniframe { height: 4000px; left: -180px; position: absolute; top: -400px; width: 1280px;}
@@ -250,16 +257,19 @@
             
 
             <div id="outdiv">
-            
+         
               <iframe
                 src="https://air.plumelabs.com/fr/live/paris" scrolling="no" width="200px" height="200px" id="iniframe">
               </iframe>
              </div>
-            <br><br>
-            
+               
+            <style>#ensavoirplus{margin-left:100px;color:black;}</style>
+            <a  href="#portfolio" id="ensavoirplus">En savoir plus ?</a>
           
           </div>
 
+
+            
 
 
 
@@ -277,9 +287,16 @@
                </iframe>
             </div>
 
+            <br>
+            <style>#ensavoirplusmeteo{margin-left:-100px;color:black;}</style>
+            <a class="navbar-brand js-scroll-trigger" href="#portfolio" id="ensavoirplusmeteo">Pourquoi la météo et elle si importante ?</a>
+
+
+
       
             <br><br>
-             <center>A Paris a: {{heure}}h : {{minute}} il fait {{temps}} et le taux de pollution est de : {{pollution}}</center>
+            
+             
           </div>
 
 
@@ -288,8 +305,9 @@
       </div>
    
       <style>#ensavoirplus{margin-left:-860px;color:black;}</style>
-       <a href id="ensavoirplus">En savoir plus ?</a>
-     
+       <center>A Paris a: {{heure}}h : {{minute}} il fait {{temps}} et le taux de pollution est de : {{pollution}}</center>
+
+        
    
        <br><br><br><br>
         <h3>voir aussi:</h3>
@@ -413,15 +431,17 @@
         
         <div class="col-lg-4 col-sm-6">
         
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/2.jpg" alt="">
+          <a class="portfolio-box" href="/static/img/portfolio2/image/meteo.jpg">
+            <img class="img-fluid" src="/static/img/portfolio2/image/meteo.jpg" alt="">
             
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Sarah 24 ans
+                La météo est corrélée avec la pollution
               </div>
               <div class="project-name">
-                Ne fais plus d'achat inutil
+                Plus il fait chaud plus il y a de la pollution. Mais elle apparait aussi quand il fait froid.
+                Le chauffage au bois traité augmente l'augmente! Les anticyclones sont facteurs. L'air se réchauffe
+                en haute atmosphère d'habitude est plus froid. Cela emprisonne l'air polué dans note atmosphère.
               </div>
             </div>
           </a>
@@ -431,14 +451,16 @@
 
         
         <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/3.jpg" alt="">
+          <a class="portfolio-box" href="/static/img/portfolio2/image/heure.jpg">
+            <img class="img-fluid" src="/static/img/portfolio2/image/heure.jpg" alt="">
             <div class="portfolio-box-caption">
               <div class="project-category text-white-50">
-                Jo 35 ans
+                l'heure
               </div>
               <div class="project-name">
-                a kiffé le projet
+                Aller aux travailles, rentrer du travaille ect... Représente les heures de pointes.
+                A ces heures la de 8 a 9 heures et de 17 a 19h, que la pollution est la plus élevée.
+                                                    
               </div>
             </div>
           </a>
