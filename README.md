@@ -1,5 +1,7 @@
 #bobo
 
+#faire des liens vers les pages qui racconte tous ca et ou appuyer sur l'image
+
 #ok faire le rapprochement entre habits et pollution en gros pour habits == poid lourds donc circulation donc pollution
 
 #synergologie ca enfete chai pas... quand je serai plus vieux jacheterai un truk vr et je ferai mon truk avec plus de temps
