@@ -12,6 +12,7 @@
 
 #bon ben ojd ca marche pas avec paris... pas grave 
 
+#oublie pas, de mette des lien vers la pollution de l'eau et le truk des algues et de la respiration chai plus comment ca sapelle
 
 #-------------------------------------------------important
 
