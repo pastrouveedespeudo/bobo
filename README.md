@@ -1,6 +1,6 @@
 #bobo
 
-#faire des liens vers les pages qui racconte tous ca et ou appuyer sur l'image
+#au pire que je dise 52.0000000 de polution ou de 10 a 1000 c la meme chose ca prévoit et c correcdte donc c juste merde
 
 #ok faire le rapprochement entre habits et pollution en gros pour habits == poid lourds donc circulation donc pollution
 
