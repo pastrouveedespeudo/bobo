@@ -3,6 +3,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,14 +66,14 @@
             #im1{
               width:50px;
               height:50px;
-              margin-left:60px;
+              margin-left:80px;
           }
           </style>
 
           <li class="nav-item">
             <a href = "/photo/photo">
-              <img src="/static/img/portfolio/icone/photo.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/photo">Prendre une photo</a>
+              <img src="/static/img/portfolio2/icone/graphe.png" id="im1">
+              <a class="nav-link js-scroll-trigger" href="/photo/photo">Nos graphiques</a>
             </a>
           </li>
 
@@ -87,8 +88,8 @@
           
           <li class="nav-item">
            <a href = "/photo/mes_images">
-            <img src="/static/img/portfolio/icone/mes_images.png" id="im2">
-            <a class="nav-link js-scroll-trigger" href="/photo/mes_images">Charger une image</a>
+            <img src="/static/img/portfolio2/icone/pol.png" id="im2">
+            <a class="nav-link js-scroll-trigger" href="/photo/mes_images">Nos données pollution</a>
             </a>
           </li>
 
@@ -104,7 +105,7 @@
           <li class="nav-item">
             <a href = "/photo/coupe">
               <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/coupe">Info trafique</a>
+              <a class="nav-link js-scroll-trigger" href="/photo/coupe">Nos predictions</a>
             </a>
           </li>
 
@@ -123,7 +124,7 @@
           
           <li class="nav-item">
            <a href = "/photo/habits">
-            <img src="/static/img/portfolio/icone/vetements.png" id="im3">
+            <img src="/static/img/portfolio2/icone/pollution.png" id="im3">
             <a class="nav-link js-scroll-trigger" href="/photo/habits">Tous sur la pollution</a>
             </a>
           </li>
@@ -131,15 +132,8 @@
           
           <li class="nav-item">
            <a href = "/photo/habits">
-            <img src="/static/img/portfolio/icone/vetements.png" id="im3">
+            <img src="/static/img/portfolio2/icone/fight.png" id="im3">
             <a class="nav-link js-scroll-trigger" href="/photo/habits">Comment lutter ?</a>
-            </a>
-          </li>
-
-          <li class="nav-item">
-           <a href = "/photo/habits">
-            <img src="/static/img/portfolio/icone/vetements.png" id="im3">
-            <a class="nav-link js-scroll-trigger" href="/photo/habits">Météo France</a>
             </a>
           </li>
 
@@ -172,7 +166,12 @@
           <h1 class="text-uppercase text-white font-weight-bold">Bienvenu !</h1>
           <br>
           <style>#h{font:Serif; color:white;}</style> 
-          <h2 id="h">My Pollution est un site de... copieur</h3>
+          <h2 id="h">My Pollution est un site rassemblant des informations sur la pollution afin de trouver de montrer que la pluie influe sur la pollution.
+          A travers différentes données scientifiques existantes et de données en temps réel.
+          En quoi ce site est-il d'un enjeu sociétal ? Nous savons aujourd'hui que la pluie abaisse la pollution 
+          Nous allons essayer ensemble, de vous montrer qu'une machine a pluie pourrait baisser drastiquement la pollution a travers des données receuillis chaque jour depuis 4 jours
+          Une machine a pluie aurait l'avantage d'etre peu couteuse et plaquerait les particules aux sols
+          Mais qu'en est il des maladies de peau ou les maladies animaux enfant (patte) ?</h3>
           <hr class="divider my-4">
         </div>
         <div class="col-lg-8 align-self-baseline">
@@ -278,7 +277,8 @@
 
         
             <br>
-            <p>Voir nos données sur Lyon<p>
+            <style>#yo{color:black;}</style>
+            <a href="/polution/polution_lyon"><p id="yo">Voir nos données sur Lyon<p></a>
        
 
           </div>
@@ -321,7 +321,7 @@
 
                     
             <br><br>
-            <p>Voir nos données sur Paris<p>
+            <a href="/polution/polution_paris"><p id="yo">Voir nos données sur Paris<p></a>
 
           </div>
 
@@ -362,7 +362,7 @@
 
                   
           <br><br>
-          <p>Voir nos données sur Marseille<p>
+            <a href="/polution/polution_marseille"><p id="yo">Voir nos données sur Marseille<p></a>
 
         </div>
 
@@ -444,9 +444,9 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im6{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/telecharger.png"/ id="im6">
-            <h3 class="h4 mb-2">Télécharger une image</h3>
-            <p class="text-muted mb-0">Télécharge une image et va essayer des coupes de cheveux et des vetements !!</p>
+           <img src = "/static/img/portfolio2/icone/graphe.png"/ id="im6">
+            <h3 class="h4 mb-2">Un recit sans preuve ca sert a rien...</h3>
+            <p class="text-muted mb-0">Nos graphiques</p>
           </div>
         </div>
 
@@ -456,10 +456,10 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im4{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/photo.png"/ id="im4">
-            <h3 class="h4 mb-2">Prendre une photo !   </h3>
+           <img src = "/static/img/portfolio2/icone/pol.png"/ id="im4">
+            <h3 class="h4 mb-2">Nos données</h3>
             <br>
-            <p class="text-muted mb-0">Va faire la star ! et va essayer une coupe de cheveux !</p>
+            <p class="text-muted mb-0">Nos données pollution</p>
           </div>
         </div>
 
@@ -467,10 +467,9 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im5{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/vetements.png"/ id="im5">
-            <h3 class="h4 mb-2">Essaie des vetements !</h3>
-            <p class="text-muted mb-0">Selon la tendance du moment va essayer des vetements
-            notre algorith fais par un genie chinois te propose les meilleurs couleurs </p>
+           <img src = "/static/img/portfolio/icone/coiffure.png"/ id="im5">
+            <h3 class="h4 mb-2">qui... ne marche pas super..</h3>
+            <p class="text-muted mb-0">Nos prédictions</p>
           </div>
         </div>
 
@@ -478,13 +477,25 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/magasin.png"/ id="im7">
-            <h3 class="h4 mb-2">e-commerce</h3>
+           <img src = "/static/img/portfolio2/icone/pollution.png"/ id="im7">
+            <h3 class="h4 mb-2">La pollution ! ah enfete c'est quoi ? </h3>
             <br>
-            <p class="text-muted mb-0">thune Thune THUNEEEE</p>
+            <p class="text-muted mb-0">Tous absolument tous sur la polltuion </p>
           </div>
         </div>
 
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+           <style>#im7{width:100px; height:100px;}</style>
+           <img src = "/static/img/portfolio2/icone/fight.png"/ id="im7">
+            <h3 class="h4 mb-2">Notre solution</h3>
+            <br>
+            <p class="text-muted mb-0">Luttons</p>
+          </div>
+        </div>
+
+
+        
 
         
       </div>
