@@ -454,7 +454,7 @@ class trafique:
 
         heure = date.hour
         jour = date.weekday()
-        
+       
         #print(heure, jour)
 
         for i in pointe:
@@ -1012,22 +1012,27 @@ class analyse:
         self.dico = dico
 
         a = ""
-
+        yo = 0
         for cle, valeur in self.dico.items():
+            print(cle,valeur)
             if valeur == 1:
                 print(cle)
+                yo = cle
+                print(yo)
                 break
         
-        return cle
+        return yo
      
 
     def point(self, dico, cle):
         self.dico = dico
         self.cle = cle
-  
-        a = self.dico[str(self.cle)]
-        return a
-
+        print(self.cle)
+        try:
+            a = self.dico[str(self.cle)]
+            return a
+        except:
+            return 0
 
      
     def point_palier_1(self):
