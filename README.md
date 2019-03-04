@@ -1,5 +1,9 @@
 #bobo
 
+#fini tout et reviens ici, continue de prendre les doonées et faut faire les indices de confiance chai pas faire ca moi
+
+#ya le rognage de la photo et plein de coupe de chevuex et de vetement, sinon des fois fini les pages une jouréne a faire les requetes mysql alors qui fallait pas les faire...
+
 #au pire que je dise 52.0000000 de polution ou de 10 a 1000 c la meme chose ca prévoit et c correcdte donc c juste merde
 
 #merde jcomprend rien au video des poids et ajustement automatiques mais ca doit etre cool en vrai oui c cool pas autant que my_profil mais bon ouffffff le site a reactualiser ces donénes sté pas 31 c 19 pas mal grokon 
