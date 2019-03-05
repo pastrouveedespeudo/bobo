@@ -3,10 +3,6 @@
 
 
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -159,6 +155,9 @@
 
           
           <a class="navbar-brand js-scroll-trigger" href ="#about"><img src ="/static/img/meteo.jpg"></a>
+          <a class="navbar-brand js-scroll-trigger" href ="#about2"><img src ="/static/img/humain.jpg"></a>
+          <a class="navbar-brand js-scroll-trigger" href ="#about3"><img src ="/static/img/inhalateur.jpg"></a>
+          <a class="navbar-brand js-scroll-trigger" href ="#about4"><img src ="/static/img/pla.jpg"></a>
 
 
           
@@ -220,9 +219,7 @@
         <div class="row">
 
           
-      
-      
-
+        <div class="col-sm-6-col-xs-6" id="vent">
             <style>#temps{color:black;background-color:white;}</style>
             
             <input type="image" src ="/static/img/soleil.png" onclick="meteo()"> 
@@ -270,80 +267,69 @@
 
               
         </script>
-
+      </div>
             
 
 
 
 
         
-            <style>#vent{color:black;background-color:white;}</style>
+        <style>#vent{color:black;background-color:white;}</style>
   
-            <div class="col-sm-6-col-xs-6" id="vent">
-                                                                     
+        <div class="col-sm-6-col-xs-6" id="vent">
+                                                                         
             <input type="image" src ="/static/img/vent.jpg" onclick="vent()"> 
 
-         
+            <script>
 
+                    function vent(){
+                      
+                        var div = document.getElementById("div");
+                        div.innerHTML = '<p>Nous nous sommes adaptés au vent par différentes facons. Par exemple nous avons fait des bateaux<br>'
+                                    + 'des moulins afin de pouvoir nous nourrir' 
+                                    + 'nous avons fais des éoliennes afin de pouvoir nous éclairer ect...'
 
-
-
-        <script>
-
-                function vent(){
-                  
-                    var div = document.getElementById("div");
-                    div.innerHTML = '<p>Nous nous sommes adaptés au vent par différentes facons. Par exemple nous avons fait des bateaux<br>'
-                                + 'des moulins afin de pouvoir nous nourrir' 
-                                + 'nous avons fais des éoliennes afin de pouvoir nous éclairer ect...'
-
-                                + 'Savez tu que le vent est liée à la rotation de la Terre mais aussi a une différence de température ! '
-                                + 'Le vent va forcément faire disparaitre la pollution ! il la disperse et c\'est bon non ? hé ben oui mais pas que. '
-                                + 'La pollution de chez toi va alors se retrouver chez ton voisin et cela sur des centaines et des centaines de kilomètres ! '
-                                + 'ou pire encore, la pollution de ton voisin viendra chez nous ! Cependant, le vent permet nettoyer l\'air bien entendu.'
-                                + 'ca c\'était pour le vent de gauche à droite mais il existe aussi un vent verticale (de bas en haut) '
-                              
-                    
-                                + 'Le vent c\'est une différence de témpérature ! Et bien oui, et cela peut introduire la témpérature et la couche d\'ozone '
-                                + 'que nous verrons plus tard. '
-                                + 'Le vent par différentes typographies (ou différentes formes géographiques)'
-                                + 'peut avoir différentes propriétés. Et donc la pollution est mouvementé differement. Par exemple les villes prés de la mer'
-                                + ''
-                                + 'Les villes dans une valléee'
-                                + ''
-                                + 'Et très haut ? au sommet des montagnes ?</p>'
-  
+                                    + 'Savez tu que le vent est liée à la rotation de la Terre mais aussi a une différence de température ! '
+                                    + 'Le vent va forcément faire disparaitre la pollution ! il la disperse et c\'est bon non ? hé ben oui mais pas que. '
+                                    + 'La pollution de chez toi va alors se retrouver chez ton voisin et cela sur des centaines et des centaines de kilomètres ! '
+                                    + 'ou pire encore, la pollution de ton voisin viendra chez nous ! Cependant, le vent permet nettoyer l\'air bien entendu.'
+                                    + 'ca c\'était pour le vent de gauche à droite mais il existe aussi un vent verticale (de bas en haut) '
+                                  
                         
-                                + '<input type="button" value="Fermer" onclick="fermer()">';
+                                    + 'Le vent c\'est une différence de témpérature ! Et bien oui, et cela peut introduire la témpérature et la couche d\'ozone '
+                                    + 'que nous verrons plus tard. '
+                                    + 'Le vent par différentes typographies (ou différentes formes géographiques)'
+                                    + 'peut avoir différentes propriétés. Et donc la pollution est mouvementé differement. Par exemple les villes prés de la mer'
+                                    + ''
+                                    + 'Les villes dans une valléee'
+                                    + ''
+                                    + 'Et très haut ? au sommet des montagnes ?</p>'
+      
+                            
+                                    + '<input type="button" value="Fermer" onclick="fermer()">';
 
-                };
+                    };
 
 
+                function fermer(){
+                  var div = document.getElementById("div");
+                  div.innerHTML = ''
+                  }
+                
+          </script>
 
-            function fermer(){
-              var div = document.getElementById("div");
-              div.innerHTML = ''
-              }
-            
-        </script>
-
-        </div>
+      </div>
 
 
            
 
 
         
-            <style>#trafic{color:black;background-color:white;}</style>
+        <style>#trafic{color:black;background-color:white;}</style>
   
         <div class="col-sm-6-col-xs-6" id="trafic">
                                                                      
             <input type="image" src ="/static/img/trafic.jpg" onclick="trafic()"> 
-
-            
-
-
-
 
 
             <script>
@@ -352,34 +338,29 @@
                   
                     var div = document.getElementById("div");
                     div.innerHTML = '<p>ouais ouais ouais nos ancetres se baladait a dos de cheval tin c trop chiant</p>'
-  
+
                         
-                                + '<input type="button" value="Fermer" onclick="fermer()">';
+                                   + '<input type="button" value="Fermer" onclick="fermer()">';
 
                 };
 
 
 
-            function fermer(){
-              var div = document.getElementById("div");
-              div.innerHTML = ''
-              }
-            
-            </script>
+              function fermer(){
+                var div = document.getElementById("div");
+                div.innerHTML = ''
+                }
+              
+          </script>
+
+        </div>
 
 
 
-
-
-
-
-
-
-           </div>
 
 
         
-            <style>#trafic{color:black;background-color:white;}</style>
+        <style>#trafic{color:black;background-color:white;}</style>
   
         <div class="col-sm-6-col-xs-6" id="saison">
                                                                      
@@ -390,10 +371,23 @@
                 function saison(){
                   
                     var div = document.getElementById("div");
-                    div.innerHTML = '<p>ouais ouais ouais nos ancetres se baladait a dos de cheval tin c trop chiant</p>'
-  
-                        
-                                + '<input type="button" value="Fermer" onclick="fermer()">';
+                    div.innerHTML = '<p>ouais ouais ouais nos ancetres se baladait a dos de cheval tin c trop chiant'
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                     + '</p>' 
+                    
+                                     + '<input type="button" value="Fermer" onclick="fermer()">';
 
                 };
 
@@ -404,7 +398,16 @@
               div.innerHTML = ''
               }
             
-            </script>
+          </script>
+
+      </div>
+
+
+
+
+
+
+    <div id="div"></div>
 
 
 
@@ -414,13 +417,18 @@
 
 
 
-           </div>
+
+
+
+
+
+
 
 
 
 
         
-          <style>#trafic{color:black;background-color:white;}</style>
+        <style>#trafic{color:black;background-color:white;}</style>
   
         <div class="col-sm-6-col-xs-6" id="manif">
                                                                      
@@ -466,7 +474,7 @@
 
 
         
-          <style>#trafic{color:black;background-color:white;}</style>
+        <style>#trafic{color:black;background-color:white;}</style>
   
         <div class="col-sm-6-col-xs-6" id="indus">
                                                                      
@@ -498,7 +506,7 @@
 
 
         
-          <style>#trafic{color:black;background-color:white;}</style>
+        <style>#trafic{color:black;background-color:white;}</style>
   
         <div class="col-sm-6-col-xs-6" id="semaine">
                                                                      
@@ -535,7 +543,7 @@
 
 
 
-          <style>#trafic{color:black;background-color:white;}</style>
+        <style>#trafic{color:black;background-color:white;}</style>
   
         <div class="col-sm-6-col-xs-6" id="diesel">
                                                                      
@@ -572,7 +580,7 @@
 
 
 
-          <style>#trafic{color:black;background-color:white;}</style>
+        <style>#trafic{color:black;background-color:white;}</style>
   
         <div class="col-sm-6-col-xs-6" id="agriculture">
                                                                      
@@ -609,7 +617,7 @@
 
 
 
-          <div id="div"></div>
+          
 
      
     </div>
@@ -619,18 +627,49 @@
 
 
 
+  <!-- About Section -->
+  <section class="page-section bg-primary" id="about2">
+    <div class="container">
+
+
+      <div class="row justify-content-center">
+        <div class="col-lg-12 text-center">
+          <h2 class="text-white mt-0"></h2>
+          
+
+    </div>
+  </section>
+
+
+
+ <!-- About Section -->
+  <section class="page-section bg-primary" id="about3">
+    <div class="container">
+
+
+      <div class="row justify-content-center">
+        <div class="col-lg-12 text-center">
+          <h2 class="text-white mt-0"></h2>
+          
+
+    </div>
+  </section>
 
 
 
 
+ <!-- About Section -->
+  <section class="page-section bg-primary" id="about4">
+    <div class="container">
 
 
+      <div class="row justify-content-center">
+        <div class="col-lg-12 text-center">
+          <h2 class="text-white mt-0"></h2>
+          
 
-
-
-
-
-
+    </div>
+  </section>
 
 
 
