@@ -20,7 +20,7 @@
 
 #faire une extension aide qui dis quoi faire pourquoi du genre un code css + html que tu met dans un autre fichier et que t'inclue sur les div chai pas
 
-
+#oh bordel mais c trop chiant tellement que jme referai bien le truk des phrases pffffff jve faire le truk de la voiture aussi...
 
 #-------------------------------------------------important
 
