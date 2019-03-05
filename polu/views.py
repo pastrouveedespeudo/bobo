@@ -15,36 +15,50 @@ def polution(request):
 def charger(request):
     return render(request, 'charger.html')
 
+def donnée(request):
+    return render(request, 'donnée.html')
+
+def machine_a_o(request):
+    return render(request, 'machine a o.html')
+
+def prediction(request):
+    return render(request, 'prediction.html')
+
 
 
 def polution_lyon(request):
 
 
     a = heure()
-    temps = temps("lyon")
-    polution = particule("lieu")
+    b = temps("lyon")
+    c = particule("lyon")
     
 
-    return render(request, 'polution_lyon.html', {'heure':a[0],'minute':a[1], 'temps':temps, 'pollution':polution})
+    return render(request, 'polution_lyon.html', {'heure':a[0],'minute':a[1], 'temps':b, 'pollution':c})
 
 
 
 def polution_marseille(request):
 
     a = heure()
-    temps = temps("marseille")
-    polution = particule("marseille")
+    b = temps("marseille")
+    c = particule("marseille")
 
     
-    return render(request, 'polution_marseille.html', {'heure':a[0],'minute':a[1], 'temps':temps, 'pollution':polution})
+    return render(request, 'polution_marseille.html', {'heure':a[0],'minute':a[1], 'temps':b, 'pollution':c})
 
 def polution_paris(request):
 
     a = heure()
-    temps = temps("paris")
-    polution = particule("paris")
+    b = temps("paris")
+    c = particule("paris")
     
-    return render(request, 'polution_paris.html', {'heure':a[0],'minute':a[1], 'temps':temps, 'pollution':polution})
+    return render(request, 'polution_paris.html', {'heure':a[0],'minute':a[1], 'temps':b, 'pollution':c})
+
+
+def graphique(request):
+    return render(request, 'graphique.html')
+
 
 
 
@@ -76,10 +90,12 @@ def temps(lieu):
     if méteo == "Clear":
         méteo = "Beau"
 
+    elif méteo == "Clouds":
+        méteo = "Nuageux"
     return méteo
 
 
-def particule(lieu)
+def particule(lieu):
 
 
     path = "https://air.plumelabs.com/fr/live/{}".format(lieu)
@@ -99,7 +115,7 @@ def particule(lieu)
     
     recherche_taux = str(liste).find(str(phrase_clé))
     liste_epluché = liste[20:21]
-    polution = liste_epluché[0][31:33]
+    polution = liste_epluché[0][31:34]
 
     return polution
     
