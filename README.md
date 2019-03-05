@@ -2,6 +2,8 @@
 
 #continue de faire appel a l'individualité pour que le mec qui lit se dise ouaiish chui pas comme ca moi et boom y verra un papier par terre et il le ramassera et incs y sdira moi chui un type bien merde jpensais comme ca en L jtai trop cool !
 
+#ptetre jfais un questionnaire comme a la médiathèque et sur my_profil on met des ornements !
+
 #fini tout et reviens ici, continue de prendre les doonées et faut faire les indices de confiance chai pas faire ca moi
 
 #ya le rognage de la photo et plein de coupe de chevuex et de vetement, sinon des fois fini les pages une jouréne a faire les requetes mysql alors qui fallait pas les faire...
