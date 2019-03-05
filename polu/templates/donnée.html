@@ -5,6 +5,7 @@
 
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -215,122 +216,62 @@
           <h2 class="text-white mt-0"></h2>
           
  
-            <h2>reflechis pk ca te fais chier de lire wikipédia ?
-            tu les sors d'ou toutes info batard?
-            
-    --et en vrai on en parle tous les jours mais on s'en branle de la polution
-    d'autres trouverons des moyens de regler ca
-    
-    --c important ! notre planete est un déchet mais je le pense sur le moment
-    taleur je m'e nbatterais les couilles
-
-
-
-    repondre a ca
-    
+            <h2></h2>
+    SOMMAIRE:
         <div class="row">
 
           
-          <div class="col-sm-12">
-            SOMMAIRE:
-
-            <style>
-            #temps{
-            color:black;
-            background-color:white;
-            background-image:url("/static/img/meteo.jpg");
-            }
-            </style>
-  
-            <div style="border:1px solid red" class="col-sm-3" id="temps">
-            temps,
-            </div>
-
-
-            <style>
-            #agi{
-            color:black;
-            background-color:white;
-            background-image:url("/static/img/green.jpg");
-            }
-            </style>
-           
-            <div style="border:1px solid red" class="col-sm-3" id="agi">
-        
-            méteo, vent, anty, chaleur
-            </div>
-
-
-
-            <style>
-            #traf{
-            color:black;
-            background-color:white;
-            background-image:url("/static/img/trafic.jpg");
-            }
-            </style>
-
-           
-            <div style="border:1px solid red" class="col-sm-3" id="traf">
-            trafique,
-            </div>
-
-
-            <style>
-            #act{
-            color:black;
-            background-color:white;
-            background-image:url("/static/img/manif.jpg");
-            }
-            </style>
-           
-            <div style="border:1px solid red" class="col-sm-3" id="act">
-            activité exeptionnelle,
-            </div>
-
-
-            <style>
-            #traf{
-            color:black;
-            background-color:white;
-            background-image:url("/static/img/trafic.jpg");
-            }
-            </style>
-
-          
-            <div style="border:1px solid red" class="col-sm-3" id="traf">
-            heure de pointe,
-            </div>
-
-
-
-
-            <style>
-            #agi{
-            color:black;
-            background-color:white;
-            background-image:url("/static/img/indus.jpg");
-            }
-            </style>
+      
             
-            <div style="border:1px solid red" class="col-sm-3">
-            positionnement ville pollué 2018,
-            </div>
 
-
-
-
-
-            <style>
-            #situ{
-            color:black;
-            background-color:white;
-            background-image:url("/static/img/montagne.jpg");
-            }
-            </style>
+            <style>#temps{color:black;background-color:white;}</style>
             
-            <div style="border:1px solid red" class="col-sm-3" id="situ">
-             lieu geo,
+            <input type="image" src ="/static/img/meteo.jpg" onclick="meteo()"> 
+              
+            <div id="temps"></div>
+
+
+            <script>
+
+            function meteo(){
+                
+                var div = document.getElementById("temps");
+                div.innerHTML = '<p><img src ="/static/img/soleil.png">Quoi de mieux qu\'un temps d\'été ? On peut sortir, etre avec ces amis, on adore ca !'
+                                + 'Cela est inscris dans nos gènes, notre mémoire biologique.'
+                                + 'Nos ancètres ben oui, avant toi y\'avait un singe nu qui se baladait dans la foret un gaulois,'
+                                + 'un chevalier, un napoléonien... et un d\'eux a peut etre developpé une maladie sous la pluie et sous le froid du coup'
+                                + 'il a donnée a son fils, ton ancetre le pouvoir de se méfier de la pluie et du froid.<br>'
+                                + 'Mais l\'absence de soleil permet aussi la mélatonine ! hohoho c\'est quoi ? en gros très gros c\'est une hormone qui te dis quand tu dois dormir.'
+                                + 'Et ca peut nous rendre triste a trop forte présence.<br>'
+                                + 'Ah oui, savez tu aussi que le soleil rend aggressif ? (En californie y fait grave chaud et le taux d\'aggression et le plus élevé)'
+                                + 'et que la baisse de la température suite a un long épisode de chaleur provoqué un petit cafard ? Donc l\'absence de lumière'
+                                + '(aussi source de vitamine D) peut nous rendre morose.<br>'
+                                + 'Donc enfete le mauvais temps c\'est nul ca devrait pas exister vive le beau temps alors! Ben oui.'
+                                + 'Mais la pollution aussi adore le beau temps. Ah oui c\'est vrai c\'est un site de polution. Mais alors pourquoi'
+                                + 'le beau temps et la pollution? Est-ce que tu connais les anticyclones ?<br>'                                
+                                + 'Mince j\'étais la pour la pollution moi...'
+                                + 'Bon allé je continue et je ferme si ca parle pas de pollution. Un anticyclone, c\'est un truk qui permet a'
+                                + 'Pollution de resté dans notre zone d\'air respirable attend je m\'explique avec une métaphore.'
+                                + 'On a notre zone haute de 4 immeuble de 10 étages ok ? et plus haut que ces 40 étages il y a la'
+                                + 'haute atmosphère. Cette altitude c\'est une zone plus froide que la notre. Enfete par a + b l\'air froid'
+                                + 'de la haute atmosphère permet d\'évacuer l\'air chaud de notre zone (les 4 étages). Un anticyclone c\'est'
+                                + 'un phénomène qui applique une pression de plus de 1030 hpa et qui va réchauffer l\'air de la haute atmosphère'
+                                + 'et qui va empécher d\'évacuer l\'air chaud et pollué de notre zone !</p>';
+
+              };
+
+            </script>
+
+            
+    
+            <style>#agi{color:black;background-color:white;}</style>
+             
+            <div style="border:1px solid red" class="col-sm-6-col-xs-6" id="agi">
+                                                                     
+              <img src ="/static/img/vent.jpg">
+
+            Savez tu que le vent c'est liée a la rotation de la Terre
+
             </div>
 
 
@@ -338,103 +279,10 @@
 
 
 
-            <style>
-            #saison{
-            color:black;
-            background-color:white;
-            background-image:url("/static/img/saison.jpg");
-            }
-            </style>
-               
-            <div style="border:1px solid red" class="col-sm-3" id="saison">
-            saison
-            </div>    
 
 
 
 
-
-            <style>
-            #sem{
-            color:black;
-            background-color:white;
-            background-image:url("/static/img/semaine.jpg");
-            }
-            </style>
-
-            <div style="border:1px solid red" class="col-sm-3" id="sem">
-            jour semaine,
-            </div>     
-
-
-
-
-
-
-            <style>
-            #die{
-            color:black;
-            background-color:white;
-            background-image:url("/static/img/diesel.jpg");
-            }
-            </style>
-
-            
-            <div style="border:1px solid red" class="col-sm-3" id="die">
-            nombre voiture diesel,
-            </div>               
-
-
-
-
-
-
-
-            <style>
-            #industrie{
-            color:black;
-            background-color:white;
-            background-image:url("/static/img/indus.jpg");
-            }
-            </style>
-
-            
-              <div style="border:1px solid red" class="col-sm-3" id="industrie">
-           industrie,
-            </div>             
-
-
-
-
-
-
-            <style>
-            #agriculture{
-            color:black;
-            background-color:white;
-            background-image:url("static/img/agriculture.jpg");
-            }
-            </style>
-            
-            <div style="border:1px solid red" class="col-sm-3" id="agriculture">
-               agriculture,
-            </div>  
-
-
-
-
-
-
-
-
-            
-            
-        
-
-            description, conséquence, lien, remede, lien
-         
-               
-          </div>
 
 
           <div class="col-sm-12">
