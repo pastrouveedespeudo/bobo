@@ -1,32 +1,26 @@
 #bobo
 
-#continue de faire appel a l'individualité pour que le mec qui lit se dise ouaiish chui pas comme ca moi et boom y verra un papier par terre et il le ramassera et incs y sdira moi chui un type bien merde jpensais comme ca en L jtai trop cool !
+#----faut que tout soit parfait--------
 
-#ptetre jfais un questionnaire comme a la médiathèque et sur my_profil on met des ornements !
+#ya le rognage de la photo 
 
-#fini tout et reviens ici, continue de prendre les doonées et faut faire les indices de confiance chai pas faire ca moi
+#mettreplein de coupe de chevuex et de vetement,
 
-#ya le rognage de la photo et plein de coupe de chevuex et de vetement, sinon des fois fini les pages une jouréne a faire les requetes mysql alors qui fallait pas les faire...
+#mettre les vetements dans tshirt pantalon
 
-#au pire que je dise 52.0000000 de polution ou de 10 a 1000 c la meme chose ca prévoit et c correcdte donc c juste merde
+#draggable des habits 
 
-#merde jcomprend rien au video des poids et ajustement automatiques mais ca doit etre cool en vrai oui c cool pas autant que my_profil mais bon ouffffff le site a reactualiser ces donénes sté pas 31 c 19 pas mal grokon 
+#mettre la tete du mec au habits aussi
 
-#ok fini le truk pizzeria avant la soutenance et fini les sites et au pire refais flask avec l'api genre deux versions
+#finir les résumer les travailler et les approfondir
 
-#ok faire le rapprochement entre habits et pollution en gros pour habits == poid lourds donc circulation donc pollution
+#mettre toutes les références
 
-#synergologie ca enfete chai pas... quand je serai plus vieux jacheterai un truk vr et je ferai mon truk avec plus de temps
+#soit tu laisses comme ca soit t'essais l'indice de confiance
 
-#la peut etre pas faire 3 sites OU faire un site qui aide les vieux ge nre une extension a les aider a niviguer sur internet avec leur mot ginette sera refaite
+#faire une extension aide qui dis quoi faire pourquoi du genre un code css + html que tu met dans un autre fichier et que t'inclue sur les div chai pas
 
 
-
-#continue de relevé les truk chaques jours et chaque heure les truks fini le site 
-
-#bon ben ojd ca marche pas avec paris... pas grave 
-
-#oublie pas, de mette des lien vers la pollution de l'eau et le truk des algues et de la respiration chai plus comment ca sapelle
 
 #-------------------------------------------------important
 
