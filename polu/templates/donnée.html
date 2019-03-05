@@ -145,12 +145,6 @@
 
 
 
-  <script>
-    function button1(){
-      alert('cc')
-      }
-  </script>
-
 
 
   <!-- Masthead -->
@@ -158,11 +152,15 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">Lyon</h1>
+          <h1 class="text-uppercase text-white font-weight-bold">Pollution</h1>
           <br>
-          <style>#h{font:Serif; color:white;}</style> 
-          <h2 id="h">La pollution
-          </h2>
+          <style>#h{font:Serif; color:white;}</style>
+
+          
+          <a class="navbar-brand js-scroll-trigger" href ="#about"><img src ="/static/img/meteo.jpg"></a>
+
+
+          
           <hr class="divider my-4">
         </div>
         <div class="col-lg-8 align-self-baseline">
@@ -222,21 +220,20 @@
 
           
       
-            
+      
 
             <style>#temps{color:black;background-color:white;}</style>
             
-            <input type="image" src ="/static/img/meteo.jpg" onclick="meteo()"> 
+            <input type="image" src ="/static/img/soleil.png" onclick="meteo()"> 
               
-            <div id="temps"></div>
-
+            
 
             <script>
 
             function meteo(){
                 
-                var div = document.getElementById("temps");
-                div.innerHTML = '<p><img src ="/static/img/soleil.png">Quoi de mieux qu\'un temps d\'été ? On peut sortir, etre avec ces amis, on adore ca !'
+                var div = document.getElementById("div");
+                div.innerHTML = '<p>Quoi de mieux qu\'un temps d\'été ? On peut sortir, etre avec ces amis, on adore ca !'
                                 + 'Cela est inscris dans nos gènes, notre mémoire biologique.'
                                 + 'Nos ancètres ben oui, avant toi y\'avait un singe nu qui se baladait dans la foret un gaulois,'
                                 + 'un chevalier, un napoléonien... et un d\'eux a peut etre developpé une maladie sous la pluie et sous le froid du coup'
@@ -256,21 +253,106 @@
                                 + 'haute atmosphère. Cette altitude c\'est une zone plus froide que la notre. Enfete par a + b l\'air froid'
                                 + 'de la haute atmosphère permet d\'évacuer l\'air chaud de notre zone (les 4 étages). Un anticyclone c\'est'
                                 + 'un phénomène qui applique une pression de plus de 1030 hpa et qui va réchauffer l\'air de la haute atmosphère'
-                                + 'et qui va empécher d\'évacuer l\'air chaud et pollué de notre zone !</p>';
+                                + 'et qui va empécher d\'évacuer l\'air chaud et pollué de notre zone !'
+                                + 'Le beau temps la pollution à case des rayons UV ! Ces rayons la qui nous font bronzer vont pouvoir faire réagir'
+                                + 'et former des polluants. Et dans tous ca les nuages ca sert à quoi ? faut mettre des mots clées</p>'
+                
+                                + '<input type="button" value="Fermer" onclick="fermer()">'
 
               };
 
+            
+            function fermer(){
+              var div = document.getElementById("div");
+              div.innerHTML = ''
+              }
+
+              
             </script>
 
             
-    
-            <style>#agi{color:black;background-color:white;}</style>
-             
-            <div style="border:1px solid red" class="col-sm-6-col-xs-6" id="agi">
-                                                                     
-              <img src ="/static/img/vent.jpg">
 
-            Savez tu que le vent c'est liée a la rotation de la Terre
+
+
+
+        
+            <style>#vent{color:black;background-color:white;}</style>
+  
+            <div class="col-sm-6-col-xs-6" id="vent">
+                                                                     
+            <input type="image" src ="/static/img/vent.jpg" onclick="vent()"> 
+
+            <div id="vent"></div>
+
+
+
+
+
+            <script>
+
+                function vent(){
+                  
+                    var div = document.getElementById("div");
+                    div.innerHTML = '<p>Savez tu que le vent est liée a la rotation de la Terre mais aussi a une différence de température !'
+                                + 'Le vent va forcément faire disparaitre la pollution ! il la disperse et c\'est bon non ? hé ben oui mais pas que.'
+                                + 'La pollution de chez toi va alors se retrouver chez ton voisin et cela sur des centaines et des centaines de kilomètres !'
+                                + 'ou pire encore, la pollution de ton voisin viendra chez nous ! '
+                                + 'ca c\'était pour le vent de gauche à droite mais il existe aussi un vent verticale (de bas en haut)'
+                              
+                    
+                                + 'Le vent c\'est une différence de témpérature ! Et bien oui, et cela peut introduire la témpérature et la couche d\'ozone'
+                                + 'que nous verrons plus tard.'
+
+
+
+
+
+
+                    
+                                + 'Et ca peut nous rendre triste a trop forte présence.<br>'
+                                + 'Ah oui, savez tu aussi que le soleil rend aggressif ? (En californie y fait grave chaud et le taux d\'aggression et le plus élevé)' 
+                                + 'et que la baisse de la température suite a un long épisode de chaleur provoqué un petit cafard ? Donc l\'absence de lumière'
+                                + '(aussi source de vitamine D) peut nous rendre morose.<br>'
+                                + 'Donc enfete le mauvais temps c\'est nul ca devrait pas exister vive le beau temps alors! Ben oui.'
+                                + 'Mais la pollution aussi adore le beau temps. Ah oui c\'est vrai c\'est un site de polution. Mais alors pourquoi'
+                                + 'le beau temps et la pollution? Est-ce que tu connais les anticyclones ?<br>'                                
+                                + 'Mince j\'étais la pour la pollution moi...'
+                                + 'Bon allé je continue et je ferme si ca parle pas de pollution. Un anticyclone, c\'est un truk qui permet a'
+                                + 'Pollution de resté dans notre zone d\'air respirable attend je m\'explique avec une métaphore.'
+                                + 'On a notre zone haute de 4 immeuble de 10 étages ok ? et plus haut que ces 40 étages il y a la'
+                                + 'haute atmosphère. Cette altitude c\'est une zone plus froide que la notre. Enfete par a + b l\'air froid'
+                                + 'de la haute atmosphère permet d\'évacuer l\'air chaud de notre zone (les 4 étages). Un anticyclone c\'est'
+                                + 'un phénomène qui applique une pression de plus de 1030 hpa et qui va réchauffer l\'air de la haute atmosphère'
+                                + 'et qui va empécher d\'évacuer l\'air chaud et pollué de notre zone !</p>'
+
+                    
+                                + '<input type="button" value="Fermer" onclick="fermer()">';
+
+                };
+
+
+              
+
+         
+
+
+
+
+
+            function fermer(){
+              var div = document.getElementById("div");
+              div.innerHTML = ''
+              }
+            
+            </script>
+
+
+
+
+
+
+
+            
 
             </div>
 
@@ -278,7 +360,7 @@
 
 
 
-
+            <div id="div"></div>
 
 
 
