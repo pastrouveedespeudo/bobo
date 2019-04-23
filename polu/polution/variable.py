@@ -1,3 +1,19 @@
+
+CLIMAT = {'> 0':0,
+          '0_10':0,
+          '11_20':0,
+          '21_30':0,
+          '31_40':0,
+          '>40':0,
+}
+
+SAISON = {'primtemps':0,
+          'été':0,
+          'hiver':0,
+          'automne':0,
+}
+
+
 METEO = {'beau_temps':0,
          'nuageux':0,
          'pluie':0,
