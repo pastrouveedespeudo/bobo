@@ -9,16 +9,12 @@ from bs4 import *
 from colour import Color
 from PIL import Image, ImageDraw, ImageChops
 
-POPULATION_ACTIVE_HABITANT = {'sup1M':0,
-                              'sup500K':0,
-                              'supp300K':0,
-}
 
 
 
 class socio:
 
-    def habitant(self, lieu):
+    def habitant(self, lieu, POPULATION_ACTIVE_HABITANT):
         self.lieu = lieu
 
         lyon = 328469
@@ -35,11 +31,6 @@ class socio:
             POPULATION_ACTIVE_HABITANT['sup500K'] += 1
         #population active de 15 a 59 ans
 
-
-socio = socio()
-socio.habitant('paris')
-
-print(POPULATION_ACTIVE_HABITANT)
 
 
 
