@@ -9,39 +9,10 @@ from bs4 import *
 from colour import Color
 from PIL import Image, ImageDraw, ImageChops
 
-REGION_INDUSTRIEL_POLLUEE = {'oui':0,
-                             'non':0,
-}
-
-PARTICULE = {'0_20':0,
-            '21_40':0,
-            '41_60':0,
-            '61_80':0,
-            '81_100':0,
-            '101_120':0,
-            '121_140':0,
-            '141_160':0,
-            '161_180':0,
-            '181_200':0,
-            '>200':0
-}
-
-
-VILLE_POLLUE2018 = {'VILLE_POLLUE2018':0,
-                    'un':0,
-                    'deux':0,
-                    'trois':0,
-                    'quattre':0,
-                    'non':0,
-}
-
-REGION_INDUSTRIEL_POLLUEE = {'oui':0,
-                             'non':0,
-}
 
 class particule:
 
-    def particule(self, lieu):
+    def particule(self, lieu, PARTICULE):
         self.lieu = lieu
 
         liste = []
@@ -74,7 +45,6 @@ class particule:
         phrase_clé = "a atteint un niveau élevé de pollution. Supérieur à la limite maximum pour 24h établie par l'OMS"
 
         polution = nb
-        print(polution)
         #polution = int(polution)
         
 
@@ -112,7 +82,7 @@ class particule:
             PARTICULE['>200'] += 1
 
 
-    def france(self, lieu):
+    def france(self, lieu, VILLE_POLLUE2018):
         self.lieu = lieu
   
         liste = ["lyon", "marseille","paris","roubaix"]
@@ -146,7 +116,7 @@ class particule:
         
 
 
-    def industrie(self, lieu):
+    def industrie(self, lieu, REGION_INDUSTRIEL_POLLUEE):
         self.lieu = lieu
 
 
@@ -206,16 +176,7 @@ class particule:
 
 
 
-particule = particule()
-particule.particule('paris')
-particule.france('paris')
-particule.industrie('paris')
 
-
-print(VILLE_POLLUE2018,
-    REGION_INDUSTRIEL_POLLUEE,
-    REGION_INDUSTRIEL_POLLUEE,
-    PARTICULE)
 
 
 
