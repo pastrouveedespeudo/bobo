@@ -10,40 +10,11 @@ from colour import Color
 from PIL import Image, ImageDraw, ImageChops
 
 
-TRAFIQUE = {'depart_routier':0,
-            'regulier jour':0,
-}
 
-HEURE = {'heure_pointe':0,
-        'non_heure_pointe':0,
-}
-
-POINTE_chemin = {'pointe':2,
-}
-
-WEEKEND_chemin = {'weekend':-2,
-}
-
-BOUCHON = {'non':0,
-           'petit':0,
-           'moyen':0,
-           'grand':0,
-           'assez grand':0,
-           'tres grand':0,
-}
-
-ACTIVITE_EXEPTIONNELLE = {'aggissement':0,
-                          'manifestation':0,
-                          'circulation dense':0,
-                          'condition a polution':0,
-
-
-
-}
 
 class trafique:
     
-    def trafique_circulation(self):
+    def trafique_circulation(self, TRAFIQUE, HEURE):
 
         date = datetime.datetime.now()
         
@@ -116,7 +87,7 @@ class trafique:
        
 
 
-    def habitude(self):
+    def habitude(self, POINTE, WEEKEND):
 
         pointe = [8,9,16,17,18,19]#reverifie les pointes
         jour = ['samedi', 'dimanche']
@@ -138,7 +109,7 @@ class trafique:
             WEEKEND['weekend'] += 1
 
 
-    def bouchons(self, lieu):
+    def bouchons(self, lieu, BOUCHON):
         self.lieu = lieu
 
       
@@ -260,7 +231,7 @@ class trafique:
 
 
  
-    def requete_lyon_traffique(self, path):
+    def requete_lyon_traffique(self, path, ACTIVITE_EXEPTIONNELLE):
         self.path = path
 
         liste = []
@@ -315,7 +286,7 @@ class trafique:
 
 
         
-    def requete_paris_traffique(self, path):
+    def requete_paris_traffique(self, path, ACTIVITE_EXEPTIONNELLE):
         self.path = path
 
         semaine = {'lundi':0, 'mardi':1, 'mercredi':2, 'jeudi':3, 'vendredi':4, 'samedi':5,
@@ -395,7 +366,7 @@ class trafique:
         #a dans 9 jours hihi faut faire pour le 10 par ex
 
 
-    def requete_marseille_traffique(self, path):
+    def requete_marseille_traffique(self, path, ACTIVITE_EXEPTIONNELLE):
         r = requests.get(path)
 
         date = datetime.datetime.now()
@@ -456,23 +427,23 @@ class trafique:
         if a == jour_semaine and liste[0] == jour:
             ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
 
-    def activité_execptionnelle(self, lieu):
+    def activité_execptionnelle(self, lieu, ACTIVITE_EXEPTIONNELLE):
         self.lieu = lieu
 
         
         if self.lieu == "lyon":
             path = "https://www.onlymoov.com/trafic/"
-            trafique.requete_lyon_traffique(path)
+            trafique.requete_lyon_traffique(self, path, ACTIVITE_EXEPTIONNELLE)
 
             
 
         elif self.lieu == "paris":
             path = "https://paris.demosphere.net/manifestations-paris"
-            trafique.requete_paris_traffique(path)
+            trafique.requete_paris_traffique(self, path, ACTIVITE_EXEPTIONNELLE)
 
         elif self.lieu == "marseille":
             path = "https://mars-infos.org/spip.php?page=agenda"
-            trafique.requete_marseille_traffique(path)
+            trafique.requete_marseille_traffique(self, path, ACTIVITE_EXEPTIONNELLE)
 
 
 
@@ -480,18 +451,7 @@ class trafique:
 
 
 
-trafique = trafique()
-trafique.trafique_circulation()
-trafique.habitude()
-trafique.bouchons('paris')
-trafique.activité_execptionnelle('paris')
 
-
-print(TRAFIQUE, HEURE)
-print(POINTE_chemin, WEEKEND_chemin)
-print(BOUCHON)
-
-print(ACTIVITE_EXEPTIONNELLE)
 
 
 
