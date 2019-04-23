@@ -10,19 +10,7 @@ from colour import Color
 from PIL import Image, ImageDraw, ImageChops
 
 
-CLIMAT = {'> 0':0,
-          '0_10':0,
-          '11_20':0,
-          '21_30':0,
-          '31_40':0,
-          '>40':0,
-}
 
-SAISON = {'primtemps':0,
-          'été':0,
-          'hiver':0,
-          'automne':0,
-}
 
 
 class climat:
@@ -85,7 +73,4 @@ class climat:
 
 
 
-climat = climat()
-climat.recuperation_donnée('Paris')
-climat.saison()
-print(CLIMAT, SAISON)
+
