@@ -24,19 +24,20 @@ def date_heure():
     day = date.day
     month = date.month
 
-    date_donnée = str(day) + '.' + str(month)
-    date_donnée = float(date_donnée)
+    date_donnée = str(day)+ str(month)
+    date_donnée = int(date_donnée)
 
     hour = date.hour
     minute = date.minute
 
-    heure_donnée = str(hour) + '.' + str(minute)
+    heure_donnée = str(hour)+ str(minute)
+    
 
     return date_donnée, heure_donnée
 
 
 
-
+date_heure()
 
 
 
