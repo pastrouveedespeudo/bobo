@@ -1,27 +1,7 @@
 #bobo
 
 
-#ok en gros tu prends 10 jours de donnée
-
-#tu scores chaque truk (et entre 0 et 1)
-
-#toi meme a la main
-
-#ensuite tu fais une 1er bougle qui dit:
-
-#donée donée.... et a la fin pm
-
-#tu fais chiffre scorage // pm et on regarde genre 0.6, 0.5 == 20 pm et 0.1/0.2 = 40 pm
-
-#tu refais une boucle:
-
-#si scorage != de score (image 40 pm et on a 0.6) pour une valeur nik sinon  pour 10 valeurs on enleve a un truk ou on rajoute a un truk
-
-#et ca pour les 12*5 truk possibles
-
-#c mort ca a l'air trop long réfléchit a un truk qui peut marcher et qui colle avec les video ou reregarde les video
-
-
+#heuresement que t'avais fait un mémo non juste dire facteur pour pic pollution réuni ou pas en scorant un truk pour que ca fasse un peu math et voila... je sais pas faire d'ia moi j'aurai ptetre eu un milleur métier avec le mot ia dans le dossier chpas réfléchis ou sinon une liste avec les mots grave genre bouchon, soleil, 40 degres => pic de pollution et ensuite t'affiche les pm et voila ouf ET !! la database c pour montrer que s'il pleut ca reduit la pollution ouf  
 
 
 
