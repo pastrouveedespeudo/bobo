@@ -118,45 +118,27 @@ class trafique:
           
             r = requests.get(path)
 
-            liste = []
+    
 
             page = r.content
             soup = BeautifulSoup(page, "html.parser")
-        
-            liste.append(str(soup))
-            bouchon = liste[0][28678:28685]
+            propriete = soup.find("span", {'class':'font38 green'})
+            liste = []
+            try:
+                for i in propriete:
+                    for j in i:
+                        try:
+                            j = int(j)
+                            if j == int(j):
+                                liste.append(str(j))
+                        except:
+                            pass
+                liste = "".join(liste)
+                b = int(liste)
+
+            except:
+                b = 0
             
-
-            liste_bouchon = []
-            for i in bouchon:
-                try:
-                    if i == ",":
-                        liste_bouchon.append(".")
-                    i = int(i)
-                    liste_bouchon.append(str(i))
-                except:
-                    pass
-
-            liste2 = []
-            a = ','.join(liste_bouchon)
-            for i in a:
-                #print(i)
-                if i == ",":
-                    pass
-                else:
-                    liste2.append(i)
-         
-            b = "".join(liste2)
-            try:
-                b = float(b)
-            except:
-                pass
-            try:
-                b = int(b)
-            except:
-                pass
-
-           
             if b == 0 or b == 0.0:
                 BOUCHON['non'] += 1 
 
