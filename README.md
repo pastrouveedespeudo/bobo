@@ -1,5 +1,7 @@
 #bobo
 
+c en pushant que tu te souviens dque c du postgresql putin
+
 #----faut que tout soit parfait--------
 
 #ya le rognage de la photo 
