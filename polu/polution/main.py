@@ -29,50 +29,58 @@ from traitement import raise_dict
 class main:
 
     def météologie(self):
-
+        
         for i in LIST_CITY:
             print(i)
 
             météo.recuperation_donnée(self, i, WEATHER,WIND,PRESSURE)
             
-            displaying = display_dict(PRESSURE, WEATHER, WIND)
-            
+            display_dict(PRESSURE, WEATHER, WIND)
             raise_dict(PRESSURE, WEATHER, WIND)
 
-            print('\n')
+            
 
     def pollution(self):
-        
-        particule.particule(self,'paris', PARTICULE)
-        particule.france(self, 'paris', VILLE_POLLUE2018)
-        particule.industrie(self, 'paris', REGION_INDUSTRIEL_POLLUEE)
 
-        print(PARTICULE)
-        print(VILLE_POLLUE2018)
-        print(REGION_INDUSTRIEL_POLLUEE)
+        for i in LIST_CITY:
+            print(i)
+            
+            particule.particule(self,i, PARTICULE)
+            particule.france(self, i, VILLE_POLLUE2018)
+            particule.industrie(self, i, REGION_INDUSTRIEL_POLLUEE)
+
+            display_dict(PARTICULE, VILLE_POLLUE2018,
+                         REGION_INDUSTRIEL_POLLUEE)
+            
+            raise_dict(PARTICULE, VILLE_POLLUE2018,
+                       REGION_INDUSTRIEL_POLLUEE)
 
 
     def sociologie(self):
         
-        socio.habitant(self, 'paris', POPULATION_ACTIVE_HABITANT)
+        for i in LIST_CITY:
+            print(i)
+            
+            socio.habitant(self, i, POPULATION_ACTIVE_HABITANT)
         
-        print(POPULATION_ACTIVE_HABITANT)
-
+            display_dict(POPULATION_ACTIVE_HABITANT)
+            raise_dict(POPULATION_ACTIVE_HABITANT)
 
 
     def trafic_routier(self):
-        
-        trafique.trafique_circulation(self, TRAFIQUE, HEURE)
-        trafique.habitude(self, POINTE, WEEKEND)
-        trafique.bouchons(self, 'paris', BOUCHON)
-        trafique.activité_execptionnelle(self, 'paris', ACTIVITE_EXEPTIONNELLE)
 
-        print(TRAFIQUE)
-        print(HEURE)
-        print(POINTE)
-        print(WEEKEND)
-        print(BOUCHON)
-        print(ACTIVITE_EXEPTIONNELLE)
+        for i in LIST_CITY:
+            print(i)
+
+            
+            trafique.trafique_circulation(self, TRAFIQUE, HEURE)
+            trafique.habitude(self, POINTE, WEEKEND)
+            trafique.bouchons(self, i, BOUCHON)
+            trafique.activité_execptionnelle(self, i, ACTIVITE_EXEPTIONNELLE)
+            
+            display_dict(TRAFIQUE, HEURE, POINTE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE)
+            raise_dict(TRAFIQUE, HEURE, POINTE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE)
+
 
 
 
@@ -83,10 +91,10 @@ class main:
 if __name__ == '__main__':
 
     main = main()
-    main.météologie()
+    #main.météologie()
     #main.pollution()
     #main.sociologie()
-    #main.trafic_routier()
+    main.trafic_routier()
 
 
 
