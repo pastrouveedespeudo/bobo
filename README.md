@@ -1,5 +1,7 @@
 #bobo
 
+la virgule ou le parametre en trop == 1h...
+
 c en pushant que tu te souviens dque c du postgresql putin
 
 #----faut que tout soit parfait--------
