@@ -54,13 +54,18 @@ class main:
             
             données = display_dict(PRESSURE, WEATHER, WIND)
 
-            insertion_table.insertion_meteo(self, i, referentiel[0], referentiel[1],
-                                            données[0], données[1], données[2])
+            insertion_table.insertion_meteo(self, i, referentiel[0],
+                                            referentiel[1],
+                                            données[0], données[1],
+                                            données[2])
 
             raise_dict(PRESSURE, WEATHER, WIND)
             
 
     def climat(self):
+
+        referentiel = date_heure()
+    
         
         for i in LIST_CITY:
             print(i)
@@ -68,7 +73,11 @@ class main:
             climat.recuperation_donnée(self, i, CLIMAT)
             climat.saison(self, SAISON)
             
-            display_dict(CLIMAT, SAISON)
+            données = display_dict(CLIMAT, SAISON)
+            
+            insertion_table.insertion_climat(self, données[0], données[1],
+                                             referentiel[0],referentiel[1], i)
+            
             raise_dict(CLIMAT, SAISON)   
 
 
@@ -131,7 +140,7 @@ if __name__ == '__main__':
 
     main = main()
     main.météologie()
-    #main.climat()
+    main.climat()
     #main.pollution()
     #main.sociologie()
     #main.trafic_routier()
