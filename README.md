@@ -1,12 +1,29 @@
 #bobo
 
-#bon ok c cool mais j'en fais quoi de ces données mtn... je sais pa sfaire d'ia et je fais plus de pour chaque condition c trop long
 
-jl'ai deja fait et je refaisplus
+#ok en gros tu prends 10 jours de donnée
 
-la virgule ou le parametre en trop == 1h...
+#tu scores chaque truk (et entre 0 et 1)
 
-c en pushant que tu te souviens dque c du postgresql putin
+#toi meme a la main
+
+#ensuite tu fais une 1er bougle qui dit:
+
+#donée donée.... et a la fin pm
+
+#tu fais chiffre scorage // pm et on regarde genre 0.6, 0.5 == 20 pm et 0.1/0.2 = 40 pm
+
+#tu refais une boucle:
+
+#si scorage != de score (image 40 pm et on a 0.6) pour une valeur nik sinon  pour 10 valeurs on enleve a un truk ou on rajoute a un truk
+
+#et ca pour les 12*5 truk possibles
+
+#c mort ca a l'air trop long réfléchit a un truk qui peut marcher et qui colle avec les video ou reregarde les video
+
+
+
+
 
 #----faut que tout soit parfait--------
 
