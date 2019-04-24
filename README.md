@@ -1,5 +1,9 @@
 #bobo
 
+#bon ok c cool mais j'en fais quoi de ces données mtn... je sais pa sfaire d'ia et je fais plus de pour chaque condition c trop long
+
+jl'ai deja fait et je refaisplus
+
 la virgule ou le parametre en trop == 1h...
 
 c en pushant que tu te souviens dque c du postgresql putin
