@@ -1,5 +1,13 @@
 #bobo
 
+#sinon mettre chaque pts bouchon => 10% dans 20 pm 50 % dans 60 pm faire une moyenne de pourcent ?
+
+
+
+
+
+#tu fais tous les truks puis tu fais le truk du bas et si un des codes marche ben bingo sinon le truk du bas
+
 
 #heuresement que t'avais fait un mémo non juste dire facteur pour pic pollution réuni ou pas en scorant un truk pour que ca fasse un peu math et voila... je sais pas faire d'ia moi j'aurai ptetre eu un milleur métier avec le mot ia dans le dossier chpas réfléchis ou sinon une liste avec les mots grave genre bouchon, soleil, 40 degres => pic de pollution et ensuite t'affiche les pm et voila ouf ET !! la database c pour montrer que s'il pleut ca reduit la pollution ouf  
 
