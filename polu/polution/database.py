@@ -35,8 +35,8 @@ class table:
         self.cursor.execute("""create table ville(
                             id INT UNSIGNED NOT NULL AUTO_INCREMENT,
                             nom_ville varchar(100),
-                            date int,
-                            heure_donnée int,
+                            date INT,
+                            heure_donnée INT,
                             pression varchar(100),
                             vent varchar(100),
                             météo varchar(100),
@@ -77,13 +77,17 @@ class insertion_table:
         self.connexion.commit()
 
 
-    def insertion_meteo_where(self):
+    def insertion_climat(self, climat, saison, date, heure_donnée, ville):
         connexion_database.connexion(self)
         
-        self.cursor.execute("""insert into 
-                            () value('');
-                
-                            """)
+        sql = ("""UPDATE ville
+                   SET climat=%s, saison=%s
+                   WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
+
+        values = (climat, saison, date, heure_donnée, ville)
+
+        
+        self.cursor.execute(sql, values)
         self.connexion.commit()
 
 
