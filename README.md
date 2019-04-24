@@ -3,6 +3,7 @@
 
 #heuresement que t'avais fait un mémo non juste dire facteur pour pic pollution réuni ou pas en scorant un truk pour que ca fasse un peu math et voila... je sais pas faire d'ia moi j'aurai ptetre eu un milleur métier avec le mot ia dans le dossier chpas réfléchis ou sinon une liste avec les mots grave genre bouchon, soleil, 40 degres => pic de pollution et ensuite t'affiche les pm et voila ouf ET !! la database c pour montrer que s'il pleut ca reduit la pollution ouf  
 
+#mais ca pete pas autant que de dire c une ia qui l'a fait... du coup heurement qu'ya my_profil
 
 
 #----faut que tout soit parfait--------
