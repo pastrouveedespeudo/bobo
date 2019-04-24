@@ -1,6 +1,10 @@
 #bobo
 
-#sinon mettre chaque pts bouchon => 10% dans 20 pm 50 % dans 60 pm faire une moyenne de pourcent ?
+#c bon j'ai capté: reste la dessus, diagramme 2 -> tu fais un proucentage des attributs genre liste = [bouchon, 40 ect] -> 60 % 50pm
+
+c tous les jorus a peut pres les meme pm et a chaque heure aussi donc emem avec tes maigres données ca peut le faire tete de con !
+
+les reseau ne neuronne n'etait pas adapté a ton problem okok jarrete ^^ merde chu irefais 
 
 
 
