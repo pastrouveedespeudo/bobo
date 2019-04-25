@@ -23,6 +23,7 @@ from variable import POINTE
 from variable import WEEKEND
 from variable import BOUCHON
 from variable import ACTIVITE_EXEPTIONNELLE
+from variable import PARTICULE_PLAGE
 
 from variable import LIST_CITY
 
@@ -145,6 +146,24 @@ class main:
                        ACTIVITE_EXEPTIONNELLE)
 
 
+    def particule_plage(self):
+
+        referentiel = date_heure()
+
+        print('\n')
+        for i in LIST_CITY:
+            print(i) 
+
+            particule.particule(self,i, PARTICULE_PLAGE)
+            
+            données = display_dict(PARTICULE_PLAGE)
+
+            insertion_table.insertion_particule_plage(self, données[0], referentiel[0],
+                                                referentiel[1], i)
+            
+            raise_dict(PARTICULE_PLAGE)
+
+
     def particule(self):
 
         referentiel = date_heure()
@@ -153,7 +172,7 @@ class main:
         for i in LIST_CITY:
             print(i) 
 
-            particule.particule(self,i, PARTICULE)
+            particule.particule2(self,i, PARTICULE)
             
             données = display_dict(PARTICULE)
 
@@ -162,6 +181,7 @@ class main:
             
             raise_dict(PARTICULE)
 
+            
 
 if __name__ == '__main__':
 
@@ -171,8 +191,8 @@ if __name__ == '__main__':
     #main.pollution()
     #main.sociologie()
     #main.trafic_routier()
-
     main.particule()
+    main.particule_plage()
 
 
 
