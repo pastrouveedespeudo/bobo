@@ -91,9 +91,73 @@ class insertion_table:
         self.connexion.commit()
 
 
+    def insertion_polution(self, ville_pollué, REGION_INDUSTRIEL_POLLUEE, date, heure_donnée, ville):
+        connexion_database.connexion(self)
+        
+        sql = ("""UPDATE ville
+                   SET ville_pollué=%s,
+                   REGION_INDUSTRIEL_POLLUEE=%s
+                   WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
+
+        values = (ville_pollué, REGION_INDUSTRIEL_POLLUEE, date, heure_donnée, ville)
+
+        
+        self.cursor.execute(sql, values)
+        self.connexion.commit()
 
 
+    def insertion_sociologie(self, POPULATION_ACTIVE_HABITANT, date, heure_donnée, ville):
+        
+        connexion_database.connexion(self)
+        
+        sql = ("""UPDATE ville
+                   SET POPULATION_ACTIVE_HABITANT=%s
+                   WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
 
+        values = (POPULATION_ACTIVE_HABITANT, date, heure_donnée, ville)
+
+        
+        self.cursor.execute(sql, values)
+        self.connexion.commit()
+
+
+    def insertion_trafic_routier(self, TRAFIQUE, HEURE,
+                                 POINTE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE,
+                                 date, heure_donnée, ville):
+        
+        connexion_database.connexion(self)
+        
+        sql = ("""UPDATE ville
+                   SET TRAFIQUE=%s,
+                   HEURE=%s,
+                   POINTE=%s,
+                   WEEKEND=%s,
+                   BOUCHON=%s,
+                   ACTIVITE_EXEPTIONNELLE=%s
+                   WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
+
+        values = (TRAFIQUE, HEURE, POINTE, WEEKEND,
+                  BOUCHON, ACTIVITE_EXEPTIONNELLE,
+                  date, heure_donnée, ville)
+
+        
+        self.cursor.execute(sql, values)
+        self.connexion.commit()
+
+
+    def insertion_particule(self, PARTICULE, date, heure_donnée, ville):
+        
+        connexion_database.connexion(self)
+        
+        sql = ("""UPDATE ville
+                   SET nombre_particule=%s
+                   WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
+
+        values = (PARTICULE, date, heure_donnée, ville)
+
+        
+        self.cursor.execute(sql, values)
+        self.connexion.commit()
 
 
 
@@ -147,13 +211,15 @@ class suppression_table:
     #create_base = create_base()
     #create_base.database()
 
+
+    #suppression_table = suppression_table()
+    #suppression_table.suppression()
+
     #creation de la table
     #table = table()
     #table.creation_table_donnée()
 
 
-    #suppression_table = suppression_table()
-    #suppression_table.suppression()
 
 
 
