@@ -4,7 +4,7 @@
 
 #la j'ai pas envie je sais pas si fo mettre un else pcque jconnais pas l'erreur
 
-
+#bon mtn faut faire le schéma réfléchis prend ton temps d'un coté t'as le remplissage de donnée de l'autre t'as le schéma et on s'en fou que ce soit faux, pcque y'a pas assez de donnée MAIS peut etre que ca peut marcher selon al ville
 
 
 
