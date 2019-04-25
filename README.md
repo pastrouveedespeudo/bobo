@@ -7,6 +7,7 @@
 
 #pfffff y pleuvait, y'avais du vent et maintenant il pleut plus et ca passe a 31 enfete le seul truk qui change c l'heure donc faudra juste donnée soit des plages soit jouer sur l'heure...
 
+#pcque jpe pas prendre les 12 villes autours prendre leur position et faire le vent selon le degres j'ai pas le temps ni de faire la typographie bon nik au moins c le plus loin que j'ai jms été 
 
 
 
