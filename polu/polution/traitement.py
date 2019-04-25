@@ -9,6 +9,15 @@ def display_dict(*args):
     print(liste)
     return liste
 
+def display_dict_particule(*args):
+    liste = []
+    for i in args:
+        for key, value in i.items():
+            print(key, value)
+            if i[key] != 0:
+                liste.append(value)
+    print(liste)
+    return liste
 
 def raise_dict(*args):
     for i in args:
@@ -37,7 +46,7 @@ def date_heure():
 
 
 
-date_heure()
+
 
 
 
