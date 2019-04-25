@@ -83,31 +83,45 @@ class main:
 
     def pollution(self):
 
+        referentiel = date_heure()
+
         for i in LIST_CITY:
             print(i)
             
             particule.france(self, i, VILLE_POLLUE2018)
             particule.industrie(self, i, REGION_INDUSTRIEL_POLLUEE)
 
-            display_dict(VILLE_POLLUE2018,
+            données = display_dict(VILLE_POLLUE2018,
                          REGION_INDUSTRIEL_POLLUEE)
+
+            insertion_table.insertion_polution(self, données[0], données[1],
+                                               referentiel[0],referentiel[1], i)
             
             raise_dict(VILLE_POLLUE2018,
                        REGION_INDUSTRIEL_POLLUEE)
 
 
     def sociologie(self):
+
+        referentiel = date_heure()
+
         
         for i in LIST_CITY:
             print(i)
             
             socio.habitant(self, i, POPULATION_ACTIVE_HABITANT)
         
-            display_dict(POPULATION_ACTIVE_HABITANT)
+            données = display_dict(POPULATION_ACTIVE_HABITANT)
+
+            insertion_table.insertion_sociologie(self, données[0], referentiel[0],
+                                                referentiel[1], i)
+             
             raise_dict(POPULATION_ACTIVE_HABITANT)
 
 
     def trafic_routier(self):
+
+        referentiel = date_heure()
 
         for i in LIST_CITY:
             print(i)
@@ -117,14 +131,23 @@ class main:
             trafique.bouchons(self, i, BOUCHON)
             trafique.activité_execptionnelle(self, i, ACTIVITE_EXEPTIONNELLE)
             
-            display_dict(TRAFIQUE, HEURE, POINTE, WEEKEND, BOUCHON,
+            données =  display_dict(TRAFIQUE, HEURE, POINTE, WEEKEND, BOUCHON,
                          ACTIVITE_EXEPTIONNELLE)
-            
+            print(données)
+
+                
+            insertion_table.insertion_trafic_routier(self, données[0], données[1],
+                                                     données[2], données[3], données[4], données[5],
+                                                     referentiel[0], referentiel[1], i)
+
+                        
             raise_dict(TRAFIQUE, HEURE, POINTE, WEEKEND, BOUCHON,
                        ACTIVITE_EXEPTIONNELLE)
 
 
     def particule(self):
+
+        referentiel = date_heure()
 
         print('\n')
         for i in LIST_CITY:
@@ -132,7 +155,11 @@ class main:
 
             particule.particule(self,i, PARTICULE)
             
-            display_dict(PARTICULE)
+            données = display_dict(PARTICULE)
+
+            insertion_table.insertion_particule(self, données[0], referentiel[0],
+                                                referentiel[1], i)
+            
             raise_dict(PARTICULE)
 
 
@@ -140,12 +167,12 @@ if __name__ == '__main__':
 
     main = main()
     main.météologie()
-    main.climat()
+    #main.climat()
     #main.pollution()
     #main.sociologie()
     #main.trafic_routier()
 
-    #main.particule()
+    main.particule()
 
 
 
