@@ -2,6 +2,11 @@
 
 #ce weekend t'auras une erreur avec regulier jour nefface pas toute la table juste la ligne avec l'id
 
+#oh purée y'a avanger ! ok t'as pas 10 ans et t'es pas en tp de chimie mais faire une video avec un grand bocale
+
+#mettre de l'eau bouillante, mettre un film plastique mettre des glacon dessus mettre un truk qui fait de la fumée et normalement la fumée devrait tomber  cotnre l'eau. 
+
+Avant faire un grand bocal le meme truk qui brule et attendre si la fumé reste alors c ok (verif les trous)
 
 #bon mtn faut faire le schéma réfléchis prend ton temps d'un coté t'as le remplissage de donnée de l'autre t'as le schéma et on s'en fou que ce soit faux, pcque y'a pas assez de donnée MAIS peut etre que ca peut marcher selon al ville
 
