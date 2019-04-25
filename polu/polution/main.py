@@ -27,6 +27,7 @@ from variable import PARTICULE_PLAGE
 
 from variable import LIST_CITY
 
+from traitement import display_dict_particule
 from traitement import display_dict
 from traitement import raise_dict
 from traitement import date_heure
@@ -174,7 +175,7 @@ class main:
 
             particule.particule2(self,i, PARTICULE)
             
-            données = display_dict(PARTICULE)
+            données = display_dict_particule(PARTICULE)
 
             insertion_table.insertion_particule(self, données[0], referentiel[0],
                                                 referentiel[1], i)
@@ -187,10 +188,10 @@ if __name__ == '__main__':
 
     main = main()
     main.météologie()
-    #main.climat()
-    #main.pollution()
-    #main.sociologie()
-    #main.trafic_routier()
+    main.climat()
+    main.pollution()
+    main.sociologie()
+    main.trafic_routier()
     main.particule()
     main.particule_plage()
 
