@@ -52,6 +52,7 @@ class table:
                             BOUCHON varchar(100),
                             ACTIVITE_EXEPTIONNELLE varchar(100),
                             nombre_particule varchar(100),
+                            particule varchar(100),
                             PRIMARY KEY(id) )
                             ENGINE=InnoDB;
                             
@@ -145,7 +146,7 @@ class insertion_table:
         self.connexion.commit()
 
 
-    def insertion_particule(self, PARTICULE, date, heure_donnée, ville):
+    def insertion_particule_plage(self, PARTICULE_PLAGE, date, heure_donnée, ville):
         
         connexion_database.connexion(self)
         
@@ -153,13 +154,25 @@ class insertion_table:
                    SET nombre_particule=%s
                    WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
 
-        values = (PARTICULE, date, heure_donnée, ville)
+        values = (PARTICULE_PLAGE, date, heure_donnée, ville)
 
         
         self.cursor.execute(sql, values)
         self.connexion.commit()
 
+    def insertion_particule(self, PARTICULE, date, heure_donnée, ville):
+        
+        connexion_database.connexion(self)
+        
+        sql = ("""UPDATE ville
+                   SET particule=%s
+                   WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
 
+        values = (PARTICULE, date, heure_donnée, ville)
+
+        
+        self.cursor.execute(sql, values)
+        self.connexion.commit()
 
 class visualisation_table:
     def visualisation(self):
