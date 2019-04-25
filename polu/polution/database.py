@@ -175,16 +175,24 @@ class insertion_table:
         self.connexion.commit()
 
 class visualisation_table:
-    def visualisation(self):
+    
+    def visualisation_météo(self, ville):
         connexion_database.connexion(self)
 
-        self.cursor.execute("""select * from ville""")
+        self.cursor.execute("""SELECT date, heure,
+                            pression, météo, vent, particule
+                            FROM ville
+                            WHERE nom_ville = %s
+                            ORDER BY particule
+                            """, (ville,))
+                           
+        
         rows = self.cursor.fetchall()
         liste = [i for i in rows]
 
         return liste
 
-    def visualisation_carre(self):
+    def visualisation_climat(self):
         connexion_database.connexion(self)
         self.cursor.execute("""select  from """)
         rows = self.cursor.fetchall()
@@ -192,7 +200,7 @@ class visualisation_table:
 
         return liste
     
-    def visualisation_rond(self):
+    def visualisation_polution(self):
         connexion_database.connexion(self)
         self.cursor.execute("""select  from """)
         rows = self.cursor.fetchall()
@@ -200,13 +208,61 @@ class visualisation_table:
 
         return liste
     
-    def visualisation_rectangle(self):
+    def visualisation_sociologie(self):
         connexion_database.connexion(self)
         self.cursor.execute("""select  from """)
         rows = self.cursor.fetchall()
         liste = [i for i in rows]
 
         return liste
+
+
+    def visualisation_trafic_routier(self):
+        connexion_database.connexion(self)
+        self.cursor.execute("""select  from """)
+        rows = self.cursor.fetchall()
+        liste = [i for i in rows]
+
+        return liste
+
+
+
+    def visualisation_particule_plage(self):
+        connexion_database.connexion(self)
+        self.cursor.execute("""select  from """)
+        rows = self.cursor.fetchall()
+        liste = [i for i in rows]
+
+        return liste
+
+
+
+    def visualisation_particule(self):
+        connexion_database.connexion(self)
+        self.cursor.execute("""select  from """)
+        rows = self.cursor.fetchall()
+        liste = [i for i in rows]
+
+        return liste
+
+
+
+
+
+class clean_data:
+    
+    def clean_data(self):
+        connexion_database.connexion(self)
+        
+        self.cursor.execute("""DELETE FROM ville
+                            WHERE (particule IS NULL
+                            OR nombre_particule IS NULL);""")
+
+
+        self.connexion.commit()
+        print('données nulles effacées')
+
+
     
 class suppression_table:
     def suppression(self):
@@ -224,6 +280,8 @@ class suppression_table:
     #create_base = create_base()
     #create_base.database()
 
+    #clean_data = clean_data()
+    #clean_data.clean_data()
 
     #suppression_table = suppression_table()
     #suppression_table.suppression()
