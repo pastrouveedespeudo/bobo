@@ -2,6 +2,7 @@
 
 #ce weekend t'auras une erreur avec regulier jour nefface pas toute la table juste la ligne avec l'id
 
+#la j'ai pas envie je sais pas si fo mettre un else pcque jconnais pas l'erreur
 
 
 
