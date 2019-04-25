@@ -1,5 +1,20 @@
 #bobo
 
+#ce weekend t'auras une erreur avec regulier jour nefface pas toute la table juste la ligne avec l'id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #c bon j'ai capté: reste la dessus, diagramme 2 -> tu fais un proucentage des attributs genre liste = [bouchon, 40 ect] -> 60 % 50pm
 
 c tous les jorus a peut pres les meme pm et a chaque heure aussi donc emem avec tes maigres données ca peut le faire tete de con !
