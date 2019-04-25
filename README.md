@@ -2,10 +2,10 @@
 
 #ce weekend t'auras une erreur avec regulier jour nefface pas toute la table juste la ligne avec l'id
 
-#la j'ai pas envie je sais pas si fo mettre un else pcque jconnais pas l'erreur
 
 #bon mtn faut faire le schéma réfléchis prend ton temps d'un coté t'as le remplissage de donnée de l'autre t'as le schéma et on s'en fou que ce soit faux, pcque y'a pas assez de donnée MAIS peut etre que ca peut marcher selon al ville
 
+#pfffff y pleuvait, y'avais du vent et maintenant il pleut plus et ca passe a 31 enfete le seul truk qui change c l'heure donc faudra juste donnée soit des plages soit jouer sur l'heure...
 
 
 
