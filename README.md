@@ -3,22 +3,20 @@
 #ce weekend t'auras une erreur avec regulier jour nefface pas toute la table juste la ligne avec l'id
 
 
-#enfete faut prendre les listes de parametre
 
-#les comparer avec les pm
+#le but la c'est de: recueuillir chaque variation de données et les creer une fois. si la table existe pas
 
-#et faire la meme chose qu'avec l'id, ca affichera toutes les correspondances avec les pm
+#creation de la table avec les données 
 
-#et ensuite tu fais la moyenne de tous les pm et a chaque f5 de main ca doit metre a jour la moyenne
+#sinon pass, update particule
 
-#et prend en compte l'heure 
+#finally refaire moyenne
 
-#départ routier ojd 20 pm hier a 22h 60 pm.... est ce que ce soir y'aura un pic? est ce que ce matin y'a eu un pic et donc moins de gens ?
+#afficher la moyenne
 
-#est ce que j'essaie d'interpréter moi meme les donénes et c'est une errreur ? est ce que j'ai pas assrez de donnée est ce que tu te prends pour un scientifique trouduc ? ^^ on s'en fou juste faire la moyenne et voila
+#chai pas comment jvai faire mais chrois je vois
 
-
-
+#et go bobo et faire un truk qui pete pour dire la mode du moment ...
 
 
 
