@@ -176,11 +176,17 @@ class insertion_table:
 
 class visualisation_table:
     
-    def visualisation_météo(self, ville):
+    def visualisation(self, ville):
         connexion_database.connexion(self)
 
-        self.cursor.execute("""SELECT date, heure,
-                            pression, météo, vent, particule
+        self.cursor.execute("""SELECT date, heure_donnée,
+                            pression, météo, vent, climat,
+                            saison, ville_pollué,
+                            REGION_INDUSTRIEL_POLLUEE,
+                            POPULATION_ACTIVE_HABITANT,
+                            TRAFIQUE, HEURE, POINTE, WEEKEND,
+                            BOUCHON, ACTIVITE_EXEPTIONNELLE,
+                            particule
                             FROM ville
                             WHERE nom_ville = %s
                             ORDER BY particule
@@ -192,14 +198,7 @@ class visualisation_table:
 
         return liste
 
-    def visualisation_climat(self):
-        connexion_database.connexion(self)
-        self.cursor.execute("""select  from """)
-        rows = self.cursor.fetchall()
-        liste = [i for i in rows]
 
-        return liste
-    
     def visualisation_polution(self):
         connexion_database.connexion(self)
         self.cursor.execute("""select  from """)
@@ -245,6 +244,64 @@ class visualisation_table:
 
         return liste
 
+class creation_conditions:
+
+    def visualisation_without_time(self, ville):
+        connexion_database.connexion(self)
+
+        self.cursor.execute("""SELECT pression, météo, vent, climat,
+                            saison, ville_pollué,
+                            REGION_INDUSTRIEL_POLLUEE,
+                            POPULATION_ACTIVE_HABITANT,
+                            TRAFIQUE, HEURE, POINTE, WEEKEND,
+                            BOUCHON, ACTIVITE_EXEPTIONNELLE
+                            FROM ville
+                            WHERE nom_ville = %s
+                            ORDER BY particule
+                            """, (ville,))
+                           
+        
+        rows = self.cursor.fetchall()
+        liste = [i for i in rows]
+
+        return liste
+
+    def recuperate_id(self, ville, pression, météo, vent, climat,
+                      saison, ville_pollué, REGION_INDUSTRIEL_POLLUEE,
+                      POPULATION_ACTIVE_HABITANT, TRAFIQUE, HEURE,
+                      POINTE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE):
+        
+        connexion_database.connexion(self)
+
+        self.cursor.execute("""SELECT id
+                            FROM ville
+                            WHERE (nom_ville = %s AND
+                            pression LIKE %s AND
+                            météo LIKE %s AND
+                            vent LIKE %s AND
+                            climat LIKE %s AND
+                            saison LIKE %s AND
+                            ville_pollué LIKE %s AND
+                            REGION_INDUSTRIEL_POLLUEE LIKE %s AND
+                            POPULATION_ACTIVE_HABITANT LIKE %s AND
+                            TRAFIQUE  LIKE %s AND
+                            HEURE LIKE %s AND
+                            POINTE  LIKE %s AND
+                            WEEKEND LIKE %s AND
+                            BOUCHON LIKE %s AND
+                            ACTIVITE_EXEPTIONNELLE LIKE %s);
+                            """, (ville, pression, météo, vent, climat,
+                                  saison, ville_pollué,
+                                  REGION_INDUSTRIEL_POLLUEE,
+                                  POPULATION_ACTIVE_HABITANT,
+                                  TRAFIQUE, HEURE, POINTE, WEEKEND,
+                                  BOUCHON, ACTIVITE_EXEPTIONNELLE))
+                           
+        
+        rows = self.cursor.fetchall()
+        liste = [i for i in rows]
+
+        return liste
 
 
 
@@ -255,8 +312,7 @@ class clean_data:
         connexion_database.connexion(self)
         
         self.cursor.execute("""DELETE FROM ville
-                            WHERE (particule IS NULL
-                            OR nombre_particule IS NULL);""")
+                            WHERE particule IS NULL;""")
 
 
         self.connexion.commit()
@@ -272,7 +328,20 @@ class suppression_table:
                             """)
         self.connexion.commit()
 
-           
+
+class creation_condition:
+
+    def creation_table_condition_paris(self):
+        self.cursor.execute("""create table ville()""")
+
+
+    def creation_table_condition_paris(self):
+        self.cursor.execute("""create table ville()""")
+
+
+    def creation_table_condition_paris(self):
+        self.cursor.execute("""create table ville()""")
+    
     
 #if __name__ == "__main__":
 
@@ -293,33 +362,3 @@ class suppression_table:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
