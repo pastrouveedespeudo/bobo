@@ -31,8 +31,15 @@ class data:
                                                             i[4],i[5],i[6],i[7],
                                                             i[8],i[9],i[10],i[11],
                                                             i[12],i[13])
+                
+                particle = creation_conditions.recuperate_particle(self, ville,
+                                                                   i[0],i[1],i[2],i[3],
+                                                                   i[4],i[5],i[6],i[7],
+                                                                   i[8],i[9],i[10],i[11],
+                                                                   i[12],i[13])
 
                 print(id_data)
+                print(particle)
                 c+=1
             
             print(c)
