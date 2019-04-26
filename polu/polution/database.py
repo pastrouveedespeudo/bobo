@@ -340,6 +340,43 @@ class creation_conditions:
 
         return liste
 
+    def recuperate_hour(self, ville, pression, météo, vent, climat,
+                          saison, ville_pollué, REGION_INDUSTRIEL_POLLUEE,
+                          POPULATION_ACTIVE_HABITANT, TRAFIQUE, HEURE,
+                          POINTE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE):
+        
+        connexion_database.connexion(self)
+
+        self.cursor.execute("""SELECT heure_donnée
+                            FROM ville
+                            WHERE (nom_ville = %s AND
+                            pression LIKE %s AND
+                            météo LIKE %s AND
+                            vent LIKE %s AND
+                            climat LIKE %s AND
+                            saison LIKE %s AND
+                            ville_pollué LIKE %s AND
+                            REGION_INDUSTRIEL_POLLUEE LIKE %s AND
+                            POPULATION_ACTIVE_HABITANT LIKE %s AND
+                            TRAFIQUE  LIKE %s AND
+                            HEURE LIKE %s AND
+                            POINTE  LIKE %s AND
+                            WEEKEND LIKE %s AND
+                            BOUCHON LIKE %s AND
+                            ACTIVITE_EXEPTIONNELLE LIKE %s);
+                            """, (ville, pression, météo, vent, climat,
+                                  saison, ville_pollué,
+                                  REGION_INDUSTRIEL_POLLUEE,
+                                  POPULATION_ACTIVE_HABITANT,
+                                  TRAFIQUE, HEURE, POINTE, WEEKEND,
+                                  BOUCHON, ACTIVITE_EXEPTIONNELLE))
+                           
+        
+        rows = self.cursor.fetchall()
+        liste = [i for i in rows]
+
+        return liste
+
 
 class clean_data:
     
