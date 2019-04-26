@@ -1,5 +1,7 @@
 #bobo
 
+ya une putin de donnée de merde qui c rajouté jb dans 9 jours t'aura un bug bonne chance jb du future putin jmetais prévenus en plus
+
 #ce weekend t'auras une erreur avec regulier jour nefface pas toute la table juste la ligne avec l'id
 
 #ca marche mais manifestation a disparu depuis 14h54 donc ca marche plus c quoi ce bordel ca veut plus aller sinserer dans la table putin
