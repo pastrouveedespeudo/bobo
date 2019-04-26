@@ -378,6 +378,116 @@ class creation_conditions:
         return liste
 
 
+class mean_data:
+    
+    def creation_table_mean(self):
+
+        connexion_database.connexion(self)
+        self.cursor.execute("""create table paris_donnees(
+                            id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                            pression varchar(100),
+                            vent varchar(100),
+                            météo varchar(100),
+                            climat varchar(100),
+                            saison varchar(100),
+                            ville_pollué varchar(100),
+                            REGION_INDUSTRIEL_POLLUEE varchar(100),
+                            POPULATION_ACTIVE_HABITANT varchar(100),
+                            TRAFIQUE varchar(100),
+                            HEURE varchar(100),
+                            POINTE varchar(100),
+                            WEEKEND varchar(100),
+                            BOUCHON varchar(100),
+                            ACTIVITE_EXEPTIONNELLE varchar(100),
+                            PRIMARY KEY(id) )
+                            ENGINE=InnoDB;
+                            
+                            """)
+        self.connexion.commit()
+                            
+
+    def creation_table_paris_particule(self):
+
+        connexion_database.connexion(self)
+        self.cursor.execute("""create table paris_donnees_particule(
+                            id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                            id_condition INT UNSIGNED,
+                            particule varchar(100),
+                            PRIMARY KEY(id),
+                            FOREIGN KEY (id_condition) REFERENCES paris_donnees(id) )
+                            ENGINE=InnoDB;
+                            
+                            """)
+        self.connexion.commit()
+
+
+
+    def visualisation_paris_donnees(self, pression, météo, vent, climat,
+                                    saison, ville_pollué, REGION_INDUSTRIEL_POLLUEE,
+                                    POPULATION_ACTIVE_HABITANT, TRAFIQUE, HEURE,
+                                    POINTE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE):
+
+        
+        connexion_database.connexion(self)
+
+        self.cursor.execute("""SELECT *
+                            FROM paris_donnees
+                            WHERE (pression LIKE %s AND
+                            météo LIKE %s AND
+                            vent LIKE %s AND
+                            climat LIKE %s AND
+                            saison LIKE %s AND
+                            ville_pollué LIKE %s AND
+                            REGION_INDUSTRIEL_POLLUEE LIKE %s AND
+                            POPULATION_ACTIVE_HABITANT LIKE %s AND
+                            TRAFIQUE  LIKE %s AND
+                            HEURE LIKE %s AND
+                            POINTE  LIKE %s AND
+                            WEEKEND LIKE %s AND
+                            BOUCHON LIKE %s AND
+                            ACTIVITE_EXEPTIONNELLE LIKE %s);
+                            """, (pression, météo, vent, climat,
+                                  saison, ville_pollué,
+                                  REGION_INDUSTRIEL_POLLUEE,
+                                  POPULATION_ACTIVE_HABITANT,
+                                  TRAFIQUE, HEURE, POINTE, WEEKEND,
+                                  BOUCHON, ACTIVITE_EXEPTIONNELLE))
+                           
+        
+        rows = self.cursor.fetchall()
+        liste = [i for i in rows]
+
+        return liste
+
+
+    
+    def insertion_paris_donnees(self, pression, météo, vent, climat,
+                                saison, ville_pollué, REGION_INDUSTRIEL_POLLUEE,
+                                POPULATION_ACTIVE_HABITANT, TRAFIQUE, HEURE,
+                                POINTE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE):
+
+        
+        connexion_database.connexion(self)
+
+        self.cursor.execute("""INSERT INTO paris_donnees
+                                  pression, météo, vent, climat,
+                                  saison, ville_pollué,
+                                  REGION_INDUSTRIEL_POLLUEE,
+                                  POPULATION_ACTIVE_HABITANT,
+                                  TRAFIQUE, HEURE, POINTE, WEEKEND,
+                                  BOUCHON, ACTIVITE_EXEPTIONNELLE;""",
+                                  (pression, météo, vent, climat,
+                                  saison, ville_pollué,
+                                  REGION_INDUSTRIEL_POLLUEE,
+                                  POPULATION_ACTIVE_HABITANT,
+                                  TRAFIQUE, HEURE, POINTE, WEEKEND,
+                                  BOUCHON, ACTIVITE_EXEPTIONNELLE))
+                           
+        self.connexion.commit()
+
+
+
+
 class clean_data:
     
     def clean_data(self):
@@ -396,7 +506,7 @@ class suppression_table:
     def suppression(self):
         connexion_database.connexion(self)
         
-        self.cursor.execute("""drop table ville;
+        self.cursor.execute("""drop table paris_donnees;
                             """)
         self.connexion.commit()
 
@@ -431,6 +541,8 @@ class creation_condition:
     #table = table()
     #table.creation_table_donnée()
 
-
+    #mean_data = mean_data()
+    #mean_data.creation_table_mean()
+    #mean_data.creation_table_paris_particule()
 
 
