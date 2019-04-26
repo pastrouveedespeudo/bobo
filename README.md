@@ -1,45 +1,8 @@
 #bobo
 
-ya une putin de donnée de merde qui c rajouté jb dans 9 jours t'aura un bug bonne chance jb du future putin jmetais prévenus en plus
 
-#ce weekend t'auras une erreur avec regulier jour nefface pas toute la table juste la ligne avec l'id
+faire traiement.py avant main.py mtn et refais trafic de a a z pour etre sur
 
-#ca marche mais manifestation a disparu depuis 14h54 donc ca marche plus c quoi ce bordel ca veut plus aller sinserer dans la table putin
-
-#le but la c'est de: recueuillir chaque variation de données et les creer une fois. si la table existe pas
-
-#creation de la table avec les données 
-
-#sinon pass, update particule
-
-#finally refaire moyenne
-
-#afficher la moyenne
-
-#chai pas comment jvai faire mais chrois je vois
-
-#et go bobo et faire un truk qui pete pour dire la mode du moment ...
-
-#ok rapel toi meme si ca marche pas des le debut, ca saffinera avec la suite si t'appuies 10 dans une jouréne pendant 1 mois, et oui tu peux appuyer 2 fois a la suite ca cahngera rien c tellement kiffant de tout voir défilé
-
-
-
-#c bon j'ai capté: reste la dessus, diagramme 2 -> tu fais un proucentage des attributs genre liste = [bouchon, 40 ect] -> 60 % 50pm
-
-c tous les jorus a peut pres les meme pm et a chaque heure aussi donc emem avec tes maigres données ca peut le faire tete de con !
-
-les reseau ne neuronne n'etait pas adapté a ton problem okok jarrete ^^ merde chu irefais 
-
-
-
-
-
-#tu fais tous les truks puis tu fais le truk du bas et si un des codes marche ben bingo sinon le truk du bas
-
-
-#heuresement que t'avais fait un mémo non juste dire facteur pour pic pollution réuni ou pas en scorant un truk pour que ca fasse un peu math et voila... je sais pas faire d'ia moi j'aurai ptetre eu un milleur métier avec le mot ia dans le dossier chpas réfléchis ou sinon une liste avec les mots grave genre bouchon, soleil, 40 degres => pic de pollution et ensuite t'affiche les pm et voila ouf ET !! la database c pour montrer que s'il pleut ca reduit la pollution ouf  
-
-#mais ca pete pas autant que de dire c une ia qui l'a fait... du coup heurement qu'ya my_profil
 
 
 #----faut que tout soit parfait--------
