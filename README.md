@@ -15,7 +15,7 @@
 
 #départ routier ojd 20 pm hier a 22h 60 pm.... est ce que ce soir y'aura un pic? est ce que ce matin y'a eu un pic et donc moins de gens ?
 
-
+#est ce que j'essaie d'interpréter moi meme les donénes et c'est une errreur ? est ce que j'ai pas assrez de donnée est ce que tu te prends pour un scientifique trouduc ? ^^ on s'en fou juste faire la moyenne et voila
 
 
 
