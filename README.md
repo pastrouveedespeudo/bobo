@@ -2,17 +2,18 @@
 
 #ce weekend t'auras une erreur avec regulier jour nefface pas toute la table juste la ligne avec l'id
 
-#oh purée y'a avanger ! ok t'as pas 10 ans et t'es pas en tp de chimie mais faire une video avec un grand bocale
 
-#mettre de l'eau bouillante, mettre un film plastique mettre des glacon dessus mettre un truk qui fait de la fumée et normalement la fumée devrait tomber  cotnre l'eau. 
+#enfete faut prendre les listes de parametre
 
-Avant faire un grand bocal le meme truk qui brule et attendre si la fumé reste alors c ok (verif les trous)
+#les comparer avec les pm
 
-#bon mtn faut faire le schéma réfléchis prend ton temps d'un coté t'as le remplissage de donnée de l'autre t'as le schéma et on s'en fou que ce soit faux, pcque y'a pas assez de donnée MAIS peut etre que ca peut marcher selon al ville
+#et faire la meme chose qu'avec l'id, ca affichera toutes les correspondances avec les pm
 
-#pfffff y pleuvait, y'avais du vent et maintenant il pleut plus et ca passe a 31 enfete le seul truk qui change c l'heure donc faudra juste donnée soit des plages soit jouer sur l'heure...
+#et ensuite tu fais la moyenne de tous les pm et a chaque f5 de main ca doit metre a jour la moyenne
 
-#pcque jpe pas prendre les 12 villes autours prendre leur position et faire le vent selon le degres j'ai pas le temps ni de faire la typographie bon nik au moins c le plus loin que j'ai jms été 
+#et prend en compte l'heure 
+
+#départ routier ojd 20 pm hier a 22h 60 pm.... est ce que ce soir y'aura un pic? est ce que ce matin y'a eu un pic et donc moins de gens ?
 
 
 
