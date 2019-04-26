@@ -18,6 +18,7 @@
 
 #et go bobo et faire un truk qui pete pour dire la mode du moment ...
 
+#ok rapel toi meme si ca marche pas des le debut, ca saffinera avec la suite si t'appuies 10 dans une jouréne pendant 1 mois, et oui tu peux appuyer 2 fois a la suite ca cahngera rien c tellement kiffant de tout voir défilé
 
 
 
