@@ -2,7 +2,7 @@
 
 #ce weekend t'auras une erreur avec regulier jour nefface pas toute la table juste la ligne avec l'id
 
-#ca marche mais manifestation a disparu depuis 14h54 donc ca marche plus c quoi ce bordel
+#ca marche mais manifestation a disparu depuis 14h54 donc ca marche plus c quoi ce bordel ca veut plus aller sinserer dans la table putin
 
 #le but la c'est de: recueuillir chaque variation de données et les creer une fois. si la table existe pas
 
