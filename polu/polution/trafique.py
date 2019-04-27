@@ -26,7 +26,6 @@ class trafique:
         minute = date.minute
 
 
-
         heure_pointe_semaine = [7,8,9,16,17,18,19]
 
         départ_routier = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
@@ -43,8 +42,6 @@ class trafique:
             ]
 
 
-
-        
         #print(jour, mois, année)
         #print(str(heure) + ":" + str(minute))
 
@@ -103,10 +100,14 @@ class trafique:
         for i in pointe:
             if heure == i:
                 POINTE['pointe'] += 1
+            else:
+                POINTE['non_pointe'] += 1
 
 
         if jour == 5 or jour == 6:
             WEEKEND['weekend'] += 1
+        else:
+            WEEKEND['non_weekend'] += 1
 
 
     def bouchons(self, lieu, BOUCHON):
@@ -225,21 +226,9 @@ class trafique:
     
         propriete = soup.find('div',attrs={"class":u"news"})
         
-        
-        #agissement = str(propriete).find(str("pollution"))
-        #agissement2 = str(propriete).find(str("circulation différenciée"))
-
-        #if agissement >= 0 and agissement2 >= 0:
-        #    ACTIVITE_EXEPTIONNELLE['aggissement'] += 1
-
-
-
         trafic = str(propriete).find(str("circulation"))
         trafic1 = str(propriete).find(str("dense"))
         trafic2 = str(propriete).find(str("très dense"))
-
-        #if trafic >= 0 and trafic1 >= 0 or trafic2 >= 0:
-        #    ACTIVITE_EXEPTIONNELLE['circulation dense'] += 1
 
         manif = str(propriete).find(str("Manifestation"))
         manif1 = str(propriete).find(str("manifestation"))
@@ -247,6 +236,8 @@ class trafique:
 
         if manif >= 0 or manif1 >=0 :
             ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
+        else:
+            ACTIVITE_EXEPTIONNELLE['non_manifestation'] += 1
 
         news = [str(propriete)]
         nombre = news[0][160:165]
@@ -259,11 +250,6 @@ class trafique:
 
             except:
                 pass
-
-        
-        #if nombre2[0] > 0:
-        #    ACTIVITE_EXEPTIONNELLE['condition a polution'] += 1
-
 
 
 
@@ -344,7 +330,10 @@ class trafique:
 
         if a == jour_semaine and num[0] == jour:
             ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
-           
+        else:
+            ACTIVITE_EXEPTIONNELLE['non_manifestation'] += 1
+
+        #print(ACTIVITE_EXEPTIONNELLE)
         #a dans 9 jours hihi faut faire pour le 10 par ex
 
 
@@ -408,6 +397,8 @@ class trafique:
         #print(a)
         if a == jour_semaine and liste[0] == jour:
             ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
+        else:
+            ACTIVITE_EXEPTIONNELLE['non_manifestation'] += 1
 
     def activité_execptionnelle(self, lieu, ACTIVITE_EXEPTIONNELLE):
         self.lieu = lieu
