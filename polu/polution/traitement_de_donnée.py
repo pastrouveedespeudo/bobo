@@ -91,24 +91,22 @@ class data:
         données_actuelle = données_météo + données_climat + données_particule +\
                   données_socio + données_trafique
 
-        print(données_actuelle,'kokok')
+
         data = creation_conditions.visualisation_without_time(self, city)
+        print(len(data))
         data = set(data)
+        print(len(data))
 
         match = ''
         c = 0
         
         for i in data:
-            
             i = list(i)
-            print('\n')
-            print('\n')
-            print(i)
-            print('\n')
-            print(données_actuelle,'kokok')
-            if i == données_actuelle[:-1]:
+            #print(i)
+
+            if i == données_actuelle:
                 match = True
-                print("ouiiiii0000000000000000000000000000000000000000000000000000000000000")
+                
             id_data = creation_conditions.recuperate_id(self, city,
                                                         i[0],i[1],i[2],i[3],
                                                         i[4],i[5],i[6],i[7],
@@ -133,18 +131,25 @@ class data:
             mean = 0
             for i in particle:
                 mean += int(i[0])
-
-            print(mean/nb_particle)
-         
+            #try:
+            #    print(mean/nb_particle)
+            #except:
+            #    pass
 
             if match == True:
+                print('match')
+                print(particle)
+                mean = 0
+                for i in particle:
+                    mean += int(i[0])
+                print(mean/nb_particle)
                 break
       
             c+=1
 
 
             
-        print(c)
+        print('il y a : ', c, 'données pour', city)
 
 
 
@@ -164,9 +169,9 @@ if __name__ == '__main__':
     
     data = data()
 
-    donnée = data.recuperation_data('lyon')
+    donnée = data.recuperation_data('paris')
     data.condition(donnée[0], donnée[1], donnée[2],
-                   donnée[3], donnée[4], donnée[5], 'lyon')
+                   donnée[3], donnée[4], donnée[5], 'paris')
 
 
 
