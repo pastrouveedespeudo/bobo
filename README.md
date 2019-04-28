@@ -1,5 +1,7 @@
 #bobo
 
+#33 au lieu de 32 donne moi un 38 !! 31... et apres prise du truk 35 ca va ca va mtn faire tous les diagrammes selon chaque condition et les pm et faire une conclusion 
+
 
 faire traiement.py avant main.py mtn et refais trafic de a a z pour etre sur
 
