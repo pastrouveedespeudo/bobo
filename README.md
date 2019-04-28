@@ -1,9 +1,24 @@
 #bobo
 
-#33 au lieu de 32 donne moi un 38 !! 31... et apres prise du truk 35 ca va ca va mtn faire tous les diagrammes selon chaque condition et les pm et faire une conclusion 
+#ok on détoure les images et on les met sur fond blanc manuellement ca on a le droit
 
+#on prend tous les pts du carré sauf les yeux de la figure
 
-faire traiement.py avant main.py mtn et refais trafic de a a z pour etre sur
+#on fait un skin détecteur
+
+#on enleve ensuite toute la partie du corps
+
+#non laisse tombé
+
+#on refait la meme chose on crop
+
+#haut/bas, si bas y'a de la couleur du haut on ignore
+
+#si y'a de la couleur sur le haut du genre 15% du haut alors on dit que c un motif et ensutie on dit:
+
+#peut etre on prend le dessus du cadre de la tronche pour dire couleur de cheveux et on dit:
+
+#pour les brunes la mode dit tshirt blanc avec motif rouge + pantalon noir car on a 10 images on s'en fou on prend pas d'image trop difficile
 
 
 
