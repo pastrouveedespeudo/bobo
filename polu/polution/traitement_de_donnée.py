@@ -138,16 +138,18 @@ class data:
 
             if match == True:
                 print('match')
-                print(particle)
+                #print(particle)
                 mean = 0
                 for i in particle:
+           
                     mean += int(i[0])
-                print(mean/nb_particle)
+                print('estimation du taux de AQI : ', mean/nb_particle)
                 break
       
             c+=1
 
-
+        a = mean/nb_particle
+        print('estimation du taux de AQI : ',a)
             
         print('il y a : ', c, 'données pour', city)
 
