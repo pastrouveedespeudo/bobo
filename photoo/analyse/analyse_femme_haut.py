@@ -4,9 +4,10 @@ import cv2
 import numpy as np
 from PIL import Image
 from matplotlib import pyplot as plt
-
+import math
 from constante import HAAR_FACE
 from constante import HAAR_YEUX
+from palettecouleur import *
 
 ##        for x in range(image.shape[0]):
 ##            for y in range(image.shape[1]):
@@ -29,13 +30,42 @@ class image_femme_haut:
        
     def ouverture(self):
 
+        blanc = 0
+        rouge = 0
+        noir = 0
+        bleu = 0
+        vert = 0
+        jaune = 0
+        rose = 0
 
- 
-        self.im = cv2.imread('2.jpg')
-        
-
-                
-        cv2.imshow('image.jpg', self.im)
+        im = cv2.imread('1.jpg')
+        for x in range(im.shape[0]):
+            for y in range(im.shape[1]):
+                coul = couleur(im[x,y][0], im[x,y][1], im[x,y][2])
+                if coul == 'blanc':
+                    blanc+=1
+                elif coul == 'rouge':
+                    rouge+=1
+                elif coul == 'noir':
+                    noir+=1
+                elif coul == 'bleu':
+                    bleu+=1
+                elif coul == 'vert':
+                    vert+=1
+                elif coul == 'rouge':
+                    rouge+=1
+                elif coul == 'rose':
+                    rose+=1
+                elif coul == 'jaune':
+                    jaune+=1
+        print(blanc,
+        rouge ,
+        noir ,
+        bleu ,
+        vert ,
+        jaune, 
+        rose )
+        cv2.imshow('image.jpg', im)
 
 
 
@@ -70,7 +100,7 @@ if __name__ == '__main__':
     #image_femme_haut.resize()
     image_femme_haut.ouverture()
 
-    image_femme_haut.position_yeux()
+    #image_femme_haut.position_yeux()
     
 
 
