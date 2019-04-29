@@ -4,6 +4,9 @@
 
 #et pour le blond ca m'inverse les truk et ca me dit rouge prio et c bien du blond c trop bizzard
 
+#bien que la mondialisation a permis l'accéssibilité à différentes cultures notre instinct grégaire nous "force" à nous adapter. My_profil permet cela en terme de style vestimentaire !
+
+My profil la faut trouver une phrase d'accroche
 
 
 #nettoyer plus d'image j'en ai plus que 8... bon pour l'instant récupérer leur peau, au pire 8 c'est suffisant et on dit que la tendance du moment et de.... et on met qu'on a juste 8 image, et que quand elles font un shooting que le photographe nous prenne la dame sur fond blanc ffront dégagé
