@@ -1,5 +1,8 @@
 #bobo
 
+
+#nettoyer plus d'image j'en ai plus que 8... bon pour l'instant récupérer leur peau, au pire 8 c'est suffisant et on dit que la tendance du moment et de.... et on met qu'on a juste 8 image, et que quand elles font un shooting que le photographe nous prenne la dame sur fond blanc ffront dégagé
+
 #ok on détoure les images et on les met sur fond blanc manuellement ca on a le droit
 
 #on prend tous les pts du carré sauf les yeux de la figure
