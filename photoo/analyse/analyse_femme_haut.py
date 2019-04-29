@@ -81,6 +81,9 @@ class image_femme_haut:
         self.image = image
 
         dico = {}
+        dico_couleur = {'marron':0,
+                        'noir':0,
+                        'blond':0}
 
         im = Image.open(self.image)
         for value in im.getdata(): 
@@ -104,26 +107,58 @@ class image_femme_haut:
             else:
                 liste2.append(i)
 
-        print(liste2)
         for i in liste2:
             coul = couleur(i[0][0], i[0][1], i[0][2])
-            
             if coul == None:
                 pass
-            elif coul == 'marron':
-                pass
-            elif coul == 'noir':
-                pass
             else:
-                print(coul)
+
+                if coul == 'blond':
+                    dico_couleur['blond'] += 1
+                    
+                elif coul == 'marron':
+                    dico_couleur['marron'] += 1
+
+                elif coul == 'noir':
+                    dico_couleur['noir'] += 1
+
+                    
+        print(dico_couleur)
+
+        if dico_couleur['blond'] > dico_couleur['marron'] + 1000 and\
+           dico_couleur['blond'] > dico_couleur['noir']:
+            return 'blond'
+            print('blond')
+            
+        elif dico_couleur['marron'] > dico_couleur['blond'] + 1000 and\
+           dico_couleur['marron'] > dico_couleur['noir']:
+            print('marron')
+            return 'marron'
+        
+        elif dico_couleur['noir'] > dico_couleur['blond'] and\
+           dico_couleur['noir'] > dico_couleur['noir']:
+            print('noir')
+            return 'noir'
+        
+        elif dico_couleur['marron'] >= dico_couleur['blond'] + 400 and\
+           dico_couleur['marron'] > dico_couleur['noir']:
+            print('chatin')
+            return 'chatin'
+            
+        elif dico_couleur['blond'] >= dico_couleur['marron'] + 400 and\
+           dico_couleur['blond'] > dico_couleur['noir']:
+            print('chatin')
+            return 'chatin'
 
 
+    def couleur_habit(self):
+        pass
 
 
-
+            
     def essais(self):
         im = cv2.imread('5b.jpg')
-        im[50:90,50] = 163,199,209
+        print(im[50:90,50])
         cv2.imshow('image', im)
     
 if __name__ == '__main__':
@@ -137,9 +172,9 @@ if __name__ == '__main__':
     
     image_femme_haut.mask_bas(IMAGE)
     image_femme_haut.mask_haut(IMAGE)
-    image_femme_haut.couleur_cheveux('5b.jpg')
+    image_femme_haut.couleur_cheveux('6b.jpg')
 
-    image_femme_haut.essais()
+    #image_femme_haut.essais()
 
 
 
