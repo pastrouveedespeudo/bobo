@@ -4,7 +4,7 @@
 
 #et pour le blond ca m'inverse les truk et ca me dit rouge prio et c bien du blond c trop bizzard
 
-#bien que la mondialisation a permis l'accéssibilité à différentes cultures notre instinct grégaire nous "force" à nous adapter. My_profil permet cela en terme de style vestimentaire !
+#bien que la mondialisation a permis l'accéssibilité à différentes cultures notre instinct grégaire nous "force" à nous adapter à notre communauté. My_profil permet cela en terme de style vestimentaire !
 
 My profil la faut trouver une phrase d'accroche
 
