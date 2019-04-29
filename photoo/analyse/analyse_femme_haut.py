@@ -77,100 +77,55 @@ class image_femme_haut:
 
         diff.save("traitement_haut.jpg")
        
-
-    def haarcascade(self, image):
-
+    def couleur_cheveux(self, image):
         self.image = image
 
-        cadre = []
+        dico = {}
+
+        im = Image.open(self.image)
+        for value in im.getdata(): 
+             if value in dico.keys():
+                 dico[value] += 1
+             else:
+                 dico[value] = 1
+
+
+        liste = []
         
-        #nous servir pour le skin detecteur
-        #et pour la prise de la couleur des cheveux
-        
-        body_cascade = cv2.CascadeClassifier(HAAR_FACE)
-        eye_cascade = cv2.CascadeClassifier(HAAR_YEUX)
-        img = cv2.imread(self.image)
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        for cle, valeur in dico.items():
+            liste.append((cle, valeur))
+                
+        liste2 = []
+        for i in liste:
+            if i[0][0] >= 240 and\
+               i[0][1] >= 240 and\
+               i[0][2] >= 240:
+                pass
+            else:
+                liste2.append(i)
 
-        faces = body_cascade .detectMultiScale(gray, 1.1, 8)
-
-        for (x,y,w,h) in faces:
-
-           cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
-           roi_gray = gray[y:y+h, x:x+w]
-           roi_color = img[y:y+h, x:x+w]
-           cadre.append((y,h,x,w))
-           eyes = eye_cascade.detectMultiScale(roi_gray)
-           for (ex,ey,ew,eh) in eyes:
-               cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
-                       
-        #cv2.imshow('image.jpg', img)
-
-        return cadre[0]
-
-    def crop_visage(self, cadre, image):
-        self.cadre = cadre
-        self.image = image
-        print(cadre)
-
-        img = cv2.imread(self.image)
-        crop_img = img[self.cadre[0]:self.cadre[0]+self.cadre[1],
-                       self.cadre[2]:self.cadre[2]+self.cadre[3]]
-        
-        cv2.imwrite('visage.jpg', crop_img)
-
-    def visage(self, image):
-        self.image = image
-
-        img = cv2.imread(self.image)
-
-        x1 = img.shape[1] - 10
-        y1 = img.shape[0]
-
-        img[10,25] = 0,0,255
-        img[10,40] = 0,0,255
-        img[10,59] = 0,0,255
+        print(liste2)
+        for i in liste2:
+            coul = couleur(i[0][0], i[0][1], i[0][2])
+            
+            if coul == None:
+                pass
+            elif coul == 'marron':
+                pass
+            elif coul == 'noir':
+                pass
+            else:
+                print(coul)
 
 
 
 
-        cv2.imshow('image.jpg', img)
 
-        
-
-
-
-
-##    def peau(self, liste, im):
-##        self.liste = liste
-##        self.im = im
-##
-##        image = cv2.imread(self.im)
-##        
-##        for x in range(image.shape[0]):
-##            for y in range(image.shape[1]):
-##                for i in self.liste:
-##                    if image[x,y][0] == i[0] and\
-##                       image[x,y][1] == i[1] and\
-##                       image[x,y][2] == i[2]:
-##                        image[x,y] = 0,0,255
-##                    
-##        cv2.imshow('image', image)
-##
-##
-##    def crop_chevelure(self, cadre, image):
-##        self.cadre = cadre
-##        self.image = image
-##
-##        img = cv2.imread(self.image)
-##        crop_img = img[self.cadre[0][0]-10:self.cadre[0][0]+self.cadre[0][1],
-##                       self.cadre[0][2]-20:self.cadre[0][2]+self.cadre[0][3]+20]
-##        
-##        cv2.imwrite('visage.jpg', crop_img)
-##        cv2.imshow('image.jpg', crop_img)
-
-
-        
+    def essais(self):
+        im = cv2.imread('5b.jpg')
+        im[50:90,50] = 163,199,209
+        cv2.imshow('image', im)
+    
 if __name__ == '__main__':
 
     
@@ -178,17 +133,13 @@ if __name__ == '__main__':
 
     #image_femme_haut.resize('9.jpg', '9.jpg')
 
-    IMAGE = '10.jpg'
+    IMAGE = '5a.jpg'
     
     image_femme_haut.mask_bas(IMAGE)
     image_femme_haut.mask_haut(IMAGE)
-    
-    cadre = image_femme_haut.haarcascade(IMAGE)
-    
-    image_femme_haut.crop_visage(cadre, "traitement_haut.jpg")
-    peau = image_femme_haut.visage("visage.jpg")
+    image_femme_haut.couleur_cheveux('5b.jpg')
 
-    #image_femme_haut.peau(peau, IMAGE)
+    image_femme_haut.essais()
 
 
 
