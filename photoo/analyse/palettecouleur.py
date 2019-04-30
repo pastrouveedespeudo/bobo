@@ -1,410 +1,508 @@
-
-#faut refaire c chiant
-
-def couleur(couleur1, couleur2, couleur3):
-
-##    if couleur1 == 43 and\
-##       couleur2 == 29 and\
-##       couleur3 == 26:
-##        return "marron"
-##
-##    if couleur1 == 37 and\
-##       couleur2 == 26 and\
-##       couleur3 == 24:
-##        return "marron"
-##
-##    if couleur1 == 65 and\
-##       couleur2 == 51 and\
-##       couleur3 == 48:
-##        return "marron"
-##
-##    if couleur1 == 58 and\
-##       couleur2 == 41 and\
-##       couleur3 == 34:
-##        return "marron"
-##
-##    if couleur1 == 65 and\
-##       couleur2 == 51 and\
-##       couleur3 == 48:
-##        return "marron"
-##
-##    if couleur1 == 58 and\
-##       couleur2 == 41 and\
-##       couleur3 == 34:
-##        return "marron"
-##
-##    if couleur1 == 68 and\
-##       couleur2 == 51 and\
-##       couleur3 == 44:
-##        return "marron"
-##
-##    if couleur1 == 71 and\
-##       couleur2 == 54 and\
-##       couleur3 == 47:
-##        return "marron"
-##    
-##    if couleur1 == 65 and\
-##       couleur2 == 48 and\
-##       couleur3 == 41:
-##        return "marron"
-##
-##    if couleur1 == 61 and\
-##       couleur2 == 42 and\
-##       couleur3 == 35:
-##        return "marron"
-##
-##    if couleur1 == 66 and\
-##       couleur2 == 47 and\
-##       couleur3 == 40:
-##        return "marron"
-##
-##    if couleur1 == 90 and\
-##       couleur2 == 71 and\
-##       couleur3 == 64:
-##        return "marron"
-##
-##    if couleur1 == 64 and\
-##       couleur2 == 41 and\
-##       couleur3 == 33:
-##        return "marron"
-##
-##    if couleur1 == 58 and\
-##       couleur2 == 38 and\
-##       couleur3 == 31:
-##        return "marron"
-##
-##    if couleur1 == 46 and\
-##       couleur2 == 26 and\
-##       couleur3 == 19:
-##        return "marron"
-##
-##    if couleur1 == 35 and\
-##       couleur2 == 24 and\
-##       couleur3 == 18:
-##        return "marron"
-##
-##
-##    if couleur1 == 31 and\
-##       couleur2 == 20 and\
-##       couleur3 == 16:
-##        return "marron"
-##
-##    if couleur1 == 59 and\
-##       couleur2 == 40 and\
-##       couleur3 == 34:
-##        return "marron"
-##
-##    if couleur1 == 63 and\
-##       couleur2 == 40 and\
-##       couleur3 == 32:
-##        return "marron"
-##
-##    if couleur1 == 61 and\
-##       couleur2 == 38 and\
-##       couleur3 == 30:
-##        return "marron"
-##
-##    if couleur1 == 74 and\
-##       couleur2 == 51 and\
-##       couleur3 == 43:
-##        return "marron"
-##
-##    if couleur1 == 58 and\
-##       couleur2 == 35 and\
-##       couleur3 == 27:
-##        return "marron"
-##
-##    if couleur1 == 35 and\
-##       couleur2 == 24 and\
-##       couleur3 == 20:
-##        return "marron"
-##
-##    if couleur1 == 73 and\
-##       couleur2 == 46 and\
-##       couleur3 == 36:
-##        return "marron"
-##
-##    if couleur1 == 78 and\
-##       couleur2 == 51 and\
-##       couleur3 == 40:
-##        return "marron"
-##
-##    if couleur1 == 74 and\
-##       couleur2 == 55 and\
-##       couleur3 == 48:
-##        return "marron"
-##
-##    if couleur1 == 62 and\
-##       couleur2 == 43 and\
-##       couleur3 == 46:
-##        return "marron"
-##
-##    if couleur1 == 63 and\
-##       couleur2 == 44 and\
-##       couleur3 == 37:
-##        return "marron"
-##
-##    if couleur1 == 56 and\
-##       couleur2 == 41 and\
-##       couleur3 == 34:
-##        return "marron"
-##
-##    if couleur1 == 39 and\
-##       couleur2 == 425 and\
-##       couleur3 == 22:
-##        return "marron"
-##
-##    if couleur1 == 34 and\
-##       couleur2 == 23 and\
-##       couleur3 == 19:
-##        return "marron"
-##
-##    if couleur1 == 57 and\
-##       couleur2 == 38 and\
-##       couleur3 == 31:
-##        return "marron"
-##
-##
-##    if couleur1 == 50 and\
-##       couleur2 == 36 and\
-##       couleur3 == 33:
-##        return "marron"
-##
-##    if couleur1 == 52 and\
-##       couleur2 == 33 and\
-##       couleur3 == 27:
-##        return "marron"
-##
-##    if couleur1 == 67 and\
-##       couleur2 == 42 and\
-##       couleur3 == 37:
-##        return "marron"
-##
-##    if couleur1 == 56 and\
-##       couleur2 == 37 and\
-##       couleur3 == 30:
-##        return "marron"
-##
-##    if couleur1 == 44 and\
-##       couleur2 == 31 and\
-##       couleur3 == 25:
-##        return "marron"
-##
-##    if couleur1 == 69 and\
-##       couleur2 == 46 and\
-##       couleur3 == 38:
-##        return "marron"
-##
-##    if couleur1 == 44 and\
-##       couleur2 == 30 and\
-##       couleur3 == 27:
-##        return "marron"
-##
-##    if couleur1 == 61 and\
-##       couleur2 == 44 and\
-##       couleur3 == 37:
-##        return "marron"
-##
-##    if couleur1 == 69 and\
-##       couleur2 == 46 and\
-##       couleur3 == 38:
-##        return "marron"
-##
-##    if couleur1 == 44 and\
-##       couleur2 == 30 and\
-##       couleur3 == 27:
-##        return "marron"
-##
-##    if couleur1 == 61 and\
-##       couleur2 == 44 and\
-##       couleur3 == 37:
-##        return "marron"
-##
-##    if couleur1 == 61 and\
-##       couleur2 == 41 and\
-##       couleur3 == 32:
-##        return "marron"
-##
-##    if couleur1 == 35 and\
-##       couleur2 == 24 and\
-##       couleur3 == 18:
-##        return "marron"
-##
-##
-##    if couleur1 == 59 and\
-##       couleur2 == 37 and\
-##       couleur3 == 26:
-##        return "marron"
-##
-##    if couleur1 == 70 and\
-##       couleur2 == 43 and\
-##       couleur3 == 36:
-##        return "marron"
-##
-##    if couleur1 == 40 and\
-##       couleur2 == 23 and\
-##       couleur3 == 16:
-##        return "marron"
-##
-##    if couleur1 == 61 and\
-##       couleur2 == 36 and\
-##       couleur3 == 31:
-##        return "marron"
-##
-##    if couleur1 == 62 and\
-##       couleur2 == 40 and\
-##       couleur3 == 29:
-##        return "marron"
-##
-##    if couleur1 == 58 and\
-##       couleur2 == 35 and\
-##       couleur3 == 27:
-##        return "marron"
-##
-##    if couleur1 == 35 and\
-##       couleur2 == 24 and\
-##       couleur3 == 20:
-##        return "marron"
-##
-##    if couleur1 == 73 and\
-##       couleur2 == 46 and\
-##       couleur3 == 36:
-##        return "marron"
-##
-##    if couleur1 == 78 and\
-##       couleur2 == 51 and\
-##       couleur3 == 40:
-##        return "marron"
-##
-##    if couleur1 == 74 and\
-##       couleur2 == 55 and\
-##       couleur3 == 48:
-##        return "marron"
-##
-##    if couleur1 == 62 and\
-##       couleur2 == 43 and\
-##       couleur3 == 46:
-##        return "marron"
-##
-##    if couleur1 == 63 and\
-##       couleur2 == 44 and\
-##       couleur3 == 37:
-##        return "marron"
-##
-##    if couleur1 == 56 and\
-##       couleur2 == 41 and\
-##       couleur3 == 34:
-##        return "marron"
-##
-##    if couleur1 == 39 and\
-##       couleur2 == 425 and\
-##       couleur3 == 22:
-##        return "marron"
-##
-##    if couleur1 == 34 and\
-##       couleur2 == 23 and\
-##       couleur3 == 19:
-##        return "marron"
-##
-##    if couleur1 == 57 and\
-##       couleur2 == 38 and\
-##       couleur3 == 31:
-##        return "marron"
-##
-##
-##    if couleur1 == 50 and\
-##       couleur2 == 36 and\
-##       couleur3 == 33:
-##        return "marron"
-##
-##    if couleur1 == 52 and\
-##       couleur2 == 33 and\
-##       couleur3 == 27:
-##        return "marron"
-##
-##    if couleur1 == 67 and\
-##       couleur2 == 42 and\
-##       couleur3 == 37:
-##        return "marron"
-##
-##    if couleur1 == 56 and\
-##       couleur2 == 37 and\
-##       couleur3 == 30:
-##        return "marron"
-##
-##    if couleur1 == 44 and\
-##       couleur2 == 31 and\
-##       couleur3 == 25:
-##        return "marron"
-##
-##    if couleur1 == 69 and\
-##       couleur2 == 46 and\
-##       couleur3 == 38:
-##        return "marron"
-##
-##    if couleur1 == 44 and\
-##       couleur2 == 30 and\
-##       couleur3 == 27:
-##        return "marron"
-##
-##    if couleur1 == 61 and\
-##       couleur2 == 44 and\
-##       couleur3 == 37:
-##        return "marron"
-
-
-    if couleur1 > couleur2 + 10 and\
-       couleur1 > couleur3 + 10 and\
-       couleur1 > 50:
-        return "marron"
-
-
-
-    if couleur1 < 50 and\
-       couleur2 < 50 and\
-       couleur3 < 50:
-        return "noir"
-
+dico = {'alice blue':'bleu',
+        'antique white':'',
+        'AntiqueWhite1':'',
+        'AntiqueWhite2':'',
+        'AntiqueWhite3':'',
+        'AntiqueWhite4':'',
+        'aquamarine':'',
+        'aquamarine2':'',
+        'aquamarine4':'',
+        'azure':'',
+        'azure2':'',
+        'azure3':'',
+        'azure4':'',
+        'beige':'',
+        'bisque':'',
+        'bisque2':'',
+        'bisque3':'',
+        'bisque4':'',
+        'black':'',
+        'blanched almond':'',
+        'blue':'',
+        'blue violet':'',
+        'blue2':'',
+        'blue4':'',
+        'brown':'',
+        'brown1':'',
+        'brown2':'',
+        'brown3':'',
+        'brown4':'',
+        'burlywood':'',
+        'burlywood1':'',
+        'burlywood2':'',
+        'burlywood3':'',
+        'burlywood4':'',
+        'cadet blue':'',
+        'CadetBlue1':'',
+        'CadetBlue2':'',
+        'CadetBlue3':'',
+        'CadetBlue4':'',
+        'chartreuse':'',
+        'chartreuse2':'',
+        'chartreuse3':'',
+        'chartreuse4':'',
+        'chocolate':'',
+        'chocolate1':'',
+        'chocolate2':'',
+        'chocolate3':'',
+        'coral':'',
+        'coral1':'',
+        'coral2':'',
+        'coral3':'',
+        'coral4':'',
+        'cornflower blue':'',
+        'cornsilk':'',
+        'cornsilk2':'',
+        'cornsilk3':'',
+        'cornsilk4':'',
+        'cyan':'',
+        'cyan2':'',
+        'cyan3':'',
+        'cyan4':'',
+        'dark goldenrod':'',
+        'dark green':'',
+        'dark grey':'',
+        'dark khaki':'',
+        'dark olive green':'',
+        'dark orange':'',
+        'dark orchid':'',
+        'dark salmon':'',
+        'dark sea green':'',
+        'dark slate blue':'',
+        'dark slate gray':'',
+        'dark turquoise':'',
+        'dark viole':'',
+        'DarkGoldenrod1':'',
+        'DarkGoldenrod2':'',
+        'DarkGoldenrod3':'',
+        'DarkGoldenrod4':'',
+        'DarkOliveGreen1':'',
+        'DarkOliveGreen2':'',
+        'DarkOliveGreen3':'',
+        'DarkOliveGreen4':'',
+        'DarkOrange1':'',
+        'DarkOrange2':'',
+        'DarkOrange3':'',
+        'DarkOrange4':'',
+        'DarkOrchid1':'',
+        'DarkOrchid2':'',
+        'DarkOrchid3':'',
+        'DarkOrchid4':'',
+        'DarkSeaGreen1':'',
+        'DarkSeaGreen2':'',
+        'DarkSeaGreen3':'',
+        'DarkSeaGreen4':'',
+        'DarkSlateGray1':'',
+        'DarkSlateGray2':'',
+        'DarkSlateGray3':'',
+        'DarkSlateGray4':'',
+        'deep pink':'',
+        'deep sky blue':'',
+        'DeepPink2':'',
+        'DeepPink3':'',
+        'DeepPink4':'',
+        'DeepSkyBlue2':'',
+        'DeepSkyBlue3':'',
+        'DeepSkyBlue4':'',
+        'dim gray':'',
+        'dodger blue':'',
+        'DodgerBlue2':'',
+        'DodgerBlue3':'',
+        'DodgerBlue4':'',
+        'firebrick':'',
+        'firebrick1':'',
+        'firebrick2':'',
+        'firebrick3':'',
+        'firebrick4':'',
+        'floral white':'',
+        'forest green':'',
+        'gainsboro':'',
+        'ghost white':'',
+        'gold':'',
+        'gold2':'',
+        'gold3':'',
+        'gold4':'',
+        'goldenrod':'',
+        'goldenrod1':'',
+        'goldenrod2':'',
+        'goldenrod3':'',
+        'goldenrod4':'',
+        'gray':'',
+        'gray1':'',
+        'gray10':'',
+        'gray11':'',
+        'gray12':'',
+        'gray13':'',
+        'gray14':'',
+        'gray15':'',
+        'gray16':'',
+        'gray17':'',
+        'gray18':'',
+        'gray19':'',
+        'gray2':'',
+        'gray20':'',
+        'gray21':'',
+        'gray22':'',
+        'gray23':'',
+        'gray24':'',
+        'gray25':'',
+        'gray26':'',
+        'gray27':'',
+        'gray28':'',
+        'gray29':'',
+        'gray3':'',
+        'gray30':'',
+        'gray31':'',
+        'gray32':'',
+        'gray33':'',
+        'gray34':'',
+        'gray35':'',
+        'gray36':'',
+        'gray37':'',
+        'gray38':'',
+        'gray39':'',
+        'gray4':'',
+        'gray40':'',
+        'gray42':'',
+        'gray43':'',
+        'gray44':'',
+        'gray45':'',
+        'gray46':'',
+        'gray47':'',
+        'gray48':'',
+        'gray49':'',
+        'gray5':'',
+        'gray50':'',
+        'gray51':'',
+        'gray52':'',
+        'gray53':'',
+        'gray54':'',
+        'gray55':'',
+        'gray56':'',
+        'gray57':'',
+        'gray58':'',
+        'gray59':'',
+        'gray6':'',
+        'gray60':'',
+        'gray61':'',
+        'gray62':'',
+        'gray63':'',
+        'gray64':'',
+        'gray65':'',
+        'gray66':'',
+        'gray67':'',,
+        'gray68':'',
+        'gray69':'',
+        'gray7':'',
+        'gray70':'',
+        'gray71':'',
+        'gray72':'',
+        'gray73':'',
+        'gray74':'',
+        'gray75':'',
+        'gray76':'',
+        'gray77':'',
+        'gray78':'',
+        'gray79':'',
+        'gray8':'',
+        'gray80':'',
+        'gray81':'',
+        'gray82':'',
+        'gray83':'',
+        'gray84':'',
+        'gray85':'',
+        'gray86':'',
+        'gray87':'',
+        'gray88':'',
+        'gray89':'',
+        'gray9':'',
+        'gray90':'',
+        'gray91':'',
+        'gray92':'',
+        'gray93':'',
+        'gray94':'',
+        'gray95':'',
+        'gray96':'',
+        'gray97':'',,
+        'gray98':'',
+        'gray99':'',
+        'green':'',
+        'green yellow':'', 
+        'green2':'', 
+        'green3':'', 
+        'green4':'', 
+        'honeydew':'', 
+        'honeydew2':'', 
+        'honeydew3':'', 
+        'honeydew4':'', 
+        'hot pink':'', 
+        'HotPink1':'', 
+        'HotPink2':'', 
+        'HotPink3':'', 
+        'HotPink4':'', 
+        'indian red':'',
+        'IndianRed1':'', 
+        'IndianRed2':'', 
+        'IndianRed3':'', 
+        'IndianRed4':'', 
+        'ivory':'', 
+        'ivory2':'', 
+        'ivory3':'', 
+        'ivory4':'', 
+        'khaki':'', 
+        'khaki1':'', 
+        'khaki2':'', 
+        'khaki3':'', 
+        'khaki4':'', 
+        'lavender':'', 
+        'lavender blush':'', 
+        'LavenderBlush2':'', 
+        'LavenderBlush3':'', 
+        'LavenderBlush4':'', 
+        'lawn green':'', 
+        'lemon chiffon':'', 
+        'LemonChiffon2':'', 
+        'LemonChiffon3':'', 
+        'LemonChiffon4':'', 
+        'light blue':'',
+        'light coral':'', 
+        'light cyan':'',
+        'light goldenrod':'',
+        'light goldenrod yellow':'',
+        'light grey':'',  
+        'light pink':'', 
+        'light salmon': '', 
+        'light sea green':'', 
+        'light sky blue':'', 
+        'light slate blue':'', 
+        'light slate gray':'',     
+        'light steel blue':'', 
+        'light yellow': '',  
+        'LightBlue1':'', 
+        'LightBlue2':'', 
+        'LightBlue3':'', 
+        'LightBlue4':'', 
+        'LightCyan2':'', 
+        'LightCyan3':'', 
+        'LightCyan4':'', 
+        'LightGoldenrod1':'', 
+        'LightGoldenrod2':'', 
+        'LightGoldenrod3':'', 
+        'LightGoldenrod4':'', 
+        'LightPink1':'', 
+        'LightPink2':'', 
+        'LightPink3':'', 
+        'LightPink4':'', 
+        'LightSalmon2':'',
+        'LightSalmon3':'',
+        'LightSalmon4':'',
+        'LightSkyBlue1':'',
+        'LightSkyBlue2':'',
+        'LightSkyBlue3':'',
+        'LightSkyBlue4':'',
+        'LightSteelBlue1':'',
+        'LightSteelBlue2':'',
+        'LightSteelBlue3':'',
+        'LightSteelBlue4':'',
+        'LightYellow2':'', 
+        'LightYellow3':'', 
+        'LightYellow4':'', 
+        'lime green':''
+        'linen':'', 
+        'magenta':'',
+        'magenta2':'',
+        'magenta3':'',
+        'magenta4':'',
+        'maroon':'',
+        'maroon1':'',
+        'maroon2':'',
+        'maroon3':'',
+        'maroon4':'',
+        'medium aquamarine':'',
+        'medium blue':'',
+        'medium orchid':'',
+        'medium purple':'',
+        'medium sea green':'',
+        'medium slate blue':'',
+        'medium spring green':'',
+        'medium turquoise':'',
+        'medium violet red':'',
+        'MediumOrchid1':'',
+        'MediumOrchid2':'',
+        'MediumOrchid3':'',
+        'MediumOrchid4':'',
+        'MediumPurple1':'',
+        'MediumPurple2':'',
+        'MediumPurple3':'',
+        'MediumPurple4':'', 
+        'midnight blue':'',
+        'misty rose':'',
+        'MistyRose2':'',
+        'MistyRose3':'',
+        'MistyRose4':'',
+        'moccasin':'',
+        'navajo white':'',
+        'NavajoWhite2':'',
+        'NavajoWhite3':'',
+        'NavajoWhite4':'',
+        'navy':'',
+        'old lace':'',
+        'olive drab':'',
+        'OliveDrab1':'',
+        'OliveDrab2':'',
+        'OliveDrab4':'',
+        'orange':'',
+        'orange red':'',
+        'orange2':'',
+        'orange3':'',
+        'orange4':'',
+        'OrangeRed2':'',
+        'OrangeRed3':'',
+        'OrangeRed4':'',
+        'orchid':'',
+        'orchid1':'',
+        'orchid2':'',
+        'orchid3':'',
+        'orchid4':'',
+        'pale goldenrod':'',
+        'pale green':'',
+        'pale turquoise':'',
+        'pale violet red':'',
+        'PaleGreen1':'',
+        'PaleGreen2':'',
+        'PaleGreen3':'',
+        'PaleGreen4':'',
+        'PaleTurquoise1':'',
+        'PaleTurquoise2':'',
+        'PaleTurquoise3':'',
+        'PaleTurquoise4':'',
+        'PaleVioletRed1':'',
+        'PaleVioletRed2':'',
+        'PaleVioletRed3':'',
+        'PaleVioletRed4':'',
+        'papaya whip':'',
+        'peach puff':'',
+        'PeachPuff2':'',
+        'PeachPuff3':'',
+        'PeachPuff4':'',
+        'peru':'',
+        'pink':'',
+        'pink1':'',
+        'pink2':'',
+        'pink3':'',
+        'pink4':'',
+        'plum':'',
+        'plum1':'',
+        'plum2':'',
+        'plum3':'',
+        'plum4':'',
+        'powder blue':'',
+        'purple':'',
+        'purple1':'',
+        'purple2':'',
+        'purple3':'',
+        'purple4':'',
+        'red':'',
+        'red2':'',
+        'red3':'',
+        'red4':'',
+        'rosy brown':'',
+        'RosyBrown1':'',
+        'RosyBrown2':'',
+        'RosyBrown3':'',
+        'RosyBrown4':'',
+        'royal blue':'',
+        'RoyalBlue1':'',
+        'RoyalBlue2':'',
+        'RoyalBlue3':'',
+        'RoyalBlue4':'',
+        'saddle brown':'',
+        'salmon':'',
+        'salmon1':'',
+        'salmon2':'',
+        'salmon3':'',
+        'salmon4':'',
+        'sandy brown':'',
+        'sea green':'',
+        'SeaGreen1':'',
+        'SeaGreen2':'',
+        'SeaGreen3':'',
+        'seashell':'',
+        'seashell2':'',
+        'seashell3':'',
+        'seashell4':'',
+        'sienna':'',
+        'sienna1':'',
+        'sienna2':'',
+        'sienna3':'',
+        'sienna4':'',
+        'sky blue':'',
+        'SkyBlue1':'',
+        'SkyBlue2':'', 
+        'SkyBlue3'', 
+        'SkyBlue4':'', 
+        'slate blue':'', 
+        'slate gray':'', 
+        'SlateBlue1':'', 
+        'SlateBlue2':'', 
+        'SlateBlue3':'', 
+        'SlateBlue4':'', 
+        'SlateGray1':'', 
+        'SlateGray2':'', 
+        'SlateGray3':'', 
+        'SlateGray4':'', 
+        'snow':'',
+        'snow2':'', 
+        'snow3':'', 
+        'snow4':'', 
+        'spring green':'',
+        'SpringGreen2':'', 
+        'SpringGreen3':'', 
+        'SpringGreen4':'', 
+        'steel blue':'', 
+        'SteelBlue1':'', 
+        'SteelBlue2':'', 
+        'SteelBlue3':'', 
+        'SteelBlue4':'', 
+        'tan':'', 
+        'tan1':'', 
+        'tan2':'', 
+        'tan4':'', 
+        'thistle':'', 
+        'thistle1':'', 
+        'thistle2':'', 
+        'thistle3':'', 
+        'thistle4':'', 
+        'tomato':'', 
+        'tomato2':'', 
+        'tomato3':'', 
+        'tomato4':'', 
+        'turquoise':'', 
+        'turquoise1':'', 
+        'turquoise2':'', 
+        'turquoise3':'', 
+        'turquoise4':'', 
+        'violet':'', 
+        'violet red':'', 
+        'VioletRed1':'', 
+        'VioletRed2':'', 
+        'VioletRed3':'', 
+        'VioletRed4':'', 
+        'wheat':'', 
+        'wheat1':'', 
+        'wheat2':'', 
+        'wheat3':'', 
+        'wheat4':'', 
+        'white: '',  
+        'white smoke':'',   
+        'yellow':'', 
+        'yellow green':'',
+        'yellow2':'', 
+        'yellow3':'', 
+        'yellow4':'', 
         
-    
-    if couleur3 > 100 and\
-       couleur2 > 100 and\
-       couleur1 > 100 and\
-       couleur3 >= couleur2 + 10 and\
-       couleur2 >= couleur1 + 10:
-        print(couleur1, couleur2, couleur3)
-        return "blondSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"
-        
-
-
-
-    
-
-
-#http://www.discoveryplayground.com/computer-programming-for-kids/rgb-colors/
-
-
-#couleur(125, 200, 0) vert
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
