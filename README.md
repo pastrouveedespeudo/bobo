@@ -1,3 +1,8 @@
+
+#https://github.com/python/cpython
+
+#https://github.com/python/cpython/tree/master/Tools/pynche
+
 #bobo
 
 #pense canape
