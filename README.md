@@ -1,6 +1,6 @@
 #bobo
 
-#d'une j'ai une sale tronche sur les vidéo ou alors c pcque chui devenu moche mais je lisais pas de texte ... m'en fou je sais par contre ca me donne une mauvaise note et j'aurai un boulot nul apres... merde imagine on me fou dans l'uml atta ca veut dire que j'ai l'air bené ? ^^
+#pense canape
 
 #bon finir les vetements ojd mais avant uml
 
