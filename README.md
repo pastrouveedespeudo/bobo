@@ -1,5 +1,10 @@
 #bobo
 
+#d'une j'ai une sale tronche sur les vidéo ou alors c pcque chui devenu moche mais je lisais pas de texte ... m'en fou je sais par contre ca me donne une mauvaise note et j'aurai un boulot nul apres... merde imagine on me fou dans l'uml atta ca veut dire que j'ai l'air bené ? ^^
+
+#bon finir les vetements ojd mais avant uml
+
+
 #alors pour le marron ca me met le bleu en prio et sur le site ca met du bleu
 
 #et pour le blond ca m'inverse les truk et ca me dit rouge prio et c bien du blond c trop bizzard
