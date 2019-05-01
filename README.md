@@ -25,3 +25,5 @@
 #dans notre solution mettre les quelques vidéo des machines à pluie + de la vidéo que tu feras
 
 #ok t'as trouvé des truks pour les mains et tout mais tu le  feras pour ton truk et aussi sur vidéocapture !!
+
+#putin de merde, trnasférer les données mysql en postGresql retrouve ton code postgres.........
