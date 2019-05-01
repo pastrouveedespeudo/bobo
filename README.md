@@ -3,6 +3,10 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+
+#poru que ce soit classe on pourrait par un find contour récupérer les pts dans une database et si 80% des pts matchs peut etre c un tshirt
+vu qu'elles sont hard néttoyées 
+
 #bobo
 
 #la coupe de cheveux -> conserver noir et blanc
