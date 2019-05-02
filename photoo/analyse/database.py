@@ -6,6 +6,7 @@ from config import PASSWORD
 from config import DATABASE
 
 
+
 class create_base:
     def database(self):
         
@@ -17,6 +18,8 @@ class create_base:
         
         self.cursor.execute("""CREATE DATABASE BOBO""")
         self.connexion.commit()
+
+
 
 class connexion_database:
     def connexion(self):
@@ -30,33 +33,21 @@ class connexion_database:
         self.connexion.commit()
 
 
+
+
 class table:
     def creation_table_donnée(self):
         connexion_database.connexion(self)
-        self.cursor.execute("""create table ville(
+        
+        self.cursor.execute("""create table bobo(
                             id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-                            nom_ville varchar(100),
-                            date INT,
-                            heure_donnée INT,
-                            pression varchar(100),
-                            vent varchar(100),
-                            météo varchar(100),
-                            climat varchar(100),
-                            saison varchar(100),
-                            ville_pollué varchar(100),
-                            REGION_INDUSTRIEL_POLLUEE varchar(100),
-                            POPULATION_ACTIVE_HABITANT varchar(100),
-                            TRAFIQUE varchar(100),
-                            HEURE varchar(100),
-                            POINTE varchar(100),
-                            WEEKEND varchar(100),
-                            BOUCHON varchar(100),
-                            ACTIVITE_EXEPTIONNELLE varchar(100),
-                            nombre_particule varchar(100),
-                            particule varchar(100),
+                            image varchar(100),
+                            sexe varchar(100),
+                            coiffure varchar(100),
+                            haut varchar(100),
+                            bas varchar(100),
                             PRIMARY KEY(id) )
                             ENGINE=InnoDB;
-                            
                             """)
         self.connexion.commit()
 
@@ -109,9 +100,11 @@ class visualisation_table:
 if __name__ == "__main__":
     
     create_base = create_base()
+    table = table()
+    
     #create_base.database()
 
-
+    #table.creation_table_donnée()
     #table.creation_table_donnée()
 
 
