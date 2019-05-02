@@ -4,8 +4,11 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#poru que ce soit classe on pourrait par un find contour récupérer les pts dans une database et si 80% des pts matchs peut etre c un tshirt
-vu qu'elles sont hard néttoyées 
+#pour la 1er toff y'a 27 % de blanc donc voir si on peut a chaque fois dire ca et faire la meme pour le rouge et si y'a tant dire que y'a un motif
+
+#y'a pleins de gens qui se battent pour que les gens se sentent a l'aise et eux c'est les plus cools faudra mettre un genre de phrase comme ca
+
+
 
 #bobo
 
