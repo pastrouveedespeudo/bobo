@@ -12,13 +12,10 @@ from constante import HAAR_YEUX
 from constante import IMAGE_TRAITEMENT_HAUT
 from constante import IMAGE_TRAITEMENT_BAS
 
-from palettecouleur_coiffure import *
+from palettecouleur_coiffure import couleur_cheuvelure
 from coul import *
 from palettecouleur import DICO_COULEUR
 
-
-##        for x in range(image.shape[0]):
-##            for y in range(image.shape[1]):
 
 from colour import Color
 
@@ -31,10 +28,8 @@ class image_femme_haut:
        
        image = Image.open(self.img)
 
-
-       image = image.resize((int(round(image.width/2)),
-                             int(round(image.height/2))))
-
+       image = image.resize((50,50))
+                            
        image.save(self.save)
 
        
@@ -56,8 +51,8 @@ class image_femme_haut:
         masque_draw.rectangle(coords, fill=(0,0,0))
         diff = ImageChops.lighter(img, masque)
 
-        
-        diff.save("traitement_bas.jpg")
+        img = img.rotate(180)
+        img.crop((0, 0, b/2, a)).save('traitement_bas1.jpg')
 
     def mask_haut(self, i):
         self.i = i
@@ -82,9 +77,6 @@ class image_femme_haut:
         img.crop((0, 0, b, a/2)).save('traitement_haut.jpg')
 
 
-    def logo(self, image):
-        pass
-
 
     def couleur_habit(self, image):
         self.image = image
@@ -94,8 +86,15 @@ class image_femme_haut:
                 'noir':0,'bleu violet':0,'beige foncé':0,'blanc':0,'kaki':0,
                 'vert foncé':0,'orange foncé':0,'jaune foncé':0,'turquoise':0,
                 'bleu':0,'rose':0,'rouge':0,'magenta':0}
+        
 
         image = cv2.imread(self.image)
+
+        largeur = image.shape[1]
+        hauteur = image.shape[0]
+
+        print(largeur, hauteur)
+        
         for x in range(image.shape[0]):
             for y in range(image.shape[1]):
                 
@@ -112,6 +111,7 @@ class image_femme_haut:
                         for clé1, valeur1 in dico.items():
                             if clé1 == DICO_COULEUR[nearest]:
                                 dico[clé1] += 1
+                                
         print(dico)
 
 
@@ -119,10 +119,8 @@ class image_femme_haut:
         #cv2.imshow('image', image)
 
 
-
-
-
-
+        #27% de blanc == fond
+        
 
 
     def couleur_cheveux(self, image):
@@ -140,7 +138,7 @@ class image_femme_haut:
              else:
                  dico[value] = 1
 
-        print(dico)
+   
         liste = []
         
         for cle, valeur in dico.items():
@@ -156,7 +154,7 @@ class image_femme_haut:
                 liste2.append(i)
 
         for i in liste2:
-            coul = couleur(i[0][0], i[0][1], i[0][2])
+            coul = couleur_cheuvelure(i[0][0], i[0][1], i[0][2])
             if coul == None:
                 pass
             else:
@@ -171,64 +169,78 @@ class image_femme_haut:
                     dico_couleur['noir'] += 1
 
                     
-        print(dico_couleur)
+
 
         if dico_couleur['blond'] > dico_couleur['marron'] + 1000 and\
            dico_couleur['blond'] > dico_couleur['noir']:
             return 'blond'
-            print('blond')
+            print('couleur de cheveux blond')
             
         elif dico_couleur['marron'] > dico_couleur['blond'] + 1000 and\
            dico_couleur['marron'] > dico_couleur['noir']:
-            print('marron')
+            print('couleur de cheveux marron')
             return 'marron'
         
         elif dico_couleur['noir'] > dico_couleur['blond'] and\
            dico_couleur['noir'] > dico_couleur['noir']:
-            print('noir')
+            print('couleur de cheveux noir')
             return 'noir'
         
         elif dico_couleur['marron'] >= dico_couleur['blond'] + 400 and\
            dico_couleur['marron'] > dico_couleur['noir']:
-            print('chatin')
+            print('couleur de cheveux chatin')
             return 'chatin'
             
         elif dico_couleur['blond'] >= dico_couleur['marron'] + 400 and\
            dico_couleur['blond'] > dico_couleur['noir']:
-            print('chatin')
+            print('couleur de cheveux chatin')
             return 'chatin'
 
 
 
 
 
-            
-    def essais(self):
-        im = cv2.imread('traitement_haut.jpg')
-        im[50:90,50] = 254,107,0
-        cv2.imshow('image', im)
-    
+     
 if __name__ == '__main__':
 
     
     image_femme_haut = image_femme_haut()
 
-    
+    liste = os.listdir()
 
-    IMAGE = '2a.jpg'
+    for i in liste:
+        if i == '__pycache__' or i == 'analyse_femme_haut.py' or\
+           i == 'constante.py' or i == 'coul.py' or\
+           i == 'palettecouleur.py' or i == 'palettecouleur_coiffure.py':
+            pass
+        else:
+            print(i)
+            IMAGE = i
+            if i[-5] == "a":
     
-    #image_femme_haut.mask_bas(IMAGE)
-    #image_femme_haut.mask_haut(IMAGE)
-    
-    image_femme_haut.resize(IMAGE_TRAITEMENT_HAUT, 'traitement_haut1.jpg')
-    
-    image_femme_haut.couleur_habit('traitement_haut1.jpg')
-    
+                image_femme_haut.mask_bas(IMAGE)
+                image_femme_haut.mask_haut(IMAGE)
+                
+                image_femme_haut.resize(IMAGE_TRAITEMENT_HAUT,
+                                        'traitement_haut1.jpg')
 
-    
-    #image_femme_haut.couleur_cheveux('6b.jpg')
+                image_femme_haut.resize(IMAGE_TRAITEMENT_HAUT,
+                        'traitement_bas1.jpg')
 
-    #image_femme_haut.essais()
+                print('le haut a les couleur:')
+                image_femme_haut.couleur_habit('traitement_haut1.jpg')
+                print('le bas a les couleur:')
+                image_femme_haut.couleur_habit('traitement_bas1.jpg')
+                
+            elif i[-5] == "b":
+            
+                image_femme_haut.couleur_cheveux(i)#mettre dans talbe direct
+
+               
+            else:
+                pass
+            
+
 
 
 
