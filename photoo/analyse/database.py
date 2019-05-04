@@ -39,13 +39,15 @@ class table:
     def creation_table_donnée(self):
         connexion_database.connexion(self)
         
-        self.cursor.execute("""create table bobo(
+        self.cursor.execute("""create table bobo1(
                             id INT UNSIGNED NOT NULL AUTO_INCREMENT,
                             image varchar(100),
                             sexe varchar(100),
                             coiffure varchar(100),
-                            haut varchar(100),
-                            bas varchar(100),
+                            haut text,
+                            bas text,
+                            taille_haut int,
+                            taille_bas int,
                             PRIMARY KEY(id) )
                             ENGINE=InnoDB;
                             """)
@@ -54,16 +56,44 @@ class table:
 
 
 
+
 class insertion_table:
-    def insertion_meteo(self, ville, date, heure_donnée, pressure, weather, wind):
+     
+    def insertion_info(self, nom, sexe, haut, bas, taille_haut, taille_bas):
+        connexion_database.connexion(self)
+
+        self.taille_haut = taille_haut
+        self.taille_bas = taille_bas
+        self.nom = nom
+        self.sexe = sexe
+        self.haut = haut
+        self.bas = bas
+        
+        
+        sql = ("""insert into bobo1
+                 (image, sexe, haut, bas, taille_haut, taille_bas)
+                 values(%s, %s, %s, %s, %s, %s);""")
+
+        values = (self.nom, self.sexe, self.haut, self.bas, self.taille_haut,
+                  taille_bas)
+
+        
+        self.cursor.execute(sql, values)
+        self.connexion.commit()
+
+
+    def coiffure(self, coiffure, image):
+
+        self.coiffure = coiffure
+        self.image = image
+
         connexion_database.connexion(self)
         
-        sql = ("""insert into ville
-                        (nom_ville, date, heure_donnée, pression, météo, vent)
-                         values(%s, %s, %s, %s, %s, %s);""")
+        sql = ("""update bobo1
+                set coiffure = %s
+                where image = %s;""")
 
-        values = (ville, date, heure_donnée,
-                  pressure, weather, wind)
+        values = (self.coiffure, self.image)
 
         
         self.cursor.execute(sql, values)
@@ -97,10 +127,10 @@ class visualisation_table:
 
 
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
     
-    create_base = create_base()
-    table = table()
+    #create_base = create_base()
+    #table = table()
     
     #create_base.database()
 
