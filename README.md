@@ -4,6 +4,9 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
+#refaire de dire combien y'a de polution et faire un truk de mysql vers psycopg2...
+
+
 #pour la 1er toff y'a 27 % de blanc donc voir si on peut a chaque fois dire ca et faire la meme pour le rouge et si y'a tant dire que y'a un motif
 
 #y'a pleins de gens qui se battent pour que les gens se sentent a l'aise et eux c'est les plus cools faudra mettre un genre de phrase comme ca, rendez vous sur "achtez des habits"
