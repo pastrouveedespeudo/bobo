@@ -3,7 +3,7 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-#faire la meme avec des mecs, ca dit gris mais c noir, j'ai vérif t'as mis cyan = gris frere...
+#faire la meme avec des mecs, ca dit gris mais c noir, j'ai vérif t'as mis cyan = gris frere... y'en avait 500 c'etait trop chiant
 
 
 
