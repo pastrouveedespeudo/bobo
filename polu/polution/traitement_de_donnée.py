@@ -87,71 +87,44 @@ class data:
                   données_socio, données_trafique, données_parti, city):
 
 
-
         données_actuelle = données_météo + données_climat + données_particule +\
                   données_socio + données_trafique
 
 
-        data = creation_conditions.visualisation_without_time(self, city)
-        print(len(data))
-        data = set(data)
-        print(len(data))
 
-        match = ''
-        c = 0
         
+        THE_PARTICLE = []
+        
+        data = creation_conditions.visualisation_without_time(self, city)
         for i in data:
             i = list(i)
-            #print(i)
-
             if i == données_actuelle:
-                match = True
+
                 
-            id_data = creation_conditions.recuperate_id(self, city,
-                                                        i[0],i[1],i[2],i[3],
-                                                        i[4],i[5],i[6],i[7],
-                                                        i[8],i[9],i[10],i[11],
-                                                        i[12],i[13])
-            
-            particle = creation_conditions.recuperate_particle(self, city,
-                                                               i[0],i[1],i[2],i[3],
-                                                               i[4],i[5],i[6],i[7],
-                                                               i[8],i[9],i[10],i[11],
-                                                               i[12],i[13])
+                particle = creation_conditions.recuperate_particle(self, city,
+                                                                   i[0],i[1],i[2],i[3],
+                                                                   i[4],i[5],i[6],i[7],
+                                                                   i[8],i[9],i[10],i[11],
+                                                                   i[12],i[13])
 
 
-            
+                THE_PARTICLE.append(particle[0][0])
 
-            #print(id_data)
-            #print(hour)
-            #print(particle)
-            
-            nb_particle = len(particle)
 
-            mean = 0
-            for i in particle:
-                mean += int(i[0])
-            #try:
-            #    print(mean/nb_particle)
-            #except:
-            #    pass
 
-            if match == True:
-                print('match')
-                #print(particle)
-                mean = 0
-                for i in particle:
-           
-                    mean += int(i[0])
-                print('estimation du taux de AQI : ', mean/nb_particle)
-                break
-      
-            c+=1
+        print(THE_PARTICLE)
 
-        a = mean/nb_particle
-        print('estimation du taux de AQI : ',a)
-            
-        print('il y a : ', c, 'données pour', city)
+        var = 0
+        for i in THE_PARTICLE:
+            i = int(i)
+            var += i
+
+        print("il y a a peu prés :", var/len(THE_PARTICLE), "AQI")
+
+
+
+
+
 
 
 
