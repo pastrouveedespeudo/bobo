@@ -3,7 +3,11 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-#faire la meme avec des mecs, ca dit gris mais c noir, j'ai vérif t'as mis cyan = gris frere... y'en avait 500 c'etait trop chiant
+#faire les pourcentages genre si y'a bcp de blanc mais quya du noir c que c le fond sinon c un ttshirt blanc
+
+#pour la 1er c 27 % ensuite faire si y'a du rouge genre >10% alors c un logo et faire le truk des log demain...
+
+#et ensuite metttre en place le site les graphiques et tous les textes et c ok purée faudra aussi faire un truk de compte et l'enregistrements des habits nik
 
 
 
@@ -20,7 +24,6 @@
 
 #proposer habits (t-shirt, pantalon ect...) + ensemble d'habit -> image du mec en couleur
 
-#tuto
 
 
 #polution
@@ -31,8 +34,5 @@
   
 #dans notre solution mettre les quelques vidéo des machines à pluie + de la vidéo que tu feras
 
-#ok t'as trouvé des truks pour les mains et tout mais tu le  feras pour ton truk et aussi sur vidéocapture !!
 
-#putin de merde, trnasférer les données mysql en postGresql retrouve ton code postgres......... par contre la si on me dit que ton projet est nul c'est que... bobo -> site de vétements ect afin de fabriqué des vétements trouve un truk qui dit que ca influe sur la polution par le transport de la fabrication et de la livraison et la t'enchaine avec polution
-
-#réflechis pour caller dk
+#réflechis pour caller dk -> ca pourrait augmenter ta note puis c'est quand meme assez cool
