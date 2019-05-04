@@ -16,8 +16,12 @@ from palettecouleur_coiffure import couleur_cheuvelure
 from coul import *
 from palettecouleur import DICO_COULEUR
 
-
 from colour import Color
+
+from database import insertion_table
+
+
+
 
 
 class image_femme_haut:
@@ -34,7 +38,6 @@ class image_femme_haut:
 
        
     def mask_bas(self, i):
-        
         self.i = i
         img = Image.open(self.i)
    
@@ -93,7 +96,8 @@ class image_femme_haut:
         largeur = image.shape[1]
         hauteur = image.shape[0]
 
-        print(largeur, hauteur)
+        taille = largeur * hauteur
+        
         
         for x in range(image.shape[0]):
             for y in range(image.shape[1]):
@@ -111,15 +115,15 @@ class image_femme_haut:
                         for clé1, valeur1 in dico.items():
                             if clé1 == DICO_COULEUR[nearest]:
                                 dico[clé1] += 1
+
+        couleur_liste = []
                                 
-        print(dico)
+        for cle, valeur in dico.items():
+            if valeur != 0:
+                couleur_liste.append((cle, valeur))
 
 
-        #print(dico)
-        #cv2.imshow('image', image)
-
-
-        #27% de blanc == fond
+        return taille, couleur_liste
         
 
 
@@ -197,7 +201,37 @@ class image_femme_haut:
             return 'chatin'
 
 
+    def traitement(self, i):
+        
+        print(i)
+        IMAGE = i
+        if i[-5] == "a":
 
+            image_femme_haut.mask_bas(IMAGE)
+            image_femme_haut.mask_haut(IMAGE)
+            
+            image_femme_haut.resize(IMAGE_TRAITEMENT_HAUT,
+                                    'traitement_haut1.jpg')
+
+            image_femme_haut.resize(IMAGE_TRAITEMENT_HAUT,
+                    'traitement_bas1.jpg')
+
+
+            haut = image_femme_haut.couleur_habit('traitement_haut1.jpg')
+            
+            bas = image_femme_haut.couleur_habit('traitement_bas1.jpg')
+
+            nom_image = str(i[0] + i[-4:])
+            
+            insertion_table.insertion_info(self, nom_image, "femme", str(haut[1]), str(bas[1]), haut[0], bas[0])
+
+        elif i[-5] == "b":
+            nom_image = str(i[0] + i[-4:])
+            coiffure = image_femme_haut.couleur_cheveux(i)#mettre dans talbe direct
+            insertion_table.coiffure(self, coiffure, nom_image)
+
+        else:
+            pass
 
 
      
@@ -214,33 +248,12 @@ if __name__ == '__main__':
            i == 'palettecouleur.py' or i == 'palettecouleur_coiffure.py':
             pass
         else:
-            print(i)
-            IMAGE = i
-            if i[-5] == "a":
-    
-                image_femme_haut.mask_bas(IMAGE)
-                image_femme_haut.mask_haut(IMAGE)
+
+            image_femme_haut.traitement(i)
+
                 
-                image_femme_haut.resize(IMAGE_TRAITEMENT_HAUT,
-                                        'traitement_haut1.jpg')
 
-                image_femme_haut.resize(IMAGE_TRAITEMENT_HAUT,
-                        'traitement_bas1.jpg')
-
-                print('le haut a les couleur:')
-                image_femme_haut.couleur_habit('traitement_haut1.jpg')
-                print('le bas a les couleur:')
-                image_femme_haut.couleur_habit('traitement_bas1.jpg')
-                
-            elif i[-5] == "b":
-            
-                image_femme_haut.couleur_cheveux(i)#mettre dans talbe direct
-
-               
-            else:
-                pass
-            
-
+        
 
 
 
