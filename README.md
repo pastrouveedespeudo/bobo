@@ -3,18 +3,10 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-#575 données et qu'une seule pour ojd la semaine derniere y'avait les meme conditions ah ! nan y pleuvait pas ouuuf, y'avais dans les 60 pour marseille et paris :o
-
-#tg t'as pleisn de truk a faire fini les habits ce soir y'a encore tous les diagrammes et le site et les donénes a transférer jsp y'a des truk bon a bouffer
-
-#et le truk avec twitter aussi mais ca après
-
-#refaire de dire combien y'a de polution et faire un truk de mysql vers psycopg2...
+#faire la meme avec des mecs, ca dit gris mais c noir, j'ai vérif t'as mis cyan = gris frere...
 
 
-#pour la 1er toff y'a 27 % de blanc donc voir si on peut a chaque fois dire ca et faire la meme pour le rouge et si y'a tant dire que y'a un motif
 
-#y'a pleins de gens qui se battent pour que les gens se sentent a l'aise et eux c'est les plus cools faudra mettre un genre de phrase comme ca, rendez vous sur "achtez des habits"
 
 
 
