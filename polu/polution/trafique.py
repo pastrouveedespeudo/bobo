@@ -96,12 +96,15 @@ class trafique:
         jour = date.weekday()
        
         #print(heure, jour)
-
+        pointeTrue = ""
         for i in pointe:
             if heure == i:
                 POINTE['pointe'] += 1
-            else:
-                POINTE['non_pointe'] += 1
+                pointeTrue = True
+                break
+
+        if pointeTrue != True:
+            POINTE['non_pointe'] += 1
 
 
         if jour == 5 or jour == 6:
@@ -418,9 +421,6 @@ class trafique:
             path = "https://mars-infos.org/spip.php?page=agenda"
             trafique.requete_marseille_traffique(self, path, ACTIVITE_EXEPTIONNELLE)
 
-
-
-   
 
 
 
