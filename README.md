@@ -7,6 +7,8 @@
 
 #1faire le truk des log demain...
 
+#revois les couleurs => noir -> gris, bleu -> gris
+
 #faire les pourcentages genre si y'a bcp de blanc mais quya du noir c que c le fond sinon c un ttshirt blanc
 
 #pour la 1er c 27 % ensuite faire si y'a du rouge genre >10% alors c un logo et 
