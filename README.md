@@ -1,22 +1,25 @@
 
-#https://github.com/python/cpython
+# https://github.com/python/cpython
 
-#https://github.com/python/cpython/tree/master/Tools/pynche
+# https://github.com/python/cpython/tree/master/Tools/pynche
+
+
+
+#1faire le truk des log demain...
 
 #faire les pourcentages genre si y'a bcp de blanc mais quya du noir c que c le fond sinon c un ttshirt blanc
 
-#pour la 1er c 27 % ensuite faire si y'a du rouge genre >10% alors c un logo et faire le truk des log demain...
+#pour la 1er c 27 % ensuite faire si y'a du rouge genre >10% alors c un logo et 
 
 #et ensuite metttre en place le site les graphiques et tous les textes et c ok purée faudra aussi faire un truk de compte et l'enregistrements des habits nik
 
 
 
-
+#tout transférer et tout refaire en postgres
 
 
 #bobo
 
-#la coupe de cheveux -> conserver noir et blanc
 
 #la prise de la photo -> cadrage
 
