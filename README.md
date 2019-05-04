@@ -3,6 +3,7 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+#et le truk avec twitter aussi mais ca après
 
 #refaire de dire combien y'a de polution et faire un truk de mysql vers psycopg2...
 
