@@ -5,6 +5,8 @@
 
 #ps evite de mettre des truk chelou comme caca@hotmail.fr gros en meme temps aaaaaaa bbbb ccc@hotmail.fr on sy retrouve plus
 
+#j'ai trouvéééé je me mettais position status pcque quand je reussi un truk je matte par la fenetre sté pour me donné la confiance !!
+
 #toutes les pages include extend -----> connection déco
 
 #migration ------> vérif que ca marche + habits/coiffure/mon compte quoi ne pas mettre mon compte (rempalcer par mes imaages)
