@@ -4,21 +4,23 @@
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
 
+#toutes les pages include extend -----> connection déco
+
+#migration ------> vérif que ca marche + habits/coiffure/mon compte quoi ne pas mettre mon compte (rempalcer par mes imaages)
+
 #1 rendre le site propre pour évaluer la situation
 
-#toutes les pages tous les raccords sinon pas de map ce soir <-------
+#toutes les pages tous les raccords
 
-#toutes les pages include extend
 
 #attention au responsive
 
-#migration calme
 
 
 
-#1faire le truk des log demain...
 
-#revois les couleurs => noir -> gris, bleu -> gris
+# revois les couleurs => noir -> gris, bleu -> gris
+
 
 #faire les pourcentages genre si y'a bcp de blanc mais quya du noir c que c le fond sinon c un ttshirt blanc
 
