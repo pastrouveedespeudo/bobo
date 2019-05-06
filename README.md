@@ -4,7 +4,16 @@
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-# 1 rendre le site propre pour évaluer la situation
+#1 rendre le site propre pour évaluer la situation
+
+#toutes les pages tous les raccords sinon pas de map ce soir <-------
+
+#toutes les pages include extend
+
+#attention au responsive
+
+#migration calme
+
 
 
 #1faire le truk des log demain...
