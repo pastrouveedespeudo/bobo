@@ -3,6 +3,8 @@
 
 {% block content %}
 {% endblock %}
+
+
  <!-- Masthead -->
   <header class="masthead">
     <div class="container h-100">
@@ -22,10 +24,10 @@
        
           </div>
 
-          <h1 class="text-uppercase text-white font-weight-bold">Se connecter</h1>
+          <h1 class="text-uppercase text-white font-weight-bold">S'inscrire</h1>
           <br>
           <style>#h{font:Serif; color:white;}</style> 
-          <h2 id="h">Connecte-toi !</h2>
+          <h2 id="h">Et pourquoi ne pas s'inscrire ?</h2>
           
           <hr class="divider my-4">
         </div>
@@ -41,44 +43,31 @@
 
 
 
-    <style>
-    #containner {
-        margin: 0px auto;
-        width: 400px;
-        height: 400px;
-    }
-    #videoElement {
-        width: 400px;
-        height: 400px;
-        position:relative;
-    }
-    #patron{
-      margin-left:105px;
-      margin-top:100px;
-      width: 200px;
-      height: 200px;
-      border: 2px solid red;
-      border-radius:50%;
-      position:absolute ;
-      z-index:1;
-    }
-    </style>
 
-  <!-- Services Section -->
-  <section class="page-section" id="services">
-  
-    {% csrf_token %}
+<section id="about">
+  <br><br><br><br><br>
+    <div style="text-align:center">
       <form method="POST">
-        {% csrf_token%}
-        <center><strong>nom utilisateur : </strong>{{form.username}}</center>
-        <br><br>
-        <center><strong>mot de passe :&nbsp;&nbsp;&nbsp;&nbsp;</strong>{{form.password}}</center>
-        <br>
-        <center><input type="submit" style="margin-left:50px;"></center>
+          {% csrf_token%}
+          &nbsp;&nbsp;&nbsp;&nbsp;<strong>Ton pseudo :</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;{{form.username}}
+          <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp<strong>Ton email : </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{form.email}}
+          <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp<strong>Confirme le : </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp
+          &nbsp;{{form.email2}}
+          <br><br>
+          <strong>Et ton password </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          {{form.password}}
+          <br><br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp<input type="submit" style="color:black;"/>
       </form>
-      </div>
-      </div>
-  </section>
+      <br><br><br><br>
+    </div>
+</section>
+
+
 
 {% include "bottom_page.html" %}
 
