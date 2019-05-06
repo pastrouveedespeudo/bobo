@@ -4,6 +4,8 @@
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
 
+# 1 rendre le site propre pour évaluer la situation
+
 
 #1faire le truk des log demain...
 
