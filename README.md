@@ -3,6 +3,7 @@
 
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
+#ps evite de mettre des truk chelou comme caca@hotmail.fr gros en meme temps aaaaaaa bbbb ccc@hotmail.fr on sy retrouve plus
 
 #toutes les pages include extend -----> connection déco
 
