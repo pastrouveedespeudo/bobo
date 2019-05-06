@@ -29,7 +29,6 @@
 
 
 
-
 <body id="page-top">
 
   <!-- Navigation -->
@@ -54,14 +53,10 @@
 
       
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
-
-          <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:60px;
-          }
-          </style>
+            
+        {% if user.is_authenticated %}
+        
+          <style>#im1{width:50px; height:50px; margin-left:60px;}</style>
 
           <li class="nav-item">
             <a href = "/photo/photo">
@@ -70,14 +65,7 @@
             </a>
           </li>
 
-
-          <style>
-            #im2{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
-          </style>
+          <style>#im2{width:50px; height:50px; margin-left:40px;}</style>
           
           <li class="nav-item">
            <a href = "/photo/mes_images">
@@ -86,14 +74,7 @@
             </a>
           </li>
 
-
-          <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:45px;
-          }
-          </style>
+          <style>#im1{width:50px; height:50px; margin-left:45px;}</style>
 
           <li class="nav-item">
             <a href = "/photo/coupe">
@@ -103,16 +84,7 @@
           </li>
 
 
-
-        
-          
-          <style>
-            #im3{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
-          </style>
+          <style>#im3{width:50px; height:50px; margin-left:40px;}</style>
 
           
           <li class="nav-item">
@@ -122,23 +94,63 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href = "/photo/photo">
+              <img src="/static/img/portfolio/icone/deco.png" id="im1">
+              <a class="nav-link js-scroll-trigger" href="/photo/photo">Se déconnecter</a>
+            </a>
+          </li>
           
         </ul>
 
+        {% else %}
+
+          <style>#ima1{width:55px; height:50px; margin-left:17px;}</style>
+
+          <li class="nav-item">
+            <a href = "/photo/photo">
+              <img src="/static/img/portfolio/icone/inscription.png" id="ima1">
+              <a class="nav-link js-scroll-trigger" href="/accounts/register_view">S'inscrire</a>
+            </a>
+          </li>
+
+          <style>#im2{width:50px; height:50px; margin-left:40px;}</style>
+          
+          <li class="nav-item">
+           <a href = "/photo/mes_images">
+            <img src="/static/img/portfolio/icone/login.png" id="im2">
+            <a class="nav-link js-scroll-trigger" href="/accounts/login">Se connecter</a>
+            </a>
+          </li>
+
+          <style>#im1{width:50px; height:50px; margin-left:45px;}</style>
+
+          <li class="nav-item">
+            <a href = "/photo/coupe">
+              <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
+              <a class="nav-link js-scroll-trigger" href="/photo/coupe">Les coiffures</a>
+            </a>
+          </li>
+
+
+          <style>#im3{width:50px; height:50px; margin-left:40px;}</style>
+
+          
+          <li class="nav-item">
+           <a href = "/photo/habits">
+            <img src="/static/img/portfolio/icone/vetements.png" id="im3">
+            <a class="nav-link js-scroll-trigger" href="/photo/habits">Les vetements</a>
+            </a>
+          </li>
+        </ul>
+
+        {% endif %}
         
       </div>
     </div>
   </nav>
 
 
-
-
-
-  <script>
-    function button1(){
-      alert('cc')
-      }
-  </script>
 
  <!-- Masthead -->
   <header class="masthead">
