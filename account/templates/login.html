@@ -32,12 +32,28 @@
       <div class="col-lg-8 align-self-baseline">
         <p class="text-white-75 font-weight-light mb-5"></p>
         
-
-        
       </div>
     </div>
   </div>
 </header>
+
+
+{% csrf_token %}
+<section id="about">
+<br><br><br><br><br><br><br><br>
+  <form method="POST">
+    {% csrf_token%}
+    <center><strong>nom utilisateur : </strong>{{form.username}}</center>
+    <br><br>
+    <center><strong>mot de passe :&nbsp;&nbsp;&nbsp;&nbsp;</strong>{{form.password}}</center>
+    <br>
+    <center><input type="submit" style="margin-left:50px;"></center>
+  </form>
+  <br><br><br><br><br><br><br><br>
+  </div>
+  </div>
+</section>
+
 
 
 {% include "bottom_page.html" %}
