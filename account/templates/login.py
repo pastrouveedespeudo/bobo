@@ -23,11 +23,10 @@
        
           </div>
 
-        <h1 class="text-uppercase text-white font-weight-bold">Bienvenue</h1>
+        <h1 class="text-uppercase text-white font-weight-bold">Inscris toi !</h1>
         <br>
         <style>#h{font:Serif; color:white;}</style> 
-        <h2 id="h">My Profil est un site fun ou tu peux essayer des coupe de cheveux avec non pas un. Non pas deux mais
-        des centaines de conseils ou d'habits choisis</h2>
+        <h2 id="h">et va essayer des coiffures !</h2>
         
         <hr class="divider my-4">
       </div>
