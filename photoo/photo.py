@@ -44,7 +44,6 @@ def photo():
 def capture(user):
 #def capture(path):
     img = ImageGrab.grab()
-    print('DAIIIIIIIIIIIIIT')
 
     #os.chir(path)
     os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo')
@@ -75,26 +74,47 @@ def capture(user):
 
     return str(maximum + 1) + ".jpg" 
 
-def cropage(image):
-    pass
-
-##    for i in liste:
-##        print(i[0])
-##        
-##    img = cv2.imread(i)
-##    
-##      
-##
-##    new = int(i[0]) + 1
-##    new = str(new)
-##    
-##    cv2.imwrite(str(new) + '.jpg', crop)
-##
-##
-##    return new + '.jpg'
 
 
-#soit prend la couleur du front
+def cropage(image, user):
+
+    liste = []
+    user = Accounts.objects.filter(name=user).all()
+    for i in user:
+        if image == i.photo:
+            print("ouiiiiiiiiiiiiiii")
+            image = i.photo
+            url_image = i.photo.path
+            break
+
+
+    print(url_image)
+    liste2 = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[]]
+    
+    c = 0
+    for i in url_image:
+        if i == "\\":
+            c+=1
+        else:
+            liste2[c].append(i)
+            
+    print(liste2)
+    liste3 = []
+    for i in liste2:
+        if i == []:
+            pass
+        else:
+            liste3.append(i)
+
+    print(liste3)
+
+    img = cv2.imread("".join(liste3[-1]))
+    crop_img = img[300:450+0, 630:250+500]
+    cv2.imwrite(str("".join(liste3[-1])), crop_img)
+
+
+
 
 
 def sauvegarde(user, saving):
@@ -127,7 +147,7 @@ def sauvegarde(user, saving):
         Accounts.objects.create(name=user, photo=saving)
         
       
-        
+    
 
 
         
