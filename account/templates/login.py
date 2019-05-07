@@ -1,5 +1,5 @@
 
-{% include "navebarre.html" %}
+{% include "navebarre1.html" %}
 {% block content %}
 {% endblock %}
 
