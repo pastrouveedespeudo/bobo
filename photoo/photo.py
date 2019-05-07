@@ -99,29 +99,33 @@ def cropage(image):
 
 def sauvegarde(user, saving):
 
-    Accounts.objects.create(name=user, photo="yoyo.jpg")
-
-
-    acc = Accounts.objects.filter(name=user).all()
-    for i in acc:
-        print(i.name, i.photo)
-
-      
+    #Accounts.objects.filter(name=user).delete()
+    #Accounts.objects.create(name=user)
     
-
-##    print(acc.photo,"PHOTO HI HOOOOOOOOOOOOO")
-##    photo = acc.photo 
-##    
-##    if photo == "":
-##        photo = "1.jpg"
-##        photo.save()
+##    Accounts.objects.create(name=user, photo="yoyo.jpg")
 ##
-##    else:
-##        print(acc.photo)
-##        Accounts.objects.create(name=user, photo=saving)
-##        acc2 = Accounts.objects.all()
-##        for i in acc2:
-##            print(i.photo)
+##
+    liste = []
+    acc = Accounts.objects.filter(name=user).all()
+    
+    for i in acc:
+        print(i.name, i.photo,'000000000')
+        if i.photo == "":
+            pass
+        else:
+            liste.append(i.photo)
+
+
+    if liste == []:
+        
+        account = Accounts.objects.get(name=user)
+        account.photo = "1.jpg"
+        account.save()
+
+    
+    else:
+        Accounts.objects.create(name=user, photo=saving)
+        
       
         
 
