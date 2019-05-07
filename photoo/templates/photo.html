@@ -41,7 +41,6 @@
 
 
     <script>
-
         OPTION = [2]
         
         function button1(){
@@ -56,11 +55,8 @@
             OPTION.push(1);
             var a = OPTION[OPTION.length-1];
             var b = document.getElementById("hidden").value = OPTION[OPTION.length-1];
-
             
         };
-
-
         function button2(){
             document.getElementById("hidden").innerHTML = '<input type="HIDDEN" value="cheveux" name="format" id="hidden">'
             document.getElementById("patron").style.width = '200px';
@@ -73,16 +69,11 @@
             
             var a = OPTION[OPTION.length-1];
             var b = document.getElementById("hidden").value = OPTION[OPTION.length-1];
-
         };  
-
-
-
         function photo(){
             document.getElementById("patron").style.width = '0px';
             document.getElementById("patron").style.height = '0px';
             document.getElementById("patron").style.marginLeft = '-600px';
-
         }
     </script>
 
@@ -114,14 +105,27 @@
               {% csrf_token %}
               
               <input type="HIDDEN" value="cheveux" name="format" id="hidden">
-              
               {% csrf_token %}
     
               
 
-            <br><br>
+            {% csrf_token %}
+            <style>#emplacement{text-align:center;}</style>
 
+            
+            <div id='prems'>
+              <input type='button' onclick="tuto()"
+               value="Si ce n'est pas votre première fois laissez tomber sinon cliqué ;)"
+               size=50px>
+              <br>
+            </div>
+
+            
+            <br><br>
+            
             <input type="submit" id="yo" value="Prendre la photo" onclick="photo()"<a class="btn btn-light btn-xl js-scroll-trigger">
+
+            {% csrf_token %}
             </a>
             {% csrf_token %}
               
@@ -132,17 +136,39 @@
       </div>
     </div>
   </section>
+ 
 
 
+    <script>
+      function tuto(){
+        alert('coucou');
+        document.getElementById('prems').innerHTML = '';
+        document.getElementById('prems').innerHTML = '<input type="text" id="emplacement" placeholder="Svp dites nous le nom de vote ordinateur" size=50px;>'
+        document.getElementById('prems').innerHTML = "<br><input type='button' value='je sais comment faire' onclick='oui()'>&nbsp;&nbsp;&nbsp;<input type='button' value='je ne sais pas comment faire' onclick='non()'>"
+
+        }
 
 
+      function oui(){
+
+        document.getElementById('prems').innerHTML = '';
+        document.getElementById('prems').innerHTML = '<input type="text" name="laprems" id="emplacement" placeholder="Svp dites nous le nom de vote ordinateur" size=50px;>'
+
+
+        }
+
+      function non(){
+        document.getElementById('prems').innerHTML = '';
+        document.getElementById('prems').innerHTML = " <center><strong> Ouvrez un dossier, récupérez le nom d'en haut</strong></center><img src='/static/img/portfolio/1.png'><br><br><input type='button' value='ok' onclick='oui()'>";
+        
+        }
+    </script>
 
 
 
 
     <script>
     var video = document.querySelector("#videoElement");
-
     if (navigator.mediaDevices.getUserMedia) {     
         navigator.mediaDevices.getUserMedia({video: true})
       .then(function(stream) {
