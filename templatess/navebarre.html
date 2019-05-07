@@ -42,11 +42,14 @@
     </style>
     
     <div class="container">
+
+      <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
     
-      <img src="/static/img/portfolio/icone/my.png" id="my">
+      <img src="/static/img/portfolio/icone/my.png" id="my_prof">
       <a class="navbar-brand js-scroll-trigger" href="/">My_Profil</a>
       
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
       
       <img src="/static/img/portfolio2/icone/indian.png" id="my">
       <a class="navbar-brand js-scroll-trigger" href="/polution/polution">My_pollution</a>
@@ -56,7 +59,7 @@
       aria-controls="navbarResponsive" aria-expanded="false"
       aria-label="Toggle navigation">
       
-        <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
         
       </button>
 
@@ -64,35 +67,42 @@
       
       <div class="collapse navbar-collapse" id="navbarResponsive">
 
-      
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
-            
+
+
         {% if user.is_authenticated %}
-        
-          <style>#im1{width:50px; height:50px; margin-left:60px;}</style>
+
+
+          <style>#im1{width:50px; height:50px; margin-left:55px;}</style>
 
           <li class="nav-item">
             <a href = "/photo/photo">
               <img src="/static/img/portfolio/icone/photo.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/photo">Prendre une photo</a>
+              <a class="nav-link js-scroll-trigger" href="/photo/photo">
+                <center>Prendre une photo</center>
+              </a>
             </a>
           </li>
 
-          <style>#im2{width:50px; height:50px; margin-left:40px;}</style>
-          
+          <style>#im2{width:50px; height:50px; margin-left:30px;}</style>
           <li class="nav-item">
-           <a href = "/photo/mes_images">
-            <img src="/static/img/portfolio/icone/mes_images.png" id="im2">
-            <a class="nav-link js-scroll-trigger" href="/photo/mes_images">Mes images</a>
+            <a href = "/photo/mes_images">
+              <img src="/static/img/portfolio/icone/mes_images.png" id="im2">
+              <a class="nav-link js-scroll-trigger" href="/photo/mes_images">
+                <center>Mes images</center>
+              </a>
             </a>
           </li>
 
-          <style>#im1{width:50px; height:50px; margin-left:45px;}</style>
 
+
+          <style>#coif_nav{width:50px; height:50px; margin-left:40px;}</style>
           <li class="nav-item">
             <a href = "/photo/coupe">
-              <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/coupe">Mes_coiffures</a>
+              <img src="/static/img/portfolio/icone/coiffure.png" id="coif_nav">
+              <a class="nav-link js-scroll-trigger" href="/photo/coupe">
+                <center>Mes coiffures</center>
+              </a>
             </a>
           </li>
 
@@ -102,17 +112,24 @@
           
           <li class="nav-item">
            <a href = "/photo/habits">
-            <img src="/static/img/portfolio/icone/vetements.png" id="im3">
-            <a class="nav-link js-scroll-trigger" href="/photo/habits">Mes vetements</a>
+              <img src="/static/img/portfolio/icone/vetements.png" id="im3">
+              <a class="nav-link js-scroll-trigger" href="/photo/habits">
+                <center>Mes vetements</center>
+              </a>
             </a>
           </li>
 
+
+          <style>#deco_nav{width:50px; height:50px; margin-left:46px;}</style>
           <li class="nav-item">
             <a href = "/photo/photo">
-              <img src="/static/img/portfolio/icone/deco.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/photo">Se déconnecter</a>
+              <img src="/static/img/portfolio/icone/deco.png" id="deco_nav">
+              <a class="nav-link js-scroll-trigger" href="/accounts/logout_view">
+                <center>Se déconnecter</center>
+              </a>
             </a>
           </li>
+
           
         </ul>
 
