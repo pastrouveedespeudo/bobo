@@ -3,20 +3,15 @@
 
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
-#ps evite de mettre des truk chelou comme caca@hotmail.fr gros en meme temps aaaaaaa bbbb ccc@hotmail.fr on sy retrouve plus
+#continuer
 
-#j'ai trouvéééé je me mettais position status pcque quand je reussi un truk je matte par la fenetre sté pour me donné la confiance !!
+#mtn faut que faire les photo du type réfléchis, tu les enregistre en database ET dans le modele ?
 
-#toutes les pages include extend -----> connection déco
-
-#migration ------> vérif que ca marche + habits/coiffure/mon compte quoi ne pas mettre mon compte (rempalcer par mes imaages)
-
-#1 rendre le site propre pour évaluer la situation
-
-#toutes les pages tous les raccords
+#est ce que le model enregistre l'image et pas que le nom ?
 
 
-#attention au responsive
+
+
 
 
 
