@@ -78,6 +78,7 @@ def capture(user):
 
 def cropage_habit(image, user):
 
+
     liste = []
     user = Accounts.objects.filter(name=user).all()
     for i in user:
@@ -110,7 +111,7 @@ def cropage_habit(image, user):
     print(liste3)
 
     img = cv2.imread("".join(liste3[-1]))
-    crop_img = img[300:450+0, 630:250+500]
+    crop_img = img[300:170+300, 530:350+500]
     cv2.imwrite(str("".join(liste3[-1])), crop_img)
 
 
