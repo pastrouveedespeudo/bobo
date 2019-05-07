@@ -3,6 +3,9 @@
 
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
+
+#je crois que j'ai pas compris comment on pouvait ajouté plein d'image dans l'orm
+
 #on creer un dossier dans le pc du mec en lui demande juste son nom de pc avec un ptit tuto de comment faire
 
 #passer de sqlite a postgres faire une database postgres
