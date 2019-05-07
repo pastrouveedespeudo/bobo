@@ -3,7 +3,7 @@
 
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
-#faut stocker l'image sur internet, sur mon google drive ou l'utilisateur met sa photo lui meme ? réfléchis.... 
+#on creer un dossier dans le pc du mec en lui demande juste son nom de pc avec un ptit tuto de comment faire
 
 #passer de sqlite a postgres faire une database postgres
 
