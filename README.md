@@ -3,6 +3,8 @@
 
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
+#oups faire une database postgres
+
 #enregistrer le path en database donc refaire le model
 
 #recadrer l'image et les affichers sur mes images
