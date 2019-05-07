@@ -20,6 +20,7 @@
           <p class="text-white-75 font-weight-light mb-5"></p>
           <a class="btn btn-primary btn-xl js-scroll-trigger" onclick="button1()" href="#about">Pour les vetements</a>
           <a class="btn btn-primary btn-xl js-scroll-trigger" onclick="button2()"  href="#about">Pour la coupe de cheveux</a>
+          
         </div>
 
         
@@ -51,6 +52,7 @@
             document.getElementById("patron").style.marginTop = '50px';
             document.getElementById("patron").style.position = 'absolute';
             document.getElementById("patron").style.zIndex = '1';
+            document.getElementById("hidden").innerHTML = '<input type="HIDDEN" value="habit" name="format" id="hidden">'
             OPTION.push(1);
             var a = OPTION[OPTION.length-1];
             var b = document.getElementById("hidden").value = OPTION[OPTION.length-1];
@@ -60,6 +62,7 @@
 
 
         function button2(){
+            document.getElementById("hidden").innerHTML = '<input type="HIDDEN" value="cheveux" name="format" id="hidden">'
             document.getElementById("patron").style.width = '200px';
             document.getElementById("patron").style.height = '200px';
             document.getElementById("patron").style.marginLeft = '105px';
@@ -110,35 +113,15 @@
               value="hCsDoCbOI5WQh4CYKUQEPwkbTgEittUJgieBqNKPJE37pvwjtXsFpi1CzMa9qEs1">
               {% csrf_token %}
               
-              <input type="HIDDEN" value="coucoucoucou" name="im" id="hidden">
+              <input type="HIDDEN" value="cheveux" name="format" id="hidden">
+              
               {% csrf_token %}
     
               
-            <a style="color:black;" href="" onclick=yo();
-               download="">1)  Dites nous ou l'enregistrer avant s'il vous plait tfacon t'as pas le choix je sais pas faire
-               
-            </a>
-            <br>
-           
-            2) récupere l'imafe fake
-            <input type="file" id="monChemin">
 
-            <a href="javascript:maFonction();">afficher</a>
-             
-            <script>
-            function maFonction(){
-            var path=window.document.getElementById("monChemin").value;
-            alert(path);
-            }
-            </script>
-
-
-     
             <br><br>
 
-
-             
-            <input type="submit" id="yo" value="3) Prendre la photo" onclick="photo()"<a class="btn btn-light btn-xl js-scroll-trigger">
+            <input type="submit" id="yo" value="Prendre la photo" onclick="photo()"<a class="btn btn-light btn-xl js-scroll-trigger">
             </a>
             {% csrf_token %}
               
