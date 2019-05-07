@@ -3,7 +3,7 @@
 
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
-#j'ai faillis laissé tombé ce site de con MAIS jpe pas faire que pollu, et ce site je le kiff la navebarre est tellement belle...
+#faut stocker l'image sur internet, sur mon google drive ou l'utilisateur met sa photo lui meme ? réfléchis.... 
 
 #passer de sqlite a postgres faire une database postgres
 
