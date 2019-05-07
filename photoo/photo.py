@@ -76,7 +76,7 @@ def capture(user):
 
 
 
-def cropage(image, user):
+def cropage_habit(image, user):
 
     liste = []
     user = Accounts.objects.filter(name=user).all()
@@ -111,6 +111,45 @@ def cropage(image, user):
 
     img = cv2.imread("".join(liste3[-1]))
     crop_img = img[300:450+0, 630:250+500]
+    cv2.imwrite(str("".join(liste3[-1])), crop_img)
+
+
+
+def cropage_cheveux(image, user):
+
+    liste = []
+    user = Accounts.objects.filter(name=user).all()
+    for i in user:
+        if image == i.photo:
+            print("ouiiiiiiiiiiiiiii")
+            image = i.photo
+            url_image = i.photo.path
+            break
+
+
+    print(url_image)
+    liste2 = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[]]
+    
+    c = 0
+    for i in url_image:
+        if i == "\\":
+            c+=1
+        else:
+            liste2[c].append(i)
+            
+    print(liste2)
+    liste3 = []
+    for i in liste2:
+        if i == []:
+            pass
+        else:
+            liste3.append(i)
+
+    print(liste3)
+
+    img = cv2.imread("".join(liste3[-1]))
+    crop_img = img[250:190+300, 530:350+500]
     cv2.imwrite(str("".join(liste3[-1])), crop_img)
 
 
