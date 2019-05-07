@@ -3,11 +3,9 @@
 
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
-#continuer
+#avec image.path on récupère espérons que ca le fasse sur dautre pc
 
-#mtn faut que faire les photo du type réfléchis, tu les enregistre en database ET dans le modele ?
-
-#est ce que le model enregistre l'image et pas que le nom ?
+#recadrer l'image et les affichers sur mes images
 
 
 
