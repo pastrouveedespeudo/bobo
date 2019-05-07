@@ -16,6 +16,7 @@
         </div>
         
         <div class="col-lg-8 align-self-baseline">
+        {% csrf_token %}
           <p class="text-white-75 font-weight-light mb-5"></p>
           <a class="btn btn-primary btn-xl js-scroll-trigger" onclick="button1()" href="#about">Pour les vetements</a>
           <a class="btn btn-primary btn-xl js-scroll-trigger" onclick="button2()"  href="#about">Pour la coupe de cheveux</a>
@@ -101,10 +102,12 @@
 
         
           <br><br>
+          {% csrf_token %}
           <form action="photo" method="POST" id="cc">
-              <input type="hidden" name="csrfmiddlewaretoken" value="hCsDoCbOI5WQh4CYKUQEPwkbTgEittUJgieBqNKPJE37pvwjtXsFpi1CzMa9qEs1">
-              <input type="HIDDEN" value="coucoucoucou" name="im" id="hidden">
-              <input type="submit" id="yo" value="Prendre la photo" onclick="photo()"<a class="btn btn-light btn-xl js-scroll-trigger"></a>
+          {% csrf_token %}
+              <input type="hidden" name="csrfmiddlewaretoken" value="hCsDoCbOI5WQh4CYKUQEPwkbTgEittUJgieBqNKPJE37pvwjtXsFpi1CzMa9qEs1">{% csrf_token %}
+              <input type="HIDDEN" value="coucoucoucou" name="im" id="hidden">{% csrf_token %}
+              <input type="submit" id="yo" value="Prendre la photo" onclick="photo()"<a class="btn btn-light btn-xl js-scroll-trigger"></a>{% csrf_token %}
           </form>
       
           
