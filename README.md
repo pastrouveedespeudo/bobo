@@ -3,6 +3,10 @@
 
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
+#port 5433 freeer j'ai saisi tous mes mdp ca marche pas minuscule avec ou sans chiffre en plus pfff
+
+#bah merde j'ai aussi perdu mon mdp openclassrooms
+
 #oups faire une database postgres
 
 #enregistrer le path en database donc refaire le model
