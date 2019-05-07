@@ -4,6 +4,8 @@ import cv2
 import os
 import shutil
 
+from accounts.models import Accounts
+
 def photo():
 
     video = cv2.VideoCapture(0)
@@ -42,26 +44,94 @@ def photo():
 def capture():
     
     img = ImageGrab.grab()
+    
+    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo')
+    liste = os.listdir()
+    for i in liste:
+        print(i[0])
+    
+    new = int(i[0]) + 1
+    new = str(new)
+    image1 = img.save(str(new) + '.jpg')
+    
+    return new + '.jpg'
+
+
+
+def cropage():
 
     os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo')
     liste = os.listdir()
     for i in liste:
         print(i[0])
+        
+    img = cv2.imread(i)
+    
+    crop = img[320:515, 580:780]
+
     new = int(i[0]) + 1
     new = str(new)
-    image1 = img.save(str(new) + '.jpg')
+    
+    cv2.imwrite(str(new) + '.jpg', crop)
+
 
     return new + '.jpg'
 
 
+#soit prend la couleur du front
 
-def cropage(para):
 
+def photo_database(user):
     
-    img = cv2.imread(para)
+    acc = Accounts.objects.get(name=user)
+    print(acc.name,"000000000000000000000000000000000000000000000000")
     
-    crop = img[320:515, 580:780]
-    cv2.imwrite("gueuledemacaccropé.jpg", crop)
+    print(acc.photo)
+    if acc.photo == "":
+        acc.photo = "1.jpg"
+        acc.save()
+
+    else:
+        print(acc.photo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
