@@ -42,19 +42,37 @@ def photo():
 
     
 def capture():
-    
+#def capture(path):
     img = ImageGrab.grab()
-    
+    print('DAIIIIIIIIIIIIIT')
+
+    #os.chir(path)
     os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo')
+
     liste = os.listdir()
-    for i in liste:
-        print(i[0])
+
+    liste2 = []
     
-    new = int(i[0]) + 1
-    new = str(new)
-    image1 = img.save(str(new) + '.jpg')
+    if liste == []:
+        name_picture = "1.jpg"
+    else:
+        for i in liste:
+            try:
+                save = i[:2]
+                save = int(save)
+                if save == int(save): 
+                    liste2.append(int(save))
+                
+            except:
+                liste2.append(int(i[0]))
+
+    print(liste2)
+    maximum = max(liste2)
     
-    return new + '.jpg'
+    img.save(str(maximum + 1) + ".jpg" )
+ 
+    
+    #return 
 
 
 
@@ -62,39 +80,28 @@ def cropage():
 
     os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo')
     liste = os.listdir()
-    for i in liste:
-        print(i[0])
-        
-    img = cv2.imread(i)
-    
-    crop = img[320:515, 580:780]
-
-    new = int(i[0]) + 1
-    new = str(new)
-    
-    cv2.imwrite(str(new) + '.jpg', crop)
-
-
-    return new + '.jpg'
+##    for i in liste:
+##        print(i[0])
+##        
+##    img = cv2.imread(i)
+##    
+##    crop = img[320:515, 580:780]
+##
+##    new = int(i[0]) + 1
+##    new = str(new)
+##    
+##    cv2.imwrite(str(new) + '.jpg', crop)
+##
+##
+##    return new + '.jpg'
 
 
 #soit prend la couleur du front
 
 
-def photo_database(user):
-    
-    acc = Accounts.objects.get(name=user)
-    print(acc.name,"000000000000000000000000000000000000000000000000")
-    
-    print(acc.photo)
-    if acc.photo == "":
-        acc.photo = "1.jpg"
-        acc.save()
 
-    else:
-        print(acc.photo)
-
-
+        
+            
 
 
 
