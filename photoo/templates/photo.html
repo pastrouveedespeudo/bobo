@@ -101,13 +101,47 @@
           </div>
 
         
-          <br><br>
+  
           {% csrf_token %}
           <form action="photo" method="POST" id="cc">
           {% csrf_token %}
-              <input type="hidden" name="csrfmiddlewaretoken" value="hCsDoCbOI5WQh4CYKUQEPwkbTgEittUJgieBqNKPJE37pvwjtXsFpi1CzMa9qEs1">{% csrf_token %}
-              <input type="HIDDEN" value="coucoucoucou" name="im" id="hidden">{% csrf_token %}
-              <input type="submit" id="yo" value="Prendre la photo" onclick="photo()"<a class="btn btn-light btn-xl js-scroll-trigger"></a>{% csrf_token %}
+          
+              <input type="hidden" name="csrfmiddlewaretoken"
+              value="hCsDoCbOI5WQh4CYKUQEPwkbTgEittUJgieBqNKPJE37pvwjtXsFpi1CzMa9qEs1">
+              {% csrf_token %}
+              
+              <input type="HIDDEN" value="coucoucoucou" name="im" id="hidden">
+              {% csrf_token %}
+    
+              
+            <a style="color:black;" href="" onclick=yo();
+               download="">1)  Dites nous ou l'enregistrer avant s'il vous plait tfacon t'as pas le choix je sais pas faire
+               
+            </a>
+            <br>
+           
+            2) récupere l'imafe fake
+            <input type="file" id="monChemin">
+
+            <a href="javascript:maFonction();">afficher</a>
+             
+            <script>
+            function maFonction(){
+            var path=window.document.getElementById("monChemin").value;
+            alert(path);
+            }
+            </script>
+
+
+     
+            <br><br>
+
+
+             
+            <input type="submit" id="yo" value="3) Prendre la photo" onclick="photo()"<a class="btn btn-light btn-xl js-scroll-trigger">
+            </a>
+            {% csrf_token %}
+              
           </form>
       
           
