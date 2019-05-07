@@ -4,7 +4,7 @@
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#je crois que j'ai pas compris comment on pouvait ajouté plein d'image dans l'orm
+#clé étrangere sale con oupssss pas grave ca revient au meme
 
 #on creer un dossier dans le pc du mec en lui demande juste son nom de pc avec un ptit tuto de comment faire
 
