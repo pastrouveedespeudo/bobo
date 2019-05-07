@@ -3,7 +3,7 @@
 
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
-#fallait juste supp sqlite3..
+#faut vraiment que je m'y face a postgres je le deteste 5 téléchargements de 5 versions elles ont toute planté et ca a bug impossible jutilise toujorus le meme mdp pfffffff
 
 #passer de sqlite a postgres faire une database postgres
 
