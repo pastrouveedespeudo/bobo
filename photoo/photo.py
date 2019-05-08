@@ -53,14 +53,12 @@ def capture(user):
 
     print(liste_user[0],'yoooooooooooooooojgrjporgjpogjgjpojrgejporjprge')
 
-
-
     try:
-        os.mkdir(r'C:\Users\{}\My_Profil'.format('jeanbaptiste'))
+        os.mkdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}'.format(str(user)))
     except:
         pass
     
-    os.chdir(r'C:\Users\{}\My_Profil'.format(str(liste_user[0])))
+    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}'.format(str(user)))
 
 
     liste = os.listdir()
