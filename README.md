@@ -8,6 +8,10 @@
 
 #vérifier tous les nom d'image
 
+#sté la seule image 
+
+#redonner le choix a l'utilisateur de rechangé dimage
+
 #mettre l'image en noir et blanc
 
 
