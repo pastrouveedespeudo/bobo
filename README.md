@@ -4,9 +4,9 @@
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#clé étrangere sale con oupssss pas grave ca revient au meme
 
-#on creer un dossier dans le pc du mec en lui demande juste son nom de pc avec un ptit tuto de comment faire
+
+#a chaque go sur image ca creer une image voir ca
 
 #passer de sqlite a postgres faire une database postgres
 
