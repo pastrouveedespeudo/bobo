@@ -6,7 +6,7 @@
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-
+#vérifier tous les nom d'image
 
 #mettre l'image en noir et blanc
 
