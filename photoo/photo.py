@@ -41,7 +41,7 @@ def photo():
 
 
     
-def capture(user):
+def capture(user, format_image):
 #def capture(path):
     img = ImageGrab.grab()
 
@@ -55,11 +55,20 @@ def capture(user):
 
     try:
         os.mkdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}'.format(str(user)))
+        
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}'.format(str(user)))
+        os.mkdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'.format(str(user)))
+
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}'.format(str(user)))
+        os.mkdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\cheveux'.format(str(user)))
+        
     except:
         pass
-    
-    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}'.format(str(user)))
 
+    if format_image == "cheveux":
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\cheveux'.format(str(user)))
+    elif format_image == "habit":
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'.format(str(user)))
 
     liste = os.listdir()
     
@@ -137,6 +146,7 @@ def cropage_habit(image, user):
 
 def cropage_cheveux(image, user):
 
+    print(image)
     liste = []
     user = Accounts.objects.filter(name=user).all()
     for i in user:
