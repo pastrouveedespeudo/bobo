@@ -53,8 +53,12 @@ def photo(request):
         elif format_image == "habit":
             cropage_habit(image, current_user)
         
+        liste_usr = []
+        image = Accounts.objects.filter(name=current_user).all()
+        for i in image:
+            liste_usr.append(i.photo)
 
-        return render(request, 'mes_images.html', {'usr':current_user})
+        return render(request, 'mes_images.html', {'usr':current_user, 'liste':liste_usr})
 
 
     return render(request, 'photo.html')
