@@ -7,6 +7,7 @@ from accounts.models import Accounts
 
 
 def mes_images(request):
+    
     current_user = request.user
     print(current_user)
 
@@ -46,13 +47,17 @@ def photo(request):
             nom_ordi(ordinom, current_user)
 
 
-        image = capture(current_user)
+        image = capture(current_user, format_image)
         
         if format_image == "cheveux":
+            os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\cheveux'.format(str(current_user)))
             cropage_cheveux(image, current_user)
+            
         elif format_image == "habit":
+            os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'.format(str(current_user)))
             cropage_habit(image, current_user)
-        
+
+
         liste_usr = []
         image = Accounts.objects.filter(name=current_user).all()
         for i in image:
