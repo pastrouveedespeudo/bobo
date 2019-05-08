@@ -97,7 +97,7 @@ def capture(user):
 
 def cropage_habit(image, user):
 
-
+    print(image,"55555")
     liste = []
     user = Accounts.objects.filter(name=user).all()
     for i in user:
@@ -147,7 +147,7 @@ def cropage_cheveux(image, user):
             break
 
 
-    print(url_image)
+
     liste2 = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
               [],[],[],[],[],[],[],[],[],[],[]]
     
