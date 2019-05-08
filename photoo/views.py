@@ -77,16 +77,20 @@ def coupe(request):
 
     if request.method == "POST":
         
-        recherche = request.POST.get('coupedecheveux')
-        print(recherche,"................................................")
-        tenu = coupe_de_cheveux_nom(recherche)
-        a = choix_fichier_haut(tenu[0])
-        b = choix_fichier_haut(tenu[1])
-        for i in a:
-            return render(request, 'habits.html', {'a':a, 'b':b, "i":i} )
+        image = request.POST.get('posting')
+        print(image,"0100000000000000000000000000000000000")
+        current_user = request.user
+        
+##        recherche = request.POST.get('coupedecheveux')
+##        print(recherche,"................................................")
+##        tenu = coupe_de_cheveux_nom(recherche)
+##        a = choix_fichier_haut(tenu[0])
+##        b = choix_fichier_haut(tenu[1])
+##        for i in a:
+##            return render(request, 'habits.html', {'a':a, 'b':b, "i":i} )
 
     
-    return render(request, 'coupe.html')
+    return render(request, 'coupe.html', {'image':image, 'user':current_user})
 
 
 
