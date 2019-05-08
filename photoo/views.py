@@ -35,8 +35,9 @@ def photo(request):
             nom_ordi(ordinom, current_user)
 
         
-        #IL FAUT FAIRE LE TRUK DU NOM ORDI
+
         image = capture(current_user)
+        
         if format_image == "cheveux":
             cropage_cheveux(image, current_user)
         elif format_image == "habit":
