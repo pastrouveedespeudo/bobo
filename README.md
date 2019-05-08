@@ -6,7 +6,9 @@
 
 
 
-#a chaque go sur image ca creer une image voir ca
+#ben ca le fait plus ^^ faire choisir le mec l'image pour cheveux et habit faire deux catégorie l'une habit l'autre vetement si
+
+#ca marche pas sur heroku trouve ou abondonne le site
 
 #passer de sqlite a postgres faire une database postgres
 
