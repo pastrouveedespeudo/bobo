@@ -75,24 +75,28 @@ def essais(request):
 
 def coupe(request):
 
+    no_choice = 'no_choice'
+
+
     if request.method == "POST":
         
         image = request.POST.get('posting')
-        print(image,"0100000000000000000000000000000000000")
-        current_user = request.user
+
+        if image:
+            no_choice = ''
+            print(image,"0100000000000000000000000000000000000")
+            current_user = request.user
         
-##        recherche = request.POST.get('coupedecheveux')
-##        print(recherche,"................................................")
-##        tenu = coupe_de_cheveux_nom(recherche)
-##        a = choix_fichier_haut(tenu[0])
-##        b = choix_fichier_haut(tenu[1])
-##        for i in a:
-##            return render(request, 'habits.html', {'a':a, 'b':b, "i":i} )
+            return render(request, 'coupe.html', {'image':image, 'user':current_user})
+
+
+
 
     
-    return render(request, 'coupe.html', {'image':image, 'user':current_user})
 
 
+
+    return render(request, 'coupe.html', {'no_choice':no_choice})
 
 def habits(request):
     return render(request, 'habits.html')
