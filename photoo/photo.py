@@ -45,25 +45,35 @@ def capture(user):
 #def capture(path):
     img = ImageGrab.grab()
 
-##    #os.chir(path)
-##    try:
-##        os.mkdir(r'C:\Users\{}\My_Profil'.format('jeanbaptiste'))
-##    except:
-##        pass
-##    
-##    os.chdir(r'C:\Users\{}\My_Profil'.format('jeanbaptiste'))
 
-    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo')
+    liste_user = []
+    direction = Accounts.objects.filter(name=user).all()
+    for i in direction:
+        liste_user.append(i.path_image)
+
+    print(liste_user[0],'yoooooooooooooooojgrjporgjpogjgjpojrgejporjprge')
+
+
+
+    try:
+        os.mkdir(r'C:\Users\{}\My_Profil'.format('jeanbaptiste'))
+    except:
+        pass
+    
+    os.chdir(r'C:\Users\{}\My_Profil'.format(str(liste_user[0])))
+
 
     liste = os.listdir()
-
+    
     liste2 = []
     
     if liste == []:
         name_picture = "1.jpg"
+        img.save(str(name_picture))
+        return name_picture
+    
     else:
         for i in liste:
-            print(i)
             try:
                 try:
                     save = i[:2]
@@ -75,6 +85,7 @@ def capture(user):
                     liste2.append(int(i[0]))
             except:
                 pass
+            
     print(liste2)
     maximum = max(liste2)
 
