@@ -14,13 +14,58 @@
           <h2 class="text-white mt-0">Mes Images</h2>
         
 
-
+        <p><center><strong>Image pour les cheveux</strong></center></p>
         {% for i in liste %}
             <tr class="{% cycle 'row1' 'row2' %}">
             
-               <img class="img-fluid" src='/static/img/portfolio/photo/{{user}}/{{i}}' style='height:200px; width:200px; border:1px black solid;'>
+               <img class="img-fluid" id='im_cheveux{{i}}' value='{{i}}'
+               src='/static/img/portfolio/photo/{{user}}/cheveux/{{i}}'
+               style='height:200px; width:200px; border:2px black solid;'>
+
+
+
+
+        <script>
+          img = document.getElementById('im_cheveux{{i}}').src;
+      
+        
+
+        </script>
+
+
+
+
+        
             </tr>
         {% endfor %}
+
+        <br><br>
+
+        <p><center><strong>Image pour les habits</strong></center></p>
+        {% for i in liste %}
+            <tr class="{% cycle 'row1' 'row2' %}">
+            
+               <img class="img-fluid" id='im_habit{{i}}' value='{{i}}'
+               'src='/static/img/portfolio/photo/{{user}}/habit/{{i}}'
+               style='height:200px; width:200px; border:2px black solid;'>
+
+        <script>
+          img = document.getElementById('im_habit{{i}}').src;
+          if(img==""){document.getElementById('im_habit{{i}}').style.display = "none";}
+
+            
+            
+            
+
+        </script>
+
+
+            </tr>
+        {% endfor %}
+
+
+
+
 
         
         <p>
