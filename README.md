@@ -6,9 +6,15 @@
 
 
 
+#mettre l'image en noir et blanc
+
+
 #j'aime cette coupe, enregistrer en database via un ajax post l'image du mec + les coupes
 
 #ajouter mes_favoris y clique ca met sa figure dans l'image et apparait les cheveux sous forme lien en ul
+
+#ajouter supprimer modifier soit tu trouve comment changer la taille de l'imag ecomme openoffice soit tu modifies en pixel la taille image via un genre de + - une musique entrainante c mise jme suis pas rendu compte erf vois si c pas torp
+
 
 
 
