@@ -7,7 +7,17 @@ from accounts.models import Accounts
 
 
 def mes_images(request):
-    return render(request, 'mes_images.html')
+    current_user = request.user
+    print(current_user)
+
+    liste = []
+    image = Accounts.objects.filter(name=current_user).all()
+    for i in image:
+        liste.append(i.photo)
+    
+    return render(request, 'mes_images.html', {'user':current_user, 'liste':liste})
+
+
 
 def home(request):
     return render(request, 'home.html')
@@ -18,9 +28,10 @@ def tshirt(request):
 def pantalon(request):
     return render(request, 'pantalon.html')
 
+
+
 def photo(request):
 
- 
     if request.method == "POST":
         
         format_image = request.POST.get('format')
@@ -34,7 +45,6 @@ def photo(request):
         if ordinom:
             nom_ordi(ordinom, current_user)
 
-        
 
         image = capture(current_user)
         
@@ -44,28 +54,11 @@ def photo(request):
             cropage_habit(image, current_user)
         
 
-        os.chdir(r"C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo")
-        liste = os.listdir()
-        #print(liste)
-        
-##        a = liste[0]
-##        b = liste[1]
-##        c = liste[2]
-##        d = liste[3]
-##        e = liste[4]
-##        f = liste[5]
+        return render(request, 'mes_images.html', {'usr':current_user})
 
-
-        #acc = Accounts.objects.get(name=current_user)
-        #a = acc.photo
-        #print(a.path)
-
-        return render(request, 'mes_images.html')
-##        return render(request, 'mes_images.html', {'capture':capturee,
-##                                                   'a':a,'b':b,'c':c,
-##                                                   'd':d,'e':e,'f':f } ) 
 
     return render(request, 'photo.html')
+
 
 
 def essais(request):
