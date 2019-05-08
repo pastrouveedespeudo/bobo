@@ -6,9 +6,9 @@
 
 
 
-#ben ca le fait plus ^^ faire choisir le mec l'image pour cheveux et habit faire deux catégorie l'une habit l'autre vetement si
+#image abit/cheveux
 
-#ca marche pas sur heroku trouve ou abondonne le site en emem temps je me disais que c'etaot bie nfacile d'hacker
+#ok ca devrait marcher
 
 #passer de sqlite a postgres faire une database postgres
 
