@@ -6,9 +6,11 @@
 
 
 
-#image abit/cheveux
+#j'aime cette coupe, enregistrer en database via un ajax post l'image du mec + les coupes
 
-#ok ca devrait marcher
+#ajouter mes_favoris y clique ca met sa figure dans l'image et apparait les cheveux sous forme lien en ul
+
+
 
 #passer de sqlite a postgres faire une database postgres
 
