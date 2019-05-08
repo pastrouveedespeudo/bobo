@@ -16,12 +16,16 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
+  <script type="text/javascript" 
+          src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script type="text/javascript" 
+          src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+  <link rel="stylesheet" type="text/css" 
+          href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
 
 
 
-
-
-
+          
     <script>
         function image(){
             
@@ -75,7 +79,7 @@
         }
     </style>
               
-
+    
 
       <script>
     $( function() {
@@ -87,6 +91,7 @@
     $( function() {
         $("#draggable12, #draggable14, #draggable15, #draggable16, #draggable17, #draggable18, #draggable19").draggable();
       } );
+
     
       </script>
 
@@ -123,53 +128,64 @@
 
               }
 
+
+
+                LISTE_RESIZE = []
+                LISTE_RESIZE_TAILLE_HAUTEUR = []
+                LISTE_RESIZE_TAILLE_LARGEUR = []
+                
+                function nom_image(id, hauteur, largeur){
+                  LISTE_RESIZE.push(id)
+                  LISTE_RESIZE_TAILLE_LARGEUR.push(largeur)
+                  LISTE_RESIZE_TAILLE_HAUTEUR.push(hauteur)
+                  
+     
+                  }
+
+         
+
             </script>
 
 
-
+            
             
             <div id="coupe_gauche">
 
-                <style>#coupe1{width:150px; height:200px;}</style>
-                <div id="draggable" name="coucou" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/bbbbbbb.png" id="coupe1" />
+            
+                <div id="draggable" name="coucou" class="ui-widget-content" onclick="nom_image('coupe1', 200, 150)";>
+                    <img src="/static/img/portfolio/coupe/bbbbbbb.png" width='150' height='200'   id="coupe1" />
                 </div>
                 
-                <style>#coupe1{width:; height:;}</style>
-                <div id="draggable2" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/coucou.png" id="coupe3"/>
+
+                <div id="draggable3" class="ui-widget-content" onclick="nom_image('coupe4', 150, 150)";>
+                    <img src="/static/img/portfolio/coupe/image849849849.png" width='150' height='150'  id="coupe4"/>
                 </div>
 
-                <style>#coupe4{width:150px; height:150px;}</style>
-                <div id="draggable3" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/image849849849.png" id="coupe4"/>
-                </div>
-
-                <style>#coupe5{width:; height:150px;}</style>
-                <div id="draggable4" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/bbbbbbb.png" id="coupe5" />
+                <style>#coupe5{width:100; height:150px;}</style>
+                <div id="draggable4" class="ui-widget-content" onclick="nom_image('coupe5', 150, 100)";>
+                    <img src="/static/img/portfolio/coupe/bbbbbbb.png" width='100' height='150'  id="coupe5" />
                 </div>
                 
                 <style>#coupe6{width:130px; height:300px;}</style>
-                <div id="draggable5" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/1.5.png" id="coupe6"/>
+                <div id="draggable5" class="ui-widget-content" onclick="nom_image('coupe6', 300, 130)";>
+                    <img src="/static/img/portfolio/coupe/1.5.png"  width='130' height='300'  id="coupe6"/>
                 </div>
 
-                <style>#coupe6{width:130px; height:300px;}</style>
-                <div id="draggable6" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/coucou3.png" id="coupe6"/>
-                </div>
-
-
-                <style>#coupe22{width:70px; height:100px;}</style>
-                <div id="draggable7" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/coucou22.png" id="coupe22"/>
+       
+                <div id="draggable6" class="ui-widget-content" onclick="nom_image('coupe6', 300, 130)";>
+                    <img src="/static/img/portfolio/coupe/coucou3.png" width='130' height='300'  id="coupe6"/>
                 </div>
 
 
-                <style>#coupe8{width:70px; height:50px;}</style>
-                <div id="draggable8" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/coucou22.png" id="coupe8"/>
+                
+                <div id="draggable7" class="ui-widget-content" onclick="nom_image('coupe22', 100, 70)";>
+                    <img src="/static/img/portfolio/coupe/coucou22.png" width='70' height='100'  id="coupe22"/>
+                </div>
+
+
+                
+                <div id="draggable8" class="ui-widget-content" onclick="nom_image('coupe8', 50, 70)";>
+                    <img src="/static/img/portfolio/coupe/coucou22.png" width='70' height='50' id="coupe8"/>
                 </div>
 
 
@@ -182,58 +198,57 @@
             
             <div id='coupe_droite'>
 
-                <style>#coupe9{width:140px; height:160px;}</style>
-                <div id="draggable9" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/coif.png" id="coupe9"/>
+              
+                <div id="draggable9" class="ui-widget-content" onclick="nom_image('coupe9', 160, 140)";>
+                    <img src="/static/img/portfolio/coupe/coif.png"  width='140' height='160'  id="coupe9"/>
                 </div>
 
 
-                <style>#coupe12{width:150px; height:250px;}</style>
-                <div id="draggable10" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/aa.png" id="coupe12"/>
+            
+                <div id="draggable10" class="ui-widget-content" onclick="nom_image('coupe12', 250, 150)";>
+                    <img src="/static/img/portfolio/coupe/aa.png" width='150' height='250' id="coupe12"/>
                 </div>
 
-                <style>#coupe13{width:150px; height:250px;}</style>
-                <div id="draggable11" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/aaaaa.png" id="coupe13"/>
+          
+                <div id="draggable11" class="ui-widget-content" onclick="nom_image('coupe13', 250, 150)";>
+                    <img src="/static/img/portfolio/coupe/aaaaa.png" width='150' height='250' id="coupe13"/>
                 </div>
 
-                <style>#coupe14{width:100px; height:160px;}</style>
-                <div id="draggable12" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/bb.png" id="coupe14" />
+             
+                <div id="draggable12" class="ui-widget-content" onclick="nom_image('coupe14', 160, 100)";>
+                    <img src="/static/img/portfolio/coupe/bb.png" width='100' height='160' id="coupe14" />
                 </div>
                 
 
-                <style>#coupe16{width:100px; height:160px;}</style>
-                <div id="draggable14" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/bbbb.png" id="coupe16"/>
+                <div id="draggable14" class="ui-widget-content" onclick="nom_image('coupe16', 160, 100)";>
+                    <img src="/static/img/portfolio/coupe/bbbb.png" width='100' height='160' id="coupe16"/>
                 </div>
 
 
-                <style>#coupe17{width:150px; height:250px;}</style>
-                <div id="draggable15" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/bbb.png" id="coupe17"/>
+              
+                <div id="draggable15" class="ui-widget-content" onclick="nom_image('coupe17', 250, 150)";>
+                    <img src="/static/img/portfolio/coupe/bbb.png" width='150' height='250' id="coupe17"/>
                 </div>
 
-                <style>#coupe18{width:140px; height:160px;}</style>
-                <div id="draggable16" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/1.1.png" id="coupe18" />
+                
+                <div id="draggable16" class="ui-widget-content" onclick="nom_image('coupe18', 160, 140)";>
+                    <img src="/static/img/portfolio/coupe/1.1.png" width='140' height='160' id="coupe18" />
                 </div>
   
-                <style>#coupe19{width:110px; height:100px;}</style>
-                <div id="draggable17" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/1.2.png" id="coupe19"/>
+               
+                <div id="draggable17" class="ui-widget-content" onclick="nom_image('coupe19', 100, 110)";>
+                    <img src="/static/img/portfolio/coupe/1.2.png" width='110' heigh='100' id="coupe19"/>
                 </div>
 
-                <style>#coupe20{width:150px; height:250px;}</style>
-                <div id="draggable18" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/11.3.png" id="coupe20"/>
+            
+                <div id="draggable18" class="ui-widget-content" onclick="nom_image('coupe20', 250, 150)";>
+                    <img src="/static/img/portfolio/coupe/11.3.png" width='150' height='250' id="coupe20"/>
                 </div>
 
 
-                <style>#coupe21{width:150px; height:250px;}</style>
-                <div id="draggable19" class="ui-widget-content">
-                    <img src="/static/img/portfolio/coupe/1.4.png" id="coupe21"/>
+  
+                <div id="draggable19" class="ui-widget-content" onclick="nom_image('coupe21', 250, 150)";>
+                    <img src="/static/img/portfolio/coupe/1.4.png" width:'150' height='250' id="coupe21"/>
                 </div>
                 
             </div>
@@ -294,26 +309,65 @@
 
     
     </div>
-        <style>#aggrandir{float:left;}</style>
-        <div id="aggrandir" style=" border:1px solid black">
-        <p>ajouter de la longueur?</p>
-        </div>
-        
-        <br><br><br>
-        <style>#aggrandir{float:left;}</style>
-        <div id="aggrandir" style=" border:1px solid black">
-        <p>Enlever de la longueur?</p>
-        </div>
+        <br><br><br><br>
+        <input type='button' value='ajouter de la longueur?' style=" border:3px solid black" onclick='ajout_longueur()'>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
-        <br><br><br>
-        <style>#aggrandir{float:left;}</style>
-        <div id="aggrandir" style=" border:1px solid black">
-        <p>Enlever de la longueur?</p>
-        </div>
+
+        <input type='button' value='ajouter de la largeur?' style=" border:3px solid black" onclick='ajout_largeur()'>
+ 
+        <input type='button' value='enlever de la longueur?' style=" border:3px solid black; float:right;" onclick='enlever_longueur()'>
+
+        &nbsp&nbsp<input type='button' value='enlever de la largeur?'
+        style=" border:3px solid black;float:right; margin-right:60px;" onclick='enlever_largeur()'>
+
+
+       
 
   </section>
 
+  <script>
 
+    function ajout_longueur(){
+
+
+      var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+      var b = document.getElementById(a).id
+      var c = '#' + b
+      alert(c)
+      var image = document.querySelector(c);
+      var X = image.getAttribute("width");
+      X = parseInt(X) ;
+  
+      var Y = image.getAttribute("height"); 		
+      Y = parseInt(Y) ;
+     
+    
+      X += 40 ; 
+      Y += 30 ;
+      image.setAttribute('width', X);
+      image.setAttribute('height',Y);
+      alert(X,Y)
+   
+      
+    }
+
+    function ajout_largeur(){
+      alert(LISTE_RESIZE[LISTE_RESIZE.length -1]);
+      }
+
+    function enlever_longueur(){
+      alert(LISTE_RESIZE[LISTE_RESIZE.length -1]);
+
+      }
+
+    function enlever_largeur(){
+      alert(LISTE_RESIZE[LISTE_RESIZE.length -1]);
+
+      }
+
+
+  </script>
   
 
 
@@ -400,7 +454,7 @@
       <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
 
 
-                 
+            
            <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
            <img src = "/static/img/portfolio/icone/facebook.png"/ id="im10">
 
