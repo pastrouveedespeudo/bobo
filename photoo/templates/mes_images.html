@@ -17,16 +17,15 @@
           <div >
             
               <style>#one{width:200px; height:200px; float:left;}</style>
-              <img class="img-fluid" src="/static/img/portfolio/photo/14.png" id="one" alt="">
+              <img class="img-fluid" src="/static/img/portfolio/photo/{{A}}" id="one" alt="">
           
 
               <style>#two{width:200px; height:200px; margin-left:10px;}</style>
-              <img class="img-fluid" src="/static/img/portfolio/photo/14.png" id="two" alt="">
+              <img class="img-fluid" src="/static/img/portfolio/photo/{{A}}" id="two" alt="">
               
     
-            
               <style>#three{width:200px; height:200px; float:right;}</style>
-              <img class="img-fluid" src="/static/img/portfolio/photo/14.png" id="three" alt="">
+              <img class="img-fluid" src="/static/img/portfolio/photo/{{A}}" id="three" alt="">
      
   
         </div>
@@ -45,11 +44,23 @@
         
         <div>
           <style>#seven{width:300px; height:300px;}</style>
-          <center><img class="img-fluid" src="/static/img/portfolio/photo/14.png" id="seven" alt="">
+          <center><img class="img-fluid" src="/static/img/portfolio/photo/{{A}}" id="seven" alt="">
         <!--soit on met depuis view un return derniere photo
         soit on met vote photo favoris donc return template depuis vu vers mes_images -->
         
         </div>
+
+
+        {{user}}aaaaaaaaaa
+        {% for i in liste %}
+   
+          <img src='/static/img/portfolio/photo/{{user}}/{{i}}'>
+        {{user}}
+        {% endfor %}
+
+
+
+
 
         <p>
           <br>
@@ -68,16 +79,16 @@
         <div>
             
             <style>#fourth{width:250px; height:250px; float:left;}</style>
-            <img class="img-fluid" src="/static/img/portfolio/photo/14.png" id="fourth" alt="">
+            <img class="img-fluid" src="/static/img/portfolio/photo/{{a}}" id="fourth" alt="">
               
 
             <style>#five{width:250px; height:250px; margin-left:25px;}</style>
-            <img class="img-fluid" src="/static/img/portfolio/photo/14.png" id="five" alt="">
+            <img class="img-fluid" src="/static/img/portfolio/photo/{{a}}" id="five" alt="">
               
          
             <style>#six{width:250px; height:250px; float:right;;}</style>
-            <img class="img-fluid" src="/static/img/portfolio/photo/14.png" id="six" alt="">
-
+            <img class="img-fluid" src="/static/img/portfolio/photo/{{a}}" id="six" alt="">
+  
         </div>
 
           
