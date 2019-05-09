@@ -5,6 +5,8 @@ from .coupenom import *
 import os
 from accounts.models import Accounts
 
+from coupe_dico import DICO_COIF
+
 
 def mes_images(request):
     
@@ -37,10 +39,11 @@ def photo(request):
         
         format_image = request.POST.get('format')
         ordinom = request.POST.get('laprems')
+        coupe = request.POST.get('coupe')
         
         print(format_image,'4899999999999999999999999999999')
         print(ordinom,'4899999999999999999999999999999')
-        
+            
         current_user = request.user         
         print(current_user)
         if ordinom:
@@ -81,19 +84,23 @@ def coupe(request):
     if request.method == "POST":
         
         image = request.POST.get('posting')
+        coupe = request.POST.get('coupe')
+        recherche = request.POST.get('coupedecheveux')
+        print(recherche,'7777777777777777777777777778888')
+        print(coupe,'777777777777777777777777777777')
 
+        if recherche:
+            for cle, value in DICO_COIF.items():
+                pass
+            return render(request, 'habits.html')
+        
         if image:
             no_choice = ''
             print(image,"0100000000000000000000000000000000000")
             current_user = request.user
         
             return render(request, 'coupe.html', {'image':image, 'user':current_user})
-
-
-
-
-    
-
+        
 
 
     return render(request, 'coupe.html', {'no_choice':no_choice})
