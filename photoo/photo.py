@@ -6,6 +6,8 @@ import shutil
 
 from accounts.models import Accounts
 
+from .models import *
+
 def photo():
 
     video = cv2.VideoCapture(0)
@@ -257,6 +259,8 @@ def sauvegarde(user, saving, format):
             Accounts.objects.create(name=user, photo_cheveux=saving)
         
 
+
+
 def nom_ordi(nom, user):
 
     account = Accounts.objects.filter(name=user).all()
@@ -265,7 +269,16 @@ def nom_ordi(nom, user):
         i.save()
         
         
+def coupe_fav(user_current, coupe, largeur_im, hauteur_im):
 
+
+    largeur_im = int(largeur_im)
+    hauteur_im = int(hauteur_im)
+
+    favoris.objects.create(user=user_current, coiffure=coupe,
+                           hauteur=int(hauteur_im),
+                           largeur=int(largeur_im))
+    
     
 
 
