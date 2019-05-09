@@ -128,9 +128,14 @@ def coupe(request):
     
     try:
         current_user = request.user
-    
-        affichage_coupe_fav(current_user)
-        print(affichage_coupe_fav[0])
+
+        fav = ''#ICIIIIIII IL Y A PEUT ETRE UNE ERREUR c ptetre [] 
+        favoris_coupe = affichage_coupe_fav(current_user)
+        
+
+        if favoris_coupe:
+            fav = True
+            
     except:
         pass
     
@@ -175,19 +180,29 @@ def coupe(request):
             current_user = request.user
 
             try:
-                return render(request, 'coupe.html', {'image':image, 'user':current_user,
-                                                      'coif':affichage_coupe_fav[0],
-                                                      'largeur':affichage_coupe_fav[1],
-                                                      'hauteur':affichage_coupe_fav[2]})
-            
+                if fav == True:
+                    return render(request, 'coupe.html', {'image':image, 'user':current_user,
+                                                          'coif':favoris_coupe[0],
+                                                          'largeur':favoris_coupe[1],
+                                                          'hauteur':favoris_coupe[2]})
+                else:
+                    return render(request, 'coupe.html', {'image':image, 'user':current_user,
+                                                          'fav':fav})
+                
             except:
                 return render(request, 'coupe.html', {'image':image, 'user':current_user})
 
     try:
-        return render(request, 'coupe.html', {'no_choice':no_choice,
-                                              'coif':affichage_coupe_fav[0],
-                                              'largeur':affichage_coupe_fav[1],
-                                              'hauteur':affichage_coupe_fav[2]})
+        if fav == True:
+            return render(request, 'coupe.html', {'no_choice':no_choice,
+                                                  'coif':favoris_coupe[0],
+                                                  'largeur':favoris_coupe[1],
+                                                  'hauteur':favoris_coupe[2]})
+
+        else:
+            return render(request, 'coupe.html', {'image':image, 'user':current_user,
+                                                          'fav':fav})
+        
     except:
         return render(request, 'coupe.html', {'no_choice':no_choice})
 def habits(request):
