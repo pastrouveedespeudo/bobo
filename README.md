@@ -9,6 +9,8 @@
 
 #ok le code etait passable mtn il est ... le factoriser
 
+#mattis 15 ans virtuose du code rencontre son professeur a l'université de standford le type faisait des truk de dingue et son prof lui dit: ca marche ok mais ne veut tu pas que ce soit parfait ? jécris 4 fois la meme chose.... et en plus jfais un site de perruque  
+
 
 
 #--------------
