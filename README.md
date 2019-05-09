@@ -6,6 +6,8 @@
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
 
+#cropage == taille écran, j'aime cette coupe == taille ecran jcrois donc soit récup la taille écran soit la technique de la photo
+
 #ajouter mes_favoris
 
 #redonner le choix a l'utilisateur de rechangé dimage
