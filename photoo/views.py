@@ -20,9 +20,24 @@ def mes_images(request):
         print(i.photo_habit, i.photo_cheveux)
         liste1.append(i.photo_habit)
         liste2.append(i.photo_cheveux)
-    
-    return render(request, 'mes_images.html', {'user':current_user, 'liste1':liste1,
-                                               'liste2':liste2})
+    print(liste2)
+    print('\n')
+    print(liste1)
+    liste11 = []
+    liste22 = []
+    for i in liste1:
+        print(i)
+        if i == '':
+            pass
+        else:
+            liste11.append(i)
+    for i in liste2:
+        if i == '':
+            pass
+        else:
+            liste22.append(i)
+    return render(request, 'mes_images.html', {'user':current_user, 'liste1':liste11,
+                                               'liste2':liste22})
 
 
 
@@ -61,18 +76,32 @@ def photo(request):
             os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'.format(str(current_user)))
             cropage_habit(image, current_user, 'habit')
 
-        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\photo')
+      
         liste1 = []
         liste2 = []
         
         image = Accounts.objects.filter(name=current_user).all()
         for i in image:
-            print(i.photo_habit, i.photo_cheveux)
+ 
             liste1.append(i.photo_habit)
             liste2.append(i.photo_cheveux)
 
-            return render(request, 'mes_images.html', {'user':current_user, 'liste1':liste1,
-                                               'liste2':liste2})
+        liste11 = []
+        liste22 = []
+        for i in liste1:
+            print(i)
+            if i == '':
+                pass
+            else:
+                liste11.append(i)
+        for i in liste2:
+            if i == '':
+                pass
+            else:
+                liste22.append(i)
+                
+        return render(request, 'mes_images.html', {'user':current_user, 'liste1':liste11,
+                                                   'liste2':liste22})
 
 
     return render(request, 'photo.html')
