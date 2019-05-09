@@ -9,13 +9,13 @@ class coupe(models.Model):
 
     coiffure = models.CharField(max_length=255)
     
-    haut = models.TextField
+    haut = models.TextField()
     
-    bas = models.TextField
+    bas = models.TextField()
     
-    taille_haut = models.IntegerField
+    taille_haut = models.IntegerField()
     
-    taille_bas = models.IntegerField
+    taille_bas = models.IntegerField()
 
     
 
@@ -25,13 +25,11 @@ class favoris(models.Model):
 
     user = models.CharField(max_length=255)
 
-    image_user = models.CharField(max_length=255)
-    
     coiffure = models.CharField(max_length=255)
 
-    hauteur = models.IntegerField
+    hauteur = models.IntegerField()
 
-    largeur = models.IntegerField
+    largeur = models.IntegerField()
 
 
 
