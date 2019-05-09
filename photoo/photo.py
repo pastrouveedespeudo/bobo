@@ -8,6 +8,8 @@ from accounts.models import Accounts
 
 from .models import *
 
+from .coupe_dico import DICO_COIF2
+
 def photo():
 
     video = cv2.VideoCapture(0)
@@ -290,7 +292,9 @@ def affichage_coupe_fav(username):
     liste_larg = []
     liste_haut = []
     for i in acc:
-        liste_coif.append(i.coiffure)
+        for cle, valeur in DICO_COIF2.items():
+            if i.coiffure == cle:
+                liste_coif.append(DICO_COIF2[cle])
         liste_larg.append(i.largeur)
         liste_haut.append(i.hauteur)
 
