@@ -38,7 +38,6 @@
 
             <script>
               img = document.getElementById('im_cheveux{{i}}').src;
-              alert(img)
               if(img==""){document.getElementById('im_cheveux{{i}}').style.display = "none";}
             </script>
 
@@ -50,15 +49,16 @@
         {% endfor %}
         <br><br>
 
-      <form action="/photo/habits" method="POST">{% csrf_token %}
+      <form name='myform' action="/photo/habits" method="POST">{% csrf_token %}
       
         <p><center><strong>Image pour les habits</strong></center></p>
         {% for i in liste1 %}
             <tr class="{% cycle 'row1' 'row2' %}">
             
-               <input type='image' class="img-fluid" id='im_habit{{i}}' value='{{i}}'
-               'src='/static/img/portfolio/photo/{{user}}/habit/{{i}}'
-               style='height:200px; width:200px; border:2px black solid;' onclick=pushing()/>
+               <input type='image' onclick=pushing()
+               class="img-fluid" id='im_habit{{i}}' value='{{i}}'
+                 src='/static/img/portfolio/photo/{{user}}/habit/{{i}}'
+                 style='height:200px; width:200px; border:2px black solid;'/>
 
           <script>
             img = document.getElementById('im_habit{{i}}').src;
