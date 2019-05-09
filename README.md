@@ -5,10 +5,17 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+#bug on peut plus prendre de photo sans etre inscrit
+
+#bug mettre de la largueur ne marche plus
+
+
+#ranger les coiffures
+
+#adapter la zone input selon la taille ecran (en %)
+
 
 #plusieurs images ont les memes noms chrois change les ! et les memes du meme style
-
-#bug on peut plus prendre de photo sans etre inscrit
 
 #ok le code etait passable mtn il est ... le factoriser
 
