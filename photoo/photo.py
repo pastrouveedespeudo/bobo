@@ -282,9 +282,20 @@ def coupe_fav(user_current, coupe, largeur_im, hauteur_im):
     
 
 
-        
+def affichage_coupe_fav(username):
+    
+    acc = favoris.objects.filter(user=username).all()
+
+    liste_coif = []
+    liste_larg = []
+    liste_haut = []
+    for i in acc:
+        liste_coif.append(i.coiffure)
+        liste_larg.append(i.largeur)
+        liste_haut.append(i.hauteur)
 
 
+    return liste_coif, liste_larg, liste_haut
         
             
 
