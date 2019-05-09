@@ -8,6 +8,8 @@
 
 #refaire la database........ envoyé les données mysql a sqlite puis apres a psycopg via le dbshell jpourrai direct postgres mais je devrai tout refaire
 
+#faireu ndocument des coiffures blond brun noir et faire un fichier qui match la database avec la coiffure et faire apparaitre les vetements selon la coiffure + refaire les couleurs + travailler la soutenance
+
 #cropage == taille écran, j'aime cette coupe == taille ecran jcrois donc soit récup la taille écran soit la technique de la photo
 
 #ajouter mes_favoris
