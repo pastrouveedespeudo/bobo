@@ -97,6 +97,7 @@ class data:
         
         data = creation_conditions.visualisation_without_time(self, city)
         for i in data:
+     
             i = list(i)
             if i == données_actuelle:
 
@@ -107,19 +108,25 @@ class data:
                                                                    i[8],i[9],i[10],i[11],
                                                                    i[12],i[13])
 
-
-                THE_PARTICLE.append(particle[0][0])
-
+       
+                THE_PARTICLE.append(particle)
+                break
 
 
         print(THE_PARTICLE)
+        if THE_PARTICLE == []:
+            print('no donnée')
 
-        var = 0
-        for i in THE_PARTICLE:
-            i = int(i)
-            var += i
-
-        print("il y a a peu prés :", var/len(THE_PARTICLE), "AQI")
+            
+        else:
+            c = 0
+            var = 0
+            for i in THE_PARTICLE[0]:
+                i = int(i[0])
+                var += i
+                c+=1
+            print(c)
+            print("il y a a peu prés :", var/c, "AQI à", city)
 
 
 
@@ -130,7 +137,7 @@ class data:
 
         #raise 
         raise_dict(PARTICULE)
-        raise_dict(TRAFIQUE, HEURE, POINTE, WEEKEND, BOUCHON,
+        raise_dict(TRAFIQUE, HEURE, POINTE, WEEKEND, BOUCHON,    
                     ACTIVITE_EXEPTIONNELLE)
         raise_dict(POPULATION_ACTIVE_HABITANT)
         raise_dict(VILLE_POLLUE2018, REGION_INDUSTRIEL_POLLUEE)
