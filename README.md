@@ -9,7 +9,7 @@
 
 #ok le code etait passable mtn il est ... le factoriser
 
-#oufff, mattis lui il le fait sans les mains gros
+#oufff, mattis lui il le fait sans les mains bon stop code recite mtn
 
 
 
