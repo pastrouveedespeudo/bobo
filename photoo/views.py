@@ -5,7 +5,7 @@ from .coupenom import *
 import os
 from accounts.models import Accounts
 
-from coupe_dico import DICO_COIF
+from .coupe_dico import DICO_COIF
 
 
 def mes_images(request):
@@ -13,12 +13,16 @@ def mes_images(request):
     current_user = request.user
     print(current_user)
 
-    liste = []
+    liste1 = []
+    liste2 = []
     image = Accounts.objects.filter(name=current_user).all()
     for i in image:
-        liste.append(i.photo)
+        print(i.photo_habit, i.photo_cheveux)
+        liste1.append(i.photo_habit)
+        liste2.append(i.photo_cheveux)
     
-    return render(request, 'mes_images.html', {'user':current_user, 'liste':liste})
+    return render(request, 'mes_images.html', {'user':current_user, 'liste1':liste1,
+                                               'liste2':liste2})
 
 
 
@@ -42,31 +46,33 @@ def photo(request):
         coupe = request.POST.get('coupe')
         
         print(format_image,'4899999999999999999999999999999')
-        print(ordinom,'4899999999999999999999999999999')
-            
+
         current_user = request.user         
         print(current_user)
-        if ordinom:
-            nom_ordi(ordinom, current_user)
 
 
         image = capture(current_user, format_image)
         
         if format_image == "cheveux":
             os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\cheveux'.format(str(current_user)))
-            cropage_cheveux(image, current_user)
+            cropage_cheveux(image, current_user, 'cheveux')
             
         elif format_image == "habit":
             os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'.format(str(current_user)))
-            cropage_habit(image, current_user)
+            cropage_habit(image, current_user, 'habit')
 
-
-        liste_usr = []
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\photo')
+        liste1 = []
+        liste2 = []
+        
         image = Accounts.objects.filter(name=current_user).all()
         for i in image:
-            liste_usr.append(i.photo)
+            print(i.photo_habit, i.photo_cheveux)
+            liste1.append(i.photo_habit)
+            liste2.append(i.photo_cheveux)
 
-        return render(request, 'mes_images.html', {'usr':current_user, 'liste':liste_usr})
+            return render(request, 'mes_images.html', {'user':current_user, 'liste1':liste1,
+                                               'liste2':liste2})
 
 
     return render(request, 'photo.html')
