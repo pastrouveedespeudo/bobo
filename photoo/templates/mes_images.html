@@ -27,7 +27,7 @@
         <input type='hidden' id='posting' name='posting' value=''/>
         
         <p><center><strong>Image pour les cheveux</strong></center></p>
-        {% for i in liste %}
+        {% for i in liste2 %}
             <tr class="{% cycle 'row1' 'row2' %}">
 
                <input type='image' onclick=pushing(value)
@@ -38,7 +38,8 @@
 
             <script>
               img = document.getElementById('im_cheveux{{i}}').src;
-              if(img==""){document.getElementById('im_habit{{i}}').style.display = "none";}
+              alert(img)
+              if(img==""){document.getElementById('im_cheveux{{i}}').style.display = "none";}
             </script>
 
             
@@ -52,7 +53,7 @@
       <form action="/photo/habits" method="POST">{% csrf_token %}
       
         <p><center><strong>Image pour les habits</strong></center></p>
-        {% for i in liste %}
+        {% for i in liste1 %}
             <tr class="{% cycle 'row1' 'row2' %}">
             
                <input type='image' class="img-fluid" id='im_habit{{i}}' value='{{i}}'
