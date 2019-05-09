@@ -4,24 +4,18 @@
 {% endblock %}
 
 
+    
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+
+
+
+
+
+  
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
-  <script type="text/javascript" 
-          src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-  <script type="text/javascript" 
-          src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
-  <link rel="stylesheet" type="text/css" 
-          href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
 
 
 
@@ -260,7 +254,7 @@
     var LISTECOUPE = []
     
     function yo() {
-
+        
       var liste = [draggable,draggable3,draggable4,draggable5,draggable6,draggable7,draggable8,draggable9,
                    draggable10,draggable11,draggable12,draggable14,draggable15,draggable16,draggable17,draggable18,
                    draggable19]
@@ -276,7 +270,7 @@
      
         };
 
-    
+        
       };
     };
     
@@ -328,17 +322,62 @@
     <input type='button' value='enlever de la longueur?' style=" border:3px solid black; float:right;" onclick='enlever_longueur()'>
 
     &nbsp&nbsp<input type='button' value='enlever de la largeur?'
-    style=" border:3px solid black;float:right; margin-right:60px;" onclick='enlever_largeur()'>
+    style=" border:3px solid black;float:right; margin-right:60px;" onclick='enlever_largeur()'>&nbsp&nbsp
 
-
-       
+    <form action='/photo/coupe' method='POST'>{% csrf_token %}
+        <input type='button' id='sauve' value='enregistrer la coupe'
+        style="border:3px solid black;"/>
+    </form>
 
   </section>
 
 
+    
+  
+  
+  
 
-  <script>
 
+
+    
+    <script>
+
+
+    jQuery("#sauve").on("click", function(e){
+        alert(LISTE_RESIZE[LISTE_RESIZE.length -1])
+       e.preventDefault();
+        jQuery.ajax({
+            data:{
+                 'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                'produit':LISTE_RESIZE[LISTE_RESIZE.length -1],
+                
+         
+            },
+            type:"POST",
+            url:"/photo/coupe/"
+        })
+        .done(function(data){
+            if (data.error){
+                jQuery("#monCadreAlert").text(data.error);
+                jQuery("#is_save");
+                
+                
+            }
+            else{
+                jQuery("#is_save").html(data.data);
+                jQuery("#monCadreAlert");
+                
+                
+            };
+            
+        });
+    });
+
+    
+
+
+
+    
     function ajout_longueur(){
 
       var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
@@ -597,14 +636,23 @@
 </body>
 
 
-
-
-
-
-
-
-
-
-
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
