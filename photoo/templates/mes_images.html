@@ -12,15 +12,17 @@
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
           <h2 class="text-white mt-0">Mes Images</h2>
+
         
         <script>
           function pushing(value){
             document.getElementById('posting').value = value;
+            document.myform.submit();
             }
         </script>
 
 
-        <form action="/photo/coupe" method="POST">{% csrf_token %}
+        <form name='myform' action="/photo/coupe" method="POST">{% csrf_token %}
         
         <input type='hidden' id='posting' name='posting' value=''/>
         
@@ -33,10 +35,12 @@
                  src='/static/img/portfolio/photo/{{user}}/cheveux/{{i}}'
                  style='height:200px; width:200px; border:2px black solid;'/>
 
+
             <script>
               img = document.getElementById('im_cheveux{{i}}').src;
               if(img==""){document.getElementById('im_habit{{i}}').style.display = "none";}
             </script>
+
             
           </tr>
           
