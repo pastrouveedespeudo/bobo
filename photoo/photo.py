@@ -294,7 +294,7 @@ def affichage_coupe_fav(username):
         liste_larg.append(i.largeur)
         liste_haut.append(i.hauteur)
 
-
+        
     return liste_coif, liste_larg, liste_haut
         
             
