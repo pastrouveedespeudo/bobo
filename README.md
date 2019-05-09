@@ -7,9 +7,9 @@
 
 
 
-#bug pour affichage photo habit
+#ok le code etait passable mtn il est ... le factoriser
 
-#réduire le code
+
 
 #--------------
 
