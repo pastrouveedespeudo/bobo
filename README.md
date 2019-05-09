@@ -5,6 +5,14 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+#bug pour la premiere photo
+
+#bug pour affichage photo habit
+
+#duplicage de code pour cropage habit
+
+#--------------
+
 
 
 #ajouter mes_favoris
