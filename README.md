@@ -5,7 +5,7 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-
+#bug on peut plus prendre de photo sans etre inscrit
 
 #ok le code etait passable mtn il est ... le factoriser
 
