@@ -110,7 +110,13 @@
                 
                 function nom_image(id, hauteur, largeur){
                   LISTE_RESIZE.push(id)
-                  LISTE1.push([id, largeur, hauteur])
+
+                  var a = document.getElementById(id).height;
+                  var b = document.getElementById(id).width;
+           
+                  
+                  LISTE1.push([id, b, a])
+        
            
                   
                 }
@@ -347,7 +353,7 @@
             data:{
                 'csrfmiddlewaretoken': '{{csrf_token}}' , 
                 'produit':String(LISTE1[LISTE1.length -1]),
-                'produit2':String(LISTE1[LISTE1.length -2]),
+
                 
          
             },
@@ -395,7 +401,13 @@
       Y += 10 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
+
+      var d = document.getElementById(b).style.height = Y;
+  
+      document.getElementById(b).style.width = X;
+      
       LISTE1.push([b, X,Y]);
+    
   
     
     }
