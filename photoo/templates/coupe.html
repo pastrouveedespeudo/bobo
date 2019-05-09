@@ -110,8 +110,9 @@
                 
                 function nom_image(id, hauteur, largeur){
                   LISTE_RESIZE.push(id)
-                  LISTE_RESIZE_TAILLE_HAUTEUR.push(hauteur)
-                  LISTE_RESIZE_TAILLE_LARGEUR.push(largeur)
+                  LISTE1.push([id, largeur, hauteur])
+           
+                  
                 }
 
          
@@ -340,13 +341,13 @@
     
 
     jQuery("#sauve").on("click", function(e){
-        alert(LISTE_RESIZE_TAILLE_LARGEUR)
-        alert(LISTE_RESIZE_TAILLE_HAUTEUR)
+
        e.preventDefault();
         jQuery.ajax({
             data:{
                 'csrfmiddlewaretoken': '{{csrf_token}}' , 
-                'produit':LISTE_RESIZE[LISTE_RESIZE.length -1],
+                'produit':String(LISTE1[LISTE1.length -1]),
+                'produit2':String(LISTE1[LISTE1.length -2]),
                 
          
             },
@@ -377,7 +378,7 @@
     LISTE1 = []
     
     function ajout_longueur(){
-
+      
       var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
       var b = document.getElementById(a).id
       var c = '#' + b
@@ -394,7 +395,8 @@
       Y += 10 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
-      LISTE1.push(b, X,Y)
+      LISTE1.push([b, X,Y]);
+  
     
     }
 
@@ -418,7 +420,8 @@
       Y += 0 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
-      LISTE1.push(b, X,Y)
+      LISTE1.push([b, X,Y]);
+      
 
     }
 
@@ -441,7 +444,7 @@
       Y -= 10 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
-      LISTE1.push(b, X,Y)
+      LISTE1.push([b, X,Y]);
     
     }
 
@@ -465,7 +468,7 @@
       Y += 0 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
-      LISTE1.push(b, X,Y)
+      LISTE1.push([b, X,Y]);
       
     }
 
