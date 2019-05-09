@@ -46,12 +46,6 @@ def capture(user, format_image):
     img = ImageGrab.grab()
 
 
-    liste_user = []
-    direction = Accounts.objects.filter(name=user).all()
-    for i in direction:
-        liste_user.append(i.path_image)
-
-    print(liste_user[0],'yoooooooooooooooojgrjporgjpogjgjpojrgejporjprge')
 
     try:
         os.mkdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}'.format(str(user)))
@@ -70,6 +64,7 @@ def capture(user, format_image):
     elif format_image == "habit":
         os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'.format(str(user)))
 
+
     liste = os.listdir()
     
     liste2 = []
@@ -77,6 +72,11 @@ def capture(user, format_image):
     if liste == []:
         name_picture = "1.jpg"
         img.save(str(name_picture))
+        
+        acc = Accounts.objects.get(name=user)
+        acc.photo = name_picture
+        acc.save()
+        
         return name_picture
     
     else:
@@ -160,30 +160,33 @@ def cropage_cheveux(image, user):
 
     liste2 = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
               [],[],[],[],[],[],[],[],[],[],[]]
+
+    try:
+        c = 0
+        for i in url_image:
+            if i == "\\":
+                c+=1
+            else:
+                liste2[c].append(i)
+                
+        print(liste2)
+        liste3 = []
+        for i in liste2:
+            if i == []:
+                pass
+            else:
+                liste3.append(i)
+
+        print(liste3)
+
     
-    c = 0
-    for i in url_image:
-        if i == "\\":
-            c+=1
-        else:
-            liste2[c].append(i)
-            
-    print(liste2)
-    liste3 = []
-    for i in liste2:
-        if i == []:
-            pass
-        else:
-            liste3.append(i)
-
-    print(liste3)
-
-    img = cv2.imread("".join(liste3[-1]))
-    crop_img = img[250:190+300, 530:350+500]
-    cv2.imwrite(str("".join(liste3[-1])), crop_img)
+        img = cv2.imread("".join(liste3[-1]))
+        crop_img = img[250:190+300, 530:350+500]
+        cv2.imwrite(str("".join(liste3[-1])), crop_img)
 
 
-
+    except:
+        pass
 
 
 def sauvegarde(user, saving):
