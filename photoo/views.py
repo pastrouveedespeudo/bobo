@@ -125,10 +125,14 @@ def essais(request):
 def coupe(request):
 
     no_choice = 'no_choice'
-
-    current_user = request.user
     
-    affichage_coupe_fav(current_user)
+    try:
+        current_user = request.user
+    
+        affichage_coupe_fav(current_user)
+        print(affichage_coupe_fav[0])
+    except:
+        pass
     
     if request.method == "POST":
 
@@ -169,19 +173,23 @@ def coupe(request):
             no_choice = ''
             print(image,"0100000000000000000000000000000000000")
             current_user = request.user
-        
-            return render(request, 'coupe.html', {'image':image, 'user':current_user,
-                                                  affichage_coupe_fav[0],
-                                                  affichage_coupe_fav[1],
-                                                  affichage_coupe_fav[2]}})
-        
 
+            try:
+                return render(request, 'coupe.html', {'image':image, 'user':current_user,
+                                                      'coif':affichage_coupe_fav[0],
+                                                      'largeur':affichage_coupe_fav[1],
+                                                      'hauteur':affichage_coupe_fav[2]})
+            
+            except:
+                return render(request, 'coupe.html', {'image':image, 'user':current_user})
 
-    return render(request, 'coupe.html', {'no_choice':no_choice,
-                                          affichage_coupe_fav[0],
-                                          affichage_coupe_fav[1],
-                                          affichage_coupe_fav[2]})
-
+    try:
+        return render(request, 'coupe.html', {'no_choice':no_choice,
+                                              'coif':affichage_coupe_fav[0],
+                                              'largeur':affichage_coupe_fav[1],
+                                              'hauteur':affichage_coupe_fav[2]})
+    except:
+        return render(request, 'coupe.html', {'no_choice':no_choice})
 def habits(request):
     return render(request, 'habits.html')
 
