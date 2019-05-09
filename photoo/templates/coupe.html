@@ -129,6 +129,51 @@
             
             <div id="coupe_gauche">
 
+                <div id='favoris' style='display:none' value={{fav}}></div>
+                
+                <script>
+                
+                    //ERREUR A COUP SUR ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII //
+                    
+                    //var a = document.getElementById(favoris).value;//
+                    //if(a == ''){//
+                        //document.getElementById(coucou).innerHTML = "<p id='coucou'>Enregistre des coupes !</p>"//
+                    //}
+
+                </script>
+                
+                {% if user.is_authenticated %}
+                    <p style='float:left;'><strong>Mes favoris</strong></p>
+                    <p id='coucou'></p>
+
+                    
+                    {% for i in coif %}
+                        
+                        <tr class="{% cycle 'row1' 'row2' %}">
+                            <img src="/static/img/portfolio/coupe/{{i}}" id="fav{{i}}"/>
+                        <tr>
+                        
+                    {%endfor%}
+
+
+
+
+                {% else %}
+                    <p style='float:left;'><strong>Inscris toi ! et ajoute des favoris !</strong></p>
+
+                {% endif %}
+
+
+            </div>
+
+
+
+
+
+            
+            <div id='coupe_droite'>
+
+              
             
                 <div id="draggable" name="coucou" value='coupe1' class="ui-widget-content" onclick="nom_image('coupe1', 200, 150)";>
                     <img src="/static/img/portfolio/coupe/bbbbbbb.png" width='150' height='200'   id="coupe1" />
@@ -166,13 +211,6 @@
                     <img src="/static/img/portfolio/coupe/coucou22.png" width='70' height='50' id="coupe8"/>
                 </div>
 
-                
-            </div>
-
-            
-            <div id='coupe_droite'>
-
-              
                 <div id="draggable9" class="ui-widget-content" value='coupe9' onclick="nom_image('coupe9', 160, 140)";>
                     <img src="/static/img/portfolio/coupe/coif.png"  width='140' height='160'  id="coupe9"/>
                 </div>
