@@ -6,7 +6,9 @@
 # https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#refaire la database........ envoyé les données mysql a sqlite puis apres a psycopg via le dbshell jpourrai direct postgres mais je devrai tout refaire
+#refaire la database........ le mettre dans l'orm et en faire une database flexible ou dynamique un fichier qui se renouvelle au pire dans ta tete dis toi qu'il y a mysql, sqlite postgres et orm qui est postgres en django 
+
+#donc mysql, sqlite postregs et orm
 
 #faireu ndocument des coiffures blond brun noir et faire un fichier qui match la database avec la coiffure et faire apparaitre les vetements selon la coiffure + refaire les couleurs + travailler la soutenance
 
