@@ -344,17 +344,17 @@
 
 
     jQuery("#sauve").on("click", function(e){
-        alert(LISTE_RESIZE[LISTE_RESIZE.length -1])
+
        e.preventDefault();
         jQuery.ajax({
             data:{
-                 'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                'csrfmiddlewaretoken': '{{csrf_token}}' , 
                 'produit':LISTE_RESIZE[LISTE_RESIZE.length -1],
                 
          
             },
             type:"POST",
-            url:"/photo/coupe/"
+            url:"/photo/coupe"
         })
         .done(function(data){
             if (data.error){
