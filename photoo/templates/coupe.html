@@ -135,11 +135,8 @@
                 LISTE_RESIZE_TAILLE_LARGEUR = []
                 
                 function nom_image(id, hauteur, largeur){
+                  alert(id)
                   LISTE_RESIZE.push(id)
-                  LISTE_RESIZE_TAILLE_LARGEUR.push(largeur)
-                  LISTE_RESIZE_TAILLE_HAUTEUR.push(hauteur)
-                  
-     
                   }
 
          
@@ -166,14 +163,14 @@
                     <img src="/static/img/portfolio/coupe/bbbbbbb.png" width='100' height='150'  id="coupe5" />
                 </div>
                 
-                <style>#coupe6{width:130px; height:300px;}</style>
+           
                 <div id="draggable5" class="ui-widget-content" onclick="nom_image('coupe6', 300, 130)";>
                     <img src="/static/img/portfolio/coupe/1.5.png"  width='130' height='300'  id="coupe6"/>
                 </div>
 
        
-                <div id="draggable6" class="ui-widget-content" onclick="nom_image('coupe6', 300, 130)";>
-                    <img src="/static/img/portfolio/coupe/coucou3.png" width='130' height='300'  id="coupe6"/>
+                <div id="draggable6" class="ui-widget-content" onclick="nom_image('coupe2', 300, 130)";>
+                    <img src="/static/img/portfolio/coupe/coucou3.png" width='130' height='300'  id="coupe2"/>
                 </div>
 
 
@@ -334,7 +331,7 @@
       var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
       var b = document.getElementById(a).id
       var c = '#' + b
-      alert(c)
+    
       var image = document.querySelector(c);
       var X = image.getAttribute("width");
       X = parseInt(X) ;
@@ -343,29 +340,85 @@
       Y = parseInt(Y) ;
      
     
-      X += 40 ; 
-      Y += 30 ;
+      X += 0 ; 
+      Y += 10 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
-      alert(X,Y)
+     
    
       
     }
 
     function ajout_largeur(){
-      alert(LISTE_RESIZE[LISTE_RESIZE.length -1]);
-      }
+      
+  
+      var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+      var b = document.getElementById(a).id
+      var c = '#' + b
+    
+      var image = document.querySelector(c);
+      var X = image.getAttribute("width");
+      X = parseInt(X) ;
+  
+      var Y = image.getAttribute("height"); 		
+      Y = parseInt(Y) ;
+     
+    
+      X += 10 ; 
+      Y += 0 ;
+      image.setAttribute('width', X);
+      image.setAttribute('height',Y);
+     
+   
+      
+    }
 
     function enlever_longueur(){
-      alert(LISTE_RESIZE[LISTE_RESIZE.length -1]);
 
-      }
-
+      var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+      var b = document.getElementById(a).id
+      var c = '#' + b
+    
+      var image = document.querySelector(c);
+      var X = image.getAttribute("width");
+      X = parseInt(X) ;
+  
+      var Y = image.getAttribute("height"); 		
+      Y = parseInt(Y) ;
+     
+    
+      X += 0 ; 
+      Y -= 10 ;
+      image.setAttribute('width', X);
+      image.setAttribute('height',Y);
+     
+   
+      
+    }
+    
     function enlever_largeur(){
-      alert(LISTE_RESIZE[LISTE_RESIZE.length -1]);
+    
 
-      }
-
+      var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+      var b = document.getElementById(a).id
+      var c = '#' + b
+    
+      var image = document.querySelector(c);
+      var X = image.getAttribute("width");
+      X = parseInt(X) ;
+  
+      var Y = image.getAttribute("height"); 		
+      Y = parseInt(Y) ;
+     
+    
+      X -= 10 ; 
+      Y += 0 ;
+      image.setAttribute('width', X);
+      image.setAttribute('height',Y);
+     
+   
+      
+    }
 
   </script>
   
