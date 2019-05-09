@@ -4,22 +4,9 @@
 {% endblock %}
 
 
-    
-
-
-
-
-
-
-
-  
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-
-
-
-
-          
+ 
     <script>
         function image(){
             document.getElementById("image1").src  = src="/static/img/portfolio/thumbnails/1.jpg";
@@ -123,6 +110,8 @@
                 
                 function nom_image(id, hauteur, largeur){
                   LISTE_RESIZE.push(id)
+                  LISTE_RESIZE_TAILLE_HAUTEUR.push(hauteur)
+                  LISTE_RESIZE_TAILLE_LARGEUR.push(largeur)
                 }
 
          
@@ -311,7 +300,9 @@
     
     </div>
 
+    <div class='container'>
     
+
     <br><br><br><br>
     <input type='button' value='ajouter de la longueur?' style=" border:3px solid black" onclick='ajout_longueur()'>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -323,10 +314,15 @@
 
     &nbsp&nbsp<input type='button' value='enlever de la largeur?'
     style=" border:3px solid black;float:right; margin-right:60px;" onclick='enlever_largeur()'>&nbsp&nbsp
+    </div>
+    <br><br>
+
+ 
+    
 
     <form action='/photo/coupe' method='POST'>{% csrf_token %}
-        <input type='button' id='sauve' value='enregistrer la coupe'
-        style="border:3px solid black;"/>
+        <center><input type='button' id='sauve' value='enregistrer la coupe'
+        style="border:3px solid black;"/></center>
     </form>
 
   </section>
@@ -341,10 +337,11 @@
 
     
     <script>
-
+    
 
     jQuery("#sauve").on("click", function(e){
-
+        alert(LISTE_RESIZE_TAILLE_LARGEUR)
+        alert(LISTE_RESIZE_TAILLE_HAUTEUR)
        e.preventDefault();
         jQuery.ajax({
             data:{
@@ -377,6 +374,7 @@
 
 
 
+    LISTE1 = []
     
     function ajout_longueur(){
 
@@ -391,12 +389,13 @@
       var Y = image.getAttribute("height"); 		
       Y = parseInt(Y) ;
      
-    
+      
       X += 0 ; 
       Y += 10 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
-
+      LISTE1.push(b, X,Y)
+    
     }
 
 
@@ -419,6 +418,7 @@
       Y += 0 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
+      LISTE1.push(b, X,Y)
 
     }
 
@@ -441,7 +441,8 @@
       Y -= 10 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
- 
+      LISTE1.push(b, X,Y)
+    
     }
 
     
@@ -464,7 +465,8 @@
       Y += 0 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
- 
+      LISTE1.push(b, X,Y)
+      
     }
 
   </script>
