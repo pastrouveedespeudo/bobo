@@ -1,23 +1,29 @@
 
 #<a href="https://fr.freepik.com/photos-vecteurs-libre/fond">Fond vecteur créé par vectorpocket - fr.freepik.com</a>
 
-# https://github.com/python/cpython
+#https://github.com/python/cpython
 
-# https://github.com/python/cpython/tree/master/Tools/pynche
+#https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#refaire la database........ le mettre dans l'orm et en faire une database flexible ou dynamique un fichier qui se renouvelle au pire dans ta tete dis toi qu'il y a mysql, sqlite postgres et orm qui est postgres en django 
-
-#donc mysql, sqlite postregs et orm
-
-#faireu ndocument des coiffures blond brun noir et faire un fichier qui match la database avec la coiffure et faire apparaitre les vetements selon la coiffure + refaire les couleurs + travailler la soutenance
-
-#cropage == taille écran, j'aime cette coupe == taille ecran jcrois donc soit récup la taille écran soit la technique de la photo
 
 #ajouter mes_favoris
 
+#database
+
+#------------------
+
+
+
+
+
+#cropage == haarcascade
+
 #mettre l'image en noir et blanc
 
+#revois les couleurs => noir -> gris, bleu -> gris
+
+#faire les pourcentages 
 
 
 
@@ -28,50 +34,18 @@
 
 
 
-#passer de sqlite a postgres faire une database postgres
-
-#enregistrer le path en database donc refaire le model
-
-#recadrer l'image et les affichers sur mes images
 
 
 
-
-
-
-
-
-
-# revois les couleurs => noir -> gris, bleu -> gris
-
-
-#faire les pourcentages genre si y'a bcp de blanc mais quya du noir c que c le fond sinon c un ttshirt blanc
-
-#pour la 1er c 27 % ensuite faire si y'a du rouge genre >10% alors c un logo et 
-
-#et ensuite metttre en place le site les graphiques et tous les textes et c ok purée faudra aussi faire un truk de compte et l'enregistrements des habits nik
-
-
-
-#tout transférer et tout refaire en postgres
-
-
-#bobo
-
-
-#la prise de la photo -> cadrage
-
-#couleur habit
-
-#proposer habits (t-shirt, pantalon ect...) + ensemble d'habit -> image du mec en couleur
 
 
 
 #polution
 
+
 #graphe + ville en arrière plan (avec les erreurs) 
 
-  #-> conclusion espère que la pluie ainsi que les données correspondent + données d'autres sites
+ #-> conclusion espère que la pluie ainsi que les données correspondent + données d'autres sites
   
 #dans notre solution mettre les quelques vidéo des machines à pluie + de la vidéo que tu feras
 
