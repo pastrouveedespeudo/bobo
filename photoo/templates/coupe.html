@@ -28,25 +28,17 @@
           
     <script>
         function image(){
-            
             document.getElementById("image1").src  = src="/static/img/portfolio/thumbnails/1.jpg";
         
             }
     </script>
     
     <style>
-        #image1{
-            margin-top:500px;
-            width: 150px;
-            height: 200px
-        }
+    
+        #image1{margin-top:500px; width: 150px; height: 200px}
         
-        #carre1{
-            height:400px;
-            width :200px;
-            background: red;
-            overflow: scroll;
-        }
+        #carre1{height:400px; width :200px; background: red; overflow: scroll;}
+    
         #draggable2,
         #draggable3,
         #draggable4,
@@ -108,12 +100,13 @@
           <h2 class="text-white mt-0"><center>Essayons quelques choses</center></h2>
   
             <div id="image">
-              <img src="/static/img/portfolio/photo/{{user}}/cheveux/{{image}}" id="image1"/>    
+              <img src="/static/img/portfolio/photo/{{user}}/cheveux/{{image}}" id="image1"/>
+              <br><a href='/photo/mes_images' style='color:black;'>Changez l'image</a>
             </div>
 
-
+         
             
-            <div id='no_choice' value='{{no_choice}}' style='display:none;'>{{no_choice}}</div>
+            <div id='no_choice' value={{no_choice}} style='display:none;'>{{no_choice}}</div>
 
             <script>
 
@@ -135,12 +128,10 @@
                 LISTE_RESIZE_TAILLE_LARGEUR = []
                 
                 function nom_image(id, hauteur, largeur){
-                  alert(id)
                   LISTE_RESIZE.push(id)
-                  }
+                }
 
          
-
             </script>
 
 
@@ -184,10 +175,6 @@
                 <div id="draggable8" class="ui-widget-content" onclick="nom_image('coupe8', 50, 70)";>
                     <img src="/static/img/portfolio/coupe/coucou22.png" width='70' height='50' id="coupe8"/>
                 </div>
-
-
-
-
 
                 
             </div>
@@ -253,36 +240,43 @@
 
 
 
+
+
   <script>
-  function ya(){
-        var a = document.getElementById("coupe1").offsetLeft;
-        var b = document.getElementById("coupe1").offsetTop;
-        console.log(a,b)
-      };
+  
+    function ya(){
+          var a = document.getElementById("coupe1").offsetLeft;
+          var b = document.getElementById("coupe1").offsetTop;
+          console.log(a,b)
+        };
+    
   </script>
+
 
             
   <script>
-  var LISTECOUPE = []
-  function yo() {
-    var liste = [draggable,draggable2,draggable3,draggable4,draggable5,draggable6,draggable7,draggable8,draggable9,
-                 draggable10,draggable11,draggable12,draggable14,draggable15,draggable16,draggable17,draggable18,
-                 draggable19]
-    
-    for(var i = 0; i <= liste.length - 1; i++){
-   
-      var a = document.getElementById(liste[i].id).offsetLeft;
-      var b = document.getElementById(liste[i].id).offsetTop;
-    
-      if(a >= 460 && a <= 580 & b >=50 && b <= 110 ){
-    
-        LISTECOUPE.push(liste[i].id)
-        document.getElementById("coupedecheveux").value = LISTECOUPE[LISTECOUPE.length - 1];
-      };
-      
-    };
-  };
+
   
+    var LISTECOUPE = []
+    function yo() {
+      var liste = [draggable,draggable2,draggable3,draggable4,draggable5,draggable6,draggable7,draggable8,draggable9,
+                   draggable10,draggable11,draggable12,draggable14,draggable15,draggable16,draggable17,draggable18,
+                   draggable19]
+      
+      for(var i = 0; i <= liste.length - 1; i++){
+     
+        var a = document.getElementById(liste[i].id).offsetLeft;
+        var b = document.getElementById(liste[i].id).offsetTop;
+      
+        if(a >= 460 && a <= 580 & b >=50 && b <= 110 ){
+      
+          LISTECOUPE.push(liste[i].id)
+          document.getElementById("coupedecheveux").value = LISTECOUPE[LISTECOUPE.length - 1];
+        };
+        
+      };
+    };
+    
   
   </script>
 
@@ -291,42 +285,57 @@
         <br><br><br><br><br><br><br><br><br><br>
         <br><br><br>
         </div>
-        <div>
-        <input type="hidden" name="csrfmiddlewaretoken" value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">
-     
-        <input type="hidden" name="csrfmiddlewaretoken" value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">
-        <form method="POST">
-          <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux">
-          <input type="hidden" name="csrfmiddlewaretoken" value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">
+
         
-          <input type="submit" id="sub" value="J'aime cette coupe" onclick="yo()"<a class="btn btn-light btn-xl js-scroll-trigger">
-       </form>
-        </div>
+      <div>
+        <input type="hidden" name="csrfmiddlewaretoken"
+          value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">
+     
+        <input type="hidden" name="csrfmiddlewaretoken"
+          value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">
+
+        
+        <form method="POST">
+        
+          <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux">
+          
+          <input type="hidden" name="csrfmiddlewaretoken"
+            value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">
+        
+          <input type="submit" id="sub" value="J'aime cette coupe" onclick="yo()"
+          <a class="btn btn-light btn-xl js-scroll-trigger">
+          
+        </form>
+        
+      </div>
 
 
     
     </div>
-        <br><br><br><br>
-        <input type='button' value='ajouter de la longueur?' style=" border:3px solid black" onclick='ajout_longueur()'>
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+    
+    <br><br><br><br>
+    <input type='button' value='ajouter de la longueur?' style=" border:3px solid black" onclick='ajout_longueur()'>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
 
-        <input type='button' value='ajouter de la largeur?' style=" border:3px solid black" onclick='ajout_largeur()'>
- 
-        <input type='button' value='enlever de la longueur?' style=" border:3px solid black; float:right;" onclick='enlever_longueur()'>
+    <input type='button' value='ajouter de la largeur?' style=" border:3px solid black" onclick='ajout_largeur()'>
 
-        &nbsp&nbsp<input type='button' value='enlever de la largeur?'
-        style=" border:3px solid black;float:right; margin-right:60px;" onclick='enlever_largeur()'>
+    <input type='button' value='enlever de la longueur?' style=" border:3px solid black; float:right;" onclick='enlever_longueur()'>
+
+    &nbsp&nbsp<input type='button' value='enlever de la largeur?'
+    style=" border:3px solid black;float:right; margin-right:60px;" onclick='enlever_largeur()'>
 
 
        
 
   </section>
 
+
+
   <script>
 
     function ajout_longueur(){
-
 
       var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
       var b = document.getElementById(a).id
@@ -344,10 +353,9 @@
       Y += 10 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
-     
-   
-      
+
     }
+
 
     function ajout_largeur(){
       
@@ -368,10 +376,9 @@
       Y += 0 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
-     
-   
-      
+
     }
+
 
     function enlever_longueur(){
 
@@ -391,10 +398,9 @@
       Y -= 10 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
-     
-   
-      
+ 
     }
+
     
     function enlever_largeur(){
     
@@ -415,9 +421,7 @@
       Y += 0 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
-     
-   
-      
+ 
     }
 
   </script>
