@@ -42,7 +42,7 @@ def photo():
 
     
 def capture(user, format_image):
-#def capture(path):
+
     img = ImageGrab.grab()
 
 
@@ -70,15 +70,30 @@ def capture(user, format_image):
     liste2 = []
     
     if liste == []:
-        name_picture = "1.jpg"
-        img.save(str(name_picture))
         
-        acc = Accounts.objects.get(name=user)
-        acc.photo = name_picture
-        acc.save()
+        if format_image == "cheveux":
+            name_picture = "1.jpg"
+            img.save(str(name_picture))
+
+     
+            acc = Accounts.objects.filter(name=user).all()
+            for i in acc:
+                i.photo_cheveux = name_picture
+                i.save()
+                
+            return name_picture
+
+        elif format_image == "habit":
+            name_picture = "1.jpg"
+            img.save(str(name_picture))
+            
+            acc = Accounts.objects.filter(name=user).all()
+            for i in acc:
+                i.photo_habit = name_picture
+                i.save()
+                
+            return name_picture
         
-        return name_picture
-    
     else:
         for i in liste:
             try:
@@ -96,7 +111,7 @@ def capture(user, format_image):
     print(liste2)
     maximum = max(liste2)
 
-    sauvegarde(user, str(maximum+1) + ".jpg")
+    sauvegarde(user, str(maximum+1) + ".jpg", format_image)
     
     img.save(str(maximum + 1) + ".jpg" )
 
@@ -104,20 +119,24 @@ def capture(user, format_image):
 
 
 
-def cropage_habit(image, user):
+def cropage_habit(image, user, format):
 
     print(image,"55555")
+    
     liste = []
-    user = Accounts.objects.filter(name=user).all()
-    for i in user:
-        if image == i.photo:
-            print("ouiiiiiiiiiiiiiii")
-            image = i.photo
-            url_image = i.photo.path
-            break
-
-
-    print(url_image)
+      
+    if format == 'habit':
+        print("ouiiiiiiiiiiiiiiiiiiiiii")
+        user = Accounts.objects.filter(name=user).all()
+        for i in user:
+            print(i.photo_habit,'55555555555555555555555555555555')
+            if image == i.photo_habit:
+                print("ouiiiiiiiiiiiiiii")
+                image = i.photo_habit
+                url_image = i.photo_habit.path
+                break
+            
+ 
     liste2 = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
               [],[],[],[],[],[],[],[],[],[],[]]
     
@@ -144,20 +163,22 @@ def cropage_habit(image, user):
 
 
 
-def cropage_cheveux(image, user):
+def cropage_cheveux(image, user, format):
 
     print(image)
+    
     liste = []
-    user = Accounts.objects.filter(name=user).all()
-    for i in user:
-        if image == i.photo:
-            print("ouiiiiiiiiiiiiiii")
-            image = i.photo
-            url_image = i.photo.path
-            break
 
+    if format == 'cheveux':
+        user = Accounts.objects.filter(name=user).all()
+        for i in user:
+            if image == i.photo_cheveux:
+                print("ouiiiiiiiiiiiiiii")
+                image = i.photo_cheveux
+                url_image = i.photo_cheveux.path
+                break
 
-
+            
     liste2 = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
               [],[],[],[],[],[],[],[],[],[],[]]
 
@@ -189,7 +210,7 @@ def cropage_cheveux(image, user):
         pass
 
 
-def sauvegarde(user, saving):
+def sauvegarde(user, saving, format):
 
     #Accounts.objects.filter(name=user).delete()
     #Accounts.objects.create(name=user)
@@ -199,24 +220,41 @@ def sauvegarde(user, saving):
 ##
     liste = []
     acc = Accounts.objects.filter(name=user).all()
-    
-    for i in acc:
-        print(i.name, i.photo,'000000000')
-        if i.photo == "":
-            pass
-        else:
-            liste.append(i.photo)
 
+    if format == 'cheveux':
+        for i in acc:
+            print(i.name, i.photo_cheveux,'000000000')
+            if i.photo_cheveux == "":
+                pass
+            else:
+                liste.append(i.photo_cheveux)
+                
+    elif format == 'habit':
+        for i in acc:
+            print(i.name, i.photo_habit,'000000000')
+            if i.photo_habit == "":
+                pass
+            else:
+                liste.append(i.photo_habit)
 
+                
     if liste == []:
         
-        account = Accounts.objects.get(name=user)
-        account.photo = "1.jpg"
-        account.save()
-
+        if format == "habit":
+            account = Accounts.objects.get(name=user)
+            account.photo_habit = "1.jpg"
+            account.save()
+            
+        elif format == "cheveux":
+            account = Accounts.objects.get(name=user)
+            account.photo_cheveux = "1.jpg"
+            account.save()
     
     else:
-        Accounts.objects.create(name=user, photo=saving)
+        if format == "habit":
+            Accounts.objects.create(name=user, photo_habit=saving)
+        elif format == "cheveux":
+            Accounts.objects.create(name=user, photo_cheveux=saving)
         
 
 def nom_ordi(nom, user):
