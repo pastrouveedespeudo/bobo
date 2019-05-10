@@ -6,7 +6,7 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#nik sa race, mettre touuuuuuuuutes les draggables en un autre exemplaire les mettre invisible et si dans la liste y'a on le remet visible gouter
+#ca met la meme coupe trouve mais au moins ca met le nombre de favoris et en draggable
 
 
 #responsivité de la page coupe
