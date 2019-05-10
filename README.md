@@ -5,6 +5,10 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+
+#soit laisse tombé les draggables favoris soit trouve comment faire en sorte que chaque element de la liste est un identifiant propre a lui
+
+
 #responsivité de la page coupe
 
 #bug on peut plus prendre de photo sans etre inscrit
