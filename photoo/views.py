@@ -131,7 +131,7 @@ def coupe(request):
 
         fav = ''#ICIIIIIII IL Y A PEUT ETRE UNE ERREUR c ptetre [] 
         favoris_coupe = affichage_coupe_fav(current_user)
-    
+        print(favoris_coupe)
         if favoris_coupe:
             fav = True
 
@@ -182,10 +182,7 @@ def coupe(request):
             try:
                 if fav == True:
                     return render(request, 'coupe.html', {'image':image, 'user':current_user,
-                                                          'coif':favoris_coupe[0],
-                                                          'largeur':favoris_coupe[1],
-                                                          'hauteur':favoris_coupe[2],
-                                                          'nom':favoris_coupe[3]})
+                                                          'coif':favoris_coupe})
                 else:
                     return render(request, 'coupe.html', {'image':image, 'user':current_user,
                                                           'fav':fav})
@@ -202,10 +199,7 @@ def coupe(request):
     try:
         if fav == True:
             return render(request, 'coupe.html', {'no_choice':no_choice,
-                                                  'coif':favoris_coupe[0],
-                                                  'largeur':favoris_coupe[1],
-                                                  'hauteur':favoris_coupe[2],
-                                                  'nom':favoris_coupe[3]})
+                                                  'coif':favoris_coupe})
 
         else:
             return render(request, 'coupe.html', {'image':image, 'user':current_user,
