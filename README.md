@@ -6,12 +6,16 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
+#faire un programme qui se sert de mysql et remplir de fait imaginons que je veuille passer sous ruby ou rail ? j'ai besoin d'avoir ma database c le seul truk que j'ai trouvé a dire... du coup pour pollution je ferai la meme un programme qui se lance en libre et qui envoie la réponse a django
+
+
+
+
+
+
+
 
 #y intégrer le code pour les couleurs
-
-#refaire la database -> orm
-
-
 
 #responsivité de la page coupe
 
