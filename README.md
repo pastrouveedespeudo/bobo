@@ -6,7 +6,7 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#faire un programme qui se sert de mysql et remplir de fait imaginons que je veuille passer sous ruby ou rail ? j'ai besoin d'avoir ma database c le seul truk que j'ai trouvé a dire... du coup pour pollution je ferai la meme un programme qui se lance en libre et qui envoie la réponse a django
+#faire un programme qui se sert de mysql et remplir de fait imaginons que je veuille passer sous ruby ou rail ? j'ai besoin d'avoir ma database c le seul truk que j'ai trouvé a dire... du coup pour pollution je ferai la meme un programme qui se lance en libre et qui envoie la réponse a django; et pour m'appuyer jdirai qu'instagramme fait pareil ou je fais pareil plutot jsp que la source était bonne
 
 
 
