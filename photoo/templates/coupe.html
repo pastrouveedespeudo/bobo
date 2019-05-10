@@ -62,7 +62,7 @@
         $("#draggable6, #draggable7, #draggable8, #draggable9, #draggable10, #draggable11").draggable();
       } );
     $( function() {
-        $("#draggable12, #draggable14, #draggable15, #draggable16, #draggable17, #draggable18, #draggable19").draggable();
+        $("#draggable12, #draggable14, #draggable15, #draggable16, #draggable17, #draggable18, #draggable19, #draggable_favoris").draggable();
       } );
 
     
@@ -127,7 +127,7 @@
 
             
             
-            <div id="coupe_gauche">
+            <div id="coupe_gauche" style='float:left;'>
 
                 <div id='favoris' style='display:none' value={{fav}}></div>
                 
@@ -150,7 +150,9 @@
                     {% for i in coif %}
                         
                         <tr class="{% cycle 'row1' 'row2' %}">
+                        <div id='draggable_favoris'>
                             <img src="/static/img/portfolio/coupe/{{i}}" id="fav{{i}}"/>
+                        </div>
                         <tr>
                         
                     {%endfor%}
@@ -171,8 +173,10 @@
 
 
             
-            <div id='coupe_droite'>
+            <div id='coupe_droite' style='margin-top:-200px;'>
 
+              <p><strong>Coupes</strong></p>
+              
               
             
                 <div id="draggable" name="coucou" value='coupe1' class="ui-widget-content" onclick="nom_image('coupe1', 200, 150)";>
@@ -230,8 +234,8 @@
                 <div id="draggable12" class="ui-widget-content"  value='coupe14' onclick="nom_image('coupe14', 160, 100)";>
                     <img src="/static/img/portfolio/coupe/bb.png" width='100' height='160' id="coupe14" />
                 </div>
-                
 
+  
                 <div id="draggable14" class="ui-widget-content"  value='coupe16'onclick="nom_image('coupe16', 160, 100)";>
                     <img src="/static/img/portfolio/coupe/bbbb.png" width='100' height='160' id="coupe16"/>
                 </div>
@@ -260,7 +264,7 @@
 
   
                 <div id="draggable19" class="ui-widget-content" value='coupe21' onclick="nom_image('coupe21', 250, 150)";>
-                    <img src="/static/img/portfolio/coupe/1.4.png" width:'150' height='250' id="coupe21"/>
+                    <img src="/static/img/portfolio/coupe/1.4.png" width='150' height='250' id="coupe21"/>
                 </div>
                 
             </div>
@@ -424,6 +428,7 @@
     function ajout_longueur(){
       
       var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+      alert(a)
       var b = document.getElementById(a).id
       var c = '#' + b
     
@@ -436,7 +441,7 @@
      
       
       X += 0 ; 
-      Y += 10 ;
+      Y += 5 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
 
@@ -461,12 +466,13 @@
       var image = document.querySelector(c);
       var X = image.getAttribute("width");
       X = parseInt(X) ;
+
   
       var Y = image.getAttribute("height"); 		
       Y = parseInt(Y) ;
      
     
-      X += 10 ; 
+      X += 5 ; 
       Y += 0 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
@@ -491,7 +497,7 @@
      
     
       X += 0 ; 
-      Y -= 10 ;
+      Y -= 5 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
       LISTE1.push([b, X,Y]);
@@ -514,7 +520,7 @@
       Y = parseInt(Y) ;
      
     
-      X -= 10 ; 
+      X -= 5 ; 
       Y += 0 ;
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
