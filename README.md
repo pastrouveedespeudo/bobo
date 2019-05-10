@@ -5,6 +5,8 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+#ah merde c demain a 13heures bon finir les bug réfléchis pour l'écran finir et préparer la soutennce
+
 #bug on peut plus prendre de photo sans etre inscrit
 
 #bug mettre de la largueur ne marche plus
