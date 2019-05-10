@@ -65,6 +65,7 @@
         $("#draggable12, #draggable14, #draggable15, #draggable16, #draggable17, #draggable18, #draggable19, #draggable_favoris").draggable();
       } );
 
+
     
       </script>
 
@@ -128,8 +129,15 @@
                 <script>
                 LISTE_FAV_FAV = []
                 function favfav(id){
+
+                    
+                    document.getElementById(id).style.position='relative';
                     LISTE_FAV_FAV.push(id)
                     alert(LISTE_FAV_FAV[LISTE_FAV_FAV.length-1])
+
+                    var a = document.getElementById(id);
+                    alert(a.offsetLeft);
+                    alert(a.offsetTop);
                     }
 
 
@@ -140,13 +148,12 @@
 
                     
                     {% for i in coif %}
+
+              
+                            <img src="/static/img/portfolio/coupe/{{i}}" id='draggable_favoris' value='fav{{i}}'
+                            onclick='favfav(id)' style='position:absolute;'/>
                         
-                        <tr class="{% cycle 'row1' 'row2' %}">
-                        <div id='draggable_favoris' style='position:absolute;'>
-                            <img src="/static/img/portfolio/coupe/{{i}}" id="fav{{i}}" onclick='favfav(id)'/>
-                        </div>
-                        <tr>
-                        
+
                     {%endfor%}
 
 
@@ -283,32 +290,36 @@
 
   
     var LISTECOUPE = []
+
+    var liste_liste = [draggable,draggable3,draggable4,draggable5,draggable6,draggable7,draggable8,draggable9,
+                        draggable10,draggable11,draggable12,draggable14,draggable15,draggable16,draggable17,draggable18,
+                        draggable19]
+
     
     function yo() {
         
-      var liste = [draggable,draggable3,draggable4,draggable5,draggable6,draggable7,draggable8,draggable9,
-                   draggable10,draggable11,draggable12,draggable14,draggable15,draggable16,draggable17,draggable18,
-                   draggable19]
+
       
-      for(var i = 0; i <= liste.length - 1; i++){
+      for(var i = 0; i <= liste_liste.length - 1; i++){
      
-        var a = document.getElementById(liste[i].id).offsetLeft;
-        var b = document.getElementById(liste[i].id).offsetTop;
-        
-  
+        var a = document.getElementById(liste_liste[i].id).offsetLeft;
+        var b = document.getElementById(liste_liste[i].id).offsetTop;
+
         if(a >= 460 && a <= 580 & b >=60 && b <= 220 ){
           
-          LISTECOUPE.push(liste[i].id)
+          LISTECOUPE.push(liste_liste[i].id)
           document.getElementById("coupedecheveux").value = LISTECOUPE[LISTECOUPE.length - 1];
           alert(LISTECOUPE[LISTECOUPE.length - 1]);
+          
+          document.getElementById("jaime").submit();
         }
+      
+     };
+ 
+  };
 
 
-  
-
-        
-      };
-    };
+   
    
   
   </script>
@@ -352,14 +363,14 @@
           value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
 
         
-        <form method="POST" action='/photo/coupe'>{% csrf_token %}
+        <form id='jaime' method="POST" action='/photo/coupe'>{% csrf_token %}
         
           <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux" value=''>{% csrf_token %}
           
           <input type="hidden" name="coupe"
             value=LISTECOUPE>{% csrf_token %}
             <br>
-          <input type="submit" id="sub" value="J'aime cette coupe" onclick="yo()"
+          <input type="button" id="sub" value="J'aime cette coupe" onclick="yo()"
           <a class="btn btn-light btn-xl js-scroll-trigger">{% csrf_token %}
           
         </form>{% csrf_token %}
