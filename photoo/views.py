@@ -131,11 +131,11 @@ def coupe(request):
 
         fav = ''#ICIIIIIII IL Y A PEUT ETRE UNE ERREUR c ptetre [] 
         favoris_coupe = affichage_coupe_fav(current_user)
-        
-
+    
         if favoris_coupe:
             fav = True
-            
+
+
     except:
         pass
     
@@ -178,13 +178,14 @@ def coupe(request):
             no_choice = ''
             print(image,"0100000000000000000000000000000000000")
             current_user = request.user
-
+            
             try:
                 if fav == True:
                     return render(request, 'coupe.html', {'image':image, 'user':current_user,
                                                           'coif':favoris_coupe[0],
                                                           'largeur':favoris_coupe[1],
-                                                          'hauteur':favoris_coupe[2]})
+                                                          'hauteur':favoris_coupe[2],
+                                                          'nom':favoris_coupe[3]})
                 else:
                     return render(request, 'coupe.html', {'image':image, 'user':current_user,
                                                           'fav':fav})
@@ -192,12 +193,19 @@ def coupe(request):
             except:
                 return render(request, 'coupe.html', {'image':image, 'user':current_user})
 
+
+        if coupe:
+            print(coupe,'pppppppppppppppppppppppppppppppppp')
+
+
+
     try:
         if fav == True:
             return render(request, 'coupe.html', {'no_choice':no_choice,
                                                   'coif':favoris_coupe[0],
                                                   'largeur':favoris_coupe[1],
-                                                  'hauteur':favoris_coupe[2]})
+                                                  'hauteur':favoris_coupe[2],
+                                                  'nom':favoris_coupe[3]})
 
         else:
             return render(request, 'coupe.html', {'image':image, 'user':current_user,
@@ -205,6 +213,12 @@ def coupe(request):
         
     except:
         return render(request, 'coupe.html', {'no_choice':no_choice})
+
+
+
+
+
+    
 def habits(request):
     return render(request, 'habits.html')
 
