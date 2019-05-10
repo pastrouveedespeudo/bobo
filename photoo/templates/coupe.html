@@ -252,25 +252,16 @@
 
 
             </div>
-            
 
 
-            {% for i in coif %}
-         
-            {% for j in largeur %}
-            {% for k in hauteur %}
-            {% for l in nom %}
-         
-            <script>
-                
-                var a = document.getElementById('{{i}}').innerHTML = "<img src='/static/img/portfolio/coupe/{{l}}' width='{{j}}' height='{{k}}'/>";
-           
-            </script>
+      
+
+
+
+
             
-            {% endfor %}
-            {% endfor %}
-            {% endfor %}
-            {% endfor %}
+            
+     
 
             
             <div id='coupe_droite' style='margin-top:-100px;'>
@@ -522,6 +513,70 @@
         <center><input type='button' id='sauve' value='enregistrer la coupe'
         style="border:3px solid black;"/></center>
     </form>
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+           
+            <script>listeeeee = []</script>
+            {% for i in coif %}
+                
+                {% for j in i %}
+                    {{j}}
+                <script>
+
+                
+                 listeeeee.push('{{j}}')
+                
+                </script>
+                <br>
+                {% endfor %}
+            {% endfor %}
+
+        <script>
+        
+        console.log(listeeeee)
+        console.log({{coif|length}})
+
+        </script>
+
+        
+        <script>
+   
+        {% for i in coif %}
+     
+        for(var c = 0; c <= {{coif|length}}*4 - 1; c+=4){
+
+            console.log(listeeeee[c], listeeeee[c + 1], listeeeee[c + 2], listeeeee[c + 3])
+
+        var url = "<img src='/static/img/portfolio/coupe/"  + listeeeee[c + 1] + "'" +  "width=" + "'" + listeeeee[c + 2] + "'"
+            + "height=" + "'" +  listeeeee[c + 2] + "' />"
+        console.log(url)
+            
+        var a = document.getElementById(listeeeee[c]).innerHTML = url;
+
+            
+         }
+        {% endfor %}
+        </script>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
 
   </section>
 
