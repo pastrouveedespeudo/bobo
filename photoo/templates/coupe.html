@@ -38,12 +38,35 @@
         #draggable18,
         #draggable19,
         #draggable { width: 0px; height: 0px;}
+
+        #favdraggable2,
+        #favdraggable3,
+        #favdraggable4,
+        #favdraggable5,
+        #favdraggable6,
+        #favdraggable7,
+        #favdraggable8,
+        #favdraggable9,
+        #favdraggable10,
+        #favdraggable11,
+        #favdraggable12,
+        #favdraggable14,
+        #favdraggable15,
+        #favdraggable16,
+        #favdraggable17,
+        #favdraggable18,
+        #favdraggable19,
+        #favdraggable { width: 0px; height: 0px;}
+    
         #image{
             margin-top:-450px;
             
         }
         #coupe_gauche{
              margin-top:-280px;
+              margin-left:10px;
+              
+            
         }
     
         #coupe_droite{
@@ -66,7 +89,18 @@
       } );
 
 
-    
+
+    $( function() {
+        $("#favdraggable, #favdraggable2, #favdraggable3, #favdraggable4, #favdraggable5").draggable();
+      } );
+    $( function() {
+        $("#favdraggable6, #favdraggable7, #favdraggable8, #favdraggable9, #favdraggable10, #favdraggable11").draggable();
+      } );
+    $( function() {
+        $("#favdraggable12, #favdraggable14, #favdraggable15, #favdraggable16, #favdraggable17, #favdraggable18, #favdraggable19, #draggable_favoris").draggable();
+      } );
+
+
       </script>
 
 
@@ -105,64 +139,108 @@
          
             </script>
 
-
+    
             
             <div id="coupe_gauche" style='float:left; margin-top:-100px;'>
 
                 <div id='favoris' style='display:none' value={{fav}}></div>
 
-                
-                <script>
-                
-                    //ERREUR A COUP SUR ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII //
+
                     
-                    //var a = document.getElementById(favoris).value;//
-                    //if(a == ''){//
-                        //document.getElementById(coucou).innerHTML = "<p id='coucou'>Enregistre des coupes !</p>"//
-                    //}
+                <div id="favdraggable" name="coucou" value='coupe1' class="ui-widget-content" onclick="nom_image('coupe1', 200, 150)";>
+                    <img src="/static/img/portfolio/coupe/bbbbbbb.png" width='150' height='200' id="coupe1" style='display:none;'/>
+                </div>
+                
 
-                </script>
+                <div id="favdraggable3" class="ui-widget-content" value='coupe4' onclick="nom_image('coupe4', 150, 150)";>
+                    <img src="/static/img/portfolio/coupe/image849849849.png" width='150' height='150'  id="coupe4" style='display:none;'/>
+                </div>
+
+         
+                <div id="favdraggable4" class="ui-widget-content" value='coupe5' onclick="nom_image('coupe5', 150, 100)";>
+                    <img src="/static/img/portfolio/coupe/bbbbbbb.png" width='100' height='150'  id="coupe5" style='display:none;'/>
+                </div>
+                
+           
+                <div id="favdraggable5" class="ui-widget-content" value='coupe6' onclick="nom_image('coupe6', 300, 130)";>
+                    <img src="/static/img/portfolio/coupe/1.5.png"  width='130' height='300'  id="coupe6" style='display:none;'/>
+                </div>
+
+       
+                <div id="favdraggable6" class="ui-widget-content" value='coupe2' onclick="nom_image('coupe2', 300, 130)";>
+                    <img src="/static/img/portfolio/coupe/coucou3.png" width='130' height='300'  id="coupe2"style='display:none;'/>
+                </div>
 
 
                 
-
-                <script>
-                LISTE_FAV_FAV = []
-                function favfav(id, valuue){
-
-                    document.getElementById(id).style.position='relative';
-                    LISTE_FAV_FAV.push(valuue)
-                    LISTE_FAV_FAV.push(id)
-                    alert(LISTE_FAV_FAV[LISTE_FAV_FAV.length-1])
-
-                    var a = document.getElementById(id);
-
-                    var b = a.offsetLeft;
-                    var c = a.offsetTop;
-                    
-                    if(b >= 460 && b <= 580 & c >=60 && c <= 220 ){
-                        alert('uiiiiiiiiii')
-                        
-                        
-                        
-                    }
-                    }
+                <div id="favdraggable7" class="ui-widget-content" value='coupe22' onclick="nom_image('coupe22', 100, 70)";>
+                    <img src="/static/img/portfolio/coupe/coucou22.png" width='70' height='100'  id="coupe22"style='display:none;'/>
+                </div>
 
 
-                </script>
+                
+                <div id="favdraggable8" class="ui-widget-content" value='coupe8' onclick="nom_image('coupe8', 50, 70)";>
+                    <img src="/static/img/portfolio/coupe/coucou22.png" width='70' height='50' id="coupe8"style='display:none;'/>
+                </div>
+
+                <div id="favdraggable9" class="ui-widget-content" value='coupe9' onclick="nom_image('coupe9', 160, 140)";>
+                    <img src="/static/img/portfolio/coupe/coif.png"  width='140' height='160'  id="coupe9"style='display:none;'/>
+                </div>
+
+
+            
+                <div id="favdraggable10" class="ui-widget-content" value='coupe12' onclick="nom_image('coupe12', 250, 150)";>
+                    <img src="/static/img/portfolio/coupe/aa.png" width='150' height='250' id="coupe12"style='display:none;'/>
+                </div>
+
+          
+                <div id="favdraggable11" class="ui-widget-content" value='coupe13' onclick="nom_image('coupe13', 250, 150)";>
+                    <img src="/static/img/portfolio/coupe/aaaaa.png" width='150' height='250' id="coupe13"style='display:none;'/>
+                </div>
+
+             
+                <div id="favdraggable12" class="ui-widget-content"  value='coupe14' onclick="nom_image('coupe14', 160, 100)";>
+                    <img src="/static/img/portfolio/coupe/bb.png" width='100' height='160' id="coupe14" style='display:none;'/>
+                </div>
+
+  
+                <div id="favdraggable14" class="ui-widget-content"  value='coupe16'onclick="nom_image('coupe16', 160, 100)";>
+                    <img src="/static/img/portfolio/coupe/bbbb.png" width='100' height='160' id="coupe16" style='display:none;'/>
+                </div>
+
+
+              
+                <div id="favdraggable15" class="ui-widget-content"  value='coupe17'onclick="nom_image('coupe17', 250, 150)";>
+                    <img src="/static/img/portfolio/coupe/bbb.png" width='150' height='250' id="coupe17" style='display:none;'/>
+                </div>
+
+                
+                <div id="favdraggable16" class="ui-widget-content"  value='coupe18'onclick="nom_image('coupe18', 160, 140)";>
+                    <img src="/static/img/portfolio/coupe/1.1.png" width='140' height='160' id="coupe18" style='display:none;'/>
+                </div>
+  
+               
+                <div id="favdraggable17" class="ui-widget-content" value='coupe19' onclick="nom_image('coupe19', 100, 110)";>
+                    <img src="/static/img/portfolio/coupe/1.2.png" width='110' heigh='100' id="coupe19" style='display:none;'/>
+                </div>
+
+            
+                <div id="favdraggable18" class="ui-widget-content" value='coupe20' onclick="nom_image('coupe20', 250, 150)";>
+                    <img src="/static/img/portfolio/coupe/11.3.png" width='150' height='250' id="coupe20" style='display:none;'/>
+                </div>
+
+
+  
+                <div id="favdraggable19" class="ui-widget-content" value='coupe21' onclick="nom_image('coupe21', 250, 150)";>
+                    <img src="/static/img/portfolio/coupe/1.4.png" width='150' height='250' id="coupe21" style='display:none;'/>
+                </div>
+                
+
+
+
                 {% if user.is_authenticated %}
                     <p style='float:left;'><strong>Mes favoris</strong></p>
                     <p id='coucou'></p>
-
-                    
-                    {% for i in coif %}
-
-              
-                            <img src="/static/img/portfolio/coupe/{{i}}" id='draggable_favoris' value='fav{{i}}'
-                            onclick='favfav(id, "fav{{i}}" )' style='position:absolute;'/>
-                        
-
-                    {%endfor%}
 
 
 
@@ -177,8 +255,22 @@
             
 
 
-
-
+            {% for i in coif %}
+         
+            {% for j in largeur %}
+            {% for k in hauteur %}
+            {% for l in nom %}
+         
+            <script>
+                
+                var a = document.getElementById('{{i}}').innerHTML = "<img src='/static/img/portfolio/coupe/{{l}}' width='{{j}}' height='{{k}}'/>";
+           
+            </script>
+            
+            {% endfor %}
+            {% endfor %}
+            {% endfor %}
+            {% endfor %}
 
             
             <div id='coupe_droite' style='margin-top:-100px;'>
