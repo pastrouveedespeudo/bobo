@@ -9,6 +9,7 @@ from accounts.models import Accounts
 from .models import *
 
 from .coupe_dico import DICO_COIF2
+from .coupe_dico import DICO_COIF3
 
 def photo():
 
@@ -289,17 +290,30 @@ def affichage_coupe_fav(username):
     acc = favoris.objects.filter(user=username).all()
 
     liste_coif = []
+    liste_nom = []
     liste_larg = []
     liste_haut = []
+
+    
     for i in acc:
         for cle, valeur in DICO_COIF2.items():
             if i.coiffure == cle:
                 liste_coif.append(DICO_COIF2[cle])
+               
+                
+        
+        for cle, valeur in DICO_COIF2.items():
+            if i.coiffure == cle:
+                liste_nom.append(DICO_COIF3[cle])
+                
+                
+
+                
         liste_larg.append(i.largeur)
         liste_haut.append(i.hauteur)
 
         
-    return liste_coif, liste_larg, liste_haut
+    return liste_coif, liste_larg, liste_haut, liste_nom
         
             
 
