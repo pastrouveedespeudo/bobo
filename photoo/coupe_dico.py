@@ -18,7 +18,7 @@ DICO_COIF = {'draggable':'coupe1',
              }
 
 
-DICO_COIF2 = {'coupe1':'bbbbbbb.png',
+DICO_COIF3 = {'coupe1':'bbbbbbb.png',
             'coupe4':'image849849849.png',
             'coupe5':'bbbbbbb.png',
             'coupe6':'1.5.png',
@@ -36,3 +36,46 @@ DICO_COIF2 = {'coupe1':'bbbbbbb.png',
             'coupe20':'11.3.png',
             'coupe21':'1.4.png'
              }
+
+
+DICO_COIF2 = {'coupe1':'favdraggable',
+            'coupe4':'favdraggable3',
+            'coupe5':'favdraggable4',
+            'coupe6':'favdraggable5',
+            'coupe2':'favdraggable6',
+            'coupe22':'favdraggable7',
+            'coupe8':'favdraggable8',
+            'coupe9':'favdraggable9',
+            'coupe12':'favdraggable10',
+            'coupe13':'favdraggable11',
+            'coupe14':'favdraggable12',
+            'coupe16':'favdraggable14',
+            'coupe17':'favdraggable15',
+            'coupe18':'favdraggable16',
+            'coupe19':'favdraggable17',
+            'coupe20':'favdraggable18',
+            'coupe21':'favdraggable19'
+             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
