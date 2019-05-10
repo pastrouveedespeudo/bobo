@@ -128,16 +128,24 @@
 
                 <script>
                 LISTE_FAV_FAV = []
-                function favfav(id){
+                function favfav(id, valuue){
 
-                    
                     document.getElementById(id).style.position='relative';
+                    LISTE_FAV_FAV.push(valuue)
                     LISTE_FAV_FAV.push(id)
                     alert(LISTE_FAV_FAV[LISTE_FAV_FAV.length-1])
 
                     var a = document.getElementById(id);
-                    alert(a.offsetLeft);
-                    alert(a.offsetTop);
+
+                    var b = a.offsetLeft;
+                    var c = a.offsetTop;
+                    
+                    if(b >= 460 && b <= 580 & c >=60 && c <= 220 ){
+                        alert('uiiiiiiiiii')
+                        
+                        
+                        
+                    }
                     }
 
 
@@ -151,7 +159,7 @@
 
               
                             <img src="/static/img/portfolio/coupe/{{i}}" id='draggable_favoris' value='fav{{i}}'
-                            onclick='favfav(id)' style='position:absolute;'/>
+                            onclick='favfav(id, "fav{{i}}" )' style='position:absolute;'/>
                         
 
                     {%endfor%}
@@ -315,8 +323,25 @@
         }
       
      };
- 
+      
+     for (var i = 0; i <= LISTE_FAV_FAV.length - 1; i++){
+
+        var a = document.getElementById(LISTE_FAV_FAV[LISTE_FAV_FAV.length-1]);
+
+        var b = a.offsetLeft;
+        var c = a.offsetTop;
+        alert(b)
+        alert(c)
+        if(b >= 460 && b <= 580 & c >=60 && c <= 220 ){
+
+            document.getElementById("coupedecheveux").value = LISTE_FAV_FAV[LISTE_FAV_FAV.length - 2];
+            alert(LISTE_FAV_FAV[LISTE_FAV_FAV.length - 1]);
+            document.getElementById("jaime").submit();
+
+            
+    };
   };
+};
 
 
    
