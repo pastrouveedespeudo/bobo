@@ -6,26 +6,25 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#ca met la meme coupe trouve mais au moins ca met le nombre de favoris et en draggable
+
+#y intégrer le code pour les couleurs
+
+#refaire la database -> orm
+
 
 
 #responsivité de la page coupe
 
 #bug on peut plus prendre de photo sans etre inscrit
 
-
-
-
-#ranger les coiffures
-
 #adapter la zone input selon la taille ecran (en %)
 
+#nettoyer le code
 
-#plusieurs images ont les memes noms chrois change les ! et les memes du meme style
 
-#ok le code etait passable mtn il est ... le factoriser
 
-#oufff, mattis lui il le fait sans les mains bon stop code recite mtn
+
+
 
 
 
@@ -33,9 +32,9 @@
 
 
 
-#ajouter mes_favoris
+#supprimer favoris
 
-#database
+
 
 #------------------
 
