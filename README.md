@@ -6,7 +6,7 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#soit laisse tombé les draggables favoris soit trouve comment faire en sorte que chaque element de la liste est un identifiant propre a lui
+#nik sa race, mettre touuuuuuuuutes les draggables en un autre exemplaire les mettre invisible et si dans la liste y'a on le remet visible gouter
 
 
 #responsivité de la page coupe
