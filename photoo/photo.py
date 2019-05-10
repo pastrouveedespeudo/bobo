@@ -290,30 +290,35 @@ def affichage_coupe_fav(username):
     acc = favoris.objects.filter(user=username).all()
 
     liste_coif = []
-    liste_nom = []
+
+    
+    liste1 = []
     liste_larg = []
     liste_haut = []
 
     
     for i in acc:
+        liste1 = []
         for cle, valeur in DICO_COIF2.items():
             if i.coiffure == cle:
-                liste_coif.append(DICO_COIF2[cle])
+                liste1.append(DICO_COIF2[cle])
                
                 
         
         for cle, valeur in DICO_COIF2.items():
             if i.coiffure == cle:
-                liste_nom.append(DICO_COIF3[cle])
+                liste1.append(DICO_COIF3[cle])
                 
                 
 
                 
-        liste_larg.append(i.largeur)
-        liste_haut.append(i.hauteur)
+        liste1.append(i.largeur)
+        liste1.append(i.hauteur)
 
-        
-    return liste_coif, liste_larg, liste_haut, liste_nom
+        liste_coif.append(liste1)
+
+    print(liste_coif)
+    return liste_coif
         
             
 
