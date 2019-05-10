@@ -284,24 +284,27 @@
      
         var a = document.getElementById(liste[i].id).offsetLeft;
         var b = document.getElementById(liste[i].id).offsetTop;
-      
-        if(a >= 460 && a <= 580 & b >=50 && b <= 110 ){
+        
+  
+        if(a >= 460 && a <= 580 & b >=60 && b <= 220 ){
+          alert('OUIIII');
           LISTECOUPE.push(liste[i].id)
           document.getElementById("coupedecheveux").value = LISTECOUPE[LISTECOUPE.length - 1];
      
-        };
+        }
+
 
         
       };
     };
-    
+   
   
   </script>
 
 
-       <div id="image" style='width:300px; height:300px; background:#069;margin-left:404px;margin-top:60px;'>
+       <div id="image" style='width:300px; height:300px; background:#069;margin-left:450px;margin-top:60px;'>
            
-            <img src="/static/img/portfolio/photo/{{user}}/cheveux/{{image}}" id="image1"/>
+            <img src="/static/img/portfolio/photo/{{user}}/cheveux/{{image}}" style='margin-top:60px;width: 240px;height: 200px;'/>
               <br>
               <a href='/photo/mes_images' style='color:black;'>Changez l'image</a>
  
@@ -314,7 +317,7 @@
               
               if(monTexte == "no_choice"){
 
-                document.getElementById('image').innerHTML = "<img src ='/static/img/manequin.jpg' style='margin-top:40px;width: 240px;height: 200px;'>\
+                document.getElementById('image').innerHTML = "<img src ='/static/img/manequin.jpg' style='margin-top:60px;width: 240px;height: 200px;'>\
                                                               <br><br><a href='/photo/mes_images' style='color:black;'>prendre une de mes image</a>";
 
 
@@ -344,7 +347,7 @@
           <input type="hidden" name="coupe"
             value=LISTECOUPE>{% csrf_token %}
             <br>
-          <input type="submit" id="sub" value="J'aime cette coupe" onclick="yo()"
+          <input type="button" id="sub" value="J'aime cette coupe" onclick="yo()"
           <a class="btn btn-light btn-xl js-scroll-trigger">{% csrf_token %}
           
         </form>{% csrf_token %}
