@@ -125,47 +125,61 @@
                         <div class="col-sm">
                         <img src='/static/bobo/2b.jpg' style='width:100px; height:100px;'><br>
                         <input type='image' src='/static/bobo/2a.jpg' style='width:100px; height:250px;'
-                        id='2' onclick='info()'><br>
+                        id='2.jpg' onclick='info(id)'><br>
                         </div>
 
                         <div class="col-sm">
                         <img src='/static/bobo/3b.jpg' style='width:100px; height:100px;'><br>
                         <input type='image' src='/static/bobo/3a.jpg' style='width:100px; height:250px;'
-                        id='3' onclick='info()'><br>
+                        id='3.jpg' onclick='info(id)'><br>
                         </div>
 
                         <div class="col-sm">
                         <img src='/static/bobo/4b.jpg' style='width:100px; height:100px;'><br>
                         <input type='image' src='/static/bobo/4a.jpg' style='width:100px; height:250px;'
-                        id='4' onclick='info()'><br>
+                        id='4.jpg' onclick='info(id)'><br>
                         </div>
 
                         <div class="col-sm">
                         <img src='/static/bobo/5b.jpg' style='width:100px; height:100px;'><br>
                         <input type='image' src='/static/bobo/5a.jpg' style='width:100px; height:250px;'
-                        id='5' onclick='info()'><br>
+                        id='5.jpg' onclick='info(id)'><br>
                         </div>
 
                         <div class="col-sm">
                         <img src='/static/bobo/6b.jpg' style='width:100px; height:100px;'><br>
                         <input type='image' src='/static/bobo/6a.jpg' style='width:100px; height:250px;'
-                        id='6' onclick='info()'><br>
+                        id='6.jpg' onclick='info(id)'><br>
                         </div>
 
                         <div class="col-sm">
                         <img src='/static/bobo/7b.jpg' style='width:100px; height:100px;'><br>
                         <input type='image' src='/static/bobo/7a.jpg' style='width:100px; height:250px;'
-                        id='7' onclick='info()'><br>
+                        id='7.jpg' onclick='info(id)'><br>
                         </div>
 
                         <div class="col-sm">
                         <img src='/static/bobo/8b.jpg' style='width:100px; height:100px;'><br>
                         <input type='image' src='/static/bobo/8a.jpg' style='width:100px; height:250px;'
-                        id='8' onclick='info()'><br>
+                        id='8.jpg' onclick='info(id)'><br>
                         </div>  
 
                     </div>
                 </div>
+      <br><br>
+      <div id='info_image'></div>
+
+      <script>
+        function info(id){
+          var identifiant = document.getElementById(id).id;
+    
+          document.getElementById('info_image').innerHTML = identifiant;
+          
+
+          }
+
+      </script>
+
 
       
     <br><br><br><br><br><br><br><br>
@@ -176,12 +190,40 @@
 
 
 
+  <script>
+          var LISTE = []
+          var LISTE_IMAGE = []
+          var LISTE_SEXE = []
+  </script>
+
+  {% for i in data %}
+  {{i|slice:'1:2'}}
+
+  <script>
+
+    LISTE_IMAGE.push(['{{i|slice:'1:2'}}'])
+    LISTE_SEXE.push(['{{i|slice:'2:3'}}'])
+    
+    
+  </script>
 
 
 
 
 
 
+
+
+  {%endfor%}
+
+
+<script>
+
+  console.log(LISTE[0]);
+  console.log(LISTE_SEXE[0]);
+
+
+</script>
 
 
 
