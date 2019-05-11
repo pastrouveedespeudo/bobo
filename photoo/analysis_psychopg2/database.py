@@ -1,44 +1,55 @@
 import psycopg2
 
-from .config import DATABASE
-from .config import USER
-from .config import HOST
-from .config import PASSWORD
+from config import DATABASE
+from config import USER
+from config import HOST
+from config import PASSWORD
 
 
 class table:
+
+    def creation_database(self):
+        pass
+    #faudra la faire create database bobo
+    
     def creation_table_donnée(self):
 
-        conn = psycopg2.connect(database=DATABASE,
-                                        user=USER,
-                                        host=HOST,
-                                        password=PASSWORD) 
-
+        conn = psycopg2.connect(database='bobo',
+                                user='postgres',
+                                host='127.0.0.1',
+                                password='tiotiotio333') 
 
         cur = conn.cursor()
         
         cur.execute("""create table bobo1(
-                    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    id serial PRIMARY KEY,
                     image varchar(100),
                     sexe varchar(100),
                     coiffure varchar(100),
                     haut text,
                     bas text,
                     taille_haut int,
-                    taille_bas int,
-                    PRIMARY KEY(id) )
-                    ENGINE=InnoDB;
+                    taille_bas int);
                     """)
         
         conn.commit()
 
 
 
+
+
 class insertion_table:
      
     def insertion_info(self, nom, sexe, haut, bas, taille_haut, taille_bas):
-        connexion_database.connexion(self)
 
+        conn = psycopg2.connect(database='bobo',
+                                user='postgres',
+                                host='127.0.0.1',
+                                password='tiotiotio333')
+
+        cur = conn.cursor()
+
+        
         self.taille_haut = taille_haut
         self.taille_bas = taille_bas
         self.nom = nom
@@ -55,18 +66,25 @@ class insertion_table:
                   taille_bas)
 
         
-        self.cursor.execute(sql, values)
-        self.connexion.commit()
+        cur.execute(sql, values)
+        conn.commit()
 
 
 
 
     def coiffure(self, coiffure, image):
+        
+        conn = psycopg2.connect(database='bobo',
+                                user='postgres',
+                                host='127.0.0.1',
+                                password='tiotiotio333') 
 
+        cur = conn.cursor()
+        
         self.coiffure = coiffure
         self.image = image
 
-        connexion_database.connexion(self)
+
         
         sql = ("""update bobo1
                 set coiffure = %s
@@ -75,19 +93,23 @@ class insertion_table:
         values = (self.coiffure, self.image)
 
         
-        self.cursor.execute(sql, values)
-        self.connexion.commit()
+        cur.execute(sql, values)
+        conn.commit()
 
 
 
 
 class visualisation_table:
     def visualisation_donnée(self):
-        connexion_database.connexion(self)
+        
+        conn = psycopg2.connect(database='bobo',
+                                user='postgres',
+                                host='127.0.0.1',
+                                password='tiotiotio333') 
 
-
-        self.cursor.execute("""SELECT * from bobo1
-                            """)
+        cur = conn.cursor()
+        
+        cur.execute("""SELECT * from bobo1""")
                            
         
         rows = self.cursor.fetchall()
@@ -101,8 +123,11 @@ class visualisation_table:
 
 
 
+table = table()
+#table.creation_table_donnée()
 
-
+#visualisation_table = visualisation_table()
+#visualisation_table.visualisation_donnée()
 
 
 
