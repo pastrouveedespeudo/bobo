@@ -5,6 +5,7 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+# lis ca avant
 
 #récupérer les 50 premeires couleurs par un max
 
