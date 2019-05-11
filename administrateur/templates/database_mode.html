@@ -168,13 +168,21 @@
                 </div>
       <br><br>
       <div id='info_image'></div>
-
+      VOULEZ VOUS VOIR A QUOI CORRESPOND CETTE COULEUR (liste_haut bas par exeple)
       <script>
         function info(id){
           var identifiant = document.getElementById(id).id;
     
           document.getElementById('info_image').innerHTML = identifiant;
-          
+
+          en gros for i in liste:
+          if i == document.get ect....
+          liste.indexOF(i)
+          et pour toute les listes gl pcque la tu vois mais demain ^^
+            console.log(LISTE_IMAGE[0]);
+            console.log(LISTE_SEXE[0]);
+            console.log(LISTE_HAUT[0]);
+            console.log(LISTE_BAS[0]);
 
           }
 
@@ -191,9 +199,16 @@
 
 
   <script>
+  
           var LISTE = []
           var LISTE_IMAGE = []
           var LISTE_SEXE = []
+          var LISTE_HAUT = []
+          var LISTE_BAS = []
+
+
+
+          
   </script>
 
   {% for i in data %}
@@ -201,9 +216,17 @@
 
   <script>
 
-    LISTE_IMAGE.push(['{{i|slice:'1:2'}}'])
-    LISTE_SEXE.push(['{{i|slice:'2:3'}}'])
-    
+    function decodeHtml(html) {
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
+
+
+    LISTE_IMAGE.push([decodeHtml("{{i|slice:'1:2'}}").slice(2,-3)])
+    LISTE_SEXE.push([decodeHtml("{{i|slice:'2:3'}}").slice(2,-3)])
+    LISTE_HAUT.push([decodeHtml("{{i|slice:'4:5'}}").slice(2,-3)])
+    LISTE_BAS.push([decodeHtml("{{i|slice:'5:6'}}").slice(2,-3)])
     
   </script>
 
@@ -214,16 +237,9 @@
 
 
 
-  {%endfor%}
+  {% endfor %}
 
 
-<script>
-
-  console.log(LISTE[0]);
-  console.log(LISTE_SEXE[0]);
-
-
-</script>
 
 
 
