@@ -61,8 +61,8 @@ class insertion_table:
         cur.execute("""insert into bobo1
                  (image, sexe, haut, bas, taille_haut, taille_bas)
                  values(%s, %s, %s, %s, %s, %s);""",
-                 self.nom, self.sexe, self.haut, self.bas, self.taille_haut,
-                 taille_bas)
+                 (self.nom, self.sexe, self.haut, self.bas, self.taille_haut,
+                 taille_bas))
 
         
         
@@ -87,7 +87,7 @@ class insertion_table:
         
         cur.execute("""update bobo1
                 set coiffure = %s
-                where image = %s;""", self.coiffure, self.image)
+                where image = %s;""", (self.coiffure, self.image))
 
         
 
