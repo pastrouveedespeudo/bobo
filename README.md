@@ -6,7 +6,11 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#faire un programme qui se sert de mysql et remplir de fait imaginons que je veuille passer sous ruby ou rail ? j'ai besoin d'avoir ma database c le seul truk que j'ai trouvé a dire... du coup pour pollution je ferai la meme un programme qui se lance en libre et qui envoie la réponse a django; et pour m'appuyer jdirai qu'instagramme fait pareil ou je fais pareil plutot jsp que la source était bonne
+#récupérer les 50 premeires couleurs par un max
+
+#le faire avec nos vetements en stock
+
+#comparer notre modele avec nos images donc 50 premiere de notre base de donnée (orm pcque postgres marche pas les 6 versions ne marchent pas) avec les 50 de notre stock avec un boucle si les 2 listes match a + 50% alors on peut afficher ce vetement selon si c une brune blonde ou chataine ca va etre tres long a charger le faire directement depuis l'orm
 
 
 
