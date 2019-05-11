@@ -58,15 +58,14 @@ class insertion_table:
         self.bas = bas
         
         
-        sql = ("""insert into bobo1
+        cur.execute("""insert into bobo1
                  (image, sexe, haut, bas, taille_haut, taille_bas)
-                 values(%s, %s, %s, %s, %s, %s);""")
-
-        values = (self.nom, self.sexe, self.haut, self.bas, self.taille_haut,
-                  taille_bas)
+                 values(%s, %s, %s, %s, %s, %s);""",
+                 self.nom, self.sexe, self.haut, self.bas, self.taille_haut,
+                 taille_bas)
 
         
-        cur.execute(sql, values)
+        
         conn.commit()
 
 
@@ -86,14 +85,12 @@ class insertion_table:
 
 
         
-        sql = ("""update bobo1
+        cur.execute("""update bobo1
                 set coiffure = %s
-                where image = %s;""")
-
-        values = (self.coiffure, self.image)
+                where image = %s;""", self.coiffure, self.image)
 
         
-        cur.execute(sql, values)
+
         conn.commit()
 
 
@@ -123,7 +120,7 @@ class visualisation_table:
 
 
 
-table = table()
+#table = table()
 #table.creation_table_donnée()
 
 #visualisation_table = visualisation_table()
