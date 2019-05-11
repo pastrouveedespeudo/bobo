@@ -5,9 +5,17 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-#par contre le coté admin est plus jolie que le site...
+#mettre tous les truk orange en bleu
 
-#un quart d'heure a chercher pikachu detective et  20 min a le matter danser...
+#mettre azurebleu == div de la couleur a l'appuie
+
+#ajoute les consignes pour ajouter des images
+
+#jvoulais pas faire ca mais c'est trop cool de recommencer une app
+
+#trouver des argumlent de pk t'as prisd heroku
+
+#jsp dans la video jtai sain oh j'ai trop peur
 
 #code postgres sans majuscule réfléchis pour refaire mysql -< postgres fichier indé
 
