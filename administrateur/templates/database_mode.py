@@ -28,14 +28,42 @@
           <div class="col-lg-8 align-self-baseline">
              <p class="text-white-75 font-weight-light mb-5"></p>
           
+            <div id='interface'>
 
-             <input type='button' value='voir la database' onclick='database_mode()'>
-             <input type='button' value='enrichir la database' onclick='database_mode()'> <br><br>
-             <input type='button' value='voir la tendance du moment' onclick='database_mode()'>
+                <input type='button' value='voir la database' onclick='database()'>
+
+            </div>
 
 
 
-          
+            <script>
+
+                function database(){
+                    
+                    document.getElementById('interface').innerHTML = ''
+                    document.getElementById('interface').innerHTML = "<input type='button' value='voir la database femme' onclick='database()'> &nbsp;&nbsp;" +
+                                                                    "<input type='button' value='voir la database homme' onclick='database()'>"
+
+
+
+                    }
+
+            </script>
+
+
+            
+            <br><br>
+            <input type='button' value='revenir en arriere' onclick='arriere()'>
+
+            
+            <script>
+            
+                function arriere(){
+                    document.location.href="/administrateur/mode"; 
+                }
+            </script>
+
+            
         
       </div>
     </div>
