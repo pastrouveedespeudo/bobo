@@ -6,6 +6,9 @@ from django.conf.urls import include
 urlpatterns = [
     path(r'admin/', admin.site.urls),
     path(r'/mode', views.mode),
-    path(r'/database_mode', views.database_mode)
+    path(r'/database_mode', views.database_mode),
+    path(r'/tendance', views.tendance),
+    path(r'/ajout', views.ajout),
+    path(r'/analyse', views.analyse),
  
 ]
