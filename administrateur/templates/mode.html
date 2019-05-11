@@ -30,16 +30,27 @@
           
 
              <input type='button' value='voir la database' onclick='database_mode()'>
-             <input type='button' value='enrichir la database' onclick='database_mode()'> <br><br>
-             <input type='button' value='voir la tendance du moment' onclick='database_mode()'>
+             <input type='button' value='enrichir la database' onclick='ajout()'> <br><br>
+             <input type='button' value='voir la tendance du moment' onclick='tendance()'><br><br>
+             <input type='button' value='faire une analyse' onclick='analyse()'>
 
 
              <script>
 
                  function database_mode(){
                     document.location.href="/administrateur/database_mode"; 
-  
+                   }
 
+                 function tendance(){
+                    document.location.href="/administrateur/tendance"; 
+                   }
+
+                 function ajout(){
+                    document.location.href="/administrateur/ajout"; 
+                   }
+
+                 function analyse(){
+                    document.location.href="/administrateur/analyse"; 
                    }
 
              </script>
