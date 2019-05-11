@@ -12,7 +12,9 @@
 
 #comparer notre modele avec nos images donc 50 premiere de notre base de donnée (orm pcque postgres marche pas les 6 versions ne marchent pas) avec les 50 de notre stock avec un boucle si les 2 listes match a + 50% alors on peut afficher ce vetement selon si c une brune blonde ou chataine ca va etre tres long a charger le faire directement depuis l'orm
 
+#oublie pas enleve dico recup les truk de color db  
 
+#t'as juste a faire un row in row et a create un objet juste ca a remplir avec i[0] i[1] etc... et faire un programme DANS django pas a l'extérieur genre @admin required et a lancé genre remplissez votre database et on met tout a jour et faire la meme avec pollution
 
 
 
@@ -54,9 +56,7 @@
 
 #mettre l'image en noir et blanc
 
-#revois les couleurs => noir -> gris, bleu -> gris
 
-#faire les pourcentages 
 
 
 
