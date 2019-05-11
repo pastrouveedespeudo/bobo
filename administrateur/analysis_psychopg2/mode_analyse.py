@@ -1,4 +1,4 @@
-from database import visualisation_table
+from .database import visualisation_table
 
 
 
@@ -22,12 +22,18 @@ class visu:
 
 
         
-
+        return vision
         
         
 
 
-if __name__ == '__main__':
 
-    visu = visu()
-    visu.visu()
+
+visu = visu()
+vision = visu.visu()
+
+def recup():
+
+    return vision
+    
+    
