@@ -27,27 +27,59 @@
           
           <div class="col-lg-8 align-self-baseline">
              <p class="text-white-75 font-weight-light mb-5"></p>
-          
-            <div id='interface'>
 
-                <input type='button' value='Ajouter des images' onclick='ajouter()'>
+
+
+
+
+
+
+
+            <div id='femme' style='display:none'>
+
+                <p>Database femme</p>
+
+                
 
             </div>
 
+
+
+
+
+
+
+
+
+
+          
+            <div id='interface'>
+
+                <input type='button' value='voir la database' onclick='database()'>
+
+            </div>
+
+
+
             <script>
 
-                function ajouter(){
-
+                function database(){
+                    
                     document.getElementById('interface').innerHTML = ''
-                    document.getElementById('interface').innerHTML = '<input type="button" value="ajouter des coupes"><br><br>' +
-                                                                     '<input type="button" value="ajouter des habits"><br><br>' +
-                                                                    '<input type="button" value="nan rien"><br><br>'
+                    document.getElementById('interface').innerHTML = "<input type='button' value='voir la database femme' onclick='femme()'>" +
+                                                                    "&nbsp;&nbsp;" + 
+                                                                    "<input type='button' value='voir la database homme' onclick='homme()'>"
+
 
 
                     }
 
             </script>
-            <br><br>
+
+
+            
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            
             <input type='button' value='revenir en arriere' onclick='arriere()'>
 
             
@@ -56,6 +88,16 @@
                 function arriere(){
                     document.location.href="/administrateur/mode"; 
                 }
+
+                function femme(){
+                    document.getElementById('interface').style.display = 'none';
+                    document.getElementById('femme').style.display = 'block';
+                }
+
+                function homme(){
+                    document.getElementById('interface').innerHTML = ''
+                }
+                
             </script>
 
             
