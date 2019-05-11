@@ -27,24 +27,24 @@
           
           <div class="col-lg-8 align-self-baseline">
              <p class="text-white-75 font-weight-light mb-5"></p>
-          
-
-             <input type='button' value='voir la database' onclick='database_mode()'>
-             <input type='button' value='enrichir la database' onclick='database_mode()'> <br><br>
-             <input type='button' value='voir la tendance du moment' onclick='tendance()'><br><br>
-             <input type='button' value='faire une analyse' onclick='tendance()'>
 
 
-             <script>
+          <div id='interface'>
+               <input type='button' value='Ajouter des images' onclick='ajouter()'>
+          </div>
 
-                 function database_mode(){
-                    document.location.href="/administrateur/database_mode"; 
-                   }
+     
+            <script>
 
-                 function tendance(){
-                    document.location.href="/administrateur/tendance"; 
-                   }
+                function ajouter(){
 
+                    document.getElementById('interface').innerHTML = ''
+                    document.getElementById('interface').innerHTML = '<input type="button" value="ajouter des coupes"><br><br>' +
+                                                                     '<input type="button" value="ajouter des habits"><br><br>' +
+                                                                    '<input type="button" value="nan rien"><br><br>'
+
+
+                    }
 
 
 
