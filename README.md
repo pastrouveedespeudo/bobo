@@ -5,7 +5,9 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+#par contre le coté admin est plus jolie que le site...
 
+#un quart d'heure a chercher pikachu detective et  20 min a le matter danser...
 
 #code postgres sans majuscule réfléchis pour refaire mysql -< postgres fichier indé
 
