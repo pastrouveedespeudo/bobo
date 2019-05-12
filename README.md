@@ -30,6 +30,7 @@
 
 #nettoyer le code
 
+#bug avec des images 10: 
 
 
 
