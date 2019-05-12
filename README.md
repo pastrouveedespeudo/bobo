@@ -6,7 +6,7 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#image petit coeur s'affiche pas depuis la base de donnée (elle a pas été pris en compte la refaire)
+#ok chui foutu j'ai de meilleur coms pour l'uml que pour le code
 
 #faire pour les hommes depuis insertion database 
 
