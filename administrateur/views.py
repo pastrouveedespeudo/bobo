@@ -15,15 +15,17 @@ def mode(request):
 def database_mode(request):
 
     data = recup()
+    data_coupe = recup2()
+    
     print(data)
     print('ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
 
     data2 = haut_bas()
-    for i in data2:
-        print(i)
+
 
         
-    return render(request, "database_mode.html", {'data':data})
+    return render(request, "database_mode.html", {'data':data, 'data2':data2,
+                                                  'data_coupe':data_coupe})
 
 
 def tendance(request):
