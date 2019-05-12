@@ -1,4 +1,4 @@
-from database import visualisation_table
+from .database import visualisation_table
 
 
 
@@ -435,44 +435,13 @@ def traitement_coul(a):
             [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
             [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
             [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
-             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     ]
 
 
 
-    print(a)
+ 
     liste = []
 
     #on met la liste dans une liste car c du str
@@ -492,7 +461,6 @@ def traitement_coul(a):
     liste = "'" + liste + "'"
     #on ajoute ' au debut et a la fin
 
-    print(liste)
     c = 0
 
     for i in liste:
@@ -506,7 +474,7 @@ def traitement_coul(a):
 
     liste2 = []
 
-    print('d',CONTENEUR)
+
     for i in CONTENEUR:
         if i == []:
             pass
@@ -530,6 +498,16 @@ def traitement_coul(a):
             if i == cle:
                 dico[i]+=1
 
+
+
+    nb = 0
+    for cle, valeur in dico.items():
+        if cle == 'white':
+            blanc = valeur
+
+        nb += valeur  
+
+
     liste4 = []
 
     for cle, valeur in dico.items():
@@ -541,12 +519,17 @@ def traitement_coul(a):
 
 
 
+    fond = (100*blanc)/nb
     
-    return liste4
+    if fond < 50.0:
+        fond = True
+    else:
+        fond = False
+        
+    return liste4, fond
     
 
     
-
 
 
 class visu:
@@ -554,20 +537,76 @@ class visu:
     def visu(self):
         vision = visualisation_table.visualisation_donnée(self)
 
-        for i in vision:
-            
-            print('haut')
-            a = traitement_coul(vision[3][4])
-            print(a)
-            print('\n')
-            
-            print('bas')
-            b = traitement_coul(vision[3][5])
-            print(b)
-         
-            
+        LISTE_HAUT = []
+        LISTE_BAS = []
+        FOND_HAUT = []
+        FOND_BAS = []
 
+        
+        c = 0
+        try:
+            for i in vision:
 
+                nom = vision[c][1]
+                print(nom)
+                
+                print('haut')
+                a = traitement_coul(vision[c][4])
+                #print(a[0])
+                #print(a[1])
+                
+                print('\n')
+                
+                print('bas')
+                b = traitement_coul(vision[c][5])
+                #print(b[0])
+                #print(b[1])
+
+                print('\n')
+                print('\n')
+
+                LISTE_HAUT.append(a[0])
+                LISTE_BAS.append(b[0])
+                FOND_HAUT.append(a[1])
+                FOND_BAS.append(b[1])
+                
+
+                c+=1
+                    
+        except:
+            pass
+
+        return LISTE_HAUT, LISTE_BAS, LISTE_HAUT, LISTE_BAS
 
 visu = visu()
-visu.visu()
+data = visu.visu()
+
+
+def haut_bas():
+    print(data)
+    return data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
