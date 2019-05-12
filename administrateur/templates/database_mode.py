@@ -250,8 +250,8 @@
           document.getElementById('image_into_vetement').src = '/static/bobo/' +
                                                           LISTE_IMAGE[LISTE[LISTE.length-2]]
 
-          document.getElementById('couleur_haut').innerHTML = '<input type="button" value="voir les couleurs du haut">';
-          document.getElementById('couleur_bas').innerHTML = '<input type="button" value="voir les couleurs du bas">';
+          document.getElementById('couleur_haut').innerHTML = '<input type="button" value="voir les couleurs du haut" onclick="coul_haut()">';
+          document.getElementById('couleur_bas').innerHTML = '<input type="button" value="voir les couleurs du bas" onclick="coul_bas()">';
           
 
           }
@@ -301,6 +301,25 @@
     LISTE_HAUT.push([decodeHtml("{{i|slice:'4:5'}}").slice(2,-3)])
     LISTE_BAS.push([decodeHtml("{{i|slice:'5:6'}}").slice(2,-3)])
     
+  </script>
+
+
+
+  <script>
+
+      function coul_haut(){
+        document.getElementById('couleur_haut').innerHTML = LISTE_HAUT;
+
+        }
+
+
+      function coul_bas(){
+        document.getElementById('couleur_haut').innerHTML = LISTE_BAS;
+
+
+        }
+
+
   </script>
 
 
