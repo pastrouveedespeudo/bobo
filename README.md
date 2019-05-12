@@ -6,7 +6,9 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#ok chui foutu j'ai de meilleur coms pour l'uml que pour le code
+#ok nettoyer les listes faut en compter les couleurs
+
+#faire le pdf
 
 #faire pour les hommes depuis insertion database 
 
