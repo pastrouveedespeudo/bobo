@@ -5,6 +5,11 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+
+#image petit coeur s'affiche pas depuis la base de donnée (elle a pas été pris en compte la refaire)
+
+#faire pour les hommes depuis insertion database 
+
 #mettre tous les truk orange en bleu
 
 #mettre azurebleu == div de la couleur a l'appuie
