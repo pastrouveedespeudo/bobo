@@ -48,11 +48,31 @@ def traitement_coul(a):
             i = "".join(i)
             liste2.append(i)
 
-    print(liste2)
-
-
-
     dico = {}
+    
+
+    liste3 = set(liste2)
+
+    for i in liste3:
+        dico[i] = 0
+
+    print(dico)
+
+    for i in liste2:
+        for cle, valeur in dico.items():
+            if i == cle:
+                dico[i]+=1
+
+    liste4 = []
+    for cle, valeur in dico.items():
+        if valeur == 0:
+            pass
+        else:
+            liste4.append((cle, valeur))
+
+    print(liste4)
+
+    
 
 
 
