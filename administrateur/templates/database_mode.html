@@ -80,7 +80,7 @@
 
                 function femme(){
                     document.getElementById('interface').style.display = 'none';
-                    document.getElementById('femme').style.display = 'block';
+                    document.getElementById('container').style.display = 'block';
                 }
 
                 function homme(){
@@ -119,7 +119,7 @@
                 
             </div>
 
-                <div class="container">
+                <div class="container" id='container' style='display:none;'>
                       <div class="row">
 
                         <div class="col-sm">
@@ -198,11 +198,9 @@
 
 
       <br><br>
-      VOULEZ VOUS VOIR A QUOI CORRESPOND CETTE COULEUR (liste_haut bas par exeple)
-            console.log(LISTE_IMAGE[0]);
-            console.log(LISTE_SEXE[0]);
-            console.log(LISTE_HAUT[0]);
-            console.log(LISTE_BAS[0]);
+
+
+
 
             
       <script>
@@ -250,8 +248,8 @@
           document.getElementById('image_into_vetement').src = '/static/bobo/' +
                                                           LISTE_IMAGE[LISTE[LISTE.length-2]]
 
-          document.getElementById('couleur_haut').innerHTML = '<input type="button" value="voir les couleurs du haut" onclick="coul_haut()">';
-          document.getElementById('couleur_bas').innerHTML = '<input type="button" value="voir les couleurs du bas" onclick="coul_bas()">';
+          document.getElementById('couleur_haut').innerHTML = '<input type="button" value="voir les couleurs du haut" onclick="coul_haut(image)">';
+          document.getElementById('couleur_bas').innerHTML = '<input type="button" value="voir les couleurs du bas" onclick="coul_bas(image)">';
           
 
           }
@@ -275,8 +273,7 @@
           var LISTE = []
           var LISTE_IMAGE = []
           var LISTE_SEXE = []
-          var LISTE_HAUT = []
-          var LISTE_BAS = []
+
 
        
   </script>
@@ -285,7 +282,7 @@
 
 
   {% for i in data %}
-  {{i|slice:'1:2'}}
+
 
   <script>
 
@@ -298,8 +295,7 @@
 
     LISTE_IMAGE.push([decodeHtml("{{i|slice:'1:2'}}").slice(2,-3)])
     LISTE_SEXE.push([decodeHtml("{{i|slice:'2:3'}}").slice(2,-3)])
-    LISTE_HAUT.push([decodeHtml("{{i|slice:'4:5'}}").slice(2,-3)])
-    LISTE_BAS.push([decodeHtml("{{i|slice:'5:6'}}").slice(2,-3)])
+
     
   </script>
 
@@ -307,8 +303,14 @@
 
   <script>
 
+      var image = document.getElementById('info_image').innerHTML = identifiant;
+      
+    
+
       function coul_haut(){
+        alert(image)
         document.getElementById('couleur_haut').innerHTML = LISTE_HAUT;
+
 
         }
 
@@ -329,13 +331,41 @@
 
 
 
+  <script>
+        var LISTE_HAUT = []
+        var LISTE_BAS = []
+  </script>
 
 
 
+  {% for i in data2 %}
+
+
+    {{i|slice:'1'}}
+    <br><br>
+    {{i|slice:'1:2'}}
+    <br><br>
+    {{i|slice:'2:3'}}
+    <br><br>
+    {{i|slice:'3:4'}}
+    <br><br>
+    {{i|slice:'4:5'}}
+
+
+    <br><br><br><br><br><br><br><br><br><br><br>
 
 
 
+    
+    <script>
+    
+      LISTE_HAUT.push([decodeHtml("{{i|slice:'1'}}").slice(2,-3)], [decodeHtml("{{i|slice:'4:5'}}").slice(2,-3)]);
+      LISTE_BAS.push([decodeHtml("{{i|slice:'1:2'}}").slice(2,-3)], [decodeHtml("{{i|slice:'4:5'}}").slice(2,-3)]);
+      
+    </script>
 
+    
+  {% endfor %}
 
 
 
