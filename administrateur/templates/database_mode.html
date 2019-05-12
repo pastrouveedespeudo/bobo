@@ -208,12 +208,13 @@
         function info(id){
 
           LISTE = []
+          IM = []
           
           var identifiant = document.getElementById(id).id;
     
           document.getElementById('info_image').innerHTML = identifiant;
 
-          for(var i = 0; i < LISTE_IMAGE.length -1; i ++){
+          for(var i = 0; i < LISTE_IMAGE.length; i ++){
             
             var liste_image1 = String(LISTE_IMAGE[i]).slice(0,1);
             var liste_image2 = String(LISTE_IMAGE[i]).slice(2,);
@@ -222,6 +223,7 @@
             if(image == identifiant){
               console.log(image);
               LISTE.push(i);
+              IM.push(image)
               
               }
             }
@@ -248,8 +250,8 @@
           document.getElementById('image_into_vetement').src = '/static/bobo/' +
                                                           LISTE_IMAGE[LISTE[LISTE.length-2]]
 
-          document.getElementById('couleur_haut').innerHTML = '<input type="button" value="voir les couleurs du haut" onclick="coul_haut(image)">';
-          document.getElementById('couleur_bas').innerHTML = '<input type="button" value="voir les couleurs du bas" onclick="coul_bas(image)">';
+          document.getElementById('couleur_haut').innerHTML = '<input type="button" value="voir les couleurs du haut" onclick="coul_haut()">';
+          document.getElementById('couleur_bas').innerHTML = '<input type="button" value="voir les couleurs du bas" onclick="coul_bas()">';
           
 
           }
@@ -303,20 +305,50 @@
 
   <script>
 
-      var image = document.getElementById('info_image').innerHTML = identifiant;
+      
       
     
 
       function coul_haut(){
-        alert(image)
-        document.getElementById('couleur_haut').innerHTML = LISTE_HAUT;
+
+        LES_COULEURS = []
+        
+        var imaima = IM[IM.length-1]
+        var im = LISTE_HAUT[LISTE_HAUT.length-1]
+
+        for(var i = 0; i < LISTE_HAUT.length; i++){
+          var p = LISTE_HAUT[i][1].slice(0,1) + LISTE_HAUT[i][1].slice(2,)
+
+          if (imaima == p){
+            LES_COULEURS.push(LISTE_HAUT[i][0])
+            }
+          }
+
+        document.getElementById('couleur_haut').innerHTML = LES_COULEURS;
 
 
         }
 
 
+
+
       function coul_bas(){
-        document.getElementById('couleur_haut').innerHTML = LISTE_BAS;
+        
+
+        LES_COULEURS = []
+        
+        var imaima = IM[IM.length-1]
+        var im = LISTE_BAS[LISTE_BAS.length-1]
+
+        for(var i = 0; i < LISTE_HAUT.length; i++){
+          var p = LISTE_BAS[i][1].slice(0,1) + LISTE_BAS[i][1].slice(2,)
+
+          if (imaima == p){
+            LES_COULEURS.push(LISTE_BAS[i][0])
+            }
+          }
+
+        document.getElementById('couleur_bas').innerHTML = LES_COULEURS;
 
 
         }
@@ -359,9 +391,9 @@
     
     <script>
     
-      LISTE_HAUT.push([decodeHtml("{{i|slice:'1'}}").slice(2,-3)], [decodeHtml("{{i|slice:'4:5'}}").slice(2,-3)]);
-      LISTE_BAS.push([decodeHtml("{{i|slice:'1:2'}}").slice(2,-3)], [decodeHtml("{{i|slice:'4:5'}}").slice(2,-3)]);
-      
+      LISTE_HAUT.push([decodeHtml("{{i|slice:'1'}}").slice(2,-3), decodeHtml("{{i|slice:'4:5'}}").slice(2,-3)]);
+      LISTE_BAS.push([decodeHtml("{{i|slice:'1:2'}}").slice(2,-3), decodeHtml("{{i|slice:'4:5'}}").slice(2,-3)]);
+
     </script>
 
     
