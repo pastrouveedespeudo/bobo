@@ -6,9 +6,7 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#ok nettoyer les listes faut en compter les couleurs
-
-#faire le pdf
+#faire la meme pour la coup et la mise en place des bouttons
 
 #faire pour les hommes depuis insertion database 
 
@@ -18,24 +16,15 @@
 
 #ajoute les consignes pour ajouter des images
 
-#jvoulais pas faire ca mais c'est trop cool de recommencer une app
+#cropage == haarcascade
 
-#trouver des argumlent de pk t'as prisd heroku
-
-#jsp dans la video jtai sain oh j'ai trop peur
-
-#code postgres sans majuscule réfléchis pour refaire mysql -< postgres fichier indé
-
-
-
-
-
+#mettre l'image en noir et blanc
 
 #y intégrer le code pour les couleurs
 
 #responsivité de la page coupe
 
-#bug on peut plus prendre de photo sans etre inscrit
+# bug on peut plus prendre de photo sans etre inscrit
 
 #adapter la zone input selon la taille ecran (en %)
 
@@ -62,9 +51,7 @@
 
 
 
-#cropage == haarcascade
 
-#mettre l'image en noir et blanc
 
 
 
