@@ -32,11 +32,20 @@
 
 
           <div id='interface'>
+              <input type='button' value='retour au menu' onclick='menu()'>
                <input type='button' value='Ajouter des images' onclick='ajouter()'>
           </div>
 
      
             <script>
+
+                function menu(){
+                  document.location.href="/administrateur/mode";
+                  }
+
+
+
+
 
                 function ajouter(){
 
@@ -58,7 +67,8 @@
 
 
                 function nan(){
-                    document.getElementById('interface').innerHTML = "<input type='button' value='Ajouter des images' onclick='ajouter()'>";
+                    document.getElementById('interface').innerHTML = "<input type='button' value='Ajouter des images' onclick='ajouter()'>" +
+                                                                     "<input type='button' value='Retour au menu' onclick='menu()'>";
                   }
 
                 
