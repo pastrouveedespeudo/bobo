@@ -1,4 +1,6 @@
 
+
+
 {% include "navebarre.html" %}
 {% block content %}
 {% endblock %}
@@ -50,6 +52,8 @@
                                                                     '<br>capito? pcque moi jcomprendrai rien'
                                                                     '<input type="button" value="nan rien" onclick="nan()"><br><br>'
 
+                    
+                    document.getElementById('section').style.display = 'block';
 
                     }
 
@@ -68,10 +72,108 @@
 </header>
 
   <!-- Call to Action Section -->
-  <section class="page-section bg-dark text-white">
+  <section class="page-section bg-dark text-white" id='section' style='display:none;'>
     <div class="container text-center">
 
 
+    <input type='button' value='ajouter une image de vetement' id='vetement'
+      style='float:left;' onclick='vetement()'>
+
+
+    <input type='button' value='ajouter une image de coupe' id='coupe'
+     style='float:right;'onclick='coupe()'>
+
+     
+    <div id='titre' value=''></div>
+    
+    <div id='enregistrement' style='display:none;'>
+
+
+      <form method='post' enctype='multipart/form-data'
+          action='/administrateur/ajout' id='myform'>{% csrf_token %}
+        {{form.as_p}}
+
+        <input type='hidden' id='enre' value='' name='hidden'></div>
+        <center><input type='button' id='but' value='Enregistrement' onclick='saving()' style='display:none;'/></center>
+     </form>
+
+
+
+
+    </div>
+
+
+
+
+
+    <script>
+      function vetement(){
+        document.getElementById('titre').innerHTML = '<h2><strong>Vetement</strong></h2><br><br>';
+        document.getElementById('titre').value = 'vetement';
+        
+        document.getElementById('vetement').style.display='none';
+        document.getElementById('coupe').style.display='none';
+        
+        document.getElementById('enregistrement').style.display = 'block';
+        document.getElementById('but').style.display = 'block';
+        }
+
+
+      function coupe(){
+        document.getElementById('titre').innerHTML = '<h2><strong>coupe</strong></h2><br><br>';
+        document.getElementById('titre').value = 'coupe';
+        
+        document.getElementById('vetement').style.display='none';
+        document.getElementById('coupe').style.display='none';
+        
+        document.getElementById('enregistrement').style.display = 'block';
+        document.getElementById('but').style.display = 'block';
+        }
+
+
+
+
+
+
+
+
+      function saving(){
+
+
+        var a = document.getElementById('titre').value;
+        document.getElementById('enre').value = a;
+        document.getElementById("myform").submit();
+
+        
+
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
   </section>
 
