@@ -28,13 +28,9 @@
           <div class="col-lg-8 align-self-baseline">
              <p class="text-white-75 font-weight-light mb-5"></p>
           
-
-             <input type='button' value='Faire une analyse' onclick='analyse()'>
-
-
-
-             <script>
-
+            <form method='post' action='/administrateur/analyse'>
+             <input type='button' id='analysa' value='Faire une analyse'>
+            </form>
 
 
              </script>
@@ -46,7 +42,42 @@
 </header>
 
 
+<script>
 
+var analyse = 'analyse'
+
+$("#analysa").on("click", function(e){
+   e.preventDefault();
+
+    $.ajax({
+        data:{
+            'csrfmiddlewaretoken': '{{csrf_token}}' , 
+            'analyse':analyse,
+            
+     
+        },
+        type:"POST",
+        url:"/administrateur/analyse",
+    })
+    .done(function(data){
+        if (data.error){
+            $("#monCadreAlert").text(data.error);
+            $("#is_save");
+            
+            
+        }
+        else{
+            $("#is_save").html(data.data);
+            $("#monCadreAlert");
+            
+            
+        };
+        
+    });
+
+});
+
+</script>
 
 
 
