@@ -49,7 +49,6 @@
                                                                     '  sous la forme :<strong><u> numéro + b + .jpg</strong></u><br>'  +
                                                                     '</p></i>' +
                                                                     '<center><i>ex : 1b.jpg</i></center>'+
-                                                                    '<br>capito? pcque moi jcomprendrai rien'
                                                                     '<input type="button" value="nan rien" onclick="nan()"><br><br>'
 
                     
@@ -75,7 +74,7 @@
   <section class="page-section bg-dark text-white" id='section' style='display:none;'>
     <div class="container text-center">
 
-
+    <center><strong>NOUS VOUS DEMANDONS D'AJOUTER DABORD LES HABITS</strong></center><br>
     <input type='button' value='ajouter une image de vetement' id='vetement'
       style='float:left;' onclick='vetement()'>
 
@@ -108,6 +107,7 @@
 
     <script>
       function vetement(){
+        document.getElementById('titre').value = ''
         document.getElementById('titre').innerHTML = '<h2><strong>Vetement</strong></h2><br><br>';
         document.getElementById('titre').value = 'vetement';
         
@@ -120,6 +120,7 @@
 
 
       function coupe(){
+        document.getElementById('titre').value = ''
         document.getElementById('titre').innerHTML = '<h2><strong>coupe</strong></h2><br><br>';
         document.getElementById('titre').value = 'coupe';
         
@@ -139,10 +140,10 @@
 
       function saving(){
 
-
         var a = document.getElementById('titre').value;
         document.getElementById('enre').value = a;
         document.getElementById("myform").submit();
+        document.getElementById('titre').value = ''
 
         
 
