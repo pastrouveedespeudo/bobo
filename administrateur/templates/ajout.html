@@ -39,27 +39,41 @@
                 function ajouter(){
 
                     document.getElementById('interface').innerHTML = ''
-                    document.getElementById('interface').innerHTML = '<input type="button" value="ajouter des coupes"><br><br>' +
-                                                                     '<input type="button" value="ajouter des habits"><br><br>' +
-                                                                    '<input type="button" value="nan rien"><br><br>'
+                    document.getElementById('interface').innerHTML = '<center><i><p>détourez les images,<br> <u><strong>les habits</strong></u>' +
+                                                                    ' sous la forme : <strong><u>numero + a + .jpg </strong></u>  <br><center> ex :' +
+                                                                    ' <i>1a.jpg</i></center>' + 
+                                                                    '<br></p></i>' +
+                                                                    '<u><strong>les coupes</strong></u>' +
+                                                                    '  sous la forme :<strong><u> numéro + b + .jpg</strong></u><br>'  +
+                                                                    '</p></i>' +
+                                                                    '<center><i>ex : 1b.jpg</i></center>'+
+                                                                    '<br>capito? pcque moi jcomprendrai rien'
+                                                                    '<input type="button" value="nan rien" onclick="nan()"><br><br>'
 
 
                     }
 
 
+                function nan(){
+                    document.getElementById('interface').innerHTML = "<input type='button' value='Ajouter des images' onclick='ajouter()'>";
+                  }
 
+                
              </script>
           
-        
+   
       </div>
     </div>
   </div>
 </header>
 
+  <!-- Call to Action Section -->
+  <section class="page-section bg-dark text-white">
+    <div class="container text-center">
 
 
-
-
+    </div>
+  </section>
 
 
 
