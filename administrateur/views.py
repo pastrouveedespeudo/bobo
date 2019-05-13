@@ -57,6 +57,25 @@ def tendance(request):
 
 def ajout(request):
 
+    try:
+        liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+        for i in liste:
+            print(i)
+
+        nb = int(liste[-2][0]) + 1
+        nouveau = str(nb) +  liste[-2][-4:]
+        
+        print(nouveau)
+
+    except:
+        liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+        print(liste)
+        nouveau=''
+
+    if request.method == "POST":
+        mode = request.POST.get('hidden')
+        print(mode,'000000000000000000000000000000000000000000000000')
+        
     print("ouiiiiiiiiiiiiiiiiiiiiiiiiii")
     form = imagepost(request.POST or None, request.FILES or None)
     if form.is_valid():
@@ -66,13 +85,24 @@ def ajout(request):
         im = form.save(commit=False)
         im.save()
         print('saved')
+        
+
+        liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+        img = cv2.imread(liste[-1])
+        cv2.imwrite(nouveau, img)
+
+        print('renamed')
+        #coupe ? habit? avec un request
+
+        
     else:
         print("nononono")
 
         
     context = {'form':form}
     
-    return render(request, "essais.html", context)
+    return render(request, "ajout.html", context)
 
 def analyse(request):
     return render(request, "analyse.html")
