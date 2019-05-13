@@ -5,14 +5,15 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+#soit enrichir la database soit faire les postites d'en bas
 
-#faire la meme pour la coup et la mise en place des bouttons
+
+#faire la meme pour la coup et la mise en place des bouttons database_mode
 
 #faire pour les hommes depuis insertion database 
 
 #mettre tous les truk orange en bleu
 
-#mettre azurebleu == div de la couleur a l'appuie
 
 #ajoute les consignes pour ajouter des images
 
@@ -20,7 +21,6 @@
 
 #mettre l'image en noir et blanc
 
-#y intégrer le code pour les couleurs
 
 #responsivité de la page coupe
 
@@ -30,7 +30,7 @@
 
 #nettoyer le code
 
-#bug avec des images 10: 
+
 
 
 
@@ -80,5 +80,3 @@
   
 #dans notre solution mettre les quelques vidéo des machines à pluie + de la vidéo que tu feras
 
-
-#réflechis pour caller dk -> ca pourrait augmenter ta note puis c'est quand meme assez cool
