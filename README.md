@@ -5,9 +5,11 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+
+#okkk faire la page mtn 
+
 #soit enrichir la database soit faire les postites d'en bas
 
-C SOIT PHP SOIT DJANGO PUTIN
 
 #bon ben php nan, télécharger une image sans php nan, django peut telecharger une imge par l'orm trouve comment ne pas tout détruire soit tu garde la ligne et tu rajoute d'autre ligne en bas chai pas c confu
 
