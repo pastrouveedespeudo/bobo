@@ -194,7 +194,8 @@
       <br><br><br><br><br><br>
       <div id='couleur_haut' style='float:left;'></div><br><br>
       <div id='couleur_bas' style='float:left;'></div>
-      
+
+      <div id='couleur_coupe' style='float:right;'></div>
 
 
       <br><br>
@@ -252,6 +253,8 @@
 
           document.getElementById('couleur_haut').innerHTML = '<input type="button" value="voir les couleurs du haut" onclick="coul_haut()">';
           document.getElementById('couleur_bas').innerHTML = '<input type="button" value="voir les couleurs du bas" onclick="coul_bas()">';
+
+          document.getElementById('couleur_coupe').innerHTML = '<input type="button" value="voir la coupe" onclick="couleur_coupe()">';
           
 
           }
@@ -373,22 +376,6 @@
   {% for i in data2 %}
 
 
-    {{i|slice:'1'}}
-    <br><br>
-    {{i|slice:'1:2'}}
-    <br><br>
-    {{i|slice:'2:3'}}
-    <br><br>
-    {{i|slice:'3:4'}}
-    <br><br>
-    {{i|slice:'4:5'}}
-
-
-    <br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-    
     <script>
     
       LISTE_HAUT.push([decodeHtml("{{i|slice:'1'}}").slice(2,-3), decodeHtml("{{i|slice:'4:5'}}").slice(2,-3)]);
@@ -398,6 +385,54 @@
 
     
   {% endfor %}
+
+
+<script>
+    var LISTE_COUPE_COULEUR = []
+    var COUL_CHEVUEX = []
+</script>
+{% for i in data_coupe %}
+
+
+  <script>
+    
+    LISTE_COUPE_COULEUR.push([decodeHtml('{{i|slice:'1:2'}}').slice(2,-3), decodeHtml('{{i|slice:'2:3'}}').slice(2,-3)])
+
+  </script>
+{% endfor %}
+
+
+
+
+
+
+  <script>
+    console.log(LISTE_COUPE_COULEUR)
+
+  
+    function couleur_coupe(){
+        var imaima = IM[IM.length-1]
+        console.log(imaima)
+        for(var i = 0; i < LISTE_HAUT.length; i++){
+          var p = LISTE_COUPE_COULEUR[i][0].slice(0,1) + LISTE_BAS[i][1].slice(2,)
+          if (imaima == p){
+            COUL_CHEVUEX.push(LISTE_COUPE_COULEUR[i][1]);
+            }
+        }
+        document.getElementById('couleur_coupe').innerHTML = COUL_CHEVUEX;   
+    }      
+
+  </script>
+
+
+
+
+
+
+
+
+
+
 
 
 
