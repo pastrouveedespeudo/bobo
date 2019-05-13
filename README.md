@@ -6,6 +6,8 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
+#bon ben c bientot fini se bordel !! au pire tu peux te le dire a haute voix trou duc ouais c vrai
+
 #au lieu que d'enregistrer en prem's les habit tu pourrais verifier qu'il n'y est pas 2 fois le nombre mais bon pas grave
 
 
