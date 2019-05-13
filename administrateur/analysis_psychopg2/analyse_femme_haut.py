@@ -197,7 +197,7 @@ class image_femme_haut:
     def traitement(self):
         
  
-        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\photo\analysis\image_femme')
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
         liste = os.listdir()
 
         for i in liste:
@@ -216,24 +216,24 @@ class image_femme_haut:
                 
                 if nom == 'a':
                     pass
-##                    image_femme_haut.mask_bas(i)
-##                    
-##                    image_femme_haut.resize('traitement_haut.jpg', 'traitement_haut.jpg')
-##                    haut = image_femme_haut.couleur_habit('traitement_haut.jpg')
-##                    
-##                         
-##                    image_femme_haut.mask_haut(i)
-##                    
-##                    image_femme_haut.resize('traitement_bas1.jpg', 'traitement_bas1.jpg')
-##                    bas = image_femme_haut.couleur_habit('traitement_bas1.jpg')
-##
-##                    insertion_table.insertion_info(self,
-##                                                   i,
-##                                                   'féminin',
-##                                                   haut[1],
-##                                                   bas[1],
-##                                                   haut[0],
-##                                                   bas[0])
+                    image_femme_haut.mask_bas(i)
+                    
+                    image_femme_haut.resize('traitement_haut.jpg', 'traitement_haut.jpg')
+                    haut = image_femme_haut.couleur_habit('traitement_haut.jpg')
+                    
+                         
+                    image_femme_haut.mask_haut(i)
+                    
+                    image_femme_haut.resize('traitement_bas1.jpg', 'traitement_bas1.jpg')
+                    bas = image_femme_haut.couleur_habit('traitement_bas1.jpg')
+
+                    insertion_table.insertion_info(self,
+                                                   i,
+                                                   'féminin',
+                                                   haut[1],
+                                                   bas[1],
+                                                   haut[0],
+                                                   bas[0])
 
 
                 elif nom == 'b':
