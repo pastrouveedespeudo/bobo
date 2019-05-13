@@ -3,7 +3,7 @@ import os
 
 
 from .analysis_psychopg2.mode_analyse import *
-
+from .analysis_psychopg2.coupe_analysis import *
 
 from .analysis_psychopg2.mode_w_data import haut_bas
 
@@ -17,9 +17,10 @@ def database_mode(request):
     data = recup()
     data_coupe = recup2()
     
-    print(data)
+    #print(data)
     print('ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
 
+    print(data_coupe)
     data2 = haut_bas()
 
 
@@ -36,3 +37,19 @@ def ajout(request):
 
 def analyse(request):
     return render(request, "analyse.html")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
