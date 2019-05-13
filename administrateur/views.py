@@ -57,52 +57,71 @@ def tendance(request):
 
 def ajout(request):
 
-    try:
-        liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
-        for i in liste:
-            print(i)
 
-        nb = int(liste[-2][0]) + 1
-        nouveau = str(nb) +  liste[-2][-4:]
-        
-        print(nouveau)
+    form = imagepost(request.POST or None, request.FILES or None)
+    context = {'form':form}
 
-    except:
-        liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
-        print(liste)
-        nouveau=''
 
     if request.method == "POST":
         mode = request.POST.get('hidden')
-        print(mode,'000000000000000000000000000000000000000000000000')
-        
-    print("ouiiiiiiiiiiiiiiiiiiiiiiiiii")
-    form = imagepost(request.POST or None, request.FILES or None)
-    if form.is_valid():
-        print("ouiiiiiiiiiiiiiiiiiiiiiiiiii")
-        print("ouiiiiiiiiiiiiiiiiiiiiiiiiii")
-        print("ouiiiiiiiiiiiiiiiiiiiiiiiiii")
-        im = form.save(commit=False)
-        im.save()
-        print('saved')
-        
-
+        print(mode,'777777777777777777777777777777777777777777777')
         liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
-        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
-        img = cv2.imread(liste[-1])
-        cv2.imwrite(nouveau, img)
-
-        print('renamed')
-        #coupe ? habit? avec un request
+        
+        liste_max = []
 
         
-    else:
-        print("nononono")
-
+        for i in liste:
+            print(i)
         
-    context = {'form':form}
+            try:
+                print(str(i[0]) + str(i[1]))
+                a = str(i[0]) + str(i[1])
+                a = int(a)
+                print(a,'8888888888888888888888888888888888888')
+                liste_max.append(a)
+                
+            except:
+                a = str(i[0])
+                a = int(a)
+                liste_max.append(a)
+        
+        print(liste_max,'000000000000000000000000000000')
+
+        num = max(liste_max)
+
+        new_number = int(num) + 1
+        print(new_number)
+
+        if mode == 'vetement':
+            nouveau = str(new_number) + 'a.jpg'
+            
+        elif mode == 'coupe':
+            num = max(liste_max)
+            new_number = int(num)
+            nouveau = str(new_number) + 'b.jpg'
+
+        if form.is_valid():
+            im = form.save(commit=False)
+            im.save()
+            
+            liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+            os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+            img = cv2.imread(liste[-1])
+            cv2.imwrite(nouveau, img)
+
+            os.remove(liste[-1])
+            print('renamed')
+            
+        return render(request, "mode.html", context)
+
+
     
     return render(request, "ajout.html", context)
+
+
+
+
+
 
 def analyse(request):
     return render(request, "analyse.html")
