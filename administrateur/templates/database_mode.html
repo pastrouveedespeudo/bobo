@@ -108,61 +108,86 @@
 
                 <p>Database femme</p>
 
-
-                
-
-
-
-
-
-                
+      
                 
             </div>
 
                 <div class="container" id='container' style='display:none;'>
                       <div class="row">
+                                            
+                                              
+                            <script>
+                            
+                              function decodeHtml(html) {
+                                  var txt = document.createElement("textarea");
+                                  txt.innerHTML = html;
+                                  return txt.value;
+                              }
 
-                        <div class="col-sm">
-                        <img src='/static/bobo/2b.jpg' style='width:100px; height:100px;'><br>
-                        <input type='image' src='/static/bobo/2a.jpg' style='width:100px; height:250px;'
-                        id='2.jpg' onclick='info(id)'><br>
-                        </div>
 
-                        <div class="col-sm">
-                        <img src='/static/bobo/3b.jpg' style='width:100px; height:100px;'><br>
-                        <input type='image' src='/static/bobo/3a.jpg' style='width:100px; height:250px;'
-                        id='3.jpg' onclick='info(id)'><br>
-                        </div>
 
-                        <div class="col-sm">
-                        <img src='/static/bobo/4b.jpg' style='width:100px; height:100px;'><br>
-                        <input type='image' src='/static/bobo/4a.jpg' style='width:100px; height:250px;'
-                        id='4.jpg' onclick='info(id)'><br>
-                        </div>
+                            </script>
 
-                        <div class="col-sm">
-                        <img src='/static/bobo/5b.jpg' style='width:100px; height:100px;'><br>
-                        <input type='image' src='/static/bobo/5a.jpg' style='width:100px; height:250px;'
-                        id='5.jpg' onclick='info(id)'><br>
-                        </div>
 
-                        <div class="col-sm">
-                        <img src='/static/bobo/6b.jpg' style='width:100px; height:100px;'><br>
-                        <input type='image' src='/static/bobo/6a.jpg' style='width:100px; height:250px;'
-                        id='6.jpg' onclick='info(id)'><br>
-                        </div>
 
-                        <div class="col-sm">
-                        <img src='/static/bobo/7b.jpg' style='width:100px; height:100px;'><br>
-                        <input type='image' src='/static/bobo/7a.jpg' style='width:100px; height:250px;'
-                        id='7.jpg' onclick='info(id)'><br>
-                        </div>
+                            
+                            {% for i in image_hab %}
 
-                        <div class="col-sm">
-                        <img src='/static/bobo/8b.jpg' style='width:100px; height:100px;'><br>
-                        <input type='image' src='/static/bobo/8a.jpg' style='width:100px; height:250px;'
-                        id='8.jpg' onclick='info(id)'><br>
-                        </div>  
+                            <script>
+                             
+                              function a(){
+                                var a = decodeHtml("{{i|slice:'1'}}").slice(2,-3)
+                                return a;
+                                };
+                              
+                              function b(){
+                                var b  = decodeHtml('{{i|slice:'1:2'}}').slice(2,-3)
+                                return b;
+                                };
+                              
+                              function c(){
+                                var c = decodeHtml('{{i|slice:'1:2'}}').slice(2,3) + decodeHtml('{{i|slice:'1:2'}}').slice(-7,-3)
+                                return c
+                                };
+
+                            console.log(decodeHtml('{{i|slice:'1'}}').slice(2,-3))
+                            console.log(decodeHtml('{{i|slice:'1:2'}}').slice(2,-3))
+                            console.log(decodeHtml('{{i|slice:'1:2'}}').slice(2,3) + decodeHtml('{{i|slice:'1:2'}}').slice(-7,-3)) 
+
+                            </script>
+
+
+                         
+                              <div id={{i|slice:'2:3'}} class="col-sm"></div>
+                              
+                              <script>
+                                var vari = "{{i|slice:'2:3'}}";
+             
+                                var a= document.getElementById(vari).innerHTML = "<img src=" +
+                                                                                 "'" +
+                                                                                 "/static/bobo/" +
+                                                                                 b() +
+                                                                                 "'" +
+                                                                                 "style='width:100px; height:100px;'><br>" +
+                                                                                 "<input type='image' src='/static/bobo/" +
+                                                                                 a() +
+                                                                                 "'"+
+                                                                                 "style='width:100px; height:250px;'" +
+                                                                                 "id='"+
+                                                                                 c()+
+                                                                                 "'"+
+                                                                                 "onclick='info(id)'><br>";
+
+
+
+                                
+                              </script>
+
+                            {% endfor %}
+
+
+
+                                              
 
                     </div>
                 </div>
@@ -170,7 +195,10 @@
 
 
 
-         
+
+
+
+      
       <br><br>
       <div id='info_image'></div>
       
@@ -423,13 +451,6 @@
     }      
 
   </script>
-
-
-
-
-
-
-
 
 
 
