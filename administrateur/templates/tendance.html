@@ -64,12 +64,102 @@
   <section class="page-section bg-dark text-white" id='section' style='display:none;'>
     <div class="container text-center">
 
-      <h4>Blond :</h4>
-      <br>
+      <center><div>Il y a {{brun}} brun, {{blond}} blond, {{chatain}} chatain</div></center><br><br>
 
-      <h4>Brun :</h4>
+      <h4>Blond couleur:</h4>
+      <div id='blonde'></div>
       <br>
-      <h4>Chatain :</h4>
+      
+      <h4>Brun couleur:</h4>
+      <div id='brune'></div><br>
+     
+      <h4>Chatain couleur:</h4>
+      <br><div id='chataine'></div>
+      
+      {% for i in liste_ana%}
+
+
+
+      
+      <script>
+
+          if("{{i|slice:'2:3'}}" == "[&#39;blond&#39;]"){
+            document.getElementById('blonde').innerHTML = "{{i|slice:'2:3'}}"
+            + "{{i|slice:'3:4'}}";
+        
+            }
+
+
+
+          if("{{i|slice:'2:3'}}" == "[&#39;marron&#39;]"){
+            
+            var balise = document.getElementById('brune');
+            var monTexte = balise.innerText || balise.textContent;
+
+            document.getElementById('brune').innerHTML = monTexte +
+            "<br>" + 
+            "{{i|slice:'2:3'}}" +
+            "{{i|slice:'3:4'}}";
+        
+            }
+
+
+
+          if("{{i|slice:'2:3'}}" == "[&#39;chatin&#39;]"){
+            document.getElementById('chataine').innerHTML = "{{i|slice:'2:3'}}"
+            + "{{i|slice:'3:4'}}";
+       
+            }
+      </script>
+        
+    
+    
+
+
+      {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {% for i in liste_finale %}
+      {{i|slice:'1'}}
+      <br>
+      {{i|slice:'1:2'}}
+      <br>
+      {{i|slice:'2:3'}}
+      <br>
+      {{i|slice:'3:4'}}      
+      <br><br><br><br><br><br>
+    
+      {% endfor %}
+
+
+
+    
+
+
+
+
+
+
+
+
 
 
  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
