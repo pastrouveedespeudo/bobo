@@ -469,11 +469,13 @@
     <center>Database sous forme SQL</center>
     <br>
     <input type='button' id='databasesql' value='voir la database'>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    
+
+    <br><br>
     <div id='is_save'>
-    
+    ddddddddddd{{dataaa}}
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
 
 
@@ -495,26 +497,16 @@
                 'csrfmiddlewaretoken': '{{csrf_token}}' , 
                 'database':'database',
                 
-         
             },
             type:"POST",
-            url:"/administrateur/database_mode"
-        })
-        .done(function(data){
-            if (data.error){
-                jQuery("#monCadreAlert").text(data.error);
-                jQuery("#is_save");
-                
-                
-            }
-            else{
-                jQuery("#is_save").html(data.data);
-                jQuery("#monCadreAlert");
-                
-                
-            };
-            
-        });
+            url:"/administrateur/database_mode",
+             success: function (data) {
+               alert(data);
+        }
+      })
+
+         
+
     });
 
 
