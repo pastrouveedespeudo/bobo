@@ -21,6 +21,18 @@ def mode(request):
 
 def database_mode(request):
 
+    if request.method == "POST":
+        print('databaseeeeeeeeeedatabaseeeeeeeeee')
+        database = request.POST.get('database')
+        print('databaseeeeeeeeee', database)
+
+
+
+
+
+
+
+
     data = recup()
     data_coupe = recup2()
     
