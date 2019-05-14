@@ -11,6 +11,7 @@ from .analysis_psychopg2.coupe_analysis import *
 from .analysis_psychopg2.mode_w_data import haut_bas
 
 from .analysis_psychopg2.analyse_femme_haut import traitement
+from .analysis_psychopg2.analyse_femme_haut import pré_visualisation_donnée
 
 from django.core.files import File
 
@@ -31,7 +32,13 @@ def database_mode(request):
         print('databaseeeeeeeeee', database)
         dataaa = 'coucouuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'
         print(dataaa)
-        return HttpResponse(dataaa)
+
+        
+        a = pré_visualisation_donnée('bobo1')
+        b = pré_visualisation_donnée('bobo1_coiffure')
+
+        liste_data = [[a],[b]]
+        return HttpResponse(liste_data)
 
 
     print('yoooooooooooooooooooooo')
