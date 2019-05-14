@@ -27,23 +27,11 @@ def mode(request):
 def database_mode(request):
 
     if request.method == "POST":
-        print('databaseeeeeeeeeedatabaseeeeeeeeee')
-        database = request.POST.get('database')
-        print('databaseeeeeeeeee', database)
-        dataaa = 'coucouuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'
-        print(dataaa)
 
-        
-        a = pré_visualisation_donnée('bobo1')
-        b = pré_visualisation_donnée('bobo1_coiffure')
-
-        liste_data = [[a],[b]]
-        return HttpResponse(liste_data)
+        return HttpResponse('ok')
 
 
     print('yoooooooooooooooooooooo')
-
-
 
 
     data = recup()
@@ -69,18 +57,90 @@ def database_mode(request):
         except:
             pass
     print(liste1)
+
+
+
+
+    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+    listee = os.listdir()
+    
+    liste11 = []
+    
+    c = 0
+    for i in listee:
+        try:
+            liste11.append((str(listee[c]), str(listee[c+1]), int(str(c) + str(c))))
+            c+=2
+        except:
+            pass
+
+
+    
+    a = data2 = haut_bas()
+    b = data_coupe = recup2()
+    c = liste11
+
+    liste_finale = []
+
+    compteur = 0
+    if len(a) == len(b) == len(c):
+        for i in a:
+            liste_finale.append(([c[compteur], b[compteur], a[compteur][0], a[compteur][1]]))
+
+            compteur += 1
+
+
+
+    
     return render(request, "database_mode.html", {'data':data, 'data2':data2,
                                                   'data_coupe':data_coupe,
-                                                  'image_hab':liste1})
+                                                  'image_hab':liste1, 'final':liste_finale})
 
 
 def tendance(request):
     
-    if request.method == "POST":
-        print("ouiiiiiiiiiiiiiiiiiiiiiiiiii")
+    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+    liste = os.listdir()
+    
+    liste1 = []
+    
+    c = 0
+    for i in liste:
+        try:
+            liste1.append((str(liste[c]), str(liste[c+1]), int(str(c) + str(c))))
+            c+=2
 
-        
+        except:
+            pass
+    print(liste1)
+
+    
+    a = data2 = haut_bas()
+    b = data_coupe = recup2()
+    c = liste1
+
+    liste_finale = []
+
+    compteur = 0
+    if len(a) == len(b) == len(c):
+        for i in a:
+            liste_finale.append(([c[compteur], b[compteur], a[compteur][0], a[compteur][1]]))
+
+            compteur += 1
+    
+        return render(request, "tendance.html", {'liste_finale':liste_finale})
+    else:
+        return render(request, "tendance.html", {'mes':'VERFIFIEZ VOTRE DATABASE'})
+
+
     return render(request, "tendance.html")
+
+
+
+
+
+
+
 
 def ajout(request):
 
