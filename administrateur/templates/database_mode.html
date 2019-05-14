@@ -246,15 +246,17 @@
           document.getElementById('vetement').style.display='block';
           
           document.getElementById('info_image_vetement').innerHTML = LISTE_IMAGE[LISTE[LISTE.length-1]];
-          document.getElementById('info_image_coupe').innerHTML = LISTE_IMAGE[LISTE[LISTE.length-2]];
+          var ok = LISTE_IMAGE[LISTE[LISTE.length-1]]
+          var okok = String(LISTE_IMAGE[LISTE[LISTE.length-1]]).slice(0,1) + 'b' + String(LISTE_IMAGE[LISTE[LISTE.length-1]]).slice(2,)
+          document.getElementById('info_image_coupe').innerHTML = okok;
           
           
           document.getElementById('im_coupe').style.display = 'block';
           document.getElementById('im_vetement').style.display = 'block';
-          document.getElementById('image_into_coupe').src = '/static/bobo/' +
-                                                          LISTE_IMAGE[LISTE[LISTE.length-1]]
+          document.getElementById('image_into_coupe').src = '/static/bobo/' + okok;
           document.getElementById('image_into_vetement').src = '/static/bobo/' +
-                                                          LISTE_IMAGE[LISTE[LISTE.length-2]]
+                                                          LISTE_IMAGE[LISTE[LISTE.length-1]]
+          
           document.getElementById('couleur_haut').innerHTML = '<input type="button" value="voir les couleurs du haut" onclick="coul_haut()">';
           document.getElementById('couleur_bas').innerHTML = '<input type="button" value="voir les couleurs du bas" onclick="coul_bas()">';
           document.getElementById('couleur_coupe').innerHTML = '<input type="button" value="voir la coupe" onclick="couleur_coupe()">';
@@ -409,7 +411,8 @@
 
     <center><div>Il y a {{brun}} brun, {{blond}} blond, {{chatain}} chatain</div></center><br><br>
     <br><br>
-    <div id='is_save'>
+    
+    <div id='is_save'>aaaaaaaaaaaaaaaaaaaaaa
       {% for i in final %}
       {{i|slice:'1'}}
       <br>
@@ -441,10 +444,15 @@
 
 
 
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 
 
+{% for i in final %}
 
+  {{i|slice:'1'}}
+  {{i|slice:'1:2'}}
 
+{% endfor %}
 
 
 
