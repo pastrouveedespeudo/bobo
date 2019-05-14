@@ -14,14 +14,23 @@ from .palettecouleur import DICO_COULEUR
 
 from .database import insertion_table
 import psycopg2
+import shutil
 
+def fichier(path):
 
+   liste = ['bobo.txt', 'config.py', 'constante.py','conteneur.py','coul.py',
+            'coupe_analysis.py', 'database.py','mode_analyse.py', 'mode_w_data.py',
+            'palettecouleur.py', 'palettecouleur_coiffure.py', 'traitement_bas1.jpg',
+            'traitement_haut.jpg']
+   
+   for i in liste:
+      shutil.move(i, path)
 
 def resize(img, save):
 
    image = Image.open(img)
 
-   image = image.resize((30,30))
+   image = image.resize((100,100))
                         
    image.save(save)
 
@@ -273,9 +282,7 @@ def traitement():
     
     print(liste3)
 
-
-    
-
+    fichier(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
     for i in liste3:    
     
         if i == '__pycache__' or i == 'analyse_femme_haut.py' or\
@@ -314,7 +321,7 @@ def traitement():
                 print(coiffure)
                 coiffure(self, i, coiffure)
                                          
-                
+   fichier(r'C:\Users\jeanbaptiste\bobo\bobo\administrateur\analysis_psychopg2')       
 
 
 
