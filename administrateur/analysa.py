@@ -67,12 +67,24 @@ def analysa():
     coif = [i[2] for i in d]
     print(coif)
 
+    laliste1 = []
 
-    
-    c = 0
     for i in liste:
+        if i == 'analyse_femme_haut.py' or  i == 'bobo.txt' or\
+           i == 'config.py' or i == 'constante.py' or i == 'conteneur.py' or\
+           i == 'coul.py' or i == 'coupe_analysis.py' or i=='constante.py' or\
+           i == 'database.py' or i == 'mode_analyse.py' or i == 'mode_w_data.py' or\
+           i == 'palettecouleur.py' or i == 'palettecouleur_coiffure.py' or\
+           i == 'traitement_bas1.jpg' or i == 'traitement_haut.jpg' or i == '__pycache__' or i=='bobo'\
+           or i =='ess.py':
+            pass
+        else:
+            laliste1.append(i)
+    print(laliste1,'487498749879')
+    c = 0
+    for i in laliste1:
         try:
-            liste1.append((str(liste[c]), str(liste[c+1]), int(str(c) + str(c))))
+            liste1.append((str(laliste1[c]), str(laliste1[c+1]), int(str(c) + str(c))))
             c+=2
 
         except:
@@ -110,7 +122,7 @@ def analysa():
         d = traitement_coul(str(b))
         
         try:
-            for j in c:
+            for j in d:
                 for k in j:
                     pré_liste_bas.append(k)
                     
@@ -119,6 +131,8 @@ def analysa():
 
         finally:
             pré_liste_bas = sorted(pré_liste_bas, key=lambda s : s[1])
+
+            
             pré_liste.append([pré_liste_haut, pré_liste_bas, coif[compteur] ,i[0]])
 
             
