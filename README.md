@@ -5,6 +5,7 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+#jcomprenais pas richard, c bon mec 8 espaces contre 2 tab, tg détruit ta plateforme ca te donnera plus d'utilisateur, gros le mec est internationnale fais ta box... désolé richard jtm
 
 #bon ben c bientot fini se bordel !! au pire tu peux te le dire a haute voix trou duc ouais c vrai
 
