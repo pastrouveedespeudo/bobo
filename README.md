@@ -18,21 +18,19 @@
 
 #bon ben c bientot fini se bordel !! au pire tu peux te le dire a haute voix trou duc ouais c vrai
 
-#au lieu que d'enregistrer en prem's les habit tu pourrais verifier qu'il n'y est pas 2 fois le nombre mais bon pas grave
+# au lieu que d'enregistrer en prem's les habit tu pourrais verifier qu'il n'y est pas 2 fois le nombre mais bon pas grave
 
+ca donne [1, 1,2,2,3,3,4,4] 
 
-#bon ben php nan, télécharger une image sans php nan, django peut telecharger une imge par l'orm trouve comment ne pas tout détruire soit tu garde la ligne et tu rajoute d'autre ligne en bas chai pas c confu
-
-#faire la meme pour la coup et la mise en place des bouttons database_mode
 
 #faire pour les hommes depuis insertion database 
 
 #mettre tous les truk orange en bleu
 
 
-#ajoute les consignes pour ajouter des images
 
-#cropage == haarcascade
+
+# cropage == haarcascade eneleve les bordure et extend de 50px mais j'y été pas arrivais sur lautre projet fois ca prenait que le coté gauche...
 
 #mettre l'image en noir et blanc
 
@@ -41,9 +39,9 @@
 
 # bug on peut plus prendre de photo sans etre inscrit
 
-#adapter la zone input selon la taille ecran (en %)
+# adapter la zone input selon la taille ecran (en %)
 
-#nettoyer le code
+# nettoyer le code
 
 
 
@@ -57,7 +55,7 @@
 
 
 
-#supprimer favoris
+# supprimer favoris
 
 
 
