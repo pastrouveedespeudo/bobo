@@ -5,7 +5,7 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-
+#ok deal tu finis ca, tu refactorises bien et tu passes a pollution et t'y reviendra apres
 
 # factoriser a mort avant pollution
 
