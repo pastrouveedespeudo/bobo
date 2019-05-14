@@ -1,5 +1,7 @@
 import os
 import psycopg2
+from operator import itemgetter
+
 
 from analysis_psychopg2.mode_w_data import traitement_coul
 
@@ -44,22 +46,78 @@ def analysa():
         except:
             pass
 
+    pré_liste_haut = []
+    pré_liste_bas = []
+    pré_liste = []
+
+
     for i in liste1:
-        print(i)
+
         a = coiffure('bobo1', 'haut', i[0])
         b = coiffure('bobo1', 'bas', i[0])
-        print('ok')
+       
 
         c = traitement_coul(str(a))
-        print(c)
-        print('\n\n\n\n\n\n\n\n\n\n')
+
+    
+        try:
+            for j in c:
+                for k in j:
+                    pré_liste_haut.append(k)
+                    
+        except:
+            pass
+
+        finally:
+            pré_liste_haut = sorted(pré_liste_haut, key=lambda s : s[1])
+       
+
+
+
         d = traitement_coul(str(b))
-        print(d)
         
-        break
+        try:
+            for j in c:
+                for k in j:
+                    pré_liste_bas.append(k)
+                    
+        except:
+            pass
+
+        finally:
+            pré_liste_bas = sorted(pré_liste_bas, key=lambda s : s[1])
+
+
+        pré_liste.append([pré_liste_haut, pré_liste_bas, i[0]])
+        pré_liste_haut = []
+        pré_liste_bas = []
+
+  
+    #print(pré_liste)
+    return pré_liste
 
 
 
     
-
 analysa()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
