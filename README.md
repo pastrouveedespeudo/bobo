@@ -6,6 +6,11 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
+
+# factoriser a mort avant pollution
+
+#si ca donne des memes couleurs avec le stock de vetement ok sinon essais de les aggrandir de passer de 50*50 a 100*100 ca prendra 2 fois plus de temps mais y'aura plus de matiere
+
 #analyse mtn... et faire la meme chose pour les vetements que t'affiches (truk de couleur)
 
 #par la coupe afficher les elements match
