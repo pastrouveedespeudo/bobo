@@ -5,7 +5,7 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-#ok deal tu finis ca, tu refactorises bien et tu passes a pollution et t'y reviendra apres
+#azure 100 + skyblue 273 j'ai faillis refaire palette couleur ouffffffff 
 
 #ajouter une commande supprimer database
 
