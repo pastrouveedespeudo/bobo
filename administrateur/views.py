@@ -49,26 +49,26 @@ def database_mode(request):
     liste = os.listdir()
 
     liste1 = []
-
+    laliste1 = []
 
     for i in liste:
-
-        if i == 'analyse_femme_haut.py' or i == 'bobo.txt' or\
+        if i == 'analyse_femme_haut.py' or  i == 'bobo.txt' or\
            i == 'config.py' or i == 'constante.py' or i == 'conteneur.py' or\
            i == 'coul.py' or i == 'coupe_analysis.py' or i=='constante.py' or\
            i == 'database.py' or i == 'mode_analyse.py' or i == 'mode_w_data.py' or\
            i == 'palettecouleur.py' or i == 'palettecouleur_coiffure.py' or\
            i == 'traitement_bas1.jpg' or i == 'traitement_haut.jpg' or i == '__pycache__' or i=='bobo':
-            liste.remove(i)
-        
+            pass
+        else:
+            laliste1.append(i)
 
+
+    print(laliste1)
 
     c = 0
-    
-    for i in liste:
-        print(i)
+    for i in laliste1:
         try:
-            liste1.append((str(liste[c]), str(liste[c+1]), int(str(c) + str(c))))
+            liste1.append((str(laliste1[c]), str(laliste1[c+1]), int(str(c) + str(c))))
             c+=2
         except:
             pass
@@ -86,20 +86,13 @@ def database_mode(request):
     liste11 = []
     
     c = 0
-    for i in listee:
-        if i == 'analyse_femme_haut.py' or i == 'bobo.txt'\
-           or i == 'config.py' or i == 'constante.py' or i ==  'conteneur.py'\
-           or i == 'coul.py' or i ==  'coupe_analysis.py'\
-           or i == 'database.py' or i ==  'mode_analyse.py' or i ==  'mode_w_data.py'\
-           or i == 'palettecouleur.py'  or i ==  'palettecouleur_coiffure.py'\
-           or i == 'traitement_bas1.jpg'  or i ==  'traitement_haut.jpg' or i == '__pycache__':
+    for i in laliste1:
+
+        try:
+            liste11.append((str(laliste1[c]), str(laliste1[c+1]), int(str(c) + str(c))))
+            c+=2
+        except:
             pass
-        else:
-            try:
-                liste11.append((str(listee[c]), str(listee[c+1]), int(str(c) + str(c))))
-                c+=2
-            except:
-                pass
 
 
     
@@ -140,6 +133,7 @@ def tendance(request):
     liste1 = []
     
     c = 0
+    laliste1 = []
     for i in liste:
         if i == 'analyse_femme_haut.py' or i == 'bobo.txt'\
            or i == 'config.py' or i == 'constante.py' or i ==  'conteneur.py'\
@@ -149,12 +143,17 @@ def tendance(request):
            or i == 'traitement_bas1.jpg'  or i ==  'traitement_haut.jpg' or i == '__pycache__':
             pass
         else:
-            try:
-                liste1.append((str(liste[c]), str(liste[c+1]), int(str(c) + str(c))))
-                c+=2
+            laliste1.append(i)
 
-            except:
-                pass
+
+
+    for i in laliste1:
+        try:
+            liste1.append((str(laliste1[c]), str(laliste1[c+1]), int(str(c) + str(c))))
+            c+=2
+
+        except:
+            pass
             
     data2 = haut_bas()
     data_coupe = recup2()
