@@ -469,6 +469,7 @@
     <center>Database sous forme SQL</center>
     <br>
     <input type='button' id='databasesql' value='voir la database'>
+    
 
     <br><br>
     <div id='is_save'>
@@ -502,6 +503,10 @@
             url:"/administrateur/database_mode",
              success: function (data) {
                alert(data);
+               document.getElementById('databasesql').style.display = 'none';
+               document.getElementById('is_save').innerHTML = "<input type='button' id='databasesql' value='supprimer des élements ?'>"
+                                                              + "<br><br>" +
+                                                              data;
         }
       })
 
