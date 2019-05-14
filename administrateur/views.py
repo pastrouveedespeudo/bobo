@@ -2,6 +2,9 @@ from django.shortcuts import render
 import os
 import cv2
 
+import json
+from django.http import HttpResponse
+
 from .analysis_psychopg2.mode_analyse import *
 from .analysis_psychopg2.coupe_analysis import *
 
@@ -14,6 +17,7 @@ from django.core.files import File
 from .models import *
 from .forms import imagepost
 
+from django.http import JsonResponse
 
 def mode(request):
     return render(request, "mode.html")
@@ -25,10 +29,12 @@ def database_mode(request):
         print('databaseeeeeeeeeedatabaseeeeeeeeee')
         database = request.POST.get('database')
         print('databaseeeeeeeeee', database)
+        dataaa = 'coucouuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu'
+        print(dataaa)
+        return HttpResponse(dataaa)
 
 
-
-
+    print('yoooooooooooooooooooooo')
 
 
 
