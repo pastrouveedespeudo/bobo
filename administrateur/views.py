@@ -5,13 +5,7 @@ import cv2
 import json
 from django.http import HttpResponse
 
-from static.bobo.mode_analyse import *
-from static.bobo.coupe_analysis import *
 
-from static.bobo.mode_w_data import haut_bas
-
-from static.bobo.analyse_femme_haut import traitement
-from static.bobo.analyse_femme_haut import pré_visualisation_donnée
 
 from .analysa import *
 
@@ -22,8 +16,13 @@ from .forms import imagepost
 
 from django.http import JsonResponse
 
+from static.bobo.mode_w_data import haut_bas
+from static.bobo.coupe_analysis import *
+from static.bobo.mode_analyse import *
+
 
 def mode(request):
+       
     return render(request, "mode.html")
 
 
@@ -50,16 +49,33 @@ def database_mode(request):
     liste = os.listdir()
 
     liste1 = []
-    
-    c = 0
+
+
     for i in liste:
+
+        if i == 'analyse_femme_haut.py' or i == 'bobo.txt' or\
+           i == 'config.py' or i == 'constante.py' or i == 'conteneur.py' or\
+           i == 'coul.py' or i == 'coupe_analysis.py' or i=='constante.py' or\
+           i == 'database.py' or i == 'mode_analyse.py' or i == 'mode_w_data.py' or\
+           i == 'palettecouleur.py' or i == 'palettecouleur_coiffure.py' or\
+           i == 'traitement_bas1.jpg' or i == 'traitement_haut.jpg' or i == '__pycache__' or i=='bobo':
+            liste.remove(i)
+        
+
+
+    c = 0
+    
+    for i in liste:
+        print(i)
         try:
             liste1.append((str(liste[c]), str(liste[c+1]), int(str(c) + str(c))))
             c+=2
-
         except:
             pass
-    print(liste1)
+        
+    print('\n\n')
+    print(liste1,'listeeeeeeeeeeeeeeeeeeeeeeeee1')
+    print('\n\n')
 
 
 
@@ -71,11 +87,19 @@ def database_mode(request):
     
     c = 0
     for i in listee:
-        try:
-            liste11.append((str(listee[c]), str(listee[c+1]), int(str(c) + str(c))))
-            c+=2
-        except:
+        if i == 'analyse_femme_haut.py' or i == 'bobo.txt'\
+           or i == 'config.py' or i == 'constante.py' or i ==  'conteneur.py'\
+           or i == 'coul.py' or i ==  'coupe_analysis.py'\
+           or i == 'database.py' or i ==  'mode_analyse.py' or i ==  'mode_w_data.py'\
+           or i == 'palettecouleur.py'  or i ==  'palettecouleur_coiffure.py'\
+           or i == 'traitement_bas1.jpg'  or i ==  'traitement_haut.jpg' or i == '__pycache__':
             pass
+        else:
+            try:
+                liste11.append((str(listee[c]), str(listee[c+1]), int(str(c) + str(c))))
+                c+=2
+            except:
+                pass
 
 
     
@@ -117,13 +141,21 @@ def tendance(request):
     
     c = 0
     for i in liste:
-        try:
-            liste1.append((str(liste[c]), str(liste[c+1]), int(str(c) + str(c))))
-            c+=2
-
-        except:
+        if i == 'analyse_femme_haut.py' or i == 'bobo.txt'\
+           or i == 'config.py' or i == 'constante.py' or i ==  'conteneur.py'\
+           or i == 'coul.py' or i ==  'coupe_analysis.py'\
+           or i == 'database.py' or i ==  'mode_analyse.py' or i ==  'mode_w_data.py'\
+           or i == 'palettecouleur.py'  or i ==  'palettecouleur_coiffure.py'\
+           or i == 'traitement_bas1.jpg'  or i ==  'traitement_haut.jpg' or i == '__pycache__':
             pass
-        
+        else:
+            try:
+                liste1.append((str(liste[c]), str(liste[c+1]), int(str(c) + str(c))))
+                c+=2
+
+            except:
+                pass
+            
     data2 = haut_bas()
     data_coupe = recup2()
     #liste1
@@ -223,7 +255,6 @@ def analyse(request):
 
     if request.method == "POST":
         print("ouiiiiiiiiiiiiiiiiiiiiiii")
-
         traitement()
        
         #image_femme_haut.traitement()
