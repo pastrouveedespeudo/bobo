@@ -405,12 +405,22 @@
 
     <center>Database sous forme SQL</center>
     <br>
-    <input type='button' id='databasesql' value='voir la database'>
-    
 
+    
     <br><br>
     <div id='is_save'>
-    ddddddddddd{{dataaa}}
+      {% for i in final %}
+      {{i|slice:'1'}}
+      <br>
+      {{i|slice:'1:2'}}
+      <br>
+      {{i|slice:'2:3'}}
+      <br>
+      {{i|slice:'3:4'}}      
+      <br><br><br><br><br><br>
+    
+      {% endfor %}
+   
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -426,42 +436,8 @@
 
 
 
-<script>
-    jQuery("#databasesql").on("click", function(e){
-       e.preventDefault();
-        jQuery.ajax({
-            data:{
-                'csrfmiddlewaretoken': '{{csrf_token}}' , 
-                'database':'database',
-                
-            },
-            type:"POST",
-            url:"/administrateur/database_mode",
-             success: function (data) {
-               alert(data);
-               document.getElementById('databasesql').style.display = 'none';
-               document.getElementById('is_save').innerHTML = "<input type='button' id='databasesql' value='supprimer des élements ?'>"
-                                                              + "<br><br>" +
-                                                              "{% for i in data %}"+
-                                                              "{{i|slice:'1'}}" +
-                                                              "<br>"  +
-                                                              "{{i|slice:'1:2'}}" +
-                                                              "<br>" +
-                                                              "{{i|slice:'2:3'}}" +
-                                                              "<br>" +
-                                                              "{{i|slice:'3:4'}}" +
-                                                              "<br>" +
-                                                              "{{i|slice:'4:5'}}" +
-                                                              "<br>" +
-                                                              "{{i|slice:'5:6'}}" +
-                                                              "<br><br><br><br><br><br>" +
-                                                              "{% endfor %}"
-                                                              
-        }
-      })
-         
-    });
-</script>
+
+
 
 
 
