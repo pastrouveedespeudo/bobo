@@ -29,21 +29,11 @@ def mode(request):
 def database_mode(request):
 
     if request.method == "POST":
-
         return HttpResponse('ok')
 
-
-    print('yoooooooooooooooooooooo')
-
-
-    data = recup()
-    data_coupe = recup2()
-    
-    #print(data)
-    print('ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
-
-    #print(data_coupe)
-    data2 = haut_bas()
+    data = recup()#from mode_analyse.py
+    data_coupe = recup2()#from coupe_analysis
+    data2 = haut_bas()#from mode_w_data
 
     os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
     liste = os.listdir()
@@ -62,8 +52,7 @@ def database_mode(request):
         else:
             laliste1.append(i)
 
-
-    print(laliste1)
+    print(laliste1)#on enlève tous les fichiers non image
 
     c = 0
     for i in laliste1:
@@ -76,8 +65,6 @@ def database_mode(request):
     print('\n\n')
     print(liste1,'listeeeeeeeeeeeeeeeeeeeeeeeee1')
     print('\n\n')
-
-
 
 
     os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
@@ -99,7 +86,7 @@ def database_mode(request):
     a = data2 = haut_bas()
     b = data_coupe = recup2()
     c = liste11
-
+    print(a)
     liste_finale = []
 
     compteur = 0
