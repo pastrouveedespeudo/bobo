@@ -3,7 +3,7 @@ import psycopg2
 from operator import itemgetter
 
 
-from .analysis_psychopg2.mode_w_data import traitement_coul
+from static.bobo.mode_w_data import traitement_coul
 
 
 def coiffure(table, attribut, image):
