@@ -5,7 +5,16 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-#jcomprenais pas richard, c bon mec 8 espaces contre 2 tab, tg détruit ta plateforme ca te donnera plus d'utilisateur, gros le mec est internationnale fais ta box... désolé richard jtm
+
+#analyse mtn... et faire la meme chose pour les vetements que t'affiches (truk de couleur)
+
+#par la coupe afficher les elements match
+
+#ensuite finir les vetements
+
+#faire pour les hommes
+
+#verifie que faire l'analyse ajoute bien une col
 
 #bon ben c bientot fini se bordel !! au pire tu peux te le dire a haute voix trou duc ouais c vrai
 
