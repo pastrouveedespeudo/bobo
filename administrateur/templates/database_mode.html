@@ -31,20 +31,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
           
             <div id='interface'>
 
-                <input type='button' value='voir la database' onclick='database()'>
+                <input type='button' value='voir la database' onclick='database()'><br><br>
+                <input type='button' value='voir la database sous forme SQL' onclick='databasesql()'>
 
             </div>
 
@@ -52,8 +43,19 @@
 
             <script>
 
+
+                function databasesql(){
+                  document.getElementById('interface').innerHTML = '';
+                  document.getElementById('section2').style.display = 'block';
+                  
+                  }
+
+
+
+            
+
                 function database(){
-                    
+                    document.getElementById('section').style.display = 'block';
                     document.getElementById('interface').innerHTML = ''
                     document.getElementById('interface').innerHTML = "<input type='button' value='voir la database femme' onclick='femme()'>" +
                                                                     "&nbsp;&nbsp;" + 
@@ -63,13 +65,16 @@
 
                     }
 
+                
+
+              
             </script>
 
 
-            
-            <br><br><br><br><br><br><br><br><br><br><br><br>
-            
+            <br>
             <input type='button' value='revenir en arriere' onclick='arriere()'>
+            
+            
 
             
             <script>
@@ -101,7 +106,7 @@
 
 
   <!-- Call to Action Section -->
-  <section class="page-section bg-dark text-white">
+  <section class="page-section bg-dark text-white" id='section' style='display:none;'>
     <div class="container text-center">
  
             <div id='femme' style='display:none'>
@@ -451,6 +456,81 @@
     }      
 
   </script>
+
+
+
+
+
+  <!-- Call to Action Section -->
+  <section class="page-section bg-dark text-white" id='section2' style='display:none;'>
+    <div class="container text-center">
+
+
+    <center>Database sous forme SQL</center>
+    <br>
+    <input type='button' id='databasesql' value='voir la database'>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+    <div id='is_save'>
+    
+    </div>
+
+
+
+
+    </div>
+  </section>
+
+
+
+
+
+<script>
+
+    jQuery("#databasesql").on("click", function(e){
+       e.preventDefault();
+        jQuery.ajax({
+            data:{
+                'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                'database':'database',
+                
+         
+            },
+            type:"POST",
+            url:"/administrateur/database_mode"
+        })
+        .done(function(data){
+            if (data.error){
+                jQuery("#monCadreAlert").text(data.error);
+                jQuery("#is_save");
+                
+                
+            }
+            else{
+                jQuery("#is_save").html(data.data);
+                jQuery("#monCadreAlert");
+                
+                
+            };
+            
+        });
+    });
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
