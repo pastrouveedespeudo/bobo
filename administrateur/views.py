@@ -7,8 +7,7 @@ from .analysis_psychopg2.coupe_analysis import *
 
 from .analysis_psychopg2.mode_w_data import haut_bas
 
-from .analysis_psychopg2 import analyse_femme_haut
-from .analysis_psychopg2.ess import *
+from .analysis_psychopg2.analyse_femme_haut import traitement
 
 from django.core.files import File
 
@@ -130,10 +129,9 @@ def analyse(request):
 
     if request.method == "POST":
         print("ouiiiiiiiiiiiiiiiiiiiiiii")
-        os.startfile(r'C:\Users\jeanbaptiste\bobo\bobo\administrateur\analysis_psychopg2\ess2.py')
 
-        a = yiyi()
-        print(a,'opppppppppppppppppppp87eaz8967e89a6z79eaz79')
+        traitement()
+       
         #image_femme_haut.traitement()
         
     return render(request, "analyse.html")
