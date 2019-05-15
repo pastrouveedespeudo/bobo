@@ -7,14 +7,13 @@
 
 #ok voici le plan:
 
-on sépare le haut du bas, on prend le nombre de pixel du haut et du bas et on fait un pourcentage
-
-y'a trop de blanc jcrois
-
-on fait la meme avec le blanc et sinon vu que j'ai que 8 images la je peux récupe la couleur oki !
+ben mtn faut se taper toutes les couleurs a la main et sur le moment je le pensais mais les tests enfete c horrible... 
 
 
-determine les poucentages mtn pcque normalement devrais y avoir du rouge y'en a pas... elles sont encore trop petite
+
+
+
+
 
 
 
