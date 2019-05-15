@@ -5,7 +5,19 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-#azure 100 + skyblue 273 j'ai faillis refaire palette couleur ouffffffff 
+#ok voici le plan:
+
+on sépare le haut du bas, on prend le nombre de pixel du haut et du bas et on fait un pourcentage, avec le blanc et le gris et les couleurs si le gris === habit noir (on triche sinon on récuperrai que les gris noir et on dirait le tshirt et gris) mais la noit
+
+on fait la meme avec le blanc et sinon vu que j'ai que 8 images la je peux récupe la couleur oki !
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br>
 
 #ajouter une commande supprimer database
 
