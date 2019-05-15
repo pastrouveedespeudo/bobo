@@ -195,26 +195,33 @@ def analyse_couleur(liste):
                 
    
             elif blanc >= 0:
-                liste_white_bas.append(j)
+                liste_white_haut.append(j)
             else:
-                liste_couleur_bas.append(j)
+                liste_couleur_haut.append(j)
 
                 
         print('\n')
         print('\n\n\n\n\n\n\n\n\n\n')
         print('WHITE', liste_white_haut)
+        print('il y a : blanc', nombre_couleur(liste_white_haut))
         print('\n\n')
         print('GRIS', liste_gris_haut)
+        print('il y a : gris', nombre_couleur(liste_gris_haut))
         print('\n\n')
         print('COUL', liste_couleur_haut)
+        print('il y a coul : ', nombre_couleur(liste_couleur_haut))
         
         print('\n\n')
+        pourcentage(nombre_couleur(liste_white_haut),
+                    nombre_couleur(liste_gris_haut),
+                    nombre_couleur(liste_couleur_haut))
         print('\n')
         print('\n')
 
         print('le bas:')
         print('\n')
         print('\n')
+
         
         print(i[1])
         
@@ -246,13 +253,18 @@ def analyse_couleur(liste):
         print('\n\n\n\n\n\n\n\n\n\n')
         
         print('WHITE', liste_white_bas)
+        print('il y a : blanc', nombre_couleur(liste_white_bas))
         print('\n\n')
         print('GRIS', liste_gris_bas)
+        print('il y a : blanc', nombre_couleur(liste_gris_bas))
         print('\n\n')
         print('COUL', liste_couleur_bas)
+        print('il y a : blanc', nombre_couleur(liste_couleur_bas))
         print('\n\n')
 
-
+        pourcentage(nombre_couleur(liste_white_bas),
+                    nombre_couleur(liste_gris_bas),
+                    nombre_couleur(liste_couleur_bas))
  
 
 
@@ -263,14 +275,23 @@ def analyse_couleur(liste):
 def nombre_couleur(liste):
 
     
-
+    c = 0
     for i in liste:
-        pass
-
-
-
+        nb = int(i[1])
+        c += nb 
+    print(c)
+    return c
     
+def pourcentage(bl, gr, cl):
+    print(bl, gr,cl)
+    total = int(bl) + int(gr) + int(cl)
+    blanc = (100 * bl) / total
+    gris = (100 * gr) / total
+    couleur = (100 * cl) / total
 
+    print('sur', total, 'couleurs il y a:', blanc,'% de blanc')
+    print('sur', total, 'couleurs il y a:', gris,'% de gris')
+    print('sur', total, 'couleurs il y a:', couleur,'% de coul')
 
 
 liste = analysa()
