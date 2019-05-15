@@ -7,7 +7,7 @@ from django.http import HttpResponse
 
 
 
-from .analysa import *
+from static.bobo.analysa import *
 
 from django.core.files import File
 
@@ -47,12 +47,13 @@ def database_mode(request):
            i == 'coul.py' or i == 'coupe_analysis.py' or i=='constante.py' or\
            i == 'database.py' or i == 'mode_analyse.py' or i == 'mode_w_data.py' or\
            i == 'palettecouleur.py' or i == 'palettecouleur_coiffure.py' or\
-           i == 'traitement_bas1.jpg' or i == 'traitement_haut.jpg' or i == '__pycache__' or i=='bobo':
+           i == 'traitement_bas1.jpg' or i == 'traitement_haut.jpg' or i == '__pycache__' or i=='bobo'\
+           or i =='analysa.py':
             pass
         else:
             laliste1.append(i)
 
-    print(laliste1)#on enlève tous les fichiers non image
+
 
     c = 0
     for i in laliste1:
@@ -62,9 +63,7 @@ def database_mode(request):
         except:
             pass
         
-    print('\n\n')
-    print(liste1,'listeeeeeeeeeeeeeeeeeeeeeeeee1')
-    print('\n\n')
+
 
 
     os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
@@ -83,10 +82,12 @@ def database_mode(request):
 
 
     
-    a = data2 = haut_bas()
-    b = data_coupe = recup2()
+    a = haut_bas()
+ 
+    b = recup2()
+ 
     c = liste11
-    print(a)
+
     liste_finale = []
 
     compteur = 0
@@ -99,13 +100,13 @@ def database_mode(request):
     coupa = []
     for i in data_coupe:
         coupa.append(i[2])
-        print(i[2])
+    
         
     brun = coupa.count('marron')
     chatain = coupa.count('chatin')
     blond = coupa.count('blond')
 
-    
+
     return render(request, "database_mode.html", {'data':data, 'data2':data2,
                                                   'data_coupe':data_coupe,
                                                   'image_hab':liste1, 'final':liste_finale,
@@ -127,7 +128,8 @@ def tendance(request):
            or i == 'coul.py' or i ==  'coupe_analysis.py'\
            or i == 'database.py' or i ==  'mode_analyse.py' or i ==  'mode_w_data.py'\
            or i == 'palettecouleur.py'  or i ==  'palettecouleur_coiffure.py'\
-           or i == 'traitement_bas1.jpg'  or i ==  'traitement_haut.jpg' or i == '__pycache__':
+           or i == 'traitement_bas1.jpg'  or i ==  'traitement_haut.jpg' or i == '__pycache__'\
+           or i =='analysa.py':
             pass
         else:
             laliste1.append(i)
@@ -149,7 +151,7 @@ def tendance(request):
     coupa = []
     for i in data_coupe:
         coupa.append(i[2])
-        print(i)
+      
     brun = coupa.count('marron')
     chatain = coupa.count('chatin')
     blond = coupa.count('blond')
@@ -177,7 +179,7 @@ def ajout(request):
     try:
         if request.method == "POST":
             mode = request.POST.get('hidden')
-            print(mode,'777777777777777777777777777777777777777777777')
+
             liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
             
             liste_max = []
@@ -190,7 +192,7 @@ def ajout(request):
                     print(str(i[0]) + str(i[1]))
                     a = str(i[0]) + str(i[1])
                     a = int(a)
-                    print(a,'8888888888888888888888888888888888888')
+                
                     liste_max.append(a)
                     
                 except:
@@ -198,12 +200,12 @@ def ajout(request):
                     a = int(a)
                     liste_max.append(a)
             
-            print(liste_max,'000000000000000000000000000000')
+         
 
             num = max(liste_max)
 
             new_number = int(num) + 1
-            print(new_number)
+        
 
             if mode == 'vetement':
                 nouveau = str(new_number) + 'a.jpg'
