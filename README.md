@@ -7,6 +7,9 @@
 
 #ok voici le plan:
 
+#ouf si il a de la couleur > gris < blanc c de la couleur nik je savais que je devais mettre le fond en couleur impossible ptin je le mettrais dans les difficultés rencontrés
+
+
 ben mtn faut se taper toutes les couleurs a la main et sur le moment je le pensais mais les tests enfete c horrible... 
 
 
