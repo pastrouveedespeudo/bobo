@@ -176,14 +176,30 @@ def analyse_couleur(liste):
  
             gris = str(j[0]).find('gray')
             blanc = str(j[0]).find('white')
-                
+ 
             if gris >= 0:
-                liste_gris_haut.append(j)
+                try:
+                    nb = j[0][-2:]
+                    nb = int(nb)
+                    
+                    if nb <= 24:
+                        liste_coul_haut.append(j)
+                        
+                    elif nb > 24 and nb < 95:
+                        liste_gris_haut.append(j)
+                        
+                    elif nb >= 95:
+                        liste_white_haut.append(j) 
+                except:
+                    pass
+                
+   
             elif blanc >= 0:
-                liste_white_haut.append(j)
+                liste_white_bas.append(j)
             else:
-                liste_couleur_haut.append(j)
+                liste_couleur_bas.append(j)
 
+                
         print('\n')
         print('\n\n\n\n\n\n\n\n\n\n')
         print('WHITE', liste_white_haut)
@@ -208,7 +224,20 @@ def analyse_couleur(liste):
             blanc = str(j[0]).find('white')
             
             if gris >= 0:
-                liste_gris_bas.append(j)
+                try:
+                    nb = j[0][-2:]
+                    nb = int(nb)
+                    if nb <= 24:
+                        liste_couleur_bas.append(j)
+                    elif nb > 24 and nb < 95:
+                        liste_gris_bas.append(j)
+                    elif nb >= 95:
+                        liste_white_bas.append(j) 
+                except:
+                    pass
+         
+                    
+                
             elif blanc >= 0:
                 liste_white_bas.append(j)
             else:
@@ -231,7 +260,12 @@ def analyse_couleur(liste):
 
 
 
+def nombre_couleur(liste):
+
     
+
+    for i in liste:
+        pass
 
 
 
