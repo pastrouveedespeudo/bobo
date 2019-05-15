@@ -9,6 +9,8 @@
 
 on sépare le haut du bas, on prend le nombre de pixel du haut et du bas et on fait un pourcentage, avec le blanc et le gris et les couleurs si le gris === habit noir si le gris == a un nombre de 10 sinon gris
 
+NOIR SOUS 24 au dessus jtrouve que c du gris
+
 on fait la meme avec le blanc et sinon vu que j'ai que 8 images la je peux récupe la couleur oki !
 
 
