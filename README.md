@@ -7,6 +7,8 @@
 
 #ok voici le plan:
 
+#ton fond == c du 'white' donc ca ok celle tout en noir ! ok faire les test du p11 et lis tout
+
 #elles sont peut etre trop grande enfete ^^
 
 #certaine ca marche une ou deux les autres ca marche pas verifie et trouve une regle ptetre parcourir les couleurs si y'a du bleu mais 4 % alors c bleu, si y'a du blanc mais en couleur 4% mais c du noir alors c blanc
