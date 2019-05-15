@@ -61,7 +61,7 @@ def analysa():
     liste1 = []
 
 
-    d = coiffure2('*', 'bobo1_coiffure')
+    d = coiffure2('*', 'bobo1')
 
 
     coif = [i[2] for i in d]
@@ -100,8 +100,7 @@ def analysa():
         a = coiffure('bobo1', 'haut', i[0])
         b = coiffure('bobo1', 'bas', i[0])
         
-           
-
+    
         c = traitement_coul(str(a))
 
     
@@ -115,7 +114,7 @@ def analysa():
 
         finally:
             pré_liste_haut = sorted(pré_liste_haut, key=lambda s : s[1])
-       
+          
 
 
 
@@ -131,10 +130,10 @@ def analysa():
 
         finally:
             pré_liste_bas = sorted(pré_liste_bas, key=lambda s : s[1])
-
+           
             
             pré_liste.append([pré_liste_haut, pré_liste_bas, coif[compteur] ,i[0]])
-
+          
             
         pré_liste_haut = []
         pré_liste_bas = []
@@ -142,50 +141,107 @@ def analysa():
 
 
         
-    #print(pré_liste)
+
     return pré_liste
     #haut, bas, brun, 1a.jpg
 
 
 def analyse_couleur(liste):
 
-    liste_white = []
-    liste_couleur = []
-    liste_gris = []
-    
+
+    c = 0
     for i in liste:
-        for j in i:
-            for k in j:
-                gris = str(k[0]).find('gray')
-                blanc = str(k[0]).find('white')
+            
+        liste_white_haut = []
+        liste_couleur_haut = []
+        liste_gris_haut = []
+
+
+        liste_white_bas = []
+        liste_couleur_bas = []
+        liste_gris_bas = []
+
+        
+        print('debut analyse de:', i[3])
+        print('\n')
+        print('\n')
+         
+        print('le haut:')
+        
+        print('\n')
+        print(i[0])
+        print('\n')
+        
+        for j in i[0]:
+ 
+            gris = str(j[0]).find('gray')
+            blanc = str(j[0]).find('white')
                 
-                if gris >= 0:
-                    liste_gris.append(k)
-                elif blanc >= 0:
-                    liste_white.append(k)
-                else:
-                    liste_couleur.append(k)
-                    
+            if gris >= 0:
+                liste_gris_haut.append(j)
+            elif blanc >= 0:
+                liste_white_haut.append(j)
+            else:
+                liste_couleur_haut.append(j)
+
+        print('\n')
+        print('\n\n\n\n\n\n\n\n\n\n')
+        print('WHITE', liste_white_haut)
+        print('\n\n')
+        print('GRIS', liste_gris_haut)
+        print('\n\n')
+        print('COUL', liste_couleur_haut)
+        
+        print('\n\n')
+        print('\n')
+        print('\n')
+
+        print('le bas:')
+        print('\n')
+        print('\n')
+        
+        print(i[1])
+        
+        for j in i[1]:
+
+            gris = str(j[0]).find('gray')
+            blanc = str(j[0]).find('white')
+            
+            if gris >= 0:
+                liste_gris_bas.append(j)
+            elif blanc >= 0:
+                liste_white_bas.append(j)
+            else:
+                liste_couleur_bas.append(j)
+      
+        print('\n\n\n\n\n\n\n\n\n\n')
+        
+        print('WHITE', liste_white_bas)
+        print('\n\n')
+        print('GRIS', liste_gris_bas)
+        print('\n\n')
+        print('COUL', liste_couleur_bas)
+        print('\n\n')
+
+
+ 
+
+
         break
 
 
 
-    return liste_white, liste_gris, liste_couleur
-
-
-def traitement_couleur(liste_white, liste_gris, liste_couleur):
     
-    print(liste_white)
-    print('\n\n')
-    print(liste_gris)
-    print('\n\n')
-    print(liste_couleur)
-    print('\n\n')
+
+
+
+    
+
 
 
 liste = analysa()
 liste1 = analyse_couleur(liste)
-traitement_couleur(liste1[0], liste1[1], liste1[2])
+
 
 
 
