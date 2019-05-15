@@ -11,10 +11,12 @@ on sépare le haut du bas, on prend le nombre de pixel du haut et du bas et on f
 
 NOIR SOUS 24 au dessus jtrouve que c du gris
 
+putin y'a du gris blanc au dessu de 95 BLANC
+
 on fait la meme avec le blanc et sinon vu que j'ai que 8 images la je peux récupe la couleur oki !
 
 
-
+determine les poucentages mtn pcque normalement devrais y avoir du rouge y'en a pas... elles sont encore trop petite
 
 
 
