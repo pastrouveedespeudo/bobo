@@ -6,6 +6,8 @@ from operator import itemgetter
 from mode_w_data import traitement_coul
 
 
+LISTE_FINAL = []
+
 def coiffure(table, attribut, image):
     
     conn = psycopg2.connect(database='bobo',
@@ -161,7 +163,7 @@ def analyse_couleur(liste):
         liste_couleur_bas = []
         liste_gris_bas = []
 
-        
+        print('\n\n\n\n\n\n\n')
         print('debut analyse de:', i[3])
         print('\n')
         print('\n')
@@ -214,7 +216,7 @@ def analyse_couleur(liste):
         print('\n\n')
         pourcentage(nombre_couleur(liste_white_haut),
                     nombre_couleur(liste_gris_haut),
-                    nombre_couleur(liste_couleur_haut))
+                    nombre_couleur(liste_couleur_haut), i[3], 'haut')
         print('\n')
         print('\n')
 
@@ -256,19 +258,19 @@ def analyse_couleur(liste):
         print('il y a : blanc', nombre_couleur(liste_white_bas))
         print('\n\n')
         print('GRIS', liste_gris_bas)
-        print('il y a : blanc', nombre_couleur(liste_gris_bas))
+        print('il y a : gris', nombre_couleur(liste_gris_bas))
         print('\n\n')
         print('COUL', liste_couleur_bas)
-        print('il y a : blanc', nombre_couleur(liste_couleur_bas))
+        print('il y a : couleur', nombre_couleur(liste_couleur_bas))
         print('\n\n')
 
         pourcentage(nombre_couleur(liste_white_bas),
                     nombre_couleur(liste_gris_bas),
-                    nombre_couleur(liste_couleur_bas))
+                    nombre_couleur(liste_couleur_bas), i[3], 'bas')
  
 
 
-        break
+    liste_final(LISTE_FINAL)
 
 
 
@@ -281,8 +283,10 @@ def nombre_couleur(liste):
         c += nb 
     print(c)
     return c
-    
-def pourcentage(bl, gr, cl):
+
+
+
+def pourcentage(bl, gr, cl, image, endroit):
     print(bl, gr,cl)
     total = int(bl) + int(gr) + int(cl)
     blanc = (100 * bl) / total
@@ -292,6 +296,35 @@ def pourcentage(bl, gr, cl):
     print('sur', total, 'couleurs il y a:', blanc,'% de blanc')
     print('sur', total, 'couleurs il y a:', gris,'% de gris')
     print('sur', total, 'couleurs il y a:', couleur,'% de coul')
+
+
+
+    if couleur > 25.0:
+        LISTE_FINAL.append(('couleur', image, endroit))
+
+    elif couleur > blanc and couleur > gris:
+        LISTE_FINAL.append(('couleur', image, endroit))
+
+    elif gris > blanc + 35 and couleur < 10:
+        LISTE_FINAL.append(('gris', image, endroit))
+
+    elif blanc > gris + 50 and couleur < 25.0:
+        LISTE_FINAL.append(('blanc', image, endroit))
+
+
+
+    return LISTE_FINAL
+    
+def liste_final(liste):
+    print(liste)
+
+
+
+
+
+
+
+
 
 
 liste = analysa()
