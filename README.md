@@ -7,7 +7,9 @@
 
 #ok voici le plan:
 
-#ouf si il a de la couleur > gris < blanc c de la couleur nik je savais que je devais mettre le fond en couleur impossible ptin je le mettrais dans les difficultés rencontrés
+#elles sont peut etre trop grande enfete ^^
+
+#certaine ca marche une ou deux les autres ca marche pas verifie et trouve une regle ptetre parcourir les couleurs si y'a du bleu mais 4 % alors c bleu, si y'a du blanc mais en couleur 4% mais c du noir alors c blanc
 
 
 ben mtn faut se taper toutes les couleurs a la main et sur le moment je le pensais mais les tests enfete c horrible... 
