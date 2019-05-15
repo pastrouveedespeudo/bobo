@@ -7,7 +7,7 @@
 
 #ok voici le plan:
 
-#ton fond == c du 'white' donc ca ok celle tout en noir ! ok faire les test du p11 et lis tout
+#ton fond == c du 'white' donc ca ok celle tout en noir ! ok faire les test du p11 et lis tout ca ok touteeee les images ta grand mere !!!!
 
 #elles sont peut etre trop grande enfete ^^
 
