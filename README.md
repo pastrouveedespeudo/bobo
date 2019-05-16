@@ -8,7 +8,7 @@
 #ok stop mais en gros si deux couleurs d'affiler ca veut dire qu'au début sté une couleur ex gris blanc et ca foire tout faut les remettre en un mm mot 
 
 
-
+#gris blanc c du gris connard bleu blanc c du bleu c du bleu connard
 
 
 
