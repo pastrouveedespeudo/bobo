@@ -197,7 +197,10 @@ def analyse_couleur(liste):
                 
    
             elif blanc >= 0:
-                liste_white_haut.append(j)
+                if j[0] == 'white':
+                    pass
+                else:
+                    liste_white_haut.append(j)
             else:
                 liste_couleur_haut.append(j)
 
@@ -248,7 +251,10 @@ def analyse_couleur(liste):
                     
                 
             elif blanc >= 0:
-                liste_white_bas.append(j)
+                if j[0] == 'white':
+                    pass
+                else:
+                    liste_white_bas.append(j)
             else:
                 liste_couleur_bas.append(j)
       
