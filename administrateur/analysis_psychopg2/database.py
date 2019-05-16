@@ -54,6 +54,22 @@ class table:
         conn.commit()
 
 
+    def table_analyse(self):
+
+        conn = psycopg2.connect(database='bobo',
+                                user='postgres',
+                                host='127.0.0.1',
+                                password='tiotiotio333') 
+
+        cur = conn.cursor()
+        
+        cur.execute("""create table analyse_donnee1(
+                    analyse_donnee text);
+                    """)
+        
+        conn.commit()
+
+
 class insertion_table:
      
     def insertion_info(self, nom, sexe, haut, bas, taille_haut, taille_bas):
@@ -156,6 +172,7 @@ class visualisation_table:
             print('\n')
 
 #table = table()
+#table.table_analyse()
 #table.creation_table_donnée()
 #table.creation_table_donnée2()
 #visualisation_table = visualisation_table()
