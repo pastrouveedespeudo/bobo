@@ -5,16 +5,7 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-#ok voici le plan:
-
-#ton fond == c du 'white' donc ca ok celle tout en noir ! ok faire les test du p11 et lis tout ca ok touteeee les images ta grand mere !!!!
-
-#elles sont peut etre trop grande enfete ^^
-
-#certaine ca marche une ou deux les autres ca marche pas verifie et trouve une regle ptetre parcourir les couleurs si y'a du bleu mais 4 % alors c bleu, si y'a du blanc mais en couleur 4% mais c du noir alors c blanc
-
-
-ben mtn faut se taper toutes les couleurs a la main et sur le moment je le pensais mais les tests enfete c horrible... 
+#ok stop mais en gros si deux couleurs d'affiler ca veut dire qu'au début sté une couleur ex gris blanc et ca foire tout faut les remettre en un mm mot 
 
 
 
