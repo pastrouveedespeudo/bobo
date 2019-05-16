@@ -159,13 +159,15 @@ def tendance(request):
     blond = coupa.count('blond')
     try:
         liste_ana = analysa()#haut, bas, brun, 1a.jpg
+        liste_tendance = les_tendances_couleurs()
     except:
         liste_ana = ''
+        liste_tendance= ''
 
 
 
     return render(request, "tendance.html", {'blond':blond, 'brun':brun, 'chatain':chatain,
-                                             'liste_ana':liste_ana})
+                                             'liste_ana':liste_ana, 'liste_tendance':liste_tendance})
 
 
 
@@ -249,8 +251,11 @@ def analyse(request):
         print("ouiiiiiiiiiiiiiiiiiiiiiii")
         traitement()
        
-        #image_femme_haut.traitement()
-        
+        try:
+            analysa()
+            les_tendances_couleurs()
+        except:
+            pass
     return render(request, "analyse.html")
 
 
