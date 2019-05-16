@@ -15,12 +15,24 @@ LISTE_FINAL = []
 
 def couleur_vetement(liste):
     coul = []
+    dico = {}
+    
+    for cle, valeur in DICO_COULEUR.items():
+        dico[valeur] = 0
+        
     for i in liste:
         for cle, valeur in DICO_COULEUR.items():
             if i[0] == cle:
                 coul.append(DICO_COULEUR[cle])
-        
-    return set(coul)
+                dico[valeur] += int(i[1])
+                break
+
+    terminal = []
+    for cle, valeur in dico.items():
+        if valeur != 0:
+            terminal.append((cle, valeur))
+
+    return terminal
 
 
 def nombre_couleur(liste):
@@ -45,24 +57,25 @@ def pourcentage(bl, gr, cl, image, endroit):
     print('sur', total, 'couleurs il y a:', gris,'% de gris')
     print('sur', total, 'couleurs il y a:', couleur,'% de coul')
 
-#6a bas hat
+
 
 
     if couleur > 50.0:
         LISTE_FINAL.append(('couleur', image, endroit))
-
+        c =  'couleur'
     elif gris > 60.0:
         LISTE_FINAL.append(('gris', image, endroit))
-
+        c = 'gris'
     elif blanc > 50.0:
         LISTE_FINAL.append(('blanc', image, endroit))
-
+        c = 'blanc'
     else:
         LISTE_FINAL.append(('none', image, endroit))
+        c = 'couleur'
 
 
+    return LISTE_FINAL, c
 
-    return LISTE_FINAL
     
 def liste_final(liste):
     print(liste)
@@ -141,8 +154,8 @@ for i in liste:
         liste_couleur_haut = sorted(liste_couleur_haut, key=lambda s : s[1])
         liste_white_haut = sorted(liste_white_haut, key=lambda s : s[1])
         liste_gris_haut = sorted(liste_gris_haut, key=lambda s : s[1])
+        
 
-        print('\n')
 
         print('\n')
         print('\n')
@@ -157,12 +170,19 @@ for i in liste:
         print('\n')
         print('\n')
         
-        pourcentage(nombre_couleur(liste_white_haut),
+        pour1 = pourcentage(nombre_couleur(liste_white_haut),
                     nombre_couleur(liste_gris_haut),
                     nombre_couleur(liste_couleur_haut), i[1], 'haut')
         
         print('\n\n')
-
+        print(str(pour1[1]).upper())
+        if pour1[1] == 'couleur':
+            print('\n')
+            un = couleur_vetement(liste_couleur_haut)
+            print(un)
+            print('\n')
+        else:
+            print(pour1[1])
 
 
 
@@ -206,9 +226,6 @@ for i in liste:
         liste_white_bas = sorted(liste_white_bas, key=lambda s : s[1])
         liste_gris_bas = sorted(liste_gris_bas, key=lambda s : s[1])
         
-
-
-
         print('\n\n')
         
         print('WHITE', liste_white_bas)
@@ -221,14 +238,19 @@ for i in liste:
         print('il y a : couleur', nombre_couleur(liste_couleur_bas))
         print('\n')
 
-        pourcentage(nombre_couleur(liste_white_bas),
+        pour = pourcentage(nombre_couleur(liste_white_bas),
                     nombre_couleur(liste_gris_bas),
                     nombre_couleur(liste_couleur_bas), i[1], 'bas')
  
-        print('\n')
-        print('\n')
-
-
+        print('\n\n')
+        print(str(pour[1]).upper())
+        if pour[1] == 'couleur':
+            print('\n')
+            un = couleur_vetement(liste_couleur_bas)
+            print(un)
+            print('\n')
+        else:
+            print(pour[1])
 
 
 print('\n\n\n')
