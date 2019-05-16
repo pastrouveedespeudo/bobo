@@ -6,8 +6,10 @@ import json
 from django.http import HttpResponse
 
 
-
-from static.bobo.analysa import *
+try:
+    from static.bobo.analysa import *
+except:
+    pass
 
 from django.core.files import File
 
@@ -19,7 +21,7 @@ from django.http import JsonResponse
 from static.bobo.mode_w_data import haut_bas
 from static.bobo.coupe_analysis import *
 from static.bobo.mode_analyse import *
-
+from static.bobo.analyse_femme_haut import *
 
 def mode(request):
        
@@ -155,8 +157,10 @@ def tendance(request):
     brun = coupa.count('marron')
     chatain = coupa.count('chatin')
     blond = coupa.count('blond')
-    liste_ana = analysa()#haut, bas, brun, 1a.jpg
-
+    try:
+        liste_ana = analysa()#haut, bas, brun, 1a.jpg
+    except:
+        liste_ana = ''
 
 
 
