@@ -272,7 +272,7 @@ def traitement():
             liste3.append(b)
 
     
-    print(liste3)
+    print(liste3,'000000000LISTE3')
 
 
     for i in liste3:    
@@ -291,20 +291,24 @@ def traitement():
 
             
             if nom == 'a':
-
+                
                 mask_bas(i)
-                
-                resize('traitement_haut.jpg', 'traitement_haut.jpg')
-                haut = couleur_habit('traitement_haut.jpg')
-                
-                     
-                mask_haut(i)
                 
                 resize('traitement_bas1.jpg', 'traitement_bas1.jpg')
                 bas = couleur_habit('traitement_bas1.jpg')
 
-                insertion_info(self, i, 'féminin', haut[1],bas[1],
-                                                 haut[0], bas[0])
+
+
+
+
+                mask_haut(i)
+                resize('traitement_haut.jpg', 'traitement_haut.jpg')
+                
+                haut = couleur_habit('traitement_haut.jpg')
+                
+
+                insertion_info(i, 'féminin', haut[1], bas[1],
+                               haut[0], bas[0])
 
 
             elif nom == 'b':
