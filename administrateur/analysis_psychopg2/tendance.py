@@ -54,7 +54,6 @@ def i_into_i(liste):
     return liste1
     
 def unification(liste1):
- 
     liste2 = []
     for i in liste1:
         if i == []:
@@ -66,6 +65,7 @@ def unification(liste1):
     return liste2
 
 def suppression_en_trop(liste2):
+
     liste3 = []
     for i in liste2:
         liste3.append(i.split())
@@ -82,12 +82,68 @@ def suppression_en_trop(liste2):
                 else:
                     mot += k
             liste4.append(mot)
-    print(liste4)
-                
+
+    return liste4    
     
+def re_elment_de_liste(liste4):
+
+    liste5 = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],]
+    c = 0
+    for i in liste4:
+        if i == 'bas' or i == 'haut':
+            liste5[c].append(i)
+            c+=1
+        elif i == '':
+            pass
+        else:
+            liste5[c].append(i)
 
 
-def les_tendances_couleurs():
+    liste6 = []
+    for i in liste5:
+        if i == []:
+            pass
+        else:
+            liste6.append(i)
+
+    return liste6
+
+
+def mise_en_dico(liste6):
+
+    liste7 = []
+    dico = {}
+    print(liste6)
+    print('\n')
+    c = 0
+    for i in liste6:
+        d = 0
+        for j in i:
+            try:
+                dico[liste6[c][d]] = liste6[c][d + 1]
+                d+=2
+            except:
+                pass
+        liste7.append(dico)
+        dico = {}
+        c+=1
+
+    print(liste7)
+
+
+
+
+
+
+        
+
+def les_tendances_couleurs(liste6):
     pass
 
 
@@ -95,4 +151,10 @@ def les_tendances_couleurs():
 liste = data()
 liste1 = i_into_i(liste)
 liste2 = unification(liste1)
-suppression_en_trop(liste2)
+liste3 = suppression_en_trop(liste2)
+liste6 = re_elment_de_liste(liste3)
+mise_en_dico(liste6)
+
+
+
+
