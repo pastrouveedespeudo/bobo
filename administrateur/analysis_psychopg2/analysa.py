@@ -6,11 +6,21 @@ from config import HOST
 from config import PASSWORD
 
 from mode_w_data import traitement_coul
-
+from palettecouleur import *
 
 
 
 LISTE_FINAL = []
+
+
+def couleur_vetement(liste):
+    coul = []
+    for i in liste:
+        for cle, valeur in DICO_COULEUR.items():
+            if i[0] == cle:
+                coul.append(DICO_COULEUR[cle])
+        
+    return set(coul)
 
 
 def nombre_couleur(liste):
@@ -35,18 +45,16 @@ def pourcentage(bl, gr, cl, image, endroit):
     print('sur', total, 'couleurs il y a:', gris,'% de gris')
     print('sur', total, 'couleurs il y a:', couleur,'% de coul')
 
+#6a bas hat
 
 
-    if couleur > 25.0:
+    if couleur > 50.0:
         LISTE_FINAL.append(('couleur', image, endroit))
 
-    elif couleur > blanc and couleur > gris:
-        LISTE_FINAL.append(('couleur', image, endroit))
-
-    elif gris > blanc + 35 and couleur < 10:
+    elif gris > 60.0:
         LISTE_FINAL.append(('gris', image, endroit))
 
-    elif blanc > gris + 50 and couleur < 25.0:
+    elif blanc > 50.0:
         LISTE_FINAL.append(('blanc', image, endroit))
 
     else:
@@ -133,7 +141,10 @@ for i in liste:
         liste_couleur_haut = sorted(liste_couleur_haut, key=lambda s : s[1])
         liste_white_haut = sorted(liste_white_haut, key=lambda s : s[1])
         liste_gris_haut = sorted(liste_gris_haut, key=lambda s : s[1])
-        
+
+        print('\n')
+
+        print('\n')
         print('\n')
         print('WHITE', liste_white_haut)
         print('il y a : blanc', nombre_couleur(liste_white_haut))
@@ -194,7 +205,10 @@ for i in liste:
         liste_couleur_bas = sorted(liste_couleur_bas, key=lambda s : s[1])
         liste_white_bas = sorted(liste_white_bas, key=lambda s : s[1])
         liste_gris_bas = sorted(liste_gris_bas, key=lambda s : s[1])
-      
+        
+
+
+
         print('\n\n')
         
         print('WHITE', liste_white_bas)
@@ -221,8 +235,6 @@ print('\n\n\n')
 liste_final(LISTE_FINAL)
 
  
-
-
 
 
 
