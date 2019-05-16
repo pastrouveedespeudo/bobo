@@ -1,14 +1,210 @@
+import sys
 import os
+import cv2
+
+from colour import Color
+import numpy as np
+from PIL import Image, ImageDraw, ImageChops
+from matplotlib import pyplot as plt
+import math
+
+from .palettecouleur_coiffure import couleur_cheuvelure
+from .coul import *
+from .palettecouleur import DICO_COULEUR
+
+from .database import insertion_table
 import psycopg2
-from operator import itemgetter
+import shutil
 
 
-from mode_w_data import traitement_coul
+
+def resize(img, save):
+
+   image = Image.open(img)
+
+   image = image.resize((100,100))
+                        
+   image.save(save)
+
+   
+def mask_bas(i):
+
+    print('mask bas de :', i)
+
+    img = Image.open(i)
+
+    masque = Image.new('RGB', img.size, color=(255,255,255))
+
+    a = img.size[0] / 100 *30
+    b = img.size[1] / 100* 70
+    c = 0
+    d = img.size[1]
+
+    coords = (a,b, c,d)
+
+    masque_draw = ImageDraw.Draw(masque)
+    masque_draw.rectangle(coords, fill=(0,0,0))
+    diff = ImageChops.lighter(img, masque)
+
+    img = img.rotate(180)
+    img.crop((0, 0, b/2, a)).save('traitement_bas1.jpg')
 
 
-LISTE_FINAL = []
+def mask_haut(i):
 
-def coiffure(table, attribut, image):
+    img = Image.open(i)
+
+    print('mask haut de :', i)
+
+    masque = Image.new('RGB', img.size, color=(255,255,255))
+
+    a = img.size[1]
+    b = img.size[0] / 100 * 100
+   
+    c = 0
+    d = 0
+
+    coords = (a,b, c,d)
+
+    
+    masque_draw = ImageDraw.Draw(masque)
+    masque_draw.rectangle(coords, fill=(0,0,0))
+    diff = ImageChops.lighter(img, masque)
+
+
+    img.crop((0, 0, b, a/2)).save('traitement_haut.jpg')
+    
+
+
+def couleur_habit(im):
+
+
+    print(im, ' : en cours')
+
+    image = cv2.imread(im)
+
+    largeur = image.shape[1]
+    hauteur = image.shape[0]
+
+    taille = largeur * hauteur
+    
+    couleur_liste = []
+    for x in range(image.shape[0]):
+        for y in range(image.shape[1]):
+            
+            colordb = get_colordb('bobo.txt')
+            if not colordb:
+                print('No parseable color database found')
+                sys.exit(1)
+            nearest = colordb.nearest(image[x,y][2],
+                                      image[x,y][1],
+                                      image[x,y][0])
+
+            couleur_liste.append(nearest)
+
+    print(couleur_liste)
+    return taille, couleur_liste
+
+
+
+def couleur_cheveux(image):
+
+    dico = {}
+    dico_couleur = {'marron':0,
+                    'noir':0,
+                    'blond':0}
+
+    im = Image.open(image)
+    for value in im.getdata(): 
+         if value in dico.keys():
+             dico[value] += 1
+         else:
+             dico[value] = 1
+
+
+    liste = []
+    
+    for cle, valeur in dico.items():
+        liste.append((cle, valeur))
+            
+    liste2 = []
+    for i in liste:
+        if i[0][0] >= 240 and\
+           i[0][1] >= 240 and\
+           i[0][2] >= 240:
+            pass
+        else:
+            liste2.append(i)
+
+    for i in liste2:
+        coul = couleur_cheuvelure(i[0][0], i[0][1], i[0][2])
+        if coul == None:
+            pass
+        else:
+
+            if coul == 'blond':
+                dico_couleur['blond'] += 1
+                
+            elif coul == 'marron':
+                dico_couleur['marron'] += 1
+
+            elif coul == 'noir':
+                dico_couleur['noir'] += 1
+
+                
+
+ 
+    if dico_couleur['blond'] > dico_couleur['marron'] + 1000 and\
+       dico_couleur['blond'] > dico_couleur['noir']:
+        print('couleur de cheveux blond')
+        return 'blond'
+        
+        
+    elif dico_couleur['marron'] > dico_couleur['blond'] + 1000 and\
+       dico_couleur['marron'] > dico_couleur['noir']:
+        print('couleur de cheveux marron')
+        return 'marron'
+    
+    elif dico_couleur['noir'] > dico_couleur['blond'] and\
+       dico_couleur['noir'] > dico_couleur['noir']:
+        print('couleur de cheveux noir')
+        return 'noir'
+    
+    elif dico_couleur['marron'] >= dico_couleur['blond'] + 400 and\
+       dico_couleur['marron'] > dico_couleur['noir']:
+        print('couleur de cheveux chatin')
+        return 'chatin'
+        
+    elif dico_couleur['blond'] >= dico_couleur['marron'] + 400 and\
+       dico_couleur['blond'] > dico_couleur['noir']:
+        print('couleur de cheveux chatin')
+        return 'chatin'
+
+
+
+def insertion_info(nom, sexe, haut, bas, taille_haut, taille_bas):
+
+    conn = psycopg2.connect(database='bobo',
+                            user='postgres',
+                            host='127.0.0.1',
+                            password='tiotiotio333')
+
+    cur = conn.cursor()
+
+    
+    
+    cur.execute("""insert into bobo1
+             (image, sexe, haut, bas, taille_haut, taille_bas)
+             values(%s, %s, %s, %s, %s, %s);""",
+             (nom, sexe, haut, bas, taille_haut,
+             taille_bas))
+
+    
+    
+    conn.commit()
+
+
+def ccoiffure(image, coiffure):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -18,20 +214,15 @@ def coiffure(table, attribut, image):
     cur = conn.cursor()
     
 
-    
-    cur.execute("""select {} from {}
-                WHERE image = '{}';""".format(attribut, table, image))
+    cur.execute("""insert into bobo1_coiffure
+                (image, coiffure)
+                values(%s, %s);""", (image, coiffure))
 
-    
+
     conn.commit()
 
-    rows = cur.fetchall()
-    liste = [i for i in rows]
 
-
-    return liste
-
-def coiffure2(table, attribut):
+def pré_visualisation_donnée(table):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -40,13 +231,9 @@ def coiffure2(table, attribut):
 
     cur = conn.cursor()
     
-
+    cur.execute("""SELECT * from {}""".format(table))
+                       
     
-    cur.execute("""select {} from {};""".format(table, attribut))
-
-    
-    conn.commit()
-
     rows = cur.fetchall()
     liste = [i for i in rows]
 
@@ -54,275 +241,93 @@ def coiffure2(table, attribut):
     return liste
 
 
-
-def analysa():
     
+def traitement():
+    
+
     os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
     liste = os.listdir()
 
-    liste1 = []
+    liste2 = ['analysa.py', 'analyse_femme_haut.py', 'bobo.txt',
+              'config.py', 'constante.py', 'conteneur.py', 'coul.py',
+              'coupe_analysis.py', 'database.py', 'ess.py', 'mode_analyse.py',
+              'mode_w_data.py', 'palettecouleur.py', 'palettecouleur_coiffure.py',
+              'traitement_bas1.jpg', 'traitement_haut.jpg', '__pycache__']
+
+    element = pré_visualisation_donnée('bobo1')
+    element2 = pré_visualisation_donnée('bobo1_coiffure')
+    
+    for i in element:
+        liste2.append(i[1])
+    for i in element2:
+        liste2.append(i[1])
+
+    set1 = set(liste2)
+    set2 = set(liste)
+
+    liste3 = []
+    
+    for a in set1 :
+        if not(a in set2):
+            print(a)
+     
+    for b in set2 :
+        if not(b in set1):
+            liste3.append(b)
+
+    
+    print(sorted(liste3),'000000000LISTE3')
 
 
-    d = coiffure2('*', 'bobo1')
-
-
-    coif = [i[2] for i in d]
- 
-
-    laliste1 = []
-
-    for i in liste:
-        if i == 'analyse_femme_haut.py' or  i == 'bobo.txt' or\
-           i == 'config.py' or i == 'constante.py' or i == 'conteneur.py' or\
-           i == 'coul.py' or i == 'coupe_analysis.py' or i=='constante.py' or\
-           i == 'database.py' or i == 'mode_analyse.py' or i == 'mode_w_data.py' or\
+    for i in sorted(liste3):    
+        print(i)
+        if i == '__pycache__' or i == 'analyse_femme_haut.py' or\
+           i == 'constante.py' or i == 'coul.py' or\
            i == 'palettecouleur.py' or i == 'palettecouleur_coiffure.py' or\
-           i == 'traitement_bas1.jpg' or i == 'traitement_haut.jpg' or i == '__pycache__' or i=='bobo'\
-           or i =='ess.py' or i =='analysa.py':
+           i=='bobo.txt' or i== 'traitement_haut.jpg' or i == "traitement_bas1.jpg" or\
+           i == 'config.py' or i == 'constante.py' or i =='coul.py' or i == 'database.py' or\
+           i == 'palettecouleur.py' or i =='palettecouleur_coiffure.py':
             pass
+        
         else:
-            laliste1.append(i)
 
-    c = 0
-    for i in laliste1:
-        try:
-            liste1.append((str(laliste1[c]), str(laliste1[c+1]), int(str(c) + str(c))))
-            c+=2
+            nom = i[-5:-4]
 
-        except:
-            pass
-
-    pré_liste_haut = []
-    pré_liste_bas = []
-    pré_liste = []
-
-    compteur = 0
-    for i in liste1:
-
-        a = coiffure('bobo1', 'haut', i[0])
-        b = coiffure('bobo1', 'bas', i[0])
-        
-    
-        c = traitement_coul(str(a))
-
-    
-        try:
-            for j in c:
-                for k in j:
-                    pré_liste_haut.append(k)
-                    
-        except:
-            pass
-
-        finally:
-            pré_liste_haut = sorted(pré_liste_haut, key=lambda s : s[1])
-          
-
-
-
-        d = traitement_coul(str(b))
-        
-        try:
-            for j in d:
-                for k in j:
-                    pré_liste_bas.append(k)
-                    
-        except:
-            pass
-
-        finally:
-            pré_liste_bas = sorted(pré_liste_bas, key=lambda s : s[1])
-           
             
-            pré_liste.append([pré_liste_haut, pré_liste_bas, coif[compteur] ,i[0]])
-          
-            
-        pré_liste_haut = []
-        pré_liste_bas = []
-        compteur += 1
-
-
-        
-
-    return pré_liste
-    #haut, bas, brun, 1a.jpg
-
-
-def analyse_couleur(liste):
-
-
-    c = 0
-    for i in liste:
-            
-        liste_white_haut = []
-        liste_couleur_haut = []
-        liste_gris_haut = []
-
-
-        liste_white_bas = []
-        liste_couleur_bas = []
-        liste_gris_bas = []
-
-        print('\n\n\n\n\n\n\n')
-        print('debut analyse de:', i[3])
-        print('\n')
-        print('\n')
-         
-        print('le haut:')
-        
-        print('\n')
-        print(i[0])
-        print('\n')
-        
-        for j in i[0]:
- 
-            gris = str(j[0]).find('gray')
-            blanc = str(j[0]).find('white')
- 
-            if gris >= 0:
-                try:
-                    nb = j[0][-2:]
-                    nb = int(nb)
-                    
-                    if nb <= 24:
-                        liste_coul_haut.append(j)
-                        
-                    elif nb > 24 and nb < 95:
-                        liste_gris_haut.append(j)
-                        
-                    elif nb >= 95:
-                        liste_white_haut.append(j) 
-                except:
-                    pass
+            if nom == 'a':
                 
-   
-            elif blanc >= 0:
-                if j[0] == 'white':
-                    pass
-                else:
-                    liste_white_haut.append(j)
-            else:
-                liste_couleur_haut.append(j)
-
+                mask_bas(i)
                 
-        print('\n')
-        print('\n\n\n\n\n\n\n\n\n\n')
-        print('WHITE', liste_white_haut)
-        print('il y a : blanc', nombre_couleur(liste_white_haut))
-        print('\n\n')
-        print('GRIS', liste_gris_haut)
-        print('il y a : gris', nombre_couleur(liste_gris_haut))
-        print('\n\n')
-        print('COUL', liste_couleur_haut)
-        print('il y a coul : ', nombre_couleur(liste_couleur_haut))
-        
-        print('\n\n')
-        pourcentage(nombre_couleur(liste_white_haut),
-                    nombre_couleur(liste_gris_haut),
-                    nombre_couleur(liste_couleur_haut), i[3], 'haut')
-        print('\n')
-        print('\n')
+                resize('traitement_bas1.jpg', 'traitement_bas1.jpg')
+                bas = couleur_habit('traitement_bas1.jpg')
 
-        print('le bas:')
-        print('\n')
-        print('\n')
 
-        
-        print(i[1])
-        
-        for j in i[1]:
 
-            gris = str(j[0]).find('gray')
-            blanc = str(j[0]).find('white')
+
+
+                mask_haut(i)
+                resize('traitement_haut.jpg', 'traitement_haut.jpg')
+                
+                haut = couleur_habit('traitement_haut.jpg')
+                
+
+                insertion_info(i, 'féminin', haut[1], bas[1],
+                               haut[0], bas[0])
+
+
+            elif nom == 'b':
             
-            if gris >= 0:
-                try:
-                    nb = j[0][-2:]
-                    nb = int(nb)
-                    if nb <= 24:
-                        liste_couleur_bas.append(j)
-                    elif nb > 24 and nb < 95:
-                        liste_gris_bas.append(j)
-                    elif nb >= 95:
-                        liste_white_bas.append(j) 
-                except:
-                    pass
-         
-                    
-                
-            elif blanc >= 0:
-                if j[0] == 'white':
-                    pass
-                else:
-                    liste_white_bas.append(j)
-            else:
-                liste_couleur_bas.append(j)
-      
-        print('\n\n\n\n\n\n\n\n\n\n')
+                coiffure = couleur_cheveux(i)
+                print(coiffure)
+                ccoiffure(i, coiffure)
+
+
+                                         
+
+
+
+
         
-        print('WHITE', liste_white_bas)
-        print('il y a : blanc', nombre_couleur(liste_white_bas))
-        print('\n\n')
-        print('GRIS', liste_gris_bas)
-        print('il y a : gris', nombre_couleur(liste_gris_bas))
-        print('\n\n')
-        print('COUL', liste_couleur_bas)
-        print('il y a : couleur', nombre_couleur(liste_couleur_bas))
-        print('\n\n')
-
-        pourcentage(nombre_couleur(liste_white_bas),
-                    nombre_couleur(liste_gris_bas),
-                    nombre_couleur(liste_couleur_bas), i[3], 'bas')
- 
-
-
-    liste_final(LISTE_FINAL)
-
-
-
-def nombre_couleur(liste):
-
-    
-    c = 0
-    for i in liste:
-        nb = int(i[1])
-        c += nb 
-    print(c)
-    return c
-
-
-
-def pourcentage(bl, gr, cl, image, endroit):
-    print(bl, gr,cl)
-    total = int(bl) + int(gr) + int(cl)
-    blanc = (100 * bl) / total
-    gris = (100 * gr) / total
-    couleur = (100 * cl) / total
-
-    print('sur', total, 'couleurs il y a:', blanc,'% de blanc')
-    print('sur', total, 'couleurs il y a:', gris,'% de gris')
-    print('sur', total, 'couleurs il y a:', couleur,'% de coul')
-
-
-
-    if couleur > 25.0:
-        LISTE_FINAL.append(('couleur', image, endroit))
-
-    elif couleur > blanc and couleur > gris:
-        LISTE_FINAL.append(('couleur', image, endroit))
-
-    elif gris > blanc + 35 and couleur < 10:
-        LISTE_FINAL.append(('gris', image, endroit))
-
-    elif blanc > gris + 50 and couleur < 25.0:
-        LISTE_FINAL.append(('blanc', image, endroit))
-
-
-
-    return LISTE_FINAL
-    
-def liste_final(liste):
-    print(liste)
 
 
 
@@ -333,8 +338,23 @@ def liste_final(liste):
 
 
 
-liste = analysa()
-liste1 = analyse_couleur(liste)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
