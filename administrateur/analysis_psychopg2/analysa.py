@@ -59,7 +59,8 @@ def pourcentage(bl, gr, cl, image, endroit):
 
 
 
-
+    j = ''
+    
     if couleur > 50.0:
         LISTE_FINAL.append(('couleur', image, endroit))
         c =  'couleur'
@@ -70,8 +71,15 @@ def pourcentage(bl, gr, cl, image, endroit):
         LISTE_FINAL.append(('blanc', image, endroit))
         c = 'blanc'
     else:
-        LISTE_FINAL.append(('none', image, endroit))
-        c = 'couleur'
+        o = [blanc, gris, couleur]
+        if o == blanc:
+            j = 'blanc'
+        elif o == gris:
+            j = 'gris'
+        else:
+            j = 'couleur'
+        LISTE_FINAL.append((j, image, endroit))
+        c = j
 
 
     return LISTE_FINAL, c
@@ -80,6 +88,8 @@ def pourcentage(bl, gr, cl, image, endroit):
 def liste_final(liste):
     print(liste)
 
+
+LISTE_FINAL2 = []
 
 #def data():
 conn = psycopg2.connect(database='bobo',
@@ -181,8 +191,10 @@ for i in liste:
             un = couleur_vetement(liste_couleur_haut)
             print(un)
             print('\n')
+            LISTE_FINAL2.append((un, i[1], 'haut'))
         else:
             print(pour1[1])
+            LISTE_FINAL2.append((pour1[1], i[1], 'haut'))
 
 
 
@@ -249,21 +261,32 @@ for i in liste:
             un = couleur_vetement(liste_couleur_bas)
             print(un)
             print('\n')
+            LISTE_FINAL2.append((un, i[1], 'bas'))
         else:
             print(pour[1])
+            LISTE_FINAL2.append((pour[1], i[1], 'bas'))
 
 
 print('\n\n\n')
 liste_final(LISTE_FINAL)
 
- 
 
 
+print(LISTE_FINAL2)
+LISTE_FINAL2 = str(LISTE_FINAL2)
+LISTE_FINAL2 = LISTE_FINAL2.replace("'", '"')
 
+conn = psycopg2.connect(database='bobo',
+                        user='postgres',
+                        host='127.0.0.1',
+                        password='tiotiotio333')
 
+cur = conn.cursor()
 
+cur.execute("""insert into analyse_donnee1
+            values (%s);""", (LISTE_FINAL2,))
 
-
+conn.commit()
 
 
 
