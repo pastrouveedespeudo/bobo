@@ -125,9 +125,10 @@
                 
                 function nom_image(id, hauteur, largeur){
                   LISTE_RESIZE.push(id)
-               
+                  
                   var a = document.getElementById(id).height;
                   var b = document.getElementById(id).width;
+                  
            
                   
                   LISTE1.push([id, b, a])
@@ -139,17 +140,16 @@
 
                 LISTE_FAV_FAV = []
                 LISTE_FAV_FAV.push(id)
-                alert(LISTE_FAV_FAV[LISTE_FAV_FAV.length-1])
+       
                
                 var a = document.getElementById(id);
 
                 var b = a.offsetLeft;
                 var c = a.offsetTop;
-                alert(b);
-                alert(c);
+             
                 
                 if(b >= 460 && b <= 580 & c >=60 && c <= 220 ){
-                    alert('uiiiiiiiiii')
+                   
                     
                     
                     
@@ -427,7 +427,7 @@
           
           LISTECOUPE.push(liste_liste[i].id)
           document.getElementById("coupedecheveux").value = LISTECOUPE[LISTECOUPE.length - 1];
-          alert(LISTECOUPE[LISTECOUPE.length - 1]);
+      
           
           document.getElementById("jaime").submit();
         }
@@ -440,12 +440,11 @@
 
         var b = a.offsetLeft;
         var c = a.offsetTop;
-        alert(b)
-        alert(c)
+     
         if(b >= 460 && b <= 580 & c >=60 && c <= 220 ){
 
             document.getElementById("coupedecheveux").value = LISTE_FAV_FAV[LISTE_FAV_FAV.length - 1];
-            alert(LISTE_FAV_FAV[LISTE_FAV_FAV.length - 1]);
+        
             document.getElementById("jaime").submit();
 
             
@@ -582,10 +581,11 @@
         for(var c = 0; c <= {{coif|length}}*4 - 1; c+=4){
 
             console.log(listeeeee[c], listeeeee[c + 1], listeeeee[c + 2], listeeeee[c + 3])
-
-        var url = "<img src='/static/img/portfolio/coupe/"  + listeeeee[c + 1] + "'" +  "width=" + "'" + listeeeee[c + 2] + "'"
-            + "height=" + "'" +  listeeeee[c + 2] + "' />"
+       
+        var url = "<img src='/static/img/portfolio/coupe/"  + listeeeee[c + 1] + "'" +  "height=" + "'" + listeeeee[c + 3] + "'"
+            + "width=" + "'" +  listeeeee[c + 2] + "' />"
         console.log(url)
+        
             
         var a = document.getElementById(listeeeee[c]).innerHTML = url;
 
@@ -594,7 +594,7 @@
         {% endfor %}
         </script>
 
-
+    
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -619,7 +619,7 @@
     
     <script>
     
-
+   
     jQuery("#sauve").on("click", function(e){
 
        e.preventDefault();
@@ -660,7 +660,7 @@
     function ajout_longueur(){
       
       var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
-      alert(a)
+ 
       var b = document.getElementById(a).id
       var c = '#' + b
     
@@ -709,6 +709,8 @@
       image.setAttribute('width', X);
       image.setAttribute('height',Y);
       LISTE1.push([b, X,Y]);
+      console.log(LISTE1[LISTE1.length-1])
+      console.log(X,Y)
       
 
     }
