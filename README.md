@@ -6,21 +6,17 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-
-#que tu laffiche en html
-
-
-#que tu face un dossier vetement rouge/noir/blanc haut et bas ect ste fois pas besoin de refaire une database
-
-#que tu demandes la couleur des cheveux via brune blonde chatin et t'as oublié noir gg donc noir mais ca sera chatain et les roux chaintain
+#les détourés avec le contour magique, finir de faire les autres images et c bientot ok
 
 #que selon la tendance tu lui affiches les vetements
 
 #que tu fasses la catégories vetements (la page)
 
-#pour les draggables tu pourrais faire un meilleur systeme comme les derniers mais ca au pire...
 
 #que tu finisses les tests et le dossier du p11 et finisse le p12
+
+
+
 
 <br><br><br><br><br><br><br><br><br><br>
 
