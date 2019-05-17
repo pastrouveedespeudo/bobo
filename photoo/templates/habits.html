@@ -79,23 +79,14 @@
           <h2 class="text-white mt-0"></h2>
           <hr class="divider light my-4">
 
-          <script>
-   
-          
-          function coul(couleur){
 
-            document.getElementById('couleur').style.display = 'block';
-            document.getElementById('couleur').innerHTML = 'Vous etes donc ' + couleur;
-            
-            };
-
-          </script>
           <p class="text-white-50 mb-4">Voici une sélection des habits fait par nos experts qui vont le mieux avec cette coupe</p>
 
           <input type='button' value='etes vous un homme ou un femme ?'>
           <br><br>
 
           <center><strong><h2>Etes-vous :</center></strong></h2><br><br>
+          
           <input type='button' id='brune' value='brune' onclick='coul("brune")'>
           <input type='button' id='blonde' value='blonde' onclick='coul("blonde")'>
           <input type='button' id='chatain' value='chatain' onclick='coul("chatain")'>
@@ -105,6 +96,10 @@
 
           <br><br>
           <div id='couleur' style='display:none;'></div>
+          <div id='recherche' style='display:none;' value='{{recherche}}'>{{recherche}}</div>
+
+
+          <div id='habit'></div>
 
 
 
@@ -114,18 +109,33 @@
 
           <script>
 
+      
+          function coul(couleur){
+
+            document.getElementById('couleur').style.display = 'block';
+            document.getElementById('couleur').innerHTML = 'Vous etes donc ' + couleur;
+            var a = document.getElementById('couleur').innerHTML;
+            alert(a);
+            };
+
+
+
           jQuery("#brune, #blonde, #chatain, #rousse, #noir").on("click", function(e){
+            
+            var a = document.getElementById('couleur').innerHTML;
+            var b = document.getElementById('recherche').innerHTML;
+            alert(a);
+            alert(b);
+            
              e.preventDefault();
               jQuery.ajax({
                   data:{
                       'csrfmiddlewaretoken': '{{csrf_token}}' , 
-                      
-
-                      
-               
+                      'a':a,
+                      'b':b
                   },
                   type:"POST",
-                  url:"/photo/vetement"
+                  url:"/photo/habits"
               })
               .done(function(data){
                   if (data.error){
