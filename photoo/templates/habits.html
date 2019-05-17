@@ -5,6 +5,11 @@
 {% block content %}
 {% endblock %}
 
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+
 
 
   <!-- Masthead -->
@@ -99,7 +104,144 @@
           <div id='recherche' style='display:none;' value=''></div>
 
 
-          <div id='habit'></div>
+          <div id='habitbas__blanc' style='display:none;'>
+          
+            <div id='1'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/1.jpg'>
+            </div>
+            
+            <div id='2'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/2.jpg'>
+            </div>
+            
+            <div id='3'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/3.jpg'>
+            </div>
+
+            <div id='4'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/4.jpg'>
+            </div>
+
+            
+            <div id='5'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/5.jpg'>
+            </div>
+
+
+            <div id='6'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/6.jpg'>
+            </div>
+  
+            <div id='7'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/7.jpg'>
+            </div>
+        
+
+            <div id='8'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/8.jpg'>
+            </div>
+
+            
+            <div id='9'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/9.jpg'>
+            </div>
+            
+            <div id='10'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/10.jpg'>
+            </div>
+
+
+      </div>
+
+
+          <script>
+            $( function() {
+              $("#1, #2, #3, #4, #5, #6, #7, #8, #9, #10").draggable();
+            } );
+
+          </script>
+
+
+
+    <div id='habitbas__bleu' style='display:none;'>
+            <div id='11'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/1.png'>
+            </div>
+            
+            <div id='22'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/2.png'>
+            </div>
+            
+            <div id='33'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/3.jpg'>
+            </div>
+
+            <div id='44'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/4.jpg'>
+            </div>
+
+            
+            <div id='55'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/5.jpg'>
+            </div>
+
+
+            <div id='66'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/6.jpg'>
+            </div>
+  
+            <div id='77'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/7.jpg'>
+            </div>
+        
+
+            <div id='88'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/8.jpg'>
+            </div>
+
+            
+            <div id='99'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/9.jpg'>
+            </div>
+            
+            <div id='1010'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/10.jpg'>
+            </div>
+
+
+            <div id='1111'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/11.jpg'>
+            </div>
+
+            <div id='1212'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/12.jpg'>
+            </div>
+
+            
+
+    </div>
+    
+          <script>
+            $( function() {
+              $("#11, #22, #33, #44, #55, #66, #77, #88, #99, #1010, #1111, #1212").draggable();
+            } );
+
+          </script>
+
+
+
+
+
+          
+
+
+
+
+
+
+
+
+          
           <div id='image'></div>
           
       
@@ -127,6 +269,7 @@
  
             
              e.preventDefault();
+             document.getElementById('habit').innerHTML = '';
               jQuery.ajax({
                   data:{
                       'csrfmiddlewaretoken': 'vrS3jiKMco5HjUgoQlNOQtDEUWWnq0Dg9jqGC5ECVvtI5mWHXmWtvrZBN09F9AMP' , 
@@ -146,64 +289,9 @@
                   else{
                       jQuery("#habit").html(data.data);
                       jQuery("#monCadreAlert");
-                      document.getElementById('habit').innerHTML = data;
                       console.log(data)
+                      document.getElementById('habit').innerHTML = data;
 
-
-                      liste1 = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
-                                [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
-                                [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
-                                [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
-                                [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
-                                [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
-                                [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
-                                [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],]
-
-
-                      var compteur = 0
-                      for(var i = 0; i < data.length;i ++){
-                          liste1[compteur].push(data[i])
-                          if(data[i] == 'g'){
-                            compteur += 1
-
-                            }
-                        };
-
-
-                      liste2 = []
-                      for(var i = 0; i < liste1.length;i ++){
-                        if(liste1[i] == ''){
-                          break
-                        }
-                        else{
-                          liste2.push(liste1[i].join(''))
- 
-                        }
-                      
-                      };
-                      console.log(liste2)
-
-                      for(var i = 0; i< liste2.length; i++){
-                        console.log(liste2[i]);
-                        var url = "<img id ='" +
-                                  liste2[i] +
-                                  "'" +
-                                  "src ='" +
-                                  "/static/img/portfolio/vetement/femme/bas_blanc/" +
-                                  liste2[i] + "'>";
-                        var urls = document.getElementById('habit').innerHTML;
-                        document.getElementById('habit').innerHTML = urls + url;
-
-                      }
-                      
-             
-
-                      
-                      
-                      
-                      
-                      
-                      
                   };
                   
               });
@@ -214,6 +302,11 @@
 
 
   
+
+
+
+
+
 
 
 
@@ -253,6 +346,9 @@
       </div>
     </div>
   </section>
+
+
+
 
 
 
@@ -458,24 +554,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="/static/vendor/jquery/jquery.min.js"></script>
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="/static/js/creative.min.js"></script>
 
 </body>
 
