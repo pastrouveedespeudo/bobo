@@ -28,7 +28,7 @@
 
 faire un refactoring + les truk d'en bas
 
-puis pollution par contre j'ai peur, sur heroku comment je vais intégrer les data de pollution ? fichier texte puis comme tendance et analysa ? et on travaille le fichier txt que l'on rerentre dans la database ? via le shell heroku ? pcque y'a 500 data et t'as pas encore toutes les conditions le jour du jury ca serait chiant quyest un bug
+puis pollution par contre j'ai peur, sur heroku comment je vais intégrer les data de pollution ? fichier texte puis comme tendance et analysa ? et on travaille le fichier txt que l'on rerentre dans la database ? via le shell heroku ? pcque y'a 500 data et t'as pas encore toutes les conditions le jour du jury ca serait chiant quyest un bug <+ a ne surtout pas racconté a un spy ^^
 
 
 <br><br><br><br><br><br><br><br><br><br>
