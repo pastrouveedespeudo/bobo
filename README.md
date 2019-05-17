@@ -11,9 +11,8 @@
 
 #que tu laffiche en html
 
-#que tu fasses un dossier couleur de cheuvex les coupes draggables
 
-#que tu face un dossier vetement rouge/noir/blanc haut et bas ect
+#que tu face un dossier vetement rouge/noir/blanc haut et bas ect ste fois pas besoin de refaire une database
 
 #que tu demandes la couleur des cheveux via brune blonde chatin et t'as oublié noir gg donc noir mais ca sera chatain et les roux chaintain
 
