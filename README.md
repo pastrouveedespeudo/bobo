@@ -11,6 +11,8 @@
 
 #que tu fasses la catégories vetements (la page)
 
+#proposer des réduire la taille vetement, et si t'as du 1M d'images dhabit comment tu vas faire ? ben jdirai nan je prend que les collections du moment ok retient ca
+
 
 # que tu finisses les tests et le dossier du p11 et finisse le p12
 
