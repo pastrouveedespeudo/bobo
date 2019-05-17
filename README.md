@@ -5,10 +5,7 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-#ok stop mais en gros si deux couleurs d'affiler ca veut dire qu'au début sté une couleur ex gris blanc et ca foire tout faut les remettre en un mm mot 
-
-
-#gris blanc c du gris connard bleu blanc c du bleu c du bleu connard
+#ok ojd: faire coupe de cheuv -> habits de tel couleur ste nuit jme disais pas besoin de faire les habits en database, je vais juste mettre les habits rouges dans un dossier rouge( tshirt) ensuite on fait tous les bug, surtout le factor et :D 
 
 
 
