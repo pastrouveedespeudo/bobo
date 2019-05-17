@@ -1,8 +1,8 @@
 import psycopg2
 from .database import *
+from .coupe_analysis import *
 
-
-def data():
+def dataaa():
     conn = psycopg2.connect(database='bobo',
                         user='postgres',
                         host='127.0.0.1',
@@ -182,6 +182,17 @@ def determination_couleur(liste7):
 def les_tendances_couleurs(liste8):
     print('\n')
 
+    data_coupe = recup2()
+    coupa = []
+    for i in data_coupe:
+        coupa.append((i[1], i[2]))
+
+    coupa2 = []
+    for i in sorted(coupa):
+        coupa2.append(i[1])
+
+
+
     c = 0
     liste9 = []
     for i in liste8:
@@ -209,8 +220,22 @@ def les_tendances_couleurs(liste8):
 
         c+=1
 
+    a = 0
+    for i in coupa2:
+        print(liste9[a])
+        liste9[a] = liste9[a] + (i,)
+        liste9[a+1] = liste9[a+1] + (i,)
+        a+=2
+        
+    print(liste9)
+        
+
+  
     
-    #print(liste9)
+
+        
+
+
 
     return liste9
 
