@@ -64,12 +64,48 @@
   <section class="page-section bg-dark text-white" id='section' style='display:none;'>
     <div class="container text-center">
 
-      <center><div>Il y a {{brun}} brun, {{blond}} blond, {{chatain}} chatain
-      dans notre base de donnée</div></center><br><br>
+      <center><h2>Il y a {{brun}} brun, {{blond}} blond, {{chatain}} chatain
+      dans notre base de donnée</h2></center><br><br>
+
+      <h3>Selon la database la tendance du moment est :</h3>
+    
+      <br><br>
+      <center><u><h3>haut - bas</h3></u></center>
+      <br>
+      
+      <div id='brun' style='font-size:1.5em;'></div><br><br>
+
+      <div id='blond' style='font-size:1.5em;'></div><br><br>
+
+      <div id='chatain' style='font-size:1.5em;'></div>
 
 
-      {{liste9}}
-      {{coupa}}
+ 
+
+
+      <script>
+      
+        function decodeHtml(html) {
+            var txt = document.createElement("textarea");
+            txt.innerHTML = html;
+            return txt.value;
+        }
+
+        var a = decodeHtml("{{liste10|slice:'1'}}");
+        var b = decodeHtml("{{liste10|slice:'1:2'}}");
+        var c = decodeHtml("{{liste10|slice:'2:3'}}");
+        
+        a = a.slice(2,-3)
+        b = b.slice(2,-3)
+        c = c.slice(2,-3)
+    
+   
+
+        document.getElementById('brun').innerHTML = "<strong>brun :</strong>&nbsp;&nbsp;&nbsp;" + a;
+        document.getElementById('blond').innerHTML = "<strong>blond :</strong>&nbsp;&nbsp;&nbsp;" + b;
+        document.getElementById('chatain').innerHTML = "<strong>chatain :</strong>&nbsp;&nbsp;&nbsp;" + c; 
+
+      </script>
 
         
     
@@ -94,20 +130,6 @@
 
 
 
-
-
-
-      {% for i in liste_finale %}
-      {{i|slice:'1'}}
-      <br>
-      {{i|slice:'1:2'}}
-      <br>
-      {{i|slice:'2:3'}}
-      <br>
-      {{i|slice:'3:4'}}      
-      <br><br><br><br><br><br>
-    
-      {% endfor %}
 
 
 
