@@ -1,13 +1,17 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_protect
 
-
+from django.http import HttpResponse
 from .photo import *
 from .coupenom import *
 import os
 from accounts.models import Accounts
 
 from .coupe_dico import DICO_COIF
+
+from .analysis.database import *
+
+
 
 
 def mes_images(request):
@@ -149,7 +153,7 @@ def coupe(request):
         enregistement = request.POST.get('produit')
  
         print(recherche,'7777777777777777777777777778888')
-        print(coupe,'777777777777777777777777777777')
+        print(coupe,'656565656565699999999789111111111117777')
         print(enregistement,'8888888888888897978979879878979')
 
         
@@ -170,9 +174,14 @@ def coupe(request):
             
 
         if recherche:
+            print('RECHERHCEEEEEEEEEEEEEEEEEEEEE', recherche)
             for cle, value in DICO_COIF.items():
                 pass
-            return render(request, 'habits.html')
+            
+            return render(request, 'habits.html', {'recherche':recherche})
+
+
+
         
         if image:
             no_choice = ''
@@ -214,6 +223,79 @@ def coupe(request):
 
     
 def habits(request):
+
+    
+    if request.method == "POST":
+        print('pouoioioioioioioioioioioioioioioioioioioioioioioioioioioioioi')
+        
+        couleur = request.POST.get('a')
+        draggable = request.POST.get('b')
+        
+        print(couleur, draggable, '0000000000000000000000000000000000000')
+
+        couleur = couleur.split()
+        couleur = couleur[-1]
+        print(couleur)
+
+        if draggable:
+            pass
+
+        if couleur:
+            print('oui')
+            liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\vetement\femme\bas_blanc')
+
+            
+     
+            print(liste)
+
+
+
+
+
+
+
+            
+            data = {'coucou':'addzadza'}
+            return HttpResponse([liste])
+
+
+
+
+
+
+
+
+
+
+
+
+                
+        #on va chercher : r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\cuopefemme' convert a ignorer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
     return render(request, 'habits.html')
 
 
