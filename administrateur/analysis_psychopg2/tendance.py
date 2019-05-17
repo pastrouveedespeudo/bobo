@@ -1,5 +1,5 @@
 import psycopg2
-from database import *
+from .database import *
 
 
 def data():
@@ -119,8 +119,8 @@ def mise_en_dico(liste6):
 
     liste7 = []
     dico = {}
-    print(liste6)
-    print('\n')
+##    print(liste6)
+##    print('\n')
     c = 0
     for i in liste6:
         d = 0
@@ -142,12 +142,12 @@ def determination_couleur(liste7):
     
     liste8 = []
     for i in liste7:
-        print(i)
+        #print(i)
         couleur = ''
         nombre = 0
         nom = []
         for cle, valeur in i.items():
-            print(cle, valeur)
+            #print(cle, valeur)
             try:
                 if int(valeur) > nombre:
                     nombre = 0
@@ -171,12 +171,12 @@ def determination_couleur(liste7):
                 
 
             
-        print('DONC : ', couleur, nombre, nom)
+        #print('DONC : ', couleur, nombre, nom)
         liste8.append((couleur, nom))
         
-        print('\n')
+        #print('\n')
 
-    print(liste8)
+    #print(liste8)
     return liste8 
 
 def les_tendances_couleurs(liste8):
@@ -191,7 +191,7 @@ def les_tendances_couleurs(liste8):
                 ou = 'haut'
             else:
                 ou = 'bas'
-            print(i[1][0][0], i[1][0][1], ou)
+            #print(i[1][0][0], i[1][0][1], ou)
             liste9.append((i[1][0][0], i[1][0][1], ou))
         else:
             try:
@@ -200,49 +200,35 @@ def les_tendances_couleurs(liste8):
                         ou = 'haut'
                     else:
                         ou = 'bas'
-                    print(i[0], i[1][0][1], ou)
+                    #print(i[0], i[1][0][1], ou)
                     liste9.append((i[0], i[1][0][1], ou))
             except:
-                print(i[0], i[1][0][0], i[1][0][1])
+                #print(i[0], i[1][0][0], i[1][0][1])
                 liste9.append((i[0], i[1][0][0], i[1][0][1]))
             
 
         c+=1
 
     
-
-    print(liste9)
+    #print(liste9)
 
     return liste9
 
 
 
 
+##liste = data()
+##liste1 = i_into_i(liste)
+##liste2 = unification(liste1)
+##liste3 = suppression_en_trop(liste2)
+##liste6 = re_elment_de_liste(liste3)
+##liste7 = mise_en_dico(liste6)
+##liste8 = determination_couleur(liste7)
+##liste9 = les_tendances_couleurs(liste8)
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-liste = data()
-liste1 = i_into_i(liste)
-liste2 = unification(liste1)
-liste3 = suppression_en_trop(liste2)
-liste6 = re_elment_de_liste(liste3)
-liste7 = mise_en_dico(liste6)
-liste8 = determination_couleur(liste7)
-les_tendances_couleurs(liste8)
 
 
 
