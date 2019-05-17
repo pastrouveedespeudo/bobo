@@ -192,16 +192,28 @@ def les_tendances_couleurs(liste8):
             else:
                 ou = 'bas'
             print(i[1][0][0], i[1][0][1], ou)
+            liste9.append((i[1][0][0], i[1][0][1], ou))
         else:
-            print(i[0], i[1][0][0], i[1][0][1])
+            try:
+                if int(i[1][0][0]):
+                    if c%2 == 0:
+                        ou = 'haut'
+                    else:
+                        ou = 'bas'
+                    print(i[0], i[1][0][1], ou)
+                    liste9.append((i[0], i[1][0][1], ou))
+            except:
+                print(i[0], i[1][0][0], i[1][0][1])
+                liste9.append((i[0], i[1][0][0], i[1][0][1]))
+            
 
         c+=1
 
     
 
+    print(liste9)
 
-
-
+    return liste9
 
 
 
