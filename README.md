@@ -5,8 +5,25 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-#ok ojd: faire coupe de cheuv -> habits de tel couleur ste nuit jme disais pas besoin de faire les habits en database, je vais juste mettre les habits rouges dans un dossier rouge( tshirt) ensuite on fait tous les bug, surtout le factor et :D 
+#t'as ton tableau ect... mtn il faut que tu:
 
+#dise selon la couleur de cheveux le haut et le bas en py
+
+#que tu laffiche en html
+
+#que tu fasses un dossier couleur de cheuvex les coupes draggables
+
+#que tu face un dossier vetement rouge/noir/blanc haut et bas ect
+
+#que tu demandes la couleur des cheveux via brune blonde chatin et t'as oublié noir gg donc noir mais ca sera chatain et les roux chaintain
+
+#que selon la tendance tu lui affiches les vetements
+
+#que tu fasses la catégories vetements (la page)
+
+#pour les draggables tu pourrais faire un meilleur systeme comme les derniers mais ca au pire...
+
+#que tu finisses les tests et le dossier du p11 et finisse le p12
 
 
 
