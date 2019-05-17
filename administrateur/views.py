@@ -7,7 +7,7 @@ from django.http import HttpResponse
 
 
 try:
-    from static.bobo.analysa import *
+    from static.bobo.tendance import *
 except:
     pass
 
@@ -153,21 +153,29 @@ def tendance(request):
     coupa = []
     for i in data_coupe:
         coupa.append(i[2])
+        
       
     brun = coupa.count('marron')
     chatain = coupa.count('chatin')
     blond = coupa.count('blond')
+    
     try:
-        liste_ana = analysa()#haut, bas, brun, 1a.jpg
-        liste_tendance = les_tendances_couleurs()
+        liste = data()
+        liste1 = i_into_i(liste)
+        liste2 = unification(liste1)
+        liste3 = suppression_en_trop(liste2)
+        liste6 = re_elment_de_liste(liste3)
+        liste7 = mise_en_dico(liste6)
+        liste8 = determination_couleur(liste7)
+        liste9 = les_tendances_couleurs(liste8)
+        
     except:
-        liste_ana = ''
-        liste_tendance= ''
+        liste9 = ''
 
 
-
-    return render(request, "tendance.html", {'blond':blond, 'brun':brun, 'chatain':chatain,
-                                             'liste_ana':liste_ana, 'liste_tendance':liste_tendance})
+    return render(request, "tendance.html", {'blond':blond, 'brun':brun,
+                                             'chatain':chatain,
+                                             'liste9':liste9, 'coupa':coupa})
 
 
 
@@ -253,7 +261,6 @@ def analyse(request):
        
         try:
             analysa()
-            les_tendances_couleurs()
         except:
             pass
     return render(request, "analyse.html")
