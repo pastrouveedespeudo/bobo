@@ -51,14 +51,8 @@
             <style>#im14{width:100px; height:100px;margin-left:100px;}</style>
             <a href=""><img src = "/static/img/portfolio/icone/chemise.png"/ id="im11"></a>
 
-            <style>#im14{width:100px; height:100px;margin-left:100px;}</style>
-            <a href=""><img src = "/static/img/portfolio/icone/jean.png"/ id="im11"></a>
 
-            <style>#im14{width:100px; height:100px;margin-left:100px;}</style>
-            <a href=""><img src = "/static/img/portfolio/icone/jean.png"/ id="im11"></a>
-            
-            <style>#im14{width:100px; height:100px;margin-left:100px;}</style>
-            <a href=""><img src = "/static/img/portfolio/icone/jean.png"/ id="im11"></a>
+
             
 
 
@@ -96,8 +90,108 @@
           <input type='button' id='blonde' value='blonde' onclick='coul("blonde")'>
           <input type='button' id='chatain' value='chatain' onclick='coul("chatain")'>
           <input type='button' id='rousse' value='rousse' onclick='coul("rousse")'>
-          <input type='button' id='noire' value='noire' onclick='coul("noire")'>
           
+          <input type='button' id='noire' value='noire' onclick='coul("noire")'>
+
+          
+          <br><br>
+          <div id='couleur' style='display:none;'></div>
+          <div id='recherche' style='display:none;' value=''></div>
+
+
+
+          <script>
+
+          var HAUT = 'habit_bas_blanc'
+          var BAS = 'habit_bas_blanc'
+          function coul(couleur){
+
+            document.getElementById('couleur').style.display = 'block';
+            document.getElementById('couleur').innerHTML = 'Vous etes donc ' + couleur;
+            var a = document.getElementById('couleur').innerHTML;
+           
+            };
+
+
+
+          jQuery("#brune, #blonde, #chatain, #rousse, #noire").on("click", function(e){
+            
+            var a = document.getElementById('couleur').innerHTML;
+            var b = document.getElementById('recherche').innerHTML;
+ 
+            document.getElementById(HAUT).style.display = 'none';   
+            document.getElementById(BAS).style.display = 'none';
+            
+             e.preventDefault();
+             
+              jQuery.ajax({
+                  data:{
+                      'csrfmiddlewaretoken': 'vrS3jiKMco5HjUgoQlNOQtDEUWWnq0Dg9jqGC5ECVvtI5mWHXmWtvrZBN09F9AMP' , 
+                      'a':a,
+                      'b':b
+                  },
+                  type:"POST",
+                  url:"/photo/habits"
+              })
+              .done(function(data){
+                  if (data.error){
+                      jQuery("#monCadreAlert").text(data.error);
+                      jQuery("#is_save");
+                      
+                      
+                  }
+                  else{
+                      jQuery("#habit").html(data.data);
+                      jQuery("#monCadreAlert");
+                      console.log(data);
+                      liste1 = [[],[]]
+                      var c = 0;
+                      for(var i = 0; i < data.length; i ++){
+                        console.log(data[i])
+                        liste1[c].push(data[i])
+                        if(data[i] == ' '){
+                            c += 1
+                          }
+
+                        }
+        
+                      var haut = 'habit_haut_' + liste1[0].join('').slice(0,-1)
+                      var bas = 'habit_bas_' + liste1[1].join('')
+                      HAUT = haut
+                      BAS = bas
+                      console.log('habit_bas_bleu')
+
+                      console.log(haut)
+                      console.log(bas)
+                    
+                      document.getElementById(haut).style.display = 'block';
+                      document.getElementById(bas).style.display = 'block';
+
+                  };
+                  
+              });
+          });
+
+          
+          </script>
+
+
+  
+
+
+        <div id ='ess'></div>
+
+
+
+
+
+
+
+
+
+
+
+
           <style>
           #1,
           #2,
@@ -120,13 +214,8 @@
           </style>
 
 
-          
-          <br><br>
-          <div id='couleur' style='display:none;'></div>
-          <div id='recherche' style='display:none;' value=''></div>
-
     
-          <div class='row' id='habitbas__blanc' style='display:none;'>
+          <div class='row' id='habit_bas_blanc' style='display:none;'>
             
             <div id='1'>
             <img src='/static/img/portfolio/vetement/femme/bas_blanc/1.png'>
@@ -187,7 +276,7 @@
 
 
 
-      <div  class='row' id='habitbas__bleu' style='display:none;'>
+      <div  class='row' id='habit_bas_bleu' style='display:none;'>
             <div id='11'>
             <img src='/static/img/portfolio/vetement/femme/bas_bleu/1.png'>
             </div>
@@ -256,7 +345,7 @@
 
 
 
-          <div class='row' id='habithaut__blanc' style='display:none;'>
+          <div class='row' id='habit_haut_blanc' style='display:none;'>
           
             <div id='111'>
             <img src='/static/img/portfolio/vetement/femme/haut_blanc/1.png'>
@@ -314,7 +403,7 @@
 
 
 
-          <div  class='row' id='habithaut__gris' style='display:none;'>
+          <div  class='row' id='habit_haut_gris' style='display:none;'>
           
             <div id='1111'>
             <img src='/static/img/portfolio/vetement/femme/haut_gris/1.png'>
@@ -384,61 +473,6 @@
       
 
 
-
-
-          <script>
-
-      
-          function coul(couleur){
-
-            document.getElementById('couleur').style.display = 'block';
-            document.getElementById('couleur').innerHTML = 'Vous etes donc ' + couleur;
-            var a = document.getElementById('couleur').innerHTML;
-  
-            };
-
-
-
-          jQuery("#brune, #blonde, #chatain, #rousse, #noir").on("click", function(e){
-            
-            var a = document.getElementById('couleur').innerHTML;
-            var b = document.getElementById('recherche').innerHTML;
- 
-            
-             e.preventDefault();
-             document.getElementById('habit').innerHTML = '';
-              jQuery.ajax({
-                  data:{
-                      'csrfmiddlewaretoken': 'vrS3jiKMco5HjUgoQlNOQtDEUWWnq0Dg9jqGC5ECVvtI5mWHXmWtvrZBN09F9AMP' , 
-                      'a':a,
-                      'b':b
-                  },
-                  type:"POST",
-                  url:"/photo/habits"
-              })
-              .done(function(data){
-                  if (data.error){
-                      jQuery("#monCadreAlert").text(data.error);
-                      jQuery("#is_save");
-                      
-                      
-                  }
-                  else{
-                      jQuery("#habit").html(data.data);
-                      jQuery("#monCadreAlert");
-                      console.log(data)
-                      document.getElementById('habit').innerHTML = data;
-
-                  };
-                  
-              });
-          });
-
-          
-          </script>
-
-
-  
 
 
 
