@@ -11,7 +11,7 @@
 
 #que tu fasses la catégories vetements (la page)
 
-
+# bug ajouter de la taille aux images ne marchent plus
 
 #afficher l'image du mec en mode vetement + la coupe de cheveux s'il y en a une
 
