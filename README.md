@@ -11,8 +11,16 @@
 
 #que tu fasses la catégories vetements (la page)
 
-#proposer des réduire la taille vetement, et si t'as du 1M d'images dhabit comment tu vas faire ? ben jdirai nan je prend que les collections du moment ok retient ca et si c la redoute ducon ?
 
+
+#afficher l'image du mec en mode vetement + la coupe de cheveux s'il y en a une
+
+# cropage == haarcascade eneleve les bordure et extend de 50px mais j'y été pas arrivais sur lautre projet fois ca prenait que le coté gauche...
+
+#mettre l'image du mec en noir et blanc
+
+
+#responsivité de la page coupe
 
 # que tu finisses les tests et le dossier du p11 et finisse le p12
 
@@ -52,12 +60,7 @@ ca donne [1, 1,2,2,3,3,4,4]
 
 
 
-# cropage == haarcascade eneleve les bordure et extend de 50px mais j'y été pas arrivais sur lautre projet fois ca prenait que le coté gauche...
 
-#mettre l'image du mec en noir et blanc
-
-
-#responsivité de la page coupe
 
 # bug on peut plus prendre de photo sans etre inscrit
 
@@ -114,4 +117,17 @@ ca donne [1, 1,2,2,3,3,4,4]
  #-> conclusion espère que la pluie ainsi que les données correspondent + données d'autres sites
   
 #dans notre solution mettre les quelques vidéo des machines à pluie + de la vidéo que tu feras
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+#proposer des réduire la taille vetement, et si t'as du 1M d'images dhabit comment tu vas faire ? ben jdirai nan je prend que les collections du moment ok retient ca
+
+
+
+
+
 
