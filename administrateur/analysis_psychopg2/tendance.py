@@ -134,17 +134,92 @@ def mise_en_dico(liste6):
         dico = {}
         c+=1
 
-    print(liste7)
+    
+    return liste7
 
 
+def determination_couleur(liste7):
+    
+    liste8 = []
+    for i in liste7:
+        print(i)
+        couleur = ''
+        nombre = 0
+        nom = []
+        for cle, valeur in i.items():
+            print(cle, valeur)
+            try:
+                if int(valeur) > nombre:
+                    nombre = 0
+                    nombre += int(valeur)
+                    couleur = ''
+                    couleur = cle
+                    
+            except:
+                if cle == 'blanc' and valeur == 0:
+                    couleur = 'blanc'
+                    nom.append(valeur)
+                    
+                elif cle == 'gris' and valeur == 0:
+                    couleur = 'gris'
+                    nom.append(valeur)
+                    
+            if cle[-4:] == '.jpg':
+                nom.append((cle, valeur))
+            elif valeur[-4:] == '.jpg':
+                nom.append((cle, valeur))
+                
 
-
-
-
+            
+        print('DONC : ', couleur, nombre, nom)
+        liste8.append((couleur, nom))
         
+        print('\n')
 
-def les_tendances_couleurs(liste6):
-    pass
+    print(liste8)
+    return liste8 
+
+def les_tendances_couleurs(liste8):
+    print('\n')
+
+    c = 0
+    liste9 = []
+    for i in liste8:
+        #print(i)
+        if i[0] == '':
+            if c%2 == 0:
+                ou = 'haut'
+            else:
+                ou = 'bas'
+            print(i[1][0][0], i[1][0][1], ou)
+        else:
+            print(i[0], i[1][0][0], i[1][0][1])
+
+        c+=1
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -153,8 +228,9 @@ liste1 = i_into_i(liste)
 liste2 = unification(liste1)
 liste3 = suppression_en_trop(liste2)
 liste6 = re_elment_de_liste(liste3)
-mise_en_dico(liste6)
-
+liste7 = mise_en_dico(liste6)
+liste8 = determination_couleur(liste7)
+les_tendances_couleurs(liste8)
 
 
 
