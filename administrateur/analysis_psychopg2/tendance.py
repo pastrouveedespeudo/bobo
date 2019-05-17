@@ -369,7 +369,7 @@ def dico_max(dico):
             coul = ''
             coul = cle
             
-    return coul, nb
+    return coul
 
     
 def analyse_tendance(liste):
