@@ -39,7 +39,10 @@ puis pollution par contre j'ai peur, sur heroku comment je vais intégrer les da
 
 # STOP PLUS RIEN FINIS
 
-pcque tuto? genre ligne blanche réduisent ou aggrandisent, les différentes couleurs perception et signification ouais mais ca apres c ton pts de vue okok plus rien les lunettes aussi, les vendeurs influent sa race et chaque lunette a sa signification.. enfete tout, les vendeurs te voient selon leur pts d e vue + jolie mais humeur pas content = moche et apres t'as des lunettes moche pendant 10 ans pcque le vendeur etait pas content et les mecs bizzare sont niqué et biaisé a cause deux pfffffff ou renseigné hihihi
+# bug on peut pas modifier la longueur des fav
+
+
+
 
 #si ca donne des memes couleurs avec le stock de vetement ok sinon essais de les aggrandir de passer de 50*50 a 100*100 ca prendra 2 fois plus de temps mais y'aura plus de matiere
 
