@@ -103,7 +103,7 @@ def database_mode(request):
     for i in data_coupe:
         coupa.append(i[2])
         
-        
+    
     brun = coupa.count('marron')
     chatain = coupa.count('chatin')
     blond = coupa.count('blond')
@@ -152,9 +152,8 @@ def tendance(request):
     
     coupa = []
     for i in data_coupe:
-        coupa.append((i[1], i[2]))
-       
-
+        coupa.append(i[2])
+    print(coupa)
 
     brun = coupa.count('marron')
     chatain = coupa.count('chatin')
@@ -175,7 +174,7 @@ def tendance(request):
 
     return render(request, "tendance.html", {'blond':blond, 'brun':brun,
                                              'chatain':chatain,
-                                             'liste9':liste9})
+                                             'liste9':liste9, 'coupa':coupa})
 
 
 
