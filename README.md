@@ -6,23 +6,20 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#les détourés avec le contour magique, finir de faire les autres images et c bientot ok
 
 #que selon la tendance tu lui affiches les vetements
 
 #que tu fasses la catégories vetements (la page)
 
 
-#que tu finisses les tests et le dossier du p11 et finisse le p12
+# que tu finisses les tests et le dossier du p11 et finisse le p12
 
 
 
 
-<br><br><br><br><br><br><br><br><br><br>
 
-faire un refactoring + les truk d'en bas
 
-puis pollution par contre j'ai peur, sur heroku comment je vais intégrer les data de pollution ? fichier texte puis comme tendance et analysa ? et on travaille le fichier txt que l'on rerentre dans la database ? via le shell heroku ? pcque y'a 500 data et t'as pas encore toutes les conditions le jour du jury ca serait chiant quyest un bug <+ a ne surtout pas racconté a un spy ^^vive les vendeur et les psychologue ?
+
 
 
 <br><br><br><br><br><br><br><br><br><br>
@@ -33,42 +30,29 @@ puis pollution par contre j'ai peur, sur heroku comment je vais intégrer les da
 
 #navebarre admin
 
-# STOP PLUS RIEN FINIS
 
 # bug on peut pas modifier la longueur des fav
 
 
 
 
-#si ca donne des memes couleurs avec le stock de vetement ok sinon essais de les aggrandir de passer de 50*50 a 100*100 ca prendra 2 fois plus de temps mais y'aura plus de matiere
 
-#analyse mtn... et faire la meme chose pour les vetements que t'affiches (truk de couleur)
+#faire pour les hommes 
 
-#par la coupe afficher les elements match
 
-#ensuite finir les vetements
 
-#faire pour les hommes
-
-#verifie que faire l'analyse ajoute bien une col
-
-#bon ben c bientot fini se bordel !! au pire tu peux te le dire a haute voix trou duc ouais c vrai
 
 # au lieu que d'enregistrer en prem's les habit tu pourrais verifier qu'il n'y est pas 2 fois le nombre mais bon pas grave
 
 ca donne [1, 1,2,2,3,3,4,4] 
 
 
-#faire pour les hommes depuis insertion database 
-
-#mettre tous les truk orange en bleu
-
 
 
 
 # cropage == haarcascade eneleve les bordure et extend de 50px mais j'y été pas arrivais sur lautre projet fois ca prenait que le coté gauche...
 
-#mettre l'image en noir et blanc
+#mettre l'image du mec en noir et blanc
 
 
 #responsivité de la page coupe
@@ -77,7 +61,7 @@ ca donne [1, 1,2,2,3,3,4,4]
 
 # adapter la zone input selon la taille ecran (en %)
 
-# nettoyer le code
+
 
 
 
