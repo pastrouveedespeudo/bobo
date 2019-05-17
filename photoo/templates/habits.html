@@ -1,187 +1,9 @@
 
 
-<!DOCTYPE html>
-<html lang="en">
+{% include "navebarre.html" %}
 
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Creative - Start Bootstrap Theme</title>
-
-  <!-- Font Awesome Icons -->
-  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
-  <!-- Plugin CSS -->
-  <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="/static/css/creative.min.css" rel="stylesheet">
-
-
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-</head>
-
-
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-
-    <style>
-      #my{
-        width:50px;
-        height:50px;
-
-    }
-    </style>
-    
-    <div class="container">
-      <img src="/static/img/portfolio/icone/my.png" id="my">
-      <a class="navbar-brand js-scroll-trigger" href="/">My_Profil</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-
-      
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-
-
-
-        {% if user.is_authenticated %}
-
-          <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:60px;
-          }
-          </style>
-
-          <li class="nav-item">
-            <a href = "/photo/photo">
-              <img src="/static/img/portfolio/icone/photo.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/photo">Prendre une photo</a>
-            </a>
-          </li>
-
-
-
-
-          <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:45px;
-          }
-          </style>
-
-          <li class="nav-item">
-            <a href = "/photo/coupe">
-              <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/coupe">Mes_coiffures</a>
-            </a>
-          </li>
-
-
-
-          
-          <style>
-            #im2{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
-          </style>
-          
-          <li class="nav-item">
-           <a href = "/photo/mes_images">
-            <img src="/static/img/portfolio/icone/mes_images.png" id="im2">
-            <a class="nav-link js-scroll-trigger" href="/photo/mes_images">Mes images</a>
-            </a>
-          </li>
-          
-          <style>
-            #im3{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
-          </style>
-
-          
-          <li class="nav-item">
-           <a href = "/photo/habits">
-            <img src="/static/img/portfolio/icone/vetements.png" id="im3">
-            <a class="nav-link js-scroll-trigger" href="/photo/habits">Mes vetements</a>
-            </a>
-          </li>
-
-        </ul>
-
-        {% else %}
-
-          <style>#ima1{width:55px; height:50px; margin-left:17px;}</style>
-
-          <li class="nav-item">
-            <a href = "/photo/photo">
-              <img src="/static/img/portfolio/icone/inscription.png" id="ima1">
-              <a class="nav-link js-scroll-trigger" href="/accounts/register_view">S'inscrire</a>
-            </a>
-          </li>
-
-          <style>#im2{width:50px; height:50px; margin-left:40px;}</style>
-          
-          <li class="nav-item">
-           <a href = "/photo/mes_images">
-            <img src="/static/img/portfolio/icone/login.png" id="im2">
-            <a class="nav-link js-scroll-trigger" href="/accounts/login">Se connecter</a>
-            </a>
-          </li>
-
-          <style>#im1{width:50px; height:50px; margin-left:45px;}</style>
-
-          <li class="nav-item">
-            <a href = "/photo/coupe">
-              <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/coupe">Les coiffures</a>
-            </a>
-          </li>
-
-
-          <style>#im3{width:50px; height:50px; margin-left:40px;}</style>
-
-          
-          <li class="nav-item">
-           <a href = "/photo/habits">
-            <img src="/static/img/portfolio/icone/vetements.png" id="im3">
-            <a class="nav-link js-scroll-trigger" href="/photo/habits">Les vetements</a>
-            </a>
-          </li>
-        </ul>
-
-        {% endif %}
-
-        
-      </div>
-    </div>
-  </nav>
-
-
+{% block content %}
+{% endblock %}
 
 
 
@@ -249,53 +71,111 @@
 
 
 
-
-
-  <script>
-  $( function() {
-    $( "#draggable, #1" ).draggable();
-  } );
-  </script>
-
-  <script>
-    LISTE =[]
-    function yo(){
-     
-        var a = event.target.id;
-    
-        var c = '<img src=/static/img/portfolio/vetement/t-shirt/'+ a + '>'
-        console.log(c)
-        var b = document.getElementById("1").innerHTML = c;
-        document.getElementById("1").style.width = "0px";
-        document.getElementById("1").style.height= "0px";
-        document.getElementById("1").classList.add('class="ui-widget-content"');
-       
-      };
-  
-  </script>
-
-
-
-  <!-- About Section -->
-  <section class="page-section bg-primary" id="about">
-    <div class="container">
+  <!-- Call to Action Section -->
+  <section class="page-section bg-dark text-white">
+    <div class="container text-center">
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
           <h2 class="text-white mt-0"></h2>
           <hr class="divider light my-4">
+
+          <script>
+   
+          
+          function coul(couleur){
+
+            document.getElementById('couleur').style.display = 'block';
+            document.getElementById('couleur').innerHTML = 'Vous etes donc ' + couleur;
+            
+            };
+
+          </script>
           <p class="text-white-50 mb-4">Voici une sélection des habits fait par nos experts qui vont le mieux avec cette coupe</p>
 
+          <input type='button' value='etes vous un homme ou un femme ?'>
+          <br><br>
+
+          <center><strong><h2>Etes-vous :</center></strong></h2><br><br>
+          <input type='button' id='brune' value='brune' onclick='coul("brune")'>
+          <input type='button' id='blonde' value='blonde' onclick='coul("blonde")'>
+          <input type='button' id='chatain' value='chatain' onclick='coul("chatain")'>
+          <input type='button' id='rousse' value='rousse' onclick='coul("rousse")'>
+          <input type='button' id='noire' value='noire' onclick='coul("noire")'>
 
 
-                
+          <br><br>
+          <div id='couleur' style='display:none;'></div>
+
+
+
+
+
+
+
+          <script>
+
+          jQuery("#brune, #blonde, #chatain, #rousse, #noir").on("click", function(e){
+             e.preventDefault();
+              jQuery.ajax({
+                  data:{
+                      'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                      
+
+                      
+               
+                  },
+                  type:"POST",
+                  url:"/photo/vetement"
+              })
+              .done(function(data){
+                  if (data.error){
+                      jQuery("#monCadreAlert").text(data.error);
+                      jQuery("#is_save");
+                      
+                      
+                  }
+                  else{
+                      jQuery("#is_save").html(data.data);
+                      jQuery("#monCadreAlert");
+                      
+                      
+                  };
+                  
+              });
+          });
+
+          
+          </script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <style>#draggable{width:0px; height:0px;}</style>
 
          {% for i in a%}
           <input type="hidden" value={{i}} id="cache">
           <input type="image" onclick="yo();" id="{{i}}" src="/static/img/portfolio/vetement/t-shirt/{{i}}">    
          {% endfor %}
-        
-  
         
           {% for i in b%}
           <input type="image" src="/static/img/portfolio/vetement/jean/{{i}}">
@@ -306,7 +186,7 @@
           <div id="1"><div>
 
 
-
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
           
         </div>
