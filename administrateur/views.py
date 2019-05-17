@@ -102,7 +102,7 @@ def database_mode(request):
     coupa = []
     for i in data_coupe:
         coupa.append(i[2])
-    
+        
         
     brun = coupa.count('marron')
     chatain = coupa.count('chatin')
@@ -152,15 +152,16 @@ def tendance(request):
     
     coupa = []
     for i in data_coupe:
-        coupa.append(i[2])
-        
-      
+        coupa.append((i[1], i[2]))
+       
+
+
     brun = coupa.count('marron')
     chatain = coupa.count('chatin')
     blond = coupa.count('blond')
     
     try:
-        liste = data()
+        liste = dataaa()
         liste1 = i_into_i(liste)
         liste2 = unification(liste1)
         liste3 = suppression_en_trop(liste2)
@@ -168,14 +169,13 @@ def tendance(request):
         liste7 = mise_en_dico(liste6)
         liste8 = determination_couleur(liste7)
         liste9 = les_tendances_couleurs(liste8)
-        
     except:
         liste9 = ''
 
 
     return render(request, "tendance.html", {'blond':blond, 'brun':brun,
                                              'chatain':chatain,
-                                             'liste9':liste9, 'coupa':coupa})
+                                             'liste9':liste9})
 
 
 
