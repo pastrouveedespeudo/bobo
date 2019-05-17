@@ -176,20 +176,25 @@
                           break
                         }
                         else{
-                          console.log(liste1[i]);
-                          console.log(liste1[i].join(''));
-                          var mot = ''
-                          
-                          mot += liste1[i]
-                          
-                          
-          
-                          console.log(mot)
-                          
+                          liste2.push(liste1[i].join(''))
+ 
                         }
-
+                      
                       };
+                      console.log(liste2)
 
+                      for(var i = 0; i< liste2.length; i++){
+                        console.log(liste2[i]);
+                        var url = "<img id ='" +
+                                  liste2[i] +
+                                  "'" +
+                                  "src ='" +
+                                  "/static/img/portfolio/vetement/femme/bas_blanc/" +
+                                  liste2[i] + "'>";
+                        var urls = document.getElementById('habit').innerHTML;
+                        document.getElementById('habit').innerHTML = urls + url;
+
+                      }
                       
              
 
