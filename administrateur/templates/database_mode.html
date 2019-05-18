@@ -44,21 +44,89 @@
                 function databasesql(){
                   document.getElementById('interface').innerHTML = '';
                   document.getElementById('section2').style.display = 'block';
+                  document.getElementById('supp').style.display = 'none';
                   
                   }
             
                 function database(){
                     document.getElementById('section').style.display = 'block';
+                    document.getElementById('supp').style.display = 'none';
                     document.getElementById('interface').innerHTML = ''
                     document.getElementById('interface').innerHTML = "<input type='button' value='voir la database femme' onclick='femme()'>" +
                                                                     "&nbsp;&nbsp;" + 
                                                                     "<input type='button' value='voir la database homme' onclick='homme()'>"
                     }
                 
+
               
             </script>
+            
+            <br>
+            
+            <input type='button' value='supprimer la database' id='supp' onclick='suppression()'>
+            
+            <br><br>
 
 
+
+            
+            <div id='sure' style='display:none;'>
+            
+              <form method='POST' action='/administrateur/database_mode'>{% csrf_token %}
+                <input type='button' value='oui' id='bubuteid'> &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type='button' value='non' onclick='nanrien1()'>
+              </form>
+              
+              
+              
+            </div>
+            
+
+            <script>
+            
+                jQuery("#bubuteid").on("click", function(e){
+
+                        jQuery.ajax({
+                            data:{
+                                'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                                'suppression':'supp',
+                                
+                         
+                            },
+                            type:"POST",
+                            url:"/administrateur/database_mode"
+                        })
+                        .done(function(data){
+                            if (data.error){
+                                jQuery("#monCadreAlert").text(data.error);
+                                jQuery("#is_save");
+                                
+                                
+                            }
+                            else{
+                                jQuery("#is_save").html(data.data);
+                                jQuery("#monCadreAlert");
+                                alert('database supprimée');
+                                document.location.href="/administrateur/mode"
+                                
+                                
+                            };
+                            
+                        });
+                    });
+
+            </script>
+
+            
+            <script>
+                function suppression(){
+                    document.getElementById('sure').style.display = 'block';
+             
+                  };
+            </script>
+
+            
+            <br>
             <br>
             <input type='button' value='revenir en arriere' onclick='arriere()'>
             
@@ -66,6 +134,11 @@
 
             
             <script>
+
+                function nanrien1(){
+                  document.getElementById('sure').style.display = 'none';
+
+                  }
             
                 function arriere(){
                     document.location.href="/administrateur/mode"; 
@@ -73,12 +146,34 @@
                 function femme(){
                     document.getElementById('interface').style.display = 'none';
                     document.getElementById('container').style.display = 'block';
+                    
                 }
                 function homme(){
                     document.getElementById('interface').innerHTML = ''
                 }
                 
             </script>
+
+
+
+          <script>
+          
+
+                
+          </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             
         
