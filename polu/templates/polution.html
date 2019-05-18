@@ -1,9 +1,4 @@
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,99 +31,100 @@
 
 
 
-
 <body id="page-top">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
 
-    <style>
-      #my{
-        width:50px;
-        height:50px;
-    }
-    </style>
+    
     
     <div class="container">
+    
+      <style> #my{width:50px; height:50px;margin-left:-50px;}</style>
       <img src="/static/img/portfolio2/icone/indian.png" id="my">
-      <a class="navbar-brand js-scroll-trigger" href="/">My_Polution</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand js-scroll-trigger" href="/">My_Polution</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
+      <img src="/static/img/portfolio/icone/my.png" id="my_prof">
+      <a class="navbar-brand js-scroll-trigger" href="/">My_Profil</a>
+     
+      
+      <button class="navbar-toggler navbar-toggler-right" type="button"
+        data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      
-      <div class="collapse navbar-collapse" id="navbarResponsive">
 
-      
+
+
+
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
 
-          <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:80px;
-          }
-          </style>
 
+
+
+          <style>
+              #im1{width:50px; height:50px; margin-left:110px;}
+              #graph{margin-left:35px; width:200px;}
+          </style>
+          
           <li class="nav-item">
             <a href = "/photo/photo">
               <img src="/static/img/portfolio2/icone/graphe.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/photo">Nos graphiques</a>
+              <center><a class="nav-link js-scroll-trigger" href="/photo/photo" id='graph'>Nos graphiques</a></center>
             </a>
           </li>
 
 
           <style>
-            #im2{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
+            #im2{width:50px;height:50px;margin-left:45px;}
+            #donnée{width:200px;height:50px;margin-left:-25px;}
           </style>
           
           <li class="nav-item">
            <a href = "/photo/mes_images">
             <img src="/static/img/portfolio2/icone/pol.png" id="im2">
-            <a class="nav-link js-scroll-trigger" href="/photo/mes_images">Nos données pollution</a>
+            <center><a class="nav-link js-scroll-trigger" href="/photo/mes_images" id='donnée'>Nos données pollution</a></center>
             </a>
           </li>
 
 
           <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:45px;
-          }
+              #impredi{width:50px;height:50px; margin-left:55px;}
+              #prédiction{width:200px;height:50px; margin-left:-20px;}
+
           </style>
 
           <li class="nav-item">
             <a href = "/photo/coupe">
-              <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/coupe">Nos predictions</a>
+              <img src="/static/img/portfolio/icone/coiffure.png" id="impredi">
+              <center><a class="nav-link js-scroll-trigger" href="/photo/coupe" id='prédiction'>Nos predictions</a></center>
             </a>
           </li>
 
 
-
-        
           
-          <style>
-            #im3{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
-          </style>
 
+          <style>
+            #im3{width:50px;height:50px;margin-left:0px;}
+            #imim{width:50px;height:50px;margin-left:68px;}
+            #toususr{width:200px;height:50px;margin-left:0px;}
+          </style>
           
           <li class="nav-item">
            <a href = "/photo/habits">
-            <img src="/static/img/portfolio2/icone/pollution.png" id="im3">
-            <a class="nav-link js-scroll-trigger" href="/photo/habits">Tous sur la pollution</a>
+            <img src="/static/img/portfolio2/icone/pollution.png" id="imim">
+            <center><a class="nav-link js-scroll-trigger" href="/photo/habits" id='toususr'>Tous sur la pollution</a></center>
             </a>
           </li>
 
+          <style>
+            #im3{width:50px;height:50px;margin-left:25px;}
+          </style>
           
           <li class="nav-item">
            <a href = "/photo/habits">
@@ -161,6 +157,7 @@
   <!-- Masthead -->
   <header class="masthead">
     <div class="container h-100">
+     <br><br><br><br><br><br>
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
           <h1 class="text-uppercase text-white font-weight-bold">Bienvenu !</h1>
@@ -704,19 +701,6 @@
 </body>
 
 
-
-    <script>
-    var video = document.querySelector("#videoElement");
-    if (navigator.mediaDevices.getUserMedia) {     
-        navigator.mediaDevices.getUserMedia({video: true})
-      .then(function(stream) {
-        video.srcObject = stream;
-      })
-      .catch(function(err0r) {
-        console.log("Something went wrong!");
-      });
-    }
-    </script>
 
 
 
