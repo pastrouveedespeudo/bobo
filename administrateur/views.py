@@ -22,6 +22,8 @@ from static.bobo.mode_w_data import haut_bas
 from static.bobo.coupe_analysis import *
 from static.bobo.mode_analyse import *
 from static.bobo.analyse_femme_haut import *
+from static.bobo.database import supprimer_database
+
 
 def mode(request):
        
@@ -31,6 +33,12 @@ def mode(request):
 def database_mode(request):
 
     if request.method == "POST":
+        print('ouiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
+        supprimer = request.POST.get('suppression')
+        print(supprimer)
+        if supprimer == 'supp':
+            supprimer_database()
+        
         return HttpResponse('ok')
 
     data = recup()#from mode_analyse.py
@@ -50,7 +58,7 @@ def database_mode(request):
            i == 'database.py' or i == 'mode_analyse.py' or i == 'mode_w_data.py' or\
            i == 'palettecouleur.py' or i == 'palettecouleur_coiffure.py' or\
            i == 'traitement_bas1.jpg' or i == 'traitement_haut.jpg' or i == '__pycache__' or i=='bobo'\
-           or i =='analysa.py':
+           or i =='analysa.py' or i == 'tendance.py':
             pass
         else:
             laliste1.append(i)
@@ -131,7 +139,7 @@ def tendance(request):
            or i == 'database.py' or i ==  'mode_analyse.py' or i ==  'mode_w_data.py'\
            or i == 'palettecouleur.py'  or i ==  'palettecouleur_coiffure.py'\
            or i == 'traitement_bas1.jpg'  or i ==  'traitement_haut.jpg' or i == '__pycache__'\
-           or i =='analysa.py':
+           or i =='analysa.py' or i =='tendance.py':
             pass
         else:
             laliste1.append(i)
