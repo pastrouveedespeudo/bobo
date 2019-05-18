@@ -11,7 +11,10 @@ from .coupe_dico import DICO_COIF
 
 from .analysis.database import *
 
-
+try:
+    from static.bobo.tendance import *
+except:
+    pass
 
 
 def mes_images(request):
@@ -226,37 +229,67 @@ def habits(request):
 
     
     if request.method == "POST":
-        print('pouoioioioioioioioioioioioioioioioioioioioioioioioioioioioioi')
         
         couleur = request.POST.get('a')
         draggable = request.POST.get('b')
-        
-        print(couleur, draggable, '0000000000000000000000000000000000000')
+        image_to_vet = request.POST.get('posting2')
 
-        couleur = couleur.split()
-        couleur = couleur[-1]
-        print(couleur)
+        print(couleur, draggable, '0000000000000000000000000000000000000')
+        print(image_to_vet,'000000000000000000000000000000000000000000000')
+
+
+    
+        if image_to_vet:
+            print('pouoioioioioioioioioioioioioioioioioioioioioioioioioioioioioi')
+            print('ouaiiiiiiiiiiiiiiiiiiiiiiiis')
+            print(image_to_vet)
+
+
+
 
         if draggable:
             pass
 
         if couleur:
             print('oui')
-            liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\vetement\femme\bas_blanc')
 
-            
-     
-            print(liste)
+            couleur = couleur.split()
+            couleur = couleur[-1]
 
+            liste = dataaa()
+            liste1 = i_into_i(liste)
+            liste2 = unification(liste1)
+            liste3 = suppression_en_trop(liste2)
+            liste6 = re_elment_de_liste(liste3)
+            liste7 = mise_en_dico(liste6)
+            liste8 = determination_couleur(liste7)
+            liste9 = les_tendances_couleurs(liste8)
+            liste10 = analyse_tendance(liste9)
 
+            print(liste10,'0000000000000000000000000')
+    
+            if couleur == 'blonde':
+                print(liste10[1], '1111111111111111111111111111')
 
+                coul_analyse_haut = liste10[1][0]
+                coul_analyse_bas = liste10[1][1]
+                 
+            elif couleur == 'brune' or couleur == 'noire':
+                print(liste10[0],  '1111111111111111111111111111')
+                
+                coul_analyse_haut = liste10[0][0]
+                coul_analyse_bas = liste10[0][1]
 
+            elif couleur == 'chatain' or couleur == 'rousse':
+                print(liste10[2], '1111111111111111111111111111')
+                
+                coul_analyse_haut = liste10[2][0]
+                coul_analyse_bas = liste10[2][1]
 
+            print(coul_analyse_haut)
+            print(coul_analyse_bas)
 
-
-            
-            data = {'coucou':'addzadza'}
-            return HttpResponse([liste])
+            return HttpResponse((coul_analyse_haut,' ', coul_analyse_bas))
 
 
 
