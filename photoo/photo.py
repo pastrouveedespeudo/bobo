@@ -146,28 +146,32 @@ def haar(image, user, format):
       
     except:
         pass
-    
-    os.chdir(path_user)
-    
-    img = cv2.imread(image)
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default_copy.xml')
-    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-    for (x,y,w,h) in faces:
-        cv2.rectangle(img,(x-1000,y-1000),(x-1000+w+100,y-1000+h+1000),0)
-        roi_gray = gray[y:y+h, x:x+w]
-        roi_color = img[y:y+h, x:x+w]
 
-        crop = img[y-20:h+20+y, x-20:w+20+x]
+    try:
+        os.chdir(path_user)
+        
+        img = cv2.imread(image)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default_copy.xml')
+        faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+        for (x,y,w,h) in faces:
+            cv2.rectangle(img,(x-1000,y-1000),(x-1000+w+100,y-1000+h+1000),0)
+            roi_gray = gray[y:y+h, x:x+w]
+            roi_color = img[y:y+h, x:x+w]
 
-    cv2.imwrite(image, crop)
+            crop = img[y-20:h+20+y, x-20:w+20+x]
+
+        cv2.imwrite(image, crop)
+        
+    except:
+        return 'error'
 
 def noir_blanc(image):
     
     im = cv2.imread(image, 0)
     cv2.imwrite(image, im)
 
- def resize(image):
+def resize(image):
     im = Image.open(image)
     im = im.resize((100,100))
     im.save(image)
@@ -215,13 +219,19 @@ def cropage_habit(image, the_user, format):
     print(liste3)
     print("".join(liste3[-1]),'000000000000000000000000000000000')
 
-
+    
     img = cv2.imread("".join(liste3[-1]))
-    #crop_img = img[250:190+300, 530:350+500]
+    
     cv2.imwrite(str("".join(liste3[-1])), img)
-    haar("".join(liste3[-1]), the_user, 'habit')
-    noir_blanc("".join(liste3[-1]))
-    resize("".join(liste3[-1]))
+   
+    error = haar("".join(liste3[-1]), the_user, 'habit')
+    if error == 'error':
+        return 'error'
+    else:
+        noir_blanc("".join(liste3[-1]))
+        resize("".join(liste3[-1]))
+  
+        
 
 def cropage_cheveux(image, the_user, format):
 
@@ -259,17 +269,21 @@ def cropage_cheveux(image, the_user, format):
                 liste3.append(i)
 
         print(liste3)
-
+        
+    except:
+        pass
     
-        img = cv2.imread("".join(liste3[-1]))
-        #crop_img = img[250:190+300, 530:350+500]
-        cv2.imwrite(str("".join(liste3[-1])), img)
-        haar("".join(liste3[-1]), the_user, 'cheveux')
+    
+    img = cv2.imread("".join(liste3[-1]))
+    #crop_img = img[250:190+300, 530:350+500]
+    cv2.imwrite(str("".join(liste3[-1])), img)
+    error = haar("".join(liste3[-1]), the_user, 'cheveux')
+    if error == 'error':
+        return 'error'
+    else:
         noir_blanc("".join(liste3[-1]))
         resize("".join(liste3[-1]))
 
-    except:
-        pass
 
 
 def sauvegarde(user, saving, format):
