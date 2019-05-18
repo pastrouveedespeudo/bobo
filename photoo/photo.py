@@ -1,5 +1,6 @@
 from PIL import ImageGrab
 from PIL import *
+from PIL import Image
 import cv2
 import os
 import shutil
@@ -124,7 +125,7 @@ def capture(user, format_image):
 
 
 
-def haar(image, user):
+def haar(image, user, format):
 
     try:
         os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\photo')
@@ -137,8 +138,8 @@ def haar(image, user):
         shutil.copy(fichier, fichier_copy)
 
 
-        path = r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'
-        path_user = path.format(user)
+        path = r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\{}'
+        path_user = path.format(user, format)
         print(path_user, '0000000000000000000000000000000000000000000000000000000000000000000000000000')
 
         shutil.move(fichier_copy, path_user)
@@ -153,16 +154,25 @@ def haar(image, user):
     face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default_copy.xml')
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
     for (x,y,w,h) in faces:
-        cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),2)
+        cv2.rectangle(img,(x-1000,y-1000),(x-1000+w+100,y-1000+h+1000),0)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
 
+        crop = img[y-20:h+20+y, x-20:w+20+x]
 
-        crop = img[y:h+y, x:w+x]
-    cv2.imshow('image', crop)
     cv2.imwrite(image, crop)
 
-   
+def noir_blanc(image):
+    
+    im = cv2.imread(image, 0)
+    cv2.imwrite(image, im)
+
+ def resize(image):
+    im = Image.open(image)
+    im = im.resize((100,100))
+    im.save(image)
+
+
 
 
 def cropage_habit(image, the_user, format):
@@ -209,16 +219,18 @@ def cropage_habit(image, the_user, format):
     img = cv2.imread("".join(liste3[-1]))
     #crop_img = img[250:190+300, 530:350+500]
     cv2.imwrite(str("".join(liste3[-1])), img)
-    haar("".join(liste3[-1]), the_user)
+    haar("".join(liste3[-1]), the_user, 'habit')
+    noir_blanc("".join(liste3[-1]))
+    resize("".join(liste3[-1]))
 
-def cropage_cheveux(image, user, format):
+def cropage_cheveux(image, the_user, format):
 
     print(image)
     
     liste = []
 
     if format == 'cheveux':
-        user = Accounts.objects.filter(name=user).all()
+        user = Accounts.objects.filter(name=the_user).all()
         for i in user:
             if image == i.photo_cheveux:
                 print("ouiiiiiiiiiiiiiii")
@@ -250,9 +262,11 @@ def cropage_cheveux(image, user, format):
 
     
         img = cv2.imread("".join(liste3[-1]))
-        crop_img = img[250:190+300, 530:350+500]
-        cv2.imwrite(str("".join(liste3[-1])), crop_img)
-
+        #crop_img = img[250:190+300, 530:350+500]
+        cv2.imwrite(str("".join(liste3[-1])), img)
+        haar("".join(liste3[-1]), the_user, 'cheveux')
+        noir_blanc("".join(liste3[-1]))
+        resize("".join(liste3[-1]))
 
     except:
         pass
