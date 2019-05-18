@@ -6,7 +6,7 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#modif longueur vetement
+
 
 
 #responsivité de la page coupe
@@ -14,7 +14,7 @@
 # que tu finisses les tests et le dossier du p11 et finisse le p12
 
 
-#ajouter une commande supprimer database
+
 
 # factoriser a mort avant pollution
 
