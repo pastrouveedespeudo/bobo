@@ -98,6 +98,26 @@
           <div id='couleur' style='display:none;'></div>
           <div id='recherche' style='display:none;' value=''></div>
 
+          <div id='profil'></div>
+
+          <script>
+
+            var a = '<img src ="/static/img/portfolio/photo/' +
+                                                           '{{user}}' +
+                                                           '/habit/'+
+                                                            '{{image_to_vet}}'+
+                                                            '">'
+            alert(a);
+          
+            document.getElementById('profil').innerHTML = a;
+                                                           
+
+
+
+           
+          </script>
+
+
 
 
           <script>
@@ -269,7 +289,7 @@
 
           <script>
             $( function() {
-              $("#1, #2, #3, #4, #5, #6, #7, #8, #9, #10").draggable();
+              $("#1, #2, #3, #4, #5, #6, #7, #8, #9, #10, #profil").draggable();
             } );
 
           </script>
