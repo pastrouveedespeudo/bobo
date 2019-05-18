@@ -169,8 +169,152 @@
 
 
 
+    <div class='container'>
+    
+
+      <br><br>
+      <input type='button' value='ajouter de la longueur?' style=" border:3px solid black" onclick='ajout_longueur()'>
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
 
+      <input type='button' value='ajouter de la largeur?' style=" border:3px solid black" onclick='ajout_largeur()'>
+
+      <input type='button' value='enlever de la longueur?' style=" border:3px solid black; float:right;" onclick='enlever_longueur()'>
+
+      &nbsp&nbsp<input type='button' value='enlever de la largeur?'
+      style=" border:3px solid black;float:right; margin-right:60px;" onclick='enlever_largeur()'>&nbsp&nbsp
+      </div>
+      <br><br>
+
+      
+
+      <script>
+        LISTE_RESIZE = []
+        LISTE_RESIZE_TAILLE_HAUTEUR = []
+        LISTE_RESIZE_TAILLE_LARGEUR = []
+
+        LISTE1 = []
+      
+        function nom_image(id_im){
+            console.log(id_im)
+            var a = document.getElementById(id_im).height;
+            var b = document.getElementById(id_im).width;
+            
+            LISTE_RESIZE.push(id_im)
+            LISTE1.push([id_im, a, b])
+
+            
+            console.log(LISTE_RESIZE)
+            console.log(LISTE1)
+
+          }
+
+      </script>
+
+
+  <script>
+      
+  function ajout_longueur(){
+      
+      var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+      console.log(LISTE_RESIZE[LISTE_RESIZE.length -1])
+      
+      var b = document.getElementById(a).id
+      console.log(b, 'b')
+      
+      var c = '#' + b
+      console.log(c)
+      var image = document.querySelector(c);
+      var X = image.getAttribute("width");
+      X = parseInt(X) ;
+      console.log(X)
+      var Y = image.getAttribute("height"); 		
+      Y = parseInt(Y) ;
+      console.log(Y)
+      
+      X += 0 ; 
+      Y += 5 ;
+      image.setAttribute('width', X);
+      image.setAttribute('height',Y);
+      var d = document.getElementById(b).style.height = Y;
+   
+  
+      document.getElementById(b).style.width = X;
+      
+      LISTE1.push([b, X,Y]);
+    
+  
+    
+    }
+    function ajout_largeur(){
+      
+  
+      var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+      var b = document.getElementById(a).id
+      var c = '#' + b
+    
+      var image = document.querySelector(c);
+      var X = image.getAttribute("width");
+      X = parseInt(X) ;
+  
+      var Y = image.getAttribute("height"); 		
+      Y = parseInt(Y) ;
+     
+    
+      X += 5 ; 
+      Y += 0 ;
+      image.setAttribute('width', X);
+      image.setAttribute('height',Y);
+      LISTE1.push([b, X,Y]);
+      console.log(LISTE1[LISTE1.length-1])
+      console.log(X,Y)
+      
+    }
+    function enlever_longueur(){
+      var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+      var b = document.getElementById(a).id
+      var c = '#' + b
+    
+      var image = document.querySelector(c);
+      var X = image.getAttribute("width");
+      X = parseInt(X) ;
+  
+      var Y = image.getAttribute("height"); 		
+      Y = parseInt(Y) ;
+     
+    
+      X += 0 ; 
+      Y -= 5 ;
+      image.setAttribute('width', X);
+      image.setAttribute('height',Y);
+      LISTE1.push([b, X,Y]);
+    
+    }
+    
+    function enlever_largeur(){
+    
+      var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+      var b = document.getElementById(a).id
+      var c = '#' + b
+    
+      var image = document.querySelector(c);
+      var X = image.getAttribute("width");
+      X = parseInt(X) ;
+  
+      var Y = image.getAttribute("height"); 		
+      Y = parseInt(Y) ;
+     
+    
+      X -= 5 ; 
+      Y += 0 ;
+      image.setAttribute('width', X);
+      image.setAttribute('height',Y);
+      LISTE1.push([b, X,Y]);
+      
+    }
+        
+
+      </script>
 
 
 
@@ -202,48 +346,48 @@
     
           <div id='habit_bas_blanc' style='display:none;'>
             <div class='row'>
-            <div id='1'>
-            <img src='/static/img/portfolio/vetement/femme/bas_blanc/1.png'>
+            <div id='1' onclick='nom_image("bb1")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/1.png' width='200' height ='250' id='bb1'>
             </div>
             
-            <div id='2'>
-            <img src='/static/img/portfolio/vetement/femme/bas_blanc/2.2.png'>
+            <div id='2' onclick='nom_image("bb2")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/2.2.png' width='200' height ='300' id='bb2'>
             </div>
             
-            <div id='3'>
-            <img src='/static/img/portfolio/vetement/femme/bas_blanc/3.png'>
+            <div id='3' onclick='nom_image("bb3")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/3.png'  width='250' height ='300' id='bb3'>
             </div>
 
-            <div id='4' >
-            <img src='/static/img/portfolio/vetement/femme/bas_blanc/4.png'>
+            <div id='4' onclick='nom_image("bb4")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/4.png'  width='240' height ='300' id='bb4'>
             </div>
 
             
-            <div id='5' >
-            <img src='/static/img/portfolio/vetement/femme/bas_blanc/5.png'>
+            <div id='5' onclick='nom_image("bb5")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/5.png'  width='250' height ='300' id='bb5'>
             </div>
 
 
-            <div id='6' >
-            <img src='/static/img/portfolio/vetement/femme/bas_blanc/6.png'>
+            <div id='6' onclick='nom_image("bb6")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/6.png'  width='250' height ='250' id='bb6'>
             </div>
   
-            <div id='7' >
-            <img src='/static/img/portfolio/vetement/femme/bas_blanc/7.png'>
+            <div id='7' onclick='nom_image("bb7")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/7.png'  width='200' height ='300' id='bb7'>
             </div>
         
 
-            <div id='8' >
-            <img src='/static/img/portfolio/vetement/femme/bas_blanc/8.png'>
+            <div id='8' onclick='nom_image("bb8")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/8.png'  width='300' height ='250' id='bb8'>
             </div>
 
             
-            <div id='9' >
-            <img src='/static/img/portfolio/vetement/femme/bas_blanc/9.png'>
+            <div id='9' onclick='nom_image("bb9")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/9.png'  width='200' height ='250' id='bb9'>
             </div>
             
-            <div id='10' >
-            <img src='/static/img/portfolio/vetement/femme/bas_blanc/10.png'>
+            <div id='10' onclick='nom_image("bb10")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_blanc/10.png'  width='300' height ='250' id='bb10'>
             </div>
 
 
@@ -263,57 +407,58 @@
 
           <div id='habit_bas_bleu' style='display:none;'>
           <div class='row'>
-            <div id='11'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/1.png'>
+          
+            <div id='11' onclick='nom_image("bbl1")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/1.png' width='150' height='250' id='bbl1'>
             </div>
             
-            <div id='22'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/2.png'>
+            <div id='22' onclick='nom_image("bbl2")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/2.png' width='150' height='250' id='bbl2'>
             </div>
             
-            <div id='33'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/3.png'>
+            <div id='33' onclick='nom_image("bbl3")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/3.png' width='190' height='250' id='bbl3'>
             </div>
 
-            <div id='44'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/4.png'>
+            <div id='44' onclick='nom_image("bbl4")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/4.png' width='190' height='250' id='bbl4'>
             </div>
 
             
-            <div id='55'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/5.png'>
+            <div id='55'onclick='nom_image("bbl5")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/5.png' width='150' height='250' id='bbl5'>
             </div>
 
 
-            <div id='66'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/6.png'>
+            <div id='66' onclick='nom_image("bbl6")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/6.png' width='150' height='250' id='bbl6'>
             </div>
   
-            <div id='77'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/7.png'>
+            <div id='77' onclick='nom_image("bbl17")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/7.png' width='150' height='250' id='bbl17'>
             </div>
         
 
-            <div id='88'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/8.png'>
+            <div id='88' onclick='nom_image("bbl8")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/8.png' width='150' height='250' id='bbl8'>
             </div>
 
             
-            <div id='99'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/9.png'>
+            <div id='99' onclick='nom_image("bbl19")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/9.png' width='150' height='250' id='bbl9'>
             </div>
             
-            <div id='1010'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/10.png'>
+            <div id='1010' onclick='nom_image("bbl10")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/10.png' width='150' height='250' id='bbl10'>
             </div>
 
 
-            <div id='1111'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/11.png'>
+            <div id='1111' onclick='nom_image("bbl11")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/11.png' width='150' height='250' id='bbl11'>
             </div>
 
-            <div id='1212'>
-            <img src='/static/img/portfolio/vetement/femme/bas_bleu/12.png'>
+            <div id='1212' onclick='nom_image("bbl12")'>
+            <img src='/static/img/portfolio/vetement/femme/bas_bleu/12.png' width='150' height='250' id='bbl12'>
             </div>
 
             
@@ -334,43 +479,43 @@
           <div id='habit_haut_blanc' style='display:none;'>
           <div class='row'>
           
-            <div id='111'>
-            <img src='/static/img/portfolio/vetement/femme/haut_blanc/1.png' width='250' height='250'>
+            <div id='111' onclick='nom_image("hb1")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_blanc/1.png' width='150' height='200' id='hb1'>
             </div>
             
-            <div id='222'>
-            <img src='/static/img/portfolio/vetement/femme/haut_blanc/2.png'>
+            <div id='222' onclick='nom_image("hb2")'> 
+            <img src='/static/img/portfolio/vetement/femme/haut_blanc/2.png' width='150' height='200' id='hb2'>
             </div>
             
-            <div id='333'>
-            <img src='/static/img/portfolio/vetement/femme/haut_blanc/3.png'>
+            <div id='333' onclick='nom_image("hb3")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_blanc/3.png' width='150' height='200' id='hb3'>
             </div>
 
-            <div id='444'>
-            <img src='/static/img/portfolio/vetement/femme/haut_blanc/4.png'>
+            <div id='444' onclick='nom_image("hb4")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_blanc/4.png' width='150' height='200' id='hb4'>
             </div>
 
             
-            <div id='555'>
-            <img src='/static/img/portfolio/vetement/femme/haut_blanc/5.png'>
+            <div id='555' onclick='nom_image("hb5")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_blanc/5.png' width='150' height='200' id='hb5'>
             </div>
 
 
-            <div id='666'>
-            <img src='/static/img/portfolio/vetement/femme/haut_blanc/6.png'>
+            <div id='666' onclick='nom_image("hb7")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_blanc/6.png' width='150' height='200' id='hb6'>
             </div>
   
-            <div id='777'>
-            <img src='/static/img/portfolio/vetement/femme/haut_blanc/7.png'>
+            <div id='777' onclick='nom_image("hb8")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_blanc/7.png' width='150' height='200' id='hb7'>
             </div>
 
         
-            <div id='999'>
-            <img src='/static/img/portfolio/vetement/femme/haut_blanc/9.png'>
+            <div id='999' onclick='nom_image("hb9")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_blanc/9.png' width='150' height='200' id='hb8'>
             </div>
             
-            <div id='101010'>
-            <img src='/static/img/portfolio/vetement/femme/haut_blanc/10.png'>
+            <div id='101010' onclick='nom_image("hb10")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_blanc/10.png' width='150' height='200' id='hb9'>
             </div>
 
 
@@ -393,48 +538,49 @@
 
           <div id='habit_haut_gris' style='display:none;'>
             <div class='row'>
-            <div id='1111'>
-            <img src='/static/img/portfolio/vetement/femme/haut_gris/1.png'>
+            
+            <div id='1111' onclick='nom_image("hg1")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_gris/1.png' width='150' height='200' id='hg1'>
             </div>
             
-            <div id='2222'>
-            <img src='/static/img/portfolio/vetement/femme/haut_gris/2.png'>
+            <div id='2222' onclick='nom_image("hg2")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_gris/2.png' width='150' height='200' id='hg2'>
             </div>
             
-            <div id='3333'>
-            <img src='/static/img/portfolio/vetement/femme/haut_gris/3.png'>
+            <div id='3333' onclick='nom_image("hg3")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_gris/3.png' width='150' height='200' id='hg3'>
             </div>
 
-            <div id='4444'>
-            <img src='/static/img/portfolio/vetement/femme/haut_gris/4.png'>
+            <div id='4444' onclick='nom_image("hg4")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_gris/4.png' width='150' height='200' id='hg4'>
             </div>
 
             
-            <div id='5555'>
-            <img src='/static/img/portfolio/vetement/femme/haut_gris/5.png'>
+            <div id='5555' onclick='nom_image("hg5")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_gris/5.png' width='150' height='200' id='hg5'>
             </div>
 
 
-            <div id='6666'>
-            <img src='/static/img/portfolio/vetement/femme/haut_gris/6.png'>
+            <div id='6666' onclick='nom_image("hg6")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_gris/6.png' width='150' height='200' id='hg6'>
             </div>
   
-            <div id='7777'>
-            <img src='/static/img/portfolio/vetement/femme/haut_gris/7.png'>
+            <div id='7777' onclick='nom_image("hg7")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_gris/7.png' width='150' height='200' id='hg7'>
             </div>
         
 
-            <div id='8888'>
-            <img src='/static/img/portfolio/vetement/femme/haut_gris/8.png'>
+            <div id='8888' onclick='nom_image("hg8")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_gris/8.png' width='150' height='200' id='hg8'>
             </div>
 
             
-            <div id='9999'>
-            <img src='/static/img/portfolio/vetement/femme/haut_gris/9.png'>
+            <div id='9999' onclick='nom_image("hg9")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_gris/9.png' width='150' height='200' id='hg9'>
             </div>
             
-            <div id='10101010'>
-            <img src='/static/img/portfolio/vetement/femme/haut_gris/10.png'>
+            <div id='10101010' onclick='nom_image("hg10")'>
+            <img src='/static/img/portfolio/vetement/femme/haut_gris/10.png' width='150' height='200' id='hg10'>
             </div>
 
       </div>
@@ -458,31 +604,6 @@
           
           <div id='image'></div>
           
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
