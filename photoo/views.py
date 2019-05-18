@@ -240,11 +240,17 @@ def habits(request):
 
     
         if image_to_vet:
+            
             print('pouoioioioioioioioioioioioioioioioioioioioioioioioioioioioioi')
             print('ouaiiiiiiiiiiiiiiiiiiiiiiiis')
             print(image_to_vet)
+            
+            current_user = request.user
 
 
+            
+            return render(request, 'habits.html', {'image_to_vet':image_to_vet,
+                                                   'user':current_user})
 
 
         if draggable:
@@ -302,32 +308,6 @@ def habits(request):
 
 
 
-                
-        #on va chercher : r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\cuopefemme' convert a ignorer
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
             
     return render(request, 'habits.html')
 
