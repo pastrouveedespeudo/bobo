@@ -5,19 +5,19 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-# ce n'es tpas une solution d'imprimer l'ecran pour des submits qui ne renvoie rien
 
-#que selon la tendance tu lui affiches les vetements
+
+
 
 #que tu fasses la catégories vetements (la page)
 
-# bug ajouter de la taille aux images ne marchent plus
 
-#afficher l'image du mec en mode vetement + la coupe de cheveux s'il y en a une
 
-# cropage == haarcascade eneleve les bordure et extend de 50px mais j'y été pas arrivais sur lautre projet fois ca prenait que le coté gauche...
 
-#mettre l'image du mec en noir et blanc
+
+
+
+
 
 
 #responsivité de la page coupe
@@ -43,12 +43,7 @@
 
 # bug on peut pas modifier la longueur des fav
 
-
-
-
-
-#faire pour les hommes 
-
+# afficher l'image du mec en mode vetement reflechis
 
 
 
@@ -57,20 +52,9 @@
 ca donne [1, 1,2,2,3,3,4,4] 
 
 
-
-
-
-
-
 # bug on peut plus prendre de photo sans etre inscrit
 
-# adapter la zone input selon la taille ecran (en %)
-
-
-
-
-
-
+#@ login admin
 
 
 
