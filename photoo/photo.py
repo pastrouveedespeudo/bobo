@@ -122,6 +122,49 @@ def capture(user, format_image):
 
     return str(maximum + 1) + ".jpg" 
 
+def haar(image, user):
+
+
+    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\photo')
+    liste = os.listdir()
+    print(liste)
+    
+##    fichier = r'C:\Users\jeanbaptiste\bobo\bobo\photo\haarcascade_frontalface_default.yml'
+##    fichier_copy = 'haarcascade_frontalface_default_copy.yml'
+##    
+    shutil.move(r'C:\Users\jeanbaptiste\bobo\bobo\photo\haarcascade_frontalface_default.xml',
+                r'C:\Users\jeanbaptiste\bobo\bobo')
+##
+##    
+##    path_debut = r'C:\Users\jeanbaptiste\bobo\bobo\photo\{}'.format(fichier_copy)
+##    
+##    path = r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'
+##    path_user = path.format(user)
+    
+
+
+
+
+
+
+    
+##    shutil.move(path_debut, path_user)
+##
+##
+##    img = cv2.imread(image)
+##    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+##    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+##    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+##    for (x,y,w,h) in faces:
+##        cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),2)
+##        roi_gray = gray[y:y+h, x:x+w]
+##        roi_color = img[y:y+h, x:x+w]
+##
+##
+##        crop = img[y:h+y, x:w+x]
+##    cv2.imshow('image', crop)
+
+
 
 
 def cropage_habit(image, user, format):
@@ -162,8 +205,9 @@ def cropage_habit(image, user, format):
 
     print(liste3)
 
-    img = cv2.imread("".join(liste3[-1]))
-    crop_img = img[300:170+300, 530:350+500]
+    #img = cv2.imread("".join(liste3[-1]))
+    #crop_img = img[300:170+300, 530:350+500]
+    haar("".join(liste3[-1]), user)
     cv2.imwrite(str("".join(liste3[-1])), crop_img)
 
 
