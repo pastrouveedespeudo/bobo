@@ -86,6 +86,7 @@ def photo(request):
             cropage_cheveux(image, current_user, 'cheveux')
             
         elif format_image == "habit":
+            print(current_user)
             os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'.format(str(current_user)))
             cropage_habit(image, current_user, 'habit')
 
