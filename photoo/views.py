@@ -16,6 +16,10 @@ try:
 except:
     pass
 
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+
+
 
 def mes_images(request):
     
@@ -56,6 +60,7 @@ def mes_images(request):
 
 def home(request):
     return render(request, 'home.html')
+
 
 def tshirt(request):
     return render(request, 't-shirt.html')
@@ -234,7 +239,7 @@ def coupe(request):
 
 
 
-    
+@csrf_exempt
 def habits(request):
 
     
@@ -306,16 +311,6 @@ def habits(request):
             print(coul_analyse_bas)
 
             return HttpResponse((coul_analyse_haut,' ', coul_analyse_bas))
-
-
-
-
-
-
-
-
-
-
 
 
             
