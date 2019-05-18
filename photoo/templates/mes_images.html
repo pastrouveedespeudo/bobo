@@ -13,53 +13,75 @@
         <div class="col-lg-12 text-center">
           <h2 class="text-white mt-0">Mes Images</h2>
 
+
+
         
         <script>
           function pushing(value){
-            document.getElementById('posting').value = value;
+            var a = document.getElementById('posting').value = value;
+            var b = document.getElementById('posting').innerHTML = value;
+            console.log(a, b)
             document.myform.submit();
             }
         </script>
 
 
+
         <form name='myform' action="/photo/coupe" method="POST">{% csrf_token %}
         
-        <input type='hidden' id='posting' name='posting' value=''/>
-        
-        <p><center><strong>Image pour les cheveux</strong></center></p>
-        {% for i in liste2 %}
-            <tr class="{% cycle 'row1' 'row2' %}">
-
-               <input type='image' onclick=pushing(value)
-                 class="img-fluid" id='im_cheveux{{i}}' value='{{i}}'
-                 src='/static/img/portfolio/photo/{{user}}/cheveux/{{i}}'
-                 style='height:200px; width:200px; border:2px black solid;'/>
-
-
-            <script>
-              img = document.getElementById('im_cheveux{{i}}').src;
-              if(img==""){document.getElementById('im_cheveux{{i}}').style.display = "none";}
-            </script>
-
-            
-          </tr>
+          <input type='hidden' id='posting' name='posting' value=''/>
           
+          <p><center><strong>Image pour les cheveux</strong></center></p>
+          {% for i in liste2 %}
+              <tr class="{% cycle 'row1' 'row2' %}">
+
+                 <input type='image' onclick=pushing(value)
+                   class="img-fluid" id='im_cheveux{{i}}' value='{{i}}'
+                   src='/static/img/portfolio/photo/{{user}}/cheveux/{{i}}'
+                   style='height:200px; width:200px; border:2px black solid;'/>
+
+
+              <script>
+                img = document.getElementById('im_cheveux{{i}}').src;
+                if(img==""){document.getElementById('im_cheveux{{i}}').style.display = "none";}
+              </script>
+
+              
+            </tr>
+            
+        {% endfor %}
       </form>
           
-        {% endfor %}
+        
         <br><br>
+        
 
       <form name='myform' action="/photo/habits" method="POST">{% csrf_token %}
-      
+            
         <p><center><strong>Image pour les habits</strong></center></p>
+        <input type='hidden' id='posting2' name='posting2' value=''/>
+
+        
         {% for i in liste1 %}
             <tr class="{% cycle 'row1' 'row2' %}">
             
-               <input type='image' onclick=pushing()
+               <input type='image' onclick='pushing2(value)'
                class="img-fluid" id='im_habit{{i}}' value='{{i}}'
                  src='/static/img/portfolio/photo/{{user}}/habit/{{i}}'
                  style='height:200px; width:200px; border:2px black solid;'/>
 
+
+        <script>
+          function pushing2(value){
+            var a = document.getElementById('posting2').value = value;
+            var b = document.getElementById('posting2').innerHTML = value;
+            console.log(a, b)
+            alert(a)
+            document.myform.submit();
+            }
+        </script>
+
+        
           <script>
             img = document.getElementById('im_habit{{i}}').src;
             if(img==""){document.getElementById('im_habit{{i}}').style.display = "none";}
@@ -69,6 +91,8 @@
         {% endfor %}
 
      </form>
+
+
 
 
    
