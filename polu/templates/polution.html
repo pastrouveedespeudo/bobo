@@ -40,7 +40,7 @@
     
     <div class="container">
     
-      <style> #my{width:50px; height:50px;margin-left:-50px;}</style>
+      <style> #my{width:50px; height:50px;margin-left:-70px;}</style>
       <img src="/static/img/portfolio2/icone/indian.png" id="my">
       <a class="navbar-brand js-scroll-trigger" href="/">My_Polution</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -163,12 +163,9 @@
           <h1 class="text-uppercase text-white font-weight-bold">Bienvenu !</h1>
           <br>
           <style>#h{font:Serif; color:white;}</style> 
-          <h2 id="h">My Pollution est un site rassemblant des informations sur la pollution afin de trouver de montrer que la pluie influe sur la pollution.
+          <h2 id="h">My Pollution est un site rassemblant des informations sur la pollution.
           A travers différentes données scientifiques existantes et de données en temps réel.
-          En quoi ce site est-il d'un enjeu sociétal ? Nous savons aujourd'hui que la pluie abaisse la pollution 
-          Nous allons essayer ensemble, de vous montrer qu'une machine a pluie pourrait baisser drastiquement la pollution a travers des données receuillis chaque jour depuis 4 jours
-          Une machine a pluie aurait l'avantage d'etre peu couteuse et plaquerait les particules aux sols
-          Mais qu'en est il des maladies de peau ou les maladies animaux enfant (patte) ?</h3>
+          METTRE TA SOLUTION SINON ILS IRONT SUR PLUMAIR fin c ce que je ferai
           <hr class="divider my-4">
         </div>
         <div class="col-lg-8 align-self-baseline">
@@ -182,30 +179,6 @@
   </header>
 
 
-
-
-    <style>
-    #containner {
-        margin: 0px auto;
-        width: 400px;
-        height: 400px;
-    }
-    #videoElement {
-        width: 400px;
-        height: 400px;
-        position:relative;
-    }
-    #patron{
-      margin-left:105px;
-      margin-top:100px;
-      width: 200px;
-      height: 200px;
-      border: 2px solid red;
-      border-radius:50%;
-      position:absolute ;
-      z-index:1;
-    }
-    </style>
 
 
 
@@ -239,166 +212,32 @@
 
           
           <div class="col-sm-4">
-
-              <style>#titre{margin-left:-100px;}</style>
-              <p id="titre">Taux de pollution de particules fines à Lyon</p>
-
-              <style>
-                #outdiv { height: 200px; overflow: hidden; position: relative; width: 250px;} 
-                #iniframe { height: 4000px; left: -180px; position: absolute; top: -400px; width: 1280px;}
-              </style>
-              
-            
-             <div id="outdiv">
-               <iframe
-                 src="https://air.plumelabs.com/fr/live/lyon" scrolling="no" width="200px" height="200px" id="iniframe">
-               </iframe>
-             </div>
-               
+            <h5>Taux de pollution de particules fines à Lyon</h5><br><br>
+            <center><strong><h5>{{lyon}}</h5></strong></center>
           </div>
-
-
-          <div class="col-sm-8">
-
-            <style>
-              #outdiv1 { height: 240px; overflow: hidden; position: relative; width: 600px; margin-top:20px;} 
-              #iniframe1 { height: 1000px; left: -150px; position: absolute; top: -600px; width: 1280px;}
-              #lyon{margin-left:-900px;}
-            </style>
-
-             <div id="outdiv1">
-              <iframe
-                src="https://www.accuweather.com/fr/fr/lyon/171210/hourly-weather-forecast/171210" scrolling="no" width="200px" height="200px" id="iniframe1">
-              </iframe>
-             </div>
-
-        
-            <br>
-            <style>#yo{color:black;}</style>
-            <a href="/polution/polution_lyon"><p id="yo">Voir nos données sur Lyon<p></a>
-       
-
-          </div>
-
           
-
+          <div class="col-sm-4">
+              <h5>Taux de pollution de particules fines à Paris</h5><br><br>
+              <center><strong><h5>{{paris}}</h5></strong></center>
+          </div>
 
           <div class="col-sm-4">
-            <br><br><br><br><br><br>
-            <p id="titre">Taux de pollution de particules fines à Paris</p>
-
-            <style>
-              #outdiv { height: 200px; overflow: hidden; position: relative; width: 250px;} 
-              #iniframe { height: 4000px; left: -180px; position: absolute; top: -400px; width: 1280px;}
-            </style>
-            
-
-            <div id="outdiv">
-            
-              <iframe
-                src="https://air.plumelabs.com/fr/live/paris" scrolling="no" width="200px" height="200px" id="iniframe">
-              </iframe>
-             </div>
-             
-          </div>
-
-          <div class="col-sm-8">
-
-              <style>
-                #outdiv1 { height: 240px; overflow: hidden; position: relative; width: 600px; margin-top:20px;} 
-                #iniframe1 { height: 1000px; left: -150px; position: absolute; top: -600px; width: 1280px;}
-          
-              </style>
-            <br><br><br><br><br><br>
-            <div id="outdiv1">
-               <iframe
-                 src="https://www.accuweather.com/fr/fr/paris/623/hourly-weather-forecast/623" scrolling="no" width="200px" height="200px" id="iniframe1">
-               </iframe>
-            </div>
-
-                    
-            <br><br>
-            <a href="/polution/polution_paris"><p id="yo">Voir nos données sur Paris<p></a>
-
+              <h5>Taux de pollution de particules fines à Marseille</h5><br><br>
+              <center><strong><h5>{{marseille}}</h5></strong></center>
           </div>
 
 
-          <br><br>
+        <br><br><br><br><br><br><br><br>
 
+        <p>
+          <i>
+            Données issuent de
+            <a href='http://www.airlab.solutions/fr' style='color:black;'>
+              plumairlab
+            </a>
+          </i>
+        </p>
 
-          <div class="col-sm-4">
-            <br><br><br><br><br><br>
-            <p id="titre">Taux de pollution de particules fines à Marseille</p>
-          
-              <style>
-                #outdiv { height: 200px; overflow: hidden; position: relative; width: 250px;} 
-                #iniframe { height: 4000px; left: -180px; position: absolute; top: -400px; width: 1280px;}
-              </style>
-              
-            <div id="outdiv">
-              <iframe
-                src="https://air.plumelabs.com/fr/live/marseille" scrolling="no" width="200px" height="200px" id="iniframe">
-              </iframe>
-            </div>
-
-          </div>
-          
-          <div class="col-sm-8">
-          
-            <style>
-              #outdiv1 { height: 240px; overflow: hidden; position: relative; width: 600px; margin-top:20px;} 
-              #iniframe1 { height: 1000px; left: -150px; position: absolute; top: -600px; width: 1280px;}
-            </style>
-
-          <br><br><br><br><br><br>
-          <div id="outdiv1">
-             <iframe
-               src="https://www.accuweather.com/fr/fr/marseille/170960/hourly-weather-forecast/170960" scrolling="no" width="200px" height="200px" id="iniframe1">
-             </iframe>
-          </div>
-
-                  
-          <br><br>
-            <a href="/polution/polution_marseille"><p id="yo">Voir nos données sur Marseille<p></a>
-
-        </div>
-
-        <br><br>
-
-        
-        <div class="col-sm-4">
-          <br><br><br><br><br><br>
-          <p id="titre">Taux de pollution de particules fines à pekin</p>
-         
-          <div id="outdiv">
-            <iframe
-              src="https://air.plumelabs.com/fr/live/beijing" scrolling="no" width="200px" height="200px" id="iniframe">
-            </iframe>
-          </div>
-        </div>
-
-          
-        <div class="col-sm-8">
-          
-            <style>
-              #outdiv1 { height: 240px; overflow: hidden; position: relative; width: 600px; margin-top:20px;} 
-              #iniframe1 { height: 1000px; left: -150px; position: absolute; top: -600px; width: 1280px;}
-            </style>
-
-           <br><br><br><br><br><br>
-           <div id="outdiv1">
-              <iframe
-               src="https://www.accuweather.com/fr/cn/beijing/101924/hourly-weather-forecast/101924" scrolling="no" width="200px" height="200px" id="iniframe1">
-              </iframe>
-           </div>
-
-                   
-          <br><br>
-          <p>Voir nos données sur Pekin<p>
-
-        </div>
-
-        mettre les sources, rend ca plus jolie
 
       </div>
     </div>
