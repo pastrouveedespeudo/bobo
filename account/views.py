@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from django.contrib.auth import (
     authenticate,
@@ -54,10 +54,9 @@ def register_view(request):
         password = form.cleaned_data.get('password')
         user.set_password(password)
         user.save()
-
-        data_food = foodAccount(name = user.username)
-        data_food.save()
-
+        
+        acc = Accounts(name=user.username)
+        acc.save()
         
         new_user = authenticate(username=user.username, password=password)
 
