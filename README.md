@@ -5,7 +5,7 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
-
+# ce n'es tpas une solution d'imprimer l'ecran pour des submits qui ne renvoie rien
 
 #que selon la tendance tu lui affiches les vetements
 
