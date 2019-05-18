@@ -126,40 +126,43 @@ def capture(user, format_image):
 
 def haar(image, user):
 
-
-    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\photo')
-    liste = os.listdir()
-    print(liste)
-    
-    fichier = r'C:\Users\jeanbaptiste\bobo\bobo\photo\haarcascade_frontalface_default.xml'
-    fichier_copy = r'C:\Users\jeanbaptiste\bobo\bobo\photo\haarcascade_frontalface_default_copy.xml'
-    
-    shutil.copy(fichier, fichier_copy)
-
-
-    path = r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'
-    path_user = path.format(user)
-    print(path_user, '0000000000000000000000000000000000000000000000000000000000000000000000000000')
-
-    shutil.move(fichier_copy, path_user)
-  
-    
     try:
-        img = cv2.imread(image)
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default_copy.xml')
-        faces = face_cascade.detectMultiScale(gray, 1.3, 5)
-        for (x,y,w,h) in faces:
-            cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),2)
-            roi_gray = gray[y:y+h, x:x+w]
-            roi_color = img[y:y+h, x:x+w]
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\photo')
+        liste = os.listdir()
+        print(liste)
+        
+        fichier = r'C:\Users\jeanbaptiste\bobo\bobo\photo\haarcascade_frontalface_default.xml'
+        fichier_copy = r'C:\Users\jeanbaptiste\bobo\bobo\photo\haarcascade_frontalface_default_copy.xml'
+        
+        shutil.copy(fichier, fichier_copy)
 
 
-            crop = img[y:h+y, x:w+x]
-        cv2.imshow('image', crop)
+        path = r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'
+        path_user = path.format(user)
+        print(path_user, '0000000000000000000000000000000000000000000000000000000000000000000000000000')
 
+        shutil.move(fichier_copy, path_user)
+      
     except:
         pass
+    
+    os.chdir(path_user)
+    
+    img = cv2.imread(image)
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default_copy.xml')
+    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+    for (x,y,w,h) in faces:
+        cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),2)
+        roi_gray = gray[y:y+h, x:x+w]
+        roi_color = img[y:y+h, x:x+w]
+
+
+        crop = img[y:h+y, x:w+x]
+    cv2.imshow('image', crop)
+    cv2.imwrite(image, crop)
+
+   
 
 
 def cropage_habit(image, the_user, format):
@@ -200,15 +203,13 @@ def cropage_habit(image, the_user, format):
             liste3.append(i)
 
     print(liste3)
-
-    try:
-        haar("".join(liste3[-1]), the_user)
-    except:
-        img = cv2.imread("".join(liste3[-1]))
-        crop_img = img[250:190+300, 530:350+500]
-        cv2.imwrite(str("".join(liste3[-1])), crop_img)
+    print("".join(liste3[-1]),'000000000000000000000000000000000')
 
 
+    img = cv2.imread("".join(liste3[-1]))
+    #crop_img = img[250:190+300, 530:350+500]
+    cv2.imwrite(str("".join(liste3[-1])), img)
+    haar("".join(liste3[-1]), the_user)
 
 def cropage_cheveux(image, user, format):
 
