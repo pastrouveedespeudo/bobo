@@ -42,19 +42,20 @@ ca donne [1, 1,2,2,3,3,4,4]
 
 
 
-
+<br><br><br><br><br><br><br><br><br>
 
 
 #polution
 
+#ok toutes les données la que t'as commencé tu fais la meme mais dans nos données pollutions et ensuite tu met une direction vers la prédiction ptin j'ai peur que ca marche pas mais ca passe
 
-#graphe + ville en arrière plan (avec les erreurs) 
+#graphe + ville en arrière plan (avec les erreurs) matplolib
 
  #-> conclusion espère que la pluie ainsi que les données correspondent + données d'autres sites
   
 #dans notre solution mettre les quelques vidéo des machines à pluie + de la vidéo que tu feras
 
-
+#tuto habit + info complete sur la pollution pas grave si c faux et c ok stop + image pour habit peut etre ptetre
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
