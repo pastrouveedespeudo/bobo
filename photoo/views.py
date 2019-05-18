@@ -83,13 +83,22 @@ def photo(request):
         
         if format_image == "cheveux":
             os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\cheveux'.format(str(current_user)))
-            cropage_cheveux(image, current_user, 'cheveux')
+            error = cropage_cheveux(image, current_user, 'cheveux')
+            print(error,'0000000000000000000000000000000000000000000000000')
+            if error == 'error':
+                message = "REPRENEZ l\'image s'il vous plait, dégagez bien votre front, montrer votre bouche"
+                return render(request, 'photo.html', {'message':message})
             
         elif format_image == "habit":
             print(current_user)
             os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'.format(str(current_user)))
-            cropage_habit(image, current_user, 'habit')
+            error1 = cropage_habit(image, current_user, 'habit')
+            print(error1,'0000000000000000000000000000000000000000000000000')
+            if error1 == 'error':
+                message = "REPRENEZ l\'image s'il vous plait, dégagez bien votre front, montrer votre bouche"
+                return render(request, 'photo.html',  {'message':message})
 
+            
       
         liste1 = []
         liste2 = []
