@@ -6,47 +6,21 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-
-
-
 #responsivité de la page coupe
 
-# que tu finisses les tests et le dossier du p11 et finisse le p12
+#factoriser a mort avant pollution
 
+#afficher l'image du mec en mode vetement reflechis
 
-
-
-# factoriser a mort avant pollution
-
-#navebarre admin
-
-
-# afficher l'image du mec en mode vetement reflechis
-
-
-
-# au lieu que d'enregistrer en prem's les habit tu pourrais verifier qu'il n'y est pas 2 fois le nombre mais bon pas grave
+#au lieu que d'enregistrer en prem's les habit tu pourrais verifier qu'il n'y est pas 2 fois le nombre mais bon pas grave
 
 ca donne [1, 1,2,2,3,3,4,4] 
 
-
-# bug on peut plus prendre de photo sans etre inscrit
-
 #@ login admin
 
+#supprimer favoris
 
 
-
-
-#--------------
-
-
-
-# supprimer favoris
-
-
-
-#------------------
 
 
 
