@@ -248,7 +248,7 @@ def recuperation_donnée(lieu):
 
 
 
-def recuperation_donnée(lieu):
+def recuperation_donnée2(lieu):
 
     
     clé = '5a72ceae1feda40543d5844b2e04a205'
@@ -912,7 +912,7 @@ def industrie(lieu):
 
 
 
-class geographie:
+
 
 def situation(self):
     pass
