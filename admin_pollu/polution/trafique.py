@@ -117,7 +117,7 @@ def bouchons(lieu, BOUCHON):
 
 
   
-    if self.lieu == "lyon":
+    if lieu == "lyon":
         path = "https://www.moncoyote.com/fr/info-trafic-{}.html".format(lieu)
       
         r = requests.get(path)
@@ -163,11 +163,11 @@ def bouchons(lieu, BOUCHON):
         elif b > 20:
             BOUCHON['tres grand'] += 1
 
-    elif self.lieu == "marseille":
+    elif lieu == "marseille":
         BOUCHON['moyen'] += 1 
 
 
-    elif self.lieu == "paris":
+    elif lieu == "paris":
     
         path = "http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html#"
 
@@ -407,19 +407,19 @@ def activité_execptionnelle(lieu, ACTIVITE_EXEPTIONNELLE):
 
 
     
-    if self.lieu == "lyon":
+    if lieu == "lyon":
         path = "https://www.onlymoov.com/trafic/"
-        trafique.requete_lyon_traffique(self, path, ACTIVITE_EXEPTIONNELLE)
+        requete_lyon_traffique(path, ACTIVITE_EXEPTIONNELLE)
 
         
 
-    elif self.lieu == "paris":
+    elif lieu == "paris":
         path = "https://paris.demosphere.net/manifestations-paris"
-        trafique.requete_paris_traffique(self, path, ACTIVITE_EXEPTIONNELLE)
+        requete_paris_traffique(path, ACTIVITE_EXEPTIONNELLE)
 
-    elif self.lieu == "marseille":
+    elif lieu == "marseille":
         path = "https://mars-infos.org/spip.php?page=agenda"
-        trafique.requete_marseille_traffique(self, path, ACTIVITE_EXEPTIONNELLE)
+        requete_marseille_traffique(path, ACTIVITE_EXEPTIONNELLE)
 
 
 
