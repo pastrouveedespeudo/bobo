@@ -11,11 +11,11 @@ from PIL import Image, ImageDraw, ImageChops
 
 
 
-def recuperation_donnée(lieu, METEO, VENT, PRESSION):
+def recuperation_donnée_météo(lieu, METEO, VENT, PRESSION):
 
     clé = '5a72ceae1feda40543d5844b2e04a205'
     
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(self.lieu,clé)
+    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,clé)
     r = requests.get(localisation)
     data=r.json()
 
