@@ -16,6 +16,10 @@
 
 #au pire je rentrerai toutes les données à la main... sur heroku
 
+#ok tout refaire mais avec des fonctions
+
+#tout faire dans la meme database me faites pas remplir la database a la main 2 fois svp j'ai 500 truks de 15 lignes qui me disent si y'a une manif a lyon et si y'a du vent...
+
 
 
 
