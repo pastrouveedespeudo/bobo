@@ -1,11 +1,23 @@
 import importlib
 import datetime
 
-from socio import socio
-from trafique import trafique
-from météo import météo
+from socio import habitant
+
+from trafique import trafique_circulation
+from trafique import habitude
+from trafique import bouchons
+from trafique import requete_lyon_traffique
+from trafique import requete_paris_traffique
+from trafique import requete_marseille_traffique
+from trafique import activité_execptionnelle
+
 from particule import particule
-from climat import climat
+from particule import particule2
+from particule import france
+from particule import industrie
+
+from particule import france
+from particule import industrie
 
 from variable import WEATHER
 from variable import WIND
@@ -32,13 +44,18 @@ from traitement import display_dict
 from traitement import raise_dict
 from traitement import date_heure
 
+from météo import recuperation_donnée_météo
+
+from climat import recuperation_donnée_température
+from climat import saison
+
+
 from config import HOST
 from config import USER
 from config import PASSWORD
 from config import DATABASE
 
-from database import insertion_table
-from database import visualisation_table
+
 
 
 
@@ -52,14 +69,14 @@ def météologie():
     for i in LIST_CITY:
         print(i)
 
-        recuperation_donnée(i, WEATHER, WIND, PRESSURE)
+        recuperation_donnée_météo(i, WEATHER, WIND, PRESSURE)
         
         données = display_dict(PRESSURE, WEATHER, WIND)
         print(données)
-        insertion_table.insertion_meteo(self, i, referentiel[0],#ICI
-                                        referentiel[1],
-                                        données[0], données[1],
-                                        données[2])
+##        insertion_table.insertion_meteo(self, i, referentiel[0],#ICI
+##                                        referentiel[1],
+##                                        données[0], données[1],
+##                                        données[2])
 
         raise_dict(PRESSURE, WEATHER, WIND)
         
@@ -72,13 +89,13 @@ def climat():
     for i in LIST_CITY:
         print(i)
 
-        climat.recuperation_donnée(self, i, CLIMAT)
-        climat.saison(self, SAISON)
+        recuperation_donnée_température(i, CLIMAT)
+        saison(SAISON)
         
         données = display_dict(CLIMAT, SAISON)
-        
-        insertion_table.insertion_climat(self, données[0], données[1],#ICI
-                                         referentiel[0],referentiel[1], i)
+        print(données)
+##        insertion_table.insertion_climat(self, données[0], données[1],#ICI
+##                                         referentiel[0],referentiel[1], i)
         
         raise_dict(CLIMAT, SAISON)   
 
@@ -90,17 +107,18 @@ def pollution():
     for i in LIST_CITY:
         print(i)
         
-        france(self, i, VILLE_POLLUE2018)
-        industrie(self, i, REGION_INDUSTRIEL_POLLUEE)
+        france(i, VILLE_POLLUE2018)
+        industrie(i, REGION_INDUSTRIEL_POLLUEE)
 
         données = display_dict(VILLE_POLLUE2018,
                      REGION_INDUSTRIEL_POLLUEE)
-
-        insertion_table.insertion_polution(self, données[0], données[1],#ICI
-                                           referentiel[0],referentiel[1], i)
+        print(données)
+##        insertion_table.insertion_polution(self, données[0], données[1],#ICI
+##                                           referentiel[0],referentiel[1], i)
         
         raise_dict(VILLE_POLLUE2018,
                    REGION_INDUSTRIEL_POLLUEE)
+
 
 
 def sociologie():
@@ -111,14 +129,16 @@ def sociologie():
     for i in LIST_CITY:
         print(i)
         
-        habitant(self, i, POPULATION_ACTIVE_HABITANT)
+        habitant(i, POPULATION_ACTIVE_HABITANT)
     
         données = display_dict(POPULATION_ACTIVE_HABITANT)
-
-        insertion_table.insertion_sociologie(self, données[0], referentiel[0],#ICI
-                                            referentiel[1], i)
+        print(données)
+##        insertion_table.insertion_sociologie(self, données[0], referentiel[0],#ICI
+##                                            referentiel[1], i)
          
         raise_dict(POPULATION_ACTIVE_HABITANT)
+
+
 
 
 def trafic_routier():
@@ -138,9 +158,9 @@ def trafic_routier():
         print(données)
 
 
-        insertion_table.insertion_trafic_routier(self, données[0], données[1],#ICI#ICI#ICI
-                                                 données[2], données[3], données[4], données[5],
-                                                 referentiel[0], referentiel[1], i)
+##        insertion_table.insertion_trafic_routier(self, données[0], données[1],#ICI#ICI#ICI
+##                                                 données[2], données[3], données[4], données[5],
+##                                                 referentiel[0], referentiel[1], i)
 
                     
         raise_dict(TRAFIQUE, HEURE, POINTE, WEEKEND, BOUCHON,
@@ -158,14 +178,14 @@ def particule_plage():
         particule(i, PARTICULE_PLAGE)
         
         données = display_dict(PARTICULE_PLAGE)
-
-        insertion_table.insertion_particule_plage(self, données[0], referentiel[0],#ICI#ICI
-                                            referentiel[1], i)
+        print(données)
+##        insertion_table.insertion_particule_plage(self, données[0], referentiel[0],#ICI#ICI
+##                                            referentiel[1], i)
         
         raise_dict(PARTICULE_PLAGE)
 
 
-def particule():
+def particulee():
 
     referentiel = date_heure()
 
@@ -173,12 +193,12 @@ def particule():
     for i in LIST_CITY:
         print(i) 
 
-        particule2(self,i, PARTICULE)
+        particule2(i, PARTICULE)
         
         données = display_dict_particule(PARTICULE)
-
-        insertion_table.insertion_particule(self, données[0], referentiel[0],#ICI#ICI
-                                            referentiel[1], i)
+        print(données)
+##        insertion_table.insertion_particule(self, données[0], referentiel[0],#ICI#ICI
+##                                            referentiel[1], i)
         
         raise_dict(PARTICULE)
 
@@ -186,14 +206,14 @@ def particule():
 
 
 
-main = main()
-main.météologie()
-main.climat()
-main.pollution()
-main.sociologie()
-main.trafic_routier()
-main.particule()
-main.particule_plage()
+météologie()
+climat()
+        
+pollution()
+sociologie()
+trafic_routier()
+particulee()
+particule_plage()
 
 
 
