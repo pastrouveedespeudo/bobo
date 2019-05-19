@@ -12,24 +12,24 @@ from PIL import Image, ImageDraw, ImageChops
 
 
 
-class socio:
 
-    def habitant(self, lieu, POPULATION_ACTIVE_HABITANT):
-        self.lieu = lieu
 
-        lyon = 328469
-        paris = 1350800 
-        marseille = 762480 
+def habitant(lieu, POPULATION_ACTIVE_HABITANT):
 
-        if self.lieu == 'lyon':
-            POPULATION_ACTIVE_HABITANT['supp300K'] += 1
 
-        if self.lieu == 'paris':
-            POPULATION_ACTIVE_HABITANT['sup1M'] += 1
+    lyon = 328469
+    paris = 1350800 
+    marseille = 762480 
 
-        if self.lieu == 'marseille':
-            POPULATION_ACTIVE_HABITANT['sup500K'] += 1
-        #population active de 15 a 59 ans
+    if self.lieu == 'lyon':
+        POPULATION_ACTIVE_HABITANT['supp300K'] += 1
+
+    if self.lieu == 'paris':
+        POPULATION_ACTIVE_HABITANT['sup1M'] += 1
+
+    if self.lieu == 'marseille':
+        POPULATION_ACTIVE_HABITANT['sup500K'] += 1
+    #population active de 15 a 59 ans
 
 
 
