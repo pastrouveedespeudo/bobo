@@ -6,6 +6,8 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
+#19 mai au cas ou 
+
 #finir de rentrer les données
 
 #comment à analyser les données
