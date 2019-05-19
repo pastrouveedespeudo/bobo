@@ -128,19 +128,19 @@ def france(lieu, VILLE_POLLUE2018):
     c = 0
     for i in liste:
 
-        if self.lieu == liste[0]:
+        if lieu == liste[0]:
             VILLE_POLLUE2018['un'] += 1
             break
 
-        elif self.lieu == liste[1]:
+        elif lieu == liste[1]:
             VILLE_POLLUE2018['deux'] += 1
             break
 
-        elif self.lieu == liste[2]:
+        elif lieu == liste[2]:
             VILLE_POLLUE2018['trois'] += 1
             break
 
-        elif self.lieu == liste[3]:
+        elif lieu == liste[3]:
             VILLE_POLLUE2018['quattre'] += 1
             break
         else:
