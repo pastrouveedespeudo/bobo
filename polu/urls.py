@@ -17,6 +17,7 @@ urlpatterns = [
     path(r'/donnée', views.donnée),
     path(r'/machine_a_o', views.machine_a_o),
     path(r'/prediction', views.prediction),
+    path(r'/info_pollu', views.info_pollu),
 
     
 ]
