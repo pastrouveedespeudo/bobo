@@ -180,71 +180,60 @@
           <h2 class="text-white mt-0"></h2>
           
 
-        <center><div id='message'></div></center>
-
+        <center><div id='message'>Afin de remplir une database, nous devons le faire sur une plage horraire d'une
+        minute. En effet, nous interrogeons la database via l'heure à la minute prés. Perso je comprendrai rien a ce
+        msg alors travaille le</div></center>
+        <br><br>
         <div class="row">
         
-         <div class="col-sm-4">
+         <div class="col-sm-12">
             <form method='POST' action='construction'>{% csrf_token %}
-              <input type='button' value='Construire la database' id='construction'>
+              <input type='button' value='remplir la database' id='remplir'>
             </form>
          </div>
-              
-          <div class="col-sm-4">
-              <input type='button' value='voir la database' id='voir_database()'>
-          </div>
-          
-          <div class="col-sm-4">
-             <input type='button' value='remplir la database' id='remplir_database()'>
-          </div>
-          <br><br>
-          <div class="col-sm-12">
-             <input type='button' value='voir la prédiction' id='voir_prédiction()'>
-          </div>
+        <br><br>
 
-              
-          </div>
+        <div class="col-sm-12">
+          <form method='POST' action='remplir_database'>{% csrf_token %}
+          <center><input type='button' value='verification' id='verification' style='display:none;'></center>
+          </form>
+        </div><br><br>
 
 
-          
-      </form>
+        <div class="col-sm-12" style='display:none;' id='divdelete'>
+        <p><i>A noter que nous effacerons automatique les données invalides Ne prenez pas de risque</i></p>
+          <form method='POST' action='remplir_database'>{% csrf_token %}
+          <center><input type='button' value='delete la dernière data' id='delete'></center>
+          </form>
+        </div>
+
+
+
+       </div>
+
+
+
       </div>
     </section>
 
 
-    <script>
-
-        function voir_database(){
-            document.location.href="/admin_pollu/database"; 
-            }
-        function remplir_database(){
-            document.location.href="/admin_pollu/remplir_database"; 
-            }
-        function voir_prédiction(){
-            document.location.href="/admin_pollu/prédiction"; 
-            }
-
-    </script>
-
-
-
-
 
 
 
 
     <script>
 
-    jQuery("#construction").on("click", function(e){
+
+    jQuery("#delete").on("click", function(e){
             jQuery.ajax({
                 data:{
                     'csrfmiddlewaretoken': '{{csrf_token}}' , 
-                    'construction':'constru',
+                    'delete':'delete',
                     
              
                 },
                 type:"POST",
-                url:"/admin_pollu/construction"
+                url:"/admin_pollu/remplir_database"
             })
             .done(function(data){
                 if (data.error){
@@ -257,7 +246,8 @@
                 else{
                     jQuery("#is_save").html(data.data);
                     jQuery("#monCadreAlert");
-                    alert('table crée');
+                    
+
   
                     
                     
@@ -265,6 +255,79 @@
                 
             });
         });
+
+
+
+
+
+    jQuery("#verification").on("click", function(e){
+            jQuery.ajax({
+                data:{
+                    'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                    'verification':'verification',
+                    
+             
+                },
+                type:"POST",
+                url:"/admin_pollu/remplir_database"
+            })
+            .done(function(data){
+                if (data.error){
+                    jQuery("#monCadreAlert").text(data.error);
+                    jQuery("#is_save");
+
+                    
+                    
+                }
+                else{
+                    jQuery("#is_save").html(data.data);
+                    jQuery("#monCadreAlert");
+                    document.getElementById('divdelete').style.display = 'block';
+
+  
+                    
+                    
+                };
+                
+            });
+        });
+
+
+
+
+
+    jQuery("#remplir").on("click", function(e){
+            jQuery.ajax({
+                data:{
+                    'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                    'remplissage':'remplissage',
+                    
+             
+                },
+                type:"POST",
+                url:"/admin_pollu/remplir_database"
+            })
+            .done(function(data){
+                if (data.error){
+                    jQuery("#monCadreAlert").text(data.error);
+                    jQuery("#is_save");
+
+                    
+                    
+                }
+                else{
+                    jQuery("#is_save").html(data.data);
+                    jQuery("#monCadreAlert");
+                    document.getElementById('verification').style.display = 'block';
+
+  
+                    
+                    
+                };
+                
+            });
+        });
+    
 </script>
 
 
@@ -274,36 +337,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
- 
   <!-- Services Section -->
   <section class="page-section" id="services">
   
