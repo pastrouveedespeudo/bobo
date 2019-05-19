@@ -1,8 +1,4 @@
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,92 +31,100 @@
 
 
 
-
 <body id="page-top">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
 
-    <style>
-      #my{
-        width:50px;
-        height:50px;
-    }
-    </style>
+    
     
     <div class="container">
+    
+      <style> #my{width:50px; height:50px;margin-left:-70px;}</style>
       <img src="/static/img/portfolio2/icone/indian.png" id="my">
-      <a class="navbar-brand js-scroll-trigger" href="/">My_Polution</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand js-scroll-trigger" href="/polution/polution">My_Polution</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
+      <img src="/static/img/portfolio/icone/my.png" id="my_prof">
+      <a class="navbar-brand js-scroll-trigger" href="/">My_Profil</a>
+     
+      
+      <button class="navbar-toggler navbar-toggler-right" type="button"
+        data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      
-      <div class="collapse navbar-collapse" id="navbarResponsive">
 
-      
+
+
+
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
 
-          <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:80px;
-          }
-          </style>
 
-          <li class="nav-item">
-            <a href = "/photo/photo">
-              <img src="/static/img/portfolio2/icone/graphe.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/photo">Nos graphiques</a>
-            </a>
-          </li>
 
 
           <style>
-            #im2{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
+              #im1{width:50px; height:50px; margin-left:110px;}
+              #graph{margin-left:35px; width:200px;}
           </style>
           
           <li class="nav-item">
-           <a href = "/photo/mes_images">
-            <img src="/static/img/portfolio2/icone/pol.png" id="im2">
-            <a class="nav-link js-scroll-trigger" href="/photo/mes_images">Nos données pollution</a>
+            <a href = "/photo/photo">
+              <img src="/static/img/portfolio2/icone/graphe.png" id="im1">
+              <center><a class="nav-link js-scroll-trigger" href="/photo/photo" id='graph'>Nos graphiques</a></center>
             </a>
           </li>
 
 
           <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:45px;
-          }
+            #im2{width:50px;height:50px;margin-left:45px;}
+            #donnée{width:200px;height:50px;margin-left:-25px;}
+          </style>
+          
+          <li class="nav-item">
+           <a href = "/polution/donnée">
+            <img src="/static/img/portfolio2/icone/pol.png" id="im2">
+            <center><a class="nav-link js-scroll-trigger" href="/polution/donnée" id='donnée'>Nos données pollution</a></center>
+            </a>
+          </li>
+
+
+          <style>
+              #impredi{width:50px;height:50px; margin-left:55px;}
+              #prédiction{width:200px;height:50px; margin-left:-20px;}
+
           </style>
 
           <li class="nav-item">
             <a href = "/photo/coupe">
-              <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/coupe">Nos predictions</a>
+              <img src="/static/img/portfolio/icone/coiffure.png" id="impredi">
+              <center><a class="nav-link js-scroll-trigger" href="/photo/coupe" id='prédiction'>Nos predictions</a></center>
             </a>
           </li>
 
 
-
-        
           
+
           <style>
-            #im3{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
+            #im3{width:50px;height:50px;margin-left:0px;}
+            #imim{width:50px;height:50px;margin-left:68px;}
+            #toususr{width:200px;height:50px;margin-left:0px;}
           </style>
+          
+          <li class="nav-item">
+           <a href = "/photo/habits">
+            <img src="/static/img/portfolio2/icone/pollution.png" id="imim">
+            <center><a class="nav-link js-scroll-trigger" href="/photo/habits" id='toususr'>Tous sur la pollution</a></center>
+            </a>
+          </li>
 
-
+          <style>
+            #im3{width:50px;height:50px;margin-left:25px;}
+          </style>
           
           <li class="nav-item">
            <a href = "/photo/habits">
@@ -176,28 +180,6 @@
 
 
 
-    <style>
-    #containner {
-        margin: 0px auto;
-        width: 400px;
-        height: 400px;
-    }
-    #videoElement {
-        width: 400px;
-        height: 400px;
-        position:relative;
-    }
-    #patron{
-      margin-left:105px;
-      margin-top:100px;
-      width: 200px;
-      height: 200px;
-      border: 2px solid red;
-      border-radius:50%;
-      position:absolute ;
-      z-index:1;
-    }
-    </style>
 
 
 
@@ -213,7 +195,201 @@
         <div class="col-lg-12 text-center">
           <h2 class="text-white mt-0"></h2>
           
- 
+
+
+
+        <div class="row">
+
+          
+          <div class="col-sm-4">
+          
+            <h5>Taux de pollution de particules fines à Lyon</h5><br><br>
+            <center><input type='button' value='Voir les données' onclick='donnée_lyon()'></center>
+            <center><strong><h5>{{lyon}}</h5></strong></center><br>
+            
+          </div>
+          
+          <div class="col-sm-4">
+          
+              <h5>Taux de pollution de particules fines à Paris</h5><br><br>
+              <center><input type='button' value='Voir les données' onclick='donnée_paris()'></center>
+              <center><strong><h5>{{paris}}</h5></strong></center><br>
+              
+          </div>
+
+          <div class="col-sm-4">
+          
+              <h5>Taux de pollution de particules fines à Marseille</h5><br><br>
+              <center><input type='button' value='Voir les données' onclick='donnée_marseille()'></center>
+              <center><strong><h5>{{marseille}}</h5></strong></center><br>
+              
+          </div>
+
+
+      </div>
+
+
+
+
+      <!-- INFORMATION SUR LA POLLUTION --> 
+      
+      <br><br>
+
+
+
+      <!-- information sur Lyon -->
+
+      <div id='info1' style='display:none;'>
+      
+        Météo de Lyon :  {{météo_lyon}}<br><br>
+        Vent de Lyon  :  {{vent_lyon}} m/s <br><br>
+        Température de Lyon  :  {{température_lyon}} degrès <br><br>
+        Saison actuelle : {{saison_actuelle}}<br><br>
+        départ à routier à Lyon :  {{départ_routier_lyon}}<br><br>
+        heure de pointe à lyon :  {{heure_pointe_lyon}}<br><br>
+        c'est jour regulier à lyon :  {{regulier_jour_lyon}}<br><br>
+        ce n'est pas une heure de pointe à lyon :  {{non_pointe_lyon}}<br><br>
+
+
+        <br><br>
+        <div style='float:left;'><i>Donnée fournis par openweathermap</i></div>
+
+
+      </div>
+
+      <!-- fin information sur Lyon -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      <div id='info2' style='display:none;'>
+        Météo de Paris :  {{météo_paris}}<br><br>
+        Météo de Paris :  {{vent_paris}} m/s<br><br>
+        
+
+        
+        <br><br>
+        <div style='float:left;'><i>Donnée fournis par openweathermap</i></div>
+        
+      </div>
+
+      
+      <div id='info3' style='display:none;'>
+        Météo de Marseille :  {{météo_marseille}}<br><br>
+        Météo de Marseille :  {{vent_marseille}} m/s<br><br>
+        
+
+        
+        <br><br>
+        <div style='float:left;'><i>Donnée fournis par openweathermap</i></div>
+
+        
+      </div>
+
+
+    <!-- FIN INFORMATION SUR LA POLLUTION -->
+
+
+
+
+
+
+
+
+
+        <a href ='/pollution/donnée' style='color:black;'><i>le vent ?</i></a>&nbsp;&nbsp;
+        <a href ='/pollution/donnée' style='color:black;'><i>la météo ?</i></a>
+        <a href ='/pollution/donnée' style='color:black;'><i>la température ?</i></a>
+        <a href ='/pollution/donnée' style='color:black;'><i>la saison ?</i></a>
+        <a href ='/pollution/donnée' style='color:black;'><i>la typographie ?</i></a>
+
+      <br><br><br><br><br><br>
+      <div style='float:left;'><i>Données issuent de <a href='http://www.airlab.solutions/fr'
+          style='color:black;'>plumairlab
+          </a></i>
+      </div>
+
+
+
+
+
+        
+    </div>
+  </section>
+
+
+  
+  <script>
+    function donnée_lyon(){
+      document.getElementById('info2').style.display = 'none';
+      document.getElementById('info3').style.display = 'none';
+      document.getElementById('info1').style.display = 'block';
+      };     
+
+    function donnée_paris(){
+      document.getElementById('info1').style.display = 'none';
+      document.getElementById('info3').style.display = 'none';
+      document.getElementById('info2').style.display = 'block';
+     };
+
+    function donnée_marseille(){
+      document.getElementById('info1').style.display = 'none';
+      document.getElementById('info2').style.display = 'none';
+      document.getElementById('info3').style.display = 'block';
+    };
+      
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+   <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
             <h2>La météo et Pollution</h2>
     
         <div class="row">
