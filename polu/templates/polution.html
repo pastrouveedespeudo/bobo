@@ -42,7 +42,7 @@
     
       <style> #my{width:50px; height:50px;margin-left:-70px;}</style>
       <img src="/static/img/portfolio2/icone/indian.png" id="my">
-      <a class="navbar-brand js-scroll-trigger" href="/">My_Polution</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="navbar-brand js-scroll-trigger" href="/polution/polution">My_Polution</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
       <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
       <img src="/static/img/portfolio/icone/my.png" id="my_prof">
@@ -86,9 +86,9 @@
           </style>
           
           <li class="nav-item">
-           <a href = "/photo/mes_images">
+           <a href = "/polution/donnée">
             <img src="/static/img/portfolio2/icone/pol.png" id="im2">
-            <center><a class="nav-link js-scroll-trigger" href="/photo/mes_images" id='donnée'>Nos données pollution</a></center>
+            <center><a class="nav-link js-scroll-trigger" href="/polution/donnée" id='donnée'>Nos données pollution</a></center>
             </a>
           </li>
 
@@ -159,8 +159,9 @@
           <br>
           <style>#h{font:Serif; color:white;}</style> 
           <h2 id="h">My Pollution est un site rassemblant des informations sur la pollution.
-          A travers différentes données scientifiques existantes et de données en temps réel.
-          METTRE TA SOLUTION SINON ILS IRONT SUR PLUMAIR fin c ce que je ferai
+          C'est aussi un site qui essaie d'informer quant à la quantité de pollution en temps réelle.
+          Et pour ne plus en finir c'est un site qui essaie de montrer qu'une machine à pluie diminuerait la pollution
+          à travers différentes données.
           <hr class="divider my-4">
         </div>
         <div class="col-lg-8 align-self-baseline">
@@ -199,99 +200,20 @@
             </iframe>
           </div>
 
-          <br><br><br>
-
-
-
+        <br><br><br>
+          
         <div class="row">
 
-          
-          <div class="col-sm-4">
-          
-            <h5>Taux de pollution de particules fines à Lyon</h5><br><br>
-            <center><strong><h5>{{lyon}}</h5></strong></center><br>
-            <center><input type='button' value='Voir les données' onclick='donnée_lyon()'></center>
-            
-          </div>
-          
-          <div class="col-sm-4">
-          
-              <h5>Taux de pollution de particules fines à Paris</h5><br><br>
-              <center><strong><h5>{{paris}}</h5></strong></center><br>
-              <center><input type='button' value='Voir les données' onclick='donnée_paris()'></center>
-              
-          </div>
-
-          <div class="col-sm-4">
-          
-              <h5>Taux de pollution de particules fines à Marseille</h5><br><br>
-              <center><strong><h5>{{marseille}}</h5></strong></center><br>
-              <center><input type='button' value='Voir les données' onclick='donnée_marseille()'></center>
-              
-          </div>
-
-
-      </div>
-
-
-
-
+        </div>
 
 
       
-      <br><br><br><br><br>
-      
-      <div id='info1' style='display:none;'>
-        Données de : Lyon
-        {{météo_lyon}}<br><br>
-        {{vent_lyon}} m/s <br><br>
-        
-        <a href ='/pollution/donnée' style='color:black;'><i>le vent ?</i></a>&nbsp;&nbsp;
-        <a href ='/pollution/donnée' style='color:black;'><i>la météo ?</i></a>
-        
-        <br><br>
-        <div style='float:left;'><i>Donnée fournis par openweathermap</i></div>
-
-
-      </div>
 
       
-      <div id='info2' style='display:none;'>
-        Données de : Paris
-        {{météo_paris}}<br><br>
-        {{vent_paris}} m/s<br><br>
-        
-        <a href ='/pollution/donnée' style='color:black;'><i>le vent ?</i></a>&nbsp;&nbsp;
-        <a href ='/pollution/donnée' style='color:black;'><i>la météo ?</i></a>
-        
-        <br><br>
-        <div style='float:left;'><i>Donnée fournis par openweathermap</i></div>
-
-        
-      </div>
 
 
-      
-      <div id='info3' style='display:none;'>
-        Données de : Marseille
-        {{météo_marseille}}<br><br>
-        {{vent_marseille}} m/s<br><br>
-        
-        <a href ='/pollution/donnée' style='color:black;'><i>le vent ?</i></a>&nbsp;&nbsp;
-        <a href ='/pollution/donnée' style='color:black;'><i>la météo ?</i></a>
-        
-        <br><br>
-        <div style='float:left;'><i>Donnée fournis par openweathermap</i></div>
-
-        
-      </div>
 
 
-      <br><br><br>
-      <div style='float:left;'><i>Données issuent de <a href='http://www.airlab.solutions/fr'
-          style='color:black;'>plumairlab
-          </a></i>
-      </div>
 
 
         
@@ -299,27 +221,6 @@
   </section>
 
 
-
-  <script>
-    function donnée_lyon(){
-      document.getElementById('info2').style.display = 'none';
-      document.getElementById('info3').style.display = 'none';
-      document.getElementById('info1').style.display = 'block';
-      };     
-
-    function donnée_paris(){
-      document.getElementById('info1').style.display = 'none';
-      document.getElementById('info3').style.display = 'none';
-      document.getElementById('info2').style.display = 'block';
-     };
-
-    function donnée_marseille(){
-      document.getElementById('info1').style.display = 'none';
-      document.getElementById('info2').style.display = 'none';
-      document.getElementById('info3').style.display = 'block';
-    };
-      
-  </script>
 
 
   
