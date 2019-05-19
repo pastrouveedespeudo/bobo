@@ -12,6 +12,10 @@ from .donnée_site.pollution import traffique
 from .donnée_site.pollution import habitude
 from .donnée_site.pollution import ville_pollué_classement
 from .donnée_site.pollution import region_industrielle
+from .donnée_site.pollution import pression_ville
+from .donnée_site.pollution import activité_execptionnelle
+from .donnée_site.pollution import socio
+from .donnée_site.pollution import bouchons
 
 
 def home(request):
@@ -32,7 +36,7 @@ def donnée(request):
     data_lyon = taux_particule('lyon')
     data_paris = taux_particule('paris')
     data_marseille = taux_particule('marseille')
-    print(data_lyon, data_paris, data_marseille)
+
 
 
     météo_lyon = temps_ville('lyon', 'météo')
@@ -85,6 +89,25 @@ def donnée(request):
     pression_paris = pression_ville('paris')
     pression_marseille = pression_ville('marseille')
 
+    manif_lyon = activité_execptionnelle('lyon')
+    manif_paris = activité_execptionnelle('paris')
+    manif_marseille = activité_execptionnelle('marseille')
+    
+
+    socio_lyon = socio('lyon')
+    socio_paris = socio('paris')
+    socio_marseille = socio('marseille')
+
+    bouchons_lyon = bouchons('lyon')
+    bouchons_paris = bouchons('paris')
+
+
+
+
+
+
+
+
 
     return render(request, 'donnée.html', {'lyon':data_lyon,
                                            'paris':data_paris,
@@ -121,7 +144,15 @@ def donnée(request):
                                            'pole_marseille':pole_marseille,
                                            'pression_lyon':pression_lyon,
                                            'pression_paris':pression_paris,
-                                           'pression_marseille':,pression_marseille})
+                                           'pression_marseille':pression_marseille,
+                                           'manif_lyon':manif_lyon,
+                                           'manif_paris':manif_paris,
+                                           'manif_marseille':manif_marseille,
+                                           'socio_lyon':socio_lyon,
+                                           'socio_marseille':socio_marseille,
+                                           'socio_paris':socio_paris,
+                                           'bouchons_lyon':bouchons_lyon,
+                                           'bouchons_paris':bouchons_paris})
 
 
     return render(request, 'donnée.html')
