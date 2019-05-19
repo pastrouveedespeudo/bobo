@@ -51,7 +51,15 @@ def admin_pollu(request):
     return render(request, "admin_pollu.html")
 
 
-def database(request): 
+def database(request):
+    
+    if request.method == "POST":
+        print('ouiiiiiiiiiiiii')
+        voir = request.POST.get('Voir')
+        print(voir)
+        if voir:
+            data = ''
+            return HttpResponse(data)
     return render(request, "database.html")
 
 def prédiction(request): 
