@@ -1,0 +1,46 @@
+import os
+import cv2
+import json
+import pyglet
+import requests
+import datetime
+import urllib.request
+from bs4 import *
+from colour import Color
+from PIL import Image, ImageDraw, ImageChops
+
+
+
+
+class socio:
+
+    def habitant(self, lieu, POPULATION_ACTIVE_HABITANT):
+        self.lieu = lieu
+
+        lyon = 328469
+        paris = 1350800 
+        marseille = 762480 
+
+        if self.lieu == 'lyon':
+            POPULATION_ACTIVE_HABITANT['supp300K'] += 1
+
+        if self.lieu == 'paris':
+            POPULATION_ACTIVE_HABITANT['sup1M'] += 1
+
+        if self.lieu == 'marseille':
+            POPULATION_ACTIVE_HABITANT['sup500K'] += 1
+        #population active de 15 a 59 ans
+
+
+
+
+
+
+
+
+
+
+
+
+
+
