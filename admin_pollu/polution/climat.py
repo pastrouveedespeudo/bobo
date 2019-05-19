@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageChops
 
 
 
-def recuperation_donnée(lieu, CLIMAT):
+def recuperation_donnée_température(lieu, CLIMAT):
 
     
     clé = '5a72ceae1feda40543d5844b2e04a205'
