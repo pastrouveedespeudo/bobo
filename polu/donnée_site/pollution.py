@@ -37,7 +37,15 @@ def taux_particule(lieu):
     print(polution)
     return polution
 
+def pression_ville(lieu):
+    
+    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,CLE)
+    r = requests.get(localisation)
+    data=r.json()
+    
+    pression = data['main']['pressure']
 
+    return pression
 
 def temps_ville(lieu, donnée):
     
@@ -167,6 +175,165 @@ def traffique(lieu):
 
 
     return dep, pointe, normale, non_pointe
+
+
+
+def habitude():
+
+    weekend = ''
+    jour_de_semaine = ''
+    
+    pointe = [8,9,16,17,18,19]#reverifie les pointes
+    jour = ['samedi', 'dimanche']
+
+    
+    date = datetime.datetime.now()
+
+    heure = date.hour
+    jour = date.weekday()
+   
+    #print(heure, jour)
+
+    if jour == 5 or jour == 6:
+        weekend = 'Weekend'
+        jour_de_semaine = 'Non'
+        
+    else:
+        weekend = 'Non'
+        jour_de_semaine = 'Oui'
+
+
+    return weekend, jour_de_semaine
+
+
+def ville_pollué_classement(lieu):
+
+    liste = ["paris", "marseille", "grenoble", "mulhouse",
+             "marignane","strasbourg","lyon"]
+
+    for i in liste:
+        if lieu == i:
+            indexe = liste.index(i)
+    print(indexe)
+    
+    return indexe
+
+
+
+def region_industrielle(lieu):
+
+
+    site = ''
+    
+    pole_poluant = ['Nord',
+                    'Bouches-du-Rhône',
+                    'Moselle',
+                    'Seine-Maritime',
+                    'Loire-Atlantique',
+                    'Haute-Normandie',
+                    'Meurthe-et-Moselle',
+                    'Seine-Maritime',
+                    'Rhône'
+
+                    ]
+
+
+
+
+    path = "https://fr.wikipedia.org/wiki/{}".format(lieu) 
+
+    r = requests.get(path)
+
+    page = r.content
+    soup = BeautifulSoup(page, "html.parser")
+    propriete = soup.find('table',attrs={"class":u"infobox_v2"})
+    propriete = str(propriete)
+    print(propriete)
+  
+    for i in pole_poluant:
+        a = str(propriete).find(str(i))
+        if a > 0:
+            site = 'oui'
+            return site
+
+    site = 'non'
+    return site
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
