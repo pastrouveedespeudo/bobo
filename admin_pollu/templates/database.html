@@ -173,86 +173,63 @@
   <!-- About Section -->
   <section class="page-section bg-primary" id="about">
     <div class="container">
+  
 
-
+      <center><input type='button' value='Retour Menu' id='menu' onclick='menu()'></center><br><br><br>
+  
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
           <h2 class="text-white mt-0"></h2>
           
 
-        <center><div id='message'></div></center>
-
         <div class="row">
         
-         <div class="col-sm-4">
+         <div class="col-sm-12">
             <form method='POST' action='construction'>{% csrf_token %}
-              <input type='button' value='Construire la database' id='construction'>
+              <input type='button' value='Voir la database' id='Voir'>
             </form>
          </div>
-              
-          <div class="col-sm-4">
-              <input type='button' value='voir la database' id='voir_database()'>
-          </div>
-          
-          <div class="col-sm-4">
-             <input type='button' value='remplir la database'>
-          </div>
-          <br><br>
-          <div class="col-sm-12">
-             <input type='button' value='voir la prédiction'>
-          </div>
+        <br><br>
 
-              
-          </div>
-
-
-          
-      </form>
+       </div>
+       
       </div>
     </section>
 
 
-    <script>
-
-        function voir_database(){
-            document.location.href="/admin_pollu/database"; 
-            }
-        
-
-    </script>
-
-
-
-
 
 
 
 
     <script>
 
-    jQuery("#construction").on("click", function(e){
+    function menu(){
+      document.location.href="/admin_pollu/admin_pollu"; 
+      }
+
+
+    jQuery("#Voir").on("click", function(e){
             jQuery.ajax({
                 data:{
                     'csrfmiddlewaretoken': '{{csrf_token}}' , 
-                    'construction':'constru',
+                    'Voir':'Voir',
                     
              
                 },
                 type:"POST",
-                url:"/admin_pollu/construction"
+                url:"/admin_pollu/database"
             })
             .done(function(data){
                 if (data.error){
                     jQuery("#monCadreAlert").text(data.error);
                     jQuery("#is_save");
-
                     
                     
                 }
                 else{
                     jQuery("#is_save").html(data.data);
                     jQuery("#monCadreAlert");
-                    alert('table crée');
+                    
   
                     
                     
@@ -260,239 +237,8 @@
                 
             });
         });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
- 
-  <!-- Services Section -->
-  <section class="page-section" id="services">
-  
-    <div class="container">
     
-      <h2 class="text-center mt-0">Mes services</h2>
-      <hr class="divider my-4">
-
-
-      
-      <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im6{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/graphe.png"/ id="im6">
-            <h3 class="h4 mb-2">Un recit sans preuve ca sert a rien...</h3>
-            <p class="text-muted mb-0">Nos graphiques</p>
-          </div>
-        </div>
-
-
-
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im4{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/pol.png"/ id="im4">
-            <h3 class="h4 mb-2">Nos données</h3>
-            <br>
-            <p class="text-muted mb-0">Nos données pollution</p>
-          </div>
-        </div>
-
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im5{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/coiffure.png"/ id="im5">
-            <h3 class="h4 mb-2">qui... ne marche pas super..</h3>
-            <p class="text-muted mb-0">Nos prédictions</p>
-          </div>
-        </div>
-
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/pollution.png"/ id="im7">
-            <h3 class="h4 mb-2">La pollution ! ah enfete c'est quoi ? </h3>
-            <br>
-            <p class="text-muted mb-0">Tous absolument tous sur la polltuion </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/fight.png"/ id="im7">
-            <h3 class="h4 mb-2">Notre solution</h3>
-            <br>
-            <p class="text-muted mb-0">Luttons</p>
-          </div>
-        </div>
-
-
-        
-
-        
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-
-  
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-
-      
-        <div class="col-lg-4 col-sm-6">
-        
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/1.jpg" alt="">
-            <div class="portfolio-box-caption">
-            
-              <div class="project-category text-white-50">
-                Conerad 26 ans
-              </div>
-                
-              
-              <div class="project-name">
-                A enfin arréter les pull orange et vert !
-              </div>
-            </div>
-          </a>
-        </div>
-
-        
-        <div class="col-lg-4 col-sm-6">
-        
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/2.jpg" alt="">
-            
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Sarah 24 ans
-              </div>
-              <div class="project-name">
-                Ne fais plus d'achat inutil
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/3.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Jo 35 ans
-              </div>
-              <div class="project-name">
-                a kiffé le projet
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/4.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Marion 17 ans
-              </div>
-              <div class="project-name">
-                a adoré le site ! (elle est aujourd'hui manequin)
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/5.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Rey 22 ans Professionel de Tennis
-              </div>
-              <div class="project-name">
-                Ne fais pas un match sans avoir tester des habits sur My Profil
-              </div>
-            </div>
-          </a>
-        </div>
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/6.jpg" alt="">
-            <div class="portfolio-box-caption p-3">
-              <div class="project-category text-white-50">
-                Ginette 82 ans
-              </div>
-              <div class="project-name">
-                N'a rien compris
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      
-    </div>
-  </section>
-
-
-
-
-
+   </script>
 
 
 
@@ -505,20 +251,10 @@
   <!-- Call to Action Section -->
   <section class="page-section bg-dark text-white">
     <div class="container text-center">
-      <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
+
+      DATABASE ICIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 
 
-                 
-           <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
-           <img src = "/static/img/portfolio/icone/facebook.png"/ id="im10">
-
-                                
-            <style>#im11{width:100px; height:100px;margin-left:100px;}</style>
-           <img src = "/static/img/portfolio/icone/twitter.png"/ id="im11">
-
-                  
-           <style>#im12{width:200px; height:200px;margin-left:100px;}</style>
-           <img src = "/static/img/portfolio/icone/snap.png"/ id="im12">
                     
     </div>
   </section>
