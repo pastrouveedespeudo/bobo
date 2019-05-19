@@ -5,6 +5,8 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+#mettre un menu a pollution.html + explication démarche
+
 
 #traitement de donnée enlever les classes et le mettre avec prédiction()
 
