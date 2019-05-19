@@ -6,21 +6,20 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
-#19 mai au cas ou 
+#traitement de donnée enlever les classes et le mettre avec prédiction()
 
 #finir de rentrer les données
 
-#comment à analyser les données
+#comment à analyser les données -> graphique
 
 #commencer a faire le fichier pour transférer mysql -> postgres -> heroku
 
-#recommencer a remplir la database mais calme pcqe :
 
 #au pire je rentrerai toutes les données à la main... sur heroku
 
 #ok tout refaire mais avec des fonctions
 
-#tout faire dans la meme database me faites pas remplir la database a la main 2 fois svp j'ai 500 truks de 15 lignes qui me disent si y'a une manif a lyon et si y'a du vent...
+
 
 
 
@@ -44,13 +43,13 @@
 
 #factoriser a mort avant pollution
 
-#afficher l'image du mec en mode vetement reflechis
+
 
 #au lieu que d'enregistrer en prem's les habit tu pourrais verifier qu'il n'y est pas 2 fois le nombre mais bon pas grave
 
 ca donne [1, 1,2,2,3,3,4,4] 
 
-#@ login admin
+#@ login admin + popo
 
 #supprimer favoris
 
@@ -95,7 +94,6 @@ ca donne [1, 1,2,2,3,3,4,4]
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-#proposer des réduire la taille vetement, et si t'as du 1M d'images dhabit comment tu vas faire ? ben jdirai nan je prend que les collections du moment ok retient ca
 
 
 
