@@ -6,6 +6,34 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 
+#finir de rentrer les données
+
+#comment à analyser les données
+
+#commencer a faire le fichier pour transférer mysql -> postgres -> heroku
+
+#recommencer a remplir la database mais calme pcqe :
+
+#au pire je rentrerai toutes les données à la main... sur heroku
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br>
+
+
 #responsivité de la page coupe
 
 #factoriser a mort avant pollution
