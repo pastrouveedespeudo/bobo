@@ -21,13 +21,13 @@ def habitant(lieu, POPULATION_ACTIVE_HABITANT):
     paris = 1350800 
     marseille = 762480 
 
-    if self.lieu == 'lyon':
+    if lieu == 'lyon':
         POPULATION_ACTIVE_HABITANT['supp300K'] += 1
 
-    if self.lieu == 'paris':
+    if lieu == 'paris':
         POPULATION_ACTIVE_HABITANT['sup1M'] += 1
 
-    if self.lieu == 'marseille':
+    if lieu == 'marseille':
         POPULATION_ACTIVE_HABITANT['sup500K'] += 1
     #population active de 15 a 59 ans
 
