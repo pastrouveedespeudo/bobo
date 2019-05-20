@@ -5,6 +5,8 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+#y intégrer http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html
+
 #prévoir d'autres sites qui font la meme chose au cas de bug au cas ou
 
 #faire toutes les truks avec pluie ou pas pluie qui change et puis au pire tu dis ben nan ca marche pas mais t'aura les truks des autres sites qui disent que pluie et t'as oublié de save l'image du graphe
