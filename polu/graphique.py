@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pylab
 import psycopg2
+import numpy as np
 
 from polu_ana.polution.database2 import clean_data
 
@@ -27,71 +28,79 @@ def visu(ville):
     return liste
 
 
-def traitement_heure(liste, xlabel_data):
+def traitement_heure(ville):
 
-    horraire_pointe = []
+    horraire_pointe = [10]
     horraire_non_pointe = []
 
-    print(xlabel_data)
-    
-    for i in liste:
+    donnée = visu(ville)
+
+
+    for i in donnée:
         #print(i[0], i[1])
 
         if i[0] == 'non_pointe':
-            horraire_pointe.append(int(i[1]))
+            horraire_non_pointe.append(int(i[1]))
         
         elif i[0] == 'pointe':
             horraire_pointe.append(int(i[1]))
 
-    if xlabel_data == 'non_pointe':
-        return horraire_non_pointe
 
-    elif xlabel_data == 'pointe':
-        return horraire_pointe
-
-
-
-def graphe_heure(ville, xlabel_data):
-
-    clean_data()
+    moy = sum(horraire_pointe) / len(horraire_pointe)
+    variance_pointe = np.var(horraire_pointe)
     
-    donnée = visu(ville)
-    heure = traitement_heure(donnée, xlabel_data)
     
-    print(heure)
+    moy_non = sum(horraire_non_pointe) / len(horraire_non_pointe)
+    variance_non_pointe = np.var(horraire_non_pointe)
 
+    erreur_pointe = (variance_pointe/len(horraire_pointe))*1/2
     
-    fig = plt.figure()
+    erreur_non_pointe = (variance_non_pointe/len(horraire_non_pointe))*1/2
 
-    x = [1,2,3,4,5,6]
-    BarName = [7,8,9,17,18,19]
 
+    print(variance_pointe, variance_non_pointe)
+    print(erreur_pointe, erreur_non_pointe)
+    print(moy, moy_non)
+
+
+
+
+    return moy, moy_non, erreur_pointe, erreur_non_pointe
+
+
+
+def diagramme(pointe, non_pointe,
+              erreur_pointe, erreur_non_pointe):
     
-    height = [50,60,70,80,90,100]
-    width = 0.00
+    plt.bar(range(2), [pointe, non_pointe], width = 0.1, color = 'red',
+           yerr = [erreur_pointe, erreur_non_pointe],
+            ecolor = 'black', capsize = 10)
+    
+    plt.xticks(range(2), ['Heure de non pointe', 'Heure de pointe'])
+
+        
+    plt.ylabel('Taux de pollution en AQI')
+    plt.title('Exemple d\' histogramme simple')
+    
+    plt.show()
 
 
-    plt.bar(x, height, width, color=(0.65098041296005249, 0.80784314870834351, 0.89019608497619629, 1.0) )
-    plt.scatter([i+width/2.0 for i in x],height,color='k',s=40)
 
-    plt.xlim(0,11)
-    plt.ylim(40,150)
-
-
-    plt.ylabel('Taux de pollution')
-    plt.xlabel('Heure')
-    plt.title('Titre')
-
-    pylab.xticks(x, BarName, rotation=40)
-
-    #plt.savefig('HeurePointeBeauSemaine.png')
-    #plt.show()
+horraire = traitement_heure('lyon')
+diagramme(horraire[0], horraire[1], horraire[2], horraire[3])
 
 
 
 
-graphe_heure('lyon', 'pointe')
-print('\n')
-graphe_heure('lyon', 'non_pointe')
+
+
+
+
+
+
+
+
+
+
 
 
