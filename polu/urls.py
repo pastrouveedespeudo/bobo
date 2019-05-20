@@ -13,7 +13,7 @@ urlpatterns = [
     path(r'/polution_lyon', views.polution_lyon),
     path(r'/polution_marseille', views.polution_marseille),
     path(r'/polution_paris', views.polution_paris),
-    path(r'/graphique', views.graphique),
+    path(r'/graphe', views.graphe),
     path(r'/donnée', views.donnée),
     path(r'/machine_a_o', views.machine_a_o),
     path(r'/prediction', views.prediction),
