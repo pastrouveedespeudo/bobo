@@ -107,12 +107,32 @@ def pollution():
 
     for i in LIST_CITY:
         print(i)
+##        try:
+##            france(i, VILLE_POLLUE2018)
+##            industrie(i, REGION_INDUSTRIEL_POLLUEE)
+##
+##            données = display_dict(VILLE_POLLUE2018,
+##                         REGION_INDUSTRIEL_POLLUEE)
+##        except:
+        if i == 'lyon':
+            REGION_INDUSTRIEL_POLLUEE['non'] += 1
+            VILLE_POLLUE2018['un'] += 1
+ 
         
-        france(i, VILLE_POLLUE2018)
-        industrie(i, REGION_INDUSTRIEL_POLLUEE)
+        elif i == 'marseille':
+            REGION_INDUSTRIEL_POLLUEE['non'] += 1
+            VILLE_POLLUE2018['deux'] += 1
+            
 
+
+        elif i == 'paris':
+            REGION_INDUSTRIEL_POLLUEE['non'] += 1
+            VILLE_POLLUE2018['trois'] += 1
+       
         données = display_dict(VILLE_POLLUE2018,
-                     REGION_INDUSTRIEL_POLLUEE)
+                                REGION_INDUSTRIEL_POLLUEE)
+
+                
         print(données)
         insertion_polution(données[0], données[1],
                           referentiel[0],referentiel[1], i)
