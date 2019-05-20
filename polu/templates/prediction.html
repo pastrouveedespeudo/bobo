@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,98 +31,108 @@
 
 
 
-
 <body id="page-top">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
 
-    <style>
-      #my{
-        width:50px;
-        height:50px;
-    }
-    </style>
+    
     
     <div class="container">
-      <img src="/static/img/portfolio/icone/my.png" id="my">
+    
+      <style> #my{width:50px; height:50px;margin-left:-70px;}</style>
+      <img src="/static/img/portfolio2/icone/indian.png" id="my">
+      <a class="navbar-brand js-scroll-trigger" href="/polution/polution">My_Polution</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
+      <img src="/static/img/portfolio/icone/my.png" id="my_prof">
       <a class="navbar-brand js-scroll-trigger" href="/">My_Profil</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+     
+      
+      <button class="navbar-toggler navbar-toggler-right" type="button"
+        data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      
-      <div class="collapse navbar-collapse" id="navbarResponsive">
 
-      
+
+
+
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
 
-          <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:60px;
-          }
-          </style>
 
-          <li class="nav-item">
-            <a href = "/photo/photo">
-              <img src="/static/img/portfolio/icone/photo.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/photo">Prendre une photo</a>
-            </a>
-          </li>
 
 
           <style>
-            #im2{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
+              #im1{width:50px; height:50px; margin-left:110px;}
+              #graph{margin-left:35px; width:200px;}
           </style>
           
           <li class="nav-item">
-           <a href = "/photo/mes_images">
-            <img src="/static/img/portfolio/icone/mes_images.png" id="im2">
-            <a class="nav-link js-scroll-trigger" href="/photo/mes_images">Mes images</a>
+            <a href = "/polution/graphe">
+              <img src="/static/img/portfolio2/icone/graphe.png" id="im1">
+              <center><a class="nav-link js-scroll-trigger" href="/polution/graphe" id='graph'>Nos graphiques</a></center>
             </a>
           </li>
 
 
           <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:45px;
-          }
+            #im2{width:50px;height:50px;margin-left:45px;}
+            #donnée{width:200px;height:50px;margin-left:-25px;}
           </style>
-
+          
           <li class="nav-item">
-            <a href = "/photo/coupe">
-              <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/coupe">Mes_coiffures</a>
+           <a href = "/polution/donnée">
+            <img src="/static/img/portfolio2/icone/pol.png" id="im2">
+            <center><a class="nav-link js-scroll-trigger" href="/polution/donnée" id='donnée'>Nos données pollution</a></center>
             </a>
           </li>
 
 
-
-        
-          
           <style>
-            #im3{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
+              #impredi{width:50px;height:50px; margin-left:55px;}
+              #prédiction{width:200px;height:50px; margin-left:-20px;}
+
           </style>
 
-          
           <li class="nav-item">
-           <a href = "/photo/habits">
-            <img src="/static/img/portfolio/icone/vetements.png" id="im3">
-            <a class="nav-link js-scroll-trigger" href="/photo/habits">Mes vetements</a>
+            <a href = "/polution/prediction">
+              <img src="/static/img/portfolio/icone/coiffure.png" id="impredi">
+              <center><a class="nav-link js-scroll-trigger" href="/polution/prediction" id='prédiction'>Nos predictions</a></center>
             </a>
           </li>
+
+
+          
+
+          <style>
+            #im3{width:50px;height:50px;margin-left:0px;}
+            #imim{width:50px;height:50px;margin-left:68px;}
+            #toususr{width:200px;height:50px;margin-left:0px;}
+          </style>
+          
+          <li class="nav-item">
+           <a href = "/polution/info_pollu">
+            <img src="/static/img/portfolio2/icone/pollution.png" id="imim">
+            <center><a class="nav-link js-scroll-trigger" href="/polution/info_pollu" id='toususr'>Tous sur la pollution</a></center>
+            </a>
+          </li>
+
+          <style>
+            #im3{width:50px;height:50px;margin-left:25px;}
+          </style>
+          
+          <li class="nav-item">
+           <a href = "/polution/lutter">
+            <img src="/static/img/portfolio2/icone/fight.png" id="im3">
+            <a class="nav-link js-scroll-trigger" href="/polution/lutter">Comment lutter ?</a>
+            </a>
+          </li>
+
 
           
         </ul>
@@ -138,46 +146,25 @@
 
 
 
-  <script>
-    function button1(){
-      alert('cc')
-      }
-  </script>
 
 
 
   <!-- Masthead -->
   <header class="masthead">
     <div class="container h-100">
+     <br><br><br><br><br><br>
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
-        <br><br>
-
-
-          <style>#autre{margin-left:-965px;;margin-top:-100px;}</style>
-
-          <div id="autre">
-            
-            <p><center>Nos autres sites</center></p>
-        
-              <li id="lien"><a href="polution/polution">Polution</a></li>
-              <li id="lien"></li>
-       
-          </div>
-
-          
-          <h1 class="text-uppercase text-white font-weight-bold">Bienvenue</h1>
+          <h1 class="text-uppercase text-white font-weight-bold">Bienvenu !</h1>
           <br>
           <style>#h{font:Serif; color:white;}</style> 
-          <h2 id="h">My Profil est un site fun ou tu peux essayer des coupe de cheveux avec non pas un. Non pas deux mais
-          des centaines de conseils ou d'habits choisis</h2>
-          
+          <h2 id="h">My Pollution est un site qui aimerait pouvoir dire en temps et en heure qu'elle est la pollution en temps réelle.
+          Pour cela nous nous sommes basés sur les données de plusieurs comme airplumair.
           <hr class="divider my-4">
         </div>
         <div class="col-lg-8 align-self-baseline">
           <p class="text-white-75 font-weight-light mb-5"></p>
           
-  
           
         </div>
       </div>
@@ -187,28 +174,165 @@
 
 
 
-    <style>
-    #containner {
-        margin: 0px auto;
-        width: 400px;
-        height: 400px;
-    }
-    #videoElement {
-        width: 400px;
-        height: 400px;
-        position:relative;
-    }
-    #patron{
-      margin-left:105px;
-      margin-top:100px;
-      width: 200px;
-      height: 200px;
-      border: 2px solid red;
-      border-radius:50%;
-      position:absolute ;
-      z-index:1;
-    }
-    </style>
+
+
+
+
+  <!-- About Section -->
+  <section class="page-section bg-primary" id="about">
+    <div class="container">
+
+
+      <div class="row justify-content-center">
+        <div class="col-lg-12 text-center">
+          <h2 class="text-white mt-0"></h2>
+          
+ 
+          <div style="text-align:center;padding:1em 0;">
+            <h2>
+              <a style="text-decoration:none;" href="https://www.zeitverschiebung.net/fr/city/2988507"></a>
+               
+            </h2> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=fr&size=large&timezone=Europe%2FParis"
+              width="100%" height="140" frameborder="0" seamless>
+            </iframe>
+          </div>
+
+        <br><br><br>
+          
+          
+        <input type='button' value='lyon' id='lyon'>
+        
+        <input type='button' value='paris' id='paris'>
+        
+        <input type='button' value='marseille' id='marseille'>
+
+        <div id='pred'></div>
+
+      
+        <script>
+
+            jQuery("#lyon").on("click", function(e){
+                    jQuery.ajax({
+                        data:{
+                            'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                            'lyon':'lyon',
+                            
+                     
+                        },
+                        type:"POST",
+                        url:"/polution/prediction"
+                    })
+                    .done(function(data){
+                        if (data.error){
+                            jQuery("#monCadreAlert").text(data.error);
+                            jQuery("#is_save");
+
+                            
+                            
+                        }
+                        else{
+                            jQuery("#is_save").html(data.data);
+                            jQuery("#monCadreAlert");
+                            document.getElementById('pred').innerHTML = '<br><br>' +
+                                                                        'Nous pensons que le taux de polution est de :'+
+                                                                        '<strong>' +
+                                                                        data +
+                                                                        '</strong>';
+
+                            
+                            
+                        };
+                        
+                    });
+                });
+
+
+            jQuery("#paris").on("click", function(e){
+                    jQuery.ajax({
+                        data:{
+                            'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                            'paris':'paris',
+                            
+                     
+                        },
+                        type:"POST",
+                        url:"/polution/prediction"
+                    })
+                    .done(function(data){
+                        if (data.error){
+                            jQuery("#monCadreAlert").text(data.error);
+                            jQuery("#is_save");
+
+                            
+                            
+                        }
+                        else{
+                            jQuery("#is_save").html(data.data);
+                            jQuery("#monCadreAlert");
+                            document.getElementById('pred').innerHTML = '<br><br>' +
+                                                                        'Nous pensons que le taux de polution est de :'+
+                                                                        '<strong>' +
+                                                                        data +
+                                                                        '</strong>';                        
+                            
+                        };
+                        
+                    });
+                });
+
+
+
+            jQuery("#marseille").on("click", function(e){
+                    jQuery.ajax({
+                        data:{
+                            'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                            'marseille':'marseille',
+                            
+                     
+                        },
+                        type:"POST",
+                        url:"/polution/prediction"
+                    })
+                    .done(function(data){
+                        if (data.error){
+                            jQuery("#monCadreAlert").text(data.error);
+                            jQuery("#is_save");
+
+                            
+                            
+                        }
+                        else{
+                            jQuery("#is_save").html(data.data);
+                            jQuery("#monCadreAlert");
+                            document.getElementById('pred').innerHTML = '<br><br>' +
+                                                                        'Nous pensons que le taux de polution est de :'+
+                                                                        '<strong>' +
+                                                                        data +
+                                                                        '</strong>';                            
+                            
+                        };
+                        
+                    });
+                });
+
+
+
+    
+
+        </script>
+
+
+
+
+
+        
+    </div>
+  </section>
+
+
+
+
+  
 
 
 
@@ -217,6 +341,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+  
   <!-- Services Section -->
   <section class="page-section" id="services">
   
@@ -231,9 +367,9 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im6{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/telecharger.png"/ id="im6">
-            <h3 class="h4 mb-2">Télécharger une image</h3>
-            <p class="text-muted mb-0">Télécharge une image et va essayer des coupes de cheveux et des vetements !!</p>
+           <img src = "/static/img/portfolio2/icone/graphe.png"/ id="im6">
+            <h3 class="h4 mb-2">Un recit sans preuve ca sert a rien...</h3>
+            <p class="text-muted mb-0">Nos graphiques</p>
           </div>
         </div>
 
@@ -243,10 +379,10 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im4{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/photo.png"/ id="im4">
-            <h3 class="h4 mb-2">Prendre une photo !   </h3>
+           <img src = "/static/img/portfolio2/icone/pol.png"/ id="im4">
+            <h3 class="h4 mb-2">Nos données</h3>
             <br>
-            <p class="text-muted mb-0">Va faire la star ! et va essayer une coupe de cheveux !</p>
+            <p class="text-muted mb-0">Nos données pollution</p>
           </div>
         </div>
 
@@ -254,10 +390,9 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im5{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/vetements.png"/ id="im5">
-            <h3 class="h4 mb-2">Essaie des vetements !</h3>
-            <p class="text-muted mb-0">Selon la tendance du moment va essayer des vetements
-            notre algorith fais par un genie chinois te propose les meilleurs couleurs </p>
+           <img src = "/static/img/portfolio/icone/coiffure.png"/ id="im5">
+            <h3 class="h4 mb-2">qui... ne marche pas super..</h3>
+            <p class="text-muted mb-0">Nos prédictions</p>
           </div>
         </div>
 
@@ -265,13 +400,25 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/magasin.png"/ id="im7">
-            <h3 class="h4 mb-2">e-commerce</h3>
+           <img src = "/static/img/portfolio2/icone/pollution.png"/ id="im7">
+            <h3 class="h4 mb-2">La pollution ! ah enfete c'est quoi ? </h3>
             <br>
-            <p class="text-muted mb-0">thune Thune THUNEEEE</p>
+            <p class="text-muted mb-0">Tous absolument tous sur la polltuion </p>
           </div>
         </div>
 
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+           <style>#im7{width:100px; height:100px;}</style>
+           <img src = "/static/img/portfolio2/icone/fight.png"/ id="im7">
+            <h3 class="h4 mb-2">Notre solution</h3>
+            <br>
+            <p class="text-muted mb-0">Luttons</p>
+          </div>
+        </div>
+
+
+        
 
         
       </div>
@@ -480,19 +627,6 @@
 </body>
 
 
-
-    <script>
-    var video = document.querySelector("#videoElement");
-    if (navigator.mediaDevices.getUserMedia) {     
-        navigator.mediaDevices.getUserMedia({video: true})
-      .then(function(stream) {
-        video.srcObject = stream;
-      })
-      .catch(function(err0r) {
-        console.log("Something went wrong!");
-      });
-    }
-    </script>
 
 
 
