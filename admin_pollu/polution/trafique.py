@@ -137,6 +137,7 @@ def bouchons(lieu, BOUCHON):
                     except:
                         pass
             liste = "".join(liste)
+            print(liste,'00000000000000000000000000000000000000000000')
             b = int(liste)
 
         except:
@@ -178,12 +179,14 @@ def bouchons(lieu, BOUCHON):
         soup = BeautifulSoup(page, "html.parser")
 
         liste.append(str(soup))
-        bouchon = liste[0][1874:1877]
+        bouchon = liste[0][1872:1876]
+        print('yooooooooooo')
         bouchon = str(bouchon)
-
+        print(bouchon)
         kmbouchon = []
         liste = []
         for i in bouchon:
+            print(i)
             try:
                 i = int(i)
                 kmbouchon.append(str(i))
@@ -191,6 +194,7 @@ def bouchons(lieu, BOUCHON):
                 pass
 
         kmbouchon = "".join(kmbouchon)
+        print(kmbouchon,'000000000000000000000000000000000000000000000')
         kmbouchon = int(kmbouchon)
 
         b = kmbouchon
