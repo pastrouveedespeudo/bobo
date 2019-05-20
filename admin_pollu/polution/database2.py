@@ -265,10 +265,75 @@ def visualisation(ville):
 
 
 
+def visualisation_without_time(ville):
+
+    
+    conn = psycopg2.connect(database='bobo',
+                             user='postgres',
+                             host='127.0.0.1',
+                             password='tiotiotio333')
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""SELECT pression, météo, vent, climat,
+                        saison, ville_pollué,
+                        REGION_INDUSTRIEL_POLLUEE,
+                        POPULATION_ACTIVE_HABITANT,
+                        TRAFIQUE, HEURE, POINTE, WEEKEND,
+                        BOUCHON, ACTIVITE_EXEPTIONNELLE
+                        FROM ville
+                        WHERE nom_ville = %s
+                        ORDER BY particule
+                        """, (ville,))
+                       
+    
+    rows = cursor.fetchall()
+    liste = [i for i in rows]
+
+    return liste
 
 
+def recuperate_particle(ville, pression, météo, vent, climat,
+                      saison, ville_pollué, REGION_INDUSTRIEL_POLLUEE,
+                      POPULATION_ACTIVE_HABITANT, TRAFIQUE, HEURE,
+                      POINTE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE):
+    
+    conn = psycopg2.connect(database='bobo',
+                             user='postgres',
+                             host='127.0.0.1',
+                             password='tiotiotio333')
+    
+    cursor = conn.cursor()
 
+    cursor.execute("""SELECT particule
+                    FROM ville
+                    WHERE (nom_ville = %s AND
+                    pression LIKE %s AND
+                    météo LIKE %s AND
+                    vent LIKE %s AND
+                    climat LIKE %s AND
+                    saison LIKE %s AND
+                    ville_pollué LIKE %s AND
+                    REGION_INDUSTRIEL_POLLUEE LIKE %s AND
+                    POPULATION_ACTIVE_HABITANT LIKE %s AND
+                    TRAFIQUE  LIKE %s AND
+                    HEURE LIKE %s AND
+                    POINTE  LIKE %s AND
+                    WEEKEND LIKE %s AND
+                    BOUCHON LIKE %s AND
+                    ACTIVITE_EXEPTIONNELLE LIKE %s);
+                    """, (ville, pression, météo, vent, climat,
+                          saison, ville_pollué,
+                          REGION_INDUSTRIEL_POLLUEE,
+                          POPULATION_ACTIVE_HABITANT,
+                          TRAFIQUE, HEURE, POINTE, WEEKEND,
+                          BOUCHON, ACTIVITE_EXEPTIONNELLE))
+                       
+    
+    rows = cursor.fetchall()
+    liste = [i for i in rows]
 
+    return liste
 
 
 
