@@ -5,6 +5,8 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+#prévoir d'autres sites qui font la meme chose au cas de bug au cas ou
+
 #mettre un menu a pollution.html + explication démarche
 
 #apprendre a faire des diagramme on peut pas utiliser de diagramme dynamique pcque c pas a la minute
