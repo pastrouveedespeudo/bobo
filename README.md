@@ -7,6 +7,7 @@
 
 #mettre un menu a pollution.html + explication démarche
 
+#javais pas compris en gros c la meme chose !! classes pas classes classes obligatoire orienté objet jcomprenais plus rien... mais enfaite c la meme chose avec du visuel + du chargement, les rectangle buttons c moche je trouve
 
 #comment à analyser les données -> graphique
 
