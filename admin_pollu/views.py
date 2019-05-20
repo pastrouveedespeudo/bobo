@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 from .polution.database2 import creation_table
 from .polution.database2 import clean_data
-
+from .polution.database2 import visualisation
 
 from .polution.main import météologie
 from .polution.main import climat
@@ -61,11 +61,43 @@ def database(request):
     
     if request.method == "POST":
         print('ouiiiiiiiiiiiii')
-        voir = request.POST.get('Voir')
-        print(voir)
-        if voir:
-            data = ''
-            return HttpResponse(data)
+        paris = request.POST.get('paris')
+        lyon = request.POST.get('lyon')
+        marseille = request.POST.get('marseille')
+        print(marseille, paris, lyon)
+
+        
+        if marseille:
+            data = visualisation('marseille')
+            liste = []
+
+            for i in data:
+                liste.append(i)
+                liste.append('<br><br>')
+                
+            return HttpResponse(liste)
+
+        
+        if lyon:
+            data = visualisation('lyon')
+            liste = []
+
+            for i in data:
+                liste.append(i)
+                liste.append('<br><br>')
+                
+            return HttpResponse(liste)
+
+        
+        if paris:
+            data = visualisation('paris')
+            liste = []
+
+            for i in data:
+                liste.append(i)
+                liste.append('<br><br>')
+                
+            return HttpResponse(liste)
 
         
     return render(request, "database.html")
