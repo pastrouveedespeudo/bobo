@@ -50,12 +50,13 @@ from climat import recuperation_donnée_température
 from climat import saison
 
 
-from config import HOST
-from config import USER
-from config import PASSWORD
-from config import DATABASE
-
-
+from database2 import insertion_meteo
+from database2 import insertion_climat
+from database2 import insertion_polution
+from database2 import insertion_sociologie
+from database2 import insertion_trafic_routier
+from database2 import insertion_particule_plage
+from database2 import insertion_particule
 
 
 
@@ -73,10 +74,10 @@ def météologie():
         
         données = display_dict(PRESSURE, WEATHER, WIND)
         print(données)
-##        insertion_table.insertion_meteo(self, i, referentiel[0],#ICI
-##                                        referentiel[1],
-##                                        données[0], données[1],
-##                                        données[2])
+        insertion_meteo(i, referentiel[0],
+                        referentiel[1],
+                        données[0], données[1],
+                        données[2])
 
         raise_dict(PRESSURE, WEATHER, WIND)
         
@@ -94,8 +95,8 @@ def climat():
         
         données = display_dict(CLIMAT, SAISON)
         print(données)
-##        insertion_table.insertion_climat(self, données[0], données[1],#ICI
-##                                         referentiel[0],referentiel[1], i)
+        insertion_climat(données[0], données[1],
+                        referentiel[0],referentiel[1], i)
         
         raise_dict(CLIMAT, SAISON)   
 
@@ -113,8 +114,8 @@ def pollution():
         données = display_dict(VILLE_POLLUE2018,
                      REGION_INDUSTRIEL_POLLUEE)
         print(données)
-##        insertion_table.insertion_polution(self, données[0], données[1],#ICI
-##                                           referentiel[0],referentiel[1], i)
+        insertion_polution(données[0], données[1],
+                          referentiel[0],referentiel[1], i)
         
         raise_dict(VILLE_POLLUE2018,
                    REGION_INDUSTRIEL_POLLUEE)
@@ -133,8 +134,8 @@ def sociologie():
     
         données = display_dict(POPULATION_ACTIVE_HABITANT)
         print(données)
-##        insertion_table.insertion_sociologie(self, données[0], referentiel[0],#ICI
-##                                            referentiel[1], i)
+        insertion_sociologie(données[0], referentiel[0],
+                            referentiel[1], i)
          
         raise_dict(POPULATION_ACTIVE_HABITANT)
 
@@ -158,9 +159,9 @@ def trafic_routier():
         print(données)
 
 
-##        insertion_table.insertion_trafic_routier(self, données[0], données[1],#ICI#ICI#ICI
-##                                                 données[2], données[3], données[4], données[5],
-##                                                 referentiel[0], referentiel[1], i)
+        insertion_trafic_routier(données[0], données[1],
+                                données[2], données[3], données[4], données[5],
+                                referentiel[0], referentiel[1], i)
 
                     
         raise_dict(TRAFIQUE, HEURE, POINTE, WEEKEND, BOUCHON,
@@ -179,8 +180,8 @@ def particule_plage():
         
         données = display_dict(PARTICULE_PLAGE)
         print(données)
-##        insertion_table.insertion_particule_plage(self, données[0], referentiel[0],#ICI#ICI
-##                                            referentiel[1], i)
+        insertion_particule_plage(données[0], referentiel[0],#ICI#ICI
+                                 referentiel[1], i)
         
         raise_dict(PARTICULE_PLAGE)
 
@@ -197,8 +198,8 @@ def particulee():
         
         données = display_dict_particule(PARTICULE)
         print(données)
-##        insertion_table.insertion_particule(self, données[0], referentiel[0],#ICI#ICI
-##                                            referentiel[1], i)
+        insertion_particule(données[0], referentiel[0],#ICI#ICI
+                            referentiel[1], i)
         
         raise_dict(PARTICULE)
 
@@ -207,8 +208,7 @@ def particulee():
 
 
 météologie()
-climat()
-        
+climat()       
 pollution()
 sociologie()
 trafic_routier()
