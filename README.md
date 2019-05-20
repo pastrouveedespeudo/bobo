@@ -7,6 +7,8 @@
 
 #mettre un menu a pollution.html + explication démarche
 
+#vite finir vite push heroku vite remplir database, refaire database bobo selon popo mais heroku ca va etre chiant donc bien tout finir et faire le heroku normalement faut faire methode agile et inté continue mais bon... 1 probleme a la fois
+
 #javais pas compris en gros c la meme chose !! classes pas classes classes obligatoire orienté objet jcomprenais plus rien... mais enfaite c la meme chose avec du visuel + du chargement, les rectangle buttons c moche je trouve
 
 #comment à analyser les données -> graphique
