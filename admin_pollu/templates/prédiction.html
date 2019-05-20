@@ -188,6 +188,8 @@
             <form method='POST' action='prédiction'>{% csrf_token %}
               <input type='button' value='voir la prédiction' id='voir_prédiction'>
             </form>
+            <br>
+            <div id='pred'></div>
          </div>
               
               
@@ -223,6 +225,7 @@
                 else{
                     jQuery("#is_save").html(data.data);
                     jQuery("#monCadreAlert");
+                    document.getElementById('pred').innerHTML = data;
   
                     
                     
