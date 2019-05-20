@@ -7,6 +7,8 @@
 
 #prévoir d'autres sites qui font la meme chose au cas de bug au cas ou
 
+#faire toutes les truks avec pluie ou pas pluie qui change et puis au pire tu dis ben nan ca marche pas mais t'aura les truks des autres sites qui disent que pluie et t'as oublié de save l'image du graphe
+
 #mettre un menu a pollution.html + explication démarche
 
 #apprendre a faire des diagramme on peut pas utiliser de diagramme dynamique pcque c pas a la minute
