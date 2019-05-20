@@ -217,11 +217,21 @@ def insertion_particule(PARTICULE, date, heure_donnée, ville):
     conn.commit()
 
 
+def clean_data():
+    
+    conn = psycopg2.connect(database='bobo',
+                             user='postgres',
+                             host='127.0.0.1',
+                             password='tiotiotio333')
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""DELETE FROM ville
+                    WHERE particule IS NULL;""")
 
 
-
-
-
+    conn.commit()
+    print('données nulles effacées')
 
 
 
