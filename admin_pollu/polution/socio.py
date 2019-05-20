@@ -1,7 +1,6 @@
 import os
 import cv2
 import json
-import pyglet
 import requests
 import datetime
 import urllib.request
