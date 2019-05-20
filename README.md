@@ -7,11 +7,7 @@
 
 #mettre un menu a pollution.html + explication démarche
 
-#c'etait horrible je savais pas comment intégrer mon truk a django 4/5 nuits a réver que je faisais un truk en boucle et que ca machait pas puis jme reveillé en chantonnant ^^ sté trop cool fin jprefere rever que jy arrive entre nous
-
-#vite finir vite push heroku vite remplir database, refaire database bobo selon popo mais heroku ca va etre chiant donc bien tout finir et faire le heroku normalement faut faire methode agile et inté continue mais bon... 1 probleme a la fois
-
-#javais pas compris en gros c la meme chose !! classes pas classes classes obligatoire orienté objet jcomprenais plus rien... mais enfaite c la meme chose avec du visuel + du chargement, les rectangle buttons c moche je trouve
+#apprendre a faire des diagramme on peut pas utiliser de diagramme dynamique pcque c pas a la minute
 
 #comment à analyser les données -> graphique
 
