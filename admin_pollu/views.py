@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from .polution.database2 import creation_table
+from .polution.database2 import clean_data
+
 
 from .polution.main import météologie
 from .polution.main import climat
@@ -40,14 +42,11 @@ def remplir_database(request):
 
             data = {'data':'fin data rempli'}
 
-            return HttpResponse(data) 
 
-        
         if verif:
+            clean_data()
             print('ouiiiiiiiii')
 
-        if delete:
-            print('deeeeeeeeelte')
 
         
     return render(request, "remplir_database.html")
