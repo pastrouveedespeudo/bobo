@@ -2,7 +2,15 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from .database import creation_table
+from .polution.database2 import creation_table
+
+from .polution.main import météologie
+from .polution.main import climat
+from .polution.main import pollution
+from .polution.main import sociologie
+from .polution.main import trafic_routier
+from .polution.main import particule_plage
+from .polution.main import particulee
 
 
 
@@ -21,7 +29,20 @@ def remplir_database(request):
         print(remplir)
 
         if remplir:
-            pass
+            
+            météologie()
+            climat()       
+            pollution()
+            sociologie()
+            trafic_routier()
+            particulee()
+            particule_plage()
+
+            data = {'data':'fin data rempli'}
+
+            return HttpResponse(data) 
+
+        
         if verif:
             print('ouiiiiiiiii')
 
@@ -30,20 +51,6 @@ def remplir_database(request):
 
         
     return render(request, "remplir_database.html")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -60,6 +67,8 @@ def database(request):
         if voir:
             data = ''
             return HttpResponse(data)
+
+        
     return render(request, "database.html")
 
 def prédiction(request): 
