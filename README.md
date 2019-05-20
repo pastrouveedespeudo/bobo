@@ -8,20 +8,11 @@
 #mettre un menu a pollution.html + explication démarche
 
 
-#traitement de donnée enlever les classes et le mettre avec prédiction()
-
-#finir de rentrer les données
-
 #comment à analyser les données -> graphique
-
-#commencer a faire le fichier pour transférer mysql -> postgres -> heroku
-
-
-#au pire je rentrerai toutes les données à la main... sur heroku
 
 #ok tout refaire mais avec des fonctions
 
-
+#tuto vetement + tuto pollution
 
 
 
