@@ -184,67 +184,33 @@
 
         <div class="row">
         
-         <div class="col-sm-4">
-            <form method='POST' action='construction'>{% csrf_token %}
-              <input type='button' value='Construire la database' id='construction'>
+         <div class="col-sm-12">
+            <form method='POST' action='prédiction'>{% csrf_token %}
+              <input type='button' value='voir la prédiction' id='voir_prédiction'>
             </form>
          </div>
               
-          <div class="col-sm-4">
-              <input type='button' value='voir la database' id='voir_database()'>
-          </div>
-          
-          <div class="col-sm-4">
-             <input type='button' value='remplir la database' id='remplir_database()'>
-          </div>
-          <br><br>
-          <div class="col-sm-12">
-             <input type='button' value='voir la prédiction' id='voir_prédiction()'>
-          </div>
-
               
-          </div>
+        </div>
 
 
-          
-      </form>
+
       </div>
     </section>
 
 
     <script>
 
-        function voir_database(){
-            document.location.href="/admin_pollu/database"; 
-            }
-        function remplir_database(){
-            document.location.href="/admin_pollu/remplir_database"; 
-            }
-        function voir_prédiction(){
-            document.location.href="/admin_pollu/prédiction"; 
-            }
-
-    </script>
-
-
-
-
-
-
-
-
-    <script>
-
-    jQuery("#construction").on("click", function(e){
+    jQuery("#voir_prédiction").on("click", function(e){
             jQuery.ajax({
                 data:{
                     'csrfmiddlewaretoken': '{{csrf_token}}' , 
-                    'construction':'constru',
+                    'prediction':'prediction',
                     
              
                 },
                 type:"POST",
-                url:"/admin_pollu/construction"
+                url:"/admin_pollu/prédiction"
             })
             .done(function(data){
                 if (data.error){
@@ -257,7 +223,6 @@
                 else{
                     jQuery("#is_save").html(data.data);
                     jQuery("#monCadreAlert");
-                    alert('table crée');
   
                     
                     
