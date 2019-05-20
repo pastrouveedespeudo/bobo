@@ -186,9 +186,26 @@
         
          <div class="col-sm-12">
             <form method='POST' action='construction'>{% csrf_token %}
-              <input type='button' value='Voir la database' id='Voir'>
+              <input type='button' value='Voir la database' id='Voir' onclick='voir()'><br><br>
             </form>
          </div>
+
+
+
+        <div class="col-sm-12">
+          <center><input type='button' value='paris' style='display:none' id='paris'><br>
+          <input type='button' value='lyon' style='display:none' id='lyon'><br>
+          <input type='button' value='marseille' style='display:none' id='marseille'></center>
+
+        </div>
+
+    
+
+
+
+
+
+         
         <br><br>
 
        </div>
@@ -203,16 +220,15 @@
 
     <script>
 
-    function menu(){
-      document.location.href="/admin_pollu/admin_pollu"; 
-      }
 
 
-    jQuery("#Voir").on("click", function(e){
+
+
+    jQuery("#marseille").on("click", function(e){
             jQuery.ajax({
                 data:{
                     'csrfmiddlewaretoken': '{{csrf_token}}' , 
-                    'Voir':'Voir',
+                    'marseille':'marseille',
                     
              
                 },
@@ -237,6 +253,96 @@
                 
             });
         });
+
+
+
+    jQuery("#lyon").on("click", function(e){
+            jQuery.ajax({
+                data:{
+                    'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                    'lyon':'lyon',
+                    
+             
+                },
+                type:"POST",
+                url:"/admin_pollu/database"
+            })
+            .done(function(data){
+                if (data.error){
+                    jQuery("#monCadreAlert").text(data.error);
+                    jQuery("#is_save");
+                    
+                    
+                }
+                else{
+                    jQuery("#is_save").html(data.data);
+                    jQuery("#monCadreAlert");
+                    
+  
+                    
+                    
+                };
+                
+            });
+        });
+
+
+
+    jQuery("#paris").on("click", function(e){
+            jQuery.ajax({
+                data:{
+                    'csrfmiddlewaretoken': '{{csrf_token}}' , 
+                    'paris':'paris',
+                    
+             
+                },
+                type:"POST",
+                url:"/admin_pollu/database"
+            })
+            .done(function(data){
+                if (data.error){
+                    jQuery("#monCadreAlert").text(data.error);
+                    jQuery("#is_save");
+                    
+                    
+                }
+                else{
+                    jQuery("#is_save").html(data.data);
+                    jQuery("#monCadreAlert");
+                    
+  
+                    
+                    
+                };
+                
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function menu(){
+      document.location.href="/admin_pollu/admin_pollu"; 
+      }
+
+    function voir(){
+      document.getElementById('Voir').style.display='none';
+      document.getElementById('paris').style.display='block';
+      document.getElementById('marseille').style.display='block';
+      document.getElementById('lyon').style.display='block';
+    
+
+      }
+
     
    </script>
 
