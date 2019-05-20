@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+
 import requests
 import urllib.request
 import datetime
@@ -16,6 +18,9 @@ from .donnée_site.pollution import pression_ville
 from .donnée_site.pollution import activité_execptionnelle
 from .donnée_site.pollution import socio
 from .donnée_site.pollution import bouchons
+
+from.polu_ana.polution.traitement_de_donnée import recuperation_data
+from.polu_ana.polution.traitement_de_donnée import condition
 
 
 def home(request):
@@ -159,20 +164,8 @@ def donnée(request):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def info_pollu(request):
+    return render(request, 'info_pollu.html')
 
 
 
@@ -181,6 +174,31 @@ def machine_a_o(request):
     return render(request, 'machine a o.html')
 
 def prediction(request):
+    if request.method == "POST":
+        lyon = request.POST.get('lyon')
+        paris = request.POST.get('paris')
+        marseille = request.POST.get('marseille')
+
+        if lyon:
+            donnée = recuperation_data('lyon')
+            pred = condition(donnée[0], donnée[1], donnée[2],
+                    donnée[3], donnée[4], donnée[5], 'lyon')
+            return HttpResponse(pred)
+        
+        if marseille:
+            donnée = recuperation_data('marseille')
+            pred = condition(donnée[0], donnée[1], donnée[2],
+                    donnée[3], donnée[4], donnée[5], 'marseille')
+            print(pred,'0000000000000000000000000000000000000000000000')
+            return HttpResponse(pred)
+        
+        if paris:
+            donnée = recuperation_data('paris')
+            pred = condition(donnée[0], donnée[1], donnée[2],
+                    donnée[3], donnée[4], donnée[5], 'paris')
+
+            return HttpResponse(pred)
+    
     return render(request, 'prediction.html')
 
 
