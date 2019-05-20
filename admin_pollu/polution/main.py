@@ -1,62 +1,62 @@
 import importlib
 import datetime
 
-from socio import habitant
+from .socio import habitant
 
-from trafique import trafique_circulation
-from trafique import habitude
-from trafique import bouchons
-from trafique import requete_lyon_traffique
-from trafique import requete_paris_traffique
-from trafique import requete_marseille_traffique
-from trafique import activité_execptionnelle
+from .trafique import trafique_circulation
+from .trafique import habitude
+from .trafique import bouchons
+from .trafique import requete_lyon_traffique
+from .trafique import requete_paris_traffique
+from .trafique import requete_marseille_traffique
+from .trafique import activité_execptionnelle
 
-from particule import particule
-from particule import particule2
-from particule import france
-from particule import industrie
+from .particule import particule
+from .particule import particule2
+from .particule import france
+from .particule import industrie
 
-from particule import france
-from particule import industrie
+from .particule import france
+from .particule import industrie
 
-from variable import WEATHER
-from variable import WIND
-from variable import PRESSURE
-from variable import SAISON
-from variable import CLIMAT
-from variable import REGION_INDUSTRIEL_POLLUEE
-from variable import PARTICULE
-from variable import VILLE_POLLUE2018
-from variable import REGION_INDUSTRIEL_POLLUEE
-from variable import POPULATION_ACTIVE_HABITANT
-from variable import TRAFIQUE
-from variable import HEURE
-from variable import POINTE
-from variable import WEEKEND
-from variable import BOUCHON
-from variable import ACTIVITE_EXEPTIONNELLE
-from variable import PARTICULE_PLAGE
+from .variable import WEATHER
+from .variable import WIND
+from .variable import PRESSURE
+from .variable import SAISON
+from .variable import CLIMAT
+from .variable import REGION_INDUSTRIEL_POLLUEE
+from .variable import PARTICULE
+from .variable import VILLE_POLLUE2018
+from .variable import REGION_INDUSTRIEL_POLLUEE
+from .variable import POPULATION_ACTIVE_HABITANT
+from .variable import TRAFIQUE
+from .variable import HEURE
+from .variable import POINTE
+from .variable import WEEKEND
+from .variable import BOUCHON
+from .variable import ACTIVITE_EXEPTIONNELLE
+from .variable import PARTICULE_PLAGE
 
-from variable import LIST_CITY
+from .variable import LIST_CITY
 
-from traitement import display_dict_particule
-from traitement import display_dict
-from traitement import raise_dict
-from traitement import date_heure
+from .traitement import display_dict_particule
+from .traitement import display_dict
+from .traitement import raise_dict
+from .traitement import date_heure
 
-from météo import recuperation_donnée_météo
+from .météo import recuperation_donnée_météo
 
-from climat import recuperation_donnée_température
-from climat import saison
+from .climat import recuperation_donnée_température
+from .climat import saison
 
 
-from database2 import insertion_meteo
-from database2 import insertion_climat
-from database2 import insertion_polution
-from database2 import insertion_sociologie
-from database2 import insertion_trafic_routier
-from database2 import insertion_particule_plage
-from database2 import insertion_particule
+from .database2 import insertion_meteo
+from .database2 import insertion_climat
+from .database2 import insertion_polution
+from .database2 import insertion_sociologie
+from .database2 import insertion_trafic_routier
+from .database2 import insertion_particule_plage
+from .database2 import insertion_particule
 
 
 
@@ -207,13 +207,6 @@ def particulee():
 
 
 
-météologie()
-climat()       
-pollution()
-sociologie()
-trafic_routier()
-particulee()
-particule_plage()
 
 
 
