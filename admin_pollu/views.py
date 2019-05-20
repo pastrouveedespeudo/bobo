@@ -14,8 +14,8 @@ from .polution.main import trafic_routier
 from .polution.main import particule_plage
 from .polution.main import particulee
 
-
-
+from .polution.traitement_de_donnée import condition
+from .polution.traitement_de_donnée import recuperation_data
 
 
 def remplir_database(request):
@@ -102,7 +102,31 @@ def database(request):
         
     return render(request, "database.html")
 
-def prédiction(request): 
+
+
+
+
+def prédiction(request):
+    if request.method == "POST":
+        print('coucouuuuuuuuuuu')
+        
+        prédiction = request.POST.get('prediction')
+        if prédiction:
+            clean_data()
+            predi = []
+            liste = ['paris', 'lyon', 'marseille']
+            
+            for i in liste:
+                print(i)
+                donnée = recuperation_data(i)
+            
+                pred = condition(donnée[0], donnée[1], donnée[2],
+                        donnée[3], donnée[4], donnée[5], i)
+                predi.append(pred)
+            
+            return HttpResponse(predi)
+            
+                
     return render(request, "prédiction.html")
 
 
