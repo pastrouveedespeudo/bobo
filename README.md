@@ -14,7 +14,19 @@
 
 #tuto vetement + tuto pollution
 
+#sinon je me perds:
 
+#il faut faire traitement de donnée => en gros ca donne le truk <- 2 visu jcrois
+
+#voir database la y'en a plusieurs pour traitement donnée et faut en faire
+
+#pour les courbes donner selon toutes les conditions et faire un truk qui dit la y'a le moins de polluiton MAIS POUR CHAQUE VILLE
+
+#et ensuite voir si y'a un truk généréal POUR LES VILLES
+
+#si ca dit pluie bingo sinon tu met quand meme dans lutter la machine a pluie et tu met des truk qui dise que pluie nik po et si ca dit pluie ben c gg pcque y'a pas assez de conditions
+
+#fini les info sur pollution
 
 
 
