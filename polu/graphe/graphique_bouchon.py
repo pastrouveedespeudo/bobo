@@ -33,12 +33,12 @@ def visu_bouchon(ville):
 def traitement_bouchon(donnée):
     liste = ['non', 'petit', 'moyen', 'grand', 'assez grand',
              'tres grand']
-    non = [0]
-    petit = [0]
-    moyen = [0]
-    grand = [0]
-    assez_grand = [0]
-    tres_grand = [0]
+    non = []
+    petit = []
+    moyen = []
+    grand = []
+    assez_grand = []
+    tres_grand = []
     
     try:
         for i in donnée:
@@ -58,7 +58,9 @@ def traitement_bouchon(donnée):
         pass
     #print(non, petit, moyen, grand, assez_grand, tres_grand)
 
-
+    data = len(non) + len(petit) + len(moyen) + len(grand)+ len(assez_grand)+ len(tres_grand)
+    print(data)
+    
     donnée_non = moyenne(non)
 
     donnée_petit = moyenne(petit)
@@ -76,7 +78,7 @@ def traitement_bouchon(donnée):
             donnée_tres_grand[0],\
             donnée_non[1], donnée_petit[1], donnée_moyen[1],\
             donnée_grand[1], donnée_assez_grand[1],\
-            donnée_tres_grand[1]
+            donnée_tres_grand[1], data
 
 
 
@@ -114,7 +116,7 @@ def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
     shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
 
-
+    
 
 
 
