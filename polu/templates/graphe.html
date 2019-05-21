@@ -291,7 +291,7 @@
   <script>
     function graphe(legraphe){
       LISTE_AJAX_TYPE_GRAPHE.push(legraphe)
-
+         document.getElementById('graphique1').innerHTML = '';
          jQuery.ajax({
            data:{
                'csrfmiddlewaretoken': '{{csrf_token}}' , 
@@ -312,9 +312,11 @@
                   else{
                       jQuery("#is_save").html(data.data);
                       jQuery("#monCadreAlert");
-                      document.getElementById('graphique1').innerHTML = "<img src = '/static/popo/diagramme.png'>"
-
-    
+                 
+                      document.getElementById('graphique1').innerHTML = "<img src = '/static/popo/" +
+                                                                        data +
+                                                                        "'>"
+                       
                       
                       
                   };
