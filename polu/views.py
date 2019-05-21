@@ -254,10 +254,9 @@ def graphe(request):
 
         elif graphe == 'climat':
 
-            a = visu_climat(ville)
-            donnée = traitement_climat(a)
-            print(donnée,'12313213213213213213213213213213123231321321231')
-            diagramme_climat(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+            a = visuuu_climat(ville)
+            donnée = traitementtt_climat(a)
+            diagramme_climattt(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
                       donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
                       donnée[10], donnée[11], 'diagramme_climat.png')
             
