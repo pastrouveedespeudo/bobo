@@ -4,9 +4,9 @@ import pylab
 import psycopg2
 import numpy as np
 
-from fonction_graphe import moyenne
+from .fonction_graphe import moyenne
 
-def visu(ville):
+def visu_traffique(ville):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -47,8 +47,8 @@ def traitement_traffique(donnée):
     return donnée_regulier_jour[0], donnée_depart_routier[0],\
             donnée_regulier_jour[1], donnée_depart_routier[1]
 
-def diagramme(donnée_regulier_jour, donnée_depart_routier,
-              er_regulier_jour, er_depart_routier):
+def diagramme_traffique(donnée_regulier_jour, donnée_depart_routier,
+              er_regulier_jour, er_depart_routier, save):
 
 
     plt.bar(range(2), [donnée_regulier_jour, donnée_depart_routier],
@@ -64,7 +64,7 @@ def diagramme(donnée_regulier_jour, donnée_depart_routier,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les départ routiers")
     
-    plt.show()
+    plt.save(save)
 
 
 
@@ -75,10 +75,7 @@ def diagramme(donnée_regulier_jour, donnée_depart_routier,
 
 
 
-a = visu('lyon')
-donnée = traitement_traffique(a)
 
-diagramme(donnée[0], donnée[1], donnée[2], donnée[3])
 
 
 
