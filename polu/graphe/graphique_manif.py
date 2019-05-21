@@ -3,6 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
+import os
+import shutil
 
 from .fonction_graphe import moyenne
 
@@ -52,9 +54,14 @@ def traitement_manif(donnée):
 
 
 def diagramme_manif(donnée_manif, donnée_non_manif,
-              er_manif, er_non_manif, save):
+              er_manif, er_non_manif, saving):
 
 
+        
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\manif.png')
+    except:
+        pass
     
     plt.bar(range(2), [donnée_manif, donnée_non_manif],
                         width = 0.1, color = 'red',
@@ -69,8 +76,9 @@ def diagramme_manif(donnée_manif, donnée_non_manif,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les manifestation")
     
-    plt.save(save)
+    plt.savefig(saving)
 
+    shutil.move(saving, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
 
 
