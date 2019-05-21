@@ -5,10 +5,10 @@ import psycopg2
 import numpy as np
 
 
-from fonction_graphe import moyenne
+from .fonction_graphe import moyenne
 
 
-def visu(ville):
+def visu_bouchon(ville):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -79,12 +79,12 @@ def traitement_bouchon(donnée):
 
 
 
-def diagramme(donnée_non, donnée_petit, donnée_moyen,
+def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
               donnée_grand, donnée_assez_grand,
               donnée_tres_grand,
               er_non, er_petit, er_moyen,
               er_grand, er_assez_grand,
-              er_tres_grand):
+              er_tres_grand, save):
 
     
     plt.bar(range(6), [donnée_non, donnée_petit, donnée_moyen,
@@ -105,7 +105,7 @@ def diagramme(donnée_non, donnée_petit, donnée_moyen,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les bouchons")
     
-    plt.show()
+    plt.save(save)
 
 
 
@@ -114,12 +114,6 @@ def diagramme(donnée_non, donnée_petit, donnée_moyen,
 
 
         
-a = visu('lyon')
-donnée = traitement_bouchon(a)
-
-diagramme(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-          donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
-          donnée[10], donnée[11])
 
 
 
