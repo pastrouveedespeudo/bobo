@@ -3,10 +3,10 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
-from fonction_graphe import moyenne
+from .fonction_graphe import moyenne
 
 
-def visu(ville):
+def visu_bouchon(ville):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -83,13 +83,13 @@ def traitement_climat(donnée):
 
 
 
-def diagramme(donnée_inf_zero, donnée_zero_dix,
+def diagramme_bouchon(donnée_inf_zero, donnée_zero_dix,
               donnée_onze_vingt,
               donnée_vingtun_trente, donnée_trente_un_quarante,
               donnée_supp_quarante,
               er_inf_zero, er_zero_dix, er_onze_vingt,
               er_vingtun_trente, er_assez_trente_un_quarante,
-              er_supp_quarante):
+              er_supp_quarante, save):
 
 
     plt.bar(range(6), [donnée_inf_zero, donnée_zero_dix,
@@ -111,7 +111,7 @@ def diagramme(donnée_inf_zero, donnée_zero_dix,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon la température en degrès")
     
-    plt.show()
+    plt.save(save)
 
 
 
@@ -120,14 +120,7 @@ def diagramme(donnée_inf_zero, donnée_zero_dix,
 
 
 
-a = visu('marseille')
-donnée = traitement_climat(a)
 
-print(donnée)
-
-diagramme(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-          donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
-          donnée[10], donnée[11])
           
 
 
