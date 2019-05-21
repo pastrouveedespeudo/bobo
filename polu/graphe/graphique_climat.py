@@ -38,27 +38,32 @@ def traitementtt_climat(donnée):
     vingtun_trente = [10]
     trente_un_quarante = [10]
     supp_quarante  = [10]
+    try:
+        for i in donnée:
 
-    for i in donnée:
-        print(i)
-        if i[0] == '>0':
-            inf_zero.append(int(i[1]))
-            
-        elif i[0] == '0_10':
-            zero_dix.append(int(i[1]))
-            
-        elif i[0] == '11_20':
-            onze_vingt.append(int(i[1]))
-            
-        elif i[0] == '21_30':
-            vingtun_trente.append(int(i[1]))
-            
-        elif i[0] == '31_40':
-            trente_un_quarante.append(int(i[1]))
+            if i[0] == '>0':
+                inf_zero.append(int(i[1]))
+                
+            elif i[0] == '0_10':
+                zero_dix.append(int(i[1]))
+                
+            elif i[0] == '11_20':
+                onze_vingt.append(int(i[1]))
+                
+            elif i[0] == '21_30':
+                vingtun_trente.append(int(i[1]))
+                
+            elif i[0] == '31_40':
+                trente_un_quarante.append(int(i[1]))
 
-        elif i[0] == '>40':
-            supp_quarante.append(int(i[1]))
+            elif i[0] == '>40':
+                supp_quarante.append(int(i[1]))
+    except:
+        pass
 
+    data = len(inf_zero) + len(zero_dix) + len(onze_vingt) + len(vingtun_trente) + len(trente_un_quarante) + len(supp_quarante)
+    print(data)
+    
     donnée_inf_zero = moyenne(inf_zero)
     donnée_zero_dix = moyenne(zero_dix)
     donnée_onze_vingt = moyenne(onze_vingt)
@@ -73,7 +78,7 @@ def traitementtt_climat(donnée):
            donnée_trente_un_quarante[0], donnée_supp_quarante[0],\
            donnée_inf_zero[1], donnée_zero_dix[1],\
            donnée_onze_vingt[1], donnée_vingtun_trente[1],\
-           donnée_trente_un_quarante[1], donnée_supp_quarante[1]
+           donnée_trente_un_quarante[1], donnée_supp_quarante[1], data
 
 
 
