@@ -36,17 +36,21 @@ def traitement_heure(ville):
 
     donnée = visu_horraire(ville)
 
+    try:
+        for i in donnée:
+            #print(i[0], i[1])
 
-    for i in donnée:
-        #print(i[0], i[1])
-
-        if i[0] == 'non_pointe':
-            horraire_non_pointe.append(int(i[1]))
-        
-        elif i[0] == 'pointe':
-            horraire_pointe.append(int(i[1]))
+            if i[0] == 'non_pointe':
+                horraire_non_pointe.append(int(i[1]))
+            
+            elif i[0] == 'pointe':
+                horraire_pointe.append(int(i[1]))
+    except:
+        pass
 
     
+    data = len(horraire_pointe) + len(horraire_non_pointe)
+    print(data)
     moy = sum(horraire_pointe) / len(horraire_pointe)
     variance_pointe = np.var(horraire_pointe)
     
@@ -63,7 +67,7 @@ def traitement_heure(ville):
     print(moy, moy_non)
 
 
-    return moy, moy_non, erreur_pointe, erreur_non_pointe
+    return moy, moy_non, erreur_pointe, erreur_non_pointe, data
 
 
 
