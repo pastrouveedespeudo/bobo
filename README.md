@@ -7,6 +7,8 @@
 
 #y intégrer http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html
 
+# récupérer macguyvert dans les fichiers supprimer avec un logiciel
+
 #jvai pas l'avoir ^^ jvai pas l'avoir merde j'avais pas lu les consignes j'ai juste vu ajouter une fonctionalité j'ai fais un jeu mais fallait faire un bug, c'est pas de la triche le bug des caractères je l'avais eu donc j'ai en quelques sortes fais la soutenance avant la soutenance ! jsp
 
 #prévoir d'autres sites qui font la meme chose au cas de bug au cas ou
