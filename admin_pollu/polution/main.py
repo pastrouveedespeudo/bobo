@@ -170,17 +170,23 @@ def trafic_routier():
         print(i)
 
         trafique_circulation(TRAFIQUE, HEURE)
-        habitude(POINTE, WEEKEND)
+  
+        habitude(WEEKEND)
+    
         bouchons(i, BOUCHON)
+  
         activité_execptionnelle(i, ACTIVITE_EXEPTIONNELLE)
+      
         
-        données =  display_dict(TRAFIQUE, HEURE, POINTE, WEEKEND, BOUCHON,
+        données =  display_dict(TRAFIQUE, HEURE, WEEKEND, BOUCHON,
                      ACTIVITE_EXEPTIONNELLE)
+
+        
         print(données)
 
 
         insertion_trafic_routier(données[0], données[1],
-                                données[2], données[3], données[4], données[5],
+                                données[2], données[3], données[4],
                                 referentiel[0], referentiel[1], i)
 
                     
