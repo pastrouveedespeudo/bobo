@@ -3,7 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
-
+import os
+import shutil
 from .fonction_graphe import moyenne
 
 def visu():
@@ -53,7 +54,10 @@ def traitement_ville(donnée):
 def diagramme(donnée_lyon, donnée_paris, donnée_marseille,
               er_lyon, er_paris, er_marseille):
 
-
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\diagramme.png')
+    except:
+        pass
     plt.bar(range(3), [donnée_lyon, donnée_paris, donnée_marseille],
                         width = 0.1, color = 'red',
                        yerr = [er_lyon, er_paris, er_marseille],
@@ -68,11 +72,6 @@ def diagramme(donnée_lyon, donnée_paris, donnée_marseille,
     plt.title("Taux de pollution selon les villes")
     
     plt.show()
+    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
 
-a = visu()
-
-donnée = traitement_ville(a)
-
-diagramme(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-          donnée[5])
