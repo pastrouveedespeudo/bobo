@@ -6,7 +6,7 @@ import numpy as np
 from .fonction_graphe import moyenne
 
 
-def visu_bouchon(ville):
+def visu_climat(ville):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -39,7 +39,7 @@ def traitement_climat(donnée):
     supp_quarante  = [10]
 
     for i in donnée:
-        
+        print(i)
         if i[0] == '>0':
             inf_zero.append(int(i[1]))
             
@@ -64,17 +64,15 @@ def traitement_climat(donnée):
     donnée_vingtun_trente = moyenne(vingtun_trente)
     donnée_trente_un_quarante = moyenne(trente_un_quarante)
     donnée_supp_quarante = moyenne(supp_quarante)
+  
 
-    print(donnée_inf_zero, donnée_zero_dix,\
-            donnée_onze_vingt, donnée_vingtun_trente,\
-            donnée_trente_un_quarante, donnée_supp_quarante)
- 
-    return donnée_inf_zero[0], donnée_zero_dix[0],\
-            donnée_onze_vingt[0], donnée_vingtun_trente[0],\
-            donnée_trente_un_quarante[0], donnée_supp_quarante[0],\
-            donnée_inf_zero[1], donnée_zero_dix[1],\
-            donnée_onze_vingt[1], donnée_vingtun_trente[1],\
-            donnée_trente_un_quarante[1], donnée_supp_quarante[1]
+    
+    return donnée_inf_zero[0], donnée_zero_dix[0],donnée_onze_vingt[0],\
+           donnée_vingtun_trente[0],\
+           donnée_trente_un_quarante[0], donnée_supp_quarante[0],\
+           donnée_inf_zero[1], donnée_zero_dix[1],\
+           donnée_onze_vingt[1], donnée_vingtun_trente[1],\
+           donnée_trente_un_quarante[1], donnée_supp_quarante[1]
 
 
 
@@ -83,15 +81,19 @@ def traitement_climat(donnée):
 
 
 
-def diagramme_bouchon(donnée_inf_zero, donnée_zero_dix,
-              donnée_onze_vingt,
-              donnée_vingtun_trente, donnée_trente_un_quarante,
-              donnée_supp_quarante,
-              er_inf_zero, er_zero_dix, er_onze_vingt,
-              er_vingtun_trente, er_assez_trente_un_quarante,
-              er_supp_quarante, save):
+def diagramme_climat(donnée_inf_zero, donnée_zero_dix,
+                      donnée_onze_vingt,
+                      donnée_vingtun_trente, donnée_trente_un_quarante,
+                      donnée_supp_quarante,
+                      er_inf_zero, er_zero_dix, er_onze_vingt,
+                      er_vingtun_trente, er_assez_trente_un_quarante,
+                      er_supp_quarante, save):
 
-
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\diagramme_climat.png')
+    except:
+        pass
+    
     plt.bar(range(6), [donnée_inf_zero, donnée_zero_dix,
                         donnée_onze_vingt,
                         donnée_vingtun_trente, donnée_trente_un_quarante,
@@ -111,15 +113,22 @@ def diagramme_bouchon(donnée_inf_zero, donnée_zero_dix,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon la température en degrès")
     
-    plt.save(save)
+    plt.savefig(save)
+    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
 
 
 
 
-
-
-
+##a = visu_climat('lyon')
+##for i in a:
+##    print(i)
+##donnée = traitement_climat(a)
+##print(donnée)
+##diagramme_climat(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+##                  donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
+##                  donnée[10], donnée[11], 'diagramme.png')
+##
 
           
 
