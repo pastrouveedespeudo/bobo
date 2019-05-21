@@ -2,7 +2,6 @@ from conteneur import conteneur
 import psycopg2
 def lecture():
 
-    
 
 
     conn = psycopg2.connect(database='bobo',
@@ -46,6 +45,7 @@ def lecture():
 
 
     for i in liste3:
+
         for j in i:
             if j == 'moyen_fort':
                 index = i.index(j)
@@ -66,12 +66,12 @@ def lecture():
             elif j == 'tres_grand':
                 index = i.index(j)
                 i[index] = 'tres grand'
+            elif j == 'None':
+                pass
                        
-           
-            
-
-        sql = ("""insert into yoyo
-                (nom_ville, date, heure_donnée, pression, météo, vent, climat, saison, ville_pollué,
+ 
+        sql = ("""insert into ville
+                (nom_ville, date, heure_donnée, pression, vent, météo, climat, saison, ville_pollué,
                 REGION_INDUSTRIEL_POLLUEE, POPULATION_ACTIVE_HABITANT, TRAFIQUE, HEURE, POINTE,
                 WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE, nombre_particule, particule)
                 VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);""")
