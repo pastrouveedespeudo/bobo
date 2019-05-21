@@ -40,22 +40,25 @@ def traitement_bouchon(donnée):
     assez_grand = []
     tres_grand = []
     
-    try:
-        for i in donnée:
-            if i[0] == 'non':
-                non.append(int(i[1]))
-            elif i[0] == 'petit':
-                petit.append(int(i[1]))
-            elif i[0] == 'moyen':
-                moyen.append(int(i[1]))  
-            elif i[0] == 'grand':
-                grand.append(int(i[1]))
-            elif i[0] == 'assez grand':
-                assez_grand.append(int(i[1]))
-            elif i[0] == 'tres grand':
-                tres_grand.append(int(i[1]))
-    except:
-        pass
+
+    for i in donnée:
+        print(i)
+        if i[1] == 'None' or i[1] == None\
+            or i[0] == 'None' or i[0] == None:
+                break
+        elif i[0] == 'non':
+            non.append(int(i[1]))
+        elif i[0] == 'petit':
+            petit.append(int(i[1]))
+        elif i[0] == 'moyen':
+            moyen.append(int(i[1]))  
+        elif i[0] == 'grand':
+            grand.append(int(i[1]))
+        elif i[0] == 'assez grand':
+            assez_grand.append(int(i[1]))
+        elif i[0] == 'tres grand':
+            tres_grand.append(int(i[1]))
+ 
     #print(non, petit, moyen, grand, assez_grand, tres_grand)
 
     data = len(non) + len(petit) + len(moyen) + len(grand)+ len(assez_grand)+ len(tres_grand)
