@@ -10,9 +10,6 @@ from PIL import Image, ImageDraw, ImageChops
 
 
 
-
-
-
 def trafique_circulation(TRAFIQUE, HEURE):
 
     date = datetime.datetime.now()
@@ -56,36 +53,37 @@ def trafique_circulation(TRAFIQUE, HEURE):
         if (jour, mois) == i :
             dep = True
 
-        elif (jour, mois) != i :
-            normale = True
+    if dep == '':
+        normale = True
 
-    for i in heure_pointe_semaine:
-        if i == heure:
-            pointe = True
-        else:
-            non_pointe == True
-        
 
     if dep == True:
         TRAFIQUE['depart_routier'] += 1
  
     elif dep != True and normale == True: 
-        TRAFIQUE['regulier jour'] += 1
+        TRAFIQUE['regulier_jour'] += 1
 
        
+    for i in heure_pointe_semaine:
+        if i == heure:
+            pointe = True
 
+    if pointe != True:
+        non_pointe = True
+
+          
     if pointe == True:
         HEURE['heure_pointe'] += 1
         
         
-    elif non_pointe == '' or non_pointe == True:
+    elif non_pointe == True:
         HEURE['non_heure_pointe'] += 1
    
 
 
 def habitude(POINTE, WEEKEND):
 
-    pointe = [8,9,16,17,18,19]#reverifie les pointes
+
     jour = ['samedi', 'dimanche']
 
     
@@ -94,22 +92,11 @@ def habitude(POINTE, WEEKEND):
     heure = date.hour
     jour = date.weekday()
    
-    #print(heure, jour)
-    pointeTrue = ""
-    for i in pointe:
-        if heure == i:
-            POINTE['pointe'] += 1
-            pointeTrue = True
-            break
-
-    if pointeTrue != True:
-        POINTE['non_pointe'] += 1
-
-
     if jour == 5 or jour == 6:
         WEEKEND['weekend'] += 1
     else:
         WEEKEND['non_weekend'] += 1
+        #si ca continue c ici
 
 
 def bouchons(lieu, BOUCHON):
