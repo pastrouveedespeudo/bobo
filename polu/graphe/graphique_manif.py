@@ -32,8 +32,8 @@ def visu_manif(ville):
 
 
 def traitement_manif(donnée):
-    manif = [10]
-    non_manif = [0]
+    manif = []
+    non_manif = []
     
     try:
         for i in donnée:
