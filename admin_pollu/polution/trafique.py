@@ -81,7 +81,7 @@ def trafique_circulation(TRAFIQUE, HEURE):
    
 
 
-def habitude(POINTE, WEEKEND):
+def habitude(WEEKEND):
 
 
     jour = ['samedi', 'dimanche']
