@@ -4,10 +4,10 @@ import pylab
 import psycopg2
 import numpy as np
 
-from fonction_graphe import moyenne
+from .fonction_graphe import moyenne
 
 
-def visu(ville):
+def visu_manif(ville):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -51,8 +51,8 @@ def traitement_manif(donnée):
             donnée_manif[1], donnée_non_manif[1]
 
 
-def diagramme(donnée_manif, donnée_non_manif,
-              er_manif, er_non_manif):
+def diagramme_manif(donnée_manif, donnée_non_manif,
+              er_manif, er_non_manif, save):
 
 
     
@@ -69,17 +69,13 @@ def diagramme(donnée_manif, donnée_non_manif,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les manifestation")
     
-    plt.show()
+    plt.save(save)
 
 
 
 
 
-a = visu('lyon')
-donnée = traitement_manif(a)
 
-diagramme(donnée[0], donnée[1],
-        donnée[2], donnée[3])
 
 
 
