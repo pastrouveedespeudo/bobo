@@ -3,7 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
-
+import os
+import shutil
 from .fonction_graphe import moyenne
 
 def visu_traffique(ville):
@@ -50,7 +51,10 @@ def traitement_traffique(donnée):
 def diagramme_traffique(donnée_regulier_jour, donnée_depart_routier,
               er_regulier_jour, er_depart_routier, save):
 
-
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\traffique.png')
+    except:
+        pass
     plt.bar(range(2), [donnée_regulier_jour, donnée_depart_routier],
                         width = 0.1, color = 'red',
                        yerr = [er_regulier_jour, er_depart_routier],
@@ -64,8 +68,8 @@ def diagramme_traffique(donnée_regulier_jour, donnée_depart_routier,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les départ routiers")
     
-    plt.save(save)
-
+    plt.savefig(save)
+    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
 
 
