@@ -4,10 +4,10 @@ import pylab
 import psycopg2
 import numpy as np
 
-from fonction_graphe import moyenne
+from .fonction_graphe import moyenne
 
-def visu(ville):
-    
+def visu_weekend(ville):
+    print('yoooooooooooooooo')
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
                             host='127.0.0.1',
@@ -29,7 +29,7 @@ def visu(ville):
 
 
 def traitement_weekend(donnée):
-
+    print('coucouuuuuuuuuuuuuuuuuuuuuuyoooo')
     weekend = [0]
     non_weekend = []
 
@@ -54,8 +54,8 @@ def traitement_weekend(donnée):
    
 
 
-def diagramme(donnée_weekend, donnée_non_weekend,
-              er_weekend, er_non_weekend):
+def diagramme_weekend(donnée_weekend, donnée_non_weekend,
+              er_weekend, er_non_weekend, save):
 
 
     plt.bar(range(2), [donnée_weekend, donnée_non_weekend],
@@ -71,10 +71,29 @@ def diagramme(donnée_weekend, donnée_non_weekend,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon le weekend")
     
-    plt.show()
+    plt.savefig(save)
+    print('ouaiiiiiiiiiiiiiiiiiiiiiiiiiiis')
+
+##
+##a = visu_weekend('lyon')
+##donnée = traitement_weekend(a)
+##diagramme_weekend(donnée[0], donnée[1], donnée[2], donnée[3],
+##                              'diagramme_weekend.png')
 
 
-a = visu('lyon')
-donnée = traitement_weekend(a)
 
-diagramme(donnée[0], donnée[1], donnée[2], donnée[3])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
