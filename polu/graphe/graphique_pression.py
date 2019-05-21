@@ -3,7 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
-
+import os
+import shutil
 from .fonction_graphe import moyenne
 
 def visu_pression(ville):
@@ -56,7 +57,11 @@ def traitement_pression(donnée):
 
 def diagramme_pression(donnée_forte, donnée_faible, donnée_normale,
               er_forte, er_faible, er_normale, save):
-
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\pression.png')
+    except:
+        pass
+    
     plt.bar(range(3), [donnée_forte, donnée_faible, donnée_normale],
                         width = 0.1, color = 'red',
                        yerr = [er_forte, er_faible, er_normale],
@@ -70,9 +75,9 @@ def diagramme_pression(donnée_forte, donnée_faible, donnée_normale,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon la pression en hpa")
     
-    plt.save(save)
+    plt.savefig(save)
 
-
+    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
 
 
