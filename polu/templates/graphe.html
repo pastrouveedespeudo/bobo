@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,12 +21,11 @@
   <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
   <!-- Theme CSS - Includes Bootstrap -->
-  <link href="/static/css/creativelyonpolu.css" rel="stylesheet">
+  <link href="/static/css/creative.min.css" rel="stylesheet">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
 
   
 </head>
-
 
 
 
@@ -42,87 +35,95 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
 
-    <style>
-      #my{
-        width:50px;
-        height:50px;
-    }
-    </style>
+    
     
     <div class="container">
+    
+      <style> #my{width:50px; height:50px;margin-left:-70px;}</style>
       <img src="/static/img/portfolio2/icone/indian.png" id="my">
-      <a class="navbar-brand js-scroll-trigger" href="/">My_Polution</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand js-scroll-trigger" href="/polution/polution">My_Polution</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
+      <img src="/static/img/portfolio/icone/my.png" id="my_prof">
+      <a class="navbar-brand js-scroll-trigger" href="/">My_Profil</a>
+     
+      
+      <button class="navbar-toggler navbar-toggler-right" type="button"
+        data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      
-      <div class="collapse navbar-collapse" id="navbarResponsive">
 
-      
+
+
+
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
 
-          <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:80px;
-          }
-          </style>
 
-          <li class="nav-item">
-            <a href = "/photo/photo">
-              <img src="/static/img/portfolio2/icone/graphe.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/polution/graphique">Nos graphiques</a>
-            </a>
-          </li>
 
 
           <style>
-            #im2{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
+              #im1{width:50px; height:50px; margin-left:110px;}
+              #graph{margin-left:35px; width:200px;}
           </style>
           
           <li class="nav-item">
-           <a href = "/photo/mes_images">
-            <img src="/static/img/portfolio2/icone/pol.png" id="im2">
-            <a class="nav-link js-scroll-trigger" href="/photo/mes_images">Nos données pollution</a>
+            <a href = "/photo/photo">
+              <img src="/static/img/portfolio2/icone/graphe.png" id="im1">
+              <center><a class="nav-link js-scroll-trigger" href="/photo/photo" id='graph'>Nos graphiques</a></center>
             </a>
           </li>
 
 
           <style>
-            #im1{
-              width:50px;
-              height:50px;
-              margin-left:45px;
-          }
+            #im2{width:50px;height:50px;margin-left:45px;}
+            #donnée{width:200px;height:50px;margin-left:-25px;}
+          </style>
+          
+          <li class="nav-item">
+           <a href = "/polution/donnée">
+            <img src="/static/img/portfolio2/icone/pol.png" id="im2">
+            <center><a class="nav-link js-scroll-trigger" href="/polution/donnée" id='donnée'>Nos données pollution</a></center>
+            </a>
+          </li>
+
+
+          <style>
+              #impredi{width:50px;height:50px; margin-left:55px;}
+              #prédiction{width:200px;height:50px; margin-left:-20px;}
+
           </style>
 
           <li class="nav-item">
             <a href = "/photo/coupe">
-              <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
-              <a class="nav-link js-scroll-trigger" href="/photo/coupe">Nos predictions</a>
+              <img src="/static/img/portfolio/icone/coiffure.png" id="impredi">
+              <center><a class="nav-link js-scroll-trigger" href="/photo/coupe" id='prédiction'>Nos predictions</a></center>
             </a>
           </li>
 
 
-
-        
           
+
           <style>
-            #im3{
-              width:50px;
-              height:50px;
-              margin-left:40px;
-          }
+            #im3{width:50px;height:50px;margin-left:0px;}
+            #imim{width:50px;height:50px;margin-left:68px;}
+            #toususr{width:200px;height:50px;margin-left:0px;}
           </style>
+          
+          <li class="nav-item">
+           <a href = "/photo/habits">
+            <img src="/static/img/portfolio2/icone/pollution.png" id="imim">
+            <center><a class="nav-link js-scroll-trigger" href="/polution/info_pollu" id='toususr'>Tous sur la pollution</a></center>
+            </a>
+          </li>
 
-
-
+          <style>
+            #im3{width:50px;height:50px;margin-left:25px;}
+          </style>
           
           <li class="nav-item">
            <a href = "/photo/habits">
@@ -144,13 +145,6 @@
 
 
 
-  <script>
-    function button1(){
-      alert('cc')
-      }
-  </script>
-
-
 
   <!-- Masthead -->
 
@@ -167,371 +161,182 @@
         </div>
     
         <div class="col-lg-8 align-self-baseline">
- 
           <p class="text-white-75 font-weight-light mb-5"></p>
-   
-          
-          
-  
-          
-        </div>
-   
-      </div>
-   
-    </div>
 
+        </div>
+      </div>
+    </div>
   </header>
 
 
-
-
-    <style>
-    #containner {
-        margin: 0px auto;
-        width: 400px;
-        height: 400px;
-    }
-    #videoElement {
-        width: 400px;
-        height: 400px;
-        position:relative;
-    }
-    #patron{
-      margin-left:105px;
-      margin-top:100px;
-      width: 200px;
-      height: 200px;
-      border: 2px solid red;
-      border-radius:50%;
-      position:absolute ;
-      z-index:1;
-    }
-    </style>
+ <input type='button' value='ville' onclick='graphe("condition")'>&nbsp;&nbsp;
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+  
   <!-- About Section -->
   
   <section class="page-section bg-primary" id="about">
     <div class="container">
 
-
       <div class="row justify-content-center">
-
-      
-
 
         <div class="row">
 
-          
           <div class="col-sm-4">
-
-           <img src="/static/img/HeurePointeBeauSemaine.png">
-               
+           <input type='button' value='graphique lyon' onclick='lyon()'>
           </div>
-
-
-          <div class="col-sm-8">
-
-
-          expli
-          </div>
-
-          
-
 
           <div class="col-sm-4">
-        
-             
-          <img src="">
-
-          <div class="col-sm-8">
-
+           <input type='button' value='graphique paris' onclick='paris()'>
           </div>
-
-
-        
-
-
+          
           <div class="col-sm-4">
-         
-          <img src="">
-          
-          <div class="col-sm-8">
-       
+           <input type='button' value='graphique marseille' onclick='marseille()'>
           </div>
 
-      
-
-    
-
-       
-
-        
-        <div class="col-sm-4">
-
-         <img src="">
-
-          
-        <div class="col-sm-8">
-          
-        
-
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <!-- Services Section -->
-  <section class="page-section" id="services">
-  
-    <div class="container">
-    
-      <h2 class="text-center mt-0">Mes services</h2>
-      <hr class="divider my-4">
-
-
-      
-      <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im6{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/graphe.png"/ id="im6">
-            <h3 class="h4 mb-2">Un recit sans preuve ca sert a rien...</h3>
-            <p class="text-muted mb-0">Nos graphiques</p>
-          </div>
-        </div>
-
-
-
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im4{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/pol.png"/ id="im4">
-            <h3 class="h4 mb-2">Nos données</h3>
-            <br>
-            <p class="text-muted mb-0">Nos données pollution</p>
-          </div>
-        </div>
-
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im5{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/coiffure.png"/ id="im5">
-            <h3 class="h4 mb-2">qui... ne marche pas super..</h3>
-            <p class="text-muted mb-0">Nos prédictions</p>
-          </div>
-        </div>
-
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/pollution.png"/ id="im7">
-            <h3 class="h4 mb-2">La pollution ! ah enfete c'est quoi ? </h3>
-            <br>
-            <p class="text-muted mb-0">Tous absolument tous sur la polltuion </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/fight.png"/ id="im7">
-            <h3 class="h4 mb-2">Notre solution</h3>
-            <br>
-            <p class="text-muted mb-0">Luttons</p>
-          </div>
-        </div>
-
-
-        
-
-        
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-
-  
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-
-      
-        <div class="col-lg-4 col-sm-6">
-        
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/1.jpg" alt="">
-            <div class="portfolio-box-caption">
-            
-              <div class="project-category text-white-50">
-                Conerad 26 ans
-              </div>
-                
-              
-              <div class="project-name">
-                A enfin arréter les pull orange et vert !
-              </div>
-            </div>
-          </a>
-        </div>
-
-        
-        <div class="col-lg-4 col-sm-6">
-        
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/2.jpg" alt="">
-            
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Sarah 24 ans
-              </div>
-              <div class="project-name">
-                Ne fais plus d'achat inutil
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/3.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Jo 35 ans
-              </div>
-              <div class="project-name">
-                a kiffé le projet
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/4.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Marion 17 ans
-              </div>
-              <div class="project-name">
-                a adoré le site ! (elle est aujourd'hui manequin)
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/5.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Rey 22 ans Professionel de Tennis
-              </div>
-              <div class="project-name">
-                Ne fais pas un match sans avoir tester des habits sur My Profil
-              </div>
-            </div>
-          </a>
-        </div>
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/6.jpg" alt="">
-            <div class="portfolio-box-caption p-3">
-              <div class="project-category text-white-50">
-                Ginette 82 ans
-              </div>
-              <div class="project-name">
-                N'a rien compris
-              </div>
-            </div>
-          </a>
-        </div>
       </div>
 
       
     </div>
   </section>
-
-
-
-
-
-
-
-
-
 
 
 
 
 
   <!-- Call to Action Section -->
-  <section class="page-section bg-dark text-white">
+  <section class="page-section bg-dark text-white" id='section_graphe' style='display:none;'>
+    
     <div class="container text-center">
-      <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
 
 
-                 
-           <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
-           <img src = "/static/img/portfolio/icone/facebook.png"/ id="im10">
+        <div class="row justify-content-center">
+        
+     
+           <input type='button' value='bouchon' onclick='graphe("bouchon")'>&nbsp;&nbsp;
+           <input type='button' value='climat' onclick='graphe("climat")'>&nbsp;&nbsp;
+           <input type='button' value='heure' onclick='graphe("heure")'>&nbsp;&nbsp;
+           <input type='button' value='manif' onclick='graphe("manif")'>&nbsp;&nbsp;
+           <input type='button' value='météo' onclick='graphe("météo")'>&nbsp;&nbsp;
+           <input type='button' value='population' onclick='graphe("population")'>&nbsp;&nbsp;
+           <input type='button' value='pression' onclick='graphe("pression")'>&nbsp;&nbsp;
+           <input type='button' value='saison' onclick='graphe("saison")'>&nbsp;&nbsp;
+           <input type='button' value='vent' onclick='graphe("vent")'>&nbsp;&nbsp;
+           <input type='button' value='weekend' onclick='graphe("weekend")'>&nbsp;&nbsp;
+           <input type='button' value='traffique' onclick='graphe("traffique")'>
+       
 
-                                
-            <style>#im11{width:100px; height:100px;margin-left:100px;}</style>
-           <img src = "/static/img/portfolio/icone/twitter.png"/ id="im11">
-
-                  
-           <style>#im12{width:200px; height:200px;margin-left:100px;}</style>
-           <img src = "/static/img/portfolio/icone/snap.png"/ id="im12">
-                    
+      </div>
+             
     </div>
   </section>
+
+
+
+
+
+  <script>
+
+    LISTE_AJAX = []
+    LISTE_AJAX_TYPE_GRAPHE = []
+
+  
+    function lyon(){
+      document.getElementById('section_graphe').style.display = 'block';
+      LISTE_AJAX.push('lyon')
+
+      }
+    function paris(){
+      document.getElementById('section_graphe').style.display = 'block';
+      LISTE_AJAX.push('paris')
+
+      }
+    function marseille(){
+      document.getElementById('section_graphe').style.display = 'block';
+      LISTE_AJAX.push('marseille')
+
+      }
+  </script>
+
+
+
+
+  <script>
+    function graphe(legraphe){
+      LISTE_AJAX_TYPE_GRAPHE.push(legraphe)
+
+         jQuery.ajax({
+           data:{
+               'csrfmiddlewaretoken': '{{csrf_token}}' , 
+               'ville':LISTE_AJAX[LISTE_AJAX.length - 1],
+               'graphe':LISTE_AJAX_TYPE_GRAPHE[LISTE_AJAX_TYPE_GRAPHE.length - 1]},
+
+           
+                  type:"POST",
+                  url:"/polution/graphe"
+              })
+              .done(function(data){
+                  if (data.error){
+                      jQuery("#monCadreAlert").text(data.error);
+                      jQuery("#is_save");
+                      
+                      
+                  }
+                  else{
+                      jQuery("#is_save").html(data.data);
+                      jQuery("#monCadreAlert");
+
+    
+                      
+                      
+                  };
+                  
+              });
+          };
+   
+
+  </script>
+
+
+
+
+
+
+
+  <script>
+
+
+                      
+               
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -584,19 +389,6 @@
 </body>
 
 
-
-    <script>
-    var video = document.querySelector("#videoElement");
-    if (navigator.mediaDevices.getUserMedia) {     
-        navigator.mediaDevices.getUserMedia({video: true})
-      .then(function(stream) {
-        video.srcObject = stream;
-      })
-      .catch(function(err0r) {
-        console.log("Something went wrong!");
-      });
-    }
-    </script>
 
 
 
