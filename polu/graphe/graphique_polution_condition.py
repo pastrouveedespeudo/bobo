@@ -4,7 +4,7 @@ import pylab
 import psycopg2
 import numpy as np
 
-from fonction_graphe import moyenne
+from .fonction_graphe import moyenne
 
 def visu(ville):
     
@@ -64,7 +64,7 @@ def visu3(min):
     return liste
 
 
-a = visu('lyon')
+a = visu('marseille')
 b = visu2(a[0])
 c = visu2(a[1])
 c = set(c)
