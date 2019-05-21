@@ -228,7 +228,6 @@
         
      
            <input type='button' value='bouchon' onclick='graphe("bouchon")'>&nbsp;&nbsp;
-           <input type='button' value='climat' onclick='graphe("climat")'>&nbsp;&nbsp;
            <input type='button' value='heure' onclick='graphe("heure")'>&nbsp;&nbsp;
            <input type='button' value='manif' onclick='graphe("manif")'>&nbsp;&nbsp;
            <input type='button' value='météo' onclick='graphe("météo")'>&nbsp;&nbsp;
@@ -241,7 +240,21 @@
        
 
       </div>
-             
+
+      <div id='graphique1'></div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
     </div>
   </section>
 
@@ -299,6 +312,7 @@
                   else{
                       jQuery("#is_save").html(data.data);
                       jQuery("#monCadreAlert");
+                      document.getElementById('graphique1').innerHTML = "<img src = '/static/popo/diagramme.png'>"
 
     
                       
