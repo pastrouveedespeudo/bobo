@@ -3,6 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
+import os
+import shutil
 
 from .fonction_graphe import *
 
@@ -59,7 +61,11 @@ def diagramme_climat(donnée_beau, donnée_nuageux, donnée_pluie,
               er_beau, er_nuageux, er_pluie, save):
 
 
-
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\météo.png')
+    except:
+        pass
+    
     plt.bar(range(3), [donnée_beau, donnée_nuageux, donnée_pluie],
                         width = 0.1, color = 'red',
                        yerr = [er_beau, er_nuageux, er_pluie],
@@ -73,8 +79,8 @@ def diagramme_climat(donnée_beau, donnée_nuageux, donnée_pluie,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon le temps")
     
-    plt.save(save)
-
+    plt.savefig(save)
+    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
 
 
