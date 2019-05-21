@@ -34,15 +34,20 @@ def visu_manif(ville):
 def traitement_manif(donnée):
     manif = [10]
     non_manif = [0]
+    
+    try:
+        for i in donnée:
+     
+            if i[0] == 'manifestation':
+                manif.append(int(i[1]))
+            elif i[0] == 'non_manifestation':
+                non_manif.append(int(i[1]))
 
-    for i in donnée:
-        print(i)
-        if i[0] == 'manifestation':
-            manif.append(int(i[1]))
-        elif i[0] == 'non_manifestation':
-            non_manif.append(int(i[1]))
+    except:
+        pass
 
-    print(non_manif)
+    data = len(manif) + len(non_manif)
+    print(data)
 
 
     donnée_manif = moyenne(manif)
@@ -50,7 +55,7 @@ def traitement_manif(donnée):
 
 
     return donnée_manif[0], donnée_non_manif[0],\
-            donnée_manif[1], donnée_non_manif[1]
+            donnée_manif[1], donnée_non_manif[1], data
 
 
 def diagramme_manif(donnée_manif, donnée_non_manif,
