@@ -5,6 +5,9 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+
+#ok mtn faire le truk pour transférer les données d'une base a une autre
+
 #y intégrer http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html
 
 # récupérer macguyvert dans les fichiers supprimer avec un logiciel
