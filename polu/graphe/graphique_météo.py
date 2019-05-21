@@ -4,9 +4,9 @@ import pylab
 import psycopg2
 import numpy as np
 
-from fonction_graphe import *
+from .fonction_graphe import *
 
-def visu(ville):
+def visu_climat(ville):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -55,8 +55,8 @@ def traitement_climat(donnée):
 
 
 
-def diagramme(donnée_beau, donnée_nuageux, donnée_pluie,
-              er_beau, er_nuageux, er_pluie):
+def diagramme_climat(donnée_beau, donnée_nuageux, donnée_pluie,
+              er_beau, er_nuageux, er_pluie, save):
 
 
 
@@ -73,7 +73,7 @@ def diagramme(donnée_beau, donnée_nuageux, donnée_pluie,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon le temps")
     
-    plt.show()
+    plt.save(save)
 
 
 
@@ -98,11 +98,7 @@ def diagramme(donnée_beau, donnée_nuageux, donnée_pluie,
 
 
 
-a = visu('lyon')
-donnée = traitement_climat(a)
 
-diagramme(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-          donnée[5])
 
 
 
