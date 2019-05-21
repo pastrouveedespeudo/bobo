@@ -4,7 +4,7 @@ import pylab
 import psycopg2
 import numpy as np
 
-from fonction_graphe import moyenne
+from .fonction_graphe import moyenne
 
 def visu():
     
