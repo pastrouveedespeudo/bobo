@@ -3,7 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
-
+import os
+import shutil
 from .fonction_graphe import moyenne
 
 def visu_population():
@@ -25,9 +26,9 @@ def visu_population():
 
 def traitement_population(donnée):
 
-    lyon = []
-    paris = []
-    marseille = []
+    lyon = [0]
+    paris = [0]
+    marseille = [0 ]
 
     for i in donnée:
   
@@ -52,7 +53,10 @@ def traitement_population(donnée):
 
 def diagramme_population(donnée_lyon, donnée_paris, donnée_marseille,
               er_lyon, er_paris, er_marseille, save):
-
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\population.png')
+    except:
+        pass
 
     plt.bar(range(3), [donnée_lyon, donnée_paris, donnée_marseille],
                         width = 0.1, color = 'red',
@@ -67,6 +71,6 @@ def diagramme_population(donnée_lyon, donnée_paris, donnée_marseille,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les villes")
     
-    plt.save(save)
-
+    plt.savefig(save)
+    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
