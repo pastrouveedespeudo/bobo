@@ -4,9 +4,9 @@ import pylab
 import psycopg2
 import numpy as np
 
-from fonction_graphe import moyenne
+from .fonction_graphe import moyenne
 
-def visu(ville):
+def visu_vent(ville):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -61,8 +61,8 @@ def traitement_vent(donnée):
            donnée_moyen[1], donnée_faible[1]
 
 
-def diagramme(donnée_tres_fort, donnée_fort,donnée_moyen, donnée_faible,
-              er_donnée_tres_fort, er_fort, er_moyen, er_faible):
+def diagramme_vent(donnée_tres_fort, donnée_fort,donnée_moyen, donnée_faible,
+              er_donnée_tres_fort, er_fort, er_moyen, er_faible, save):
 
 
     plt.bar(range(4), [donnée_tres_fort, donnée_fort,
@@ -80,7 +80,7 @@ def diagramme(donnée_tres_fort, donnée_fort,donnée_moyen, donnée_faible,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon le vent en km/h")
     
-    plt.show()
+    plt.save(save)
 
 
 
@@ -88,10 +88,7 @@ def diagramme(donnée_tres_fort, donnée_fort,donnée_moyen, donnée_faible,
 
 
 
-a = visu('lyon')
-donnée = traitement_vent(a)
-diagramme(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-          donnée[5], donnée[6], donnée[7])
+
 
 
 
