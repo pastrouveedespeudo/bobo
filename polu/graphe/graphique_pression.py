@@ -4,9 +4,9 @@ import pylab
 import psycopg2
 import numpy as np
 
-from fonction_graphe import moyenne
+from .fonction_graphe import moyenne
 
-def visu(ville):
+def visu_pression(ville):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -54,8 +54,8 @@ def traitement_pression(donnée):
 
 
 
-def diagramme(donnée_forte, donnée_faible, donnée_normale,
-              er_forte, er_faible, er_normale):
+def diagramme_pression(donnée_forte, donnée_faible, donnée_normale,
+              er_forte, er_faible, er_normale, save):
 
     plt.bar(range(3), [donnée_forte, donnée_faible, donnée_normale],
                         width = 0.1, color = 'red',
@@ -70,15 +70,11 @@ def diagramme(donnée_forte, donnée_faible, donnée_normale,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon la pression en hpa")
     
-    plt.show()
+    plt.save(save)
 
 
 
-a = visu('lyon')
-donnée = traitement_pression(a)
 
-diagramme(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-          donnée[5])
 
 
 
