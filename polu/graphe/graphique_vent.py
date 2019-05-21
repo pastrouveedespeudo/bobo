@@ -3,7 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
-
+import os
+import shutil
 from .fonction_graphe import moyenne
 
 def visu_vent(ville):
@@ -31,9 +32,9 @@ def visu_vent(ville):
 def traitement_vent(donnée):
 
     tres_fort = [0]
-    fort = []
-    moyen = []
-    faible = []
+    fort = [0]
+    moyen = [0]
+    faible = [0]
  
     for i in donnée:
         print(i)
@@ -64,7 +65,10 @@ def traitement_vent(donnée):
 def diagramme_vent(donnée_tres_fort, donnée_fort,donnée_moyen, donnée_faible,
               er_donnée_tres_fort, er_fort, er_moyen, er_faible, save):
 
-
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\vent.png')
+    except:
+        pass
     plt.bar(range(4), [donnée_tres_fort, donnée_fort,
                        donnée_moyen, donnée_faible],
                         width = 0.1, color = 'red',
@@ -80,7 +84,8 @@ def diagramme_vent(donnée_tres_fort, donnée_fort,donnée_moyen, donnée_faible
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon le vent en km/h")
     
-    plt.save(save)
+    plt.savefig(save)
+    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
 
 
