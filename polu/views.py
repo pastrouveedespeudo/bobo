@@ -6,18 +6,25 @@ import urllib.request
 import datetime
 from bs4 import *
 
-from .donnée_site.pollution import taux_particule
-from .donnée_site.pollution import temps_ville
-from .donnée_site.pollution import climat_ville
-from .donnée_site.pollution import saison
-from .donnée_site.pollution import traffique
-from .donnée_site.pollution import habitude
-from .donnée_site.pollution import ville_pollué_classement
-from .donnée_site.pollution import region_industrielle
-from .donnée_site.pollution import pression_ville
-from .donnée_site.pollution import activité_execptionnelle
-from .donnée_site.pollution import socio
-from .donnée_site.pollution import bouchons
+##from .graphe.graphique_bouchon import *
+##from .graphe.graphique_climat import *
+##from .graphe.graphique_heure import *
+##from .graphe.graphique_manif import *
+##from .graphe.graphique_météo import *
+##from .graphe.graphique_polution_condition import *
+##from .graphe.graphique_pression import *
+##from .graphe.graphique_saison import *
+##from .graphe.graphique_traffique import *
+##from .graphe.graphique_vent import *
+##from .graphe.graphique_ville import *
+from .graphe.graphique_weekend import *
+
+
+
+
+
+
+
 
 from.polu_ana.polution.traitement_de_donnée import recuperation_data
 from.polu_ana.polution.traitement_de_donnée import condition
@@ -233,8 +240,98 @@ def polution_paris(request):
     return render(request, 'polution_paris.html', {'heure':a[0],'minute':a[1], 'temps':b, 'pollution':c})
 
 
-def graphique(request):
-    return render(request, 'graphique.html')
+def graphe(request):
+    if request.method == "POST":
+        
+        ville = request.POST.get('ville')
+        graphe = request.POST.get('graphe')
+        
+        print('grapheeeeeeeeeeeeeeeeeeeeeee')
+        
+        print(ville, graphe)
+
+        if graphe == 'bouchon':
+            a = visu_bouchon(ville)
+            donnée = traitement_bouchon(a)
+            diagramme_bouchon(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+                      donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
+                      donnée[10], donnée[11], 'diagramme.png')
+
+        elif graphe == 'climat':
+            a = visu_climat('marseille')
+            donnée = traitement_climat(a)
+
+            diagramme_climat(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+                      donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
+                      donnée[10], donnée[11], 'diagramme.png')
+
+
+
+        elif graphe == 'heure':
+            horraire = traitement_heure(ville)
+            diagramme_heure(horraire[0], horraire[1], horraire[2], horraire[3])
+
+            
+        elif graphe == 'manif':
+            a = visu_manif(ville)
+            donnée = traitement_manif(a)
+            diagramme_manif(donnée[0], donnée[1],
+                    donnée[2], donnée[3], 'diagramme.png')
+
+
+        elif graphe == 'météo':
+            a = visu_climat(ville)
+            donnée = traitement_climat(a)
+            diagramme_climat(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+                      donnée[5], 'diagramme.png')
+                        
+        elif graphe == 'population':
+            a = visu_population()
+            donnée = traitement_population(a)
+            diagramme_population(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+                      donnée[5], 'diagramme.png')
+
+            
+        elif graphe == 'pression':
+            a = visu_pression(ville)
+            donnée = traitement_pression(a)
+            diagramme_pression(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+                      donnée[5], 'diagramme.png')
+            
+        elif graphe == 'saison':
+            a = visu_saison(ville)
+            donnée = traitement_saison(a)
+
+            diagramme_saison(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+                      donnée[5], donnée[6], donnée[7])
+
+
+            
+        elif graphe == 'vent':
+            a = visu_vent(ville)
+            donnée = traitement_vent(a)
+            diagramme_vent(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+                      donnée[5], donnée[6], donnée[7],'diagramme.png')
+                        
+        elif graphe == 'weekend':
+
+            a = visu_weekend(ville)
+            donnée = traitement_weekend(a)
+            diagramme_weekend(donnée[0], donnée[1], donnée[2], donnée[3],
+                              'diagramme.png')
+            
+        elif graphe == 'traffique':
+            a = visu_traffique(ville)
+            donnée = traitement_traffique(a)
+            diagramme_traffique(donnée[0], donnée[1], donnée[2], donnée[3],
+                                'diagramme.png')
+
+            
+        else:
+            pass
+
+        
+    return render(request, 'graphe.html')
 
 
 
