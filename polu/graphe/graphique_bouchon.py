@@ -3,7 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
-
+import os
+import shutil
 
 from .fonction_graphe import moyenne
 
@@ -32,12 +33,12 @@ def visu_bouchon(ville):
 def traitement_bouchon(donnée):
     liste = ['non', 'petit', 'moyen', 'grand', 'assez grand',
              'tres grand']
-    non = []
+    non = [0]
     petit = [0]
     moyen = [0]
-    grand = []
-    assez_grand = []
-    tres_grand = []
+    grand = [0]
+    assez_grand = [0]
+    tres_grand = [0]
     
 
     for i in donnée:
@@ -85,7 +86,10 @@ def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
               er_non, er_petit, er_moyen,
               er_grand, er_assez_grand,
               er_tres_grand, save):
-
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\diagramme.png')
+    except:
+        pass
     
     plt.bar(range(6), [donnée_non, donnée_petit, donnée_moyen,
                        donnée_grand, donnée_assez_grand,
@@ -105,7 +109,8 @@ def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les bouchons")
     
-    plt.save(save)
+    plt.savefig(save)
+    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
 
 
@@ -113,7 +118,6 @@ def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
 
 
 
-        
 
 
 
