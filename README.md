@@ -9,11 +9,10 @@
 
 # récupérer macguyvert dans les fichiers supprimer avec un logiciel
 
-#jvai pas l'avoir ^^ jvai pas l'avoir merde j'avais pas lu les consignes j'ai juste vu ajouter une fonctionalité j'ai fais un jeu mais fallait faire un bug, c'est pas de la triche le bug des caractères je l'avais eu donc j'ai en quelques sortes fais la soutenance avant la soutenance ! jsp
+#page graphique, page info pollu, page machine a eau et ok
 
-#prévoir d'autres sites qui font la meme chose au cas de bug au cas ou
+#video par contre me faut des glacons
 
-#faire toutes les truks avec pluie ou pas pluie qui change et puis au pire tu dis ben nan ca marche pas mais t'aura les truks des autres sites qui disent que pluie et t'as oublié de save l'image du graphe
 
 #mettre un menu a pollution.html + explication démarche
 
@@ -23,7 +22,7 @@
 
 #ok tout refaire mais avec des fonctions
 
-#tuto vetement + tuto pollution
+
 
 #sinon je me perds:
 
@@ -69,7 +68,7 @@ ca donne [1, 1,2,2,3,3,4,4]
 
 #supprimer favoris
 
-
+#push heroku
 
 
 
@@ -98,9 +97,7 @@ ca donne [1, 1,2,2,3,3,4,4]
 
 #ok toutes les données la que t'as commencé tu fais la meme mais dans nos données pollutions et ensuite tu met une direction vers la prédiction ptin j'ai peur que ca marche pas mais ca passe
 
-#graphe + ville en arrière plan (avec les erreurs) matplolib
-
- #-> conclusion espère que la pluie ainsi que les données correspondent + données d'autres sites
+#-> conclusion espère que la pluie ainsi que les données correspondent + données d'autres sites
   
 #dans notre solution mettre les quelques vidéo des machines à pluie + de la vidéo que tu feras
 
