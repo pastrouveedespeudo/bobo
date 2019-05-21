@@ -4,7 +4,7 @@ import pylab
 import psycopg2
 import numpy as np
 
-from polu_ana.polution.database2 import clean_data
+from fonction_graphe import moyenne
 
 def visu(ville):
     
@@ -28,42 +28,59 @@ def visu(ville):
     return liste
 
 
-def traitement_vent(ville):
+def traitement_vent(donnée):
 
-    horraire_pointe = []
-    horraire_non_pointe = []
-
-    donnée = visu(ville)
-
-
+    tres_fort = [0]
+    fort = []
+    moyen = []
+    faible = []
+ 
     for i in donnée:
-        #print(i[0], i[1])
-
-        if i[0] == 'non_pointe':
-            horraire_non_pointe.append(int(i[1]))
+        print(i)
+        if i[0] == 'tres fort':
+            tres_fort.append(int(i[1]))
         
-        elif i[0] == 'pointe':
-            horraire_pointe.append(int(i[1]))
+        elif i[0] == 'fort':
+            fort.append(int(i[1]))
+
+        elif i[0] == 'moyen fort':
+            moyen.append(int(i[1]))
+
+        elif i[0] == 'faible':
+            faible.append(int(i[1]))
+
+    donnée_tres_fort = moyenne(tres_fort)
+    donnée_fort = moyenne(fort)
+    donnée_moyen = moyenne(moyen)
+    donnée_faible = moyenne(faible)
 
     
-    moy = sum(horraire_pointe) / len(horraire_pointe)
-    variance_pointe = np.var(horraire_pointe)
+    return donnée_tres_fort[0], donnée_fort[0],\
+           donnée_moyen[0], donnée_faible[0],\
+           donnée_tres_fort[1], donnée_fort[1],\
+           donnée_moyen[1], donnée_faible[1]
+
+
+def diagramme(donnée_tres_fort, donnée_fort,donnée_moyen, donnée_faible,
+              er_donnée_tres_fort, er_fort, er_moyen, er_faible):
+
+
+    plt.bar(range(4), [donnée_tres_fort, donnée_fort,
+                       donnée_moyen, donnée_faible],
+                        width = 0.1, color = 'red',
+                       yerr = [er_donnée_tres_fort, er_fort,
+                               er_moyen,er_faible],
+                        ecolor = 'black', capsize = 10)
+                
+
+
+    plt.xticks(range(4), ['vent tres fort', 'vent fort', 'vent moyen','vent faible'])
+
+        
+    plt.ylabel('Taux de pollution en AQI')
+    plt.title("Taux de pollution selon le vent en km/h")
     
-    
-    moy_non = sum(horraire_non_pointe) / len(horraire_non_pointe)
-    variance_non_pointe = np.var(horraire_non_pointe)
-
-    erreur_pointe = (variance_pointe/len(horraire_pointe))*1/2
-    
-    erreur_non_pointe = (variance_non_pointe/len(horraire_non_pointe))**(1/2)
-
-    print(variance_pointe, variance_non_pointe)
-    print(erreur_pointe, erreur_non_pointe)
-    print(moy, moy_non)
-
-
-
-
+    plt.show()
 
 
 
@@ -72,6 +89,26 @@ def traitement_vent(ville):
 
 
 a = visu('lyon')
-for i in a:
-    print(i)
-    print('\n')
+donnée = traitement_vent(a)
+diagramme(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+          donnée[5], donnée[6], donnée[7])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
