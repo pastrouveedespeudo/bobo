@@ -4,9 +4,9 @@ import pylab
 import psycopg2
 import numpy as np
 
-from polu_ana.polution.database2 import clean_data
 
-def visu(ville):
+
+def visu_horraire(ville):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -53,7 +53,7 @@ def traitement_heure(ville):
     moy_non = sum(horraire_non_pointe) / len(horraire_non_pointe)
     variance_non_pointe = np.var(horraire_non_pointe)
 
-    erreur_pointe = (variance_pointe/len(horraire_pointe))*1/2
+    erreur_pointe = (variance_pointe/len(horraire_pointe))**(1/2)
     
     erreur_non_pointe = (variance_non_pointe/len(horraire_non_pointe))**(1/2)
 
@@ -66,8 +66,8 @@ def traitement_heure(ville):
 
 
 
-def diagramme(pointe, non_pointe,
-              erreur_pointe, erreur_non_pointe):
+def diagramme_heure(pointe, non_pointe,
+              erreur_pointe, erreur_non_pointe, save):
     
     plt.bar(range(2), [pointe, non_pointe], width = 0.1, color = 'red',
            yerr = [erreur_pointe, erreur_non_pointe],
@@ -77,14 +77,13 @@ def diagramme(pointe, non_pointe,
 
         
     plt.ylabel('Taux de pollution en AQI')
-    plt.title('Exemple d\' histogramme simple')
+    plt.title("Taux de pollution selon l'heure")
     
-    plt.show()
+    plt.save(save)
 
 
 
-horraire = traitement_heure('lyon')
-diagramme(horraire[0], horraire[1], horraire[2], horraire[3])
+
 
 
 
