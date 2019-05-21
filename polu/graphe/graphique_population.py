@@ -30,16 +30,20 @@ def traitement_population(donnée):
     paris = [0]
     marseille = [0 ]
 
-    for i in donnée:
-  
-        if i[0] == 'lyon':
-            lyon.append(int(i[1]))
-        elif i[0] == 'paris':
-            paris.append(int(i[1]))
-        elif i[0] == 'marseille':
-            marseille.append(int(i[1]))
+    try:
+        for i in donnée:
+            print(i)
+            if i[0] == 'lyon':
+                lyon.append(int(i[1]))
+            elif i[0] == 'paris':
+                paris.append(int(i[1]))
+            elif i[0] == 'marseille':
+                marseille.append(int(i[1]))
 
+    except:
+        pass
 
+    data = len(lyon) + len(paris) + len(marseille)
     donnée_lyon = moyenne(lyon)
     donnée_paris = moyenne(paris)
     donnée_marseille = moyenne(marseille)
