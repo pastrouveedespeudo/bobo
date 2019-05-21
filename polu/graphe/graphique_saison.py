@@ -37,18 +37,22 @@ def traitement_saison(donnée):
     hiver = [0]
     automne = [0]
 
-    for i in donnée:
-  
-        if i[0] == 'primtemps':
-            primtemps.append(int(i[1]))
-        elif i[0] == 'été':
-            été.append(int(i[1]))
-        elif i[0] == 'hiver':
-            hiver.append(int(i[1]))  
-        elif i[0] == 'automne':
-            automne.append(int(i[1])) 
+    try:
+        for i in donnée:
+      
+            if i[0] == 'primtemps':
+                primtemps.append(int(i[1]))
+            elif i[0] == 'été':
+                été.append(int(i[1]))
+            elif i[0] == 'hiver':
+                hiver.append(int(i[1]))  
+            elif i[0] == 'automne':
+                automne.append(int(i[1])) 
+    except:
+        pass
 
-
+    data = len(primtemps) + len(été) + len(hiver) + len(automne)
+    print(data)
     donnée_primtemps = moyenne(primtemps)
     donnée_été = moyenne(été)
     donnée_hiver = moyenne(hiver)
@@ -58,7 +62,7 @@ def traitement_saison(donnée):
 
     return donnée_primtemps[0], donnée_été[0], donnée_hiver[0],\
             donnée_automne[0], donnée_primtemps[1], donnée_été[1],\
-            donnée_hiver[1], donnée_automne[1]
+            donnée_hiver[1], donnée_automne[1], data
 
 
 def diagramme_saison(donnée_primtemps, donnée_été, donnée_hiver, donnée_automne,
