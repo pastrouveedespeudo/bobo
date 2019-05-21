@@ -263,7 +263,7 @@ def visualisation(ville):
                         saison, ville_pollué,
                         REGION_INDUSTRIEL_POLLUEE,
                         POPULATION_ACTIVE_HABITANT,
-                        TRAFIQUE, HEURE, POINTE, WEEKEND,
+                        TRAFIQUE, HEURE, WEEKEND,
                         BOUCHON, ACTIVITE_EXEPTIONNELLE,
                         particule
                         FROM ville
@@ -293,7 +293,7 @@ def visualisation_without_time(ville):
                         saison, ville_pollué,
                         REGION_INDUSTRIEL_POLLUEE,
                         POPULATION_ACTIVE_HABITANT,
-                        TRAFIQUE, HEURE, POINTE, WEEKEND,
+                        TRAFIQUE, HEURE, WEEKEND,
                         BOUCHON, ACTIVITE_EXEPTIONNELLE
                         FROM ville
                         WHERE nom_ville = %s
@@ -310,7 +310,7 @@ def visualisation_without_time(ville):
 def recuperate_particle(ville, pression, météo, vent, climat,
                       saison, ville_pollué, REGION_INDUSTRIEL_POLLUEE,
                       POPULATION_ACTIVE_HABITANT, TRAFIQUE, HEURE,
-                      POINTE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE):
+                      WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE):
     
     conn = psycopg2.connect(database='bobo',
                              user='postgres',
@@ -332,7 +332,6 @@ def recuperate_particle(ville, pression, météo, vent, climat,
                     POPULATION_ACTIVE_HABITANT LIKE %s AND
                     TRAFIQUE  LIKE %s AND
                     HEURE LIKE %s AND
-                    POINTE  LIKE %s AND
                     WEEKEND LIKE %s AND
                     BOUCHON LIKE %s AND
                     ACTIVITE_EXEPTIONNELLE LIKE %s);
@@ -340,7 +339,7 @@ def recuperate_particle(ville, pression, météo, vent, climat,
                           saison, ville_pollué,
                           REGION_INDUSTRIEL_POLLUEE,
                           POPULATION_ACTIVE_HABITANT,
-                          TRAFIQUE, HEURE, POINTE, WEEKEND,
+                          TRAFIQUE, HEURE, WEEKEND,
                           BOUCHON, ACTIVITE_EXEPTIONNELLE))
                        
     
