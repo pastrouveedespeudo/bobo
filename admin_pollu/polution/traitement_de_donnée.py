@@ -76,11 +76,11 @@ def recuperation_data(city):
 
     #traffique
     trafique_circulation(TRAFIQUE, HEURE)
-    habitude(POINTE, WEEKEND)
+    habitude(WEEKEND)
     bouchons(city, BOUCHON)
     activité_execptionnelle(city, ACTIVITE_EXEPTIONNELLE)
     
-    données_trafique =  display_dict(TRAFIQUE, HEURE, POINTE, WEEKEND, BOUCHON,
+    données_trafique =  display_dict(TRAFIQUE, HEURE, WEEKEND, BOUCHON,
                  ACTIVITE_EXEPTIONNELLE)
 
 
@@ -119,7 +119,7 @@ def condition(données_météo, données_climat, données_particule,
                                            i[0],i[1],i[2],i[3],
                                            i[4],i[5],i[6],i[7],
                                            i[8],i[9],i[10],i[11],
-                                           i[12],i[13])
+                                           i[12])
 
    
             THE_PARTICLE.append(particle)
