@@ -13,6 +13,7 @@
 
 #video par contre me faut des glacons
 
+#ne cherche pas a tout voir juste condition pluie de toute facon t"as pas assez de donnée et de connaissance pour tout dire juste pluie relax !
 
 #mettre un menu a pollution.html + explication démarche
 
