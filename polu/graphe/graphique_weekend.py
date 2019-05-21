@@ -30,20 +30,23 @@ def visu_weekend(ville):
 
 
 def traitement_weekend(donnée):
-    print('coucouuuuuuuuuuuuuuuuuuuuuuyoooo')
-    weekend = [0]
+
+    weekend = []
     non_weekend = []
 
-
+    
     for i in donnée:
-  
-        if i[0] == 'weekend':
+        
+        if[1] == None or i[1] == 'None':
+            pass
+        elif i[0] == 'weekend':
             weekend.append(int(i[1]))
         elif i[0] == 'non_weekend':
             non_weekend.append(int(i[1]))
+        print(i[1])
 
-
-
+    data = len(weekend) + len(non_weekend)
+    print(data)
     donnée_weekend = moyenne(weekend)
     donnée_non_weekend = moyenne(non_weekend)
 
@@ -51,7 +54,7 @@ def traitement_weekend(donnée):
 
 
     return donnée_weekend[0], donnée_non_weekend[0],\
-            donnée_weekend[1], donnée_non_weekend[1]
+            donnée_weekend[1], donnée_non_weekend[1], data
    
 
 
