@@ -87,7 +87,7 @@ def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
               er_grand, er_assez_grand,
               er_tres_grand, save):
     try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\diagramme.png')
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\diagramme_bouchon.png')
     except:
         pass
     
