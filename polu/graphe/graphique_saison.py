@@ -4,9 +4,9 @@ import pylab
 import psycopg2
 import numpy as np
 
-from fonction_graphe import moyenne
+from .fonction_graphe import moyenne
 
-def visu(ville):
+def visu_saison(ville):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -59,8 +59,8 @@ def traitement_saison(donnée):
             donnée_hiver[1], donnée_automne[1]
 
 
-def diagramme(donnée_primtemps, donnée_été, donnée_hiver, donnée_automne,
-              er_primtemps, er_été, er_hiver, er_automne):
+def diagramme_saison(donnée_primtemps, donnée_été, donnée_hiver, donnée_automne,
+              er_primtemps, er_été, er_hiver, er_automne, save):
 
 
     plt.bar(range(4), [donnée_primtemps, donnée_été, donnée_hiver,
@@ -79,14 +79,8 @@ def diagramme(donnée_primtemps, donnée_été, donnée_hiver, donnée_automne,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les saisons")
     
-    plt.show()
+    plt.save(save)
 
-
-a = visu('lyon')
-donnée = traitement_saison(a)
-
-diagramme(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-          donnée[5], donnée[6], donnée[7])
 
 
 
