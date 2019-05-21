@@ -30,21 +30,25 @@ def visu_climat(ville):
     return liste
 
 def traitement_climat(donnée):
-    beau = [0]
+    beau = []
     nuageux = []
     pluie = []
 
-    for i in donnée:
-        if i[0] == 'beau_temps':
-            beau.append(int(i[1]))
+    try:
+        for i in donnée:
+            if i[0] == 'beau_temps':
+                beau.append(int(i[1]))
 
-        elif i[0] == 'nuageux':
-            nuageux.append(int(i[1]))
+            elif i[0] == 'nuageux':
+                nuageux.append(int(i[1]))
 
-        elif i[0] == 'pluie':
-            pluie.append(int(i[1]))
+            elif i[0] == 'pluie':
+                pluie.append(int(i[1]))
 
-
+    except:
+        pass
+    data = len(beau) + len(nuageux) + len(pluie)
+    print(data)
 
     donnée_beau = moyenne(beau)
     donnée_nuageux = moyenne(nuageux)
@@ -53,7 +57,7 @@ def traitement_climat(donnée):
 
 
     return donnée_beau[0], donnée_nuageux[0], donnée_pluie[0],\
-           donnée_beau[1], donnée_nuageux[1], donnée_pluie[1]
+           donnée_beau[1], donnée_nuageux[1], donnée_pluie[1], data
 
 
 
