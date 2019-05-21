@@ -4,9 +4,10 @@ import pylab
 import psycopg2
 import numpy as np
 from .fonction_graphe import moyenne
+import os
+import shutil
 
-
-def visu_climat(ville):
+def visuuu_climat(ville):
     
     conn = psycopg2.connect(database='bobo',
                             user='postgres',
@@ -28,7 +29,7 @@ def visu_climat(ville):
     return liste
 
 
-def traitement_climat(donnée):
+def traitementtt_climat(donnée):
 
 
     inf_zero = [10]
@@ -81,7 +82,7 @@ def traitement_climat(donnée):
 
 
 
-def diagramme_climat(donnée_inf_zero, donnée_zero_dix,
+def diagramme_climattt(donnée_inf_zero, donnée_zero_dix,
                       donnée_onze_vingt,
                       donnée_vingtun_trente, donnée_trente_un_quarante,
                       donnée_supp_quarante,
