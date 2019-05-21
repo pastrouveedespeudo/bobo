@@ -3,7 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
-
+import os
+import shutil
 
 
 def visu_horraire(ville):
@@ -33,7 +34,7 @@ def traitement_heure(ville):
     horraire_pointe = []
     horraire_non_pointe = []
 
-    donnée = visu(ville)
+    donnée = visu_horraire(ville)
 
 
     for i in donnée:
@@ -69,6 +70,11 @@ def traitement_heure(ville):
 def diagramme_heure(pointe, non_pointe,
               erreur_pointe, erreur_non_pointe, save):
     
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\diagramme_heure.png')
+    except:
+        pass
+    
     plt.bar(range(2), [pointe, non_pointe], width = 0.1, color = 'red',
            yerr = [erreur_pointe, erreur_non_pointe],
             ecolor = 'black', capsize = 10)
@@ -79,8 +85,8 @@ def diagramme_heure(pointe, non_pointe,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon l'heure")
     
-    plt.save(save)
-
+    plt.savefig(save)
+    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
 
 
