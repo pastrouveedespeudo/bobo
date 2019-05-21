@@ -3,6 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
+import os
+import shutil
 
 from .fonction_graphe import moyenne
 
@@ -62,7 +64,10 @@ def traitement_saison(donnée):
 def diagramme_saison(donnée_primtemps, donnée_été, donnée_hiver, donnée_automne,
               er_primtemps, er_été, er_hiver, er_automne, save):
 
-
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\saison.png')
+    except:
+        pass
     plt.bar(range(4), [donnée_primtemps, donnée_été, donnée_hiver,
                        donnée_automne],
                         width = 0.1, color = 'red',
@@ -79,8 +84,8 @@ def diagramme_saison(donnée_primtemps, donnée_été, donnée_hiver, donnée_au
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les saisons")
     
-    plt.save(save)
-
+    plt.savefig(save)
+    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
 
 
