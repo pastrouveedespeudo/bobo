@@ -3,7 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
-
+import os
+import shutil
 from .fonction_graphe import moyenne
 
 def visu_weekend(ville):
@@ -57,7 +58,10 @@ def traitement_weekend(donnée):
 def diagramme_weekend(donnée_weekend, donnée_non_weekend,
               er_weekend, er_non_weekend, save):
 
-
+    try:
+        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\weekend.png')
+    except:
+        pass
     plt.bar(range(2), [donnée_weekend, donnée_non_weekend],
                         width = 0.1, color = 'red',
                        yerr = [er_weekend, er_non_weekend],
@@ -72,13 +76,9 @@ def diagramme_weekend(donnée_weekend, donnée_non_weekend,
     plt.title("Taux de pollution selon le weekend")
     
     plt.savefig(save)
-    print('ouaiiiiiiiiiiiiiiiiiiiiiiiiiiis')
 
-##
-##a = visu_weekend('lyon')
-##donnée = traitement_weekend(a)
-##diagramme_weekend(donnée[0], donnée[1], donnée[2], donnée[3],
-##                              'diagramme_weekend.png')
+    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+
 
 
 
