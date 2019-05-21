@@ -60,8 +60,8 @@ def trafique_circulation(TRAFIQUE, HEURE):
     if dep == True:
         TRAFIQUE['depart_routier'] += 1
  
-    elif dep != True and normale == True: 
-        TRAFIQUE['regulier_jour'] += 1
+    elif normale == True: 
+        TRAFIQUE['regulier jour'] += 1
 
        
     for i in heure_pointe_semaine:
