@@ -6,6 +6,7 @@ import numpy as np
 import os
 import shutil
 from .fonction_graphe import moyenne
+from .fonction_graphe import new
 
 def visu():
     
@@ -31,8 +32,10 @@ def traitement_ville(donnée):
     marseille = []
 
     for i in donnée:
-  
-        if i[0] == 'lyon':
+        if i[0] == None or i[0] == 'None' or\
+           i[1] == None or i[1] == 'None':
+            pass
+        elif i[0] == 'lyon':
             lyon.append(int(i[1]))
         elif i[0] == 'paris':
             paris.append(int(i[1]))
@@ -54,10 +57,7 @@ def traitement_ville(donnée):
 def diagramme(donnée_lyon, donnée_paris, donnée_marseille,
               er_lyon, er_paris, er_marseille):
 
-    try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\diagramme.png')
-    except:
-        pass
+
     plt.bar(range(3), [donnée_lyon, donnée_paris, donnée_marseille],
                         width = 0.1, color = 'red',
                        yerr = [er_lyon, er_paris, er_marseille],
@@ -71,7 +71,27 @@ def diagramme(donnée_lyon, donnée_paris, donnée_marseille,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les villes")
     
-    plt.show()
+    nouveau = new()
+        
+    plt.savefig(nouveau)
+    plt.clf()
+    plt.close()
     shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+
+    return nouveau
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
