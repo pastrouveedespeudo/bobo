@@ -3,6 +3,8 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
+import os
+import shutil
 
 from .fonction_graphe import moyenne
 
@@ -64,18 +66,18 @@ def visu3(min):
     return liste
 
 
-a = visu('marseille')
-b = visu2(a[0])
-c = visu2(a[1])
-c = set(c)
-b = set(b)
-for i in c:
-    print(i)
-
-print('\n')
-
-for i in b:
-    print(i)
+##a = visu('marseille')
+##b = visu2(a[0])
+##c = visu2(a[1])
+##c = set(c)
+##b = set(b)
+##for i in c:
+##    print(i)
+##
+##print('\n')
+##
+##for i in b:
+##    print(i)
 
 
 
