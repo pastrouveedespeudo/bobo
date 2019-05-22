@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab
@@ -5,6 +8,8 @@ import psycopg2
 import numpy as np
 import os
 import shutil
+
+from .fonction_graphe import new
 
 
 def visu_horraire(ville):
@@ -16,15 +21,17 @@ def visu_horraire(ville):
 
     cursor = conn.cursor()
     
-    sql = ("""SELECT POINTE, particule FROM ville
+    sql = ("""SELECT HEURE, particule FROM ville
             WHERE nom_ville = %s;""")
     
     values = (ville)
 
     cursor.execute(sql, (ville,))
 
+    
     rows = cursor.fetchall()
     liste = [i for i in rows]
+
 
     return liste
 
@@ -35,49 +42,52 @@ def traitement_heure(ville):
     horraire_non_pointe = []
 
     donnée = visu_horraire(ville)
+    
+  
+    for i in donnée:
+        
+        if i[0] == 'None' or i[0] == None or\
+           i[1] == None or i[1] == 'None':
+            break
 
-    try:
-        for i in donnée:
-            #print(i[0], i[1])
+        elif i[0] == 'non_heure_pointe':
+            horraire_non_pointe.append(int(i[1]))
+        
+        elif i[0] == 'heure_pointe':
+            horraire_pointe.append(int(i[1]))
 
-            if i[0] == 'non_pointe':
-                horraire_non_pointe.append(int(i[1]))
-            
-            elif i[0] == 'pointe':
-                horraire_pointe.append(int(i[1]))
-    except:
-        pass
-
+        print(i)
     
     data = len(horraire_pointe) + len(horraire_non_pointe)
     print(data)
-    moy = sum(horraire_pointe) / len(horraire_pointe)
+
+    
+    try:
+        moy = sum(horraire_pointe) / len(horraire_pointe)
+    except:
+        moy=0
     variance_pointe = np.var(horraire_pointe)
     
-    
-    moy_non = sum(horraire_non_pointe) / len(horraire_non_pointe)
+    try:
+        moy_non = sum(horraire_non_pointe) / len(horraire_non_pointe)
+    except:
+        moy_non=0
+        
     variance_non_pointe = np.var(horraire_non_pointe)
 
     erreur_pointe = (variance_pointe/len(horraire_pointe))**(1/2)
     
     erreur_non_pointe = (variance_non_pointe/len(horraire_non_pointe))**(1/2)
 
-    print(variance_pointe, variance_non_pointe)
-    print(erreur_pointe, erreur_non_pointe)
-    print(moy, moy_non)
-
-
+    print(moy,moy_non)
     return moy, moy_non, erreur_pointe, erreur_non_pointe, data
 
 
 
 def diagramme_heure(pointe, non_pointe,
-              erreur_pointe, erreur_non_pointe, save):
+                    erreur_pointe, erreur_non_pointe, save):
     
-    try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\diagramme_heure.png')
-    except:
-        pass
+
     
     plt.bar(range(2), [pointe, non_pointe], width = 0.1, color = 'red',
            yerr = [erreur_pointe, erreur_non_pointe],
@@ -88,11 +98,15 @@ def diagramme_heure(pointe, non_pointe,
         
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon l'heure")
+
+    nouveau = new()
     
-    plt.savefig(save)
-    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    plt.savefig(nouveau)
+    plt.close()
+    
+    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
-
+    return nouveau
 
 
 
