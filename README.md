@@ -1,4 +1,6 @@
 
+# link88 faut vider le bufffffffffer !!!
+
 #<a href="https://fr.freepik.com/photos-vecteurs-libre/fond">Fond vecteur créé par vectorpocket - fr.freepik.com</a>
 
 #https://github.com/python/cpython
@@ -6,6 +8,10 @@
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
 #traiter les repons https
+
+#ouais bah c pas facile facile le push sur heroku va etre horrible
+
+#faut absolument mettre: 100 data: moyenne de 40 avec une erruer a  0.0000000048498797 et la c parfait ! chai meme pas si c la bonne erreur que jutilise ^^
 
 #faire en sorte que le graphique ne charge pas le précédent
 
