@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab
@@ -6,6 +9,7 @@ import numpy as np
 from .fonction_graphe import moyenne
 import os
 import shutil
+from .fonction_graphe import new
 
 def visuuu_climat(ville):
     
@@ -38,28 +42,32 @@ def traitementtt_climat(donnée):
     vingtun_trente = [10]
     trente_un_quarante = [10]
     supp_quarante  = [10]
-    try:
-        for i in donnée:
+   
+    for i in donnée:
+    
+        if i[0] == None or i[0] == 'None' or\
+           i[1] == None or i[1] == 'None':
+            break
+        
+        elif i[0] == '>0':
+            inf_zero.append(int(i[1]))
+            
+        elif i[0] == '0_10':
+            zero_dix.append(int(i[1]))
+            
+        elif i[0] == '11_20':
+            onze_vingt.append(int(i[1]))
+            
+        elif i[0] == '21_30':
+            vingtun_trente.append(int(i[1]))
+            
+        elif i[0] == '31_40':
+            trente_un_quarante.append(int(i[1]))
 
-            if i[0] == '>0':
-                inf_zero.append(int(i[1]))
-                
-            elif i[0] == '0_10':
-                zero_dix.append(int(i[1]))
-                
-            elif i[0] == '11_20':
-                onze_vingt.append(int(i[1]))
-                
-            elif i[0] == '21_30':
-                vingtun_trente.append(int(i[1]))
-                
-            elif i[0] == '31_40':
-                trente_un_quarante.append(int(i[1]))
+        elif i[0] == '>40':
+            supp_quarante.append(int(i[1]))
 
-            elif i[0] == '>40':
-                supp_quarante.append(int(i[1]))
-    except:
-        pass
+        print(i)
 
     data = len(inf_zero) + len(zero_dix) + len(onze_vingt) + len(vingtun_trente) + len(trente_un_quarante) + len(supp_quarante)
     print(data)
@@ -118,23 +126,19 @@ def diagramme_climattt(donnée_inf_zero, donnée_zero_dix,
         
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon la température en degrès")
+
+    nouveau = new()
     
-    plt.savefig(save)
-    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    plt.savefig(nouveau)
+    plt.close()
+    
+    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    return nouveau
 
 
 
 
 
-##a = visu_climat('lyon')
-##for i in a:
-##    print(i)
-##donnée = traitement_climat(a)
-##print(donnée)
-##diagramme_climat(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-##                  donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
-##                  donnée[10], donnée[11], 'diagramme.png')
-##
 
           
 
