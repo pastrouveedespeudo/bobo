@@ -7,6 +7,7 @@ import os
 import shutil
 
 from .fonction_graphe import moyenne
+from .fonction_graphe import new
 
 def visu_saison(ville):
     
@@ -33,23 +34,24 @@ def visu_saison(ville):
 def traitement_saison(donnée):
 
     primtemps = []
-    été = [0]
-    hiver = [0]
-    automne = [0]
+    été = []
+    hiver = []
+    automne = []
 
-    try:
-        for i in donnée:
-      
-            if i[0] == 'primtemps':
-                primtemps.append(int(i[1]))
-            elif i[0] == 'été':
-                été.append(int(i[1]))
-            elif i[0] == 'hiver':
-                hiver.append(int(i[1]))  
-            elif i[0] == 'automne':
-                automne.append(int(i[1])) 
-    except:
-        pass
+
+    for i in donnée:
+        if i[1] == 'None' or i[1] == None\
+            or i[0] == 'None' or i[0] == None:
+                pass
+        elif i[0] == 'primtemps':
+            primtemps.append(int(i[1]))
+        elif i[0] == 'été':
+            été.append(int(i[1]))
+        elif i[0] == 'hiver':
+            hiver.append(int(i[1]))  
+        elif i[0] == 'automne':
+            automne.append(int(i[1])) 
+
 
     data = len(primtemps) + len(été) + len(hiver) + len(automne)
     print(data)
@@ -87,10 +89,15 @@ def diagramme_saison(donnée_primtemps, donnée_été, donnée_hiver, donnée_au
         
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les saisons")
-    
-    plt.savefig(save)
-    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
+    nouveau = new()
+    
+    plt.savefig(nouveau)
+    plt.clf()
+    plt.close()
+    
+    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    return nouveau
 
 
 
