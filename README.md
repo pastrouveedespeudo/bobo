@@ -1,5 +1,5 @@
 
-# link88 faut vider le bufffffffffer !!!
+#dans graphe avoir un fichier diagramme1 a un moment donnée yaura 89999999999999999999999999.png ca bugguera refaire fonctiongraphe
 
 #<a href="https://fr.freepik.com/photos-vecteurs-libre/fond">Fond vecteur créé par vectorpocket - fr.freepik.com</a>
 
