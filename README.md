@@ -5,6 +5,9 @@
 
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
+#traiter les repons https
+
+#faire en sorte que le graphique ne charge pas le précédent
 
 #ok mtn faire le truk pour transférer les données d'une base a une autre
 
