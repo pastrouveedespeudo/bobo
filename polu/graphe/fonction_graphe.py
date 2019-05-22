@@ -16,20 +16,50 @@ def moyenne(liste):
 
 def new():
 
+    liste_new = []
     liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
-
-    try:
-        nb = str((liste[-1][-3])) + str((liste[-1][-4])) + str((liste[-1][-5]))
-        nb = int(nb) + 1
-    except:
-        pass
-    
-    try:
-        nb = str((liste[-1][-4])) + str((liste[-1][-5]))
-        nb = int(nb) + 1
-    except:
-        nb = int(liste[-1][-5]) + 1
+    for i in liste:
         
-    new_save = str(liste[-1][:-5]) + str(nb) + '.png' 
+        try:
+            nb = str((i[-7])) + str((i[-6])) + str((i[-5]))
+            nb = int(nb)
+            liste_new.append(nb)
+        except:
+            pass
+        
+        try:
+            nb = str((i[-6])) + str((i[-5]))
+            nb = int(nb)
+            liste_new.append(nb)
+        except:
+            nb = int(i[-5])
+            liste_new.append(nb)
+
+    maxi = max(liste_new) + 1
+
+
+        
+    new_save = str(liste[-1][:-5]) + str(maxi) + '.png' 
 
     return new_save
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
