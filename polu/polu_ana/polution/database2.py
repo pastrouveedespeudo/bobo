@@ -149,7 +149,7 @@ def insertion_sociologie(POPULATION_ACTIVE_HABITANT, date, heure_donnée, ville)
 
 
 def insertion_trafic_routier(TRAFIQUE, HEURE,
-                             POINTE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE,
+                             WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE,
                              date, heure_donnée, ville):
     
     conn = psycopg2.connect(database='bobo',
@@ -162,13 +162,12 @@ def insertion_trafic_routier(TRAFIQUE, HEURE,
     sql = ("""UPDATE ville
                SET TRAFIQUE=%s,
                HEURE=%s,
-               POINTE=%s,
                WEEKEND=%s,
                BOUCHON=%s,
                ACTIVITE_EXEPTIONNELLE=%s
                WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
 
-    values = (TRAFIQUE, HEURE, POINTE, WEEKEND,
+    values = (TRAFIQUE, HEURE,WEEKEND,
               BOUCHON, ACTIVITE_EXEPTIONNELLE,
               date, heure_donnée, ville)
 
@@ -234,7 +233,56 @@ def clean_data():
     print('données nulles effacées')
 
 
+def clean_data2():
+    
+    conn = psycopg2.connect(database='bobo',
+                             user='postgres',
+                             host='127.0.0.1',
+                             password='tiotiotio333')
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""DELETE FROM ville
+                    WHERE (bouchon = 'None' and
+                    climat = 'None');""")
 
+
+    conn.commit()
+    print('données nulles effacées')
+
+
+def clean_data3():
+    
+    conn = psycopg2.connect(database='bobo',
+                             user='postgres',
+                             host='127.0.0.1',
+                             password='tiotiotio333')
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""DELETE FROM ville
+                    WHERE (bouchon = 'None' and
+                    particule = 'None');""")
+
+
+    conn.commit()
+    print('données nulles effacées')
+
+def clean_data4():
+    
+    conn = psycopg2.connect(database='bobo',
+                             user='postgres',
+                             host='127.0.0.1',
+                             password='tiotiotio333')
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""DELETE FROM ville
+                    WHERE particule = 'None';""")
+
+
+    conn.commit()
+    print('données nulles effacées')
 
 def visualisation(ville):
     
@@ -249,12 +297,11 @@ def visualisation(ville):
                         saison, ville_pollué,
                         REGION_INDUSTRIEL_POLLUEE,
                         POPULATION_ACTIVE_HABITANT,
-                        TRAFIQUE, HEURE, POINTE, WEEKEND,
+                        TRAFIQUE, HEURE, WEEKEND,
                         BOUCHON, ACTIVITE_EXEPTIONNELLE,
                         particule
                         FROM ville
-                        WHERE nom_ville = %s
-                        ORDER BY particule
+                        WHERE nom_ville = %s;
                         """, (ville,))
                        
     
@@ -279,7 +326,7 @@ def visualisation_without_time(ville):
                         saison, ville_pollué,
                         REGION_INDUSTRIEL_POLLUEE,
                         POPULATION_ACTIVE_HABITANT,
-                        TRAFIQUE, HEURE, POINTE, WEEKEND,
+                        TRAFIQUE, HEURE, WEEKEND,
                         BOUCHON, ACTIVITE_EXEPTIONNELLE
                         FROM ville
                         WHERE nom_ville = %s
@@ -296,7 +343,7 @@ def visualisation_without_time(ville):
 def recuperate_particle(ville, pression, météo, vent, climat,
                       saison, ville_pollué, REGION_INDUSTRIEL_POLLUEE,
                       POPULATION_ACTIVE_HABITANT, TRAFIQUE, HEURE,
-                      POINTE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE):
+                      WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE):
     
     conn = psycopg2.connect(database='bobo',
                              user='postgres',
@@ -318,7 +365,6 @@ def recuperate_particle(ville, pression, météo, vent, climat,
                     POPULATION_ACTIVE_HABITANT LIKE %s AND
                     TRAFIQUE  LIKE %s AND
                     HEURE LIKE %s AND
-                    POINTE  LIKE %s AND
                     WEEKEND LIKE %s AND
                     BOUCHON LIKE %s AND
                     ACTIVITE_EXEPTIONNELLE LIKE %s);
@@ -326,7 +372,7 @@ def recuperate_particle(ville, pression, météo, vent, climat,
                           saison, ville_pollué,
                           REGION_INDUSTRIEL_POLLUEE,
                           POPULATION_ACTIVE_HABITANT,
-                          TRAFIQUE, HEURE, POINTE, WEEKEND,
+                          TRAFIQUE, HEURE, WEEKEND,
                           BOUCHON, ACTIVITE_EXEPTIONNELLE))
                        
     
