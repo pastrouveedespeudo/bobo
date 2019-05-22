@@ -32,8 +32,11 @@ def new():
             nb = int(nb)
             liste_new.append(nb)
         except:
-            nb = int(i[-5])
-            liste_new.append(nb)
+            try:
+                nb = int(i[-5])
+                liste_new.append(nb)
+            except:
+                pass
 
     maxi = max(liste_new) + 1
 
