@@ -7,7 +7,7 @@ import os
 import shutil
 
 from .fonction_graphe import moyenne
-
+from .fonction_graphe import new
 
 def visu_manif(ville):
     
@@ -35,16 +35,17 @@ def traitement_manif(donnée):
     manif = []
     non_manif = []
     
-    try:
-        for i in donnée:
-     
-            if i[0] == 'manifestation':
-                manif.append(int(i[1]))
-            elif i[0] == 'non_manifestation':
-                non_manif.append(int(i[1]))
+    for i in donnée:
+        print(i)
+        if i[1] == 'None' or i[1] == None\
+           or i[0] == 'None' or i[0] == None:
+            pass
+        elif i[0] == 'manifestation':
+            manif.append(int(i[1]))
+        elif i[0] == 'non_manifestation':
+            non_manif.append(int(i[1]))
 
-    except:
-        pass
+
 
     data = len(manif) + len(non_manif)
     print(data)
@@ -59,14 +60,9 @@ def traitement_manif(donnée):
 
 
 def diagramme_manif(donnée_manif, donnée_non_manif,
-              er_manif, er_non_manif, saving):
+              er_manif, er_non_manif, save):
 
 
-        
-    try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\manif.png')
-    except:
-        pass
     
     plt.bar(range(2), [donnée_manif, donnée_non_manif],
                         width = 0.1, color = 'red',
@@ -81,10 +77,12 @@ def diagramme_manif(donnée_manif, donnée_non_manif,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les manifestation")
     
-    plt.savefig(saving)
-
-    shutil.move(saving, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
-
+    nouveau = new()
+    
+    plt.savefig(nouveau)
+    plt.clf()
+    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    return nouveau
 
 
 
