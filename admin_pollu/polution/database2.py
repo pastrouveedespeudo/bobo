@@ -250,6 +250,40 @@ def clean_data2():
     conn.commit()
     print('données nulles effacées')
 
+
+def clean_data3():
+    
+    conn = psycopg2.connect(database='bobo',
+                             user='postgres',
+                             host='127.0.0.1',
+                             password='tiotiotio333')
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""DELETE FROM ville
+                    WHERE (bouchon = 'None' and
+                    particule = 'None');""")
+
+
+    conn.commit()
+    print('données nulles effacées')
+
+def clean_data4():
+    
+    conn = psycopg2.connect(database='bobo',
+                             user='postgres',
+                             host='127.0.0.1',
+                             password='tiotiotio333')
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""DELETE FROM ville
+                    WHERE particule = 'None';""")
+
+
+    conn.commit()
+    print('données nulles effacées')
+
 def visualisation(ville):
     
     conn = psycopg2.connect(database='bobo',
