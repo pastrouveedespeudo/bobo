@@ -92,10 +92,8 @@ def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
               er_non, er_petit, er_moyen,
               er_grand, er_assez_grand,
               er_tres_grand, save):
-    try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\diagramme_bouchon.png')
-    except:
-        pass
+
+    liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
     
     plt.bar(range(6), [donnée_non, donnée_petit, donnée_moyen,
                        donnée_grand, donnée_assez_grand,
@@ -114,12 +112,22 @@ def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
         
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les bouchons")
-    
-    plt.savefig(save)
-    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
-
+    try:
+        nb = str((liste[-1][-4])) + str((liste[-1][-5]))
+        nb = int(nb) + 1
+    except:
+        nb = int(liste[-1][-5]) + 1
+        
+        new_save = str(liste[-1][:-5]) + str(nb) + '.png' 
     
+    plt.savefig(new_save)
+    plt.close()
+    
+    shutil.move(new_save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    return new_save
+
+    return new_save
 
 
 
