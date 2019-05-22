@@ -6,6 +6,7 @@ import numpy as np
 import os
 import shutil
 from .fonction_graphe import moyenne
+from .fonction_graphe import new
 
 def visu_weekend(ville):
     print('yoooooooooooooooo')
@@ -36,14 +37,17 @@ def traitement_weekend(donnée):
 
     
     for i in donnée:
-        
-        if[1] == None or i[1] == 'None':
-            pass
+        print(i)
+        if i[1] == 'None' or i[1] == None\
+            or i[0] == 'None' or i[0] == None:
+                pass
+            
         elif i[0] == 'weekend':
             weekend.append(int(i[1]))
+            
         elif i[0] == 'non_weekend':
             non_weekend.append(int(i[1]))
-        print(i[1])
+
 
     data = len(weekend) + len(non_weekend)
     print(data)
@@ -61,10 +65,7 @@ def traitement_weekend(donnée):
 def diagramme_weekend(donnée_weekend, donnée_non_weekend,
               er_weekend, er_non_weekend, save):
 
-    try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\weekend.png')
-    except:
-        pass
+
     plt.bar(range(2), [donnée_weekend, donnée_non_weekend],
                         width = 0.1, color = 'red',
                        yerr = [er_weekend, er_non_weekend],
@@ -78,10 +79,13 @@ def diagramme_weekend(donnée_weekend, donnée_non_weekend,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon le weekend")
     
-    plt.savefig(save)
-
-    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
-
+    nouveau = new()
+    
+    plt.savefig(nouveau)
+    plt.clf()
+    plt.close()
+    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    return nouveau
 
 
 
