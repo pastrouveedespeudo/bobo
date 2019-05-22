@@ -48,7 +48,7 @@ def traitement_heure(ville):
         
         if i[0] == 'None' or i[0] == None or\
            i[1] == None or i[1] == 'None':
-            break
+            pass
 
         elif i[0] == 'non_heure_pointe':
             horraire_non_pointe.append(int(i[1]))
@@ -66,6 +66,7 @@ def traitement_heure(ville):
         moy = sum(horraire_pointe) / len(horraire_pointe)
     except:
         moy=0
+        
     variance_pointe = np.var(horraire_pointe)
     
     try:
