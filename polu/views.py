@@ -23,6 +23,7 @@ from .graphe.graphique_population import *
 from.polu_ana.polution.traitement_de_donnée import recuperation_data
 from.polu_ana.polution.traitement_de_donnée import condition
 
+from .donnée_site.pollution import *
 
 def home(request):
     return render(request, 'home.html')
@@ -106,9 +107,6 @@ def donnée(request):
 
     bouchons_lyon = bouchons('lyon')
     bouchons_paris = bouchons('paris')
-
-
-
 
 
 
