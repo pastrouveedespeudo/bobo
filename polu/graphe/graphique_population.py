@@ -6,6 +6,7 @@ import numpy as np
 import os
 import shutil
 from .fonction_graphe import moyenne
+from .fonction_graphe import new
 
 def visu_population():
     
@@ -16,7 +17,7 @@ def visu_population():
 
     cursor = conn.cursor()
     
-    cursor.execute("""SELECT POPULATION_ACTIVE_HABITANT, particule FROM ville;""")
+    cursor.execute("""SELECT POPULATION_ACTIVE_HABITANT, nom_ville, particule FROM ville;""")
     
     rows = cursor.fetchall()
     liste = [i for i in rows]
@@ -26,22 +27,26 @@ def visu_population():
 
 def traitement_population(donnée):
 
-    lyon = [0]
-    paris = [0]
-    marseille = [0 ]
+    lyon = []
+    paris = []
+    marseille = []
 
-    try:
-        for i in donnée:
-            print(i)
-            if i[0] == 'lyon':
-                lyon.append(int(i[1]))
-            elif i[0] == 'paris':
-                paris.append(int(i[1]))
-            elif i[0] == 'marseille':
-                marseille.append(int(i[1]))
+  
+    for i in donnée:
+        
+        if i[0] == 'None' or i[0] == None or\
+           i[1] == None or i[1] == 'None'\
+            or i[2] == None or i[2] == 'None':
+                pass
 
-    except:
-        pass
+        elif i[1] == 'lyon':
+            lyon.append(int(i[2]))
+        elif i[1] == 'paris':
+            paris.append(int(i[2]))
+        elif i[1] == 'marseille':
+            marseille.append(int(i[2]))
+            
+        print(i)
 
     data = len(lyon) + len(paris) + len(marseille)
     donnée_lyon = moyenne(lyon)
@@ -57,10 +62,6 @@ def traitement_population(donnée):
 
 def diagramme_population(donnée_lyon, donnée_paris, donnée_marseille,
               er_lyon, er_paris, er_marseille, save):
-    try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\population.png')
-    except:
-        pass
 
     plt.bar(range(3), [donnée_lyon, donnée_paris, donnée_marseille],
                         width = 0.1, color = 'red',
@@ -69,12 +70,16 @@ def diagramme_population(donnée_lyon, donnée_paris, donnée_marseille,
                 
 
 
-    plt.xticks(range(3), ['lyon', 'paris', 'marseille'])
+    plt.xticks(range(3), ['plus de 300 K', 'plus de 1M', 'plus de 500 K'])
 
         
     plt.ylabel('Taux de pollution en AQI')
-    plt.title("Taux de pollution selon les villes")
-    
-    plt.savefig(save)
-    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    plt.title("Taux de pollution selon le taux de population active")
 
+    nouveau = new()
+    
+    plt.savefig(nouveau)
+    plt.clf()
+    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+
+    return nouveau
