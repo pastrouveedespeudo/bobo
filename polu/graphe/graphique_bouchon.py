@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab
@@ -7,6 +10,8 @@ import os
 import shutil
 
 from .fonction_graphe import moyenne
+from .fonction_graphe import new
+
 
 
 def visu_bouchon(ville):
@@ -45,7 +50,7 @@ def traitement_bouchon(donnée):
         print(i)
         if i[1] == 'None' or i[1] == None\
             or i[0] == 'None' or i[0] == None:
-                break
+                pass
         elif i[0] == 'non':
             non.append(int(i[1]))
         elif i[0] == 'petit':
@@ -93,7 +98,7 @@ def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
               er_grand, er_assez_grand,
               er_tres_grand, save):
 
-    liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    
     
     plt.bar(range(6), [donnée_non, donnée_petit, donnée_moyen,
                        donnée_grand, donnée_assez_grand,
@@ -113,21 +118,16 @@ def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les bouchons")
 
-    try:
-        nb = str((liste[-1][-4])) + str((liste[-1][-5]))
-        nb = int(nb) + 1
-    except:
-        nb = int(liste[-1][-5]) + 1
-        
-        new_save = str(liste[-1][:-5]) + str(nb) + '.png' 
-    
-    plt.savefig(new_save)
+
+    nouveau = new()
+    print(nouveau)
+    plt.savefig(nouveau)
+    plt.clf()
     plt.close()
     
-    shutil.move(new_save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
-    return new_save
+    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    return nouveau
 
-    return new_save
 
 
 
