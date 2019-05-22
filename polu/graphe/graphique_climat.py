@@ -47,7 +47,7 @@ def traitementtt_climat(donnée):
     
         if i[0] == None or i[0] == 'None' or\
            i[1] == None or i[1] == 'None':
-            break
+            pass
         
         elif i[0] == '>0':
             inf_zero.append(int(i[1]))
@@ -130,6 +130,7 @@ def diagramme_climattt(donnée_inf_zero, donnée_zero_dix,
     nouveau = new()
     
     plt.savefig(nouveau)
+    plt.clf()
     plt.close()
     
     shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
