@@ -234,113 +234,146 @@ def polution_paris(request):
     return render(request, 'polution_paris.html', {'heure':a[0],'minute':a[1], 'temps':b, 'pollution':c})
 
 
+def supp():
+    
+    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    liste = os.listdir()
+    for i in liste[1:-4]:
+        os.remove(i)
+    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\polution')
+
+
 def graphe(request):
+    
     if request.method == "POST":
         
         ville = request.POST.get('ville')
         graphe = request.POST.get('graphe')
         
-        print('grapheeeeeeeeeeeeeeeeeeeeeee')
+
         print(ville, graphe)
 
         if graphe == 'bouchon':
             a = visu_bouchon(ville)
             donnée = traitement_bouchon(a)
-            diagramme_bouchon(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+            b = diagramme_bouchon(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
                       donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
-                      donnée[10], donnée[11], 'diagramme_bouchon.png')
+                      donnée[10], donnée[11], 'diagramme.png')
             
-            return HttpResponse('diagramme_bouchon.png')
+
+            supp()
+            return HttpResponse(b)
+
 
         elif graphe == 'climat':
 
-            a = visuuu_climat(ville)
-            donnée = traitementtt_climat(a)
-            diagramme_climattt(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+            c = visuuu_climat(ville)
+            donnée = traitementtt_climat(c)
+            d = diagramme_climattt(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
                       donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
-                      donnée[10], donnée[11], 'diagramme_climat.png')
-            
-            return HttpResponse('diagramme_climat.png')
+                      donnée[10], donnée[11], 'diagramme.png')
+            supp()
+            return HttpResponse(d)
 
-        
+
+
         elif graphe == 'heure':
             horraire = traitement_heure(ville)
-            diagramme_heure(horraire[0], horraire[1], horraire[2], horraire[3],
-                            'diagramme_heure.png')
+            e = diagramme_heure(horraire[0], horraire[1], horraire[2], horraire[3],
+                            'diagramme.png')
+            supp()
+            return HttpResponse(e)
 
-            return HttpResponse('diagramme_heure.png')
+
+
+
         
         elif graphe == 'manif':
-            a = visu_manif(ville)
-            donnée = traitement_manif(a)
-            diagramme_manif(donnée[0], donnée[1],
-                    donnée[2], donnée[3], 'manif.png')
-            return HttpResponse('manif.png')
+            f = visu_manif(ville)
+            donnée = traitement_manif(f)
+            g = diagramme_manif(donnée[0], donnée[1],
+                    donnée[2], donnée[3], 'diagramme.png')
+
+            supp()
+            return HttpResponse(g)
+
+
 
 
         elif graphe == 'météo':
-            a = visu_climat(ville)
-            donnée = traitement_climat(a)
-            diagramme_climat(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-                      donnée[5], 'météo.png')
-            return HttpResponse('météo.png')
+            h = visu_climat(ville)
+            donnée = traitement_climat(h)
+            i = diagramme_climat(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+                      donnée[5], 'diagramme.png')
+            
+            supp()
+            return HttpResponse(i)
+
+
+
                         
         elif graphe == 'population':
-            a = visu_population()
-            donnée = traitement_population(a)
-            diagramme_population(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-                      donnée[5], 'population.png')
+            j = visu_population()
+            donnée = traitement_population(j)
+            k = diagramme_population(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+                      donnée[5], 'diagramme.png')
+            supp()
+            return HttpResponse(k)
 
-            return HttpResponse('population.png')
-
-            
+        
         elif graphe == 'pression':
-            a = visu_pression(ville)
-            donnée = traitement_pression(a)
-            diagramme_pression(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-                      donnée[5], 'pression.png')
-            return HttpResponse('pression.png')
-            
+            l = visu_pression(ville)
+            donnée = traitement_pression(l)
+            m = diagramme_pression(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+                      donnée[5], 'diagramme.png')
+
+            supp()
+            return HttpResponse(m)
+
+
+
+
+    
         elif graphe == 'saison':
-            a = visu_saison(ville)
-            donnée = traitement_saison(a)
+            n = visu_saison(ville)
+            donnée = traitement_saison(n)
 
-            diagramme_saison(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+            o = diagramme_saison(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
                       donnée[5], donnée[6], donnée[7],
-                             'saison.png')
-
-            return HttpResponse('saison.png')
+                             'diagramme.png')
+            supp()
+            return HttpResponse(o)
 
 
             
         elif graphe == 'vent':
-            a = visu_vent(ville)
-            donnée = traitement_vent(a)
-            diagramme_vent(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-                      donnée[5], donnée[6], donnée[7],'vent.png')
+            p = visu_vent(ville)
+            donnée = traitement_vent(p)
+            q = diagramme_vent(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
+                      donnée[5], donnée[6], donnée[7],'diagramme.png')
 
-
-            return HttpResponse('vent.png')
+            supp()
+            return HttpResponse(q)
 
         
         elif graphe == 'weekend':
 
-            a = visu_weekend(ville)
-            donnée = traitement_weekend(a)
-            diagramme_weekend(donnée[0], donnée[1], donnée[2], donnée[3],
-                              'weekend.png')
-            
-            return HttpResponse('weekend.png')
+            r = visu_weekend(ville)
+            donnée = traitement_weekend(r)
+            s = diagramme_weekend(donnée[0], donnée[1], donnée[2], donnée[3],
+                              'diagramme.png')
+            supp()
+            return HttpResponse(s)
 
         
         elif graphe == 'traffique':
-            a = visu_traffique(ville)
-            donnée = traitement_traffique(a)
-            diagramme_traffique(donnée[0], donnée[1], donnée[2], donnée[3],
-                                'traffique.png')
-
-            return HttpResponse('traffique.png')
-    
+            t = visu_traffique(ville)
+            donnée = traitement_traffique(t)
+            u = diagramme_traffique(donnée[0], donnée[1], donnée[2], donnée[3],
+                                'diagramme.png')
+            supp()
+            return HttpResponse(u)
+  
 
         
     return render(request, 'graphe.html')
