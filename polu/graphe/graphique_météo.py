@@ -6,6 +6,7 @@ import numpy as np
 import os
 import shutil
 
+from .fonction_graphe import new
 from .fonction_graphe import *
 
 def visu_climat(ville):
@@ -34,19 +35,23 @@ def traitement_climat(donnée):
     nuageux = []
     pluie = []
 
-    try:
-        for i in donnée:
-            if i[0] == 'beau_temps':
-                beau.append(int(i[1]))
+ 
+    for i in donnée:
+        if i[0] == 'None' or i[0] == None or\
+           i[1] == None or i[1] == 'None':
+            pass
+        elif i[0] == 'beau_temps':
+            beau.append(int(i[1]))
 
-            elif i[0] == 'nuageux':
-                nuageux.append(int(i[1]))
+        elif i[0] == 'nuageux':
+            nuageux.append(int(i[1]))
 
-            elif i[0] == 'pluie':
-                pluie.append(int(i[1]))
+        elif i[0] == 'pluie':
+            pluie.append(int(i[1]))
 
-    except:
-        pass
+        print(i)
+
+   
     data = len(beau) + len(nuageux) + len(pluie)
     print(data)
 
@@ -65,10 +70,6 @@ def diagramme_climat(donnée_beau, donnée_nuageux, donnée_pluie,
               er_beau, er_nuageux, er_pluie, save):
 
 
-    try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\météo.png')
-    except:
-        pass
     
     plt.bar(range(3), [donnée_beau, donnée_nuageux, donnée_pluie],
                         width = 0.1, color = 'red',
@@ -82,10 +83,15 @@ def diagramme_climat(donnée_beau, donnée_nuageux, donnée_pluie,
         
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon le temps")
-    
-    plt.savefig(save)
-    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
+    nouveau = new()
+
+    
+    plt.savefig(nouveau)
+    plt.clf()
+    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+
+    return nouveau
 
 
 
