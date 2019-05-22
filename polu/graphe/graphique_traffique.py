@@ -6,6 +6,8 @@ import numpy as np
 import os
 import shutil
 from .fonction_graphe import moyenne
+from .fonction_graphe import new
+
 
 def visu_traffique(ville):
     
@@ -30,31 +32,36 @@ def visu_traffique(ville):
 
 
 def traitement_traffique(donnée):
-    depart_routier = [0]
+    depart_routier = []
     regulier_jour = []
 
-    
+ 
     for i in donnée:
-
-        if i[0] == 'regulier jour':
+    
+        if i[0] == None or i[0] == 'None' or\
+           i[1] == None or i[1] == 'None':
+            pass
+        elif i[0] == 'regulier jour':
             regulier_jour.append(int(i[1]))
-        elif i[0] == 'depart_routier jour':
+        elif i[0] == 'depart_routier':
             depart_routier.append(int(i[1]))
 
+        print(i)
+        
+    data = len(depart_routier) + len(regulier_jour)
+    print(data)
 
     donnée_regulier_jour = moyenne(regulier_jour)
     donnée_depart_routier = moyenne(depart_routier)
 
     return donnée_regulier_jour[0], donnée_depart_routier[0],\
-            donnée_regulier_jour[1], donnée_depart_routier[1]
+            donnée_regulier_jour[1], donnée_depart_routier[1], data
 
 def diagramme_traffique(donnée_regulier_jour, donnée_depart_routier,
               er_regulier_jour, er_depart_routier, save):
 
-    try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\traffique.png')
-    except:
-        pass
+
+    
     plt.bar(range(2), [donnée_regulier_jour, donnée_depart_routier],
                         width = 0.1, color = 'red',
                        yerr = [er_regulier_jour, er_depart_routier],
@@ -67,10 +74,15 @@ def diagramme_traffique(donnée_regulier_jour, donnée_depart_routier,
         
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les départ routiers")
-    
-    plt.savefig(save)
-    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
 
+    nouveau = new()
+    
+    plt.savefig(nouveau)
+    plt.clf()
+    plt.close()
+    
+    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    return nouveau
 
 
 
