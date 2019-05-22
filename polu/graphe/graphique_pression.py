@@ -6,6 +6,8 @@ import numpy as np
 import os
 import shutil
 from .fonction_graphe import moyenne
+from .fonction_graphe import new
+
 
 def visu_pression(ville):
     
@@ -30,20 +32,27 @@ def visu_pression(ville):
 
 def traitement_pression(donnée):
 
-    forte = [0]
-    normale = [0]
+    forte = [1]
+    normale = []
     faible = []
 
     for i in donnée:
-        print(i)
-        if i[0] == 'forte':
+        
+        if i[0] == None or i[0] == 'None' or\
+           i[1] == None or i[1] == 'None':
+            pass
+        elif i[0] == 'forte':
             forte.append(int(i[1]))
 
         elif i[0] == 'normale':
-            forte.append(int(i[1]))
+            normale.append(int(i[1]))
 
         elif i[0] == 'faible':
             faible.append(int(i[1]))
+        print(i)
+
+    data = len(forte) + len(normale) + len(faible)
+    print(data)
 
     donnée_forte = moyenne(forte)
     donnée_faible = moyenne(faible)
@@ -51,16 +60,13 @@ def traitement_pression(donnée):
 
 
     return donnée_forte[0], donnée_faible[0], donnée_normale[0],\
-           donnée_forte[1], donnée_faible[1], donnée_normale[1],
+           donnée_forte[1], donnée_faible[1], donnée_normale[1],data
 
 
 
 def diagramme_pression(donnée_forte, donnée_faible, donnée_normale,
               er_forte, er_faible, er_normale, save):
-    try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\pression.png')
-    except:
-        pass
+
     
     plt.bar(range(3), [donnée_forte, donnée_faible, donnée_normale],
                         width = 0.1, color = 'red',
@@ -75,10 +81,14 @@ def diagramme_pression(donnée_forte, donnée_faible, donnée_normale,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon la pression en hpa")
     
-    plt.savefig(save)
-
-    shutil.move(save, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
-
+    nouveau = new()
+    print(nouveau)
+    plt.savefig(nouveau)
+    plt.clf()
+    plt.close()
+    
+    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    return nouveau
 
 
 
