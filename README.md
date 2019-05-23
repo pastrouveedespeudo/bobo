@@ -3,7 +3,7 @@
 
 demain: refactoriser a mort
 
-okiii plus qua mettre les static et changer la database des settings et tous les futurs bugs puis refaire un peu le code, le texte,
+okiii plus qua faire les futurs bugs puis refaire un peu le code, le texte,
 la partie machine a o et c ok!
 
 #<a href="https://fr.freepik.com/photos-vecteurs-libre/fond">Fond vecteur créé par vectorpocket - fr.freepik.com</a>
