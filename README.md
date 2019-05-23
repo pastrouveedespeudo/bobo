@@ -3,9 +3,6 @@
 
 demain: refactoriser a mort
 
-push heroku
-
-pk tu parles de vent alors que tu parles de voiture rooooooooo
 
 
 #<a href="https://fr.freepik.com/photos-vecteurs-libre/fond">Fond vecteur créé par vectorpocket - fr.freepik.com</a>
@@ -37,7 +34,7 @@ ca donne [1, 1,2,2,3,3,4,4]
 
 #supprimer favoris
 
-#push heroku
+
 
 
 
@@ -58,7 +55,7 @@ ca donne [1, 1,2,2,3,3,4,4]
  
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 
 
