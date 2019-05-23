@@ -1,4 +1,4 @@
-
+from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -20,7 +20,7 @@ from .polution.main import particulee
 from .polution.traitement_de_donnée import condition
 from .polution.traitement_de_donnée import recuperation_data
 
-
+@csrf_protect
 def remplir_database(request):
 
     if request.method == "POST":
@@ -48,6 +48,9 @@ def remplir_database(request):
 
         if verif:
             clean_data()
+            clean_data2()
+            clean_data3()
+            clean_data4()
             print('ouiiiiiiiii')
 
 
