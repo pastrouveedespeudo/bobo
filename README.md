@@ -2,6 +2,8 @@
 
 #mettre des logo de chargement
 
+#les vetements saffichainet pas car la database est viiiiiide ! essaie de trouver comment trasnférer d'une database a une autre
+
 #frere jme suis donnée pas mal de mal stp marche sur le local pyscreen marche pffffff c pas cool
 
 #régler tous les bug
