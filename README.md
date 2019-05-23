@@ -2,6 +2,8 @@
 
 #mettre des logo de chargement
 
+#je crois pas sur quavec psycoipg2 je peux remplir depuis mon pc des truks, ca veut dire que jpe remplir des databases de gens sur github 
+
 #les vetements saffichainet pas car la database est viiiiiide ! essaie de trouver comment trasnférer d'une database a une autre
 
 #frere jme suis donnée pas mal de mal stp marche sur le local pyscreen marche pffffff c pas cool
