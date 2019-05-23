@@ -2,7 +2,7 @@
 
 #mettre des logo de chargement
 
-#ca c un site quali
+#régler tous les bug
 
 #finir les textes et info_polu et machine a eau
 
