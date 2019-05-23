@@ -1,5 +1,7 @@
 #https://myprofilmypollution.herokuapp.com/
 
+#mettre des logo de chargement
+
 #ca c un site quali
 
 #finir les textes et info_polu et machine a eau
