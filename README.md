@@ -2,6 +2,8 @@
 
 #mettre des logo de chargement
 
+#frere jme suis donnée pas mal de mal stp marche sur le local pyscreen marche pffffff c pas cool
+
 #régler tous les bug
 
 #finir les textes et info_polu et machine a eau
