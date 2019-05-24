@@ -4,6 +4,8 @@
 
 #tout ranger ben si tu finis peut etre ajouter un truk avec speech recognitiion via les texte trises du genre le bien etre, le coté psychologie, dans les magazine de mode y'a toujours une rubrique psycho et nouveau gadjet ici popo fin j'imagine je sais pas j'en ai jamais lu
 
+#ouais fin jusqu'au prochain gros bug comme la capture decran
+
 #reflechis, au pire remplir la database depuis non pas heroku mais depuis ton pc.... et la capture decran ca on verra
 
 #je crois pas sur quavec psycoipg2 je peux remplir depuis mon pc des truks, ca veut dire que jpe remplir des databases de gens sur github 
