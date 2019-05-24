@@ -45,7 +45,12 @@ def database_mode(request):
     data_coupe = recup2()#from coupe_analysis
     data2 = haut_bas()#from mode_w_data
 
-    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+    try:
+        os.chdir('/app/static/bobo')
+    except:
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+
+
     liste = os.listdir()
 
     liste1 = []
@@ -57,13 +62,13 @@ def database_mode(request):
            i == 'coul.py' or i == 'coupe_analysis.py' or i=='constante.py' or\
            i == 'database.py' or i == 'mode_analyse.py' or i == 'mode_w_data.py' or\
            i == 'palettecouleur.py' or i == 'palettecouleur_coiffure.py' or\
-           i == 'traitement_bas1.jpg' or i == 'traitement_haut.jpg' or i == '__pycache__' or i=='bobo'\
+           i == 'traitement_bas1.jpg' or i == 'traitement_haut.jpg' or i == '__pycache__' or i=='bobo.txt'\
            or i =='analysa.py' or i == 'tendance.py':
             pass
         else:
             laliste1.append(i)
 
-
+    laliste1 = sorted(laliste1)
 
     c = 0
     for i in laliste1:
@@ -74,9 +79,12 @@ def database_mode(request):
             pass
         
 
+    try:
+        os.chdir('/app/static/bobo')
+    except:
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
 
-
-    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+        
     listee = os.listdir()
     
     liste11 = []
@@ -115,17 +123,19 @@ def database_mode(request):
     brun = coupa.count('marron')
     chatain = coupa.count('chatin')
     blond = coupa.count('blond')
-
+    print(liste1)
 
     return render(request, "database_mode.html", {'data':data, 'data2':data2,
                                                   'data_coupe':data_coupe,
-                                                  'image_hab':liste1, 'final':liste_finale,
+                                                  'image_hab':liste1,
+                                                  'final':liste_finale,
+                                                  'laliste1':laliste1,
                                                   'blond':blond, 'brun':brun, 'chatain':chatain})
 
 
 def tendance(request):
     
-    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+    os.chdir('/app/static/bobo')
     liste = os.listdir()
 
     liste1 = []
@@ -201,7 +211,7 @@ def ajout(request):
         if request.method == "POST":
             mode = request.POST.get('hidden')
 
-            liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+            liste = os.listdir('/app/static/bobo')
             
             liste_max = []
 
@@ -239,9 +249,9 @@ def ajout(request):
             if form.is_valid():
                 im = form.save(commit=False)
                 im.save()
-                
-                liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
-                os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+        
+                liste = os.listdir('/app/static/bobo')
+                os.chdir('/app/static/bobo')
                 img = cv2.imread(liste[-1])
                 cv2.imwrite(nouveau, img)
 
