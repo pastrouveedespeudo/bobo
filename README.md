@@ -1,8 +1,6 @@
 #https://myprofilmypollution.herokuapp.com/
 
-#10 truks a screenshot aucun ne marchent pffffffffffffffff
-
-faire télécharger le mec ?
+#prendre un screenshot avec js et en parrallele faire la creation de doss et l'envoyé a js pour que ca aille l'enregistrer
 
 #reflechis, au pire remplir la database depuis non pas heroku mais depuis ton pc.... et la capture decran ca on verra
 
