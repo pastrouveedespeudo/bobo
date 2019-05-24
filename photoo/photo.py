@@ -1,7 +1,10 @@
-from PIL import ImageGrab
 from PIL import *
 from PIL import Image
+
+
 import cv2
+import numpy as np
+
 import os
 import shutil
 
@@ -12,15 +15,13 @@ from .models import *
 from .coupe_dico import DICO_COIF2
 from .coupe_dico import DICO_COIF3
 
-def photo():
 
-    video = cv2.VideoCapture(0)
 
-    a = 0
+def photographie():
+
     
-    #img = ImageGrab.grab()
-    #image1 = img.save()
-
+    video = cv2.VideoCapture(0)
+    a = 0
     while True:
 
         a = a + 1
@@ -37,22 +38,34 @@ def photo():
         key=cv2.waitKey(1)
 
         if key == ord('o'):
+            cv2.imwrite('yoyoyo.jpg', frame)
             break
 
 
-    
+
     video.release()
 
-    cv2.destroyAllWindows
 
+
+##    cv2.namedWindow(window_name, cv2.WND_PROP_FULLSCREEN)
+##    cv2.setWindowProperty(window_name, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
+    ret, frame = cap.read()
+        
+    cv2.imwrite('image.jpg', frame)
+
+    cap.release()
+    cv2.destroyAllWindows()
 
     
 def capture(user, format_image):
 
-    img = ImageGrab.grab()
+    cap = cv2.VideoCapture(0)
 
+    ret, frame = cap.read()
+    
 
-
+            
     try:
         os.mkdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}'.format(str(user)))
         
@@ -71,6 +84,7 @@ def capture(user, format_image):
         os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'.format(str(user)))
 
 
+
     liste = os.listdir()
     
     liste2 = []
@@ -79,7 +93,9 @@ def capture(user, format_image):
         
         if format_image == "cheveux":
             name_picture = "1.jpg"
-            img.save(str(name_picture))
+            cv2.imwrite(str(name_picture), frame)
+            cap.release()
+            #img.save(str(name_picture))
 
      
             acc = Accounts.objects.filter(name=user).all()
@@ -91,7 +107,9 @@ def capture(user, format_image):
 
         elif format_image == "habit":
             name_picture = "1.jpg"
-            img.save(str(name_picture))
+            #img.save(str(name_picture))
+            cv2.imwrite(str(name_picture), frame)
+            cap.release()
             
             acc = Accounts.objects.filter(name=user).all()
             for i in acc:
@@ -119,8 +137,8 @@ def capture(user, format_image):
 
     sauvegarde(user, str(maximum+1) + ".jpg", format_image)
     
-    img.save(str(maximum + 1) + ".jpg" )
-
+    cv2.imwrite(str(maximum + 1) + ".jpg", frame)
+    cap.release()
     return str(maximum + 1) + ".jpg" 
 
 
