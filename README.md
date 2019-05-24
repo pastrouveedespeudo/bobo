@@ -1,8 +1,8 @@
 #https://myprofilmypollution.herokuapp.com/
 
-#mettre des logo de chargement
 
-#effacer toutes les analyses les faire a la main a cause du timeout !
+
+#tout ranger ben si tu finis peut etre ajouter un truk avec speech recognitiion via les texte trises du genre le bien etre, le coté psychologie, dans les magazine de mode y'a toujours une rubrique psycho et nouveau gadjet ici popo fin j'imagine je sais pas j'en ai jamais lu
 
 #reflechis, au pire remplir la database depuis non pas heroku mais depuis ton pc.... et la capture decran ca on verra
 
