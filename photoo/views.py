@@ -10,7 +10,7 @@ from accounts.models import Accounts
 from .coupe_dico import DICO_COIF
 
 from .analysis.database import *
-
+from django.middleware.gzip import GZipMiddleware
 try:
     from static.bobo.tendance import *
 except:
@@ -18,6 +18,12 @@ except:
 
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
+
+from django.views.decorators.gzip import gzip_page
+from django.http import StreamingHttpResponse
+
+import cv2
+
 
 
 
@@ -82,12 +88,12 @@ def photo(request):
 
         current_user = request.user         
         print(current_user)
-
-
+        
         image = capture(current_user, format_image)
+
         
         if format_image == "cheveux":
-            os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\cheveux'.format(str(current_user)))
+            os.chdir('/app/static/img/portfolio/photo/{}/cheveux'.format(str(current_user)))
             error = cropage_cheveux(image, current_user, 'cheveux')
             print(error,'0000000000000000000000000000000000000000000000000')
             if error == 'error':
@@ -96,7 +102,7 @@ def photo(request):
             
         elif format_image == "habit":
             print(current_user)
-            os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\img\portfolio\photo\{}\habit'.format(str(current_user)))
+            os.chdir('/app/static/img/portfolio/photo/{}/habit'.format(str(current_user)))
             error1 = cropage_habit(image, current_user, 'habit')
             print(error1,'0000000000000000000000000000000000000000000000000')
             if error1 == 'error':
@@ -138,8 +144,6 @@ def photo(request):
 
 
 
-def essais(request):
-    return render(request, 'essais.html')
 
 
 
@@ -319,6 +323,18 @@ def habits(request):
 
 
 
+
+def essais(request):
+
+    video = cv2.VideoCapture(0 + cv2.CAP_DSHOW)
+
+    check, frame = video.read()
+        
+    video.release()
+
+    cv2.imwrite('eeeeeeeeeeeeeee.jpg', frame)
+
+    return render(request, 'essais.html')
 
 
 
