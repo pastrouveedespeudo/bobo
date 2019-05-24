@@ -21,7 +21,7 @@ from django.http import JsonResponse
 from static.bobo.mode_w_data import haut_bas
 from static.bobo.coupe_analysis import *
 from static.bobo.mode_analyse import *
-from static.bobo.analyse_femme_haut import *
+#from static.bobo.analyse_femme_haut import *
 from static.bobo.database import supprimer_database
 
 
@@ -154,8 +154,6 @@ def tendance(request):
         else:
             laliste1.append(i)
 
-
-
     for i in laliste1:
         try:
             liste1.append((str(laliste1[c]), str(laliste1[c+1]), int(str(c) + str(c))))
@@ -267,18 +265,6 @@ def ajout(request):
 
 
 
-
-
-
-def analyse(request):
-
-    if request.method == "POST":
-        try:
-            traitement()
-            analysa()
-        except:
-            pass
-    return render(request, "analyse.html")
 
 
 def essais(request):
