@@ -2,6 +2,8 @@
 
 #mettre des logo de chargement
 
+#effacer toutes les analyses les faire a la main a cause du timeout !
+
 #reflechis, au pire remplir la database depuis non pas heroku mais depuis ton pc.... et la capture decran ca on verra
 
 #je crois pas sur quavec psycoipg2 je peux remplir depuis mon pc des truks, ca veut dire que jpe remplir des databases de gens sur github 
