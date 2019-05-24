@@ -1,10 +1,8 @@
 #https://myprofilmypollution.herokuapp.com/
 
+#10 truks a screenshot aucun ne marchent pffffffffffffffff
 
-
-#tout ranger ben si tu finis peut etre ajouter un truk avec speech recognitiion via les texte trises du genre le bien etre, le coté psychologie, dans les magazine de mode y'a toujours une rubrique psycho et nouveau gadjet ici popo fin j'imagine je sais pas j'en ai jamais lu
-
-#ouais fin jusqu'au prochain gros bug comme la capture decran
+faire télécharger le mec ?
 
 #reflechis, au pire remplir la database depuis non pas heroku mais depuis ton pc.... et la capture decran ca on verra
 
