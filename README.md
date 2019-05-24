@@ -1,5 +1,7 @@
 #https://myprofilmypollution.herokuapp.com/
 
+c horrible.... plus d'haarscade et sté ma fierté....
+
 #prendre un screenshot avec js et en parrallele faire la creation de doss et l'envoyé a js pour que ca aille l'enregistrer
 
 #reflechis, au pire remplir la database depuis non pas heroku mais depuis ton pc.... et la capture decran ca on verra
