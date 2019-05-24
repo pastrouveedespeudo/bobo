@@ -273,10 +273,8 @@ def ajout(request):
 def analyse(request):
 
     if request.method == "POST":
-        print("ouiiiiiiiiiiiiiiiiiiiiiii")
-        traitement()
-       
         try:
+            traitement()
             analysa()
         except:
             pass
