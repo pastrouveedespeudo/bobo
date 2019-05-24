@@ -2,6 +2,12 @@
 
 c horrible.... plus d'haarscade et sté ma fierté....
 
+#https://www.html5rocks.com/en/tutorials/getusermedia/intro/
+
+2 videos qui marchaient pas 2 video de 16 mintues ou le type code a une putin de vitesse pfff jamais jfais ca serieux
+
+# donnée la possibilité de réduire le cadre... 
+
 #prendre un screenshot avec js et en parrallele faire la creation de doss et l'envoyé a js pour que ca aille l'enregistrer
 
 #reflechis, au pire remplir la database depuis non pas heroku mais depuis ton pc.... et la capture decran ca on verra
