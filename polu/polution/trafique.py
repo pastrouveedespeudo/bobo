@@ -25,7 +25,7 @@ def trafique_circulation(TRAFIQUE, HEURE):
     minute = date.minute
 
 
-    heure_pointe_semaine = [7,8,9,16,17,18,19]
+    heure_pointe_semaine = [9,10,11,18,19,20,21]
 
     départ_routier = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
                       (1,3),(2,3),(8,3),(9,3),
