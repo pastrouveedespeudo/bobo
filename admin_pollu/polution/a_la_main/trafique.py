@@ -117,6 +117,8 @@ def bouchons(lieu, BOUCHON):
         try:
             for i in propriete:
                 for j in i:
+                    if j == ',':
+                        liste.append(str('.'))
                     try:
                         j = int(j)
                         if j == int(j):
@@ -125,7 +127,12 @@ def bouchons(lieu, BOUCHON):
                         pass
             liste = "".join(liste)
             print(liste,'00000000000000000000000000000000000000000000')
-            b = int(liste)
+            try:
+                b = float(liste)
+                print(b)
+            except:
+                b = int(liste)
+                print(b)
 
         except:
             b = 0
@@ -134,20 +141,20 @@ def bouchons(lieu, BOUCHON):
             BOUCHON['non'] += 1 
 
     
-        elif b > 0  and b <= 5:
+        elif b > 0  and b <= 5.0:
             BOUCHON['petit'] += 1 
 
 
-        elif b > 5 and b <= 9:
+        elif b > 5 and b <= 9.0:
             BOUCHON['moyen'] += 1 
 
-        elif b > 9 and b <= 15:
+        elif b > 9 and b <= 15.0:
             BOUCHON['grand'] += 1 
 
-        elif b > 15 and b <= 20:
+        elif b > 15 and b <= 20.0:
             BOUCHON['assez grand'] += 1 
 
-        elif b > 20:
+        elif b > 20.0:
             BOUCHON['tres grand'] += 1
 
     elif lieu == "marseille":
