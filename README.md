@@ -2,6 +2,10 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
+le jour de la soutenance, si jtrouve un autre image qu'un habit sur le site.... jpourrais remonter jusqu'a toi facilement
+
+#résoudre lyon prediction saffiche pas... et c pas comme eux et faut dire a +- 10 pcque jaurai bien acheter un capteur et jlaurai filer a un gars mais bon...
+
 remplirt la datazbase de mysql
 
 améliorer le rendu visuel tout effacer
