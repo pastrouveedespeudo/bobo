@@ -117,6 +117,8 @@ def bouchons(lieu, BOUCHON):
         try:
             for i in propriete:
                 for j in i:
+                    if j == ',':
+                        liste.append(str('.'))
                     try:
                         j = int(j)
                         if j == int(j):
@@ -125,7 +127,12 @@ def bouchons(lieu, BOUCHON):
                         pass
             liste = "".join(liste)
             print(liste,'00000000000000000000000000000000000000000000')
-            b = int(liste)
+            try:
+                b = float(liste)
+                print(b)
+            except:
+                b = int(liste)
+                print(b)
 
         except:
             b = 0
