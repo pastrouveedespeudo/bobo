@@ -212,7 +212,7 @@ def ville_pollué_classement(lieu):
             indexe = liste.index(i)
     
     
-    return indexe
+    return indexe + 1
 
 
 
@@ -515,11 +515,13 @@ def bouchons(lieu):
         page = r.content
         soup = BeautifulSoup(page, "html.parser")
         propriete = soup.find("span", {'class':'font38 green'})
-
-        
+        liste = []
+        print(propriete)
         try:
             for i in propriete:
                 for j in i:
+                    if j == ',':
+                        liste.append(str('.'))
                     try:
                         j = int(j)
                         if j == int(j):
@@ -527,8 +529,14 @@ def bouchons(lieu):
                     except:
                         pass
             liste = "".join(liste)
-            b = int(liste)
-  
+            print(liste,'000000000000000')
+            try:
+                b = float(liste)
+                print(b)
+            except:
+                b = int(liste)
+                print(b)
+
         except:
             b = 0
         
@@ -570,8 +578,6 @@ def bouchons(lieu):
         b = kmbouchon
            
         return b
-
-
 
 
 
