@@ -183,22 +183,16 @@
         <center><div id='message'></div></center>
 
         <div class="row">
-        
-         <div class="col-sm-4">
-            <form method='POST' action='construction'>{% csrf_token %}
-              <input type='button' value='Construire la database' id='construction'>
-            </form>
-         </div>
-              
-          <div class="col-sm-4">
+          
+          <div class="col-sm">
               <input type='button' value='voir la database' onclick='voir_database()'>
           </div>
           
-          <div class="col-sm-4">
+          <div class="col-sm">
              <input type='button' value='remplir la database' onclick='remplir_database()'>
           </div>
           <br><br>
-          <div class="col-sm-12">
+          <div class="col-sm">
              <input type='button' value='voir la prédiction' onclick='voir_prédiction()'>
           </div>
 
