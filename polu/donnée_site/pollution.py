@@ -557,7 +557,7 @@ def bouchons(lieu):
         soup = BeautifulSoup(page, "html.parser")
 
         liste.append(str(soup))
-        bouchon = liste[0][1874:1877]
+        bouchon = liste[0][1870:1890]
         bouchon = str(bouchon)
 
         kmbouchon = []
