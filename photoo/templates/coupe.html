@@ -38,12 +38,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
 
-    <style>
-      #my{
-        width:50px;
-        height:50px;
-    }
-    </style>
+    <style> #my{width:50px; height:50px;}</style>
     
     <div class="container">
 
@@ -54,28 +49,23 @@
       
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   
-      
       <img src="/static/img/portfolio2/icone/indian.png" id="my">
       <a class="navbar-brand js-scroll-trigger" href="/polution/polution">My_pollution</a>
       
       <button class="navbar-toggler navbar-toggler-right" type="button"
-      data-toggle="collapse" data-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false"
-      aria-label="Toggle navigation">
-      
-      <span class="navbar-toggler-icon"></span>
-        
+        data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> 
       </button>
 
 
-      
       <div class="collapse navbar-collapse" id="navbarResponsive">
 
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
 
 
         {% if user.is_authenticated %}
-
 
           <style>#coif_nav{width:50px; height:50px; margin-left:40px;}</style>
           <li class="nav-item">
@@ -90,7 +80,7 @@
 
           <style>#im3{width:50px; height:50px; margin-left:40px;}</style>
 
-          
+      
           <li class="nav-item">
            <a href = "/photo/habits">
               <img src="/static/img/portfolio/icone/vetements.png" id="im3">
@@ -165,57 +155,33 @@
 
 
 
-
-
     <script>
         function image(){
             document.getElementById("image1").src  = src="/static/img/portfolio/thumbnails/1.jpg";
         
             }
     </script>
-    
+
+
+
     <style>
     
         #image1{margin-top:500px; width: 150px; height: 200px}
         
         #carre1{height:400px; width :200px; background: red; overflow: scroll;}
     
-        #draggable2,
-        #draggable3,
-        #draggable4,
-        #draggable5,
-        #draggable6,
-        #draggable7,
-        #draggable8,
-        #draggable9,
-        #draggable10,
-        #draggable11,
-        #draggable12,
-        #draggable14,
-        #draggable15,
-        #draggable16,
-        #draggable17,
-        #draggable18,
-        #draggable19,
-        #draggable { width: 0px; height: 0px;}
+        #draggable2, #draggable3,#draggable4,#draggable5, #draggable6,#draggable7,
+        #draggable8, #draggable9, #draggable10,#draggable11,#draggable12,
+        #draggable14,#draggable15,#draggable16,#draggable17,#draggable18,
+        #draggable19,#draggable
+        { width: 0px; height: 0px;}
 
-        #favdraggable2,
-        #favdraggable3,
-        #favdraggable4,
-        #favdraggable5,
-        #favdraggable6,
-        #favdraggable7,
-        #favdraggable8,
-        #favdraggable9,
-        #favdraggable10,
-        #favdraggable11,
-        #favdraggable12,
-        #favdraggable14,
-        #favdraggable15,
-        #favdraggable16,
-        #favdraggable17,
-        #favdraggable18,
-        #favdraggable19,
+        #favdraggable2, #favdraggable3,#favdraggable4,
+        #favdraggable5,#favdraggable6,#favdraggable7,
+        #favdraggable8,#favdraggable9,#favdraggable10,
+        #favdraggable11,#favdraggable12,#favdraggable14,
+        #favdraggable15, #favdraggable16,#favdraggable17,
+        #favdraggable18, #favdraggable19,
         #favdraggable { width: 0px; height: 0px;}
     
         #image{
@@ -224,51 +190,52 @@
         }
         #coupe_gauche{
              margin-top:-280px;
-              margin-left:10px;
-              
+              margin-left:10px;      
             
         }
     
         #coupe_droite{
              margin-top:10px;
-             margin-left:900px;
+             margin-left:1100px;
         }
     </style>
               
     
 
-      <script>
-    $( function() {
-        $("#draggable, #draggable2, #draggable3, #draggable4, #draggable5").draggable();
-      } );
-    $( function() {
-        $("#draggable6, #draggable7, #draggable8, #draggable9, #draggable10, #draggable11").draggable();
-      } );
-    $( function() {
-        $("#draggable12, #draggable14, #draggable15, #draggable16, #draggable17, #draggable18, #draggable19, #draggable_favoris").draggable();
-      } );
+
+    <script>
+      $( function() {
+          $("#draggable, #draggable2, #draggable3, #draggable4, #draggable5").draggable();
+        } );
+      $( function() {
+          $("#draggable6, #draggable7, #draggable8, #draggable9, #draggable10, #draggable11").draggable();
+        } );
+      $( function() {
+          $("#draggable12, #draggable14, #draggable15, #draggable16, #draggable17, #draggable18, #draggable19, #draggable_favoris").draggable();
+        } );
 
 
 
-    $( function() {
-        $("#favdraggable, #favdraggable2, #favdraggable3, #favdraggable4, #favdraggable5").draggable();
-      } );
-    $( function() {
-        $("#favdraggable6, #favdraggable7, #favdraggable8, #favdraggable9, #favdraggable10, #favdraggable11").draggable();
-      } );
-    $( function() {
-        $("#favdraggable12, #favdraggable14, #favdraggable15, #favdraggable16, #favdraggable17, #favdraggable18, #favdraggable19, #draggable_favoris").draggable();
-      } );
+      $( function() {
+          $("#favdraggable, #favdraggable2, #favdraggable3, #favdraggable4, #favdraggable5").draggable();
+        } );
+      $( function() {
+          $("#favdraggable6, #favdraggable7, #favdraggable8, #favdraggable9, #favdraggable10, #favdraggable11").draggable();
+        } );
+      $( function() {
+          $("#favdraggable12, #favdraggable14, #favdraggable15, #favdraggable16, #favdraggable17, #favdraggable18, #favdraggable19, #draggable_favoris").draggable();
+        } );
 
 
-      </script>
+    </script>
 
 
 
 
   <!-- About Section -->
-  <section class="page-section bg-primary" id="about">
-    <div class="container">
+  <div style='background:#283B57;'><br><br><br><br></div>
+  <section style='background:#283B57;' id="about">
+    <div class="container>
 
      
       <div class="row justify-content-center">
@@ -277,55 +244,36 @@
           <br>
   
 
-        <br><br>
-            <script>
+      <br><br>
+      <script>
 
-                LISTE_RESIZE = []
-                LISTE_RESIZE_TAILLE_HAUTEUR = []
-                LISTE_RESIZE_TAILLE_LARGEUR = []
-                
-                function nom_image(id, hauteur, largeur){
-                  LISTE_RESIZE.push(id)
-                  console.log(id)
-                  var a = document.getElementById(id).height;
-                  var b = document.getElementById(id).width;
-                  
-           
-                  
-                  LISTE1.push([id, b, a])
-        
-           
-                  
-                
+          LISTE_RESIZE = []
+          LISTE_RESIZE_TAILLE_HAUTEUR = []
+          LISTE_RESIZE_TAILLE_LARGEUR = []
+          
+          function nom_image(id, hauteur, largeur){
+            LISTE_RESIZE.push(id)
+            console.log(id)
+            var a = document.getElementById(id).height;
+            var b = document.getElementById(id).width;
 
+            LISTE1.push([id, b, a])
 
-                LISTE_FAV_FAV = []
-                LISTE_FAV_FAV.push(id)
-       
-               
-                var a = document.getElementById(id);
-
-                var b = a.offsetLeft;
-                var c = a.offsetTop;
-             
-                
-                if(b >= 460 && b <= 580 & c >=60 && c <= 220 ){
-                   
-                    
-                    
-                    
-                }
-                }
-
-
-
-
-
-
-
-
+          LISTE_FAV_FAV = []
+          LISTE_FAV_FAV.push(id)
+ 
          
-            </script>
+          var a = document.getElementById(id);
+
+          var b = a.offsetLeft;
+          var c = a.offsetTop;
+       
+          
+          if(b >= 460 && b <= 580 & c >=60 && c <= 220 ){
+          }
+        }
+
+    </script>
 
     
             
@@ -459,19 +407,9 @@
             </div>
 
 
-      
-
-
-
-
-            
-            
-     
-
-            
             <div id='coupe_droite' style='margin-top:-100px;'>
 
-              <p><strong>Coupes</strong></p>
+              <p><center><strong>Coupes</strong></center></p>
               
               
             
@@ -618,7 +556,7 @@
         var a = document.getElementById(liste_liste[i].id).offsetLeft;
         var b = document.getElementById(liste_liste[i].id).offsetTop;
 
-        if(a >= 460 && a <= 580 & b >=60 && b <= 220 ){
+        if(a >= 400 && a <= 700 & b >=30 && b <= 400 ){
           
           LISTECOUPE.push(liste_liste[i].id)
           document.getElementById("coupedecheveux").value = LISTECOUPE[LISTECOUPE.length - 1];
@@ -655,15 +593,15 @@
   </script>
 
 
-
-
     <div id="basic" style="text-align:center; z-index: 4;">
 
       <video class="videostream" autoplay style="z-index: 4;"></video>
       
       <p><button class="capture-button">Capture video</button> <button id="stop-button">Stop</button></p>
       
-      <p><button id="cssfilters-apply">Apply CSS filter</button></p>
+      <p><button id="cssfilters-apply">Mettre en noir et blanc conseillé</button></p>
+
+      
       
     </div>
 
@@ -794,7 +732,7 @@
 
     
 
-
+  <br><br><br>
   </section>
 
 
@@ -1138,76 +1076,17 @@ video, #cssfilters-stream {
   background: rgba(255,255,255,0.5);
   border: 1px solid #ccc;
 }
-.blur {
-  -webkit-filter: blur(3px);
-  -moz-filter: blur(3px);
-  -o-filter: blur(3px);
-  -ms-filter: blur(3px);
-  filter: blur(3px);
-}
-.brightness {
-  -webkit-filter: brightness(5);
-  -moz-filter: brightness(5);
-  -o-filter: brightness(5);
-  -ms-filter: brightness(5);
-  filter: brightness(5);
-}
-.contrast {
-  -webkit-filter: contrast(8);
-  -moz-filter: contrast(8);
-  -o-filter: contrast(8);
-  -ms-filter: contrast(8);
-  filter: contrast(8);
-}
-.hue-rotate {
-  -webkit-filter: hue-rotate(90deg);
-  -moz-filter: hue-rotate(90deg);
-  -o-filter: hue-rotate(90deg);
-  -ms-filter: hue-rotate(90deg);
-  filter: hue-rotate(90deg);
-}
-.hue-rotate2 {
-  -webkit-filter: hue-rotate(180deg);
-  -moz-filter: hue-rotate(180deg);
-  -o-filter: hue-rotate(180deg);
-  -ms-filter: hue-rotate(180deg);
-  filter: hue-rotate(180deg);
-}
-.hue-rotate3 {
-  -webkit-filter: hue-rotate(270deg);
-  -moz-filter: hue-rotate(270deg);
-  -o-filter: hue-rotate(270deg);
-  -ms-filter: hue-rotate(270deg);
-  filter: hue-rotate(270deg);
-}
-.saturate {
-  -webkit-filter: saturate(10);
-  -moz-filter: saturate(10);
-  -o-filter: saturate(10);
-  -ms-filter: saturate(10);
-  filter: saturate(10);
-}
+
 .grayscale {
-  -webkit-filter: grayscale(1);
-  -moz-filter: grayscale(1);
-  -o-filter: grayscale(1);
-  -ms-filter: grayscale(1);
-  filter: grayscale(1);
+  -webkit-filter: grayscale(20000);
+  -moz-filter: grayscale(20000);
+  -o-filter: grayscale(20000);
+  -ms-filter: grayscale(20000);
+  filter: grayscale(20000);
 }
-.sepia {
-  -webkit-filter: sepia(1);
-  -moz-filter: sepia(1);
-  -o-filter: sepia(1);
-  -ms-filter: sepia(1);
-  filter: sepia(1);
-}
-.invert {
-  -webkit-filter: invert(1);
-  -moz-filter: invert(1);
-  -o-filter: invert(1);
-  -ms-filter: invert(1);
-  filter: invert(1);
-}
+
+
+
 </style>
 
 
@@ -1289,15 +1168,6 @@ const constraints = {video: true};
   let filterIndex = 0;
   const filters = [
     'grayscale',
-    'sepia',
-    'blur',
-    'brightness',
-    'contrast',
-    'hue-rotate',
-    'hue-rotate2',
-    'hue-rotate3',
-    'saturate',
-    'invert',
     ''
   ];
 
