@@ -1,10 +1,8 @@
 #https://myprofilmypollution.herokuapp.com/
 
-#jvai passer pour un mec qui lit des magazines psycho mais c juste que jvai pas attendre 1 mois sans rien faire, fin en 1 mois tu pourrais tout ranger mais bon... jdirais c un peu comme un magasine psycho, rubrique beauté, planete, psycho tavu ouais ben dans la file dattente du bureau de tabac avant fallait soccuper
-
-c horrible.... plus d'haarscade et sté ma fierté....
-
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
+
+remplirt la datazbase de mysql
 
 améliorer le rendu visuel tout effacer
 
