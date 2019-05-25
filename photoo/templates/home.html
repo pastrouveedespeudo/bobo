@@ -13,16 +13,7 @@
 
           <style>#autre{margin-left:-965px;;margin-top:-100px;}</style>
 
-          <div id="autre">
-            
-            <p><center>Nos autres sites</center></p>
-        
-              <li id="lien"><a href="/polution/polution">Polution</a></li>
-              <li id="lien"></li>
-       
-          </div>
 
-          
           <h1 class="text-uppercase text-white font-weight-bold">Bienvenue</h1>
           <br>
           <style>#h{font:Serif; color:white;}</style> 
@@ -44,52 +35,10 @@
 
 
 
-    <style>
-    #containner {
-        margin: 0px auto;
-        width: 400px;
-        height: 400px;
-    }
-    #videoElement {
-        width: 400px;
-        height: 400px;
-        position:relative;
-    }
-    #patron{
-      margin-left:105px;
-      margin-top:100px;
-      width: 200px;
-      height: 200px;
-      border: 2px solid red;
-      border-radius:50%;
-      position:absolute ;
-      z-index:1;
-    }
-    </style>
-
-
-
-
-
 
 {% include "bottom_page.html" %}
 {% block content2 %}
 {% endblock content2%}
-
-
-    <script>
-    var video = document.querySelector("#videoElement");
-    if (navigator.mediaDevices.getUserMedia) {     
-        navigator.mediaDevices.getUserMedia({video: true})
-      .then(function(stream) {
-        video.srcObject = stream;
-      })
-      .catch(function(err0r) {
-        console.log("Something went wrong!");
-      });
-    }
-    </script>
-
 
 
 
