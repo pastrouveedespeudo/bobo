@@ -21,8 +21,8 @@ def trafique_circulation(TRAFIQUE, HEURE):
     heure = date.hour
     minute = date.minute
 
-
-    heure_pointe_semaine = [7,8,9,16,17,18,19]
+    print(heure, minute)
+    heure_pointe_semaine = [9,10,11,18,19,20,21]
 
     départ_routier = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
                       (1,3),(2,3),(8,3),(9,3),
@@ -65,18 +65,22 @@ def trafique_circulation(TRAFIQUE, HEURE):
 
        
     for i in heure_pointe_semaine:
+        print(i, heure)
         if i == heure:
             pointe = True
 
     if pointe != True:
         non_pointe = True
 
-          
+    print('pointe', pointe)
+    print(non_pointe)
+
+    
     if pointe == True:
         HEURE['heure_pointe'] += 1
         
         
-    elif non_pointe == True:
+    else:
         HEURE['non_heure_pointe'] += 1
    
 
@@ -136,12 +140,14 @@ def bouchons(lieu, BOUCHON):
 
         except:
             b = 0
-        
+
+            
+        print(b,'lyonnnnnnnnnnnnnnnnnnnnnnnnn')
         if b == 0 or b == 0.0:
             BOUCHON['non'] += 1 
 
     
-        elif b > 0  and b <= 5:
+        elif b > 0  and b <= 5.0:
             BOUCHON['petit'] += 1 
 
 
