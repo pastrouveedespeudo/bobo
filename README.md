@@ -2,11 +2,17 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
+ok le soir un peu de mot
+
+et le jour faire tout les trucks d'en bas
+
+et normalement tu devrais effacer toute la database a cause des bouchons mais pagrave
+
 le jour de la soutenance, si jtrouve un autre image qu'un habit sur le site.... jpourrais remonter jusqu'a toi facilement
 
 #résoudre les predictions, des fois ca affiche des fois non
 
-
+#normalement tu devrais tout effacer a cause des bouchons ...
 
 améliorer le rendu visuel tout effacer
 
@@ -36,15 +42,12 @@ la partie machine a o et c ok!
 # récupérer macguyvert dans les fichiers supprimer avec un logiciel
 
 
-#video par contre me faut des glacons
+# video par contre me faut des glacons
 
 #mettre un menu a pollution.html + explication démarche
 
 #responsivité des
 
-#au lieu que d'enregistrer en prem's les habit tu pourrais verifier qu'il n'y est pas 2 fois le nombre mais bon pas grave
-
-ca donne [1, 1,2,2,3,3,4,4] 
 
 #@ login admin + popo
 
