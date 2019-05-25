@@ -6,6 +6,7 @@ c horrible.... plus d'haarscade et sté ma fierté....
 
 améliorer le rendu visuel tout effacer
 
+bon par contre les vetements c bo, mettre des coupes bien faite essaie de rajouter 2 fonctionnalités pour rendre la navbarre jolie
 
 #régler tous les bug
 
