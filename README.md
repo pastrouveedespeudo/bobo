@@ -2,11 +2,12 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-puis entre nous c un peu de la merde, ca va se fixer a un chiffre la prediction et si un jour y'a un gros pic mpon vieu truk le verra pas <strong>pareil</strong> pour les polution a bas taux
+enfete on va faire ca:
+on dit que le vent est proportionelle en haut comme en bas,
 
-j'ai passer une heure a try m/s -> m enfete m/s c des metres
+on mesure la ville long et large,
 
-et je comprend rien a la lat et long, fin si j'ai compris mais c caluler la lat via les m, jdois prendre la longueur de la ville? en long en large ?
+10m plus loins on refait la meme puis si ca change 8m plus loins et que ca fait: haut et droite on regarde le plus gros (rfaudrai partir des poles) si haut > droite aloonrs on calcul un angle mais ca... et pareil pour droite, on verifie a l'endroit de langle et si ca marche pas ben chai pas qui normalement devrait pousser dans la direction qu'on a pensé sinon.. réfflchis
 
 ok le soir un peu de mot
 
