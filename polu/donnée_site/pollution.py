@@ -121,9 +121,8 @@ def traffique(lieu):
     heure = date.hour
     minute = date.minute
 
-
-
     heure = heure + 2
+
     heure_pointe_semaine = [7,8,9,16,17,18,19]
 
     départ_routier = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
