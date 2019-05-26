@@ -213,11 +213,16 @@ def long_lat(lat, long, km, sens):
 
 
     elif sens == 'nordnordest':
-        pass
+        lat1 = (km*0.009)*sqrt(3/2)
+        nouvel_lat = lat + lat1
+        long1 = 111.11 * cos(radians(nouvel_lat)) *1/2
+        print('newlat, long', nouvel_lat, long)
+    
     elif sens == 'nordest':
         pass
     elif sens == 'estnordest':
         pass
+    
     elif sens == 'est':
         long1 = 111.11 * cos(radians(lat) + km*0.009)
         print('lat, newlong', lat, long)
@@ -228,6 +233,7 @@ def long_lat(lat, long, km, sens):
         pass
     elif sens == 'sudsudest':
         pass
+    
     elif sens == 'sud':
         lat1 = km*0.009
         nouvel_lat = lat - lat1
