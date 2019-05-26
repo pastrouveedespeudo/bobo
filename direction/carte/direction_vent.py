@@ -21,7 +21,7 @@ def ville(parametre):
     c = location.longitude
 
     
-    print(b, c)
+   
     return b, c
 
 
@@ -91,106 +91,171 @@ def par_lat_par_long(lat, long):
         liste2.append(i)
 
     print(liste2[-6][:-1])
-            
+    return liste2[-6][:-1]       
 
-def calcul_vent(vitesse_vent, direction):
+def calcul_vent(direction):
 
-    print(vitesse_vent,direction)
 
     if direction == 0 or direction == 360:
-        print('nord')
+      
+        return 'nord'
 
-    elif direction > 0 or direction > 360:
-        print('nordnordest')
-        
+
     elif direction > 0 and direction <= 22.5:
-        print('nordnordest')
-
+      
+        return 'nordnordest'
+    
     elif direction > 22.5 and direction <= 45:
-        print('nordnordest')
-
+      
+        return 'nordnordest'
+    
     elif direction == 45:
-        print('nordest')
+     
+        return 'nordest'
 
+    
     elif direction > 45 and direction <= 67.5:
-        print('estnordest')
-
+     
+        return 'estnordest'
+    
     elif direction > 67.5 and direction <= 90:
-        print('estnordest')
-
+  
+        return 'estnordest'
+    
     elif direction > 90 and direction <= 112.5:
-        print('est')
-
+        
+        return 'est'
+    
     elif direction > 112.5 and direction <= 135:
-        print('estsudest')
-
+     
+        return 'estsudest'
+    
     elif direction == 135:
-        print('sudest')
+        
+        return 'sudest'
 
+    
     elif direction > 135 and direction <= 157.5:
-        print('sudsudest')
+       
+        return 'sudsudest'
 
+    
     elif direction > 157.5 and direction <= 180:
-        print('sudsudest')
+      
+        return 'sudsudest'
 
+    
     elif direction == 180:
-         print('sud')
+      
+         return 'sud'
          
     elif direction > 180 and direction <= 202.5:
-        print('sudsudouest')
+    
+        return 'sudsudouest'
 
+    
     elif direction > 202.5 and direction <= 225:
-        print('sudsudouest')
-        
+     
+        return 'sudsudouest'
+    
     elif direction == 225:
-        print('sudouest')
-
+        
+        return 'sudouest'
 
     elif direction > 225 and direction <= 247.5:
-        print('sudouest')
-
+       
+        return 'sudouest'
+    
     elif direction > 247.5 and direction <= 270:
-        print('ouestsudouest')
-        
+     
+        return 'ouestsudouest'
+    
     elif direction > 270:
-        print('ouest')
+      
+        return 'ouest'
     
     elif direction > 270 and direction <= 292.5:
-        print('ouestnordouest')
-        
+      
+        return 'ouestnordouest'
+    
     elif direction > 292.5 and direction <= 315:
-        print('norouest')
-        
+  
+        return 'nordouest'
+    
     elif direction == 315:
-        print('nordouest')
 
+        return 'nordouest'
+    
     elif direction > 315 and direction <= 337.5:
-        print('nordnordouest')
+        return 'nordnordouest'
     
     #print('degres : ',degres)
 
-    km = vitesse_vent / 1000
-    print('kilometre: ', km)
 
 
-    return km
 
-def long_lat(lat, long, km):
+   
 
-    print(lat, long)
+def long_lat(lat, long, km, sens):
+
+
+    print(sens)
+    
+    kilometre = km / 1000
+    print('metre, kilometre: ',km, kilometre)
 
     
-    lat1 = km*0.009
+    if sens == 'nord':
+        lat1 = km*0.009
+        nouvel_lat = lat + lat1
+        long1 = 111.11 * cos(radians(nouvel_lat))
+        print('newlat, long', nouvel_lat, long)
 
-    nouvel_lat = lat + lat1
+
+    elif sens == 'nordnordest':
+        pass
+    elif sens == 'nordest':
+        pass
+    elif sens == 'estnordest':
+        pass
+    elif sens == 'est':
+        long1 = 111.11 * cos(radians(lat) + km*0.009)
+        print('lat, newlong', lat, long)
+        
+    elif sens == 'estsudest':
+        pass
+    elif sens == 'sudest':
+        pass
+    elif sens == 'sudsudest':
+        pass
+    elif sens == 'sud':
+        lat1 = km*0.009
+        nouvel_lat = lat - lat1
+        long1 = 111.11 * cos(radians(nouvel_lat))
+        print('newlat, long', nouvel_lat, long)
+
+        
+    elif sens == 'sudsudouest':
+        pass
+    elif sens == 'sudouest':
+        pass
+    elif sens == 'ouestsudouest':
+        pass
+    
+    elif sens == 'ouest':
+        long1 = 111.11 * cos(radians(lat) - km*0.009)
+        print('lat, newlong', lat, long)
+
+        
+    elif sens == 'ouestnordouest':
+        pass
+    elif sens == 'nordouest':
+        pass
+    elif sens == 'nordnordouest':
+        pass
 
 
 
-    print(nouvel_lat)
-
-    long1 = 111.11 * cos(radians(nouvel_lat))
-
-    print('lat, long', long)
 
 
     
@@ -199,9 +264,9 @@ def long_lat(lat, long, km):
     
 lat, long = ville('crest')#site pollué
 vitesse_vent, degres = recherche('crest') #vent
-km = calcul_vent(vitesse_vent, degres)
+degres = calcul_vent(degres)
 par_lat_par_long(lat, long)#calcul via degres et m/s
-long_lat(lat, long, km)
+long_lat(lat, long, vitesse_vent, degres)
 
 
 
