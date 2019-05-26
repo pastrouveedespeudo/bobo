@@ -36,8 +36,8 @@ def recherche(lieu):
     vent = data['wind']['speed']
     deg = data['wind']['deg']
 
-    print(vent, deg)
 
+    return vent, deg
 
 
     
@@ -87,21 +87,97 @@ def par_lat_par_long(lat, long):
 
         
         liste2.append(i)
-
-
-
-        
+   
     print(liste2[-6][:-1])
             
+
+def calcul_vent(vitesse_vent, direction):
+
+    km = vitesse_vent / 1000
+    print('kilometre: ', km)
+
+    if direction == 0 or direction == 360:
+        print('nord')
+
+    elif direction > 0 or direction > 360:
+        print('nordnordest')
+        
+    elif direction > 0 and direction <= 22.5:
+        print('nordnordest')
+
+    elif direction > 22.5 and direction <= 45:
+        print('nordnordest')
+
+    elif direction == 45:
+        print('nordest')
+
+    elif direction > 45 and direction <= 67.5:
+        print('estnordest')
+
+    elif direction > 67.5 and direction <= 90:
+        print('estnordest')
+
+    elif direction > 90 and direction <= 112.5:
+        print('est')
+
+    elif direction > 112.5 and direction <= 135:
+        print('estsudest')
+
+    elif direction == 135:
+        print('sudest')
+
+    elif direction > 135 and direction <= 157.5:
+        print('sudsudest')
+
+    elif direction > 157.5 and direction <= 180:
+        print('sudsudest')
+
+    elif direction == 180:
+         print('sud')
+         
+    elif direction > 180 and direction <= 202.5:
+        print('sudsudouest')
+
+    elif direction > 202.5 and direction <= 225:
+        print('sudsudouest')
+        
+    elif direction == 225:
+        print('sudouest')
+
+
+    elif direction > 225 and direction <= 247.5:
+        print('sudouest')
+
+    elif direction > 247.5 and direction <= 270:
+        print('ouestsudouest')
+        
+    elif direction > 270:
+        print('ouest')
+    
+    elif direction > 270 and direction <= 292.5:
+        print('ouestnordouest')
+        
+    elif direction > 292.5 and direction <= 315:
+        print('norouest')
+        
+    elif direction == 315:
+        print('nordouest')
+
+    elif direction > 315 and direction <= 337.5:
+        print('nordnordouest')
+    
+    print('degres : ',degres)
+
+
 
 
 #while calcul vent possible
 
     
-pos = ville('crest')#site pollué
-recherche('crest') #vent
-#calcul vent
-par_lat_par_long(pos[0], pos[1])#calcul via degres et m/s
+lat, long = ville('crest')#site pollué
+vitesse_vent, degres = recherche('crest') #vent
+calcul_vent(vitesse_vent, degres)
+par_lat_par_long(lat, long)#calcul via degres et m/s
 
 
 
