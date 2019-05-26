@@ -2,6 +2,12 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
+puis entre nous c un peu de la merde, ca va se fixer a un chiffre la prediction et si un jour y'a un gros pic mpon vieu truk le verra pas <strong>pareil</strong> pour les polution a bas taux
+
+j'ai passer une heure a try m/s -> m enfete m/s c des metres
+
+et je comprend rien a la lat et long, fin si j'ai compris mais c caluler la lat via les m, jdois prendre la longueur de la ville? en long en large ?
+
 ok le soir un peu de mot
 
 et le jour faire tout les trucks d'en bas
