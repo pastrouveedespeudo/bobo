@@ -123,12 +123,19 @@ def bouchons(lieu, BOUCHON):
       
         r = requests.get(path)
 
-
+        km = ''
 
         page = r.content
         soup = BeautifulSoup(page, "html.parser")
         propriete = soup.find("span", {'class':'font38 green'})
         liste = []
+        
+        for i in propriete:
+            for j in i:
+                if j == 'K' or j == 'k':
+                    km = True
+        
+        
         try:
             for i in propriete:
                 for j in i:
@@ -150,6 +157,10 @@ def bouchons(lieu, BOUCHON):
 
         except:
             b = 0
+        
+        if km != True:
+            b = 0
+        
         
         if b == 0 or b == 0.0:
             BOUCHON['non'] += 1 
