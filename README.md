@@ -2,9 +2,7 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-sauf que j'ai pas comrpis 8m/s ca parcour 8 m en une seconde dc faut traduire en km mais ce 8 m/s seconde y sarrete quand ? donc ptetre qui faut faire ca : on va prendre la mesure 8m plus loin ensuite on refait le meme truk mais ste fois au lieu de partir des 20 sites les plus polluiant on part de lyon marseille et paris
-
-et y faut calculer lat + 8m si c au nord jai riennnnnnn compris
+enfete a lyon des fois le site se reinitialise et ca met None du coup tous les truk vont dans none et la conditionbouchon non a la blinde de condition repare ca
 
 enfete on va faire ca:
 on dit que le vent est proportionelle en haut comme en bas,
