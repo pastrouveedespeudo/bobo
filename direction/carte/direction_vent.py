@@ -2,7 +2,6 @@ from geopy.geocoders import Nominatim
 import requests
 from bs4 import *
 
-
 def ville(parametre):
     """Here we searching from Python modul(geopy.geocoders)"""
     """address from the input from html page"""
@@ -37,7 +36,7 @@ def recherche(lieu):
     vent = data['wind']['speed']
     deg = data['wind']['deg']
 
-
+    
     return vent, deg
 
 
@@ -56,7 +55,7 @@ def par_lat_par_long(lat, long):
     liste = []
     liste.append(soup.text)
     
-    liste = liste[0][4:]
+    liste = liste[0]
     
     liste1 = []
     mot = ''
@@ -88,14 +87,13 @@ def par_lat_par_long(lat, long):
 
         
         liste2.append(i)
-   
+
     print(liste2[-6][:-1])
             
 
 def calcul_vent(vitesse_vent, direction):
 
-    km = vitesse_vent / 1000
-    print('kilometre: ', km)
+    print(vitesse_vent,direction)
 
     if direction == 0 or direction == 360:
         print('nord')
@@ -167,9 +165,14 @@ def calcul_vent(vitesse_vent, direction):
     elif direction > 315 and direction <= 337.5:
         print('nordnordouest')
     
-    print('degres : ',degres)
+    #print('degres : ',degres)
 
+    km = vitesse_vent / 1000
+    print('kilometre: ', km)
 
+    lat = km*0.009
+
+    long = 111.11 * cos(radians(lat))
 
 
 #while calcul vent possible
@@ -179,7 +182,6 @@ lat, long = ville('crest')#site pollué
 vitesse_vent, degres = recherche('crest') #vent
 calcul_vent(vitesse_vent, degres)
 par_lat_par_long(lat, long)#calcul via degres et m/s
-
 
 
 
