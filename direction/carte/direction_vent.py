@@ -2,6 +2,7 @@ from geopy.geocoders import Nominatim
 import requests
 from bs4 import *
 
+
 def ville(parametre):
     """Here we searching from Python modul(geopy.geocoders)"""
     """address from the input from html page"""
