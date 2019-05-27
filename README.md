@@ -2,7 +2,7 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-ah ben ouais tout de suite tu tapelles vanessa 27 dispo du skype ca te répond
+voila pourquoi ce vieux site va m'aider au moins je serai premier de ma mer
 
 récuperer la superficie de la ville et faire + 25km
 
