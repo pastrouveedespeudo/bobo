@@ -2,6 +2,9 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
+ok continue ces histoire de cercle puis de sphere puis de triangle dans un cercle mais pk infini ? on peut le compter les petits pts...
+pcque si bien c pas ca 
+
 enfete a lyon des fois le site se reinitialise et ca met None du coup tous les truk vont dans none et la conditionbouchon non a la blinde de condition repare ca
 
 enfete on va faire ca:
