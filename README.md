@@ -2,7 +2,7 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-ouais bah tu marque calcul de latitude longitude on commence a de parler de méridiens d'orange de circonférence de km^2 de cercle trigonometrique de 2d de 3d gros oh moins je sais qu'on peut mettre des triangles dans des rond
+la tangeante par le point (y,x) d'angle teta de r de rho z p cos omga par racine de 3 *si y te regarde dis oui de la tete et tire ton oreille gauche avec un peu de chance tu cocheras les bonne reponses au qcm
 
 ok continue ces histoire de cercle puis de sphere puis de triangle dans un cercle mais pk infini ? on peut le compter les petits pts...
 pcque si bien c pas ca et les rosace ca sert a quoi ? et une image d'un cercle ca serta quoi ? genre mirroire ? 
