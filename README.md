@@ -2,13 +2,12 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-la tangeante par le point (y,x) d'angle teta de r de rho z p cos omga par racine de 3 *si y te regarde dis oui de la tete et tire ton oreille gauche avec un peu de chance tu cocheras les bonne reponses au qcm
+bon désolé a tous ceux a qui j'ai spam la boite mail
 
-ok continue ces histoire de cercle puis de sphere puis de triangle dans un cercle mais pk infini ? on peut le compter les petits pts...
-pcque si bien c pas ca et les rosace ca sert a quoi ? et une image d'un cercle ca serta quoi ? genre mirroire ? 
+bon mtn boucle + petit points qui parcours
 
+hé puis pour la force du vent faut voir ptetre soustraction et on regarde autour pour voir le vent chpas enfaite pfffff et faut faire un rond de diametre autour jcrois, diametre = coté d'un triangle alors il est rectangle
 
-ok le soir un peu de mot
 
 et le jour faire tout les trucks d'en bas
 
