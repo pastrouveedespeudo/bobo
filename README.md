@@ -3,16 +3,8 @@
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
 ok continue ces histoire de cercle puis de sphere puis de triangle dans un cercle mais pk infini ? on peut le compter les petits pts...
-pcque si bien c pas ca 
+pcque si bien c pas ca et les rosace ca sert a quoi ? et une image d'un cercle ca serta quoi ? genre mirroire ? 
 
-enfete a lyon des fois le site se reinitialise et ca met None du coup tous les truk vont dans none et la conditionbouchon non a la blinde de condition repare ca
-
-enfete on va faire ca:
-on dit que le vent est proportionelle en haut comme en bas,
-
-on mesure la ville long et large,
-
-10m plus loins on refait la meme puis si ca change 8m plus loins et que ca fait: haut et droite on regarde le plus gros (rfaudrai partir des poles) si haut > droite aloonrs on calcul un angle mais ca... et pareil pour droite, on verifie a l'endroit de langle et si ca marche pas ben chai pas qui normalement devrait pousser dans la direction qu'on a pensé sinon.. réfflchis
 
 ok le soir un peu de mot
 
