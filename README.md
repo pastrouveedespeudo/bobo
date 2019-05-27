@@ -2,7 +2,7 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-bon désolé a tous ceux a qui j'ai spam la boite mail
+récuperer la superficie de la ville et faire + 25km
 
 bon mtn boucle + petit points qui parcours
 
