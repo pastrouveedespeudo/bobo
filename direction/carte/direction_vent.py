@@ -89,8 +89,11 @@ def par_lat_par_long(lat, long):
 
         
         liste2.append(i)
-
-    print(liste2[-6][:-1])
+    print(liste)
+    try:
+        print(liste2[-6][:-1])
+    except:
+        pass
     return liste2[-6][:-1]       
 
 def calcul_vent(direction):
@@ -208,86 +211,86 @@ def long_lat(lat, long, km, sens):
     if sens == 'nord':
         lat1 = km*0.009
         nouvel_lat = lat + lat1
-        long1 = 111.11 * cos(radians(nouvel_lat))
         print('newlat, long', nouvel_lat, long)
 
 
     elif sens == 'nordnordest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(22.5)) + kilo
-        print('newlat, long', lat, long1 )
+        lat = lat + km  * 0.5
+        long = long + km * 0.17
+        print('newlat, long', lat, long)
     
     elif sens == 'nordest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(45)) + kilo
-        print('newlat, long', lat, long1 )
+        lat = lat + km  * 0.25
+        long = long + km * 0.25
+        print('newlat, long', lat, long)
         
     elif sens == 'estnordest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(67.5)) + kilo
-        print('newlat, long', lat, long1 )
+        lat = lat + km  * 0.17
+        long = long + km * 0.5
+        print('newlat, long', lat, long
     
     elif sens == 'est':
-        long1 = 111.11 * cos(radians(lat) + km*0.009)
+        long = long + km*0.009
         print('lat, newlong', lat, long)
         
     elif sens == 'estsudest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(112.5)) + kilo
-        print('newlat, long', lat, long1 )
+        lat = lat + km  * -0.17
+        long = long + km * 0.5
+        print('newlat, long', lat, long
         
     elif sens == 'sudest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(157.5)) + kilo
-        print('newlat, long', long1 )
+        lat = lat + km  * -0.25
+        long = long + km * 0.25
+        print('newlat, long', lat, long
         
     elif sens == 'sudsudest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(202.5)) + kilo
-        print('newlat, long', lat, long1 )
+        lat = lat + km  * -0.5
+        long = long + km * 0.17
+        print('newlat, long', lat, long
     
     elif sens == 'sud':
         lat1 = km*0.009
         nouvel_lat = lat - lat1
-        long1 = 111.11 * cos(radians(nouvel_lat))
+ 
         print('newlat, long', nouvel_lat, long)
 
         
     elif sens == 'sudsudouest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(202.5)) + kilo
-        print('newlat, long', lat, long1 )
+        lat = lat + km  * -0.17
+        long = long + km * -0.5
+        print('newlat, long', lat, long
 
         
     elif sens == 'sudouest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(225)) + kilo
-        print('newlat, long', lat, long1 )
+        lat = lat + km  * -0.25
+        long = long + km * -0.25
+        print('newlat, long', lat, long
         
     elif sens == 'ouestsudouest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(247.5)) + kilo
-        print('newlat, long', lat, long1 )
+        lat = lat + km  * -0.17
+        long = long + km * -0.5
+        print('newlat, long', lat, long
     
     elif sens == 'ouest':
-        long1 = 111.11 * cos(radians(lat) - km*0.009)
-        print('lat, newlong', lat, long)
+        kilo = km*0.009
+        long1 = long - kilo
+        print('lat, newlong', lat, long1)
 
         
     elif sens == 'ouestnordouest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(292.5)) + kilo
-        print('newlat, long', lat, long1 )
+        lat = lat + km  * 0.17
+        long = long + km * -0.5
+        print('newlat, long', lat, long
         
     elif sens == 'nordouest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(315)) + kilo
-        print('newlat, long', lat, long1 )
+        lat = lat + km  * 0.25
+        long = long + km * -0.25
+        print('newlat, long', lat, long
         
     elif sens == 'nordnordouest':
-        kilo = km*0.009
-        long1 = 111.11 * cos(radians(337)) + kilo
-        print('newlat, long', lat, long1 )
+        lat = lat + km  * 0.5
+        long = long + km * -0.17
+        print('newlat, long', lat, long
 
 
 
@@ -297,13 +300,14 @@ def long_lat(lat, long, km, sens):
 #while calcul vent possible
 
     
-lat, long = ville('crest')#site pollué
-vitesse_vent, degres = recherche('crest') #vent
-degres = calcul_vent(degres)
-par_lat_par_long(lat, long)#calcul via degres et m/s
-long_lat(lat, long, vitesse_vent, degres)
+##lat, long = ville('crest')#site pollué
+##vitesse_vent, degres = recherche('crest') #vent
+##degres = calcul_vent(degres)
+##par_lat_par_long(lat, long)#calcul via degres et m/s
+##long_lat(lat, long, vitesse_vent, degres)
 
-
+par_lat_par_long('44.7282675', '5.0236641')
+par_lat_par_long('44.730267500000004', '5.0256641')
 
 
 
