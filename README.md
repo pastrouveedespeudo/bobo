@@ -2,6 +2,10 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
+lat + km * 0.75
+
+111.11 * cos(rad(lat) *0.25 pour nne et ormalement tj a crest
+
 ok continue ces histoire de cercle puis de sphere puis de triangle dans un cercle mais pk infini ? on peut le compter les petits pts...
 pcque si bien c pas ca et les rosace ca sert a quoi ? et une image d'un cercle ca serta quoi ? genre mirroire ? 
 
