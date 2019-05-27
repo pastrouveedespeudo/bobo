@@ -21,7 +21,7 @@ def ville(parametre):
     c = location.longitude
 
     
-   
+    print('origine', b,c)
     return b, c
 
 
@@ -213,26 +213,38 @@ def long_lat(lat, long, km, sens):
 
 
     elif sens == 'nordnordest':
-        lat1 = (km*0.009)*sqrt(3)/2
-        nouvel_lat = lat + lat1
-        long1 = 111.11 * cos(radians(nouvel_lat)) *1/2
-        print('newlat, long', nouvel_lat, long)
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(22.5)) + kilo
+        print('newlat, long', lat, long1 )
     
     elif sens == 'nordest':
-        pass
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(45)) + kilo
+        print('newlat, long', lat, long1 )
+        
     elif sens == 'estnordest':
-        pass
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(67.5)) + kilo
+        print('newlat, long', lat, long1 )
     
     elif sens == 'est':
         long1 = 111.11 * cos(radians(lat) + km*0.009)
         print('lat, newlong', lat, long)
         
     elif sens == 'estsudest':
-        pass
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(112.5)) + kilo
+        print('newlat, long', lat, long1 )
+        
     elif sens == 'sudest':
-        pass
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(157.5)) + kilo
+        print('newlat, long', long1 )
+        
     elif sens == 'sudsudest':
-        pass
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(202.5)) + kilo
+        print('newlat, long', lat, long1 )
     
     elif sens == 'sud':
         lat1 = km*0.009
@@ -242,11 +254,20 @@ def long_lat(lat, long, km, sens):
 
         
     elif sens == 'sudsudouest':
-        pass
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(202.5)) + kilo
+        print('newlat, long', lat, long1 )
+
+        
     elif sens == 'sudouest':
-        pass
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(225)) + kilo
+        print('newlat, long', lat, long1 )
+        
     elif sens == 'ouestsudouest':
-        pass
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(247.5)) + kilo
+        print('newlat, long', lat, long1 )
     
     elif sens == 'ouest':
         long1 = 111.11 * cos(radians(lat) - km*0.009)
@@ -254,11 +275,19 @@ def long_lat(lat, long, km, sens):
 
         
     elif sens == 'ouestnordouest':
-        pass
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(292.5)) + kilo
+        print('newlat, long', lat, long1 )
+        
     elif sens == 'nordouest':
-        pass
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(315)) + kilo
+        print('newlat, long', lat, long1 )
+        
     elif sens == 'nordnordouest':
-        pass
+        kilo = km*0.009
+        long1 = 111.11 * cos(radians(337)) + kilo
+        print('newlat, long', lat, long1 )
 
 
 
