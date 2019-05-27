@@ -2,6 +2,8 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
+ah ben ouais tout de suite tu tapelles vanessa 27 dispo du skype ca te répond
+
 récuperer la superficie de la ville et faire + 25km
 
 bon mtn boucle + petit points qui parcours
