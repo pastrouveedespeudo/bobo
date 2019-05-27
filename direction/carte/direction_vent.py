@@ -89,12 +89,13 @@ def par_lat_par_long(lat, long):
 
         
         liste2.append(i)
-    print(liste)
+    
     try:
+        print(liste)
         print(liste2[-6][:-1])
     except:
         pass
-    return liste2[-6][:-1]       
+    #return liste2[-6][:-1]       
 
 def calcul_vent(direction):
 
@@ -218,7 +219,8 @@ def long_lat(lat, long, km, sens):
         lat = lat + km
         long = long + km * cos(radians(67.7))
         print('newlat, long', lat, long)
-    
+
+
     elif sens == 'nordest':
         lat = lat + km
         long = long + km * cos(radians(45))
@@ -228,24 +230,28 @@ def long_lat(lat, long, km, sens):
         lat = lat + km
         long = long + km * cos(radians(22.5))
         print('newlat, long', lat, long)
+
+
+
+
     
     elif sens == 'est':
         long = long + km
         print('lat, newlong', lat, long)
         
     elif sens == 'estsudest':
-        lat = lat + km * cos(radians(157.5))
-        long = long + km
+        lat = lat - km
+        long = long - km * cos(radians(157.5))
         print('newlat, long', lat, long)
         
     elif sens == 'sudest':
-        lat = lat + km * cos(radians(135))
-        long = long + km
+        lat = lat - km
+        long = long - km * cos(radians(135))
         print('newlat, long', lat, long)
         
     elif sens == 'sudsudest':
-        lat = lat + km * cos(radians(112.5))
-        long = long + km
+        lat = lat - km
+        long = long - km * cos(radians(112.5))
         print('newlat, long', lat, long)
     
     elif sens == 'sud':
@@ -258,19 +264,19 @@ def long_lat(lat, long, km, sens):
 
 
     elif sens == 'sudsudouest':
-        lat = lat + km * cos(radians(247.5))
-        long = long + km
+        lat = lat - km
+        long = long - km * cos(radians(337))
         print('newlat, long', lat, long)
 
         
     elif sens == 'sudouest':
-        lat = lat + km * cos(radians(225))
-        long = long + km
+        lat = lat - km
+        long = long - km * cos(radians(315))
         print('newlat, long', lat, long)
         
     elif sens == 'ouestsudouest':
-        lat = lat + km * cos(radians(202.5))
-        long = long + km
+        lat = lat - km
+        long = long - km * cos(radians(292.5))
         print('newlat, long', lat, long)
 
 
@@ -280,21 +286,29 @@ def long_lat(lat, long, km, sens):
         long1 = long - kilo
         print('lat, newlong', lat, long1)
 
+
+
+
+
+
+
         
     elif sens == 'ouestnordouest':
         lat = lat + km
-        long = long + km * cos(radians(337))
+        long = long - km * cos(radians(337))
         print('newlat, long', lat, long)
         
     elif sens == 'nordouest':
         lat = lat + km
-        long = long + km * cos(radians(315))
+        long = long - km * cos(radians(315))
         print('newlat, long', lat, long)
         
     elif sens == 'nordnordouest':
         lat = lat + km
-        long = long + km * cos(radians(292.5))
+        long = long - km * cos(radians(292.5))
         print('newlat, long', lat, long)
+
+
 
 
 
@@ -311,11 +325,10 @@ lat, long = ville('Université Catholique de Lyon, 69002 Lyon')#site pollué
 ##long_lat(lat, long, vitesse_vent, degres)
 
 #par_lat_par_long('44.7282675', '5.0236641')
-par_lat_par_long('45.74697512807942', '4.824759000000001')
+#par_lat_par_long('45.7563421', '4.824543')
+#par_lat_par_long('45.7563421',  '4.830328088487179')
 
-
-
-
+par_lat_par_long('45.7518421',  '4.822820924554358')
 
 
 
