@@ -204,93 +204,97 @@ def long_lat(lat, long, km, sens):
 
     print(sens)
     
-    kilometre = km / 1000
+    kilometre = km / 1000 * 0.009
     print('metre, kilometre: ',km, kilometre)
 
     
     if sens == 'nord':
-        lat1 = km*0.009
+        lat1 = km
         nouvel_lat = lat + lat1
         print('newlat, long', nouvel_lat, long)
 
 
     elif sens == 'nordnordest':
-        lat = lat + km  * 0.5
-        long = long + km * 0.17
+        lat = lat + km
+        long = long + km * cos(radians(67.7))
         print('newlat, long', lat, long)
     
     elif sens == 'nordest':
-        lat = lat + km  * 0.25
-        long = long + km * 0.25
+        lat = lat + km
+        long = long + km * cos(radians(45))
         print('newlat, long', lat, long)
         
     elif sens == 'estnordest':
-        lat = lat + km  * 0.17
-        long = long + km * 0.5
-        print('newlat, long', lat, long
+        lat = lat + km
+        long = long + km * cos(radians(22.5))
+        print('newlat, long', lat, long)
     
     elif sens == 'est':
-        long = long + km*0.009
+        long = long + km
         print('lat, newlong', lat, long)
         
     elif sens == 'estsudest':
-        lat = lat + km  * -0.17
-        long = long + km * 0.5
-        print('newlat, long', lat, long
+        lat = lat + km * cos(radians(157.5))
+        long = long + km
+        print('newlat, long', lat, long)
         
     elif sens == 'sudest':
-        lat = lat + km  * -0.25
-        long = long + km * 0.25
-        print('newlat, long', lat, long
+        lat = lat + km * cos(radians(135))
+        long = long + km
+        print('newlat, long', lat, long)
         
     elif sens == 'sudsudest':
-        lat = lat + km  * -0.5
-        long = long + km * 0.17
-        print('newlat, long', lat, long
+        lat = lat + km * cos(radians(112.5))
+        long = long + km
+        print('newlat, long', lat, long)
     
     elif sens == 'sud':
-        lat1 = km*0.009
+        lat1 = km
         nouvel_lat = lat - lat1
  
         print('newlat, long', nouvel_lat, long)
 
-        
+
+
+
     elif sens == 'sudsudouest':
-        lat = lat + km  * -0.17
-        long = long + km * -0.5
-        print('newlat, long', lat, long
+        lat = lat + km * cos(radians(247.5))
+        long = long + km
+        print('newlat, long', lat, long)
 
         
     elif sens == 'sudouest':
-        lat = lat + km  * -0.25
-        long = long + km * -0.25
-        print('newlat, long', lat, long
+        lat = lat + km * cos(radians(225))
+        long = long + km
+        print('newlat, long', lat, long)
         
     elif sens == 'ouestsudouest':
-        lat = lat + km  * -0.17
-        long = long + km * -0.5
-        print('newlat, long', lat, long
+        lat = lat + km * cos(radians(202.5))
+        long = long + km
+        print('newlat, long', lat, long)
+
+
     
     elif sens == 'ouest':
-        kilo = km*0.009
+        kilo = km
         long1 = long - kilo
         print('lat, newlong', lat, long1)
 
         
     elif sens == 'ouestnordouest':
-        lat = lat + km  * 0.17
-        long = long + km * -0.5
-        print('newlat, long', lat, long
+        lat = lat + km
+        long = long + km * cos(radians(337))
+        print('newlat, long', lat, long)
         
     elif sens == 'nordouest':
-        lat = lat + km  * 0.25
-        long = long + km * -0.25
-        print('newlat, long', lat, long
+        lat = lat + km
+        long = long + km * cos(radians(315))
+        print('newlat, long', lat, long)
         
     elif sens == 'nordnordouest':
-        lat = lat + km  * 0.5
-        long = long + km * -0.17
-        print('newlat, long', lat, long
+        lat = lat + km
+        long = long + km * cos(radians(292.5))
+        print('newlat, long', lat, long)
 
 
 
@@ -300,14 +304,14 @@ def long_lat(lat, long, km, sens):
 #while calcul vent possible
 
     
-##lat, long = ville('crest')#site pollué
+lat, long = ville('Université Catholique de Lyon, 69002 Lyon')#site pollué
 ##vitesse_vent, degres = recherche('crest') #vent
 ##degres = calcul_vent(degres)
 ##par_lat_par_long(lat, long)#calcul via degres et m/s
 ##long_lat(lat, long, vitesse_vent, degres)
 
-par_lat_par_long('44.7282675', '5.0236641')
-par_lat_par_long('44.730267500000004', '5.0256641')
+#par_lat_par_long('44.7282675', '5.0236641')
+par_lat_par_long('45.74697512807942', '4.824759000000001')
 
 
 
