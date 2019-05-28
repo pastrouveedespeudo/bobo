@@ -17,6 +17,11 @@ récuperer la superficie de la ville et faire + 25km
 
 # AVANT MOT, AVANT VENT, AVANT V 2 PREDICTION tous mettre a jour, responsif + visuel + bug
 
+#bien mettre des message du genre: appuie sur l'image
+
+#avant de faire un remplissage de data dire:
+
+il faut faire le truk polu voisin depuis le fichier externe a cause du time out
 
 #bug vetement les tshirt se modif pas
 
