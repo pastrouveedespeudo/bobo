@@ -2,6 +2,8 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
+#entre nous c dla merde, mais garde ste version, au cas ou, faut plus de condition et reflechis a la prédiction...
+
 voila pourquoi ce vieux site va m'aider au moins je serai premier de ma mer
 
 récuperer la superficie de la ville et faire + 25km
