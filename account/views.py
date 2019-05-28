@@ -1,17 +1,14 @@
-from django.shortcuts import render, redirect
+"""This is view for login, register and logout from accounts app"""
 
-from django.contrib.auth import (
-    authenticate,
-    get_user_model,
-    login,
-    logout
-    )
-
+from django.shortcuts import render
+from django.shortcuts import redirect
+from django.contrib.auth import authenticate
+from django.contrib.auth import get_user_model
+from django.contrib.auth import login
+from django.contrib.auth import logout
 
 from .forms import UserLoginForm, UserRegisterForm
-from .models import *
-
-
+from .models import Accounts
 
 
 def my_account(request):
@@ -19,27 +16,28 @@ def my_account(request):
     return render(request, "mon_compte.html", {})
 
 
-
 def login_view(request):
     """Here we define the login view"""
 
     next = request.GET.get('next')
     form = UserLoginForm(request.POST or None)
+    
     if form.is_valid():
         username = form.cleaned_data.get('username')
         password = form.cleaned_data.get('password')
-        user = authenticate(username=username, password=password)
+        user = authenticate(username=username,
+                            password=password)
+        
         login(request, user)
+        
         if next:
             return redirect(next)
+        
         return redirect('/')
 
-    context = {
-        'form':form
-    }
+    context = {'form':form}
 
     return render(request, 'login.html', context)
-
 
 
 def register_view(request):
@@ -58,7 +56,8 @@ def register_view(request):
         acc = Accounts(name=user.username)
         acc.save()
         
-        new_user = authenticate(username=user.username, password=password)
+        new_user = authenticate(username=user.username,
+                                password=password)
 
         login(request, new_user)
 
@@ -66,12 +65,9 @@ def register_view(request):
             return redirect(next)
         return redirect('/')
 
-    context = {
-        'form':form
-    }
+    context = {'form':form}
 
     return render(request, 'signup.html', context)
-
 
 
 def logout_view(request):
@@ -80,38 +76,3 @@ def logout_view(request):
     logout(request)
     print("déconnexion")
     return redirect('/')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
