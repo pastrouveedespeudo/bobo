@@ -3,38 +3,160 @@ import psycopg2
 
 def creation_table():
 
+
+
     conn = psycopg2.connect(database='datu8fkornnndh',
                             user='pwtfmpvfpsujtw',
                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')  
+                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
 
+    
     cursor = conn.cursor()
     
-    cursor.execute("""create table ville(
+    cursor.execute("""create table ville_pression(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
                     heure_donnée INT,
-                    pression varchar(100),
-                    vent varchar(100),
-                    météo varchar(100),
-                    climat varchar(100),
-                    saison varchar(100),
-                    ville_pollué varchar(100),
-                    REGION_INDUSTRIEL_POLLUEE varchar(100),
-                    POPULATION_ACTIVE_HABITANT varchar(100),
-                    TRAFIQUE varchar(100),
-                    HEURE varchar(100),
-                    POINTE varchar(100),
-                    WEEKEND varchar(100),
-                    BOUCHON varchar(100),
-                    ACTIVITE_EXEPTIONNELLE varchar(100),
                     nombre_particule varchar(100),
-                    particule varchar(100))
-                    
-                    """)
-    
+                    pression varchar(100));""")
+
     conn.commit()
+
+
+    cursor.execute("""create table ville_vent(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100),
+                    vent varchar(100));""")
+
+    cursor.execute("""create table ville_météo(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100),
+                    météo varchar(100));""")
+    conn.commit()
+
+
+    cursor.execute("""create table ville_climat(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100),
+                    climat varchar(100));""")
+    conn.commit()
+
+    
+    cursor.execute("""create table ville_saison(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100),
+                    saison varchar(100));""")
+
+    conn.commit()
+
+
+    cursor.execute("""create table ville_ville_pollué(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100),
+                    ville_pollué varchar(100));""")
+
+    conn.commit()
+
+    cursor.execute("""create table ville_region_industrielle(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100),
+                    REGION_INDUSTRIEL_POLLUEE varchar(100));""")
+
+    cursor.execute("""create table ville_population_active(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100),
+                    POPULATION_ACTIVE_HABITANT varchar(100));""")
+
+    conn.commit()
+
+
+    cursor.execute("""create table ville_traffique(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100),
+                    TRAFIQUE varchar(100));""")
+
+
+    conn.commit()
+
+    cursor.execute("""create table ville_heure(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100),
+                    HEURE varchar(100));""")
+
+
+    conn.commit()
+
+
+
+    cursor.execute("""create table ville_weekend(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100),
+                    WEEKEND varchar(100));""")
+
+    cursor.execute("""create table ville_bouchon(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100),
+                    BOUCHON varchar(100));""")
+
+
+    conn.commit()
+
+    cursor.execute("""create table ville_activité(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    nombre_particule varchar(100),
+                    heure_donnée INT,
+                    ACTIVITE_EXEPTIONNELLE varchar(100));""")
+
+
+    conn.commit()
+
+    cursor.execute("""create table ville_nb_particule(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100));""")
+    conn.commit()
+
+
+
+
 
 
 def suppression_table():
@@ -383,7 +505,7 @@ def recuperate_particle(ville, pression, météo, vent, climat,
 
 
 
-#creation_table()
+creation_table()
 
 
 
