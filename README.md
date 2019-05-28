@@ -3,9 +3,24 @@
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
 
+"------"
+#en gros jcrois qu'il faut: update polu voisin a chaque fois (tache cron mais ca a l'air bizzare)
+
+# LIS CA 
+
+#si vent alors on regarde la derniere update et via le vent on dit danger.... mais en vrai... voila quoi ok ON DIT si vent pendant 4/5heures (via cron donc cron faut le faire) == vent (sud ouest ex) ALORS danger et ensuite faudrait voir les courrant d'air et tout... dis juste danger (OU avec ton nouveau projet tu te sers de ca ET en plus tu met ton nouvo projet dans le site)
+
+
+
+
+"-----"
+
+
+
+
 #------------------------------------------
 
-#entre nous c dla merde, mais garde ste version, au cas ou, faut plus de condition et reflechis a la prédiction...
+
 
 voila pourquoi ce vieux site va m'aider au moins je serai premier de ma mer
 
