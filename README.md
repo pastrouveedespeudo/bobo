@@ -22,7 +22,7 @@ récuperer la superficie de la ville et faire + 25km
 
 #bug du site qui se met a jour == erreur (try except ou boucle while)
 
-
+#tout mettre dans des fichier js mais ca marche pas des que je met une fonction en haut ou bas...
 
 bon mtn boucle + petit points qui parcours
 
