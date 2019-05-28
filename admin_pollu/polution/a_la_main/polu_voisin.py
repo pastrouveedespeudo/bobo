@@ -8,7 +8,7 @@ from bs4 import *
 from colour import Color
 
 from boussole import *
-
+from conteneur_ville import *
 
 def voisin(ville):
 
@@ -42,10 +42,66 @@ def voisin(ville):
     print(nb)
 
 
-
-
+def voisinage():
 
     
+    for i in ville_haut_droite:
+        print(i)
+        
+        if i == 'duisburg-military-golf-club':
+            voisin('duisburg')
+        elif i == 'antwerp-golf-school':
+            voisin('antwerp')
+        elif i == 'antwerp-golf-school':
+            voisin('antwerp')
+        else:
+            voisin(i)
+
+    for i in ville_haut_gauche:
+        print(i)
+        voisin(i)
+
+    for i in ville_haut_droite2:
+        print(i)
+        voisin(i)
+
+    for i in ville_haut_droite3:
+        print(i)
+        voisin(i)
+        
+    for i in ville_haut_droite4:
+        print(i)
+        voisin(i)
+
+    for i in bas_droite6:
+        print(i)
+        voisin(i)
+        
+    for i in ville_bas_gauche9:
+        print(i)
+        voisin(i)
+        
+    for i in ville_haut_droite5:
+        print(i)
+        voisin(i)
+        
+    for i in ville_bas_gauche8:
+        print(i)
+        if i == 'barcelone':
+            voisin('barcelona')
+        else:
+            voisin(i)
+        
+    for i in ville_bas_droite7:
+        print(i)
+        if i == 'baselga-del-bondone':
+            voisin('basel')
+        else:
+            voisin(i)
+
+    
+
+voisinage()
 
 
 
