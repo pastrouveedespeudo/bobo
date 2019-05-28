@@ -1,3 +1,5 @@
+"""This is model from accounts app"""
+
 from django.db import models
 
 class Accounts(models.Model):
@@ -9,4 +11,3 @@ class Accounts(models.Model):
     photo_cheveux = models.ImageField()
     habits = models.CharField(max_length=100)
     coiffure = models.CharField(max_length=100)
-
