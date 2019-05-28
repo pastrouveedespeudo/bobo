@@ -1,0 +1,41 @@
+taux polution pays voisin + vent,
+agriculture va creuser
+eruption volcanique
+truk du sahara
+heure de clope
+decheterie et brulage de vegetaux
+polenn
+alentoure agricole
+saison pesticide et angrais
+on récupere si le vent pas fort si beau (sur la semaine) et influence antycyclone (haute pression)
+
+genre : de lundi a vendredi: tres beau vent 5m/s forte pression == propice on stock ca comme UNE condition
+ETTTT on score ca en gros 5 jour beau pas vent 50 pm
+
+etttttt ['durée temps'] + 1
+
+si samedi meto change nouvelle table
+
+zone a combustion ? si oui quand telephone
+
+feu de foret
+
+vente du diesel
+
+nombre de chantier
+
+combo entre plusieurs condition
+
+zone incinération et quand
+
+
+nombre de collégien, zone daccouplage -> deo avant été, durant, printemps
+
+nuit froide et air tres chaud le jour base de donnée
+
+traffic + antycycle condition
+
+scorer chaque condtion avec les particules en phase appprentissage
+table => si le score diverge on stock
+si ce meme score diverge 10 fois on reactualise la table: nous pensons qu'il y a 50 pm
+il sembelrait que nous nous soyons trompé de...
