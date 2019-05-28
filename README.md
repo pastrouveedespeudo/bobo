@@ -4,12 +4,14 @@
 
 
 "------"
+
 #en gros jcrois qu'il faut: update polu voisin a chaque fois (tache cron mais ca a l'air bizzare)
 
 # LIS CA 
 
-#si vent alors on regarde la derniere update et via le vent on dit danger.... mais en vrai... voila quoi ok ON DIT si vent pendant 4/5heures (via cron donc cron faut le faire) == vent (sud ouest ex) ALORS danger et ensuite faudrait voir les courrant d'air et tout... dis juste danger (OU avec ton nouveau projet tu te sers de ca ET en plus tu met ton nouvo projet dans le site)
+#merde je comprendrai rien, en gros, il faut update a chaque heure vent voisin ET polution voisin. Si pendant 4/5 heures il y a la meme direction AVEC un vent significatif alors on dit danger. Pour cela, tu peux te servir de ton nouveau projet de pts sur carte via vent. 
 
+Ensuite tu peux essayer de voir si tu peux faire une soustraction avant apres, MAIS peut etre que la ville a REproduit de la popo donc ca chai pas donc nouveau projet mais novueau projet = passé jcrois
 
 
 
