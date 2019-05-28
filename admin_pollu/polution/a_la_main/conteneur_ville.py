@@ -34,7 +34,7 @@ num_ville6 = [6590]
 path6 =''
 
 ville_bas_gauche9 =['perpignan']
-num_ville_9 = [6510]#ene, ne, nne, n nno no ono
+num_ville9 = [6510]#ene, ne, nne, n nno no ono
 
 
 
@@ -52,7 +52,7 @@ num_ville8 = [1498961,2558109,1519,1045, 2896, 356, 266, 5217,5217,4099]
 path9 = 'https://www.lachainemeteo.com/meteo-espagne/village-{}/previsions-meteo-{}-aujourdhui'
 
 #https://www.lachainemeteo.com/meteo-italie/ville-443727/previsions-meteo-baselga-del-bondone-aujourdhui
-ville_bas_droite7 = ['basel', 'torino']#nno, no, ono
+ville_bas_droite7 = ['baselga-del-bondone', 'torino']#nno, no, ono
 num_ville7 = [443727,2558109, ]
 path10 = 'https://www.lachainemeteo.com/meteo-italie/ville-{}/previsions-meteo-{}-aujourdhui'
 
