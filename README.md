@@ -2,11 +2,27 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
+
+#------------------------------------------
+
 #entre nous c dla merde, mais garde ste version, au cas ou, faut plus de condition et reflechis a la prédiction...
 
 voila pourquoi ce vieux site va m'aider au moins je serai premier de ma mer
 
 récuperer la superficie de la ville et faire + 25km
+
+#-----------------------------------------
+
+
+
+# AVANT MOT, AVANT VENT, AVANT V 2 PREDICTION tous mettre a jour, responsif + visuel + bug
+
+
+#bug vetement les tshirt se modif pas
+
+#bug du site qui se met a jour == erreur (try except ou boucle while)
+
+
 
 bon mtn boucle + petit points qui parcours
 
