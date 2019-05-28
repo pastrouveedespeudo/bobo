@@ -26,16 +26,16 @@ def vent_voisin(nombre, ville, situ):
     elif situ == 'ville_haut_droite3':
         path = 'https://www.lachainemeteo.com/meteo-suisse/village-{}/previsions-meteo-{}-aujourdhui'
 
-    elif situ == 'ville_haut_droite4' or situ == 'ville_haut_droite6' or situ == 'ville_haut_droite9':
+    elif situ == 'ville_haut_droite4' or situ == 'bas_droite6' or situ == 'ville_bas_gauche9':
         path = 'https://www.lachainemeteo.com/meteo-france/ville-{}/previsions-meteo-{}-aujourdhui'
 
     elif situ == 'ville_haut_droite5':
         path = 'https://www.lachainemeteo.com/meteo-allemagne/ville-{}/previsions-meteo-{}-%28oder%29-aujourdhui'
 
-    elif situ == 'ville_haut_droite8':
-        path = 'https://www.lachainemeteo.com/meteo-espagne/village-{}/previsions-meteo-{}-aujourdhui'
+    elif situ == 'ville_bas_gauche8':
+        path = 'https://www.lachainemeteo.com/meteo-espagne/ville-{}/previsions-meteo-{}-aujourdhui'
         
-    elif situ == 'ville_haut_droite7':
+    elif situ == 'ville_bas_droite7':
         path = 'https://www.lachainemeteo.com/meteo-italie/ville-{}/previsions-meteo-{}-aujourdhui'
 
 
@@ -51,11 +51,49 @@ def vent_voisin(nombre, ville, situ):
     liste = str(propriete)
 
     a = str(liste).find('scaleWindOrange"></i>')
+    b = str(liste).find('scaleWindRed"></i>')
+    aa = str(liste).find('scaleWindYellow"></i>')
+    
+    if a >= 0:
+        code = liste[a:a+200]
+    elif b >= 0:
+        code = liste[b:b+200]
+    elif aa >= 0:
+        code = liste[aa:aa+200]
+    else:
+        code = 'None'
+    
+    #print(a,b,aa)
 
-    code = liste[a:a+200]
+    if code == 'None':
+        path = 'https://www.lachainemeteo.com/meteo-allemagne/village-{}/previsions-meteo-{}-%28oder%29-aujourdhui'
+        path = path.format(nombre, ville)
+        r = requests.get(path)
+
+        page = r.content
+        soup = BeautifulSoup(page, "html.parser")
+
+        propriete = soup.find_all("div", {'class':'splitData'})
+
+        liste = str(propriete)
+
+        a = str(liste).find('scaleWindOrange"></i>')
+        b = str(liste).find('scaleWindRed"></i>')
+        aa = str(liste).find('scaleWindYellow"></i>')
+        
+        if a >= 0:
+            code = liste[a:a+200]
+        elif b >= 0:
+            code = liste[b:b+200]
+        elif aa >= 0:
+            code = liste[c:c+200]
 
 
 
+
+
+
+    
     c = str(code).find('Nord-Nord-Est')
     
     if c >= 0:
@@ -151,7 +189,8 @@ def traitement_ville(liste, liste1, nom_liste):
         liste2.append((i, vent))
         
         c+=1
-    
+        
+    return liste2
 
     
 def apport_pollu():
@@ -168,7 +207,36 @@ def apport_pollu():
     j =traitement_ville(ville_bas_droite7, num_ville7, 'ville_bas_droite7')
     
 
-    print(a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 apport_pollu()
 
