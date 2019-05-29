@@ -18,9 +18,8 @@ Ensuite tu peux essayer de voir si tu peux faire une soustraction avant apres, M
 "-----"
 
 
-en gros on va dire: un jour normal = 20, 
+faut trouvé de combien jour ou nuit influe sur la jouréne !! manif ou pas influe sur la journée ect
 
-selon les combinaisons on ajoutera ou descendra si c juste + 1 si c +- 3 + 0 si c inf ou plus de 4 - 1 et apres chai pas
 
 #------------------------------------------
 
