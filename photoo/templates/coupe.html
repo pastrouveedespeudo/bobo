@@ -165,7 +165,7 @@
       $("#draggable6, #draggable7, #draggable8, #draggable9, #draggable10, #draggable11").draggable();
     } );
   $( function() {
-      $("#draggable12, #draggable14, #draggable15, #draggable16, #draggable17, #draggable18, #draggable19, #draggable_favoris").draggable();
+      $("#draggable12, #draggable14, #draggable15, #draggable16, #draggable18, #draggable19, #draggable_favoris").draggable();
     } );
 
 
@@ -177,7 +177,7 @@
       $("#favdraggable6, #favdraggable7, #favdraggable8, #favdraggable9, #favdraggable10, #favdraggable11").draggable();
     } );
   $( function() {
-      $("#favdraggable12, #favdraggable14, #favdraggable15, #favdraggable16, #favdraggable17, #favdraggable18, #favdraggable19, #draggable_favoris").draggable();
+      $("#favdraggable12, #favdraggable14, #favdraggable15, #favdraggable16, #favdraggable18, #favdraggable19, #draggable_favoris").draggable();
     } );
 
 
@@ -233,7 +233,7 @@ listeeeee = []
 
     #draggable2, #draggable3,#draggable4,#draggable5, #draggable6,#draggable7,
     #draggable8, #draggable9, #draggable10,#draggable11,#draggable12,
-    #draggable14,#draggable15,#draggable16,#draggable17,#draggable18,
+    #draggable14,#draggable15,#draggable16,#draggable18,
     #draggable19,#draggable{ width: 0px; height: 0px;}
 
     #favdraggable2, #favdraggable3,#favdraggable4,
@@ -504,12 +504,11 @@ listeeeee = []
 
 
 
-
             </center>
           </div>
 
           
-          <div class="col-lg-6">
+          <div class="col-lg-6" id='vivideo'>
 
             <div id="basic" style="text-align:center; z-index: 4;">
               <video class="videostream" autoplay style="z-index: 4;"></video>
@@ -533,122 +532,7 @@ listeeeee = []
           </div>
 
 
-
-
-          
           <div class="col-lg-3">
-
-
-          <script>
-
-
-
-        
-          function favovo(){
-          };
-
-
-          function coupe_longue(){
-            document.getElementById('placement').style.display = 'none';
-            document.getElementById('bout_fermer_longue').style.display = 'block';
-            
-            document.getElementById('draggable19').style.display = 'block';
-            document.getElementById('draggable18').style.display = 'block';
-            document.getElementById('draggable').style.display = 'block';
-            document.getElementById('draggable4').style.display = 'block';
-            document.getElementById('draggable15').style.display = 'block';
-            document.getElementById('draggable5').style.display = 'block';
-            
-          };
-
-
-          function coupe_courte(){
-            document.getElementById('placement').style.display = 'none';
-            document.getElementById('bout_fermer_court').style.display = 'block';
-
-            document.getElementById('draggable14').style.display = 'block';
-            document.getElementById('draggable16').style.display = 'block';
-          };
-
-
-          function coupe_longue_coul(){
-            document.getElementById('placement').style.display = 'none';
-            document.getElementById('bout_fermer_longue_coul').style.display = 'block';
-
-            document.getElementById('draggable10').style.display = 'block';
-            document.getElementById('draggable11').style.display = 'block';
-            document.getElementById('draggable6').style.display = 'block'; 
-          };
-
-
-
-          function coupe_courte_coul(){
-            document.getElementById('placement').style.display = 'none';
-            document.getElementById('bout_fermer_court_coul').style.display = 'block';
-
-            document.getElementById('draggable3').style.display = 'block';
-            document.getElementById('draggable9').style.display = 'block';
-            document.getElementById('draggable12').style.display = 'block'; 
-          };
-
-
-
-
-          function barbe(){
-            document.getElementById('placement').style.display = 'none';
-            document.getElementById('bout_fermer_barbe').style.display = 'block';
-
-            document.getElementById('draggable7').style.display = 'block';
-            document.getElementById('draggable8').style.display = 'block';
-          };
-
-
-          function fermer1(){
-            document.getElementById('placement').style.display = 'block';
-            document.getElementById('bout_fermer_longue').style.display = 'none';
-            
-            document.getElementById('draggable19').style.display = 'none';
-            document.getElementById('draggable18').style.display = 'none';
-            document.getElementById('draggable').style.display = 'none';
-            document.getElementById('draggable4').style.display = 'none';
-            document.getElementById('draggable15').style.display = 'none';
-            document.getElementById('draggable5').style.display = 'none';
-          };
-          
-          function fermer2(){
-            document.getElementById('placement').style.display = 'block';
-            document.getElementById('bout_fermer_court').style.display = 'none';
-
-            document.getElementById('draggable14').style.display = 'none';
-            document.getElementById('draggable16').style.display = 'none';
-          };
-          
-           function fermer3(){
-            document.getElementById('placement').style.display = 'block';
-            document.getElementById('bout_fermer_longue_coul').style.display = 'none';
-
-            document.getElementById('draggable10').style.display = 'none';
-            document.getElementById('draggable11').style.display = 'none';
-            document.getElementById('draggable6').style.display = 'none'; 
-          };
-           
-          function fermer4(){
-            document.getElementById('placement').style.display = 'block';
-            document.getElementById('bout_fermer_court_coul').style.display = 'none';
-
-            document.getElementById('draggable3').style.display = 'none';
-            document.getElementById('draggable9').style.display = 'none';
-            document.getElementById('draggable12').style.display = 'none'; 
-          };
-          function fermer5(){
-            document.getElementById('placement').style.display = 'block';
-            document.getElementById('bout_fermer_barbe').style.display = 'none';
-
-            document.getElementById('draggable7').style.display = 'none';
-            document.getElementById('draggable8').style.display = 'none';
-          };        
-
-        </script>
 
 
           <p><center><strong>Coupes</strong></center></p>
@@ -663,7 +547,35 @@ listeeeee = []
               <input type='button' value='barbe' onclick='barbe()' style='border:3px solid black;'><br><br>
             </div>
 
-            <div>
+          <center>
+
+            <div>{% csrf_token %}
+              <input type="hidden" name="csrfmiddlewaretoken"
+                value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
+           
+              <input type="hidden" name="csrfmiddlewaretoken"
+                value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
+
+              
+              <form id='jaime' method="POST" action='/photo/coupe'>{% csrf_token %}
+              
+                <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux" value=''>{% csrf_token %}
+                
+                <input type="hidden" name="coupe"
+                  value=LISTECOUPE>{% csrf_token %}
+                  <br>
+                <input type="button" id='sauve' value="J'aime cette coupe"
+                <a class="btn btn-light btn-xl js-scroll-trigger">{% csrf_token %}
+                
+              </form>{% csrf_token %}
+            </div>
+
+          </center>
+
+
+
+    
+          <div>
                 
             <div id="draggable19" class="ui-widget-content" value='coupe21'
             onclick="nom_image('coupe21', 250, 150)";
@@ -767,8 +679,6 @@ listeeeee = []
             </div>
 
 
-
-
             <div id="draggable3" class="ui-widget-content" value='coupe4'
               onclick="nom_image('coupe4', 150, 150)";
               style='z-index: 1; display:none;'>
@@ -787,9 +697,6 @@ listeeeee = []
             </div>
 
 
-
-
-         
             <div id="draggable12" class="ui-widget-content"  value='coupe14'
               onclick="nom_image('coupe14', 160, 100)";
               style='z-index: 1; display:none;'>
@@ -836,41 +743,8 @@ listeeeee = []
           </div>
         </div>    
       </div>
-      </div>
-
-
-    <center>
- 
-    <div style='margin-top:-180px;'>{% csrf_token %}
-      <input type="hidden" name="csrfmiddlewaretoken"
-        value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
-   
-      <input type="hidden" name="csrfmiddlewaretoken"
-        value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
 
       
-      <form id='jaime' method="POST" action='/photo/coupe'>{% csrf_token %}
-      
-        <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux" value=''>{% csrf_token %}
-        
-        <input type="hidden" name="coupe"
-          value=LISTECOUPE>{% csrf_token %}
-          <br>
-        <input type="button" id="sub" value="J'aime cette coupe" onclick="yo()"
-        <a class="btn btn-light btn-xl js-scroll-trigger">{% csrf_token %}
-        
-      </form>{% csrf_token %}
-      
-    </div>
-    </div>
-    </div><br><br>
-    </center>
-
-
-
-
-
-
 
 
     <div class="container" >
@@ -885,9 +759,7 @@ listeeeee = []
           
           </form>
       </center>
-       </div>
-
-
+    </div>
 
 
       {% for i in coif %}
@@ -899,6 +771,7 @@ listeeeee = []
           
           {% endfor %}
       {% endfor %}
+
 
 
   <br><br><br>
@@ -1014,23 +887,7 @@ listeeeee = []
 
 
 
-  <!-- Footer -->
-  <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
-    </div>
-  </footer>
 
-  <!-- Bootstrap core JavaScript -->
- 
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="/static/js/creative.min.js"></script>
 
 </body>
 
@@ -1044,6 +901,115 @@ listeeeee = []
 
 
 
+<script>
+
+
+
+  function favovo(){
+  };
+
+
+  function coupe_longue(){
+    document.getElementById('placement').style.display = 'none';
+    document.getElementById('bout_fermer_longue').style.display = 'block';
+    
+    document.getElementById('draggable19').style.display = 'block';
+    document.getElementById('draggable18').style.display = 'block';
+    document.getElementById('draggable').style.display = 'block';
+    document.getElementById('draggable4').style.display = 'block';
+    document.getElementById('draggable15').style.display = 'block';
+    document.getElementById('draggable5').style.display = 'block';
+    
+  };
+
+
+  function coupe_courte(){
+    document.getElementById('placement').style.display = 'none';
+    document.getElementById('bout_fermer_court').style.display = 'block';
+
+    document.getElementById('draggable14').style.display = 'block';
+    document.getElementById('draggable16').style.display = 'block';
+  };
+
+
+  function coupe_longue_coul(){
+    document.getElementById('placement').style.display = 'none';
+    document.getElementById('bout_fermer_longue_coul').style.display = 'block';
+
+    document.getElementById('draggable10').style.display = 'block';
+    document.getElementById('draggable11').style.display = 'block';
+    document.getElementById('draggable6').style.display = 'block'; 
+  };
+
+
+
+  function coupe_courte_coul(){
+    document.getElementById('placement').style.display = 'none';
+    document.getElementById('bout_fermer_court_coul').style.display = 'block';
+
+    document.getElementById('draggable3').style.display = 'block';
+    document.getElementById('draggable9').style.display = 'block';
+    document.getElementById('draggable12').style.display = 'block'; 
+  };
+
+
+
+
+  function barbe(){
+    document.getElementById('placement').style.display = 'none';
+    document.getElementById('bout_fermer_barbe').style.display = 'block';
+
+    document.getElementById('draggable7').style.display = 'block';
+    document.getElementById('draggable8').style.display = 'block';
+  };
+
+
+  function fermer1(){
+    document.getElementById('placement').style.display = 'block';
+    document.getElementById('bout_fermer_longue').style.display = 'none';
+    
+    document.getElementById('draggable19').style.display = 'none';
+    document.getElementById('draggable18').style.display = 'none';
+    document.getElementById('draggable').style.display = 'none';
+    document.getElementById('draggable4').style.display = 'none';
+    document.getElementById('draggable15').style.display = 'none';
+    document.getElementById('draggable5').style.display = 'none';
+  };
+  
+  function fermer2(){
+    document.getElementById('placement').style.display = 'block';
+    document.getElementById('bout_fermer_court').style.display = 'none';
+
+    document.getElementById('draggable14').style.display = 'none';
+    document.getElementById('draggable16').style.display = 'none';
+  };
+  
+   function fermer3(){
+    document.getElementById('placement').style.display = 'block';
+    document.getElementById('bout_fermer_longue_coul').style.display = 'none';
+
+    document.getElementById('draggable10').style.display = 'none';
+    document.getElementById('draggable11').style.display = 'none';
+    document.getElementById('draggable6').style.display = 'none'; 
+  };
+   
+  function fermer4(){
+    document.getElementById('placement').style.display = 'block';
+    document.getElementById('bout_fermer_court_coul').style.display = 'none';
+
+    document.getElementById('draggable3').style.display = 'none';
+    document.getElementById('draggable9').style.display = 'none';
+    document.getElementById('draggable12').style.display = 'none'; 
+  };
+  function fermer5(){
+    document.getElementById('placement').style.display = 'block';
+    document.getElementById('bout_fermer_barbe').style.display = 'none';
+
+    document.getElementById('draggable7').style.display = 'none';
+    document.getElementById('draggable8').style.display = 'none';
+  };        
+
+</script>
 
 
 
@@ -1073,7 +1039,6 @@ listeeeee = []
   }
 
 </style>
-
 
 
 <script>
@@ -1249,24 +1214,21 @@ listeeeee = []
 
 <script>
 
-  
     var LISTECOUPE = []
 
     var liste_liste = [draggable,draggable3,draggable4,draggable5,draggable6,draggable7,draggable8,draggable9,
-                        draggable10,draggable11,draggable12,draggable14,draggable15,draggable16,draggable17,draggable18,
+                        draggable10,draggable11,draggable12,draggable14,draggable15,draggable16,draggable18,
                         draggable19]
 
-    
-    function yo() {
-        
 
-      
+    function yo() {
+
       for(var i = 0; i <= liste_liste.length - 1; i++){
      
         var a = document.getElementById(liste_liste[i].id).offsetLeft;
         var b = document.getElementById(liste_liste[i].id).offsetTop;
 
-        if(a >= 400 && a <= 700 & b >=30 && b <= 400 ){
+        if(a >= 10 && a <= 349 & b >=130 && b <= 410 ){
           
           LISTECOUPE.push(liste_liste[i].id)
           document.getElementById("coupedecheveux").value = LISTECOUPE[LISTECOUPE.length - 1];
@@ -1295,11 +1257,6 @@ listeeeee = []
   };
 
 };
-
-
-   
-   
-  
 </script>
 
 
