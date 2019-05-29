@@ -18,7 +18,7 @@ Ensuite tu peux essayer de voir si tu peux faire une soustraction avant apres, M
 "-----"
 
 
-
+soit tu garde le coté friperrie soit tu met des boutons selon les coupes
 
 #------------------------------------------
 
