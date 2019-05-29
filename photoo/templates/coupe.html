@@ -334,11 +334,34 @@ listeeeee = []
                     id="coupe212121"
                     style='display:none;'/>
               </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
           </div>
     
           
             {% if user.is_authenticated %}
                 <center><p><strong>Mes favoris</strong></p></center>
+                <center><input type='button' value='Favoris' style='border:3px solid black;' onclick='favovo()'></center>
                 <p id='coucou'></p>
             {% else %}
                 <p><strong>Inscris toi ! et ajoute des favoris !</strong></p>
@@ -390,86 +413,209 @@ listeeeee = []
           <div class="col-lg-3">
 
 
+          <script>
+
+
+
+        
+          function favovo(){
+          };
+
+
+          function coupe_longue(){
+            document.getElementById('placement').style.display = 'none';
+            document.getElementById('bout_fermer_longue').style.display = 'block';
+            
+            document.getElementById('draggable19').style.display = 'block';
+            document.getElementById('draggable18').style.display = 'block';
+            document.getElementById('draggable').style.display = 'block';
+            document.getElementById('draggable4').style.display = 'block';
+            document.getElementById('draggable15').style.display = 'block';
+            document.getElementById('draggable5').style.display = 'block';
+            
+          };
+
+
+          function coupe_courte(){
+            document.getElementById('placement').style.display = 'none';
+            document.getElementById('bout_fermer_court').style.display = 'block';
+
+            document.getElementById('draggable14').style.display = 'block';
+            document.getElementById('draggable16').style.display = 'block';
+          };
+
+
+          function coupe_longue_coul(){
+            document.getElementById('placement').style.display = 'none';
+            document.getElementById('bout_fermer_longue_coul').style.display = 'block';
+
+            document.getElementById('draggable10').style.display = 'block';
+            document.getElementById('draggable11').style.display = 'block';
+            document.getElementById('draggable6').style.display = 'block'; 
+          };
+
+
+
+          function coupe_courte_coul(){
+            document.getElementById('placement').style.display = 'none';
+            document.getElementById('bout_fermer_court_coul').style.display = 'block';
+
+            document.getElementById('draggable3').style.display = 'block';
+            document.getElementById('draggable9').style.display = 'block';
+            document.getElementById('draggable12').style.display = 'block'; 
+          };
+
+
+
+
+          function barbe(){
+            document.getElementById('placement').style.display = 'none';
+            document.getElementById('bout_fermer_barbe').style.display = 'block';
+
+            document.getElementById('draggable7').style.display = 'block';
+            document.getElementById('draggable8').style.display = 'block';
+          };
+
+
+          function fermer1(){
+            document.getElementById('placement').style.display = 'block';
+            document.getElementById('bout_fermer_longue').style.display = 'none';
+            
+            document.getElementById('draggable19').style.display = 'none';
+            document.getElementById('draggable18').style.display = 'none';
+            document.getElementById('draggable').style.display = 'none';
+            document.getElementById('draggable4').style.display = 'none';
+            document.getElementById('draggable15').style.display = 'none';
+            document.getElementById('draggable5').style.display = 'none';
+          };
+          
+          function fermer2(){
+            document.getElementById('placement').style.display = 'block';
+            document.getElementById('bout_fermer_court').style.display = 'none';
+
+            document.getElementById('draggable14').style.display = 'none';
+            document.getElementById('draggable16').style.display = 'none';
+          };
+          
+           function fermer3(){
+            document.getElementById('placement').style.display = 'block';
+            document.getElementById('bout_fermer_longue_coul').style.display = 'none';
+
+            document.getElementById('draggable10').style.display = 'none';
+            document.getElementById('draggable11').style.display = 'none';
+            document.getElementById('draggable6').style.display = 'none'; 
+          };
+           
+          function fermer4(){
+            document.getElementById('placement').style.display = 'block';
+            document.getElementById('bout_fermer_court_coul').style.display = 'none';
+
+            document.getElementById('draggable3').style.display = 'none';
+            document.getElementById('draggable9').style.display = 'none';
+            document.getElementById('draggable12').style.display = 'none'; 
+          };
+          function fermer5(){
+            document.getElementById('placement').style.display = 'block';
+            document.getElementById('bout_fermer_barbe').style.display = 'none';
+
+            document.getElementById('draggable7').style.display = 'none';
+            document.getElementById('draggable8').style.display = 'none';
+          };        
+
+        </script>
+
 
           <p><center><strong>Coupes</strong></center></p>
 
-          
-          
+          <div>
+          <center>
+            <div id='placement'>
+              <input type='button' value='coupe longue' onclick='coupe_longue()' style='border:3px solid black;'><br><br>
+              <input type='button' value='coupe courte' onclick='coupe_courte()' style='border:3px solid black;'><br><br>
+              <input type='button' value='coupe couleur longue' onclick='coupe_longue_coul()' style='border:3px solid black;'><br><br>
+              <input type='button' value='coupe couleur courte' onclick='coupe_courte_coul()' style='border:3px solid black;'><br><br>
+              <input type='button' value='barbe' onclick='barbe()' style='border:3px solid black;'><br><br>
+            </div>
+
+            <div>
+                
+            <div id="draggable19" class="ui-widget-content" value='coupe21'
+            onclick="nom_image('coupe21', 250, 150)";
+              style='z-index: 1; display:none;'>
+                <img src="/static/img/portfolio/coupe/1.4.png"
+                  width='150' height='250'
+                  id="coupe21"/>
+            </div>
+
+            <div id="draggable18" class="ui-widget-content" value='coupe20'
+            onclick="nom_image('coupe20', 250, 150)";
+                style='z-index: 1; display:none;'>
+                <img src="/static/img/portfolio/coupe/11.3.png"
+                  width='150' height='250'
+                  id="coupe20"/>
+            </div>
+
           <div id="draggable" name="coucou" value='coupe1'
             class="ui-widget-content"
             onclick="nom_image('coupe1', 200, 150)";
-            style='z-index: 1;'>
+            style='z-index: 1; display:none;'>
                 <img src="/static/img/portfolio/coupe/bbbbbbb.png"
                   width='150' height='200'
                   id="coupe1" />
             </div>
-            
 
-            <div id="draggable3" class="ui-widget-content" value='coupe4'
-              onclick="nom_image('coupe4', 150, 150)";
-              style='z-index: 1;'>
-                <img src="/static/img/portfolio/coupe/image849849849.png"
-                  width='150' height='150'
-                  id="coupe4"/>
-            </div>
 
-     
             <div id="draggable4" class="ui-widget-content" value='coupe5'
             onclick="nom_image('coupe5', 150, 100)";
-            style='z-index: 1;'>
+            style='z-index: 1; display:none;'>
                 <img src="/static/img/portfolio/coupe/bbbbbbb.png"
                 width='100' height='150'
                 id="coupe5" />
             </div>
+
             
-       
+            <div id="draggable15" class="ui-widget-content"  value='coupe17'
+              onclick="nom_image('coupe17', 250, 150)";
+              style='z-index: 1; display:none;'>
+                <img src="/static/img/portfolio/coupe/bbb.png"
+                  width='150' height='250'
+                  id="coupe17"/>
+            </div>
+
             <div id="draggable5" class="ui-widget-content" value='coupe6'
               onclick="nom_image('coupe6', 300, 130)";
-              style='z-index: 1;'>
+              style='z-index: 1; display:none;'>
                 <img src="/static/img/portfolio/coupe/1.5.png"
                   width='130' height='300'
                   id="coupe6"/>
             </div>
 
-   
-            <div id="draggable6" class="ui-widget-content" value='coupe2'
-              onclick="nom_image('coupe2', 300, 130)";
-              style='z-index: 1;'>
-                <img src="/static/img/portfolio/coupe/coucou3.png"
-                  width='130' height='300'
-                  id="coupe2"/>
+
+
+
+            <div id="draggable14" class="ui-widget-content"  value='coupe16'
+              onclick="nom_image('coupe16', 160, 100)";
+              style='z-index: 1; display:none;'>
+                <img src="/static/img/portfolio/coupe/bbbb.png"
+                  width='100' height='160'
+                  id="coupe16"/>
             </div>
 
 
-            <div id="draggable7" class="ui-widget-content" value='coupe22'
-              onclick="nom_image('coupe22', 100, 70)";
-              style='z-index: 1;'>
-                <img src="/static/img/portfolio/coupe/coucou22.png"
-                  width='70' height='100'
-                  id="coupe22"/>
+
+
+            
+            <div id="draggable16" class="ui-widget-content"  value='coupe18'
+              onclick="nom_image('coupe18', 160, 140)";
+              style='z-index: 1; display:none;'>
+                <img src="/static/img/portfolio/coupe/1.1.png"
+                  width='140' height='160'
+                  id="coupe18" />
             </div>
-
-            <div id="draggable8" class="ui-widget-content" value='coupe8'
-              onclick="nom_image('coupe8', 50, 70)";
-              style='z-index: 1;'>
-                <img src="/static/img/portfolio/coupe/coucou22.png"
-                  width='70' height='50'
-                  id="coupe8"/>
-            </div>
-
-
-            <div id="draggable9" class="ui-widget-content" value='coupe9'
-              onclick="nom_image('coupe9', 160, 140)";
-              style='z-index: 1;'>
-                <img src="/static/img/portfolio/coupe/coif.png"
-                width='140' height='160'
-                id="coupe9"/>
-            </div>
-
 
             <div id="draggable10" class="ui-widget-content" value='coupe12'
               onclick="nom_image('coupe12', 250, 150)";
-              style='z-index: 1;'>
+              style='z-index: 1; display:none;'>
                 <img src="/static/img/portfolio/coupe/aa.png"
                   width='150' height='250'
                   id="coupe12"/>
@@ -478,106 +624,93 @@ listeeeee = []
       
             <div id="draggable11" class="ui-widget-content" value='coupe13'
               onclick="nom_image('coupe13', 250, 150)";
-              style='z-index: 1;'>
+              style='z-index: 1; display:none;'>
                 <img src="/static/img/portfolio/coupe/aaaaa.png"
                   width='150' height='250'
                   id="coupe13"/>
             </div>
 
+
+   
+            <div id="draggable6" class="ui-widget-content" value='coupe2'
+              onclick="nom_image('coupe2', 300, 130)";
+              style='z-index: 1; display:none;'>
+                <img src="/static/img/portfolio/coupe/coucou3.png"
+                  width='130' height='300'
+                  id="coupe2"/>
+            </div>
+
+
+
+
+            <div id="draggable3" class="ui-widget-content" value='coupe4'
+              onclick="nom_image('coupe4', 150, 150)";
+              style='z-index: 1; display:none;'>
+                <img src="/static/img/portfolio/coupe/image849849849.png"
+                  width='150' height='150'
+                  id="coupe4"/>
+            </div>
+
+     
+            <div id="draggable9" class="ui-widget-content" value='coupe9'
+              onclick="nom_image('coupe9', 160, 140)";
+              style='z-index: 1; display:none;'>
+                <img src="/static/img/portfolio/coupe/coif.png"
+                width='140' height='160'
+                id="coupe9"/>
+            </div>
+
+
+
+
          
             <div id="draggable12" class="ui-widget-content"  value='coupe14'
               onclick="nom_image('coupe14', 160, 100)";
-              style='z-index: 1;'>
+              style='z-index: 1; display:none;'>
                 <img src="/static/img/portfolio/coupe/bb.png"
                   width='100' height='160'
                   id="coupe14"/>
             </div>
 
 
-            <div id="draggable14" class="ui-widget-content"  value='coupe16'
-              onclick="nom_image('coupe16', 160, 100)";
-              style='z-index: 1;'>
-                <img src="/static/img/portfolio/coupe/bbbb.png"
-                  width='100' height='160'
-                  id="coupe16"/>
+            <div id="draggable7" class="ui-widget-content" value='coupe22'
+              onclick="nom_image('coupe22', 100, 70)";
+              style='z-index: 1; display:none;'>
+                <img src="/static/img/portfolio/coupe/coucou22.png"
+                  width='70' height='100'
+                  id="coupe22"/>
+            </div>
+
+            <div id="draggable8" class="ui-widget-content" value='coupe8'
+              onclick="nom_image('coupe8', 50, 70)";
+              style='z-index: 1; display:none;'>
+                <img src="/static/img/portfolio/coupe/coucou22.png"
+                  width='70' height='50'
+                  id="coupe8"/>
             </div>
 
 
-            <div id="draggable15" class="ui-widget-content"  value='coupe17'
-              onclick="nom_image('coupe17', 250, 150)";
-              style='z-index: 1;'>
-                <img src="/static/img/portfolio/coupe/bbb.png"
-                  width='150' height='250'
-                  id="coupe17"/>
-            </div>
+            <input type='button' id='bout_fermer_longue' value='fermer' onclick='fermer1()'
+                style='display:none; border:3px solid black;'><br><br>
+                
+            <input type='button' id='bout_fermer_court' value='fermer' onclick='fermer2()'
+                style='display:none;border:3px solid black;''><br><br>
+                
+            <input type='button' id='bout_fermer_longue_coul' value='fermer' onclick='fermer3()'
+                style='display:none;border:3px solid black;''><br><br>
+                
+            <input type='button' id='bout_fermer_court_coul' value='fermer' onclick='fermer4()'
+                style='display:none;border:3px solid black;''><br><br>
 
+            <input type='button' id='bout_fermer_barbe' value='fermer' onclick='fermer5()'
+                style='display:none;border:3px solid black;''><br><br>     
             
-            <div id="draggable16" class="ui-widget-content"  value='coupe18'
-              onclick="nom_image('coupe18', 160, 140)";
-              style='z-index: 1;'>
-                <img src="/static/img/portfolio/coupe/1.1.png"
-                  width='140' height='160'
-                  id="coupe18" />
-            </div>
-
-           
-            <div id="draggable17" class="ui-widget-content" value='coupe19'
-              onclick="nom_image('coupe19', 100, 110)";
-                style='z-index: 1;'>
-                <img src="/static/img/portfolio/coupe/1.2.png"
-                  width='110' height='100'
-                  id="coupe19"/>
-            </div>
-
-        
-            <div id="draggable18" class="ui-widget-content" value='coupe20'
-            onclick="nom_image('coupe20', 250, 150)";
-                style='z-index: 1;'>
-                <img src="/static/img/portfolio/coupe/11.3.png"
-                  width='150' height='250'
-                  id="coupe20"/>
-            </div>
-
-
-            <div id="draggable19" class="ui-widget-content" value='coupe21'
-            onclick="nom_image('coupe21', 250, 150)";
-              style='z-index: 1;'>
-                <img src="/static/img/portfolio/coupe/1.4.png"
-                  width='150' height='250'
-                  id="coupe21"/>
-            </div>
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          </center>
 
 
 
           </div>
-        </div>
-
-
-
-
-
-    
-
-
-
-
-
-        
+        </div>    
       </div>
 
 
@@ -829,9 +962,6 @@ listeeeee = []
 
 
 </html>
-
-
-
 
 
 
