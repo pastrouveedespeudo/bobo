@@ -7,6 +7,8 @@
 
 #en gros jcrois qu'il faut: update polu voisin a chaque fois (tache cron mais ca a l'air bizzare)
 
+#pour incendie faut verifier toute les formes de date et c pas tres fiable ^^
+
 # LIS CA 
 
 #merde je comprendrai rien, en gros, il faut update a chaque heure vent voisin ET polution voisin. Si pendant 4/5 heures il y a la meme direction AVEC un vent significatif alors on dit danger. Pour cela, tu peux te servir de ton nouveau projet de pts sur carte via vent. 
