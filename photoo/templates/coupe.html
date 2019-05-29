@@ -335,34 +335,12 @@ listeeeee = []
                     style='display:none;'/>
               </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
               
           </div>
     
           
             {% if user.is_authenticated %}
                 <center><p><strong>Mes favoris</strong></p></center>
-                <center><input type='button' value='Favoris' style='border:3px solid black;' onclick='favovo()'></center>
-                <p id='coucou'></p>
             {% else %}
                 <p><strong>Inscris toi ! et ajoute des favoris !</strong></p>
             {% endif %}
@@ -707,68 +685,13 @@ listeeeee = []
             
           </center>
 
-
-
           </div>
         </div>    
       </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <div>
-            <br><br><br><br>
-            <br><br><br><br><br><br><br><br><br>
-          </div>
-
-          
-        </div> 
-      </div>    
-    </div>
-            
-    
-    <div>{% csrf_token %}
+    <center>
+    <div style='margin-top:-200px;'>{% csrf_token %}
       <input type="hidden" name="csrfmiddlewaretoken"
         value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
    
@@ -790,7 +713,7 @@ listeeeee = []
       
     </div>
     </div><br><br>
-
+    </center>
 
 
 
