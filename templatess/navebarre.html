@@ -44,7 +44,7 @@
     <style>#deco_nav{width:50px; height:50px; margin-left:46px;}</style>
     <style>#autre{margin-left:-965px;margin-top:-100px;}</style>
     <style>#h{font:Serif; color:white;}</style>
-    <style>#momode{width:65px; height:57px;margin-left:80px;}</style>
+    <style>#momode{width:65px; height:50px;margin-left:90px;}</style>
         
     <div class="container">
 
