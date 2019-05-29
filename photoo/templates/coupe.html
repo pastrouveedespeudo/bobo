@@ -314,6 +314,31 @@ listeeeee = []
               onclick='enlever_largeur()'/><br><br>
 
 
+            <center>
+
+              <div>{% csrf_token %}
+                <input type="hidden" name="csrfmiddlewaretoken"
+                  value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
+             
+                <input type="hidden" name="csrfmiddlewaretoken"
+                  value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
+
+                
+                <form id='jaime' method="POST" action='/photo/coupe'>{% csrf_token %}
+                
+                  <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux" value=''>{% csrf_token %}
+                  
+                  <input type="hidden" name="coupe"
+                    value=LISTECOUPE>{% csrf_token %}
+                    <br>
+                  <input type="button" id='sauve' value="J'aime cette coupe"
+                  <a class="btn btn-light btn-xl js-scroll-trigger">{% csrf_token %}
+                  
+                </form>{% csrf_token %}
+              </div>
+
+            </center><br>
+
 
             <div id='favoris' style='display:none; border:1px solid red;' value={{fav}}></div>
             <div style='text-align:center'>
@@ -547,34 +572,6 @@ listeeeee = []
               <input type='button' value='barbe' onclick='barbe()' style='border:3px solid black;'><br><br>
             </div>
 
-          <center>
-
-            <div>{% csrf_token %}
-              <input type="hidden" name="csrfmiddlewaretoken"
-                value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
-           
-              <input type="hidden" name="csrfmiddlewaretoken"
-                value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
-
-              
-              <form id='jaime' method="POST" action='/photo/coupe'>{% csrf_token %}
-              
-                <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux" value=''>{% csrf_token %}
-                
-                <input type="hidden" name="coupe"
-                  value=LISTECOUPE>{% csrf_token %}
-                  <br>
-                <input type="button" id='sauve' value="J'aime cette coupe"
-                <a class="btn btn-light btn-xl js-scroll-trigger">{% csrf_token %}
-                
-              </form>{% csrf_token %}
-            </div>
-
-          </center>
-
-
-
-    
           <div>
                 
             <div id="draggable19" class="ui-widget-content" value='coupe21'
