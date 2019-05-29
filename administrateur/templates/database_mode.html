@@ -13,7 +13,7 @@
       <div class="col-lg-10 align-self-end"><br><br><br><br><br>
 
         <h1 class="text-uppercase text-white font-weight-bold">
-          Coté administrateur !
+          Mais quelle mode ?
         </h1><br><hr class="divider my-4">
       </div>
 
@@ -33,6 +33,8 @@
       </div>
             
       <input type='button' value='revenir en arriere' onclick='arriere()'>
+      <br>
+      
             
     </div>
   </div>
@@ -47,7 +49,9 @@
       </div>
 
                                             
-      <center><div>Il y a {{brun}} brun, {{blond}} blond, {{chatain}} chatain</div></center><br><br><br><br>  
+      <center><div>Il y a {{brun}} brun, {{blond}} blond, {{chatain}} chatain</div></center><br><br>
+      <strong><p>Clique sur une des images pour voir ces caractéristiques</p></strong><br><br>
+      
           <div class="container" id='container' style='display:none;'>
             <div class="row">
 
@@ -233,6 +237,7 @@
       <center>Database sous forme SQL</center><br>
 
       <center><div>Il y a {{brun}} brun, {{blond}} blond, {{chatain}} chatain</div></center><br><br><br><br>
+      
       
       <div id='is_save'>
         {% for i in final %}
