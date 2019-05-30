@@ -91,7 +91,7 @@ def vent_voisin(nombre, ville, situ):
         elif b >= 0:
             code = liste[b:b+200]
         elif aa >= 0:
-            code = liste[c:c+200]
+            code = liste[aa:aa+200]
         
         
         
@@ -238,17 +238,17 @@ def traitement_liste_France(liste, liste_ville):
     liste1 = []
 
     for i in liste:
- 
+
         if i[0] == i: 
             a = apport_pollu_vent(i[1], direction_ville4)
             if a == True:
-                liste1.append(i[0])
+                liste1.append([i[0], i[1]])
             
         else:
             a = apport_pollu_vent(i[1], direction_ville44)
             
             if a == True:
-                liste1.append(i[0])
+                liste1.append([i[0], i[1]])
 
     return liste1
 
@@ -297,42 +297,74 @@ def apport_pollu():
     aa = traitement_liste(a, direction_ville1)
     aaa = voisinage(aa)
 
+    print(aaa)
+    print('\n')
 
     b = traitement_ville(ville_haut_gauche, num_ville, 'ville_haut_gauche')
     bb = traitement_liste(b, direction_ville)
     bbb = voisinage(bb)
 
+    print(bbb)
+    print('\n')
+
     c = traitement_ville(ville_haut_droite2, num_ville2, 'ville_haut_droite2')
     cc = traitement_liste(c, direction_ville2)
     ccc = voisinage(cc)
+
+    print(ccc)
+    print('\n')
     
     d =traitement_ville(ville_haut_droite3, num_ville3, 'ville_haut_droite3')
     dd = traitement_liste(d, direction_ville3)
     ddd = voisinage(dd)
+
+    print(ddd)
+    print('\n')
     
     e = traitement_ville(ville_haut_droite4, num_ville4, 'ville_haut_droite4')
+    print(e)
     ee = traitement_liste_France(e, direction_ville4)
     eee = voisinage(ee)
+
+    print(eee)
+    print('\n')
     
     f =traitement_ville(bas_droite6, num_ville6, 'bas_droite6')
     ff = traitement_liste(f, direction_ville6)
     fff = voisinage(ff)
+
+    print(fff)
+    print('\n')
     
     g =traitement_ville(ville_bas_gauche9, num_ville9, 'ville_bas_gauche9')
     gg = traitement_liste(g, direction_ville9)
     ggg = voisinage(gg)
 
+    print(ggg)
+    print('\n')
+
+
     h =traitement_ville(ville_haut_droite5, num_ville5, 'ville_haut_droite5')
     hh = traitement_liste(h, direction_ville5)
     hhh = voisinage(hh)
 
-    i =traitement_ville(ville_bas_gauche8, num_ville8, 'ville_bas_gauche8')
+    print(hhh)
+    print('\n')
+
+    i = traitement_ville(ville_bas_gauche8, num_ville8, 'ville_bas_gauche8')
     ii = traitement_liste(i, direction_ville8)
     iii = voisinage(ii)
+
+    print(iii)
+    print('\n')
+
 
     j =traitement_ville(ville_bas_droite7, num_ville7, 'ville_bas_droite7')
     jj = traitement_liste(j, direction_ville7)
     jjj = voisinage(jj)
+
+    print(jjj)
+    print('\n')
 
     liste.extend([aaa, bbb,ccc,ddd,eee,fff,ggg,hhh,iii,jjj])
     print(liste)
