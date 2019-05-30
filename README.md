@@ -2,6 +2,7 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
+bon sans incinération, pcqu'au pire google map et j'apelle les voisins qui me disent quand est ce que ca fume
 
 "------"
 
