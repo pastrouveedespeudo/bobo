@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageChops
 
 
 
-def recuperation_donnée_météo(lieu, METEO, VENT, PRESSION):
+def recuperation_donnée_météo(lieu):
 
     clé = '5a72ceae1feda40543d5844b2e04a205'
     
@@ -20,15 +20,23 @@ def recuperation_donnée_météo(lieu, METEO, VENT, PRESSION):
 
 
     méteo = data['weather'][0]['main']
-    print(méteo)
+
     if méteo == "Rain" or méteo == 'Thunderstorm':
-        METEO['pluie'] +=1
+        return 'pluie'
     elif méteo == "Clouds" or méteo == 'Mist' or méteo == 'Haze':
-        METEO['nuageux'] +=1
+        return 'nuageux'
     elif méteo == "Clear":
-        METEO['beau_temps'] +=1
+        return 'beau_temps'
 
+def vent(lieu):
 
+    clé = '5a72ceae1feda40543d5844b2e04a205'
+    
+    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,clé)
+    r = requests.get(localisation)
+    data=r.json()
+
+    
     try:
         vent_degres = data['wind']['deg']
     except:
@@ -39,18 +47,26 @@ def recuperation_donnée_météo(lieu, METEO, VENT, PRESSION):
 
 
     if vent <= 3 :
-        VENT['faible'] += 1
+        return 'faible'
         
     elif vent <= 6 and vent > 3:
-        VENT['moyen fort'] += 1
+        return 'moyen fort'
 
     elif vent <= 8 and vent > 6:
-        VENT['fort'] += 1
+        return 'fort'
 
     elif vent >= 8:
-        VENT['tres fort'] += 1
+        return 'tres fort'
 
+def pression(lieu):
 
+    
+    clé = '5a72ceae1feda40543d5844b2e04a205'
+    
+    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,clé)
+    r = requests.get(localisation)
+    data=r.json()
+    
     date = datetime.datetime.now()
     mois = date.month
 
@@ -58,13 +74,13 @@ def recuperation_donnée_météo(lieu, METEO, VENT, PRESSION):
 
     
     if pression >= 1030:#anti
-        PRESSION['forte'] += 1
+        return 'forte'
 
     elif pression <= 1013:
-        PRESSION['faible'] += 1#depression
+        return 'faible'#depression
 
     else:
-        PRESSION['normale'] += 1
+        return 'normale'
 
     
 
