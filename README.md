@@ -3,7 +3,7 @@
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
 
-#euh jvois vos gueules si vous appuyer sur stop hin ?
+
 
 faut faire vent voisin a part et ne plus le faire dans la minute mais dans les 5 minutes qui suivent
 
