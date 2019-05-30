@@ -12,7 +12,7 @@ from PIL import Image, ImageDraw, ImageChops
 
 
 
-def recuperation_donnée_température(lieu, CLIMAT):
+def recuperation_donnée_température(lieu):
 
     
     clé = '5a72ceae1feda40543d5844b2e04a205'
@@ -30,19 +30,19 @@ def recuperation_donnée_température(lieu, CLIMAT):
     #print(str(round(température)) + ' Celsius')
 
     if température < 0:
-        CLIMAT['> 0']+=1
+        return '> 0'
     elif température >= 0 and température <= 10:
-        CLIMAT['0_10']+=1
+        return '0_10'
     elif température >= 10 and température <= 20:
-        CLIMAT['11_20']+=1
+        return '11_20'
     elif température >= 20 and température <= 30:
-        CLIMAT['21_30']+=1
+        return '21_30'
     elif température >= 30 and température <= 40:
-        CLIMAT['31_40']+=1
+        return '31_40'
     elif température >= 40:
-        CLIMAT['41>']+=1
+        return '41>'
 
-def saison(SAISON):
+def saison():
     
     date = datetime.datetime.now()
     mois = date.month
@@ -52,20 +52,20 @@ def saison(SAISON):
     
     if mois == 12 or mois == 1\
        or mois == 2:
-        SAISON['hiver'] += 1 #pollution au bois
+        return 'hiver'
 
     elif mois == 3 or mois == 4\
          or mois == 5:
-        SAISON['primtemps'] += 1
+        return 'primtemps'
 
     elif mois == 6 or mois == 7\
          or mois == 8\
          or mois == 9:
-        SAISON['été'] += 1 
+        return 'été'
 
     elif mois == 10 or mois == 11\
          or mois == 12:
-        SAISON['automne'] += 1
+        return 'automne'
 
 
 
