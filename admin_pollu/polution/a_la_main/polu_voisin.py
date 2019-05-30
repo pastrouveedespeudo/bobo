@@ -10,6 +10,10 @@ from colour import Color
 from boussole import *
 from conteneur_ville import *
 
+#en gros chaque jour tu updates ca dans une database
+
+#et ensuite par le vent tu mattes
+
 def voisin(ville):
 
     liste1 = []
@@ -39,71 +43,42 @@ def voisin(ville):
     nb = ''.join(nb)
     nb = int(nb)
 
-    print(nb)
 
+    return nb
 
-def voisinage():
+def voisinage(liste):
 
+    c = 0
+    for i in liste:
     
-    for i in ville_haut_droite:
-        print(i)
-        
-        if i == 'duisburg-military-golf-club':
-            voisin('duisburg')
-        elif i == 'antwerp-golf-school':
-            voisin('antwerp')
-        elif i == 'antwerp-golf-school':
-            voisin('antwerp')
+        if i[0] == 'duisburg-military-golf-club':
+            a = voisin('duisburg')
+            liste[c].append(a)
+            
+        elif i[0] == 'antwerp-golf-school':
+            a = voisin('antwerp')
+            liste[c].append(a)
+            
+        elif i[0] == 'antwerp-golf-school':
+            a = voisin('antwerp')
+            liste[c].append(a)
+            
+        elif i[0] == 'barcelone':
+            a = voisin('barcelona')
+            liste[c].append(a)
+
+        elif i[0] == 'baselga-del-bondone':
+            a = voisin('basel')
+            liste[c].append(a)
+
         else:
-            voisin(i)
-
-    for i in ville_haut_gauche:
-        print(i)
-        voisin(i)
-
-    for i in ville_haut_droite2:
-        print(i)
-        voisin(i)
-
-    for i in ville_haut_droite3:
-        print(i)
-        voisin(i)
-        
-    for i in ville_haut_droite4:
-        print(i)
-        voisin(i)
-
-    for i in bas_droite6:
-        print(i)
-        voisin(i)
-        
-    for i in ville_bas_gauche9:
-        print(i)
-        voisin(i)
-        
-    for i in ville_haut_droite5:
-        print(i)
-        voisin(i)
-        
-    for i in ville_bas_gauche8:
-        print(i)
-        if i == 'barcelone':
-            voisin('barcelona')
-        else:
-            voisin(i)
-        
-    for i in ville_bas_droite7:
-        print(i)
-        if i == 'baselga-del-bondone':
-            voisin('basel')
-        else:
-            voisin(i)
-
+            a = voisin(i[0])
+            liste[c].append(a)
     
 
-voisinage()
+        c+=1
 
-
+    return liste
 
 
 
