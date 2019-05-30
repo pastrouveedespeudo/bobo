@@ -13,266 +13,266 @@ def creation_table():
     
     cursor = conn.cursor()
     
-    cursor.execute("""create table pression(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    pression varchar(100));""")
-
-    conn.commit()
-
-
-    cursor.execute("""create table vent(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    vent varchar(100));""")
-
-    cursor.execute("""create table météo(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    météo varchar(100));""")
-    conn.commit()
-
-
-    cursor.execute("""create table climat(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    climat varchar(100));""")
-    conn.commit()
-
-    
-    cursor.execute("""create table saison(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    saison varchar(100));""")
-
-    conn.commit()
-
-
-    cursor.execute("""create table pollué(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    pollué varchar(100));""")
-
-    conn.commit()
-
-    cursor.execute("""create table region_industrielle(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    REGION_INDUSTRIEL_POLLUEE varchar(100));""")
-
-
-    cursor.execute("""create table population_active(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    POPULATION_ACTIVE_HABITANT varchar(100));""")
-
-    conn.commit()
-
-
-    cursor.execute("""create table traffique(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    TRAFIQUE varchar(100));""")
-
-
-    conn.commit()
-
-    cursor.execute("""create table heure(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    HEURE varchar(100));""")
-
-
-    conn.commit()
-
-
-
-    cursor.execute("""create table weekend(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    WEEKEND varchar(100));""")
-
-    cursor.execute("""create table bouchon(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    BOUCHON varchar(100));""")
-
-
-    conn.commit()
-
-    cursor.execute("""create table activité(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    ACTIVITE_EXEPTIONNELLE varchar(100));""")
-
-
-    conn.commit()
-
-    cursor.execute("""create table nb_particule(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100));""")
-    conn.commit()
-
-
-
-    cursor.execute("""create table angrais(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    angrais varchar(100));""")
-    conn.commit()
-
-
-
-
-
-    cursor.execute("""create table diesel(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    diesel varchar(100));""")
-    conn.commit()
-
-
-
-
-    cursor.execute("""create table eruption(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    eruption varchar(100));""")
-    conn.commit()
-
-
-
-
-
-    cursor.execute("""create table incendie(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    incendie varchar(100));""")
-    conn.commit()
-
-
-
-
-    cursor.execute("""create table jour_nuit(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    jour_nuit varchar(100));""")
-    conn.commit()
-
-
-    cursor.execute("""create table polenne(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    polenne varchar(100));""")
-    conn.commit()
-
-
-
-
-    cursor.execute("""create table voisin(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    voisin varchar(100));""")
-    conn.commit()
-
-    cursor.execute("""create table pos_france(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100),
-                    nombre_particule varchar(100),
-                    pos varchar(100));""")
-    conn.commit()
-
-
-    cursor.execute("""create table sauvegarde_anty(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    vent varchar(100),
-                    temps varchar(100),
-                    pression INT,
-                    date varchar(100),
-                    heure_donnée varchar(100));""")
-    conn.commit()
-
-
-
-    cursor.execute("""create table nuit_froide(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    température_nuit varchar(100),
-                    température_journée varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100));""")
-    conn.commit()
-
-
-
-
-    cursor.execute("""create table conditions(
+##    cursor.execute("""create table pression(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    pression varchar(100));""")
+##
+##    conn.commit()
+##
+##
+##    cursor.execute("""create table vent(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    vent varchar(100));""")
+##
+##    cursor.execute("""create table météo(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    météo varchar(100));""")
+##    conn.commit()
+##
+##
+##    cursor.execute("""create table climat(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    climat varchar(100));""")
+##    conn.commit()
+##
+##    
+##    cursor.execute("""create table saison(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    saison varchar(100));""")
+##
+##    conn.commit()
+##
+##
+##    cursor.execute("""create table pollué(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    pollué varchar(100));""")
+##
+##    conn.commit()
+##
+##    cursor.execute("""create table region_industrielle(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    REGION_INDUSTRIEL_POLLUEE varchar(100));""")
+##
+##
+##    cursor.execute("""create table population_active(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    POPULATION_ACTIVE_HABITANT varchar(100));""")
+##
+##    conn.commit()
+##
+##
+##    cursor.execute("""create table traffique(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    TRAFIQUE varchar(100));""")
+##
+##
+##    conn.commit()
+##
+##    cursor.execute("""create table heure(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    HEURE varchar(100));""")
+##
+##
+##    conn.commit()
+##
+##
+##
+##    cursor.execute("""create table weekend(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    WEEKEND varchar(100));""")
+##
+##    cursor.execute("""create table bouchon(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    BOUCHON varchar(100));""")
+##
+##
+##    conn.commit()
+##
+##    cursor.execute("""create table activité(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    ACTIVITE_EXEPTIONNELLE varchar(100));""")
+##
+##
+##    conn.commit()
+##
+##    cursor.execute("""create table nb_particule(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100));""")
+##    conn.commit()
+##
+##
+##
+##    cursor.execute("""create table angrais(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    angrais varchar(100));""")
+##    conn.commit()
+##
+##
+##
+##
+##
+##    cursor.execute("""create table diesel(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    diesel varchar(100));""")
+##    conn.commit()
+##
+##
+##
+##
+##    cursor.execute("""create table eruption(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    eruption varchar(100));""")
+##    conn.commit()
+##
+##
+##
+##
+##
+##    cursor.execute("""create table incendie(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    incendie varchar(100));""")
+##    conn.commit()
+##
+##
+##
+##
+##    cursor.execute("""create table jour_nuit(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    jour_nuit varchar(100));""")
+##    conn.commit()
+##
+##
+##    cursor.execute("""create table polenne(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    polenne varchar(100));""")
+##    conn.commit()
+##
+##
+##
+##
+##    cursor.execute("""create table voisin(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    voisin varchar(100));""")
+##    conn.commit()
+##
+##    cursor.execute("""create table pos_france(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100),
+##                    nombre_particule varchar(100),
+##                    pos varchar(100));""")
+##    conn.commit()
+##
+##
+##    cursor.execute("""create table sauvegarde_anty(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    vent varchar(100),
+##                    temps varchar(100),
+##                    pression INT,
+##                    date varchar(100),
+##                    heure_donnée varchar(100));""")
+##    conn.commit()
+##
+##
+##
+##    cursor.execute("""create table nuit_froide(
+##                    id serial PRIMARY KEY,
+##                    nom_ville varchar(100),
+##                    température_nuit varchar(100),
+##                    température_journée varchar(100),
+##                    date varchar(100),
+##                    heure_donnée varchar(100));""")
+##    conn.commit()
+##
+##
+
+
+    cursor.execute("""create table conditions2(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     pression varchar(100),
@@ -280,7 +280,6 @@ def creation_table():
                     météo varchar(100),
                     climat varchar(100),
                     saison varchar(100),
-                    pollué varchar(100),
                     REGION_INDUSTRIEL_POLLUEE varchar(100),
                     POPULATION_ACTIVE_HABITANT varchar(100),
                     TRAFIQUE varchar(100),
@@ -295,11 +294,9 @@ def creation_table():
                     incendie varchar(100),
                     jour_nuit varchar(100),
                     polenne varchar(100),
-                    voisin varchar(100),
                     pos varchar(100),
                     heure_donnée varchar(100),
-                    date varchar(100),
-                    heure_donnée varchar(100));""")
+                    date varchar(100));""")
     conn.commit()
 
 
