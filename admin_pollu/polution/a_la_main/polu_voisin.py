@@ -27,6 +27,7 @@ def voisin(ville):
     soup = BeautifulSoup(page, "html.parser")
 
     propriete = soup.find_all("div", {'class':'report__pi-number'})
+
     for i in propriete:
         liste1.append(i.get_text())
     
@@ -39,10 +40,9 @@ def voisin(ville):
             except:
                 pass
 
-    
+   
     nb = ''.join(nb)
     nb = int(nb)
-
 
     return nb
 
@@ -50,7 +50,7 @@ def voisinage(liste):
 
     c = 0
     for i in liste:
-    
+        print(i)
         if i[0] == 'duisburg-military-golf-club':
             a = voisin('duisburg')
             liste[c].append(a)
@@ -79,15 +79,6 @@ def voisinage(liste):
         c+=1
 
     return liste
-
-
-
-
-
-
-
-
-
 
 
 
