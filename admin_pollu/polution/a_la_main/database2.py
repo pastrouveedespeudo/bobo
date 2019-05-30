@@ -16,8 +16,8 @@ def creation_table():
     cursor.execute("""create table pression(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     pression varchar(100));""")
 
@@ -27,16 +27,16 @@ def creation_table():
     cursor.execute("""create table vent(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     vent varchar(100));""")
 
     cursor.execute("""create table météo(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     météo varchar(100));""")
     conn.commit()
@@ -45,8 +45,8 @@ def creation_table():
     cursor.execute("""create table climat(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     climat varchar(100));""")
     conn.commit()
@@ -55,8 +55,8 @@ def creation_table():
     cursor.execute("""create table saison(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     saison varchar(100));""")
 
@@ -66,8 +66,8 @@ def creation_table():
     cursor.execute("""create table pollué(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     pollué varchar(100));""")
 
@@ -76,8 +76,8 @@ def creation_table():
     cursor.execute("""create table region_industrielle(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     REGION_INDUSTRIEL_POLLUEE varchar(100));""")
 
@@ -85,8 +85,8 @@ def creation_table():
     cursor.execute("""create table population_active(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     POPULATION_ACTIVE_HABITANT varchar(100));""")
 
@@ -96,8 +96,8 @@ def creation_table():
     cursor.execute("""create table traffique(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     TRAFIQUE varchar(100));""")
 
@@ -107,8 +107,8 @@ def creation_table():
     cursor.execute("""create table heure(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     HEURE varchar(100));""")
 
@@ -120,16 +120,16 @@ def creation_table():
     cursor.execute("""create table weekend(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     WEEKEND varchar(100));""")
 
     cursor.execute("""create table bouchon(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
                     BOUCHON varchar(100));""")
 
@@ -139,9 +139,9 @@ def creation_table():
     cursor.execute("""create table activité(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100),
-                    heure_donnée INT,
                     ACTIVITE_EXEPTIONNELLE varchar(100));""")
 
 
@@ -150,8 +150,8 @@ def creation_table():
     cursor.execute("""create table nb_particule(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    date INT,
-                    heure_donnée INT,
+                    date varchar(100),
+                    heure_donnée varchar(100),
                     nombre_particule varchar(100));""")
     conn.commit()
 
@@ -160,31 +160,23 @@ def creation_table():
     cursor.execute("""create table angrais(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    angrais varchar(100),
-                    date INT,
-                    heure_donnée INT,
-                    nombre_particule varchar(100));""")
+                    date varchar(100),
+                    heure_donnée varchar(100),
+                    nombre_particule varchar(100),
+                    angrais varchar(100));""")
     conn.commit()
 
 
-    cursor.execute("""create table angrais(
-                    id serial PRIMARY KEY,
-                    nom_ville varchar(100),
-                    angrais varchar(100),
-                    date INT,
-                    heure_donnée INT,
-                    nombre_particule varchar(100));""")
-    conn.commit()
 
 
 
     cursor.execute("""create table diesel(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    diesel varchar(100),
-                    date INT,
-                    heure_donnée INT,
-                    nombre_particule varchar(100));""")
+                    date varchar(100),
+                    heure_donnée varchar(100),
+                    nombre_particule varchar(100),
+                    diesel varchar(100));""")
     conn.commit()
 
 
@@ -193,10 +185,10 @@ def creation_table():
     cursor.execute("""create table eruption(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    eruption varchar(100),
-                    date INT,
-                    heure_donnée INT,
-                    nombre_particule varchar(100));""")
+                    date varchar(100),
+                    heure_donnée varchar(100),
+                    nombre_particule varchar(100),
+                    eruption varchar(100));""")
     conn.commit()
 
 
@@ -206,10 +198,10 @@ def creation_table():
     cursor.execute("""create table incendie(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    incendie varchar(100),
-                    date INT,
-                    heure_donnée INT,
-                    nombre_particule varchar(100));""")
+                    date varchar(100),
+                    heure_donnée varchar(100),
+                    nombre_particule varchar(100),
+                    incendie varchar(100));""")
     conn.commit()
 
 
@@ -218,20 +210,20 @@ def creation_table():
     cursor.execute("""create table jour_nuit(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    jour_nuit varchar(100),
-                    date INT,
-                    heure_donnée INT,
-                    nombre_particule varchar(100));""")
+                    date varchar(100),
+                    heure_donnée varchar(100),
+                    nombre_particule varchar(100),
+                    jour_nuit varchar(100));""")
     conn.commit()
 
 
     cursor.execute("""create table polenne(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    polenne varchar(100),
-                    date INT,
-                    heure_donnée INT,
-                    nombre_particule varchar(100));""")
+                    date varchar(100),
+                    heure_donnée varchar(100),
+                    nombre_particule varchar(100),
+                    polenne varchar(100));""")
     conn.commit()
 
 
@@ -240,10 +232,10 @@ def creation_table():
     cursor.execute("""create table voisin(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
-                    voisin varchar(100),
-                    date INT,
-                    heure_donnée INT,
-                    nombre_particule varchar(100));""")
+                    date varchar(100),
+                    heure_donnée varchar(100),
+                    nombre_particule varchar(100),
+                    voisin varchar(100));""")
     conn.commit()
 
 
@@ -255,8 +247,8 @@ def creation_table():
                     vent varchar(100),
                     temps varchar(100),
                     pression INT,
-                    date INT,
-                    heure_donnée INT);""")
+                    date varchar(100),
+                    heure_donnée varchar(100));""")
     conn.commit()
 
 
@@ -266,163 +258,347 @@ def creation_table():
                     nom_ville varchar(100),
                     température_nuit varchar(100),
                     température_journée varchar(100),
-                    date INT,
-                    heure_donnée INT);""")
+                    date varchar(100),
+                    heure_donnée varchar(100));""")
     conn.commit()
 
 
 
 
 
-
-def insertion_meteo(ville, date, heure_donnée, pressure, weather, wind):
-    
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696') 
-
-    cursor = conn.cursor()
-    
-    sql = ("""insert into ville
-                    (nom_ville, date, heure_donnée, pression, météo, vent)
-                     values(%s, %s, %s, %s, %s, %s);""")
-
-    values = (ville, date, heure_donnée,
-              pressure, weather, wind)
-
-    
-    cursor.execute(sql, values)
-    conn.commit()
-
-
-def insertion_climat(climat, saison, date, heure_donnée, ville):
-    
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696') 
-
-    cursor = conn.cursor()
-    
-    sql = ("""UPDATE ville
-               SET climat=%s, saison=%s
-               WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
-
-    values = (climat, saison, date, heure_donnée, ville)
-
-    
-    cursor.execute(sql, values)
-    conn.commit()
-
-
-def insertion_polution(ville_pollué, REGION_INDUSTRIEL_POLLUEE, date, heure_donnée, ville):
-    
+def insertion_angrais(i,  donnée, date, heure, particule):
     conn = psycopg2.connect(database='datu8fkornnndh',
                              user='pwtfmpvfpsujtw',
                              host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')  
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
 
+    
     cursor = conn.cursor()
     
-    sql = ("""UPDATE ville
-               SET ville_pollué=%s,
-               REGION_INDUSTRIEL_POLLUEE=%s
-               WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
+    cursor.execute("""INSERT INTO angrais
+                    (nom_ville, angrais, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
 
-    values = (ville_pollué, REGION_INDUSTRIEL_POLLUEE, date, heure_donnée, ville)
 
-    
-    cursor.execute(sql, values)
     conn.commit()
 
 
-def insertion_sociologie(POPULATION_ACTIVE_HABITANT, date, heure_donnée, ville):
-    
+
+def insertion_saison(i,  donnée, date, heure, particule):
     conn = psycopg2.connect(database='datu8fkornnndh',
                              user='pwtfmpvfpsujtw',
                              host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')  
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
 
+    
     cursor = conn.cursor()
     
-    sql = ("""UPDATE ville
-               SET POPULATION_ACTIVE_HABITANT=%s
-               WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
+    cursor.execute("""INSERT INTO saison
+                    (nom_ville, saison, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
 
-    values = (POPULATION_ACTIVE_HABITANT, date, heure_donnée, ville)
 
-    
-    cursor.execute(sql, values)
     conn.commit()
 
 
-def insertion_trafic_routier(TRAFIQUE, HEURE,
-                             WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE,
-                             date, heure_donnée, ville):
-    
+def insertion_diesel(i,  donnée, date, heure, particule):
     conn = psycopg2.connect(database='datu8fkornnndh',
                              user='pwtfmpvfpsujtw',
                              host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')  
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
 
+    
     cursor = conn.cursor()
     
-    sql = ("""UPDATE ville
-               SET TRAFIQUE=%s,
-               HEURE=%s,
-               WEEKEND=%s,
-               BOUCHON=%s,
-               ACTIVITE_EXEPTIONNELLE=%s
-               WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
+    cursor.execute("""INSERT INTO diesel
+                    (nom_ville, diesel, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
 
-    values = (TRAFIQUE, HEURE,WEEKEND,
-              BOUCHON, ACTIVITE_EXEPTIONNELLE,
-              date, heure_donnée, ville)
 
-    
-    cursor.execute(sql, values)
     conn.commit()
 
 
-def insertion_particule_plage(PARTICULE_PLAGE, date, heure_donnée, ville):
-    
+def insertion_eruption(i,  donnée, date, heure, particule):
     conn = psycopg2.connect(database='datu8fkornnndh',
                              user='pwtfmpvfpsujtw',
                              host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')  
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
 
+    
     cursor = conn.cursor()
     
-    sql = ("""UPDATE ville
-               SET nombre_particule=%s
-               WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
+    cursor.execute("""INSERT INTO eruption
+                    (nom_ville, eruption, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
 
-    values = (PARTICULE_PLAGE, date, heure_donnée, ville)
 
-    
-    cursor.execute(sql, values)
     conn.commit()
 
 
-def insertion_particule(PARTICULE, date, heure_donnée, ville):
-    
+
+
+def insertion_nuit_jour(i,  donnée, date, heure, particule):
     conn = psycopg2.connect(database='datu8fkornnndh',
                              user='pwtfmpvfpsujtw',
                              host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')  
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
 
+    
     cursor = conn.cursor()
     
-    sql = ("""UPDATE ville
-               SET particule=%s
-               WHERE (date = %s AND heure_donnée = %s AND nom_ville = %s);""")
+    cursor.execute("""INSERT INTO jour_nuit
+                    (nom_ville, jour_nuit, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
 
-    values = (PARTICULE, date, heure_donnée, ville)
+
+    conn.commit()
+
+
+def insertion_trafique_circulation(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
 
     
-    cursor.execute(sql, values)
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO traffique
+                    (nom_ville, TRAFIQUE, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
     conn.commit()
+
+
+def insertion_heure_de_pointe(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO heure
+                    (nom_ville, HEURE, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+
+
+def insertion_habitude(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO weekend
+                    (nom_ville, WEEKEND, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+
+
+def insertion_bouchon(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO bouchon
+                    (nom_ville, BOUCHON, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+
+
+
+
+def insertion_activité_execptionnelle(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO activité
+                    (nom_ville, ACTIVITE_EXEPTIONNELLE, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+
+def insertion_habitant(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO population_active
+                    (nom_ville, POPULATION_ACTIVE_HABITANT, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+def insertion_industrie(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO region_industrielle
+                    (nom_ville, REGION_INDUSTRIEL_POLLUEE, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+
+def insertion_polenne(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO polenne
+                    (nom_ville, polenne, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+
+def insertion_france(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO pos_france
+                    (nom_ville, pos, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+
+def insertion_météo(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO météo
+                    (nom_ville, météo, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+
+
+def insertion_vent(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO vent
+                    (nom_ville, vent, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+
+def insertion_pression(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO pression
+                    (nom_ville, pression, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+def insertion_température(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO climat
+                    (nom_ville, climat, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+
+
+def insertion_incendie(i,  donnée, date, heure, particule):
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+
+    
+    cursor = conn.cursor()
+    
+    cursor.execute("""INSERT INTO incendie
+                    (nom_ville, incendie, date, heure_donnée, nombre_particule)
+                    VALUES (%s, %s, %s, %s, %s);""", (i,  donnée, date, heure, particule))
+
+
+    conn.commit()
+
+
+
+
 
 
 def clean_data():
@@ -602,7 +778,7 @@ def recuperate_particle(ville, pression, météo, vent, climat,
 
 
 
-creation_table()
+#creation_table()
 
 
 
