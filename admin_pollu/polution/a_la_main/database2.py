@@ -272,6 +272,35 @@ def creation_table():
 
 
 
+    cursor.execute("""create table conditions(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    pression varchar(100),
+                    vent varchar(100),
+                    météo varchar(100),
+                    climat varchar(100),
+                    saison varchar(100),
+                    pollué varchar(100),
+                    REGION_INDUSTRIEL_POLLUEE varchar(100),
+                    POPULATION_ACTIVE_HABITANT varchar(100),
+                    TRAFIQUE varchar(100),
+                    HEURE varchar(100),
+                    WEEKEND varchar(100),
+                    BOUCHON varchar(100),
+                    ACTIVITE_EXEPTIONNELLE varchar(100),
+                    nombre_particule varchar(100),
+                    angrais varchar(100),
+                    diesel varchar(100),
+                    eruption varchar(100),
+                    incendie varchar(100),
+                    jour_nuit varchar(100),
+                    polenne varchar(100),
+                    voisin varchar(100),
+                    pos varchar(100),
+                    heure_donnée varchar(100),
+                    date varchar(100),
+                    heure_donnée varchar(100));""")
+    conn.commit()
 
 
 def insertion_angrais(i,  donnée, date, heure, particule):
