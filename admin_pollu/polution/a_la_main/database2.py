@@ -13,7 +13,7 @@ def creation_table():
     
     cursor = conn.cursor()
     
-    cursor.execute("""create table ville_pression(
+    cursor.execute("""create table pression(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -24,7 +24,7 @@ def creation_table():
     conn.commit()
 
 
-    cursor.execute("""create table ville_vent(
+    cursor.execute("""create table vent(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -32,7 +32,7 @@ def creation_table():
                     nombre_particule varchar(100),
                     vent varchar(100));""")
 
-    cursor.execute("""create table ville_météo(
+    cursor.execute("""create table météo(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -42,7 +42,7 @@ def creation_table():
     conn.commit()
 
 
-    cursor.execute("""create table ville_climat(
+    cursor.execute("""create table climat(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -52,7 +52,7 @@ def creation_table():
     conn.commit()
 
     
-    cursor.execute("""create table ville_saison(
+    cursor.execute("""create table saison(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -63,17 +63,17 @@ def creation_table():
     conn.commit()
 
 
-    cursor.execute("""create table ville_ville_pollué(
+    cursor.execute("""create table pollué(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
                     heure_donnée INT,
                     nombre_particule varchar(100),
-                    ville_pollué varchar(100));""")
+                    pollué varchar(100));""")
 
     conn.commit()
 
-    cursor.execute("""create table ville_region_industrielle(
+    cursor.execute("""create table region_industrielle(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -81,7 +81,8 @@ def creation_table():
                     nombre_particule varchar(100),
                     REGION_INDUSTRIEL_POLLUEE varchar(100));""")
 
-    cursor.execute("""create table ville_population_active(
+
+    cursor.execute("""create table population_active(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -92,7 +93,7 @@ def creation_table():
     conn.commit()
 
 
-    cursor.execute("""create table ville_traffique(
+    cursor.execute("""create table traffique(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -103,7 +104,7 @@ def creation_table():
 
     conn.commit()
 
-    cursor.execute("""create table ville_heure(
+    cursor.execute("""create table heure(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -116,7 +117,7 @@ def creation_table():
 
 
 
-    cursor.execute("""create table ville_weekend(
+    cursor.execute("""create table weekend(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -124,7 +125,7 @@ def creation_table():
                     nombre_particule varchar(100),
                     WEEKEND varchar(100));""")
 
-    cursor.execute("""create table ville_bouchon(
+    cursor.execute("""create table bouchon(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -135,7 +136,7 @@ def creation_table():
 
     conn.commit()
 
-    cursor.execute("""create table ville_activité(
+    cursor.execute("""create table activité(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -146,7 +147,7 @@ def creation_table():
 
     conn.commit()
 
-    cursor.execute("""create table ville_nb_particule(
+    cursor.execute("""create table nb_particule(
                     id serial PRIMARY KEY,
                     nom_ville varchar(100),
                     date INT,
@@ -156,23 +157,119 @@ def creation_table():
 
 
 
-
-
-
-def suppression_table():
-    
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')  
-
-    cursor = conn.cursor()
-    
-    cursor.execute("""DROP TABLE ville""")
-
-
+    cursor.execute("""create table angrais(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    angrais varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100));""")
     conn.commit()
+
+
+    cursor.execute("""create table angrais(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    angrais varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100));""")
+    conn.commit()
+
+
+
+    cursor.execute("""create table diesel(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    diesel varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100));""")
+    conn.commit()
+
+
+
+
+    cursor.execute("""create table eruption(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    eruption varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100));""")
+    conn.commit()
+
+
+
+
+
+    cursor.execute("""create table incendie(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    incendie varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100));""")
+    conn.commit()
+
+
+
+
+    cursor.execute("""create table jour_nuit(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    jour_nuit varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100));""")
+    conn.commit()
+
+
+    cursor.execute("""create table polenne(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    polenne varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100));""")
+    conn.commit()
+
+
+
+
+    cursor.execute("""create table voisin(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    voisin varchar(100),
+                    date INT,
+                    heure_donnée INT,
+                    nombre_particule varchar(100));""")
+    conn.commit()
+
+
+
+
+    cursor.execute("""create table sauvegarde_anty(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    vent varchar(100),
+                    temps varchar(100),
+                    pression INT,
+                    date INT,
+                    heure_donnée INT);""")
+    conn.commit()
+
+
+
+    cursor.execute("""create table nuit_froide(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    température_nuit varchar(100),
+                    température_journée varchar(100),
+                    date INT,
+                    heure_donnée INT);""")
+    conn.commit()
+
 
 
 
