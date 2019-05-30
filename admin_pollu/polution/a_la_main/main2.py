@@ -143,7 +143,7 @@ for i in liste:
               nombre_particule)
               VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,
               %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,
-              %s,%s, %s, %s);
+              %s,%s, %s);
             """)
 
 
@@ -151,7 +151,7 @@ for i in liste:
               n, q,
               r, s, t, u, v
               , a, d, e,g,
-              g, o, l, heure_jour[1], heure_jour[0], m)
+              o, l, heure_jour[1], heure_jour[0], m)
 
     cursor.execute(sql, values)    
     conn.commit()
