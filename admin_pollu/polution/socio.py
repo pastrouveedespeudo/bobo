@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageChops
 
 
 
-def habitant(lieu):
+def habitant(lieu, POPULATION_ACTIVE_HABITANT):
 
 
     lyon = 328469
@@ -21,13 +21,13 @@ def habitant(lieu):
     marseille = 762480 
 
     if lieu == 'lyon':
-        return 'supp300K'
+        POPULATION_ACTIVE_HABITANT['supp300K'] += 1
 
     if lieu == 'paris':
-        return 'sup1M'
+        POPULATION_ACTIVE_HABITANT['sup1M'] += 1
 
     if lieu == 'marseille':
-        return 'sup500K'
+        POPULATION_ACTIVE_HABITANT['sup500K'] += 1
     #population active de 15 a 59 ans
 
 
