@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageChops
 
 
 
-def trafique_circulation():
+def trafique_circulation(TRAFIQUE, HEURE):
 
     date = datetime.datetime.now()
     
@@ -20,9 +20,9 @@ def trafique_circulation():
 
     heure = date.hour
     minute = date.minute
-
-
-
+    heure = heure + 2
+    print(heure, minute)
+    heure_pointe_semaine = [7,8,9,16,17,18,19]
 
     départ_routier = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
                       (1,3),(2,3),(8,3),(9,3),
@@ -58,55 +58,34 @@ def trafique_circulation():
 
 
     if dep == True:
-        return 'depart_routier'
+        TRAFIQUE['depart_routier'] += 1
  
     elif normale == True: 
-        return 'regulier jour'
-
-
-
-
-
-def heure_de_pointe():
-
-    dep = ""
-    pointe = ""
-    normale = ""
-    non_pointe = ""
-
-
-    date = datetime.datetime.now()
-    
-    jour = date.day
-    mois = date.month
-    année = date.year
-
-    heure = date.hour
-    minute = date.minute
-
-
-    heure_pointe_semaine = [7,8,9,16,17,18,19]
-
+        TRAFIQUE['regulier jour'] += 1
 
        
     for i in heure_pointe_semaine:
+        print(i, heure)
         if i == heure:
             pointe = True
 
     if pointe != True:
         non_pointe = True
 
-          
+    print('pointe', pointe)
+    print(non_pointe)
+
+    
     if pointe == True:
-        return 'heure_pointe'
+        HEURE['heure_pointe'] += 1
         
         
-    elif non_pointe == True:
-        return 'non_heure_pointe'
+    else:
+        HEURE['non_heure_pointe'] += 1
    
 
 
-def habitude():
+def habitude(WEEKEND):
 
 
     jour = ['samedi', 'dimanche']
@@ -118,13 +97,13 @@ def habitude():
     jour = date.weekday()
    
     if jour == 5 or jour == 6:
-        return 'weekend'
+        WEEKEND['weekend'] += 1
     else:
-        return 'jour_semaine'
+        WEEKEND['non_weekend'] += 1
         #si ca continue c ici
 
 
-def bouchons(lieu):
+def bouchons(lieu, BOUCHON):
 
 
   
@@ -133,12 +112,19 @@ def bouchons(lieu):
       
         r = requests.get(path)
 
-
+        km = ''
 
         page = r.content
         soup = BeautifulSoup(page, "html.parser")
         propriete = soup.find("span", {'class':'font38 green'})
         liste = []
+
+        for i in propriete:
+            for j in i:
+                if j == 'K' or j == 'k':
+                    km = True
+
+        
         try:
             for i in propriete:
                 for j in i:
@@ -151,39 +137,44 @@ def bouchons(lieu):
                     except:
                         pass
             liste = "".join(liste)
-            #print(liste,'00000000000000000000000000000000000000000000')
+            print(liste,'00000000000000000000000000000000000000000000')
             try:
                 b = float(liste)
-                #print(b)
+                print(b)
             except:
                 b = int(liste)
-                #print(b)
+                print(b)
 
         except:
             b = 0
-        
+
+        if km != True:
+            b = 0
+
+            
+        print(b,'lyonnnnnnnnnnnnnnnnnnnnnnnnn')
         if b == 0 or b == 0.0:
-            return 'non'
+            BOUCHON['non'] += 1 
 
     
         elif b > 0  and b <= 5.0:
-            return 'petit'
+            BOUCHON['petit'] += 1 
 
 
-        elif b > 5 and b <= 9.0:
-            return 'moyen'
+        elif b > 5 and b <= 9:
+            BOUCHON['moyen'] += 1 
 
-        elif b > 9 and b <= 15.0:
-            return 'grand'
+        elif b > 9 and b <= 15:
+            BOUCHON['grand'] += 1 
 
-        elif b > 15 and b <= 20.0:
-            return 'assez grand'
+        elif b > 15 and b <= 20:
+            BOUCHON['assez grand'] += 1 
 
-        elif b > 20.0:
-            return 'tres grand'
+        elif b > 20:
+            BOUCHON['tres grand'] += 1
 
     elif lieu == "marseille":
-        return 'moyen'
+        BOUCHON['moyen'] += 1 
 
 
     elif lieu == "paris":
@@ -199,13 +190,13 @@ def bouchons(lieu):
 
         liste.append(str(soup))
         bouchon = liste[0][1872:1876]
-        
+        print('yooooooooooo')
         bouchon = str(bouchon)
-        #print(bouchon)
+        print(bouchon)
         kmbouchon = []
         liste = []
         for i in bouchon:
-            #print(i)
+            print(i)
             try:
                 i = int(i)
                 kmbouchon.append(str(i))
@@ -213,33 +204,33 @@ def bouchons(lieu):
                 pass
 
         kmbouchon = "".join(kmbouchon)
-        #print(kmbouchon,'000000000000000000000000000000000000000000000')
+        print(kmbouchon,'000000000000000000000000000000000000000000000')
         kmbouchon = int(kmbouchon)
 
         b = kmbouchon
        
         if b == 0 or b == 0.0:
-            return 'non'
+            BOUCHON['non'] += 1 
 
         elif b > 0  and b <= 5:
-            return 'petit'
+            BOUCHON['petit'] += 1 
 
         elif b > 5 and b <= 9:
-            return 'moyen'
+            BOUCHON['moyen'] += 1 
 
         elif b > 9 and b <= 15:
-            return 'grand'
+            BOUCHON['grand'] += 1 
 
         elif b > 15 and b <= 20:
-            return 'assez grand' 
+            BOUCHON['assez grand'] += 1 
 
         elif b > 20:
-            return 'tres grand' 
+            BOUCHON['tres grand'] += 1
                    
 
 
 
-def requete_lyon_traffique(path):
+def requete_lyon_traffique(path, ACTIVITE_EXEPTIONNELLE):
 
 
     liste = []
@@ -260,9 +251,9 @@ def requete_lyon_traffique(path):
 
 
     if manif >= 0 or manif1 >=0 :
-        return 'manifestation'
+        ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
     else:
-        return 'non_manifestation'
+        ACTIVITE_EXEPTIONNELLE['non_manifestation'] += 1
 
     news = [str(propriete)]
     nombre = news[0][160:165]
@@ -279,7 +270,7 @@ def requete_lyon_traffique(path):
 
 
     
-def requete_paris_traffique(path):
+def requete_paris_traffique(path, ACTIVITE_EXEPTIONNELLE):
 
 
     semaine = {'lundi':0, 'mardi':1, 'mercredi':2, 'jeudi':3, 'vendredi':4, 'samedi':5,
@@ -354,15 +345,15 @@ def requete_paris_traffique(path):
 
 
     if a == jour_semaine and num[0] == jour:
-        return 'manifestation'
+        ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
     else:
-        return 'non_manifestation'
+        ACTIVITE_EXEPTIONNELLE['non_manifestation'] += 1
 
     #print(ACTIVITE_EXEPTIONNELLE)
     #a dans 9 jours hihi faut faire pour le 10 par ex
 
 
-def requete_marseille_traffique(path):
+def requete_marseille_traffique(path, ACTIVITE_EXEPTIONNELLE):
     r = requests.get(path)
 
     date = datetime.datetime.now()
@@ -421,29 +412,28 @@ def requete_marseille_traffique(path):
                 pass
     #print(a)
     if a == jour_semaine and liste[0] == jour:
-        return 'manifestation'
+        ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
     else:
-        return 'non_manifestation'
+        ACTIVITE_EXEPTIONNELLE['non_manifestation'] += 1
 
-def activité_execptionnelle(lieu):
+def activité_execptionnelle(lieu, ACTIVITE_EXEPTIONNELLE):
 
 
     
     if lieu == "lyon":
         path = "https://www.onlymoov.com/trafic/"
-        a = requete_lyon_traffique(path)
+        requete_lyon_traffique(path, ACTIVITE_EXEPTIONNELLE)
 
         
 
     elif lieu == "paris":
         path = "https://paris.demosphere.net/manifestations-paris"
-        a = requete_paris_traffique(path)
+        requete_paris_traffique(path, ACTIVITE_EXEPTIONNELLE)
 
     elif lieu == "marseille":
         path = "https://mars-infos.org/spip.php?page=agenda"
-        a = requete_marseille_traffique(path)
+        requete_marseille_traffique(path, ACTIVITE_EXEPTIONNELLE)
 
-    return a
 
 
 
