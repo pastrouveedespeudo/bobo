@@ -238,7 +238,14 @@ def creation_table():
                     voisin varchar(100));""")
     conn.commit()
 
-
+    cursor.execute("""create table pos_france(
+                    id serial PRIMARY KEY,
+                    nom_ville varchar(100),
+                    date varchar(100),
+                    heure_donnée varchar(100),
+                    nombre_particule varchar(100),
+                    pos varchar(100));""")
+    conn.commit()
 
 
     cursor.execute("""create table sauvegarde_anty(
@@ -261,6 +268,7 @@ def creation_table():
                     date varchar(100),
                     heure_donnée varchar(100));""")
     conn.commit()
+
 
 
 
