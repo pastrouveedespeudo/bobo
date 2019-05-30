@@ -2,7 +2,9 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-par contre je ne sais pas qu'elle est la différence entre un golf et une ville, de toute facon par contre le c sédille meurt, il doit y avoir le meme vent
+faut faire vent voisin a part et ne plus le faire dans la minute mais dans les 5 minutes qui suivent
+
+polu voisin c a faire toutes les 2 heures et si y'a toujours la meme direction alors on peut dire que ca influera et si le vent et > a 40 == vent fort 
 
 "------"
 
