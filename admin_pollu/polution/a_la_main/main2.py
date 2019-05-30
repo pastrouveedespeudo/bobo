@@ -133,24 +133,33 @@ for i in liste:
                              host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
                              password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
     cursor = conn.cursor()
-
+    
     sql = ("""INSERT INTO conditions2
-            (nom_ville, pression, vent, météo, climat, saison,
-              REGION_INDUSTRIEL_POLLUEE, POPULATION_ACTIVE_HABITANT,
-              TRAFIQUE, HEURE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE
-              , angrais, diesel, eruption,incendie,
-              jour_nuit, polenne, pos, heure_donnée, date,
+            (nom_ville, pression, vent,
+            météo, climat, saison,
+              REGION_INDUSTRIEL_POLLUEE,
+              POPULATION_ACTIVE_HABITANT,
+              TRAFIQUE, HEURE, WEEKEND,
+              BOUCHON, ACTIVITE_EXEPTIONNELLE
+              , angrais, diesel,
+              eruption,incendie,
+              jour_nuit, polenne,
+              pos, heure_donnée, date,
               nombre_particule)
-              VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,
-              %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,
-              %s,%s, %s);
+              VALUES (%s,%s,%s,
+              %s,%s,%s,%s,
+              %s,%s,
+              %s,%s,%s,%s,
+              %s,%s,%s,%s,
+              %s,%s,
+              %s,%s, %s, %s);
             """)
 
 
     values = (i, k, j, h, b, c,
               n, q,
               r, s, t, u, v
-              , a, d, e,g,
+              , a, d, e, f, g,
               o, l, heure_jour[1], heure_jour[0], m)
 
     cursor.execute(sql, values)    
