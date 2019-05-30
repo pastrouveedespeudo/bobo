@@ -4,6 +4,12 @@
 
 bon sans incinération, pcqu'au pire google map et j'apelle les voisins qui me disent quand est ce que ca fume
 
+"pour les jours d'incinération" 
+
+"pourquoi ?"
+
+"jlui aurai filer toute mes ressources grepolis"
+
 "------"
 
 #en gros jcrois qu'il faut: update polu voisin a chaque fois (tache cron mais ca a l'air bizzare)
