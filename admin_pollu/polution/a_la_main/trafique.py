@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageChops
 
 
 
-def trafique_circulation(TRAFIQUE, HEURE):
+def trafique_circulation():
 
     date = datetime.datetime.now()
     
@@ -22,7 +22,7 @@ def trafique_circulation(TRAFIQUE, HEURE):
     minute = date.minute
 
 
-    heure_pointe_semaine = [7,8,9,16,17,18,19]
+
 
     départ_routier = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
                       (1,3),(2,3),(8,3),(9,3),
@@ -58,10 +58,35 @@ def trafique_circulation(TRAFIQUE, HEURE):
 
 
     if dep == True:
-        TRAFIQUE['depart_routier'] += 1
+        return 'depart_routier'
  
     elif normale == True: 
-        TRAFIQUE['regulier jour'] += 1
+        return 'regulier jour'
+
+
+
+
+
+def heure_de_pointe():
+
+    dep = ""
+    pointe = ""
+    normale = ""
+    non_pointe = ""
+
+
+    date = datetime.datetime.now()
+    
+    jour = date.day
+    mois = date.month
+    année = date.year
+
+    heure = date.hour
+    minute = date.minute
+
+
+    heure_pointe_semaine = [7,8,9,16,17,18,19]
+
 
        
     for i in heure_pointe_semaine:
@@ -73,15 +98,15 @@ def trafique_circulation(TRAFIQUE, HEURE):
 
           
     if pointe == True:
-        HEURE['heure_pointe'] += 1
+        return 'heure_pointe'
         
         
     elif non_pointe == True:
-        HEURE['non_heure_pointe'] += 1
+        return 'non_heure_pointe'
    
 
 
-def habitude(WEEKEND):
+def habitude():
 
 
     jour = ['samedi', 'dimanche']
@@ -93,13 +118,13 @@ def habitude(WEEKEND):
     jour = date.weekday()
    
     if jour == 5 or jour == 6:
-        WEEKEND['weekend'] += 1
+        return 'weekend'
     else:
-        WEEKEND['non_weekend'] += 1
+        return 'jour_semaine'
         #si ca continue c ici
 
 
-def bouchons(lieu, BOUCHON):
+def bouchons(lieu):
 
 
   
@@ -126,39 +151,39 @@ def bouchons(lieu, BOUCHON):
                     except:
                         pass
             liste = "".join(liste)
-            print(liste,'00000000000000000000000000000000000000000000')
+            #print(liste,'00000000000000000000000000000000000000000000')
             try:
                 b = float(liste)
-                print(b)
+                #print(b)
             except:
                 b = int(liste)
-                print(b)
+                #print(b)
 
         except:
             b = 0
         
         if b == 0 or b == 0.0:
-            BOUCHON['non'] += 1 
+            return 'non'
 
     
         elif b > 0  and b <= 5.0:
-            BOUCHON['petit'] += 1 
+            return 'petit'
 
 
         elif b > 5 and b <= 9.0:
-            BOUCHON['moyen'] += 1 
+            return 'moyen'
 
         elif b > 9 and b <= 15.0:
-            BOUCHON['grand'] += 1 
+            return 'grand'
 
         elif b > 15 and b <= 20.0:
-            BOUCHON['assez grand'] += 1 
+            return 'assez grand'
 
         elif b > 20.0:
-            BOUCHON['tres grand'] += 1
+            return 'tres grand'
 
     elif lieu == "marseille":
-        BOUCHON['moyen'] += 1 
+        return 'moyen'
 
 
     elif lieu == "paris":
@@ -174,13 +199,13 @@ def bouchons(lieu, BOUCHON):
 
         liste.append(str(soup))
         bouchon = liste[0][1872:1876]
-        print('yooooooooooo')
+        
         bouchon = str(bouchon)
-        print(bouchon)
+        #print(bouchon)
         kmbouchon = []
         liste = []
         for i in bouchon:
-            print(i)
+            #print(i)
             try:
                 i = int(i)
                 kmbouchon.append(str(i))
@@ -188,33 +213,33 @@ def bouchons(lieu, BOUCHON):
                 pass
 
         kmbouchon = "".join(kmbouchon)
-        print(kmbouchon,'000000000000000000000000000000000000000000000')
+        #print(kmbouchon,'000000000000000000000000000000000000000000000')
         kmbouchon = int(kmbouchon)
 
         b = kmbouchon
        
         if b == 0 or b == 0.0:
-            BOUCHON['non'] += 1 
+            return 'non'
 
         elif b > 0  and b <= 5:
-            BOUCHON['petit'] += 1 
+            return 'petit'
 
         elif b > 5 and b <= 9:
-            BOUCHON['moyen'] += 1 
+            return 'moyen'
 
         elif b > 9 and b <= 15:
-            BOUCHON['grand'] += 1 
+            return 'grand'
 
         elif b > 15 and b <= 20:
-            BOUCHON['assez grand'] += 1 
+            return 'assez grand' 
 
         elif b > 20:
-            BOUCHON['tres grand'] += 1
+            return 'tres grand' 
                    
 
 
 
-def requete_lyon_traffique(path, ACTIVITE_EXEPTIONNELLE):
+def requete_lyon_traffique(path):
 
 
     liste = []
@@ -235,9 +260,9 @@ def requete_lyon_traffique(path, ACTIVITE_EXEPTIONNELLE):
 
 
     if manif >= 0 or manif1 >=0 :
-        ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
+        return 'manifestation'
     else:
-        ACTIVITE_EXEPTIONNELLE['non_manifestation'] += 1
+        return 'non_manifestation'
 
     news = [str(propriete)]
     nombre = news[0][160:165]
@@ -254,7 +279,7 @@ def requete_lyon_traffique(path, ACTIVITE_EXEPTIONNELLE):
 
 
     
-def requete_paris_traffique(path, ACTIVITE_EXEPTIONNELLE):
+def requete_paris_traffique(path):
 
 
     semaine = {'lundi':0, 'mardi':1, 'mercredi':2, 'jeudi':3, 'vendredi':4, 'samedi':5,
@@ -329,15 +354,15 @@ def requete_paris_traffique(path, ACTIVITE_EXEPTIONNELLE):
 
 
     if a == jour_semaine and num[0] == jour:
-        ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
+        return 'manifestation'
     else:
-        ACTIVITE_EXEPTIONNELLE['non_manifestation'] += 1
+        return 'non_manifestation'
 
     #print(ACTIVITE_EXEPTIONNELLE)
     #a dans 9 jours hihi faut faire pour le 10 par ex
 
 
-def requete_marseille_traffique(path, ACTIVITE_EXEPTIONNELLE):
+def requete_marseille_traffique(path):
     r = requests.get(path)
 
     date = datetime.datetime.now()
@@ -396,28 +421,29 @@ def requete_marseille_traffique(path, ACTIVITE_EXEPTIONNELLE):
                 pass
     #print(a)
     if a == jour_semaine and liste[0] == jour:
-        ACTIVITE_EXEPTIONNELLE['manifestation'] += 1
+        return 'manifestation'
     else:
-        ACTIVITE_EXEPTIONNELLE['non_manifestation'] += 1
+        return 'non_manifestation'
 
-def activité_execptionnelle(lieu, ACTIVITE_EXEPTIONNELLE):
+def activité_execptionnelle(lieu):
 
 
     
     if lieu == "lyon":
         path = "https://www.onlymoov.com/trafic/"
-        requete_lyon_traffique(path, ACTIVITE_EXEPTIONNELLE)
+        a = requete_lyon_traffique(path)
 
         
 
     elif lieu == "paris":
         path = "https://paris.demosphere.net/manifestations-paris"
-        requete_paris_traffique(path, ACTIVITE_EXEPTIONNELLE)
+        a = requete_paris_traffique(path)
 
     elif lieu == "marseille":
         path = "https://mars-infos.org/spip.php?page=agenda"
-        requete_marseille_traffique(path, ACTIVITE_EXEPTIONNELLE)
+        a = requete_marseille_traffique(path)
 
+    return a
 
 
 
