@@ -1,124 +1,85 @@
 
 from direction.ville import ville
-from direction.addresse import par_lat_par_long
 from direction.nouvel_pos import long_lat
 from direction.boussole import calcul_vent
 from direction.vent import le_vent
 
 from direction.superficie import *
+from direction.addresse import *
 
 
-liste = ['crest']
+if __name__=="__main__": 
+    liste = ['Ruy']
 
 
-new_lat = ''
-new_long = ''
+    new_lat = ''
+    new_long = ''
 
 
-while True:
+    while True:
 
-    for i in liste:
-        
-        if new_lat != '' and new_long != '':
+        for i in liste:
             
-            print('de lattitude:', new_lat, 'et de longitude', new_long)
-            
-            adresse = par_lat_par_long(new_lat, new_long)
-  
-            adresse = adresse.split()
-            print(adresse)
-
-            lat, long = ville(adresse[-6][:-1])
-            
-            print('adresse trouvée :', adresse[-6][:-1])
-            
-            try:
-                a, degres_vent = le_vent(adresse[-6][:-1])
-                vent = superficie_ville(adresse[-6][:-1])
- 
-            except:
+            if new_lat != '' and new_long != '':
                 
+                print('de lattitude:', new_lat, 'et de longitude', new_long)
+                
+                adresse = dress_to_ville(new_lat, new_long)
+      
+                print('adresse trouvée :', adresse)
+                
+                a, degres_vent = le_vent(adresse)
                 try:
-                    adresse2 = adresse[-5]
-                    print(adresse,'1')
-                    
-                    a, degres_vent = le_vent(adresse2)
-
-                    vent = superficie_ville(adresse2)
-                    
+                    vent = superficie_ville(adresse)
+                    print(vent,'2')
                 except:
-                    
-                    try:
-                        
-                        adresse2 = adresse[-4][-1]
-                        print(adresse,'2')
-                        
-                        a, degres_vent = le_vent(adresse2)
+                    vent = vent_deux(adresse)
+                    print(vent)
 
-                        vent = superficie_ville(adresse2)
                 
-                    except:
-                        adresse2 = adresse[-4][-1]
-                        print(adresse,'3')
-                        
-                        a, degres_vent = le_vent(adresse2)
+            else:
+                
+                lat, long = ville(i)
+                
+                adresse = dress_to_ville(lat, long)
+                
+                print('de lattitude:', lat, 'de longitude', long)
+                
+                a, degres_vent = le_vent(i)
+                try:
+                    vent = superficie_ville(adresse)
+                    print(vent,'1')
+                except:
+                    vent = vent_deux(adresse)
+                    print(vent)
 
-                        vent = superficie_ville(adresse2)
+            
+            #print('vent de :', vent, 'de degres :', degres_vent, '\n')
+                
+            position_vent = calcul_vent(degres_vent)
+            print('donc le vent va vers:', position_vent)
 
+            
 
+            
+            if new_lat != '' and new_long != '':
+                
+                nouvelle_position = long_lat(new_lat, new_long, vent, position_vent)
+                print('la nouvelle position est de :', nouvelle_position)
+                
+            else:
+                      
+                nouvelle_position = long_lat(lat, long, vent, position_vent)
+                print('la nouvelle position est de :', nouvelle_position)    
+            
+            new_lat = nouvelle_position[0]
+            new_long = nouvelle_position[1]
 
-
-
-
-
-
-
+            
+            print('\n')
 
 
             
-        else:
-            
-            lat, long = ville(i)
-            
-            adresse = par_lat_par_long(lat, long)
-            
-            adresse = adresse.split()
-            
-            print('de lattitude:', lat, 'de longitude', long)
-            
-            a, degres_vent = le_vent(i)
-            
-            vent = superficie_ville(adresse[-6][:-1])
-
-
-
-        
-        #print('vent de :', vent, 'de degres :', degres_vent, '\n')
-            
-        position_vent = calcul_vent(degres_vent)
-        print('donc le vent va vers:', position_vent)
-
-        print(vent)
-
-        
-        if new_lat != '' and new_long != '':
-            
-            nouvelle_position = long_lat(new_lat, new_long, vent, position_vent)
-            print('la nouvelle position est de :', nouvelle_position)
-            
-        else:
-                  
-            nouvelle_position = long_lat(lat, long, vent, position_vent)
-            print('la nouvelle position est de :', nouvelle_position)    
-        
-        new_lat = nouvelle_position[0]
-        new_long = nouvelle_position[1]
-
-        
-        print('\n')
-
-
-        
 
 
 
