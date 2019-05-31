@@ -4,33 +4,9 @@
 
 voir si y'a des bug et le mettre sur le site
 
-
-o lieu de te servir de l'api vent, va juste scrapper jme demande des fois si y'a vrmnt quelqu'un la dedans en passant t'aurai pu scrapper aussi la lattitude et longitude
-
-faut faire vent voisin a part et ne plus le faire dans la minute mais dans les 5 minutes qui suivent
-
-polu voisin c a faire toutes les 2 heures et si y'a toujours la meme direction alors on peut dire que ca influera et si le vent et > a 40 == vent fort 
-
-"------"
+momot mtn ca sera juste un truk qui sort les mots avec des graphiques
 
 
-
-#en gros jcrois qu'il faut: update polu voisin a chaque fois (tache cron mais ca a l'air bizzare)
-
-#pour incendie faut verifier toute les formes de date et c pas tres fiable ^^
-
-# LIS CA 
-
-#merde je comprendrai rien, en gros, il faut update a chaque heure vent voisin ET polution voisin. Si pendant 4/5 heures il y a la meme direction AVEC un vent significatif alors on dit danger. Pour cela, tu peux te servir de ton nouveau projet de pts sur carte via vent. 
-
-Ensuite tu peux essayer de voir si tu peux faire une soustraction avant apres, MAIS peut etre que la ville a REproduit de la popo donc ca chai pas donc nouveau projet mais novueau projet = passé jcrois
-
-
-
-"-----"
-
-
-faut trouvé de combien jour ou nuit influe sur la jouréne !! manif ou pas influe sur la journée ect
 
 
 #------------------------------------------
