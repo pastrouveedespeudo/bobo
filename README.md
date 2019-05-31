@@ -7,7 +7,7 @@ en attendant de remplir database, reflechis algo difference + score condi, fais 
 oublie pas polu voisin
 
 
-o lieu de te servir de l'api vent, va juste scrapper jme demande des fois si y'a vrmnt quelqu'un la dedans
+o lieu de te servir de l'api vent, va juste scrapper jme demande des fois si y'a vrmnt quelqu'un la dedans en passant t'aurai pu scrapper aussi la lattitude et longitude
 
 faut faire vent voisin a part et ne plus le faire dans la minute mais dans les 5 minutes qui suivent
 
