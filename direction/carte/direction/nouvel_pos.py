@@ -1,12 +1,14 @@
-
-
-
+from math import *
 
 def long_lat(lat, long, km, sens):
 
+    km = float(km)
+    #print(lat, long, km, sens)
+
     #print(sens)
     
-    kilometre = km / 1000 * 0.009
+    kilometre = km * 0.009
+    
     #print('metre, kilometre: ',km, kilometre)
 
     
@@ -70,8 +72,10 @@ def long_lat(lat, long, km, sens):
         return lat, long
 
     elif sens == 'ouest':
+        
         kilo = kilometre
         long1 = long - kilo
+      
         return lat, long1
 
     elif sens == 'ouestnordouest':
