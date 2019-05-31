@@ -26,14 +26,54 @@ while True:
             adresse = par_lat_par_long(new_lat, new_long)
   
             adresse = adresse.split()
-            #print(adresse)
+            print(adresse)
 
             lat, long = ville(adresse[-6][:-1])
             
             print('adresse trouvée :', adresse[-6][:-1])
             
-            a, degres_vent = le_vent(adresse[-6][:-1])
-            vent = superficie_ville(adresse[-6][:-1])
+            try:
+                a, degres_vent = le_vent(adresse[-6][:-1])
+                vent = superficie_ville(adresse[-6][:-1])
+ 
+            except:
+                
+                try:
+                    adresse2 = adresse[-5]
+                    print(adresse,'1')
+                    
+                    a, degres_vent = le_vent(adresse2)
+
+                    vent = superficie_ville(adresse2)
+                    
+                except:
+                    
+                    try:
+                        
+                        adresse2 = adresse[-4][-1]
+                        print(adresse,'2')
+                        
+                        a, degres_vent = le_vent(adresse2)
+
+                        vent = superficie_ville(adresse2)
+                
+                    except:
+                        adresse2 = adresse[-4][-1]
+                        print(adresse,'3')
+                        
+                        a, degres_vent = le_vent(adresse2)
+
+                        vent = superficie_ville(adresse2)
+
+
+
+
+
+
+
+
+
+
 
             
         else:
@@ -57,11 +97,17 @@ while True:
             
         position_vent = calcul_vent(degres_vent)
         print('donc le vent va vers:', position_vent)
+
+        print(vent)
+
+        
         if new_lat != '' and new_long != '':
             
             nouvelle_position = long_lat(new_lat, new_long, vent, position_vent)
-            print('la nouvelle position est de :', nouvelle_position)    
+            print('la nouvelle position est de :', nouvelle_position)
+            
         else:
+                  
             nouvelle_position = long_lat(lat, long, vent, position_vent)
             print('la nouvelle position est de :', nouvelle_position)    
         
