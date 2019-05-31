@@ -16,7 +16,7 @@ def par_lat_par_long(lat, long):
 
     liste = []
     liste.append(soup.text)
-    
+
     liste = liste[0][2:]
     
     liste1 = []
@@ -35,22 +35,25 @@ def par_lat_par_long(lat, long):
 
 
 
+    c = 0
     liste2 = []
     code = ''
+    
     for i in liste1:
-       
-        try:
-            i = int(i[:-1])
-            if i == int(i):
-                break
 
+        try:
+            o = int(i[:-1])
+            if o == int(o) and c >= 6:
+                break
+            i = str(i)
         except:
             pass
 
         
         liste2.append(i)
+        
+        c+=1
 
 
-  
-
+    #print(' '.join(liste2))
     return ' '.join(liste2)
