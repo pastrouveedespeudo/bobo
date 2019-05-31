@@ -33,12 +33,6 @@ def eruption():
             le_mois = valeur
 
 
-    
-
-
-    
-    
-
     path = "https://www.volcanodiscovery.com/fr/volcanoes/today.html"
 
     r = requests.get(path)
@@ -84,8 +78,9 @@ def eruption():
             liste2.append(jour)
 
 
-
-    print(liste2)    
+    if liste2 != []:
+        return 'oui'
+    
 
     
 
@@ -102,7 +97,7 @@ def eruption():
 
 
 
-eruption()
+
 
 
 
