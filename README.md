@@ -2,9 +2,7 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-en attendant de remplir database, reflechis algo difference + score condi, fais tous les truk den bas, et fini vent map puis momot puis pages
-
-oublie pas polu voisin
+voir si y'a des bug et le mettre sur le site
 
 
 o lieu de te servir de l'api vent, va juste scrapper jme demande des fois si y'a vrmnt quelqu'un la dedans en passant t'aurai pu scrapper aussi la lattitude et longitude
