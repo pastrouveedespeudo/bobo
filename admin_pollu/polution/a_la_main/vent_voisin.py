@@ -12,6 +12,8 @@ from conteneur_ville import *
 
 from polu_voisin import *
 
+from database2 import *
+
 def vent_voisin(nombre, ville, situ):
 
   
@@ -242,19 +244,19 @@ def traitement_liste_France(liste, liste_ville):
         if i[0] == i: 
             a = apport_pollu_vent(i[1], direction_ville4)
             if a == True:
-                liste1.append([i[0], i[1]])
+                liste1.append([i[0], i[1], i[2]])
             
         else:
             a = apport_pollu_vent(i[1], direction_ville44)
             
             if a == True:
-                liste1.append([i[0], i[1]])
+                liste1.append([i[0], i[1], i[2]])
 
     return liste1
 
 
 def vent_m_s(path):
-
+ 
     r = requests.get(path)
 
     page = r.content
@@ -285,62 +287,199 @@ def vent_m_s(path):
             break
 
         
-    
+
     return nb
 
+
+
+
+
+def heure_joure():
     
+    date = datetime.datetime.now()
+    jour = date.day
+    mois = date.month
+    année = date.year
+
+    heure = date.hour
+    minute = date.minute
+
+    jour = str(jour)+'_'+str(mois)+'_'+str(année)
+    heure = str(heure)+'_'+str(minute)
+    
+    return jour, heure
+
+
+
 def apport_pollu():
 
     liste = []
+
+    heure_jour = heure_joure()
+
     
     a = traitement_ville(ville_haut_droite, num_ville1, 'ville_haut_droite')
     aa = traitement_liste(a, direction_ville1)
     aaa = voisinage(aa)
 
-    print(aaa)
+    for i in aaa:
+        #print(i)
+        print(i[0], i[1], i[2], i[3])
+        print('\n')
+        
+        insertion_voisin_vent_pollution(i[0],
+                                        i[1],
+                                        i[2],
+                                        i[3],
+                                        heure_jour[1],
+                                        heure_jour[0])
+
+
+
+
+    
     print('\n')
+    
+
+
+
+
+
+
+
+
 
     b = traitement_ville(ville_haut_gauche, num_ville, 'ville_haut_gauche')
     bb = traitement_liste(b, direction_ville)
     bbb = voisinage(bb)
 
-    print(bbb)
+    for i in bbb:
+        #print(i)
+        print(i[0], i[1], i[2], i[3])
+        print('\n')
+        
+        insertion_voisin_vent_pollution(i[0],
+                                        i[1],
+                                        i[2],
+                                        i[3],
+                                        heure_jour[1],
+                                        heure_jour[0])
+
+
+
+
+    
     print('\n')
+
 
     c = traitement_ville(ville_haut_droite2, num_ville2, 'ville_haut_droite2')
     cc = traitement_liste(c, direction_ville2)
     ccc = voisinage(cc)
 
-    print(ccc)
+    for i in ccc:
+        #print(i)
+        print(i[0], i[1], i[2], i[3])
+        print('\n')
+        
+        insertion_voisin_vent_pollution(i[0],
+                                        i[1],
+                                        i[2],
+                                        i[3],
+                                        heure_jour[1],
+                                        heure_jour[0])
+
+
+
+
+    
     print('\n')
     
     d =traitement_ville(ville_haut_droite3, num_ville3, 'ville_haut_droite3')
     dd = traitement_liste(d, direction_ville3)
     ddd = voisinage(dd)
 
-    print(ddd)
+    for i in ddd:
+        #print(i)
+        print(i[0], i[1], i[2], i[3])
+        print('\n')
+        
+        insertion_voisin_vent_pollution(i[0],
+                                        i[1],
+                                        i[2],
+                                        i[3],
+                                        heure_jour[1],
+                                        heure_jour[0])
+
+
+
+
+    
     print('\n')
     
     e = traitement_ville(ville_haut_droite4, num_ville4, 'ville_haut_droite4')
-    print(e)
     ee = traitement_liste_France(e, direction_ville4)
     eee = voisinage(ee)
-
     print(eee)
+    for i in eee:
+        print(i)
+        print(i[0], i[1], i[2], i[3])
+        print('\n')
+        
+        insertion_voisin_vent_pollution(i[0],
+                                        i[1],
+                                        i[2],
+                                        i[3],
+                                        heure_jour[1],
+                                        heure_jour[0])
+
+
+
+
+    
     print('\n')
     
     f =traitement_ville(bas_droite6, num_ville6, 'bas_droite6')
     ff = traitement_liste(f, direction_ville6)
     fff = voisinage(ff)
 
-    print(fff)
+    for i in fff:
+        #print(i)
+        print(i[0], i[1], i[2], i[3])
+        print('\n')
+        
+        insertion_voisin_vent_pollution(i[0],
+                                        i[1],
+                                        i[2],
+                                        i[3],
+                                        heure_jour[1],
+                                        heure_jour[0])
+
+
+
+
+    
     print('\n')
     
     g =traitement_ville(ville_bas_gauche9, num_ville9, 'ville_bas_gauche9')
     gg = traitement_liste(g, direction_ville9)
     ggg = voisinage(gg)
 
-    print(ggg)
+    for i in ggg:
+        #print(i)
+        print(i[0], i[1], i[2], i[3])
+        print('\n')
+        
+        insertion_voisin_vent_pollution(i[0],
+                                        i[1],
+                                        i[2],
+                                        i[3],
+                                        heure_jour[1],
+                                        heure_jour[0])
+
+
+
+
+    
     print('\n')
 
 
@@ -348,14 +487,44 @@ def apport_pollu():
     hh = traitement_liste(h, direction_ville5)
     hhh = voisinage(hh)
 
-    print(hhh)
+    for i in hhh:
+        #print(i)
+        print(i[0], i[1], i[2], i[3])
+        print('\n')
+        
+        insertion_voisin_vent_pollution(i[0],
+                                        i[1],
+                                        i[2],
+                                        i[3],
+                                        heure_jour[1],
+                                        heure_jour[0])
+
+
+
+
+    
     print('\n')
 
     i = traitement_ville(ville_bas_gauche8, num_ville8, 'ville_bas_gauche8')
     ii = traitement_liste(i, direction_ville8)
     iii = voisinage(ii)
 
-    print(iii)
+    for i in iii:
+        #print(i)
+        print(i[0], i[1], i[2], i[3])
+        print('\n')
+        
+        insertion_voisin_vent_pollution(i[0],
+                                        i[1],
+                                        i[2],
+                                        i[3],
+                                        heure_jour[1],
+                                        heure_jour[0])
+
+
+
+
+    
     print('\n')
 
 
@@ -363,19 +532,25 @@ def apport_pollu():
     jj = traitement_liste(j, direction_ville7)
     jjj = voisinage(jj)
 
-    print(jjj)
-    print('\n')
-
-    liste.extend([aaa, bbb,ccc,ddd,eee,fff,ggg,hhh,iii,jjj])
-    print(liste)
-
-
+    for i in jjj:
+        #print(i)
+        print(i[0], i[1], i[2], i[3])
+        print('\n')
+        
+        insertion_voisin_vent_pollution(i[0],
+                                        i[1],
+                                        i[2],
+                                        i[3],
+                                        heure_jour[1],
+                                        heure_jour[0])
 
 
 
 
     
-    return liste
+    print('\n')
+
+
 
 
 apport_pollu()
