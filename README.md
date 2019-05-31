@@ -2,7 +2,9 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
+en attendant de remplir database, reflechis algo, fais tous les truk den bas, et fini vent map puis momot puis pages
 
+oublie pas polu voisin
 
 
 faut faire vent voisin a part et ne plus le faire dans la minute mais dans les 5 minutes qui suivent
