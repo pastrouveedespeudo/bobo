@@ -6,7 +6,7 @@ voir si y'a des bug et le mettre sur le site
 
 momot mtn ca sera juste un truk qui sort les mots avec des graphiques
 
-
+en gros, d'une part on fait ca sur google map et d'autres part sur la map monde avec des traits rouges
 
 
 #------------------------------------------
