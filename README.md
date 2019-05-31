@@ -7,6 +7,8 @@ en attendant de remplir database, reflechis algo difference + score condi, fais 
 oublie pas polu voisin
 
 
+o lieu de te servir de l'api vent, va juste scrapper jme demande des fois si y'a vrmnt quelqu'un la dedans
+
 faut faire vent voisin a part et ne plus le faire dans la minute mais dans les 5 minutes qui suivent
 
 polu voisin c a faire toutes les 2 heures et si y'a toujours la meme direction alors on peut dire que ca influera et si le vent et > a 40 == vent fort 
