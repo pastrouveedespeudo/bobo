@@ -9,6 +9,8 @@ from bs4 import *
 
 def recup_balise():
 
+    dol = cours_dollar()
+    
     
     path = "https://prixdubaril.com/"
 
@@ -25,8 +27,8 @@ def recup_balise():
     d = str(propriete).find('Gazole+')
     
 
-    gas = ''
-    gasplus = ''
+    gas = False
+    gasplus = False
     
     if a or c >= 0:
         gas = True
@@ -34,10 +36,30 @@ def recup_balise():
         gasplus = True
 
 
-    return gas, gasplus
+    return gas, gasplus, dol
+
+    if gas == True and gasplus == True and dol  == 'dollard baisse':
+        return 'tres fort'
+
+    elif gas == True and gasplus == False and dol == 'dollard augmente':
+        return 'moyen'
+
+    elif gas == False and gasplus == True and dol == 'dollard augmente':
+        return 'moyen'
 
 
+    elif gas == False and gasplus == False and dol == 'dollard augmente':
+        return 'bas'
 
+
+    elif gas == True and gasplus == False and dol == 'dollard baisse':
+        return 'fort'
+
+    elif gas == False and gasplus == True and dol == 'dollard baisse':
+        return 'fort'
+
+
+    
 def cours_dollar():
     
     path = "https://prixdubaril.com/"
@@ -54,18 +76,16 @@ def cours_dollar():
     liste.append(str(propriete))
 
 
-    print('dolar', liste[0][520:525])
     dollar = liste[0][520:525]
     
     if dollar[0] == '+':
-        print('non baisse')
+        return 'dollard augmente'
     else:
-        print('baisse')
+       return 'dollard baisse'
 
 
 
-recup_balise()
-cours_dollar()
+
 
 
 
