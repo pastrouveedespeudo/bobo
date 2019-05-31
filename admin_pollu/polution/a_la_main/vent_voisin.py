@@ -13,6 +13,9 @@ from conteneur_ville import *
 from polu_voisin import *
 
 from database2 import *
+from difference_voisin import *
+
+
 
 def vent_voisin(nombre, ville, situ):
 
@@ -20,7 +23,7 @@ def vent_voisin(nombre, ville, situ):
     if situ == 'ville_haut_gauche':
         path = "https://www.lachainemeteo.com/meteo-royaume-uni/ville-{}/previsions-meteo-{}-aujourdhui"
         
-    elif situ == 'ville_haut_droite':
+    elif situ == 'ville_haut_droite[[['duisburg-military-golf-club', 'Ouest', '20', 33], ['antwerp-golf-school', 'Sud-Ouest', '20', 26], ['bruxelles', 'Sud', '15', 15], ['liege', 'Sud-Ouest', '30', 22], ['antwerp-golf-school', 'Sud-Ouest', '20', 26]], []]':
         path = 'https://www.lachainemeteo.com/meteo-belgique/golf-{}/previsions-meteo-{}-aujourdhui'
 
     elif situ == 'ville_haut_droite2':
@@ -322,234 +325,299 @@ def apport_pollu():
     aa = traitement_liste(a, direction_ville1)
     aaa = voisinage(aa)
 
-    for i in aaa:
-        #print(i)
-        print(i[0], i[1], i[2], i[3])
-        print('\n')
-        
-        insertion_voisin_vent_pollution(i[0],
-                                        i[1],
-                                        i[2],
-                                        i[3],
-                                        heure_jour[1],
-                                        heure_jour[0])
-
-
-
-
-    
-    print('\n')
-    
-
-
-
-
-
-
+    liste.append(aaa)
 
 
 
     b = traitement_ville(ville_haut_gauche, num_ville, 'ville_haut_gauche')
     bb = traitement_liste(b, direction_ville)
     bbb = voisinage(bb)
+    
+    liste.append(bbb)
 
-    for i in bbb:
-        #print(i)
-        print(i[0], i[1], i[2], i[3])
-        print('\n')
-        
-        insertion_voisin_vent_pollution(i[0],
-                                        i[1],
-                                        i[2],
-                                        i[3],
-                                        heure_jour[1],
-                                        heure_jour[0])
+
+    
+    print(liste)
+
+    liste_premier = visusu()
+
+    différence(liste, liste_premier[0], liste_premier[1])
+    #essaie depuis difference mais en gros, on recup l'heure et
+    #on fais les opérations
+
+
+##    c = traitement_ville(ville_haut_droite2, num_ville2, 'ville_haut_droite2')
+##    cc = traitement_liste(c, direction_ville2)
+##    ccc = voisinage(cc)
+##
+##
+##    
+##    d =traitement_ville(ville_haut_droite3, num_ville3, 'ville_haut_droite3')
+##    dd = traitement_liste(d, direction_ville3)
+##    ddd = voisinage(dd)
+##
+##
+##    
+##    e = traitement_ville(ville_haut_droite4, num_ville4, 'ville_haut_droite4')
+##    ee = traitement_liste_France(e, direction_ville4)
+##    eee = voisinage(ee)
+##
+##
+##    
+##    f =traitement_ville(bas_droite6, num_ville6, 'bas_droite6')
+##    ff = traitement_liste(f, direction_ville6)
+##    fff = voisinage(ff)
+##
+##    
+##    g =traitement_ville(ville_bas_gauche9, num_ville9, 'ville_bas_gauche9')
+##    gg = traitement_liste(g, direction_ville9)
+##    ggg = voisinage(gg)
+##
+##
+##
+##    h =traitement_ville(ville_haut_droite5, num_ville5, 'ville_haut_droite5')
+##    hh = traitement_liste(h, direction_ville5)
+##    hhh = voisinage(hh)
+##
+##
+##    i = traitement_ville(ville_bas_gauche8, num_ville8, 'ville_bas_gauche8')
+##    ii = traitement_liste(i, direction_ville8)
+##    iii = voisinage(ii)
+##
+##
+##    j =traitement_ville(ville_bas_droite7, num_ville7, 'ville_bas_droite7')
+##    jj = traitement_liste(j, direction_ville7)
+##    jjj = voisinage(jj)
+##
+##
+##
+##
+##
+##
+##
+
+
+
 
 
 
 
     
-    print('\n')
-
-
-    c = traitement_ville(ville_haut_droite2, num_ville2, 'ville_haut_droite2')
-    cc = traitement_liste(c, direction_ville2)
-    ccc = voisinage(cc)
-
-    for i in ccc:
-        #print(i)
-        print(i[0], i[1], i[2], i[3])
-        print('\n')
-        
-        insertion_voisin_vent_pollution(i[0],
-                                        i[1],
-                                        i[2],
-                                        i[3],
-                                        heure_jour[1],
-                                        heure_jour[0])
-
-
-
-
-    
-    print('\n')
-    
-    d =traitement_ville(ville_haut_droite3, num_ville3, 'ville_haut_droite3')
-    dd = traitement_liste(d, direction_ville3)
-    ddd = voisinage(dd)
-
-    for i in ddd:
-        #print(i)
-        print(i[0], i[1], i[2], i[3])
-        print('\n')
-        
-        insertion_voisin_vent_pollution(i[0],
-                                        i[1],
-                                        i[2],
-                                        i[3],
-                                        heure_jour[1],
-                                        heure_jour[0])
-
-
-
-
-    
-    print('\n')
-    
-    e = traitement_ville(ville_haut_droite4, num_ville4, 'ville_haut_droite4')
-    ee = traitement_liste_France(e, direction_ville4)
-    eee = voisinage(ee)
-    print(eee)
-    for i in eee:
-        print(i)
-        print(i[0], i[1], i[2], i[3])
-        print('\n')
-        
-        insertion_voisin_vent_pollution(i[0],
-                                        i[1],
-                                        i[2],
-                                        i[3],
-                                        heure_jour[1],
-                                        heure_jour[0])
-
-
-
-
-    
-    print('\n')
-    
-    f =traitement_ville(bas_droite6, num_ville6, 'bas_droite6')
-    ff = traitement_liste(f, direction_ville6)
-    fff = voisinage(ff)
-
-    for i in fff:
-        #print(i)
-        print(i[0], i[1], i[2], i[3])
-        print('\n')
-        
-        insertion_voisin_vent_pollution(i[0],
-                                        i[1],
-                                        i[2],
-                                        i[3],
-                                        heure_jour[1],
-                                        heure_jour[0])
-
-
-
-
-    
-    print('\n')
-    
-    g =traitement_ville(ville_bas_gauche9, num_ville9, 'ville_bas_gauche9')
-    gg = traitement_liste(g, direction_ville9)
-    ggg = voisinage(gg)
-
-    for i in ggg:
-        #print(i)
-        print(i[0], i[1], i[2], i[3])
-        print('\n')
-        
-        insertion_voisin_vent_pollution(i[0],
-                                        i[1],
-                                        i[2],
-                                        i[3],
-                                        heure_jour[1],
-                                        heure_jour[0])
-
-
-
-
-    
-    print('\n')
-
-
-    h =traitement_ville(ville_haut_droite5, num_ville5, 'ville_haut_droite5')
-    hh = traitement_liste(h, direction_ville5)
-    hhh = voisinage(hh)
-
-    for i in hhh:
-        #print(i)
-        print(i[0], i[1], i[2], i[3])
-        print('\n')
-        
-        insertion_voisin_vent_pollution(i[0],
-                                        i[1],
-                                        i[2],
-                                        i[3],
-                                        heure_jour[1],
-                                        heure_jour[0])
-
-
-
-
-    
-    print('\n')
-
-    i = traitement_ville(ville_bas_gauche8, num_ville8, 'ville_bas_gauche8')
-    ii = traitement_liste(i, direction_ville8)
-    iii = voisinage(ii)
-
-    for i in iii:
-        #print(i)
-        print(i[0], i[1], i[2], i[3])
-        print('\n')
-        
-        insertion_voisin_vent_pollution(i[0],
-                                        i[1],
-                                        i[2],
-                                        i[3],
-                                        heure_jour[1],
-                                        heure_jour[0])
-
-
-
-
-    
-    print('\n')
-
-
-    j =traitement_ville(ville_bas_droite7, num_ville7, 'ville_bas_droite7')
-    jj = traitement_liste(j, direction_ville7)
-    jjj = voisinage(jj)
-
-    for i in jjj:
-        #print(i)
-        print(i[0], i[1], i[2], i[3])
-        print('\n')
-        
-        insertion_voisin_vent_pollution(i[0],
-                                        i[1],
-                                        i[2],
-                                        i[3],
-                                        heure_jour[1],
-                                        heure_jour[0])
-
-
-
-
-    
-    print('\n')
-
+##    for i in aaa:
+##        #print(i)
+##        print(i[0], i[1], i[2], i[3])
+##        print('\n')
+##        
+##        insertion_voisin_vent_pollution(i[0],
+##                                        i[1],
+##                                        i[2],
+##                                        i[3],
+##                                        heure_jour[1],
+##                                        heure_jour[0])
+##
+##
+##
+##
+##    
+##    print('\n')
+##    
+##
+##
+##
+##    for i in bbb:
+##        #print(i)
+##        print(i[0], i[1], i[2], i[3])
+##        print('\n')
+##        
+##        insertion_voisin_vent_pollution(i[0],
+##                                        i[1],
+##                                        i[2],
+##                                        i[3],
+##                                        heure_jour[1],
+##                                        heure_jour[0])
+##
+##
+##
+##
+##    
+##    print('\n')
+##
+##
+##
+##    for i in ccc:
+##        #print(i)
+##        print(i[0], i[1], i[2], i[3])
+##        print('\n')
+##        
+##        insertion_voisin_vent_pollution(i[0],
+##                                        i[1],
+##                                        i[2],
+##                                        i[3],
+##                                        heure_jour[1],
+##                                        heure_jour[0])
+##
+##
+##
+##
+##    
+##    print('\n')
+##
+##
+##
+##
+##
+##    for i in ddd:
+##        #print(i)
+##        print(i[0], i[1], i[2], i[3])
+##        print('\n')
+##        
+##        insertion_voisin_vent_pollution(i[0],
+##                                        i[1],
+##                                        i[2],
+##                                        i[3],
+##                                        heure_jour[1],
+##                                        heure_jour[0])
+##
+##
+##
+##
+##    
+##    print('\n')
+##
+##
+##
+##
+##
+##
+##
+##
+##
+##    
+##    for i in eee:
+##        #print(i)
+##        print(i[0], i[1], i[2], i[3])
+##        print('\n')
+##        
+##        insertion_voisin_vent_pollution(i[0],
+##                                        i[1],
+##                                        i[2],
+##                                        i[3],
+##                                        heure_jour[1],
+##                                        heure_jour[0])
+##
+##
+##
+##
+##    
+##    print('\n')
+##
+##
+##
+##    for i in fff:
+##        #print(i)
+##        print(i[0], i[1], i[2], i[3])
+##        print('\n')
+##        
+##        insertion_voisin_vent_pollution(i[0],
+##                                        i[1],
+##                                        i[2],
+##                                        i[3],
+##                                        heure_jour[1],
+##                                        heure_jour[0])
+##
+##
+##
+##
+##    
+##    print('\n')
+##
+##
+##    for i in ggg:
+##        #print(i)
+##        print(i[0], i[1], i[2], i[3])
+##        print('\n')
+##        
+##        insertion_voisin_vent_pollution(i[0],
+##                                        i[1],
+##                                        i[2],
+##                                        i[3],
+##                                        heure_jour[1],
+##                                        heure_jour[0])
+##
+##
+##
+##
+##    
+##    print('\n')
+##
+##
+##    for i in hhh:
+##        #print(i)
+##        print(i[0], i[1], i[2], i[3])
+##        print('\n')
+##        
+##        insertion_voisin_vent_pollution(i[0],
+##                                        i[1],
+##                                        i[2],
+##                                        i[3],
+##                                        heure_jour[1],
+##                                        heure_jour[0])
+##
+##
+##
+##
+##    
+##    print('\n')
+##
+##
+##
+##
+##
+##
+##
+##
+##
+##    for i in iii:
+##        #print(i)
+##        print(i[0], i[1], i[2], i[3])
+##        print('\n')
+##        
+##        insertion_voisin_vent_pollution(i[0],
+##                                        i[1],
+##                                        i[2],
+##                                        i[3],
+##                                        heure_jour[1],
+##                                        heure_jour[0])
+##
+##
+##
+##
+##    
+##    print('\n')
+##
+##
+##
+##
+##
+##
+##    for i in jjj:
+##        #print(i)
+##        print(i[0], i[1], i[2], i[3])
+##        print('\n')
+##        
+##        insertion_voisin_vent_pollution(i[0],
+##                                        i[1],
+##                                        i[2],
+##                                        i[3],
+##                                        heure_jour[1],
+##                                        heure_jour[0])
+##
+##
+##
+##
+##    
+##    print('\n')
+##
 
 
 
