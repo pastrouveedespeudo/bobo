@@ -2,7 +2,7 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-voir si y'a des bug et le mettre sur le site
+ok tout va au sud mtn grrrrrrr
 
 momot mtn ca sera juste un truk qui sort les mots avec des graphiques
 
