@@ -108,8 +108,12 @@ def map(request):
 
 
 
-
+def essais(request):
+    return render(request, "essais.html")
 
 
 if __name__=="__main__":
     map(request)
+    essais(request)
+
+    
