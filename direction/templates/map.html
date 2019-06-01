@@ -180,33 +180,142 @@
           <h2 class="text-white mt-0"></h2>
 
 
-          <style>#map{margin-left:0px; padding:10px; height: 400px; width: 100%;}</style>
+          <style>#map{margin-left:0px; padding:10px; height: 400px; width: 100%; display:none;}</style>
           <style>#map22{height: 300px; width: 650px;}</style>
 
 
+          <div id='marque_ville'></div>
 
-          <div id="map2"><center><img id='map22' src='/static/direction/france.jpg'></center></div>
+          
+          <div id="map2"><center><img id='map22' src='/static/direction/map.png'></center></div>
           <br><br><br>
+
+          
+          <input type='text' placeholder='Place une ville' style='text-align:center;' id='input_text'><br><br>
+          <input type='button' value='valider' id='button_valider'>
+
+          
           <div id="map"></div>
 
     
 
-          <script>
-            var map;
-            function initMap() {
-              map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 44.7333, lng: 5.0333},
-                zoom: 10
-              });
-            }
-          </script>
+<script>
+  var map;
+  function initMap(lattitude, longitude) {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 44.7333, lng: 5.0333},
+      zoom: 10
+    });
+  }
+</script>
+
+
+<script>
+  var LISTE = [[],[],[],[],[],[],[],[]];
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#button_valider").on("click", function(e){
+      document.getElementById('input_text').style.display = 'none';
+      document.getElementById('button_valider').style.display = 'none';
+      document.getElementById('map2').style.display = 'none';
+    
+      $.ajax({
+          data:{
+               'csrfmiddlewaretoken': '{{ csrf_token }}',
+              data:$("#input_text").val(),
+          },
+          type:"POST",
+          url:"/direction/map"
+      })
+      .done(function(data){
+          if (data.error){
+              $("#monCadreAlert").text(data.error);
+              $("#monCadreHidden2");
+          }
+          else{
+              $("#monCadreHidden2").html(data.data);
+              $("#monCadreAlert");
+              traitement(data);
+              liste_traitement(LISTE);
+              document.getElementById('marque_ville').innerHTML = data;
+              document.getElementById('map').style.display = 'block';
+              
+              
+
+              
+          };
+      });
+  });
+});
+</script>
+
+
+<script>
+  function traitement(data){
+
+    
+    var c = 0;
+    
+    console.log('coucou');
+    for(var i = 0; i <= data.length; i ++){
+      if(data[i] == ' '){
+        c += 1
+        }
+      else{
+        LISTE[c].push(data[i])
+      };
+    };
+  };
+    
+
+
+  function liste_traitement(liste){
+    console.log(liste[6].slice(1,-1))
+    console.log(liste[7].slice(0,-2))
+
+
+    var a = liste[6].slice(1,-1)
+    var b = liste[7].slice(0,-2)
+    
+    var lat = ''
+    var long = ''
+
+    for (var i = 0; i <= a.length; i++){
+      lat += a[i]
+
+    };
+
+  
+  for (var i = 0; i <= b.length; i++){
+      long += b[i]
+    };
+
+    lat = lat.slice(0,-9)
+    console.log(lat)
+    long = long.slice(0,-9)
+    console.log(long)
+};
 
 
 
 
 
 
-          
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
 
           
    
@@ -325,122 +434,6 @@
   </section>
 
 
-
-
-
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-
-  
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-
-      
-        <div class="col-lg-4 col-sm-6">
-        
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/1.jpg" alt="">
-            <div class="portfolio-box-caption">
-            
-              <div class="project-category text-white-50">
-                Conerad 26 ans
-              </div>
-                
-              
-              <div class="project-name">
-                A enfin arréter les pull orange et vert !
-              </div>
-            </div>
-          </a>
-        </div>
-
-        
-        <div class="col-lg-4 col-sm-6">
-        
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/2.jpg" alt="">
-            
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Sarah 24 ans
-              </div>
-              <div class="project-name">
-                Ne fais plus d'achat inutil
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/3.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Jo 35 ans
-              </div>
-              <div class="project-name">
-                a kiffé le projet
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/4.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Marion 17 ans
-              </div>
-              <div class="project-name">
-                a adoré le site ! (elle est aujourd'hui manequin)
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/5.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Rey 22 ans Professionel de Tennis
-              </div>
-              <div class="project-name">
-                Ne fais pas un match sans avoir tester des habits sur My Profil
-              </div>
-            </div>
-          </a>
-        </div>
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/6.jpg" alt="">
-            <div class="portfolio-box-caption p-3">
-              <div class="project-category text-white-50">
-                Ginette 82 ans
-              </div>
-              <div class="project-name">
-                N'a rien compris
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      
-    </div>
-  </section>
 
 
 
