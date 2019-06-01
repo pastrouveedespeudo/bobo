@@ -69,78 +69,77 @@ def vent_deux(lieu):
 
     
     code = code_postal(lieu)
-
-    path.format(lieu, code)
-
+    
+    path = path.format(lieu, code)
+    print(path)
+   
     
     r = requests.get(path)
     page = r.content
     
     soup = BeautifulSoup(page, "html.parser")
     
-    propriete = soup.find_all("div", {"class":"fond2"})
+    propriete = soup.find_all("td", {"class":"td_corps_meteo"})
 
 
     liste = []
     liste.append(propriete)
 
+
+      
     liste1 = []
     mot = ''
     c = 0
-    for i in liste[0]:
+    for i in liste:
         for j in i:
-            a = str(j).find('Vent :')
+            a = str(j).find('<td class="td_corps_meteo" width="63"><img alt="direction du vent - ')
             if a >= 0:
                 for k in j:
-                    if k == " ":
-                        if mot == 'N':
-                            return '' 'nord'
-                        elif mot == 'NNE':
-                            return 'nordnordest' 
-                        elif mot == 'NE':
-                            return 'nordest'
-                        elif mot == 'ENE':
-                            return 'estnordest'
-                        elif mot == 'E':
-                            return 'est'
-                        elif mot == 'ESE':
-                            return 'estsudest'
-                        elif mot == 'SE':
-                            return 'sudest'
-                        elif mot == 'SSE':
-                            return 'sudsudest'
-                        elif mot == 'S':
-                            return 'sud'
-                        elif mot == 'SSO':
-                            return 'sudsudouest'
-                        elif mot == 'SO':
-                            return 'sudouest'
-                        elif mot == 'OSO':
-                            return 'ouestsudouest'
-                        elif mot == 'O':
-                            return 'ouest'
-                        elif mot == 'ONO':
-                            return 'ouestnordouest'
-                        elif mot == 'NO':
-                            return 'nordouest'
-                        elif mot == 'NNO':
-                            return 'nordnordouest'
-   
-
-
-
-
-
-                        
-                        mot = ''
-                    else:
-                        mot += k
-
-   
+                    for l in k:
+                        mot += l
                 break
             
+    print(mot)
 
 
+    if mot == 'N':
+        return '' 'nord'
+    elif mot == 'NNE':
+        return 'nordnordest' 
+    elif mot == 'NE':
+        return 'nordest'
+    elif mot == 'ENE':
+        return 'estnordest'
+    elif mot == 'E':
+        return 'est'
+    elif mot == 'ESE':
+        return 'estsudest'
+    elif mot == 'SE':
+        return 'sudest'
+    elif mot == 'SSE':
+        return 'sudsudest'
+    elif mot == 'S':
+        return 'sud'
+    elif mot == 'SSO':
+        return 'sudsudouest'
+    elif mot == 'SO':
+        return 'sudouest'
+    elif mot == 'OSO':
+        return 'ouestsudouest'
+    elif mot == 'O':
+        return 'ouest'
+    elif mot == 'ONO':
+        return 'ouestnordouest'
+    elif mot == 'NO':
+        return 'nordouest'
+    elif mot == 'NNO':
+        return 'nordnordouest'
+
+
+
+
+    
+#print(vent_deux('anger'))
 
 
 
