@@ -12,7 +12,7 @@ from .carte.direction.vent import *
 
 from .carte.direction.superficie import *
 from .carte.direction.addresse import *
-
+ 
 
 @csrf_exempt
 def map(request):
