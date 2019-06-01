@@ -199,29 +199,70 @@
           
           <div id="map"></div><br><br>
           <center><input type='button' value='valider' id='button_valider2' style='display:none;'></center>
+          <input type='button' value='dézoomer'>
+          <div id='pos_caché'>var pos = [</div>
+
+
+
+
+
+          
         
 
           <script>
-            var map;
-            function initMap(lattitude, longitude, lat_dep, long_dep) {
+            function pos_cach(){
+              var a = document.getElementById('pos_caché').innerHTML;
               
-              var marq1 = {lat: lat_dep, lng: long_dep};
-              var marq2 = {lat: lattitude, lng: longitude};
+              
+
+
+
+
+              }
+
+          </script>
+
+
+
+
+
+          <script>
+            var map;
+            function initMap(lattitude, longitude, lat_dep, long_dep, liste) {
+
               
               map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: lattitude, lng: longitude},
                 zoom: 10
               });
 
-              var marker = new google.maps.Marker({
-                position: marq2,
-                map: map,
-              });
 
-              var marker2 = new google.maps.Marker({
-                position: marq1,
-                map: map,
-              });
+              for(var i = 0; i < liste.length; i++){
+
+                if(liste == undefined){
+                  }
+                else{
+                  console.log(liste[i][0])
+                  console.log(liste[i][1])
+                  console.log('\n')
+                  var marq1 = {lat: parseFloat(liste[i][0]), lng: parseFloat(liste[i][1])};
+                  
+                  var marker1 = new google.maps.Marker({
+                    position: marq1,
+                    map: map,
+                  });
+                  
+                  alert('coucou')
+                }
+              }
+         
+            
+
+
+
+
+
+       
             }
 
             
@@ -233,6 +274,7 @@
             var LISTE = [[],[],[],[],[],[],[],[]];
             var PREMIERE = []
             var NEW = []
+            var POS = []
 
           </script>
 
@@ -240,6 +282,8 @@
           <script>
             $(document).ready(function(){
               $("#button_valider2").on("click", function(e){
+
+                  
                 
                   var a = document.getElementById('secret').value;
                   console.log('zaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
@@ -270,15 +314,38 @@
                           var dep = départ(the_liste);
                           var arr = arrivé(the_liste);
                           
- 
+                          POS.push([dep[0], dep[1]])
+                          POS.push([arr[0], arr[1]])
+
+
+                            var poz = document.getElementById('pos_caché').innerHTML;
+                            console.log(poz)
+                            
+                            document.getElementById('pos_caché').innerHTML = poz +
+                                                                            'new google.maps.LatLng('+
+                                                                            dep[0] +
+                                                                            ',' +
+                                                                            dep[1] +
+                                                                            ')'
+
+
+                            document.getElementById('pos_caché').innerHTML = poz +
+                                                                            'new google.maps.LatLng('+
+                                                                            arr[0] +
+                                                                            ',' +
+                                                                            arr[1] +
+                                                                            '),'
+
+
+
                           document.getElementById('marque_ville').innerHTML = data;
                           document.getElementById('map').style.display = 'block';
                           
                           initMap(parseFloat(arr[0]), parseFloat(arr[1]),
-                                  parseFloat(dep[0]), parseFloat(dep[1]))
+                                  parseFloat(dep[0]), parseFloat(dep[1]), POS)
 
                           document.getElementById('button_valider2').style.display = 'block';
-
+                          pos_cach();
                           
                       };
                   });
@@ -354,7 +421,7 @@
 
     function arrivé(liste){
 
- 
+      console.log(liste)
       var a = liste[2].slice(1,-1)
       var b = liste[3].slice(0,-2)
       
@@ -465,10 +532,35 @@
                         else{
                             $("#monCadreHidden2").html(data.data);
                             $("#monCadreAlert");
+                            
                             the_liste = traitement(data);
+                            
                             var dep = départ(the_liste);
                             var arr = arrivé(the_liste);
+                            
+                            POS.push([dep[0], dep[1]])
+                            POS.push([arr[0], arr[1]])
 
+                            var poz = document.getElementById('pos_caché').innerHTML;
+
+                            
+                            document.getElementById('pos_caché').innerHTML = poz +
+                                                                            'new google.maps.LatLng('+
+                                                                            dep[0] +
+                                                                            ',' +
+                                                                            dep[1] +
+                                                                            '),'
+
+
+                            document.getElementById('pos_caché').innerHTML = poz +
+                                                                            'new google.maps.LatLng('+
+                                                                            arr[0] +
+                                                                            ',' +
+                                                                            arr[1] +
+                                                                            '),'
+
+
+                            
                             document.getElementById('button_valider2').style.display = 'block';
 
                             
@@ -479,6 +571,8 @@
                                     parseFloat(dep[0]), parseFloat(dep[1]))
 
                             document.getElementById('button_valider2').style.display = 'block';
+
+                            pos_cach();
                         };
                     });
                 });
