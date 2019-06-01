@@ -194,6 +194,8 @@
           <input type='text' placeholder='Place une ville' style='text-align:center;' id='input_text'><br><br>
           <input type='button' value='valider' id='button_valider'>
 
+          <div id='secret' value=''>
+
           
           <div id="map"></div><br><br>
           <center><input type='button' value='valider' id='button_valider2' style='display:none;'></center>
@@ -231,18 +233,24 @@
             var LISTE = [[],[],[],[],[],[],[],[]];
             var PREMIERE = []
             var NEW = []
+
           </script>
 
 
           <script>
             $(document).ready(function(){
               $("#button_valider2").on("click", function(e){
-
+                
+                  var a = document.getElementById('secret').value;
+                  console.log('zaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+                  console.log(a);
+                  
                   $.ajax({
-                      data:{
-                           'csrfmiddlewaretoken': '{{ csrf_token }}',
-                            data:$("#input_text").val(),
-                      },
+                    data:{
+                      'a':String(a),
+                      
+                    },
+                    
                       type:"POST",
                       url:"/direction/map"
                   })
@@ -368,7 +376,9 @@
       long = long.slice(0,-9)
       console.log('arrivé', long)
       var lat_long = [lat, long]
-
+      
+      document.getElementById('secret').value = '';
+      document.getElementById('secret').value = lat_long;
       
       return lat_long
   };
