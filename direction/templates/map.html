@@ -184,7 +184,7 @@
           <style>#map22{height: 300px; width: 650px;}</style>
 
 
-          <div id='marque_ville'></div>
+          <div id='marque_ville' value=''></div>
 
           
           <div id="map2"><center><img id='map22' src='/static/direction/map.png'></center></div>
@@ -195,169 +195,183 @@
           <input type='button' value='valider' id='button_valider'>
 
           
-          <div id="map"></div>
+          <div id="map"></div><br><br>
+          <center><input type='button' value='valider' id='button_valider2' style='display:none;'></center>
+        
 
-    
+          <script>
+            var map;
+            function initMap(lattitude, longitude, lat_dep, long_dep) {
+              
+              var marq1 = {lat: lat_dep, lng: long_dep};
+              var marq2 = {lat: lattitude, lng: longitude};
+              
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: lattitude, lng: longitude},
+                zoom: 10
+              });
 
-<script>
-  var map;
-  function initMap(lattitude, longitude, lat_dep, long_dep) {
-    
-    var marq1 = {lat: lat_dep, lng: long_dep};
-    var marq2 = {lat: lattitude, lng: longitude};
-    
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: lattitude, lng: longitude},
-      zoom: 10
-    });
+              var marker = new google.maps.Marker({
+                position: marq2,
+                map: map,
+              });
 
-    var marker = new google.maps.Marker({
-      position: marq2,
-      map: map,
-      title: 'Hello World!'
-    });
+              var marker2 = new google.maps.Marker({
+                position: marq1,
+                map: map,
+              });
+            }
 
-    var marker2 = new google.maps.Marker({
-      position: marq1,
-      map: map,
-      title: 'Hello World!'
-    });
-
-
-
-    
-  }
-
-  
-</script>
+            
+          </script>
 
 
-<script>
-  var LISTE = [[],[],[],[],[],[],[],[]];
-</script>
 
-<script>
-$(document).ready(function(){
-  $("#button_valider").on("click", function(e){
-      document.getElementById('input_text').style.display = 'none';
-      document.getElementById('button_valider').style.display = 'none';
-      document.getElementById('map2').style.display = 'none';
-    
-      $.ajax({
-          data:{
-               'csrfmiddlewaretoken': '{{ csrf_token }}',
-              data:$("#input_text").val(),
-          },
-          type:"POST",
-          url:"/direction/map"
-      })
-      .done(function(data){
-          if (data.error){
-              $("#monCadreAlert").text(data.error);
-              $("#monCadreHidden2");
+          <script>
+            var LISTE = [[],[],[],[],[],[],[],[]];
+            var PREMIERE = []
+            var NEW = []
+          </script>
+
+
+          <script>
+            $(document).ready(function(){
+              $("#button_valider2").on("click", function(e){
+
+                  $.ajax({
+                      data:{
+                           'csrfmiddlewaretoken': '{{ csrf_token }}',
+                            data:$("#input_text").val(),
+                      },
+                      type:"POST",
+                      url:"/direction/map"
+                  })
+                  
+                  .done(function(data){
+                      if (data.error){
+                          $("#monCadreAlert").text(data.error);
+                          $("#monCadreHidden2");
+                      }
+                      
+                      else{
+                          $("#monCadreHidden2").html(data.data);
+                          $("#monCadreAlert");
+                          
+                          the_liste = traitement(data);
+                          
+                          var dep = départ(the_liste);
+                          var arr = arrivé(the_liste);
+                          
+ 
+                          document.getElementById('marque_ville').innerHTML = data;
+                          document.getElementById('map').style.display = 'block';
+                          
+                          initMap(parseFloat(arr[0]), parseFloat(arr[1]),
+                                  parseFloat(dep[0]), parseFloat(dep[1]))
+
+                          document.getElementById('button_valider2').style.display = 'block';
+
+                          
+                      };
+                  });
+              });
+            });
+
+          </script>
+
+
+
+
+
+  <script>
+    function traitement(data){
+
+      var LISTE = [[],[],[],[]];
+
+      var c = 0;
+      for(var i = 0; i <= data.length; i ++){
+        
+        if(data[i] == ' '){
+          c += 1
+          
           }
-          else{
-              $("#monCadreHidden2").html(data.data);
-              $("#monCadreAlert");
-              
-              traitement(data);
-              var dep = départ(LISTE);
-              var arr = arrivé(LISTE);
-
-              console.log(dep);
-              
-              
-              document.getElementById('marque_ville').innerHTML = data;
-              document.getElementById('map').style.display = 'block';
-              
-              initMap(parseFloat(arr[0]), parseFloat(arr[1]),
-                      parseFloat(dep[0]), parseFloat(dep[1]))
-
-              
-          };
-      });
-  });
-});
-</script>
-
-
-<script>
-  function traitement(data){
-
-    
-    var c = 0;
-    
-    console.log('coucou');
-    for(var i = 0; i <= data.length; i ++){
-      if(data[i] == ' '){
-        c += 1
-        }
-      else{
-        LISTE[c].push(data[i])
+        
+        else{
+          LISTE[c].push(data[i])
+          
+        };
       };
+      return LISTE
     };
+     
+
+
+
+
+
+  function départ(liste){
+    
+      var a = liste[0]
+      var b = liste[1]
+      
+      var lat = ''
+      var long = ''
+
+      for (var i = 0; i <= a.length; i++){
+        lat += a[i]
+
+      };
+
+    for (var i = 0; i <= b.length; i++){
+        long += b[i]
+      };
+
+      lat = lat.slice(0,-9)
+      console.log('depart', lat)
+      long = long.slice(0,-9)
+      console.log('depart', long)
+      
+      var lat_long = [lat, long]
+      NEW.push([lat_long])
+      
+      return lat_long
+
+      
   };
+
+
+
+
+
+
+    function arrivé(liste){
+
+ 
+      var a = liste[2].slice(1,-1)
+      var b = liste[3].slice(0,-2)
+      
+      var lat = ''
+      var long = ''
+
+      for (var i = 0; i <= a.length; i++){
+        lat += a[i]
+
+      };
+
     
+    for (var i = 0; i <= b.length; i++){
+        long += b[i]
+      };
 
+      lat = lat.slice(0,-9)
+      console.log('arrivé', lat)
+      long = long.slice(0,-9)
+      console.log('arrivé', long)
+      var lat_long = [lat, long]
 
-
-function départ(liste){
-
-
-    var a = liste[0]
-    var b = liste[1]
-    
-    var lat = ''
-    var long = ''
-
-    for (var i = 0; i <= a.length; i++){
-      lat += a[i]
-
-    };
-
-  for (var i = 0; i <= b.length; i++){
-      long += b[i]
-    };
-
-    lat = lat.slice(0,-9)
-    console.log('depart', lat)
-    long = long.slice(0,-9)
-    console.log('depart', long)
-    
-    var lat_long = [lat, long]
-    return lat_long
-};
-
-
-
-
-
-  function arrivé(liste){
-
-    var a = liste[6].slice(1,-1)
-    var b = liste[7].slice(0,-2)
-    
-    var lat = ''
-    var long = ''
-
-    for (var i = 0; i <= a.length; i++){
-      lat += a[i]
-
-    };
-
-  
-  for (var i = 0; i <= b.length; i++){
-      long += b[i]
-    };
-
-    lat = lat.slice(0,-9)
-    console.log('arrivé', lat)
-    long = long.slice(0,-9)
-    console.log('arrivé', long)
-    var lat_long = [lat, long]
-
-    return lat_long
-};
+      
+      return lat_long
+  };
 
 
 
@@ -365,13 +379,101 @@ function départ(liste){
 
 
 
-</script>
+  </script>
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <script>
+              $(document).ready(function(){
+                $("#button_valider").on("click", function(e){
+                    document.getElementById('input_text').style.display = 'none';
+                    document.getElementById('map2').style.display = 'none';
+                    document.getElementById('button_valider').style.display = 'none';
+
+
+                  
+                    $.ajax({
+                        data:{
+                             'csrfmiddlewaretoken': '{{ csrf_token }}',
+                            data:$("#input_text").val(),
+                        },
+                        type:"POST",
+                        url:"/direction/map"
+                    })
+                    
+                    .done(function(data){
+                        if (data.error){
+                            $("#monCadreAlert").text(data.error);
+                            $("#monCadreHidden2");
+                        }
+                        
+                        else{
+                            $("#monCadreHidden2").html(data.data);
+                            $("#monCadreAlert");
+                            the_liste = traitement(data);
+                            var dep = départ(the_liste);
+                            var arr = arrivé(the_liste);
+
+                            document.getElementById('button_valider2').style.display = 'block';
+
+                            
+                            document.getElementById('marque_ville').innerHTML = data;
+                            document.getElementById('map').style.display = 'block';
+                            
+                            initMap(parseFloat(arr[0]), parseFloat(arr[1]),
+                                    parseFloat(dep[0]), parseFloat(dep[1]))
+
+                            document.getElementById('button_valider2').style.display = 'block';
+                        };
+                    });
+                });
+              });
+          </script>
 
 
 
