@@ -196,18 +196,17 @@
           <div id='secret' value=''>
 
           
-          <div id="map"></div><br><br>
+          <div id="map"></div>
           <div class='container'>
-          <center><input type='text' placeholder='Place une ville' style='text-align:center;' id='input_text'><br><br></center>
-          <center><input type='button' value='valider' id='button_valider'></center>
-   
-          <br>
+          <input type='text' placeholder='Place une ville' style='text-align:center;' id='input_text'>
+          <input type='button' value='valider' id='button_valider'>
+  
             <div>
             
             <center><input style='display:none;'
             type='button' value='valider'
               id='button_valider2'>
-            
+            <br>
             <input style='display:none;'
             type='button' value='stop'
               id='button_valider3'
@@ -226,8 +225,8 @@
               document.getElementById('button_valider2').disabled = true;
               document.getElementById('button_valider2').style.display = 'none';
               
-              document.getElementById('input_text').style.display = 'block';
-              document.getElementById('button_valider').style.display = 'block';
+              document.getElementById('input_text').style.display = 'inline-block';
+              document.getElementById('button_valider').style.display = 'inline-block';
        
           
             }
@@ -238,7 +237,7 @@
           <script>
             var map;
             function initMap(lattitude, longitude, lat_dep, long_dep, liste) {
-
+      
     
               map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: lattitude, lng: longitude},
@@ -262,7 +261,7 @@
                   });
                 }
               }
-         
+            
             document.getElementById('button_valider2').click();
 
 
@@ -445,50 +444,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           <script>
               $(document).ready(function(){
                 $("#button_valider").on("click", function(e){
@@ -527,7 +482,7 @@
 
                             
 
-                            
+                            document.getElementById('button_valider2').disabled = false;
                             document.getElementById('marque_ville').innerHTML = data;
                             document.getElementById('map').style.display = 'block';
                             
