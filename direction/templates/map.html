@@ -230,7 +230,7 @@
             var map;
             function initMap(lattitude, longitude, lat_dep, long_dep, liste) {
 
-              
+    
               map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: lattitude, lng: longitude},
                 zoom: 10
@@ -252,7 +252,7 @@
                     map: map,
                   });
                   
-                  alert('coucou')
+       
                 }
               }
          
@@ -316,27 +316,6 @@
                           
                           POS.push([dep[0], dep[1]])
                           POS.push([arr[0], arr[1]])
-
-
-                            var poz = document.getElementById('pos_caché').innerHTML;
-                            console.log(poz)
-                            
-                            document.getElementById('pos_caché').innerHTML = poz +
-                                                                            'new google.maps.LatLng('+
-                                                                            dep[0] +
-                                                                            ',' +
-                                                                            dep[1] +
-                                                                            ')'
-
-
-                            document.getElementById('pos_caché').innerHTML = poz +
-                                                                            'new google.maps.LatLng('+
-                                                                            arr[0] +
-                                                                            ',' +
-                                                                            arr[1] +
-                                                                            '),'
-
-
 
                           document.getElementById('marque_ville').innerHTML = data;
                           document.getElementById('map').style.display = 'block';
@@ -541,26 +520,6 @@
                             POS.push([dep[0], dep[1]])
                             POS.push([arr[0], arr[1]])
 
-                            var poz = document.getElementById('pos_caché').innerHTML;
-
-                            
-                            document.getElementById('pos_caché').innerHTML = poz +
-                                                                            'new google.maps.LatLng('+
-                                                                            dep[0] +
-                                                                            ',' +
-                                                                            dep[1] +
-                                                                            '),'
-
-
-                            document.getElementById('pos_caché').innerHTML = poz +
-                                                                            'new google.maps.LatLng('+
-                                                                            arr[0] +
-                                                                            ',' +
-                                                                            arr[1] +
-                                                                            '),'
-
-
-                            
                             document.getElementById('button_valider2').style.display = 'block';
 
                             
@@ -568,11 +527,11 @@
                             document.getElementById('map').style.display = 'block';
                             
                             initMap(parseFloat(arr[0]), parseFloat(arr[1]),
-                                    parseFloat(dep[0]), parseFloat(dep[1]))
+                                    parseFloat(dep[0]), parseFloat(dep[1]), POS)
 
                             document.getElementById('button_valider2').style.display = 'block';
 
-                            pos_cach();
+
                         };
                     });
                 });
