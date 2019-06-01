@@ -191,41 +191,50 @@
           <br><br><br>
 
           
-          <input type='text' placeholder='Place une ville' style='text-align:center;' id='input_text'><br><br>
-          <input type='button' value='valider' id='button_valider'>
+
 
           <div id='secret' value=''>
 
           
           <div id="map"></div><br><br>
-          <center><input type='button' value='valider' id='button_valider2' style='display:none;'></center>
-          <input type='button' value='dézoomer'>
-          <div id='pos_caché'>var pos = [</div>
+          <div class='container'>
+          <center><input type='text' placeholder='Place une ville' style='text-align:center;' id='input_text'><br><br></center>
+          <center><input type='button' value='valider' id='button_valider'></center>
+   
+          <br>
+            <div>
+            
+            <center><input style='display:none;'
+            type='button' value='valider'
+              id='button_valider2'>
+            
+            <input style='display:none;'
+            type='button' value='stop'
+              id='button_valider3'
+              onclick='stop()'></center>
+            </div>
+          </div>
+
+         
 
 
 
-
-
-          
-        
 
           <script>
-            function pos_cach(){
-              var a = document.getElementById('pos_caché').innerHTML;
+            function stop(){
+        
+              document.getElementById('button_valider2').disabled = true;
+              document.getElementById('button_valider2').style.display = 'none';
               
-              
-
-
-
-
-              }
-
+              document.getElementById('input_text').style.display = 'block';
+              document.getElementById('button_valider').style.display = 'block';
+       
+          
+            }
           </script>
 
-
-
-
-
+          
+          
           <script>
             var map;
             function initMap(lattitude, longitude, lat_dep, long_dep, liste) {
@@ -233,7 +242,7 @@
     
               map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: lattitude, lng: longitude},
-                zoom: 10
+                zoom: 7
               });
 
 
@@ -251,14 +260,10 @@
                     position: marq1,
                     map: map,
                   });
-                  
-       
                 }
               }
          
-            
-
-
+            document.getElementById('button_valider2').click();
 
 
 
@@ -323,8 +328,8 @@
                           initMap(parseFloat(arr[0]), parseFloat(arr[1]),
                                   parseFloat(dep[0]), parseFloat(dep[1]), POS)
 
-                          document.getElementById('button_valider2').style.display = 'block';
-                          pos_cach();
+                          document.getElementById('button_valider3').style.display = 'inline-block';
+                  
                           
                       };
                   });
@@ -520,7 +525,7 @@
                             POS.push([dep[0], dep[1]])
                             POS.push([arr[0], arr[1]])
 
-                            document.getElementById('button_valider2').style.display = 'block';
+                            
 
                             
                             document.getElementById('marque_ville').innerHTML = data;
@@ -529,7 +534,7 @@
                             initMap(parseFloat(arr[0]), parseFloat(arr[1]),
                                     parseFloat(dep[0]), parseFloat(dep[1]), POS)
 
-                            document.getElementById('button_valider2').style.display = 'block';
+                            document.getElementById('button_valider3').style.display = 'inline-block';
 
 
                         };
