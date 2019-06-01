@@ -201,12 +201,34 @@
 
 <script>
   var map;
-  function initMap(lattitude, longitude) {
+  function initMap(lattitude, longitude, lat_dep, long_dep) {
+    
+    var marq1 = {lat: lat_dep, lng: long_dep};
+    var marq2 = {lat: lattitude, lng: longitude};
+    
     map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 44.7333, lng: 5.0333},
+      center: {lat: lattitude, lng: longitude},
       zoom: 10
     });
+
+    var marker = new google.maps.Marker({
+      position: marq2,
+      map: map,
+      title: 'Hello World!'
+    });
+
+    var marker2 = new google.maps.Marker({
+      position: marq1,
+      map: map,
+      title: 'Hello World!'
+    });
+
+
+
+    
   }
+
+  
 </script>
 
 
@@ -237,12 +259,19 @@ $(document).ready(function(){
           else{
               $("#monCadreHidden2").html(data.data);
               $("#monCadreAlert");
+              
               traitement(data);
-              liste_traitement(LISTE);
+              var dep = départ(LISTE);
+              var arr = arrivé(LISTE);
+
+              console.log(dep);
+              
+              
               document.getElementById('marque_ville').innerHTML = data;
               document.getElementById('map').style.display = 'block';
               
-              
+              initMap(parseFloat(arr[0]), parseFloat(arr[1]),
+                      parseFloat(dep[0]), parseFloat(dep[1]))
 
               
           };
@@ -271,10 +300,39 @@ $(document).ready(function(){
     
 
 
-  function liste_traitement(liste){
-    console.log(liste[6].slice(1,-1))
-    console.log(liste[7].slice(0,-2))
 
+function départ(liste){
+
+
+    var a = liste[0]
+    var b = liste[1]
+    
+    var lat = ''
+    var long = ''
+
+    for (var i = 0; i <= a.length; i++){
+      lat += a[i]
+
+    };
+
+  for (var i = 0; i <= b.length; i++){
+      long += b[i]
+    };
+
+    lat = lat.slice(0,-9)
+    console.log('depart', lat)
+    long = long.slice(0,-9)
+    console.log('depart', long)
+    
+    var lat_long = [lat, long]
+    return lat_long
+};
+
+
+
+
+
+  function arrivé(liste){
 
     var a = liste[6].slice(1,-1)
     var b = liste[7].slice(0,-2)
@@ -293,9 +351,12 @@ $(document).ready(function(){
     };
 
     lat = lat.slice(0,-9)
-    console.log(lat)
+    console.log('arrivé', lat)
     long = long.slice(0,-9)
-    console.log(long)
+    console.log('arrivé', long)
+    var lat_long = [lat, long]
+
+    return lat_long
 };
 
 
