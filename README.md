@@ -2,7 +2,7 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-ok tout va au sud mtn grrrrrrr
+pour etre encore mieux tu pourrais faire village par village mais c ok si t'as encore le temps a la fin; faut automatiser le click mtn
 
 momot mtn ca sera juste un truk qui sort les mots avec des graphiques
 
