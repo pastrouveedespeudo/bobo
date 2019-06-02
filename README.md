@@ -1,5 +1,7 @@
 pcque les trucks de compta ok mais excel fait tout tout seul et ca pourrait le faire pour trait to trait ou redessine trait
 
+j'ai pris l'habitude d'utiliser qu'une dixene de nom de variable et jme perd... faut travailler sur ca 
+
 #https://myprofilmypollution.herokuapp.com/
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
