@@ -2,15 +2,9 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-oh merde j'ai effacer les données de ville sans faire expres y'a plus rien dc faut refaire avec le nouveau truk faut vite tout refaire et faire les graphes
+en gros a la fin y'aura week end (faut plus de donnée la ca va sarreter avec 2/3 données) une condition et ensuite on fait a moyenne et voila chpas 
 
-- faire le truk différence condition
-
-- en gros on récupere la condition ayant le plus faible taux de pollu
-
-- on essaie de récup des conditions avec UNE seule différence et apres je sais pas
-
-- truk pollu voisin j'ai compris mais faut juste la mettre en fonctionnalité aussi va falloir trouver de la place sur la navebarre et vite jve faire momot
+et a la fin des fin peut etre que ca scorera une condition genre nuit = 2 de polu
 
 
 
