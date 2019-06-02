@@ -1,8 +1,12 @@
+pcque les trucks de compta ok mais excel fait tout tout seul et ca pourrait le faire pour trait to trait ou redessine trait
+
 #https://myprofilmypollution.herokuapp.com/
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
 en gros a la fin y'aura week end (faut plus de donnée la ca va sarreter avec 2/3 données) une condition et ensuite on fait a moyenne et voila chpas 
+
+
 
 et a la fin des fin peut etre que ca scorera une condition genre nuit = 2 de polu
 
