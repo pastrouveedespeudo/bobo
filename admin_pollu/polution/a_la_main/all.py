@@ -1,7 +1,7 @@
 import psycopg2
 
 from analyse import *
-
+from analysebis import *
 
 def donnée():
     
@@ -59,10 +59,25 @@ def donnée():
 
         rows = cursor.fetchall()
         liste = [i for i in rows]
-        minimum = condition_min(liste)
-        liste1, liste2, liste3, liste4 = différence(liste, minimum)
-        conclusion(liste1, liste2, liste3, liste4)
-            
+        debut = ''
+        
+            #while True:
+        
+        début = début()
+        
+        if début != False:
+            minimum = condition_min(liste)
+            liste1, liste2, liste3, liste4 = différence(liste, minimum)
+            conditions_diff, les_différences, liste_condition_min_reduit = différences(liste1, liste2, liste3, liste4)
+            la_conclu = conclusion(liste4, conditions_diff, les_différences, liste_condition_min_reduit)
+        else:
+            liste1, liste2, liste3, liste4 = différence(liste, la_conclu)
+            conditions_diff, les_différences, liste_condition_min_reduit = différences(liste1, liste2, liste3, liste4)
+            la_conclu = conclusion(liste4, conditions_diff, les_différences, liste_condition_min_reduit)
+        
+
+        
+
             
             
         print('\n')
