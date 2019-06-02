@@ -2,7 +2,7 @@
 def début():
     return False
 
-def condition_min(liste):
+def condition_min(liste, LISTE_DEJA):
 
     c = 0
     liste_min_pol = []
@@ -29,20 +29,27 @@ def condition_min(liste):
             liste_condition_min.append(i)
 
     #print(liste_condition_min)
+
+
+    
     return liste_condition_min
 
 
 
-def différence(liste, liste_condition_min):
+def différence(liste, liste_condition_min, LISTE_DEJA):
+
     
-    liste_condition_min_reduit = list(liste_condition_min[0][2:-2])
-    #print('\n\n')
+    try:
+        liste_condition_min_reduit = list(liste_condition_min[0][2:-2])
+    except:
+        liste_condition_min_reduit = list(liste_condition_min[2:-2])
 
 
     nombre_de_différence = []
     les_différences = []
     c = 0
-    
+
+
     for i in liste:
         
         i_list = list(i[2:-2])
@@ -63,10 +70,10 @@ def différence(liste, liste_condition_min):
         nombre_de_différence.append([len(diff)])
         les_différences.append(diff)
         
-        #print(diff, 'différence de: ', len(diff))
-        #print(diff_origine)
-
-        #print('\n')
+##        print(diff, 'différence de: ', len(diff))
+##        print(diff_origine)
+##
+##        print('\n')
 
         c+=1
 
@@ -79,66 +86,69 @@ def différence(liste, liste_condition_min):
 def différences(nombre_de_différence,
                les_différences,
                liste_condition_min_reduit,
-               liste):
+               liste, LISTE_DEJA):
 
 
 ##    print(liste_condition_min_reduit)
 ##    print('\n\n')
-##
-##    c = 0
-##    for i in liste:
-##
+
+
+    c = 0
+    for i in liste:
+
 ##        print(int(i[14]), 'soit nombre de diff de pollu :', int(i[14]) - int(liste_condition_min_reduit[12]))
 ##
 ##        print('difference de condition :', nombre_de_différence[c])
 ##        print('qui sont :' , str(les_différences[c]))
 ##
 ##        print('\n')
-##
-##        c+=1
 
+        c+=1
 
-
-    diff_min = []
-    for i in nombre_de_différence:
-        if i == [0]:
-            pass
-        else:
-            diff_min.append(i[0])
     
-    minimum = min(diff_min)
+
+    liste1 = []
+    
+
+    for i in liste:
+        for j in LISTE_DEJA:
+            if i[0] == j:
+                liste.remove(i)
+    
+    for i in nombre_de_différence:
+        liste1.append(i[0])
+
+    liste2 = sorted(liste1)
+
+    mini = min(liste2[1:])
+
+
+    
+
+
 
     c = 0
-    condition_mini = []
-    for i in nombre_de_différence:
-        if i[0] == minimum:
-            condition_mini.append(c)
-    
+    nb = 0
+    for i in liste1:
+        if mini == i:
+            nb += c
+            
         c+=1
 
 
-    #print(condition_mini)
+##    print(liste_condition_min_reduit)
+##    print('\n')
+##    print(list(liste[nb][2:-2]))
+##    print(les_différences[nb])
+##    print(liste[nb][0])
+    LISTE_DEJA.append(liste[nb][0])
+##    print('\n')
+##    print(LISTE_DEJA)
 
-    return condition_mini, les_différences, liste_condition_min_reduit
+    
+    return liste[nb]
 
 
-
-
-def conclusion(liste, liste_mini, les_différences, liste_condition_min_reduit):
-
-    print(liste_condition_min_reduit)
-    print('\n')
-
-    a = []
-    for i in liste_mini:
-        print(list(liste[i][2:-2]))
-        print('\n')
-        print('différences de :', les_différences[i])
-
-        print('\n\n')
-        a = liste[i]
-
-        return a
 
 
 
