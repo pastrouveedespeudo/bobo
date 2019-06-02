@@ -10,6 +10,8 @@ oh merde j'ai effacer les données de ville sans faire expres y'a plus rien dc f
 
 - on essaie de récup des conditions avec UNE seule différence et apres je sais pas
 
+- truk pollu voisin j'ai compris mais faut juste la mettre en fonctionnalité aussi va falloir trouver de la place sur la navebarre et vite jve faire momot
+
 
 
 
