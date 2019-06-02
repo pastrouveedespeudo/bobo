@@ -1,7 +1,11 @@
 import psycopg2
+import time
+
 
 from analyse import *
 from analysebis import *
+
+
 
 def donnée():
     
@@ -50,6 +54,8 @@ def donnée():
     liste_ville = ['lyon']
     #liste_ville = ['lyon', 'paris', 'marseille']
 
+    LISTE_DEJA = []
+    
     for i in liste_ville:
 
         cursor.execute("""select *  from conditions2 where nom_ville = '{}';""".format(i))
@@ -59,24 +65,40 @@ def donnée():
 
         rows = cursor.fetchall()
         liste = [i for i in rows]
-        debut = ''
+        #faut voir si toutes les conditions mini se mettent si oui en faire la moyenne et a chaque fois la renouveller
         
-            #while True:
-        
-        début = début()
-        
-        if début != False:
-            minimum = condition_min(liste)
-            liste1, liste2, liste3, liste4 = différence(liste, minimum)
-            conditions_diff, les_différences, liste_condition_min_reduit = différences(liste1, liste2, liste3, liste4)
-            la_conclu = conclusion(liste4, conditions_diff, les_différences, liste_condition_min_reduit)
-        else:
-            liste1, liste2, liste3, liste4 = différence(liste, la_conclu)
-            conditions_diff, les_différences, liste_condition_min_reduit = différences(liste1, liste2, liste3, liste4)
-            la_conclu = conclusion(liste4, conditions_diff, les_différences, liste_condition_min_reduit)
-        
+        début_boucle = True
 
+##        minimum = condition_min(liste, LISTE_DEJA)
+##        liste1, liste2, liste3, liste4 = différence(liste, minimum, LISTE_DEJA)
+##        a = différences(liste1, liste2, liste3, liste4, LISTE_DEJA)
+
+                
+        oContinuer = True
         
+        while oContinuer:
+            time.sleep(0.3)
+            if début_boucle != False:
+                minimum = condition_min(liste, LISTE_DEJA)
+                liste1, liste2, liste3, liste4 = différence(liste, minimum, LISTE_DEJA)
+                a = différences(liste1, liste2, liste3, liste4, LISTE_DEJA)
+                
+                #print(LISTE_DEJA)
+                #print(a)
+                print('\n')
+
+                début_boucle = début()
+                
+            else:
+
+                liste1, liste2, liste3, liste4 = différence(liste, a, LISTE_DEJA)
+                a = différences(liste1, liste2, liste3, liste4, LISTE_DEJA)
+                
+                #print(LISTE_DEJA)
+                #print(a)
+                print('\n')
+
+                
 
             
             
