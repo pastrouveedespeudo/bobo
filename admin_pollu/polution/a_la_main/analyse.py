@@ -1,5 +1,6 @@
 
-
+def début():
+    return False
 
 def condition_min(liste):
 
@@ -59,7 +60,7 @@ def différence(liste, liste_condition_min):
                 diff_origine.append(liste_condition_min_reduit[c1])
             c1+=1
         
-        nombre_de_différence.append([len(diff), c])
+        nombre_de_différence.append([len(diff)])
         les_différences.append(diff)
         
         #print(diff, 'différence de: ', len(diff))
@@ -75,46 +76,69 @@ def différence(liste, liste_condition_min):
 
 
 
-def conclusion(nombre_de_différence,
+def différences(nombre_de_différence,
                les_différences,
                liste_condition_min_reduit,
                liste):
 
+
+##    print(liste_condition_min_reduit)
+##    print('\n\n')
+##
+##    c = 0
+##    for i in liste:
+##
+##        print(int(i[14]), 'soit nombre de diff de pollu :', int(i[14]) - int(liste_condition_min_reduit[12]))
+##
+##        print('difference de condition :', nombre_de_différence[c])
+##        print('qui sont :' , str(les_différences[c]))
+##
+##        print('\n')
+##
+##        c+=1
+
+
+
+    diff_min = []
+    for i in nombre_de_différence:
+        if i == [0]:
+            pass
+        else:
+            diff_min.append(i[0])
     
-    print(liste_condition_min_reduit)
-    print('\n\n')
+    minimum = min(diff_min)
 
     c = 0
-    for i in liste:
-
-        print('nombre de diff de pollu :', int(i[14]) - int(liste_condition_min_reduit[12]))
-
-        print('difference de condition :', nombre_de_différence[c])
-        print('qui sont :' ,les_différences[c])
-
-        print('\n')
-
+    condition_mini = []
+    for i in nombre_de_différence:
+        if i[0] == minimum:
+            condition_mini.append(c)
+    
         c+=1
 
 
+    #print(condition_mini)
+
+    return condition_mini, les_différences, liste_condition_min_reduit
 
 
 
 
+def conclusion(liste, liste_mini, les_différences, liste_condition_min_reduit):
 
+    print(liste_condition_min_reduit)
+    print('\n')
 
+    a = []
+    for i in liste_mini:
+        print(list(liste[i][2:-2]))
+        print('\n')
+        print('différences de :', les_différences[i])
 
+        print('\n\n')
+        a = liste[i]
 
-
-
-
-
-
-
-
-
-
-
+        return a
 
 
 
