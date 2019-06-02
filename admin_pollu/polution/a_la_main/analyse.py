@@ -1,424 +1,76 @@
-import psycopg2
 
 
 
+def condition_min(liste):
 
-def visu1(date, heure):
+    c = 0
+    liste_min_pol = []
 
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    for i in liste:
+        liste_min_pol.append(int(i[14]))
+
+##        print(i[2], i[3],i[4],i[5],i[6],i[7],
+##              i[8],i[9],i[10],i[11],i[12],i[13],
+##              i[14],i[16],i[17],i[18],i[19],
+##              i[20],i[21])
+##        print('\n')
+
+        c+=1
 
 
-    cursor = conn.cursor()
+    #print(min(liste_min_pol))
+
+
+
+    liste_condition_min = []
+    for i in liste:
+        if str(i[14]) == str(min(liste_min_pol)):
+            liste_condition_min.append(i)
+
+    #print(liste_condition_min)
+    return liste_condition_min
+
+
+
+def différence(liste, liste_condition_min):
     
-    cursor.execute("""select * from angrais where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-    
-
-def visu2(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-
-    
-    cursor.execute("""select * from saison where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-
-def visu3(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
+    liste_condition_min_reduit = list(liste_condition_min[0][2:-2])
+    #print('\n\n')
 
     
-    cursor.execute("""select * from pression where date = '{}'
-                and heure_donnée = '{}';""".format(date, heure))
+    différence_un = []
 
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-def visu4(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-
-    
-    cursor.execute("""select * from vent where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-def visu5(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                        user='pwtfmpvfpsujtw',
-                        host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                        password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-
-    
-    cursor.execute("""select * from météo where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-def visu6(date, heure):
-
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
+    for i in liste:
         
-    cursor.execute("""select * from climat where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-
-def visu7(date, heure):
-
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
+        i_list = list(i[2:-2])
+        c1 = 0
+        counter = 0
+        diff = []
+        diff_origine = []
         
-    cursor.execute("""select * from region_industrielle where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-def visu8(date, heure):
-
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-
-    
-    cursor.execute("""select * from population_active where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-def visu9(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-        
-    cursor.execute("""select * from traffique where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-def visu10(date, heure):
-
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                        user='pwtfmpvfpsujtw',
-                        host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                        password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-
-    
-    cursor.execute("""select * from heure where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-    
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-def visu11(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                        user='pwtfmpvfpsujtw',
-                        host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                        password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-
-    
-    cursor.execute("""select * from weekend where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-
-
-def visu12(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-    
-    cursor.execute("""select * from diesel where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-def visu13(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-
-
-    
-    cursor.execute("""select * from activité where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-def visu14(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-
-    
-    cursor.execute("""select * from eruption where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-
-def visu15(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-
-    
-    cursor.execute("""select * from incendie where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-
-def visu16(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
+        for j in i_list:
+            if j == liste_condition_min_reduit[c1]:
+                counter += 1
+
+            elif j!= liste_condition_min_reduit[c1]:
+                diff.append(j)
+                diff_origine.append(liste_condition_min_reduit[c1])
+            c1+=1
+            
+        if counter == len(liste_condition_min_reduit) - 1:
+            différence_un.append(i)
+
+            
+        print(diff, 'différence de: ', len(diff))
+        print(diff_origine)
+
+        print('\n')
 
         
-    cursor.execute("""select * from jour_nuit where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
+    print(différence_un)
+  
 
-    return liste
-
-
-
-def visu17(date, heure):
-
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                        user='pwtfmpvfpsujtw',
-                        host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                        password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-    cursor.execute("""select * from polenne where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-def visu18(date, heure):
-
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
         
-    cursor.execute("""select * from voisin where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-
-
-def visu19(date, heure):
-
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-        
-    cursor.execute("""select * from pos_france where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-def visu21(date, heure):
-
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                        user='pwtfmpvfpsujtw',
-                        host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                        password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-    cursor.execute("""select * from nuit_froide where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
-
-def visu22(date, heure):
-
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
-
-    cursor = conn.cursor()
-
-    
-    cursor.execute("""select * from bouchon where date = '{}'
-                    and heure_donnée = '{}';""".format(date, heure))
-                    
-    rows = password=cursor.fetchall()
-    liste = [i for i in rows]
-
-    return liste
 
 
 
@@ -426,31 +78,21 @@ def visu22(date, heure):
 
 
 
-date = '30_5_2019'
-heure = '19_56'
 
-print(visu1(date, heure))
-print(visu2(date, heure))
-print(visu3(date, heure))
-print(visu4(date, heure))
-print(visu5(date, heure))
-print(visu6(date, heure))
-print(visu7(date, heure))
-print(visu8(date, heure))
-print(visu9(date, heure))
-print(visu10(date, heure))
-print(visu11(date, heure))
-print(visu12(date, heure))
-print(visu13(date, heure))
-print(visu14(date, heure))
-print(visu15(date, heure))
-print(visu16(date, heure))
-print(visu17(date, heure))
-print(visu18(date, heure))
-print(visu19(date, heure))
-print(visu20(date, heure))
-print(visu21(date, heure))
-print(visu22(date, heure))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
