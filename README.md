@@ -2,11 +2,15 @@
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
 
-pour etre encore mieux tu pourrais faire village par village mais c ok si t'as encore le temps a la fin; faut automatiser le click mtn
+oh merde j'ai effacer les données de ville sans faire expres y'a plus rien dc faut refaire avec le nouveau truk faut vite tout refaire et faire les graphes
 
-momot mtn ca sera juste un truk qui sort les mots avec des graphiques
+- faire le truk différence condition
 
-en gros, d'une part on fait ca sur google map et d'autres part sur la map monde avec des traits rouges
+- en gros on récupere la condition ayant le plus faible taux de pollu
+
+- on essaie de récup des conditions avec UNE seule différence et apres je sais pas
+
+
 
 
 #------------------------------------------
