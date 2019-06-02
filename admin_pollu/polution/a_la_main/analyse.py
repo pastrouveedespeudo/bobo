@@ -37,9 +37,11 @@ def différence(liste, liste_condition_min):
     liste_condition_min_reduit = list(liste_condition_min[0][2:-2])
     #print('\n\n')
 
-    
-    différence_un = []
 
+    nombre_de_différence = []
+    les_différences = []
+    c = 0
+    
     for i in liste:
         
         i_list = list(i[2:-2])
@@ -56,27 +58,43 @@ def différence(liste, liste_condition_min):
                 diff.append(j)
                 diff_origine.append(liste_condition_min_reduit[c1])
             c1+=1
-            
-        if counter == len(liste_condition_min_reduit) - 1:
-            différence_un.append(i)
+        
+        nombre_de_différence.append([len(diff), c])
+        les_différences.append(diff)
+        
+        #print(diff, 'différence de: ', len(diff))
+        #print(diff_origine)
 
-            
-        print(diff, 'différence de: ', len(diff))
-        print(diff_origine)
+        #print('\n')
+
+        c+=1
+
+
+    return nombre_de_différence, les_différences, liste_condition_min_reduit,\
+            liste
+
+
+
+def conclusion(nombre_de_différence,
+               les_différences,
+               liste_condition_min_reduit,
+               liste):
+
+    
+    print(liste_condition_min_reduit)
+    print('\n\n')
+
+    c = 0
+    for i in liste:
+
+        print('nombre de diff de pollu :', int(i[14]) - int(liste_condition_min_reduit[12]))
+
+        print('difference de condition :', nombre_de_différence[c])
+        print('qui sont :' ,les_différences[c])
 
         print('\n')
 
-        
-    print(différence_un)
-  
-
-        
-
-
-
-
-
-
+        c+=1
 
 
 
