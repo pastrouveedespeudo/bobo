@@ -107,43 +107,35 @@ def yoyo():
 
 
 
-    didif = []
     c1 = 0
-    for i in liste:
-
-        for j in liste:
-            compteur = 0
-            c = 0
-            #print(i)
-            #print(j)
+    diff = []
     
-            ici = []
+    for i in liste:
+        #print(liste.index(i))
+        #print('\n')
+        c1 = 0
+        for j in liste:
+
+            c = 0
+            c2 = 0
             
             for ii in i:
-                #print(ii, j[compteur])
-                if ii != j[compteur]:
-                    c += 1
-                    ici.append(c)
-                compteur+=1
-
-            
-            #print('\n')
-            if c == 1:
-                didif.append([ici[0], c1])
-        c1 += 1 
-
-        break
+                #print(ii, liste[c1][c])
+                #print(c1)
+                if ii != liste[c1][c]:
+                    c2 +=1
+                c+=1
        
-
-    print(didif)
+            #print(c2)
+            if c2 == 1:
+                diff.append([liste.index(i), c1, c])
+            c1+=1
+            #print('\n')
+                
+    print(diff)
     
-    print(mini)
-    print(pol_mini)
-
-    for i in didif:
-        print(liste_pol[i[0]])
-        print(liste[i[0]])
-        print(liste[i[0]][i[1]])
+    print(liste[0])
+    print(liste[2])
 
 
 
