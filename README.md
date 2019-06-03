@@ -1,6 +1,10 @@
-pcque les trucks de compta ok mais excel fait tout tout seul et ca pourrait le faire pour trait to trait ou redessine trait
+ok réfléchis, les images pareils ont pas forcement les memes noms ni la meme url ni les 4a 8 ou 7 ou 6 ou 5 inversé
 
-j'ai pris l'habitude d'utiliser qu'une dixene de nom de variable et jme perd... faut travailler sur ca 
+ouais en gros chui foutu tiens matte dk bouge tout seul a ben nan y'a 2 images pareils pffffff
+
+en plus c pas mes alors qui descendent c pcque j'ai regarder chasseur de rat hier jpasse pour un de c connar qui se venge ouais nik
+
+pense canap
 
 #https://myprofilmypollution.herokuapp.com/
 
