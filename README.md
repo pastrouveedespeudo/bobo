@@ -1,4 +1,6 @@
-ok réfléchis, les images pareils ont pas forcement les memes noms ni la meme url ni les 4a 8 ou 7 ou 6 ou 5 inversé
+en plus jpasse pour un gros venere, les types y vont voir un ptit chinoix trop furax sur les video, jpe dire adieu a un beau métier en meme temps zen frere voua ...
+
+
 
 ouais en gros chui foutu tiens matte dk bouge tout seul a ben nan y'a 2 images pareils pffffff
 
