@@ -115,7 +115,7 @@ def yoyo():
         #print('\n')
         c1 = 0
         for j in liste:
-
+            
             c = 0
             c2 = 0
             
@@ -134,11 +134,17 @@ def yoyo():
                 
     print(diff)
     
-    print(liste[0])
     print(liste[2])
+    print(liste_pol[0])
+    print('\n')
+    print(liste[10])
+    print(liste_pol[2])
+   
 
 
+    
 
+    
 
 
 
