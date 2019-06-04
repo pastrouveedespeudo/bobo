@@ -26,6 +26,7 @@ la partie machine a o
 
 #supprimer favoris
 
+# focus sur le visuel
 
 #https://myprofilmypollution.herokuapp.com/
 
@@ -40,7 +41,9 @@ la partie machine a o
 
 # récupérer macguyvert dans les fichiers supprimer avec un logiciel
 
+# ranger tout les github en les clonnant
 
+# mettre tous les code js dans un fichier js et css aussi
 
 
 
