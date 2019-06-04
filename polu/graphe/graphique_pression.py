@@ -11,14 +11,13 @@ from .fonction_graphe import new
 
 def visu_pression(ville):
     
-    conn = psycopg2.connect(database='bobo',
-                            user='postgres',
-                            host='127.0.0.1',
-                            password='tiotiotio333')  
-
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                            user='pwtfmpvfpsujtw',
+                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
     cursor = conn.cursor()
     
-    sql = ("""SELECT pression, particule FROM ville
+    sql = ("""SELECT pression, nombre_particule FROM pression
             WHERE nom_ville = %s;""")
     
     values = (ville)
@@ -60,7 +59,7 @@ def traitement_pression(donnée):
 
 
     return donnée_forte[0], donnée_faible[0], donnée_normale[0],\
-           donnée_forte[1], donnée_faible[1], donnée_normale[1],data
+           donnée_forte[1], donnée_faible[1], donnée_normale[1], data
 
 
 
@@ -87,7 +86,7 @@ def diagramme_pression(donnée_forte, donnée_faible, donnée_normale,
     plt.clf()
     plt.close()
     
-    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    shutil.move(nouveau, '/app/static/popo')
     return nouveau
 
 
