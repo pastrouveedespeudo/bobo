@@ -17,7 +17,7 @@ def moyenne(liste):
 def new():
 
     liste_new = []
-    liste = os.listdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    liste = os.listdir('/app/static/popo')
     for i in liste:
         
         try:
