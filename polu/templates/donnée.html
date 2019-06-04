@@ -234,28 +234,31 @@
           Population active de 15 à 59 ans:  {{socio_lyon}} personnes<br><br>
           Bouchons à Lyon :  {{bouchons_lyon}} Km
 
+          <br><br>
+          <input type='button' value='fermer' onclick='fermer()'>
+
         
-        <br><br><br><br>
-        <div style='float:left;'><i>Donnée fournis par openweathermap :
-        <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
-        </a></i></div><br>
+          <br><br><br><br>
+          <div style='float:left;'><i>Donnée fournis par openweathermap :
+          <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
+          </a></i></div><br>
 
-        <div style='float:left;'>
-        <i>Classement de 1 a 7 des villes les plus polluée :</i>
-        <a href="http://www.linternaute.com/ville/c-ville-pollution-de-l-air"
-         style='color:black;'><i>Internaute</a></i></div><br>
+          <div style='float:left;'>
+          <i>Classement de 1 a 7 des villes les plus polluée :</i>
+          <a href="http://www.linternaute.com/ville/c-ville-pollution-de-l-air"
+           style='color:black;'><i>Internaute</a></i></div><br>
 
 
-        <div style='float:left;'><i>Classement des sites industriels les plus pollués : 
-        </i><a href="https://www.greenunivers.com/2009/05/quinze-sites-industriels-plus-pollueurs-de-france-6981/"
-        style='color:black;'><i>Grenunivers</a></i></div><br>
+          <div style='float:left;'><i>Classement des sites industriels les plus pollués : 
+          </i><a href="https://www.greenunivers.com/2009/05/quinze-sites-industriels-plus-pollueurs-de-france-6981/"
+          style='color:black;'><i>Grenunivers</a></i></div><br>
 
-        <div style='float:left;'><i>Manifestation à lyon : </i>
-        <a href="https://www.onlymoov.com/trafic/" style='color:black;'><i>onlymoov</a></i></div><br>
+          <div style='float:left;'><i>Manifestation à lyon : </i>
+          <a href="https://www.onlymoov.com/trafic/" style='color:black;'><i>onlymoov</a></i></div><br>
 
-        <div style='float:left;'><i>Bouchons à lyon : </i>
-        <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
-          style='color:black;'><i>moncoyote</a></i></div><br>
+          <div style='float:left;'><i>Bouchons à lyon : </i>
+          <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
+            style='color:black;'><i>moncoyote</a></i></div><br>
 
       </div>
 
@@ -279,6 +282,9 @@
         Manifestation en ce moment à Paris :  {{manif_paris}} <br><br>
         Population active de 15 à 59 ans:  {{socio_paris}} personnes<br><br>
         Bouchons à Paris :  {{bouchons_paris}} Km
+
+        <br><br>
+        <input type='button' value='fermer' onclick='fermer()'>
 
         <br><br><br><br>
         <div style='float:left;'><i>Donnée fournis par openweathermap</i></div><br>
@@ -324,6 +330,9 @@
         Population active de 15 à 59 ans:  {{socio_marseille}} personnes<br><br>
         Bouchons à marseille :  {{bouchons_marseille}} Km
 
+        <br><br>
+        <input type='button' value='fermer' onclick='fermer()'>
+
         
         <br><br><br><br>
         <div style='float:left;'><i>Donnée fournis par openweathermap</i></div>
@@ -355,9 +364,14 @@
       <br><br><br><br><br><br>
       <div style='float:left;'><i>Données issuent de <a href='http://www.airlab.solutions/fr'
           style='color:black;'>plumairlab
-          </a></i>
+          </a></i> 
       </div>
 
+
+      <div style='float:right;'><a href='/direction/map'
+          style='color:black;'><h5>Voir notre carte interractive sur le vent</h5>
+          </a>
+      </div>
         
     </div>
   </section>
@@ -365,6 +379,13 @@
 
   
   <script>
+
+    function fermer(){
+      document.getElementById('info2').style.display = 'none';
+      document.getElementById('info3').style.display = 'none';
+      document.getElementById('info1').style.display = 'none';
+      };
+  
     function donnée_lyon(){
       document.getElementById('info2').style.display = 'none';
       document.getElementById('info3').style.display = 'none';
@@ -452,6 +473,18 @@
             <p class="text-muted mb-0">Tous absolument tous sur la polltuion </p>
           </div>
         </div>
+
+
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+           <style>#im7{width:100px; height:100px;}</style>
+           <img src = "/static/img/portfolio2/icone/wind.png"/ id="im7">
+            <h3 class="h4 mb-2">Nos données sur le vent</h3>
+            <br>
+            <p class="text-muted mb-0">Devenir un ballon de baudruche !</p>
+          </div>
+        </div>
+
 
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
