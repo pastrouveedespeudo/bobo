@@ -1,5 +1,7 @@
 réfléchis a la prediction low cost et c ok
 
+#uncomment coupe nalysis et mode_analyse.py (static/bobo)
+
 #navebarre responsive
 
 #faire les href de services
