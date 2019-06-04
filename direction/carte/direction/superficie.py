@@ -4,10 +4,11 @@ from math import *
 
 
 def superficie_ville(ville):
-    #print(ville,'VILLLLLLLLLLLLLLLLLLLLLLE')
-    path = 'https://www.google.com/search?ei=wjnsXOzeIZCAjLsPm62CgAo&q={}+superficie&oq={}+superficie&gs_l=psy-ab.3..33i160l3.47870.49141..49264...0.0..0.316.1867.0j9j1j1......0....1..gws-wiz.......0i71j35i39j0i20i263j0i67j0j0i10j0i203j0i22i30.KKnu850MPRU'
+
+    path = 'https://www.google.com/search?ei=wjnsXOzeIZCAjLsPm62CgAo&q={}+superficie&oq={}+superficie'
     path = path.format(ville, ville)
- 
+    #print(path)
+    
     r = requests.get(path)
     page = r.content
     
@@ -19,8 +20,12 @@ def superficie_ville(ville):
 
     for i in propriete:
         liste.append(str(i.string))
+        
+  
+        
+        print('\n')
 
-
+        
     kilometre_carre = ''
     
     for i in liste:
@@ -29,7 +34,7 @@ def superficie_ville(ville):
         if kilometre_carre == True:
             break
         for j in i:
-            if j == ',' and numbe == True:
+            if j == ',' or j == '.' and numbe == True:
                 number+= str('.')
             try:
                 j = int(j)
@@ -44,13 +49,13 @@ def superficie_ville(ville):
                 
         if kilometre_carre == True:
             break
-        
-    #print(number)
+       
+    print(number)
     return number
 
 
         
-#superficie_ville("marseille")
+#superficie_ville("crest")
 
 
 
