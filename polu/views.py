@@ -230,11 +230,11 @@ def polution_paris(request):
 
 def supp():
     
-    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    os.chdir('/app/static/popo')
     liste = os.listdir()
     for i in liste[1:-4]:
         os.remove(i)
-    os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\polution')
+    os.chdir('/app/polution')
 
 
 def graphe(request):
