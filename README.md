@@ -1,12 +1,16 @@
-en plus jpasse pour un gros venere, les types y vont voir un ptit chinoix trop furax sur les video, jpe dire adieu a un beau métier en meme temps zen frere voua ...
+ok mais ca dit que nuit et jour avec une grosse diff remplir database a mort et faire les autres truks
 
+- mettre vent sur la page d'accueil
 
+- le mec rentre sa ville, on recupere le pays et on y met un pts sur la map monde(donc faire avec python puis l'enregistrer)
 
-ouais en gros chui foutu tiens matte dk bouge tout seul a ben nan y'a 2 images pareils pffffff
+- on met la carte google map
 
-en plus c pas mes alors qui descendent c pcque j'ai regarder chasseur de rat hier jpasse pour un de c connar qui se venge ouais nik
+- finir pollu voisin et le mettre sur la page d'accueil genre 2 inputs
 
-pense canap
+- finir momot et le mettre dans la navebarre
+
+- et a la fin des fin ajuster les graphes et faire la "prediction" low cost
 
 #https://myprofilmypollution.herokuapp.com/
 
