@@ -7,7 +7,7 @@ def superficie_ville(ville):
 
     path = 'https://www.google.com/search?ei=wjnsXOzeIZCAjLsPm62CgAo&q={}+superficie&oq={}+superficie'
     path = path.format(ville, ville)
-    #print(path)
+    print(path)
     
     r = requests.get(path)
     page = r.content
@@ -20,13 +20,14 @@ def superficie_ville(ville):
 
     for i in propriete:
         liste.append(str(i.string))
-        
+
     kilometre_carre = ''
     
     for i in liste:
+        print(i)
         number = ''
         numbe = ''
-
+        
         c = 0
         for j in i:
             c1 = 0
@@ -39,7 +40,8 @@ def superficie_ville(ville):
                     numbe = True
             except:
                 pass
-            if j == '²':
+            if j == '²' and number != '':
+                print(number)
                 kilometre_carre = True
                 break
             c1 += 1
@@ -50,8 +52,8 @@ def superficie_ville(ville):
 
     number_final = ''
     c2 = 0
+    
     for i in number:
-
         if i == '.':
             if number[c2 - 1] != '.' and number[c2 + 1] != '.':
                 number_final += '.'
@@ -64,11 +66,22 @@ def superficie_ville(ville):
         
         c2 += 1
         
+    
+    try:
+        number_final = float(number_final)
+    except:
+        try:
+            if number_final[0] == '.':
+                number_final = float(number_final[1:])
+        except:
+            print(number_final)
+            number_final = 20.0
+            
     print(number_final)
     return number_final
 
 
-superficie_ville("crest")
+#superficie_ville("Leucate+Languedoc-Roussillon")
 
 
 
