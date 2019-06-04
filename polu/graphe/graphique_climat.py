@@ -13,14 +13,14 @@ from .fonction_graphe import new
 
 def visuuu_climat(ville):
     
-    conn = psycopg2.connect(database='bobo',
-                            user='postgres',
-                            host='127.0.0.1',
-                            password='tiotiotio333')  
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696') 
 
     cursor = conn.cursor()
     
-    sql = ("""SELECT climat, particule FROM ville
+    sql = ("""SELECT climat, nombre_particule FROM climat
             WHERE nom_ville = %s;""")
     
     values = (ville)
@@ -103,11 +103,7 @@ def diagramme_climattt(donnée_inf_zero, donnée_zero_dix,
                       er_vingtun_trente, er_assez_trente_un_quarante,
                       er_supp_quarante, save):
 
-    try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\diagramme_climat.png')
-    except:
-        pass
-    
+
     plt.bar(range(6), [donnée_inf_zero, donnée_zero_dix,
                         donnée_onze_vingt,
                         donnée_vingtun_trente, donnée_trente_un_quarante,
@@ -133,7 +129,7 @@ def diagramme_climattt(donnée_inf_zero, donnée_zero_dix,
     plt.clf()
     plt.close()
     
-    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    shutil.move(nouveau, '/app/static/popo')
     return nouveau
 
 
