@@ -16,14 +16,14 @@ from .fonction_graphe import new
 
 def visu_bouchon(ville):
     
-    conn = psycopg2.connect(database='bobo',
-                            user='postgres',
-                            host='127.0.0.1',
-                            password='tiotiotio333')  
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                             user='pwtfmpvfpsujtw',
+                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
 
     cursor = conn.cursor()
     
-    sql = ("""SELECT BOUCHON, particule FROM ville
+    sql = ("""SELECT BOUCHON, nombre_particule FROM bouchon
             WHERE nom_ville = %s;""")
     
     values = (ville)
@@ -47,7 +47,10 @@ def traitement_bouchon(donnée):
     
 
     for i in donnée:
-        print(i)
+        print(i[0])
+
+
+        
         if i[1] == 'None' or i[1] == None\
             or i[0] == 'None' or i[0] == None:
                 pass
@@ -63,6 +66,7 @@ def traitement_bouchon(donnée):
             assez_grand.append(int(i[1]))
         elif i[0] == 'tres grand':
             tres_grand.append(int(i[1]))
+            
  
     #print(non, petit, moyen, grand, assez_grand, tres_grand)
 
@@ -125,7 +129,7 @@ def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
     plt.clf()
     plt.close()
     
-    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    shutil.move(nouveau, '/app/static/popo')
     return nouveau
 
 
