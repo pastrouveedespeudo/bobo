@@ -183,9 +183,6 @@
           <style>#map{margin-left:0px; padding:10px; height: 400px; width: 100%; display:none;}</style>
           <style>#map22{height: 300px; width: 650px;}</style>
 
-
-          <div id='marque_ville' value=''></div>
-
           
           <div id="map2"><center><img id='map22' src='/static/direction/map.png'></center></div>
           <br><br><br>
@@ -321,7 +318,6 @@
                           POS.push([dep[0], dep[1]])
                           POS.push([arr[0], arr[1]])
 
-                          document.getElementById('marque_ville').innerHTML = data;
                           document.getElementById('map').style.display = 'block';
                           
                           initMap(parseFloat(arr[0]), parseFloat(arr[1]),
@@ -483,7 +479,6 @@
                             
 
                             document.getElementById('button_valider2').disabled = false;
-                            document.getElementById('marque_ville').innerHTML = data;
                             document.getElementById('map').style.display = 'block';
                             
                             initMap(parseFloat(arr[0]), parseFloat(arr[1]),
@@ -708,7 +703,7 @@
 
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBInNqWmfuvqC7bRcqwokUJiaQ60zBdtA&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqJf5bBiufgiWCK34KcdmPt4Zhsp4oRCc&callback=initMap"
   async defer></script>
 
 
