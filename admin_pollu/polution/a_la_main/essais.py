@@ -134,14 +134,23 @@ def yoyo():
                 
     print(diff)
     
-    print(liste[2])
-    print(liste_pol[0])
-    print('\n')
-    print(liste[10])
-    print(liste_pol[2])
+##    print(liste[2])
+##    print(liste_pol[0])
+##    print('\n')
+##    print(liste[10])
+##    print(liste_pol[2])
    
 
+    for i in diff:
 
+        liste2 = list(set(liste[i[0]]) - set(liste[i[1]]))
+
+        
+        print(liste[i[0]])
+        print(liste[i[1]])
+        print('diff de pollution de : ', abs(int(liste_pol[i[0]]) - int(liste_pol[i[1]])))
+        print('par la différence de la condition :', liste2[0])
+        print('\n')
     
 
     
