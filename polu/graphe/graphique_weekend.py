@@ -9,15 +9,14 @@ from .fonction_graphe import moyenne
 from .fonction_graphe import new
 
 def visu_weekend(ville):
-    print('yoooooooooooooooo')
-    conn = psycopg2.connect(database='bobo',
-                            user='postgres',
-                            host='127.0.0.1',
-                            password='tiotiotio333')  
+    conn = psycopg2.connect(database='datu8fkornnndh',
+                            user='pwtfmpvfpsujtw',
+                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
+                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
 
     cursor = conn.cursor()
     
-    sql = ("""SELECT WEEKEND, particule FROM ville
+    sql = ("""SELECT WEEKEND, nombre_particule FROM weekend
             WHERE nom_ville = %s;""")
     
     values = (ville)
@@ -45,7 +44,7 @@ def traitement_weekend(donnée):
         elif i[0] == 'weekend':
             weekend.append(int(i[1]))
             
-        elif i[0] == 'non_weekend':
+        elif i[0] == 'jour_semaine':
             non_weekend.append(int(i[1]))
 
 
@@ -84,7 +83,7 @@ def diagramme_weekend(donnée_weekend, donnée_non_weekend,
     plt.savefig(nouveau)
     plt.clf()
     plt.close()
-    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    shutil.move(nouveau, '/app/static/popo')
     return nouveau
 
 
