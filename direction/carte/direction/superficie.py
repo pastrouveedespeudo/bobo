@@ -21,20 +21,16 @@ def superficie_ville(ville):
     for i in propriete:
         liste.append(str(i.string))
         
-  
-        
-        print('\n')
-
-        
     kilometre_carre = ''
     
     for i in liste:
         number = ''
         numbe = ''
-        if kilometre_carre == True:
-            break
+
+        c = 0
         for j in i:
-            if j == ',' or j == '.' and numbe == True:
+            c1 = 0
+            if j == ',' or j == '.':
                 number+= str('.')
             try:
                 j = int(j)
@@ -46,16 +42,33 @@ def superficie_ville(ville):
             if j == '²':
                 kilometre_carre = True
                 break
-                
+            c1 += 1
         if kilometre_carre == True:
             break
-       
+    c+=1
     print(number)
-    return number
 
+    number_final = ''
+    c2 = 0
+    for i in number:
 
+        if i == '.':
+            if number[c2 - 1] != '.' and number[c2 + 1] != '.':
+                number_final += '.'
+        try:
+            i = int(i)
+            if i == int(i):
+                number_final += str(i)
+        except:
+            pass
         
-#superficie_ville("crest")
+        c2 += 1
+        
+    print(number_final)
+    return number_final
+
+
+superficie_ville("crest")
 
 
 
