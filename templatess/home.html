@@ -42,7 +42,6 @@
       background-attachment: scroll;
       background-size: cover;
     }
-
     </style>
 
 
@@ -66,7 +65,6 @@
       #myprofile_p{color:black;margin-left:55px;}
       #pol_logo{color:black;}
     
-
       @media screen and (min-width: 990px) and (max-width:991px) {
         #my {
           margin-left:360px;
@@ -78,7 +76,6 @@
         }
         
       }
-
       @media screen and (min-width: 970px) and (max-width:990px) {
         #my {
           margin-left:365px;
@@ -87,9 +84,7 @@
        #my_prof{
           margin-top: -230px;
         }
-
       }
-
       @media screen and (min-width: 950px) and (max-width:970px) {
         #my {
           margin-left:360px;
@@ -99,8 +94,6 @@
           margin-top: -230px;
         }
       }
-
-
       @media screen and (min-width: 900px) and (max-width:950px) {
         #my {
           margin-left:360px;
@@ -110,9 +103,6 @@
           margin-top: -230px;
         }
       }
-
-
-
       @media screen and (min-width: 850px) and (max-width:900px) {
         #my {
           margin-left:360px;
@@ -122,7 +112,6 @@
           margin-top: -230px;
         }
       }
-
       @media screen and (min-width: 800px) and (max-width:850px) {
         #my {
           margin-left:360px;
@@ -142,8 +131,6 @@
           margin-top: -230px;
         }
       }
-
-
       @media screen and (min-width: 780px) and (max-width:790px) {
         #my {
           margin-left:360px;
@@ -163,7 +150,6 @@
           margin-top: -230px;
         }
       }
-
       @media screen and (min-width: 769px) and (max-width:770px) {
         #my {
           margin-left:345px;
@@ -173,8 +159,6 @@
           margin-top: -230px;
         }
       }
-
-
       @media screen and (min-width: 768px) and (max-width:769px) {
         #my {
           margin-left:346px;
@@ -184,8 +168,6 @@
           margin-top: -230px;
         }
       }
-
-
       @media screen and (min-width: 767px) and (max-width:768px) {
         #my {
           margin-left:347px;
@@ -195,8 +177,6 @@
           margin-top: -230px;
         }
       }
-
-
       @media screen and (min-width: 766px) and (max-width:767px) {
         #my {
           margin-left:245px;
@@ -206,9 +186,6 @@
           margin-top: -230px;
         }
       }
-
-
-
       @media screen and (min-width: 765px) and (max-width:766px) {
         #my {
           margin-left:245px;
@@ -218,9 +195,6 @@
           margin-top: -230px;
         }
       }
-
-
-
       @media screen and (min-width: 758px) and (max-width:765px) {
         #my {
           margin-left:240px;
@@ -230,8 +204,6 @@
           margin-top: -230px;
         }
       }
-
-
       @media screen and (min-width: 755px) and (max-width:758px) {
         #my {
           margin-left:240px;
@@ -241,7 +213,6 @@
           margin-top: -230px;
         }
       }
-
       @media screen and (min-width: 754px) and (max-width:755px) {
         #my {
           margin-left:240px;
@@ -251,7 +222,6 @@
           margin-top: -230px;
         }
       }
-
       @media screen and (min-width: 753px) and (max-width:754px) {
         #my {
           margin-left:240px;
@@ -261,10 +231,6 @@
           margin-top: -230px;
         }
       }
-
-
-
-
       @media screen and (min-width: 752px) and (max-width:753px) {
         #my {
           margin-left:240px;
@@ -274,7 +240,6 @@
           margin-top: -230px;
         }
       }
-
       @media screen and (min-width: 751px) and (max-width:752px) {
         #my {
           margin-left:240px;
@@ -284,9 +249,6 @@
           margin-top: -230px;
         }
       }
-
-
-
       @media screen and (min-width: 750px) and (max-width:751px) {
         #my {
           margin-left:240px;
@@ -296,9 +258,6 @@
           margin-top: -230px;
         }
       }
-
-
-
       @media screen and (min-width: 749px) and (max-width:750px) {
         #my {
           margin-left:240px;
@@ -308,9 +267,6 @@
           margin-top: -230px;
         }
       }
-
-
-
       @media screen and (min-width: 748px) and (max-width:749px) {
         #my {
           margin-left:2400px;
@@ -320,7 +276,6 @@
           margin-top: -230px;
         }
       }
-
       
       @media screen and (min-width: 650px) and (max-width:749px) {
         #my {
@@ -331,8 +286,6 @@
           margin-top: -230px;
         }
       }
-
-
     </style>
 
 
@@ -554,190 +507,106 @@
 
 
 <script>
-
   function mode_div3(div, image){
-
     document.getElementById(image).style.width = '70px';
     document.getElementById(image).style.height = '70px';
     document.getElementById(div).style.color = '#330000';
  
   };
-
-
   function mode_div4(div, color, image, largeur, hauteur){
     document.getElementById(image).style.width = largeur;
     document.getElementById(image).style.height = hauteur;
     document.getElementById(div).style.color = 'black';
   };
-
-
     
   function mode_div(div, image, largeur, hauteur){
     
     a = document.getElementById(image).width;
     b = document.getElementById(image).height;
-
     document.getElementById(image).width = a + largeur;
     document.getElementById(image).height = b + hauteur;
-
     
     document.getElementById(div).style.color = 'red';
     
-
-
-
     
-
   };
   function mode_div2(div, color, image, largeur, hauteur){
     document.getElementById(div).style.color = color;
-
     document.getElementById(image).width = largeur;
     document.getElementById(image).height = hauteur;
   };
-
-
-
-
-
-
   function change_image_tendance1(div, image){
         
     document.getElementById('p_mode').style.color = '#330000';
     document.getElementById('momode').src = "/static/img/portfolio/icone/momode2.png";
-
   };
-
-
   function change_image_tendance2(div, image){
     document.getElementById('p_mode').style.color = 'black';
     document.getElementById('momode').src = "/static/img/portfolio/icone/momode.png";
-
   };
-
-
-
-
-
   function change_image_coiff1(div, image){
         
     document.getElementById('coif_p').style.color = '#330000';
     document.getElementById('coif_nav').src = "/static/img/portfolio/icone/coiffure2.png";
-
   };
-
-
   function change_image_coiff2(div, image){
     document.getElementById('coif_p').style.color = 'black';
     document.getElementById('coif_nav').src = "/static/img/portfolio/icone/coiffure.png";
-
   };
-
-
-
-
-
-
   function change_image_vetements1(div, image){
         
     document.getElementById('p_vet').style.color = '#330000';
     document.getElementById('im3').src = "/static/img/portfolio/icone/vetements2.png";
-
   };
-
-
   function change_image_vetements2(div, image){
     document.getElementById('p_vet').style.color = 'black';
     document.getElementById('im3').src = "/static/img/portfolio/icone/vetements.png";
-
   };
-
-
-
   function change_image_logout1(div, image){
         
     document.getElementById('p_deco').style.color = '#330000';
     document.getElementById('deco_nav').src = "/static/img/portfolio/icone/logout2.png";
-
   };
-
-
   function change_image_logout2(div, image){
     document.getElementById('p_deco').style.color = 'black';
     document.getElementById('deco_nav').src = "/static/img/portfolio/icone/deco.png";
-
   };
-
-
-
-
   function change_image_inscription1(div, image){
         
     document.getElementById('p_inscri').style.color = '#330000';
     document.getElementById('ima1').src = "/static/img/portfolio/icone/yoyo.png";
-
   };
-
-
   function change_image_inscription2(div, image){
     document.getElementById('p_inscri').style.color = 'black';
     document.getElementById('ima1').src = "/static/img/portfolio/icone/inscription.png";
-
   };
-
-
   function change_image_co1(div, image){
         
     document.getElementById('p_con').style.color = '#330000';
     document.getElementById('im2').src = "/static/img/portfolio/icone/inscri.png";
-
   };
-
-
   function change_image_co2(div, image){
     document.getElementById('p_con').style.color = 'black';
     document.getElementById('im2').src = "/static/img/portfolio/icone/login.png";
-
   };
-
-
-
-
-
   function change_image_foiiiif1(div, image){
         
     document.getElementById('p_coicoif').style.color = '#330000';
     document.getElementById('im1').src = "/static/img/portfolio/icone/hairhair.png";
-
   };
-
-
   function change_image_foiiiif2(div, image){
     document.getElementById('p_coicoif').style.color = 'black';
     document.getElementById('im1').src = "/static/img/portfolio/icone/coiffure.png";
-
   };
-
-
-
   function change_image_drees1(div, image){
         
     document.getElementById('p_vetvet').style.color = '#330000';
     document.getElementById('im3').src = "/static/img/portfolio/icone/dressme.png";
-
   };
-
-
   function change_image_drees2(div, image){
     document.getElementById('p_vetvet').style.color = 'black';
     document.getElementById('im3').src = "/static/img/portfolio/icone/vetements.png";
-
   };
-
-
-
-
-
   
 </script>
 
@@ -749,13 +618,10 @@
     font-family:"cursive"
     color:black;
   }
-
   #h{
     font-family:"Comic Sans MS, Comic Sans, cursive";
     color:black;
-
   }
-
 </style>
 
 
@@ -801,22 +667,17 @@
 
 
 <style>
-
 #bg1{
-  height:500px;
+  height:600px;
   width:100%;
   border:8px solid black;
   background:url("/static/img/parquet1.jpg");
   color:white;
 }
-
 #bg11{
-  height:50%;
-  width:50%px;
+  height:40%;
   border:4px solid black;
-
 }
-
 </style>
 
 
@@ -840,7 +701,7 @@
         <br>
         <div id='bg11'>
           <marquee direction="right" id='marc'
-          scrollamount="20" height="210" width="322">
+          scrollamount="50" height="210">
           
             <a href=""><img src='/static/img/mapvent.jpg' onmouseover="stop('im1')" onmouseout="start()"></a>
             <a href=""><img src='/static/img/algoalgo1.png' onmouseover="stop('im2')" onmouseout="start()"></a>
@@ -855,17 +716,18 @@
 
         </div>
         <p id='status'></p>
+
+        <div id='description' ></div>
       </div>
 
 
       <script>
-
       function stop(im){
         document.getElementById('marc').stop();
         
         if(im == 'im1'){
           document.getElementById('status').innerHTML = 'Status : Fini';
-          document.getElementById('description').innerHTML = '<br><br><center>' +
+          document.getElementById('description').innerHTML = '<br><center>' +
                                                               'Un algorithme qui permet de voir le déplacement du vent ' +
                                                               'a partir d\'une ville en temps réel ' +
                                                               'scrappage, utilisation d\'api, nous ' +
@@ -891,17 +753,12 @@
         }
    
       };
-
       function start(){
         document.getElementById('marc').start();
           document.getElementById('description').innerHTML = "";
         document.getElementById('status').innerHTML = "";
-
       };
-
-
       
-
       </script>
 
 
@@ -924,17 +781,6 @@
           <li></li>
           <li></li>
           <li></li>
-          <br>
-       </ul>
-       
-      <p style='float:left; padding:20px;'>Nos coups de coeur :</p>
-      <br>
-      <br>
-      <br>
-      <br>
-
-      <ul>
-          <li></li>
           <li></li>
           <li></li>
           
@@ -947,8 +793,8 @@
 
 
 
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-4" id='description' style='position:absolute'></div>
+
+      
 
   </div>
 
@@ -1131,13 +977,11 @@
   -webkit-transition: background-color 0.2s ease;
   transition: background-color 0.2s ease;
 }
-
 #mainNav .navbar-brand {
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   color: #fff;
 }
-
 #mainNav .navbar-nav .nav-item .nav-link {
   color: #6c757d;
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -1145,15 +989,12 @@
   font-size: 0.9rem;
   padding: 0.75rem 0;
 }
-
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
   color: #fff;
 }
-
 #mainNav .navbar-nav .nav-item .nav-link.active {
   color: #fff !important;
 }
-
 @media (min-width: 992px) {
   #mainNav {
     -webkit-box-shadow: none;
@@ -1194,5 +1035,4 @@
     color: #f4623a;
   }
 }
-
 </style>
