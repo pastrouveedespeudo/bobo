@@ -1,6 +1,384 @@
-{% include "navebarre.html" %}
-{% block content %}
-{% endblock %}
+<!DOCTYPE html>
+  <html lang="en">
+
+    <head>
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+
+      <title>Magazine virtuel</title>
+
+      <!-- Font Awesome Icons -->
+      <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+      <!-- Plugin CSS -->
+      <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+      <!-- Theme CSS - Includes Bootstrap -->
+      <link href="/static/css/creative.min.css" rel="stylesheet">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+
+    </head> 
+
+    <body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+
+
+    <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
+    <style>#my{width:50px;height:50px; position: absolute;margin-left:185px;}</style>
+    
+    <style>#im1{width:50px;height:50px;margin-left:55px;}</style>
+    <style>#coif_nav{width:50px; height:50px; margin-left:25px;}</style>
+    <style>#im2{width:50px;height:50px;margin-left:40px;}</style>
+    <style>#im3{width:50px; height:50px; margin-left:20px;}</style>
+    <style>#im4{width:50px;height:50px;margin-left:40px;}</style>
+    <style>#h{font:Serif; color:white;}</style>
+    <style>#im6{width:100px; height:100px;}</style>
+    <style>#deco_nav{width:50px; height:50px; margin-left:25px;}</style>
+    <style>#autre{margin-left:-965px;margin-top:-100px;}</style>
+    <style>#h{font:Serif; color:white;}</style>
+    
+    <style>
+      #momode{width:65px; height:50px; margin-left:20px;}
+      #my_prof{color:black; position: absolute;}
+      #myprofile_p{color:black;margin-left:55px;}
+      #pol_logo{color:black;}
+
+
+
+      @media screen and (min-width: 950px) and (max-width:1000px) {
+        #my {
+          margin-left:360px;
+        }
+      }
+
+      @media screen and (min-width: 900px) and (max-width:950px) {
+        #my {
+          margin-left:360px;
+        }
+      }
+
+      @media screen and (min-width: 850px) and (max-width:900px) {
+        #my {
+          margin-left:360px;
+        }
+      }
+
+      @media screen and (min-width: 800px) and (max-width:850px) {
+        #my {
+          margin-left:360px;
+        }
+      }
+
+      @media screen and (min-width: 790px) and (max-width:800px) {
+        #my {
+          margin-left:360px;
+        }
+      }
+
+
+      @media screen and (min-width: 780px) and (max-width:790px) {
+        #my {
+          margin-left:360px;
+        }
+      }
+      
+      @media screen and (min-width: 770px) and (max-width:780px) {
+        #my {
+          margin-left:360px;
+        }
+      }
+
+      @media screen and (min-width: 765px) and (max-width:770px) {
+        #my {
+          margin-left:355px;
+        }
+      }
+
+      @media screen and (min-width: 758px) and (max-width:765px) {
+        #my {
+          margin-left:240px;
+        }
+      }
+
+
+      @media screen and (min-width: 750px) and (max-width:758px) {
+        #my {
+          margin-left:240px;
+        }
+      }
+
+
+
+      
+      
+    </style>
+        
+    <div class="container">
+
+
+      <img src="/static/img/portfolio/icone/my.png" id="my_prof"
+        onMouseOver='mode_div3("myprofile_p", "my_prof")'
+        onMouseOut='mode_div4("myprofile_p", "black", "my_prof", "49px", "49px")'>
+        
+      <a class="navbar-brand js-scroll-trigger" href="/">
+      
+          <p id='myprofile_p'
+            onMouseOver='mode_div3("myprofile_p", "my_prof")'
+            onMouseOut='mode_div4("myprofile_p", "black", "my_prof","49px", "49px")'>
+            My_Profil
+          </p>
+        
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
+
+
+      <img src="/static/img/portfolio2/icone/indian.png" id="my"
+        onMouseOver='mode_div3("pol_logo", "my", 50,60)'
+        onMouseOut='mode_div4("pol_logo", "black", "my", "49px", "49px")'>
+        
+      <a class="navbar-brand js-scroll-trigger" href="/polution/polution">
+      
+        <p id='pol_logo'
+          onMouseOver='mode_div3("pol_logo", "my", 50,60)'
+          onMouseOut='mode_div4("pol_logo", "black", "my", "49px", "49px")'>
+            My_pollution
+          </p>
+        
+      </a>
+
+
+
+      
+      <button class="navbar-toggler navbar-toggler-right" type="button"
+        data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+
+          <ul class="navbar-nav ml-auto my-2 my-lg-0">
+
+              {% if user.is_authenticated %}
+              
+  
+            <center>
+              <li class="nav-item">
+              
+                  <img src="/static/img/portfolio/icone/momode.png" id="momode"
+                    onMouseOver='mode_div("p_mode", "momode", 5,10)'
+                    onMouseOut='mode_div2("p_mode", "black", "momode", 65, 50)'>
+                    
+                  <a class="nav-link js-scroll-trigger" href="/administrateur/tendance">
+                  
+                    <p id='p_mode'
+                      onMouseOver='mode_div("p_mode", "momode", 5,10)'
+                      onMouseOut='mode_div2("p_mode", "black", "momode", 65, 40)'
+                       style='color:black;'>La tendance du moment ?
+                    </p>
+                  
+                  </a>
+              </li>
+              
+            </center>
+
+
+
+
+
+
+
+
+              <center>
+              <li class="nav-item">
+                  <img src="/static/img/portfolio/icone/coiffure.png" id="coif_nav"
+                    onMouseOver='mode_div("coif_p")'
+                    onMouseOut='mode_div2("coif_p", "black")'>
+                  <a class="nav-link js-scroll-trigger" href="/photo/coupe">
+                    <p id='coif_p'
+                    onMouseOver='mode_div("coif_p")'
+                    onMouseOut='mode_div2("coif_p", "black")'
+                    style='color:black;'>Mes coiffures</p>
+                  </a>
+              </li>
+              </center>
+
+              <center>
+              <li class="nav-item">
+                  <img src="/static/img/portfolio/icone/vetements.png" id="im3"
+                    onMouseOver='mode_div("p_vet")'
+                    onMouseOut='mode_div2("p_vet", "black")'>
+                  <a class="nav-link js-scroll-trigger" href="/photo/habits">
+                    <center><p id='p_vet'
+                    onMouseOver='mode_div("p_vet")'
+                    onMouseOut='mode_div2("p_vet", "black")'
+                     style='color:black;'>
+                     Mes vetements</p></center>
+                  </a>
+              </li>
+              </center>
+
+              <center>
+              <li class="nav-item">
+                  <img src="/static/img/portfolio/icone/deco.png" id="deco_nav"
+                    onMouseOver='mode_div("p_deco")'
+                    onMouseOut='mode_div2("p_deco", "black")'>
+                  <a class="nav-link js-scroll-trigger" href="/accounts/logout_view">
+                    <center><p id='p_deco'
+                    onMouseOver='mode_div("p_deco")'
+                    onMouseOut='mode_div2("p_deco", "black")'
+                     style='color:black;'>Se déconnecter</p></center>
+                  </a>
+              </li>
+              </center>
+             
+      
+          </ul>
+
+            {% else %}
+
+              <style>#ima1{width:55px; height:50px; margin-left:17px;}</style>
+              <style>#im2{width:50px; height:50px; margin-left:40px;}</style>
+              <style>#im1{width:50px; height:50px; margin-left:45px;}</style>
+              <style>#im3{width:50px; height:50px; margin-left:40px;}</style>
+
+              <center>
+              <li class="nav-item">
+                  <img src="/static/img/portfolio/icone/inscription.png" id="ima1"
+                    onMouseOver='mode_div("p_inscri")'
+                    onMouseOut='mode_div2("p_inscri", "black")'>
+                  <a class="nav-link js-scroll-trigger" href="/accounts/register_view">
+                    <p id='p_inscri' onMouseOver='mode_div("p_inscri")'
+                    onMouseOut='mode_div2("p_inscri", "black")'
+                     style='color:black;'>
+                    S'inscrire</p>
+                  </a>
+              </li>
+              </center>
+              
+              <center>
+              <li class="nav-item">
+                  <img src="/static/img/portfolio/icone/login.png" id="im2"
+                    onMouseOver='mode_div("p_con")'
+                    onMouseOut='mode_div2("p_con", "black")'>
+                  <a class="nav-link js-scroll-trigger" href="/accounts/login">
+                    <p id='p_con'
+                    onMouseOver='mode_div("p_con")'
+                    onMouseOut='mode_div2("p_con", "black")'
+                     style='color:black;'>Se connecter</p>
+                  </a>
+              </li>
+              </center>
+
+              <center>
+              <li class="nav-item">
+                  <img src="/static/img/portfolio/icone/coiffure.png" id="im1"
+                    onMouseOver='mode_div("p_coicoif")'
+                    onMouseOut='mode_div2("p_coicoif", "black")'>
+                  <a class="nav-link js-scroll-trigger" href="/photo/coupe">
+                    <p id='p_coicoif'
+                    style='color:black;'
+                    onMouseOver='mode_div("p_coicoif")'
+                    onMouseOut='mode_div2("p_coicoif", "black")'>
+                    Les coiffures</p>
+                  </a>
+              </li>
+              </center>
+
+              <center>
+              <li class="nav-item">
+                  <img src="/static/img/portfolio/icone/vetements.png" id="im3"
+                    onMouseOver='mode_div("p_vetvet")'
+                    onMouseOut='mode_div2("p_vetvet", "black")'>
+                  <a class="nav-link js-scroll-trigger" href="/photo/habits">
+                    <p id='p_vetvet'
+                    onMouseOver='mode_div("p_vetvet")'
+                    onMouseOut='mode_div2("p_vetvet", "black")'
+                     style='color:black;'>Les vetements</p>
+                  </a>
+              </li>
+              </center>
+              
+          </ul>
+
+          {% endif %}
+
+
+
+      </div>
+    </div>
+  </nav>
+</html>
+
+
+
+<script>
+
+  function mode_div3(div, image){
+
+    document.getElementById(image).style.width = '70px';
+    document.getElementById(image).style.height = '70px';
+    document.getElementById(div).style.color = 'red';
+ 
+  };
+
+
+  function mode_div4(div, color, image, largeur, hauteur){
+    document.getElementById(image).style.width = largeur;
+    document.getElementById(image).style.height = hauteur;
+    document.getElementById(div).style.color = 'black';
+  };
+
+
+    
+  function mode_div(div, image, largeur, hauteur){
+    
+    a = document.getElementById(image).width;
+    b = document.getElementById(image).height;
+
+    document.getElementById(image).width = a + largeur;
+    document.getElementById(image).height = b + hauteur;
+
+    
+    document.getElementById(div).style.color = 'red';
+    
+
+
+
+    
+
+  };
+  function mode_div2(div, color, image, largeur, hauteur){
+    document.getElementById(div).style.color = color;
+
+    document.getElementById(image).width = largeur;
+    document.getElementById(image).height = hauteur;
+  };
+</script>
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Masthead -->
 <header class="masthead">
@@ -20,7 +398,7 @@
             selon votre couleur de cheveux.
             
           </h2><hr class="divider my-4">
-             
+         
       </div>
 
       <div class="col-lg-8 align-self-baseline"></div>
