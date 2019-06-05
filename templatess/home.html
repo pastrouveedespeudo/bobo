@@ -181,8 +181,8 @@
       }
 
 
-      
-      
+
+    
     </style>
         
     <div class="container">
@@ -220,8 +220,6 @@
       </a>
 
 
-
-      
       <button class="navbar-toggler navbar-toggler-right" type="button"
         data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false"
@@ -242,14 +240,14 @@
               <li class="nav-item">
               
                   <img src="/static/img/portfolio/icone/momode.png" id="momode"
-                    onMouseOver='mode_div("p_mode", "momode", 5,10)'
-                    onMouseOut='mode_div2("p_mode", "black", "momode", 65, 50)'>
+                    onMouseOver='change_image_tendance1("p_mode", "momode")'
+                    onMouseOut='change_image_tendance2("p_mode", "momode")'>
                     
                   <a class="nav-link js-scroll-trigger" href="/administrateur/tendance">
                   
                     <p id='p_mode'
-                      onMouseOver='mode_div("p_mode", "momode", 5,10)'
-                      onMouseOut='mode_div2("p_mode", "black", "momode", 65, 40)'
+                      onMouseOver='change_image_tendance1("p_mode", "momode")'
+                      onMouseOut='change_image_tendance2("p_mode", "momode")'
                        style='color:black;'>La tendance du moment ?
                     </p>
                   
@@ -258,22 +256,15 @@
               
             </center>
 
-
-
-
-
-
-
-
               <center>
               <li class="nav-item">
                   <img src="/static/img/portfolio/icone/coiffure.png" id="coif_nav"
-                    onMouseOver='mode_div("coif_p")'
-                    onMouseOut='mode_div2("coif_p", "black")'>
+                    onMouseOver='change_image_coiff1("coif_p")'
+                    onMouseOut='change_image_coiff2("coif_p", "black")'>
                   <a class="nav-link js-scroll-trigger" href="/photo/coupe">
                     <p id='coif_p'
-                    onMouseOver='mode_div("coif_p")'
-                    onMouseOut='mode_div2("coif_p", "black")'
+                    onMouseOver='change_image_coiff1("coif_p")'
+                    onMouseOut='change_image_coiff2("coif_p", "black")'
                     style='color:black;'>Mes coiffures</p>
                   </a>
               </li>
@@ -282,30 +273,35 @@
               <center>
               <li class="nav-item">
                   <img src="/static/img/portfolio/icone/vetements.png" id="im3"
-                    onMouseOver='mode_div("p_vet")'
-                    onMouseOut='mode_div2("p_vet", "black")'>
+                    onMouseOver='change_image_vetements1("p_vet")'
+                    onMouseOut='change_image_vetements2("p_vet", "black")'>
                   <a class="nav-link js-scroll-trigger" href="/photo/habits">
                     <center><p id='p_vet'
-                    onMouseOver='mode_div("p_vet")'
-                    onMouseOut='mode_div2("p_vet", "black")'
+                    onMouseOver='change_image_vetements1("p_vet")'
+                    onMouseOut='change_image_vetements2("p_vet", "black")'
                      style='color:black;'>
                      Mes vetements</p></center>
                   </a>
               </li>
               </center>
 
+
               <center>
               <li class="nav-item">
                   <img src="/static/img/portfolio/icone/deco.png" id="deco_nav"
-                    onMouseOver='mode_div("p_deco")'
-                    onMouseOut='mode_div2("p_deco", "black")'>
+                    onMouseOver='change_image_logout1("p_deco")'
+                    onMouseOut='change_image_logout2("p_deco", "black")'>
+                    
                   <a class="nav-link js-scroll-trigger" href="/accounts/logout_view">
+                  
                     <center><p id='p_deco'
-                    onMouseOver='mode_div("p_deco")'
-                    onMouseOut='mode_div2("p_deco", "black")'
+                    onMouseOver='change_image_logout1("p_deco")'
+                    onMouseOut='change_image_logout2("p_deco", "black")'
                      style='color:black;'>Se déconnecter</p></center>
                   </a>
+                  
               </li>
+              
               </center>
              
       
@@ -321,26 +317,26 @@
               <center>
               <li class="nav-item">
                   <img src="/static/img/portfolio/icone/inscription.png" id="ima1"
-                    onMouseOver='mode_div("p_inscri")'
-                    onMouseOut='mode_div2("p_inscri", "black")'>
+                    onMouseOver='change_image_inscription1("p_inscri")'
+                    onMouseOut='change_image_inscription2("p_inscri", "black")'>
                   <a class="nav-link js-scroll-trigger" href="/accounts/register_view">
-                    <p id='p_inscri' onMouseOver='mode_div("p_inscri")'
-                    onMouseOut='mode_div2("p_inscri", "black")'
+                    <p id='p_inscri' onMouseOver='change_image_inscription1("p_inscri")'
+                    onMouseOut='change_image_inscription2("p_inscri", "black")'
                      style='color:black;'>
                     S'inscrire</p>
                   </a>
               </li>
               </center>
-              
+ 
               <center>
               <li class="nav-item">
                   <img src="/static/img/portfolio/icone/login.png" id="im2"
-                    onMouseOver='mode_div("p_con")'
-                    onMouseOut='mode_div2("p_con", "black")'>
+                    onMouseOver='change_image_co1("p_con")'
+                    onMouseOut='change_image_co2("p_con", "black")'>
                   <a class="nav-link js-scroll-trigger" href="/accounts/login">
                     <p id='p_con'
-                    onMouseOver='mode_div("p_con")'
-                    onMouseOut='mode_div2("p_con", "black")'
+                    onMouseOver='change_image_co1("p_con")'
+                    onMouseOut='change_image_co2("p_con", "black")'
                      style='color:black;'>Se connecter</p>
                   </a>
               </li>
@@ -349,13 +345,13 @@
               <center>
               <li class="nav-item">
                   <img src="/static/img/portfolio/icone/coiffure.png" id="im1"
-                    onMouseOver='mode_div("p_coicoif")'
-                    onMouseOut='mode_div2("p_coicoif", "black")'>
+                    onMouseOver='change_image_foiiiif1("p_coicoif")'
+                    onMouseOut='change_image_foiiiif2("p_coicoif", "black")'>
                   <a class="nav-link js-scroll-trigger" href="/photo/coupe">
                     <p id='p_coicoif'
                     style='color:black;'
-                    onMouseOver='mode_div("p_coicoif")'
-                    onMouseOut='mode_div2("p_coicoif", "black")'>
+                    onMouseOver='change_image_foiiiif1("p_coicoif")'
+                    onMouseOut='change_image_foiiiif2("p_coicoif", "black")'>
                     Les coiffures</p>
                   </a>
               </li>
@@ -364,12 +360,12 @@
               <center>
               <li class="nav-item">
                   <img src="/static/img/portfolio/icone/vetements.png" id="im3"
-                    onMouseOver='mode_div("p_vetvet")'
-                    onMouseOut='mode_div2("p_vetvet", "black")'>
+                    onMouseOver='change_image_drees1("p_vetvet")'
+                    onMouseOut='change_image_drees2("p_vetvet", "black")'>
                   <a class="nav-link js-scroll-trigger" href="/photo/habits">
                     <p id='p_vetvet'
-                    onMouseOver='mode_div("p_vetvet")'
-                    onMouseOut='mode_div2("p_vetvet", "black")'
+                    onMouseOver='change_image_drees1("p_vetvet")'
+                    onMouseOut='change_image_drees2("p_vetvet", "black")'
                      style='color:black;'>Les vetements</p>
                   </a>
               </li>
@@ -430,6 +426,150 @@
     document.getElementById(image).width = largeur;
     document.getElementById(image).height = hauteur;
   };
+
+
+
+
+
+
+  function change_image_tendance1(div, image){
+        
+    document.getElementById('p_mode').style.color = 'red';
+    document.getElementById('momode').src = "/static/img/portfolio/icone/momode2.png";
+
+  };
+
+
+  function change_image_tendance2(div, image){
+    document.getElementById('p_mode').style.color = 'black';
+    document.getElementById('momode').src = "/static/img/portfolio/icone/momode.png";
+
+  };
+
+
+
+
+
+  function change_image_coiff1(div, image){
+        
+    document.getElementById('coif_p').style.color = 'red';
+    document.getElementById('coif_nav').src = "/static/img/portfolio/icone/coiffure2.png";
+
+  };
+
+
+  function change_image_coiff2(div, image){
+    document.getElementById('coif_p').style.color = 'black';
+    document.getElementById('coif_nav').src = "/static/img/portfolio/icone/coiffure.png";
+
+  };
+
+
+
+
+
+
+  function change_image_vetements1(div, image){
+        
+    document.getElementById('p_vet').style.color = 'red';
+    document.getElementById('im3').src = "/static/img/portfolio/icone/vetements2.png";
+
+  };
+
+
+  function change_image_vetements2(div, image){
+    document.getElementById('p_vet').style.color = 'black';
+    document.getElementById('im3').src = "/static/img/portfolio/icone/vetements.png";
+
+  };
+
+
+
+  function change_image_logout1(div, image){
+        
+    document.getElementById('p_deco').style.color = 'red';
+    document.getElementById('deco_nav').src = "/static/img/portfolio/icone/logout2.png";
+
+  };
+
+
+  function change_image_logout2(div, image){
+    document.getElementById('p_deco').style.color = 'black';
+    document.getElementById('deco_nav').src = "/static/img/portfolio/icone/deco.png";
+
+  };
+
+
+
+
+  function change_image_inscription1(div, image){
+        
+    document.getElementById('p_inscri').style.color = 'red';
+    document.getElementById('ima1').src = "/static/img/portfolio/icone/yoyo.png";
+
+  };
+
+
+  function change_image_inscription2(div, image){
+    document.getElementById('p_inscri').style.color = 'black';
+    document.getElementById('ima1').src = "/static/img/portfolio/icone/inscription.png";
+
+  };
+
+
+  function change_image_co1(div, image){
+        
+    document.getElementById('p_con').style.color = 'red';
+    document.getElementById('im2').src = "/static/img/portfolio/icone/inscri.png";
+
+  };
+
+
+  function change_image_co2(div, image){
+    document.getElementById('p_con').style.color = 'black';
+    document.getElementById('im2').src = "/static/img/portfolio/icone/login.png";
+
+  };
+
+
+
+
+
+  function change_image_foiiiif1(div, image){
+        
+    document.getElementById('p_coicoif').style.color = 'red';
+    document.getElementById('im1').src = "/static/img/portfolio/icone/hairhair.png";
+
+  };
+
+
+  function change_image_foiiiif2(div, image){
+    document.getElementById('p_coicoif').style.color = 'black';
+    document.getElementById('im1').src = "/static/img/portfolio/icone/coiffure.png";
+
+  };
+
+
+
+  function change_image_drees1(div, image){
+        
+    document.getElementById('p_vetvet').style.color = 'red';
+    document.getElementById('im3').src = "/static/img/portfolio/icone/dressme.png";
+
+  };
+
+
+  function change_image_drees2(div, image){
+    document.getElementById('p_vetvet').style.color = 'black';
+    document.getElementById('im3').src = "/static/img/portfolio/icone/vetements.png";
+
+  };
+
+
+
+
+
+  
 </script>
 
 
