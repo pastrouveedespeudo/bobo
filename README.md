@@ -1,3 +1,5 @@
+j'ai matté les 10 plus beaux sites du moment puis j'ai regarder le mien...
+
 réfléchis a la prediction low cost et c ok
 
 #uncomment coupe nalysis et mode_analyse.py (static/bobo)
