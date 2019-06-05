@@ -31,6 +31,36 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
 
+    <style>
+    header.masthead {
+      padding-top: 10rem;
+      padding-bottom: calc(10rem - 72px);
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8))), url("/static/img/vetements.jpg");
+      background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("/static/img/vetements.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-size: cover;
+    }
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
     <style>#my{width:50px;height:50px; position: absolute;margin-left:185px;}</style>
@@ -51,8 +81,7 @@
       #my_prof{color:black; position: absolute;}
       #myprofile_p{color:black;margin-left:55px;}
       #pol_logo{color:black;}
-
-
+    
 
       @media screen and (min-width: 990px) and (max-width:991px) {
         #my {
@@ -180,10 +209,9 @@
         }
       }
 
-
-
-    
     </style>
+
+
         
     <div class="container">
 
@@ -381,6 +409,23 @@
     </div>
   </nav>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -612,7 +657,374 @@
 </header>
 
 
-{% include "bottom_page.html" %}
-{% block content2 %}
-{% endblock content2%}
+<!-- Portfolio Section -->
+<section id="portfolio">
+  
+  <div class="container-fluid p-0" style='background:#343a40'>
+  <br>
+  <center><h1><strong>Nos autres projets</strong></h1></center>
+  <br>
+    <div class="row no-gutters">
+    
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="/static/img/dk_python.png">
+            <center><img class="img-fluid" src="/static/img/dk.png" alt=""
+            width='350' height='650'></center>
+            
+            <div class="portfolio-box-caption">
+            
+              <div class="project-category text-white-50">
+                Dk Labyrinthe
+              </div>
 
+              <div class="project-name">
+                Dk apprend tout seul à récupérer les bananes
+                dans un labyrinthe !
+                et avec grand mal.
+                <br>
+                https://github.com/pastrouveedespeudo/p11
+
+              </div>
+              
+            </div>
+
+          </a>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="/static/img/portfolio/fullsize/2.jpg">
+          
+            <img class="img-fluid" src="/static/img/portfolio/thumbnails/2.jpg" alt="">
+            
+            <div class="portfolio-box-caption">
+            
+              <div class="project-category text-white-50">
+                Un algorithme qui écrit tout seul des programme ?
+              </div>
+              
+              <div class="project-name">
+                Il sait écrire une table de multiplication, te donner des définitions
+                <i>En cours</i>
+              </div>
+              
+            </div>
+            
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="/static/img/portfolio/fullsize/3.jpg">
+          
+            <img class="img-fluid" src="/static/img/portfolio/thumbnails/3.jpg" alt="">
+            
+            <div class="portfolio-box-caption">
+            
+              <div class="project-category text-white-50">
+                Un programme qui déssine des voitures ?
+              </div>
+              
+              <div class="project-name">
+                en lui disant simplement de quoi est constituer une voiture
+                il te le dessinera sommairement et sait afficher des phrases
+                <br>
+                https://github.com/pastrouveedespeudo/algoalgo
+                <br>
+                <i>En cours</i>
+              </div>
+              
+            </div>
+            
+          </a>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="/static/img/portfolio/fullsize/4.jpg">
+          
+            <img class="img-fluid" src="/static/img/portfolio/thumbnails/4.jpg" alt="">
+            
+            <div class="portfolio-box-caption">
+            
+              <div class="project-category text-white-50">
+                Un algorithme qui permet de te donner les principales caractéristiques
+                d'un texte (joyeux, triste)
+              </div>
+              
+              <div class="project-name">
+                En effet, il parcourt une série de texte
+                et sort le nombre de mot récurrent
+              </div>
+                                   
+            </div>
+                                   
+          </a>
+        </div>
+
+
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="/static/img/portfolio/fullsize/5.jpg">
+                                   
+            <img class="img-fluid" src="/static/img/portfolio/thumbnails/5.jpg" alt="">
+                                   
+            <div class="portfolio-box-caption">
+                                   
+              <div class="project-category text-white-50">
+                Un jeu d'arcade avec speech recognition ?
+              </div>
+                                   
+              <div class="project-name">
+                J'ai besoin d'un bouclier et vite... SHIELD !
+                <i>En cours</i>
+              </div>
+                                   
+            </div>
+                                   
+          </a>
+        </div>
+
+ 
+        <div class="col-lg-4 col-sm-6">
+          <a class="portfolio-box" href="/static/img/portfolio/fullsize/6.jpg">
+                                   
+            <img class="img-fluid" src="/static/img/portfolio/thumbnails/6.jpg" alt="">
+                                   
+            <div class="portfolio-box-caption p-3">
+                                   
+              <div class="project-category text-white-50">
+                Un algorithme qui permet de vérifier la fonction d'un mot
+                et de classifier la nature des noms communs (vivant dans l'eau, air, machine)
+              </div>
+                                   
+              <div class="project-name">
+                verbe, pronom, adverbe ... Et en plus selon les noms communs
+                des images apparaissent !
+              </div>
+                                   
+            </div>
+                                   
+          </a>
+                                   
+        </div>
+
+  </div>
+    <br>
+    <div style='background:#343a40'>
+      <center><h2><strong>Mes projets Openclassrooms</strong></h2></center>
+      <center><a href='https://github.com/pastrouveedespeudo?tab=repositories' style='color:black;'>
+      <h3>sont ici</h3></a></center>
+      </div>
+                                                             
+</section>
+
+
+<style>#im10{width:100px; height:100px;margin-left:50px;}</style>
+<style>#im11{width:100px; height:100px;margin-left:100px;}</style>
+<style>#im12{width:200px; height:200px;margin-left:100px;}</style>
+
+                                   
+<!-- Call to Action Section -->
+<section class="page-section bg-dark text-white">
+                                   
+  <div class="container text-center">
+                                   
+    <h2 class="mb-4">
+      Abonne toi sur nos reseaux sociaux !
+    </h2>
+        
+    <a href='https://www.facebook.com/'>
+      <img src = "/static/img/portfolio/icone/facebook.png"/ id="im10">
+    </a>
+
+    <a href='https://twitter.com/'>
+      <img src = "/static/img/portfolio/icone/twitter.png"/ id="im11">
+    </a>
+                                   
+    <a href='https://www.snapchat.com/l/fr-fr/download'>
+      <img src = "/static/img/portfolio/icone/snap.png"/ id="im12">
+    </a>
+                  
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section class="page-section" id="contact">
+  <div class="container">
+                                   
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+                                   
+        <h2 class="mt-0">
+          Let's Get In Touch!
+        </h2><hr class="divider my-4">
+                                   
+        <p class="text-muted mb-5">
+            Ready to start your next project with us?
+            Give us a call or send us an email and we
+            will get back to you as soon as possible!
+        </p>
+                                   
+      </div>
+    </div>
+                                   
+    <div class="row">
+      <div class="col-lg-4 ml-auto text-center">
+                                   
+        <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+        <div>
+          +1 (202) 555-0149
+        </div>
+                                   
+      </div>
+                                   
+      <div class="col-lg-4 mr-auto text-center">
+        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+        <!-- Make sure to change the email address in anchor text AND the link below! -->
+        <a class="d-block" href="mailto:jeanbaptisteservais26@gmail.com">
+          jeanbaptisteservais26@gmail.com
+        </a>
+      </div>
+                                   
+    </div>
+  </div>
+                                   
+</section>
+
+<!-- Footer -->
+<footer class="bg-light py-5">
+  <div class="container">
+    <div class="small text-center text-muted">
+      Copyright &copy; 2019 - Start Bootstrap
+    </div>
+  </div>
+</footer>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="/static/vendor/jquery/jquery.min.js"></script>
+<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="/static/js/creative.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+#mainNav {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: rgb(46, 26, 221);
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+#mainNav .navbar-brand {
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  color: #212529;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: #6c757d;
+  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.75rem 0;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
+  color: #f4623a;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link.active {
+  color: #f4623a !important;
+}
+
+@media (min-width: 992px) {
+  #mainNav {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
+  #mainNav .navbar-brand {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  #mainNav .navbar-brand:hover {
+    color: #fff;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 1rem;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: #fff;
+  }
+  #mainNav .navbar-nav .nav-item:last-child .nav-link {
+    padding-right: 0;
+  }
+  #mainNav.navbar-scrolled {
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background-color: #BE8544;
+  }
+  #mainNav.navbar-scrolled .navbar-brand {
+    color: #212529;
+  }
+  #mainNav.navbar-scrolled .navbar-brand:hover {
+    color: #f4623a;
+  }
+  #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
+    color: #212529;
+  }
+  #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
+    color: #f4623a;
+  }
+}
+
+</style>
