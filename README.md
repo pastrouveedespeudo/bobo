@@ -46,7 +46,7 @@ la partie machine a o
 # mettre tous les code js dans un fichier js et css aussi
 
 
-# go fini les projets en cours (certains sont pratiquement fini donc c pas mentir)
+# go fini les projets en cours (certains sont pratiquement fini donc c pas mentir) faut juste tout mettre en listcompréhension pcque c trop classe
 
 
 
