@@ -48,15 +48,24 @@
         
     <div class="container">
 
-      <img src="/static/img/portfolio/icone/my.png" id="my_prof">
+      <img src="/static/img/portfolio/icone/my.png" id="my_prof"
+        onMouseOver='mode_div("pol_logo")' onMouseOut='mode_div2("pol_logo", "white")'>
       <a class="navbar-brand js-scroll-trigger" href="/">
-        My_Profil
+        <p id='myprofile_p'
+        onMouseOver='mode_div("myprofile_p")'
+        onMouseOut='mode_div2("myprofile_p", "white")'
+        >My_Profil</p>
       </a>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       
-      <img src="/static/img/portfolio2/icone/indian.png" id="my">
+      <img src="/static/img/portfolio2/icone/indian.png" id="my"
+        onMouseOver='mode_div("pol_logo")' onMouseOut='mode_div2("pol_logo", "white")'>
+        
       <a class="navbar-brand js-scroll-trigger" href="/polution/polution">
-        My_pollution
+        <p id='pol_logo'
+        onMouseOver='mode_div("pol_logo")'
+        onMouseOut='mode_div2("pol_logo", "white")'>
+        My_pollution</p>
       </a>
       
       <button class="navbar-toggler navbar-toggler-right" type="button"
@@ -65,6 +74,8 @@
         aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
+
+
       
       <div class="collapse navbar-collapse" id="navbarResponsive">
 
@@ -74,37 +85,55 @@
               
   
               <center>
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/momode.png" id="momode">
+              <li class="nav-item" onMouseOver='mode_div()' onMouseOut='mode_div2()'>
+                  <img src="/static/img/portfolio/icone/momode.png" id="momode"
+                  onMouseOver='mode_div("p_mode")'
+                  onMouseOut='mode_div2("p_mode", "white")'>
                   <a class="nav-link js-scroll-trigger" href="/administrateur/tendance">
-                    La tendance du moment ?
+                    <p id='p_mode'
+                    onMouseOver='mode_div("p_mode")'
+                    onMouseOut='mode_div2("p_mode", "white")'
+                    >La tendance du moment ?</p>
                   </a>
               </li>
               </center>
 
               <center>
               <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/coiffure.png" id="coif_nav">
+                  <img src="/static/img/portfolio/icone/coiffure.png" id="coif_nav"
+                    onMouseOver='mode_div("coif_p")'
+                    onMouseOut='mode_div2("coif_p", "white")'>
                   <a class="nav-link js-scroll-trigger" href="/photo/coupe">
-                    Mes coiffures
+                    <p id='coif_p'
+                    onMouseOver='mode_div("coif_p")'
+                    onMouseOut='mode_div2("coif_p", "white")'>
+                    Mes coiffures</p>
                   </a>
               </li>
               </center>
 
               <center>
               <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/vetements.png" id="im3">
+                  <img src="/static/img/portfolio/icone/vetements.png" id="im3"
+                    onMouseOver='mode_div("p_vet")'
+                    onMouseOut='mode_div2("p_vet", "white")'>
                   <a class="nav-link js-scroll-trigger" href="/photo/habits">
-                    <center>Mes vetements</center>
+                    <center><p id='p_vet'
+                    onMouseOver='mode_div("p_vet")'
+                    onMouseOut='mode_div2("p_vet", "white")'>Mes vetements</p></center>
                   </a>
               </li>
               </center>
 
               <center>
               <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/deco.png" id="deco_nav">
+                  <img src="/static/img/portfolio/icone/deco.png" id="deco_nav"
+                    onMouseOver='mode_div("p_deco")'
+                    onMouseOut='mode_div2("p_deco", "white")'>
                   <a class="nav-link js-scroll-trigger" href="/accounts/logout_view">
-                    <center>Se déconnecter</center>
+                    <center><p id='p_deco'
+                    onMouseOver='mode_div("p_deco")'
+                    onMouseOut='mode_div2("p_deco", "white")'>Se déconnecter</p></center>
                   </a>
               </li>
               </center>
@@ -118,43 +147,77 @@
               <style>#im2{width:50px; height:50px; margin-left:40px;}</style>
               <style>#im1{width:50px; height:50px; margin-left:45px;}</style>
               <style>#im3{width:50px; height:50px; margin-left:40px;}</style>
-              
+
+              <center>
               <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/inscription.png" id="ima1">
+                  <img src="/static/img/portfolio/icone/inscription.png" id="ima1"
+                    onMouseOver='mode_div("p_inscri")'
+                    onMouseOut='mode_div2("p_inscri", "white")'>
                   <a class="nav-link js-scroll-trigger" href="/accounts/register_view">
-                    S'inscrire
+                    <p id='p_inscri' onMouseOver='mode_div("p_inscri")'
+                    onMouseOut='mode_div2("p_inscri", "white")'>
+                    S'inscrire</p>
                   </a>
               </li>
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/login.png" id="im2">
-                  <a class="nav-link js-scroll-trigger" href="/accounts/login">
-                    Se connecter
-                  </a>
-              </li>
-
+              </center>
               
+              <center>
               <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
-                  <a class="nav-link js-scroll-trigger" href="/photo/coupe">
-                    Les coiffures
+                  <img src="/static/img/portfolio/icone/login.png" id="im2"
+                    onMouseOver='mode_div("p_con")'
+                    onMouseOut='mode_div2("p_con", "white")'>
+                  <a class="nav-link js-scroll-trigger" href="/accounts/login">
+                    <p id='p_con'
+                    onMouseOver='mode_div("p_con")'
+                    onMouseOut='mode_div2("p_con", "white")'>Se connecter</p>
                   </a>
               </li>
+              </center>
 
+              <center>
               <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/vetements.png" id="im3">
-                  <a class="nav-link js-scroll-trigger" href="/photo/habits">
-                    Les vetements
+                  <img src="/static/img/portfolio/icone/coiffure.png" id="im1"
+                    onMouseOver='mode_div("p_coicoif")'
+                    onMouseOut='mode_div2("p_coicoif", "white")'>
+                  <a class="nav-link js-scroll-trigger" href="/photo/coupe">
+                    <p id='p_coicoif'
+                    onMouseOver='mode_div("p_coicoif")'
+                    onMouseOut='mode_div2("p_coicoif", "white")'>Les coiffures</p>
                   </a>
               </li>
+              </center>
+
+              <center>
+              <li class="nav-item">
+                  <img src="/static/img/portfolio/icone/vetements.png" id="im3"
+                    onMouseOver='mode_div("p_vetvet")'
+                    onMouseOut='mode_div2("p_vetvet", "white")'>
+                  <a class="nav-link js-scroll-trigger" href="/photo/habits">
+                    <p id='p_vetvet'
+                    onMouseOver='mode_div("p_vetvet")'
+                    onMouseOut='mode_div2("p_vetvet", "white")'>Les vetements</p>
+                  </a>
+              </li>
+              </center>
               
           </ul>
 
           {% endif %}
 
-      
-          
       </div>
     </div>
   </nav>
 </html>
+
+
+
+<script>
+  function mode_div(div){
+    document.getElementById(div).style.color = 'red';
+
+  };
+  function mode_div2(div, color){
+    document.getElementById(div).style.color = color;
+
+  };
+</script>
