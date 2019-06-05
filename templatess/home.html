@@ -35,8 +35,8 @@
     header.masthead {
       padding-top: 10rem;
       padding-bottom: calc(10rem - 72px);
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8))), url("/static/img/vetements.jpg");
-      background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("/static/img/vetements.jpg");
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8))), url("/static/img/fond2.jpg");
+      background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("/static/img/fond2.jpg");
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: scroll;
@@ -744,7 +744,19 @@
 
 
 
+<style>
+  #bienvenue{
+    font-family:"cursive"
+    color:black;
+  }
 
+  #h{
+    font-family:"Comic Sans MS, Comic Sans, cursive";
+    color:black;
+
+  }
+
+</style>
 
 
 
@@ -759,17 +771,17 @@
     
       <div class="col-lg-10 align-self-end"><br><br>
 
-          <h1 class="text-uppercase text-white font-weight-bold">
+          <h1  id='bienvenue'>
             Bienvenue
           </h1><br>
           
-          <h2 id="h">
-            My Profil est un site fun où tu peux essayer
+          <h2 id="h" >
+            My Profil est un site qui vous propose de pouvoir essayer
             des coupes de cheveux. Par notre algorithme
             nous nous basons sur les meilleures tenues du moment
-            selon votre couleur de cheveux.
+            selon la couleur de vos cheveux.
             
-          </h2><hr class="divider my-4">
+          </h2><hr>
          
       </div>
 
@@ -781,185 +793,163 @@
 </header>
 
 
-<!-- Portfolio Section -->
-<section id="portfolio" style='background:#993300'>
-  
-  <div class="container-fluid p-0" style='background:#993300'>
-  <br>
-  <center><h1><strong>Nos autres projets</strong></h1></center>
-  <br>
-    <div class="row no-gutters">
-    
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/dk_python.png">
-            <center><img class="img-fluid" src="/static/img/dk.png" alt=""
-            width='375' height='200'></center>
-            
-            <div class="portfolio-box-caption">
-            
-              <div class="project-category text-white-50">
-                Dk Labyrinthe
-              </div>
-
-              <div class="project-name">
-                Dk apprend tout seul à récupérer les bananes
-                dans un labyrinthe !
-                et avec grand mal.
-                <br>
-                https://github.com/pastrouveedespeudo/p11
-
-              </div>
-              
-            </div>
-
-          </a>
-        </div>
-
-
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/algoalgo.jpg">
-          
-            <center>
-              <img class="img-fluid" src="/static/img/algoalgo1.png"
-              width='500' height='500' alt="">
-            </center>
-            
-            <div class="portfolio-box-caption">
-            
-              <div class="project-category text-white-50">
-                Un algorithme qui écrit tout seul des programme ?
-                et sait afficher des phrases
-              </div>
-              
-              <div class="project-name">
-                Il sait écrire une table de multiplication, te donner des définitions
-                <i>En cours</i>
-              </div>
-              
-            </div>
-            
-          </a>
-        </div>
-
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/3.jpg">
-          
-            <center><img class="img-fluid" src="/static/img/voiture.png"
-            width='487' height='500' alt=""></center>
-            
-            <div class="portfolio-box-caption">
-            
-              <div class="project-category text-white-50">
-                Un programme qui déssine des voitures ?
-              </div>
-              
-              <div class="project-name">
-                en lui disant simplement de quoi est constituer une voiture
-                il te le dessinera sommairement
-                <br>
-                https://github.com/pastrouveedespeudo/algoalgo
-                <br>
-                <i>En cours</i>
-              </div>
-              
-            </div>
-            
-          </a>
-        </div>
-
-
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/4.jpg">
-          
-            <center><img class="img-fluid" src="/static/img/mot.png" alt=""
-            style='margin-top:50px;' width='400'></center>
-            
-            <div class="portfolio-box-caption">
-            
-              <div class="project-category text-white-50">
-                Un algorithme qui permet de te donner les principales caractéristiques
-                d'un texte (joyeux, triste)
-              </div>
-              
-              <div class="project-name">
-                En effet, il parcourt une série de texte
-                et sort le nombre de mot récurrent
-              </div>
-                                   
-            </div>
-                                   
-          </a>
-        </div>
-
-
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/5.jpg">
-                                   
-            <center><img class="img-fluid" src="/static/img/jeux.jpg" alt=""
-            width='515'></center>
-                                   
-            <div class="portfolio-box-caption">
-                                   
-              <div class="project-category text-white-50">
-                Un jeu d'arcade avec speech recognition ?
-              </div>
-                                   
-              <div class="project-name">
-                J'ai besoin d'un bouclier et vite... SHIELD !
-                <i>En cours</i>
-              </div>
-                                   
-            </div>
-                                   
-          </a>
-        </div>
-
- 
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/6.jpg">
-                                   
-            <center><img class="img-fluid" src="/static/img/phrase.png" alt=""
-            width='250'></center>
-                                   
-            <div class="portfolio-box-caption p-3">
-                                   
-              <div class="project-category text-white-50">
-                Un algorithme qui permet de vérifier la fonction d'un mot
-                et de classifier la nature des noms communs (vivant dans l'eau, air, machine)
-              </div>
-                                   
-              <div class="project-name">
-                verbe, pronom, adverbe ... Et en plus selon les noms communs
-                des images apparaissent !
-              </div>
-                                   
-            </div>
-                                   
-          </a>
-                                   
-        </div>
-
-  </div>
-    <br>
-    <div style='background:#993300'>
-      <center><h2><strong>Mes projets Openclassrooms</strong></h2></center>
-      <center><a href='https://github.com/pastrouveedespeudo?tab=repositories' style='color:black;'>
-      <h3>sont ici</h3></a></center>
-      <br>
-      </div>
-   </div>
-
-                                                             
-</section>
-
-
 <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
 <style>#im11{width:100px; height:100px;margin-left:100px;}</style>
 <style>#im12{width:200px; height:200px;margin-left:100px;}</style>
 
-                                   
+
+
+
+<style>
+
+#bg1{
+  height:500px;
+  width:100%;
+  border:8px solid black;
+  background:url("/static/img/parquet1.jpg");
+  color:white;
+}
+
+#bg11{
+  height:50%;
+  width:50%px;
+  border:4px solid black;
+
+}
+
+</style>
+
+
+
+
+
+   
+
+
 <!-- Call to Action Section -->
 <section class="page-section bg-dark text-white">
+
+
+  <div class='container'>
+    <center>
+    <div class="row">
+    
+      <div class="col-xs-12 col-sm-12 col-md-4" id='bg1'>
+        <br>
+        <h2 style='border:8px solid black; width:70%;'>Nos autres projets</h2>
+        <br>
+        <div id='bg11'>
+          <marquee direction="right" id='marc'
+          scrollamount="20" height="210" width="322">
+          
+            <a href=""><img src='/static/img/mapvent.jpg' onmouseover="stop('im1')" onmouseout="start()"></a>
+            <a href=""><img src='/static/img/algoalgo1.png' onmouseover="stop('im2')" onmouseout="start()"></a>
+            <a href=""><img src='/static/img/jeux.jpg' onmouseover="stop('im3')" onmouseout="start()"></a>
+            <a href=""><img src='/static/img/phrase.png' onmouseover="stop('im4')" onmouseout="start()"></a>
+            <a href=""><img src='/static/img/mot.png' onmouseover="stop('im5')" onmouseout="start()"></a>
+            <a href=""><img src='/static/img/voiture.png' onmouseover="stop('im6')" onmouseout="start()"></a>
+            
+          </marquee>
+
+          <br>
+
+        </div>
+
+      </div>
+
+
+      <script>
+
+      function stop(im){
+        document.getElementById('marc').stop();
+        if(im == 'im1'){
+          document.getElementById('description').innerHTML = '<br><br><center>coucou</center>';
+   
+      };
+
+      function start(){
+        document.getElementById('marc').start();
+
+
+      };
+
+
+      
+
+      </script>
+
+
+
+
+
+      <div class="col-xs-12 col-sm-12 col-md-3" style='1px solid red;'>&nbsp;&nbsp;</div>
+      
+
+
+
+      <div class="col-xs-12 col-sm-12 col-md-4" id='bg1'>
+        <br>
+        <h2 style='border:8px solid black; width:70%;'>Nos autres projets</h2>
+        <br>
+        <div id='bg11'>
+
+        </div>
+
+      </div>
+
+    </div>
+    </center>
+
+
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4" id='description'></div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
                                    
   <div class="container text-center">
                                    
@@ -1146,7 +1136,7 @@
   #mainNav.navbar-scrolled {
     -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    background-color: #BE8544;
+    background-color: #444e55;
   }
   #mainNav.navbar-scrolled .navbar-brand {
     color: #212529;
