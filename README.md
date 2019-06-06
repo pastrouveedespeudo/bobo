@@ -1,6 +1,3 @@
-#scrapper les horraires et les magasins aux alentours : coiffeur, sale de gym et vetement du genre le mec
-
-remplis les horraires ect genre formulaire km ect
 
 réfléchis a la prediction low cost et c ok
 
@@ -30,7 +27,11 @@ la partie machine a o
 
 #supprimer favoris
 
-# focus sur le visuel
+##scrapper les horraires et les magasins aux alentours : coiffeur, sale de gym et vetement du genre le mec
+
+remplis les horraires ect genre formulaire km ect un truk qui envoie l'image par email du coiffeur 
+
+# si non efface inscription
 
 #https://myprofilmypollution.herokuapp.com/
 
