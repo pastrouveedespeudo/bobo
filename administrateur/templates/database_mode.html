@@ -1,6 +1,33 @@
-{% include "navebarre.html" %}
-{% block content %}
-{% endblock %}
+<link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+<!-- Plugin CSS -->
+<link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+<!-- Theme CSS - Includes Bootstrap -->
+<link href="/static/css/creative.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+
+
+<style>
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 72px);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8))), url("/static/img/fond2.jpg");
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("/static/img/fond2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+</style>
+
+
+
+
 
 <style>#autre{margin-left:-965px;;margin-top:-100px;}</style>
 <style>#h{font:Serif; color:white;}</style>
@@ -12,17 +39,34 @@
     
       <div class="col-lg-10 align-self-end"><br><br><br><br><br>
 
-        <h1 class="text-uppercase text-white font-weight-bold">
+        <h1 style='color:black;'>
           Mais quelle mode ?
         </h1><br><hr class="divider my-4">
       </div>
 
- 
+
+
+
+       <script>
+
+       $( document ).ready(function() {
+          document.getElementById('dadata').click();
+          document.getElementById('groumit').click();
+          });
+       </script>
+
+
+
+
+
+
+
+       
       <div class="col-lg-8 align-self-baseline">
           <p class="text-white-75 font-weight-light mb-5"></p>
           
       <div id='interface'>
-          <input type='button' value='voir la database' onclick='database()'><br><br>
+          <input type='button' value='voir la database' id='dadata' onclick='database()'><br><br>
       </div><br><br><br>
 
       <div id='sure' style='display:none;'>
@@ -32,8 +76,7 @@
         </form>         
       </div>
             
-      <input type='button' value='revenir en arriere' onclick='arriere()'>
-      <br>
+
       
             
     </div>
@@ -255,9 +298,7 @@
     </div>
   </section>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
   <div><br><br>My_Profil</div>
 
@@ -279,7 +320,7 @@
     function database(){
         document.getElementById('interface').innerHTML = ''
         document.getElementById('section').style.display = 'block';
-        document.getElementById('interface').innerHTML = "<input type='button' value='voir la database femme' onclick='femme()'>" +
+        document.getElementById('interface').innerHTML = "<input type='button' id='groumit' value='voir la database femme' onclick='femme()'>" +
                                                          "&nbsp;&nbsp;" + 
                                                          "<input type='button' value='voir la database homme' onclick='homme()'>"
     };
