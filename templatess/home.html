@@ -924,9 +924,12 @@
 
 
 
+
+
+
 #bg111{
   height:500px;
-  width:1050px;
+  width:100%;
   margin-left:-100px;
   border:8px solid black;
   background:url("/static/img/parquet1.jpg");
@@ -935,6 +938,41 @@
 
 
 
+
+
+
+
+
+
+@media screen and (min-width: 750px) and (max-width:800px) {
+  #bg111{
+    height:210px;
+    width:73%;
+    border:8px solid black;
+    background:url("/static/img/parquet1.jpg");
+    color:white;
+    margin-top:0px;
+    margin-left:10px;
+    }
+
+}
+
+
+
+
+
+@media screen and (min-width: 0px) and (max-width:750px) {
+  #bg111{
+    height:210px;
+    width:75%;
+    border:8px solid black;
+    background:url("/static/img/parquet1.jpg");
+    color:white;
+    margin-top:0px;
+    margin-left:10px;
+    }
+
+}
 
 
 
@@ -1100,13 +1138,13 @@
 
 
 
-  
+  <br>
   <center>
   <div class="col-xs-12 col-sm-12 col-md-8" id='bg111' style='display:none; text-align:justify'>
 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aujourd'hui 
   
-
+  
   <a href='#' style='color:black' onclick="(function(e){fermer();e.preventDefault();})(event)"><center>Fermer</center></a>
   </div>
   </center>
