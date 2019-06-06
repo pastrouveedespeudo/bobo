@@ -1,4 +1,7 @@
 
+merde c les horraires du jeudi a gauche y'a un encadré avec toutes les dates (scrap avec les jours de la semaine + int + ":")
+
+
 réfléchis a la prediction low cost et c ok
 
 #uncomment coupe nalysis et mode_analyse.py (static/bobo)
