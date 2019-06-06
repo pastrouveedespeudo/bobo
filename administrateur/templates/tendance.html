@@ -31,7 +31,7 @@
  
       <div class="col-lg-8 align-self-baseline">
         
-        <h2>Nous vous proposons les habits selon un critère précis, la tendance du moment.</h2>
+        <h2>Nous vous proposons des habits selon un critère, la tendance du moment.</h2>
         
         <div id='latendance'></div>
 
@@ -53,18 +53,22 @@
 <section class="page-section bg-dark text-white" id='section'>
   <div class="container text-center">
 
-      <center><h2>
-        Il y a {{brun}} brun, {{blond}} blond, {{chatain}} chatain
-        dans notre base de donnée
-      </h2></center><br><br>
+      <center>
+      <br>
+      <div style="background:url('/static/img/parquet1.jpg');
+        width:45%; border:2px solid black;">
 
-      <h3>Selon la database la tendance du moment est :</h3><br><br>
-    
-      <center><u><h3>haut - bas</h3></u></center><br>
+      <center><h1 style='color:black; font-family:segoe script'>Notre tendance</h1></center><br><br>
+
+      <center>
+
       
       <div id='brun' style='font-size:1.5em;'></div><br><br>
       <div id='blond' style='font-size:1.5em;'></div><br><br>
       <div id='chatain' style='font-size:1.5em;'></div>
+      <br>
+      </div>
+      </center>
 
   </div>
 </section>
@@ -77,20 +81,25 @@
 
 <style>
     #inlineFrameExample{
+      border:2px solid black;
       style='border:none; scrolling:no;
       allowfullscreen="true;
       frameborder=0';
+      overflow: hidden;
       }
 
 </style>
 
+<div style="background:url('/static/img/parquet1.jpg');">
+  <center>
+    <iframe id="inlineFrameExample"
+        title="Inline Frame Example"
+        style='width:90%; height:500px;'
+        src="/administrateur/database_mode">
+    </iframe>
+  </center>
+</div>
 
-
-<iframe id="inlineFrameExample"
-    title="Inline Frame Example"
-    style='width:105%; height:130%;'
-    src="/administrateur/database_mode">
-</iframe>
 
 
   <div style='background:#212529'>
@@ -136,13 +145,42 @@
     var b = decodeHtml("{{liste10|slice:'1:2'}}");
     var c = decodeHtml("{{liste10|slice:'2:3'}}");
     
-    a = a.slice(2,-3)
-    b = b.slice(2,-3)
-    c = c.slice(2,-3)
+    a = a.slice(3,-4)
+    b = b.slice(3,-4)
+    c = c.slice(3,-4)
 
-    document.getElementById('brun').innerHTML = "<strong>brune :</strong>&nbsp;&nbsp;&nbsp;" + a;
-    document.getElementById('blond').innerHTML = "<strong>blonde :</strong>&nbsp;&nbsp;&nbsp;" + b;
-    document.getElementById('chatain').innerHTML = "<strong>chatain :</strong>&nbsp;&nbsp;&nbsp;" + c; 
+    function enelve(lettre){
+      liste = ""
+      for(var i = 0; i < lettre.length; i ++){
+        if (lettre[i] == "'"){
+
+        }
+        else if(lettre[i] == ","){
+          liste += " et "
+        }
+        else{
+          liste += lettre[i]
+        }
+
+      }
+
+      return liste
+    }
+
+    a = enelve(a)
+    b = enelve(b)
+    c = enelve(c)
+
+    document.getElementById('brun').innerHTML = "<center><strong>Brune</strong>&nbsp;&nbsp;&nbsp;</center>" +
+                                                "<center><p style='font-family:amaze; font-size:2em;'>" + a + "</p></center>";
+
+                                                
+    document.getElementById('blond').innerHTML = "<center><strong>Blonde :</strong>" +
+                                                  "&nbsp;&nbsp;&nbsp;<p style='font-family:amaze;font-size:2em;'>" + b + "</p></center>";
+
+                                                  
+    document.getElementById('chatain').innerHTML = "<center><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chatain :" +
+                                                   "</strong>&nbsp;&nbsp;&nbsp;<p style='font-family:amaze;font-size:2em;'>" + c + "</p></center>";
 
 </script>
 
