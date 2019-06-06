@@ -1,41 +1,48 @@
-{% include "navebarre.html" %}
+{% include "navebarre_admin.html" %}
 {% block content %}
 {% endblock %}
 
 
 <style>#autre{margin-left:-965px;;margin-top:-100px;}</style>
 <style>#h{font:Serif; color:white;}</style>
+<style>
 
+#database,
+#tendance{
+  color:white;
+  background:url('/static/img/parquet1.jpg');
+  border: none;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  
+  }
+
+</style>
 <!-- Masthead -->
 <header class="masthead">
 
   <div class="container h-100">
     <div class="row h-100 align-items-center justify-content-center text-center">
     
-      <div class="col-lg-10 align-self-end"><br><br>
+      <div class="col-lg-10 align-self-end">
 
-          <h1 class="text-uppercase text-white font-weight-bold">
-            Coté administrateur !
-          </h1><br><hr class="divider my-4">
+          <h1>La tendance du moment</h1><br>
           
       </div>
  
       <div class="col-lg-8 align-self-baseline">
         
-        <h2>D'après notre super algorithme</h2>
-        <input type='button' value='voir la tendance' id='tendance' onclick='tendance()'>
+        <h2>Nous vous proposons les habits selon un critère précis, la tendance du moment.</h2>
+        
         <div id='latendance'></div>
-        <br>
-        <a href='/administrateur/database_mode/' style='color:black'>A partir de quoi ? Voir la database ! </a>
+
+        
+        
       </div>
-      
     </div>
   </div>
 
-  <div id='botttom'> 
-    {% include "bottom_page.html" %}
-    {% block content2 %}
-    {% endblock content2%}
+  <div style='background:#212529'>
+    <br><br><br><br><br>
   </div>
 
 
@@ -43,7 +50,7 @@
 
 
 <!-- Call to Action Section -->
-<section class="page-section bg-dark text-white" id='section' style='display:none;'>
+<section class="page-section bg-dark text-white" id='section'>
   <div class="container text-center">
 
       <center><h2>
@@ -64,11 +71,55 @@
 
 
 
+  <div style='background:#212529'>
+    <br><br><br><br><br>
+  </div>
+
+<style>
+    #inlineFrameExample{
+      style='border:none; scrolling:no;
+      allowfullscreen="true;
+      frameborder=0';
+      }
+
+</style>
+
+
+
+<iframe id="inlineFrameExample"
+    title="Inline Frame Example"
+    style='width:105%; height:130%;'
+    src="/administrateur/database_mode">
+</iframe>
+
+
+  <div style='background:#212529'>
+    <br><br><br><br><br>
+  </div>
+
+
+  <div id='botttom'> 
+    {% include "bottom_page2.html" %}
+    {% block content2 %}
+    {% endblock content2%}
+  </div>
+
 
 
 
 <script>
+
+
+    function data(){
+      document.location.href="/administrateur/database_mode/"
+
+      }
+
+
+
+
     function tendance(){
+  
        document.getElementById('latendance').innerHTML = '<br><h3>La tendance du moment selon : </h3>';
        document.getElementById('section').style.display = 'block';
        document.getElementById('botttom').style.display = 'none';
@@ -94,6 +145,7 @@
     document.getElementById('chatain').innerHTML = "<strong>chatain :</strong>&nbsp;&nbsp;&nbsp;" + c; 
 
 </script>
+
 
 
 
