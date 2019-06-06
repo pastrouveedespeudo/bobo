@@ -1,4 +1,4 @@
-j'ai matté les 10 plus beaux sites du moment puis j'ai regarder le mien...
+#scrapper les horraires et les magasins aux alentours : coiffeur, sale de gym et vetement 
 
 réfléchis a la prediction low cost et c ok
 
