@@ -1,4 +1,6 @@
-#scrapper les horraires et les magasins aux alentours : coiffeur, sale de gym et vetement 
+#scrapper les horraires et les magasins aux alentours : coiffeur, sale de gym et vetement du genre le mec
+
+remplis les horraires ect genre formulaire km ect
 
 réfléchis a la prediction low cost et c ok
 
