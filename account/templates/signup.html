@@ -5,80 +5,107 @@
 <style>#autre{margin-left:-965px;;margin-top:-100px;}</style>
 <style>#h{font:Serif; color:white;}</style>
 
+<style>
+  #sins{
+    color:black;
+    font-family:"cursive";
+    color:black;
+  }
+
+  #h{
+    color:black;
+    font-family:"Comic Sans MS, Comic Sans, cursive";
+
+  }
+
+  p{
+    color:white;
+  }
+
+
+  #data{
+    text-align:center;
+  }
+</style>
+
+
+
+
 <!-- Masthead -->
-<header class="masthead">
+<header class="masthead"> 
   <div class="container h-100">
     <div class="row h-100 align-items-center justify-content-center text-center">
     
         <div class="col-lg-10 align-self-end"><br><br>
           
-          <h1 class="text-uppercase text-white font-weight-bold">
-            S'inscrire
-          </h1><br>
+          <h1 id='sins'>S'inscrire</h1><br>
           
-          <h2 id="h">
-            Et pourquoi ne pas s'inscrire ?
-          </h2><hr class="divider my-4">
+          <h2 id="h" >Et pourquoi ne pas s'inscrire ?
+                      Par l'inscription tu pourras enregistrer des
+                      coupes en favoris, voir les coiffeurs, salle de gym
+                      selon tes horraires ainsi que les magasins les plus proches
+                      et au cout le plus bas !
+
+
+          </h2>
           
         </div>
         
         <div class="col-lg-8 align-self-baseline">
-        <p class="text-white-75 font-weight-light mb-5"></p>
-
-    </div>
+          <p class="text-white-75 font-weight-light mb-5"></p>
+        </div>
+        
+    </div>  
   </div>
 </header>
 
 
-<section id="about"><br><br><br><br><br>
+<section id="about" style='background:#212529'><br><br><br><br><br>
   <div style="text-align:center">
       <form method="POST">{% csrf_token%}
-      
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          
-          <strong>
-            Ton pseudo :
-          </strong>
-          
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          
-          {{form.username}}<br><br>
-          
-          &nbsp;&nbsp;&nbsp;&nbsp
-          
-          <strong>
-            Ton email :
-          </strong>
-          
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-          {{form.email}}<br><br>
+          <center><p id='1'><strong>Ton nom :</strong></p></center>
           
-          &nbsp;&nbsp;&nbsp;&nbsp
+          <input type='text' style='text-align:center; width:250px;'
+            onmouseover="stop('1', '11')" onmouseout="start('1', '11')"
+            oninput="myFunction('1')"
+            {{form.username}}><br>
+            
+          <center><div><p id='11'>&nbsp;</p></div></center><br>
 
-          <strong>
-            Confirme le :
-          </strong>
+         
+          <p id='2'><strong>Ton email :</strong></p>
+            <input type='text' style='text-align:center; width:250px;'
+              onmouseover="stop('2', '22')" onmouseout="start('2', '22')"
+              oninput="myFunction('2')"
+              {{form.email}}><br>
           
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <center><div><p id='22'>&nbsp;</p></div></center><br>
           
-          {{form.email2}}<br><br>
-          
-          <strong>
-            Et ton password
-          </strong>
 
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          
-          {{form.password}}<br><br><br>
-          
-          &nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;
-          &nbsp;&nbsp
+          <p id='3'><strong>Confirme ton mail :</strong></p>
+            <input type='text' style='text-align:center; width:250px;'
+              onmouseover="stop('3', '33')" onmouseout="start('3', '33')"
+              oninput="myFunction('3')"
+              {{form.email2}}><br>
 
+          <center><div><p id='33'>&nbsp;</p></div></center><br>
+
+
+          
+          <p id='4'><strong>Et ton mot de passe :</strong></p>
+          
+          <input type='password' style='text-align:center; width:250px;'
+            onmouseover="stop('4', '44')" onmouseout="start('4', '44')"
+            oninput="myFunction2('4')"
+            {{form.password}}><br>
+            
+          <center><div><p id='44'>&nbsp;</p></div></center><br>
+
+
+
+
+          
           <input type="submit" style="color:black;"/>
           
       </form><br><br><br><br>
@@ -87,7 +114,94 @@
 </section>
 
 
+<script>
 
-{% include "bottom_page.html" %}
+  function stop(titre, div){
+    document.getElementById(titre)
+
+    if(div == '11'){
+      document.getElementById(div).innerHTML = '<i>Par exemple Emma</i>'
+    }
+    else if(div == '22'){
+      document.getElementById(div).innerHTML = '<i>Par exemple Emma@hotmail.fr</i>'
+    }
+    else if(div == '33'){
+      document.getElementById(div).innerHTML = '<i>Confirme le pour etre sur !</i>'
+    }
+    else if(div == '44'){
+      document.getElementById(div).innerHTML = '<i>Nous te conseillons de mettre des chiffres et des majuscules</i>'
+    }
+    
+    
+  }
+
+  function start(titre, div){
+    document.getElementById(div).innerHTML = '&nbsp;';
+  }
+
+
+  function myFunction(titre){
+    console.log(titre)
+    if(titre == '1'){
+      document.getElementById(titre).style.color = 'green';
+      }
+    else if(titre == '2'){
+      document.getElementById(titre).style.color = 'green';
+    }
+    else if(titre == '3'){
+      document.getElementById(titre).style.color = 'green';
+    }
+
+  }
+
+  var c = 0
+  function myFunction2(titre){
+    if (c == 0){
+      c += 1
+      }
+    else{
+      console.log('laaaaaa')
+      document.getElementById(titre).style.color = 'green';
+    }
+
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% include "bottom_page2.html" %}
 {% block content2 %}
 {% endblock content2%}
