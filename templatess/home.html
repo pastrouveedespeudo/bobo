@@ -286,6 +286,27 @@
           margin-top: -230px;
         }
       }
+
+
+      @media screen and (min-width: 0px) and (max-width:749px) {
+        #my {
+          margin-left:240px;
+          margin-top: -230px;
+        }
+       #my_prof{
+          margin-top: -230px;
+        }
+      }
+
+
+
+
+
+
+
+
+
+      
     </style>
 
 
@@ -982,7 +1003,21 @@
 
 
 
-
+@media screen and (min-width: 0px) and (max-width:750px) {
+  #bg3{
+    height:210px;
+    width:110%;
+    border:8px solid black;
+    background:url("/static/img/parquet1.jpg");
+    color:white;
+    margin-top:0px;
+    margin-left:0px;
+    }
+  #bg4{
+    display:none;
+  
+  }
+}
 
 
 
@@ -1023,12 +1058,11 @@
 @media screen and (min-width: 0px) and (max-width:750px) {
   #bg111{
     height:210px;
-    width:75%;
     border:8px solid black;
     background:url("/static/img/parquet1.jpg");
     color:white;
     margin-top:0px;
-    margin-left:10px;
+    margin-left:0px;
     }
 
 }
@@ -1098,9 +1132,8 @@
             if(im == 'im1'){
               document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
               document.getElementById('description').innerHTML = '<center>' +
-                                                                  'Un algorithme qui permet de visualiser le déplacement du vent. ' +
-                                                                  'L\'utilisateur saisit le nom d\'une ville ' +
-                                                                  'nous récupérons ses coordonnées, le sens du vent, la superficie de la ville ' +
+                                                                  'Saisissez le nom d\'une ville ! ' +
+                                                                  'Nous récupérons ses coordonnées, le sens du vent et ' +
                                                                   'calculons sa nouvelle trajectoire et ' +
                                                                   'nous l\'affichons sur une carte google map.'
                                                                   '</center>';
