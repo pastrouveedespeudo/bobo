@@ -1,6 +1,7 @@
 
 merde c les horraires du jeudi a gauche y'a un encadré avec toutes les dates (scrap avec les jours de la semaine + int + ":")
 
++ les avis jdois juste faire des soustractions mais je sais pas comment faire et jdétourne le probleme avec du scrappage pfffffff
 
 réfléchis a la prediction low cost et c ok
 
