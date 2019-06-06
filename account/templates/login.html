@@ -5,6 +5,21 @@
 <style>#autre{margin-left:-965px;;margin-top:-100px;}</style>
 <style>#h{font:Serif; color:white;}</style>
 
+<style>
+  h1{
+    color:black;
+    font-family:"cursive";
+  };
+  #h{
+    color:black;
+    font-family:"cursive";
+  };
+
+</style>
+
+
+
+
 
 <!-- Masthead -->
 <header class="masthead">
@@ -13,13 +28,11 @@
     
       <div class="col-lg-10 align-self-end"><br><br>
 
-          <h1 class="text-uppercase text-white font-weight-bold">
-            Connecte toi !
-          </h1><br>
+          <h1>Connecte toi !</h1><br>
           
-          <h2 id="h">
-            et va essayer des coiffures !
-          </h2><hr class="divider my-4">
+          <h2 id="h" style='color:black;'>
+            et va essayer des coiffures en noir et blanc, en couleur, longue, courte il y
+            a tous ce que tu veux !
       
       </div>
       
@@ -32,32 +45,52 @@
 
 
 
-<section id="about"><br><br><br><br><br><br><br><br>
+<section id="about" style='background:#212529'><br><br>
 
-  <form method="POST">{% csrf_token%}
-  
-    <center>
-      <strong>
-        nom utilisateur :
-      </strong>
-      {{form.username}}
-    </center><br><br>
-    
-    <center>
-      <strong>
-        mot de passe :&nbsp;&nbsp;&nbsp;&nbsp;
-      </strong>
-      {{form.password}}
-    </center><br>
+  <center><h3 style='color:white;text-shadow: black 0.1em 0.1em 0.2em'>
+        Se connecter</h3><br><br><br></center>
+        
+  <div style="text-align:center">
 
-    
-    <center><input type="submit" style="margin-left:50px;"></center>
-    
-  </form><br><br><br><br><br><br><br><br>
+  <center>
+      
+      <form method="POST" id="formm"
+        style="border:1px solid black; width:50%;
+        background:url('/static/img/parquet1.jpg');">{% csrf_token%}<br><br>
+      
+        <center>
+          <p style='color:white; 'text-shadow: black 0.1em 0.1em 0.2em'>
+            <strong>nom utilisateur :</strong></p>
+
+          <input type='text' style='text-align:center; width:250px; border:1px solid black;
+          border:1px solid black;'
+          {{form.username}}
+
+        </center><br><br>
+
+        <center>
+          <p style='color:white; 'text-shadow: black 0.1em 0.1em 0.2em'>
+          <strong> mot de passe :</strong></p>
+          
+          <input type='text' style='text-align:center; width:250px; border:1px solid black;
+            border:1px solid black;'
+          {{form.password}}
+        </center><br><br><br>
+
+        
+        <center><input type="submit" style='border:2px solid black;'></center>
+
+
+      <br><br>
+      </form><br><br><br><br><br><br><br><br>
+
+  </center>
+
+  </div>
   
 </section>
 
-{% include "bottom_page.html" %}
+{% include "bottom_page2.html" %}
 {% block content2 %}
 {% endblock content2%}
 
