@@ -5,8 +5,6 @@ LISTE = ['coiffure', 'COIFFURE', 'salon', 'salon de coiffure']
 
 
 
-
-
 def rayon(ville):
     path = "https://www.villorama.com/ville/{}/villes-proches.html"
     
