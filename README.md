@@ -1,3 +1,5 @@
+#bug les style ca affiche pas le amaze trop deg le faire telecharger de force ou mettre du segoe print ou l'autre segoe
+
 pour eviter le time out
 
 views:
