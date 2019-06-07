@@ -25,132 +25,20 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
       <script type="text/javascript"></script>
 
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      
       
     </head> 
 
-    <body id="page-top">
+<body id="page-top">
+    
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+{% include "navebarre_ui.html" %}
+{% block content %}
+{% endblock %}
 
 
-    <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
-    <style>#my{width:50px;height:50px;}</style>
-    <style>#im1{width:50px;height:50px;margin-left:55px;}</style>
-    <style>#coif_nav{width:50px; height:50px; margin-left:30px;}</style>
-    <style>#im2{width:50px;height:50px;margin-left:40px;}</style>
-    <style>#im3{width:50px; height:50px; margin-left:40px;}</style>
-    <style>#im4{width:50px;height:50px;margin-left:40px;}</style>
-    <style>#h{font:Serif; color:white;}</style>
-    <style>#im6{width:100px; height:100px;}</style>
-    <style>#deco_nav{width:50px; height:50px; margin-left:46px;}</style>
-    <style>#autre{margin-left:-965px;margin-top:-100px;}</style>
-    <style>#h{font:Serif; color:white;}</style>
-    <style>#momode{width:65px; height:50px;margin-left:80px;}</style>
-        
-    <div class="container">
 
-      <img src="/static/img/portfolio/icone/my.png" id="my_prof">
-      <a class="navbar-brand js-scroll-trigger" href="/">
-        My_Profil
-      </a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  
-      <img src="/static/img/portfolio2/icone/indian.png" id="my">
-      <a class="navbar-brand js-scroll-trigger" href="/polution/polution">
-        My_pollution
-      </a>
-      
-      <button class="navbar-toggler navbar-toggler-right" type="button"
-        data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-
-          <ul class="navbar-nav ml-auto my-2 my-lg-0">
-
-              {% if user.is_authenticated %}
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/momode.png" id="momode">
-                  <a class="nav-link js-scroll-trigger" href="/administrateur/tendance">
-                    <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La tendance du moment ?</center>
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/coiffure.png" id="coif_nav">
-                  <a class="nav-link js-scroll-trigger" href="/photo/coupe">
-                    <center>Mes coiffures</center>
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/vetements.png" id="im3">
-                  <a class="nav-link js-scroll-trigger" href="/photo/habits">
-                    <center>Mes vetements</center>
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/deco.png" id="deco_nav">
-                  <a class="nav-link js-scroll-trigger" href="/accounts/logout_view">
-                    <center>Se déconnecter</center>
-                  </a>
-              </li>
-      
-          </ul>
-
-            {% else %}
-
-              <style>#ima1{width:55px; height:50px; margin-left:17px;}</style>
-              <style>#im2{width:50px; height:50px; margin-left:40px;}</style>
-              <style>#im1{width:50px; height:50px; margin-left:45px;}</style>
-              <style>#im3{width:50px; height:50px; margin-left:40px;}</style>
-              
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/inscription.png" id="ima1">
-                  <a class="nav-link js-scroll-trigger" href="/accounts/register_view">
-                    S'inscrire
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/login.png" id="im2">
-                  <a class="nav-link js-scroll-trigger" href="/accounts/login">
-                    Se connecter
-                  </a>
-              </li>
-
-              
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
-                  <a class="nav-link js-scroll-trigger" href="/photo/coupe">
-                    Les coiffures
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/vetements.png" id="im3">
-                  <a class="nav-link js-scroll-trigger" href="/photo/habits">
-                    Les vetements
-                  </a>
-              </li>
-              
-          </ul>
-
-          {% endif %}
-
-      
-          
-      </div>
-    </div>
-  </nav>
-</html>
+</body>
 
 
 <script>
@@ -268,175 +156,159 @@ listeeeee = []
 
 
 
-<!-- About Section -->
-<div style='background:#283B57;'><br><br><br><br><br><br><br><br></div>
-<section style='background:#283B57;' id="about">
-  <div class="container>
 
-     
-      <div class="row justify-content-center">
-        <div class="col-lg-12 text-center">
-        
-          <h2 class="text-white mt-0"><center>
-            Essayons quelques choses</center>
-          </h2><br><br><br>
-        </div>
-      </div>
-      
-  </div>
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center justify-content-center text-center">
+      <br><br><br><br><br><br>
 
+       <div class="col-lg-12 align-self-end"><br><br>
 
+      <center><h1 style='color:black;'>Essaie des coiffures !</h1></center><br>
+      <center><h2 style='color:black; font-style=justu'>Démarre la vidéo, appuie sur stop et essaie des coiffures. Si tu l'aimes appuie sur j'aime cette coupe !</h2></center>
 
+      <br><br><br><br><br><br><br><br><br><br><br>
+      <div class="col-lg-12 align-self-end"><br><br><br>
+                  <center><h2 style='color:black;'>
+                    Essayons quelques choses
+                  </h2><br><br><br></center>
+          <div class="container>
+              <div class="row justify-content-center">
+ 
+                </div>
+              </div>
+          </div>
 
 
       <div class="container">
-      
         <div class="row">
         
           <div class="col-xs-12 col-md-12 col-lg-3">
-
             <center>
+            <div style='border:1px solid red; margint-left:50px; width:220px;'>
             <input type='button' value='ajouter de la longueur?'
               style=" border:3px solid black"
               onclick='ajout_longueur()'/><br><br>
-
-
             <input type='button' value='ajouter de la largeur?'
               style=" border:3px solid black; text-align:center; width:200px;"
               onclick='ajout_largeur()'/><br><br>
-
             <input type='button' value='enlever de la longueur?'
               style=" border:3px solid black;"
               onclick='enlever_longueur()'/><br><br>
-
             <input type='button' value='enlever de la largeur?'
               style="border:3px solid black; text-align:center; width:200px;"
               onclick='enlever_largeur()'/><br><br>
-
-
+            
             <center>
-
               <div>{% csrf_token %}
                 <input type="hidden" name="csrfmiddlewaretoken"
                   value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
-             
                 <input type="hidden" name="csrfmiddlewaretoken"
                   value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
-
-                
                 <form id='jaime' method="POST" action='/photo/coupe'>{% csrf_token %}
-                
                   <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux" value=''>{% csrf_token %}
-                  
                   <input type="hidden" name="coupe"
-                    value=LISTECOUPE>{% csrf_token %}
-                    <br>
+                    value=LISTECOUPE>{% csrf_token %}<br>
                   <input type="button" id='sauve' value="J'aime cette coupe"
                   <a class="btn btn-light btn-xl js-scroll-trigger">{% csrf_token %}
-                  
                 </form>{% csrf_token %}
               </div>
-
             </center><br>
+          </div>
 
-
-            <div id='favoris' style='display:none; border:1px solid red;' value={{fav}}></div>
-            <div style='text-align:center'>
-              <div id="favdraggable" name="coucou" value='coupe1'
-                class="ui-widget-content"
-                onclick="nom_image('favdraggable', 200, 150)";
+            <div id='favoris' style='display:none;' value={{fav}}></div>
+              <div style='text-align:center'>
+                <div id="favdraggable" name="coucou" value='coupe1'
+                  class="ui-widget-content"
+                  onclick="nom_image('favdraggable', 200, 150)";
+                    style='z-index: 1;'>
+                    <img src="/static/img/portfolio/coupe/bbbbbbb.png"
+                      width='150' height='200'
+                      id="coupe111"
+                      style='display:none;'/>
+                </div>
+              
+                <div id="favdraggable3" class="ui-widget-content" value='coupe4'
+                  onclick="nom_image('favdraggable3', 150, 150)";
                   style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/bbbbbbb.png"
-                    width='150' height='200'
-                    id="coupe111"
-                    style='display:none;'/>
-              </div>
-              
-              <div id="favdraggable3" class="ui-widget-content" value='coupe4'
-                onclick="nom_image('favdraggable3', 150, 150)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/image849849849.png"
-                    width='150' height='150'
-                    id="coupe444"
-                    style='display:none;'/>
-              </div>
+                    <img src="/static/img/portfolio/coupe/image849849849.png"
+                      width='150' height='150'
+                      id="coupe444"
+                      style='display:none;'/>
+                </div>
 
-              <div id="favdraggable4" class="ui-widget-content" value='coupe5'
-                onclick="nom_image('favdraggable4', 150, 100)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/bbbbbbb.png"
-                    width='100' height='150'
-                    id="coupe555"
-                    style='display:none;'/>
-              </div>
-              
+                <div id="favdraggable4" class="ui-widget-content" value='coupe5'
+                  onclick="nom_image('favdraggable4', 150, 100)";
+                  style='z-index: 1;'>
+                    <img src="/static/img/portfolio/coupe/bbbbbbb.png"
+                      width='100' height='150'
+                      id="coupe555"
+                      style='display:none;'/>
+                </div>
+                
          
-              <div id="favdraggable5" class="ui-widget-content" value='coupe6'
-                onclick="nom_image('favdraggable5', 300, 130)";
+                <div id="favdraggable5" class="ui-widget-content" value='coupe6'
+                  onclick="nom_image('favdraggable5', 300, 130)";
+                  style='z-index: 1;'>
+                    <img src="/static/img/portfolio/coupe/1.5.png"
+                      width='130' height='300'
+                      id="coupe666"
+                      style='display:none;'/>
+                </div>
+
+                <div id="favdraggable6" class="ui-widget-content" value='coupe2'
+                  onclick="nom_image('favdraggable6', 300, 130)";
+                  style='z-index: 1;'>
+                    <img src="/static/img/portfolio/coupe/coucou3.png"
+                      width='130' height='300'
+                      id="coupe222"
+                      style='display:none;'/>
+                </div>
+
+                <div id="favdraggable7" class="ui-widget-content" value='coupe22'
+                onclick="nom_image('favdraggable7', 100, 70)";
                 style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/1.5.png"
-                    width='130' height='300'
-                    id="coupe666"
+                    <img src="/static/img/portfolio/coupe/coucou22.png"
+                    width='70' height='100'
+                    id="coupe22447"
                     style='display:none;'/>
-              </div>
+                </div>
 
-              <div id="favdraggable6" class="ui-widget-content" value='coupe2'
-                onclick="nom_image('favdraggable6', 300, 130)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/coucou3.png"
-                    width='130' height='300'
-                    id="coupe222"
-                    style='display:none;'/>
-              </div>
-
-              <div id="favdraggable7" class="ui-widget-content" value='coupe22'
-              onclick="nom_image('favdraggable7', 100, 70)";
-              style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/coucou22.png"
-                  width='70' height='100'
-                  id="coupe22447"
-                  style='display:none;'/>
-              </div>
-
-              <div id="favdraggable8" class="ui-widget-content" value='coupe8'
-                onclick="nom_image('favdraggable8', 50, 70)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/coucou22.png"
-                    width='70' height='50'
-                    id="coupe888"style='display:none;'/>
-              </div>
-
-              <div id="favdraggable9" class="ui-widget-content" value='coupe9'
-                onclick="nom_image('favdraggable9', 160, 140)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/coif.png"
-                    width='140' height='160'
-                    id="coupe999"
-                    style='display:none;'/>
-              </div>
-
-
-          
-              <div id="favdraggable10" class="ui-widget-content" value='coupe12'
-                onclick="nom_image('favdraggable10', 250, 150)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/aa.png"
-                    width='150' height='250'
-                    id="coupe12"
-                    style='display:none;'/>
-              </div>
-
-        
-              <div id="favdraggable11" class="ui-widget-content" value='coupe13'
-                onclick="nom_image('favdraggable11', 250, 150)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/aaaaa.png"
-                    width='150' height='250'
-                    id="coupe131313"
-                    style='display:none;'/>
-              </div>
-
+                <div id="favdraggable8" class="ui-widget-content" value='coupe8'
+                  onclick="nom_image('favdraggable8', 50, 70)";
+                  style='z-index: 1;'>
+                    <img src="/static/img/portfolio/coupe/coucou22.png"
+                      width='70' height='50'
+                      id="coupe888"style='display:none;'/>
+                </div>
+              
+                <div id="favdraggable9" class="ui-widget-content" value='coupe9'
+                  onclick="nom_image('favdraggable9', 160, 140)";
+                  style='z-index: 1;'>
+                    <img src="/static/img/portfolio/coupe/coif.png"
+                      width='140' height='160'
+                      id="coupe999"
+                      style='display:none;'/>
+                </div>
            
+                <div id="favdraggable10" class="ui-widget-content" value='coupe12'
+                  onclick="nom_image('favdraggable10', 250, 150)";
+                  style='z-index: 1;'>
+                    <img src="/static/img/portfolio/coupe/aa.png"
+                      width='150' height='250'
+                      id="coupe12"
+                      style='display:none;'/>
+                </div>
+
+                <div id="favdraggable11" class="ui-widget-content" value='coupe13'
+                  onclick="nom_image('favdraggable11', 250, 150)";
+                  style='z-index: 1;'>
+                    <img src="/static/img/portfolio/coupe/aaaaa.png"
+                      width='150' height='250'
+                      id="coupe131313"
+                      style='display:none;'/>
+                </div>
+
               <div id="favdraggable12" class="ui-widget-content"  value='coupe14'
                 onclick="nom_image('favdraggable12', 160, 100)";
                 style='z-index: 1;'>
@@ -445,7 +317,6 @@ listeeeee = []
                     id="coupe141414"
                     style='display:none;'/>
               </div>
-
 
               <div id="favdraggable14" class="ui-widget-content"  value='coupe16'
                 onclick="nom_image('favdraggable14', 160, 100)";
@@ -456,8 +327,6 @@ listeeeee = []
                     style='display:none;'/>
               </div>
 
-
-            
               <div id="favdraggable15" class="ui-widget-content"  value='coupe17'
                 onclick="nom_image('favdraggable15', 250, 150)";
                 style='z-index: 1;'>
@@ -467,7 +336,6 @@ listeeeee = []
                     style='display:none;'/>
               </div>
 
-              
               <div id="favdraggable16" class="ui-widget-content"  value='coupe18'
                 onclick="nom_image('favdraggable16', 160, 140)";
                 style='z-index: 1;'>
@@ -477,7 +345,6 @@ listeeeee = []
                     style='display:none;'/>
               </div>
 
-             
               <div id="favdraggable17" class="ui-widget-content" value='coupe19'
                 onclick="nom_image('favdraggable17', 100, 110)";
                 style='z-index: 1;'>
@@ -487,7 +354,6 @@ listeeeee = []
                     style='display:none;'/>
               </div>
 
-          
               <div id="favdraggable18" class="ui-widget-content" value='coupe20'
                 onclick="nom_image('favdraggable18', 250, 150)";
                 style='z-index: 1;'>
@@ -496,8 +362,6 @@ listeeeee = []
                     id="coupe202020"
                     style='display:none;'/>
               </div>
-
-
 
               <div id="favdraggable19" class="ui-widget-content" value='coupe21'
                 onclick="nom_image('favdraggable19', 250, 150)";
@@ -508,12 +372,14 @@ listeeeee = []
                     style='display:none;'/>
               </div>
 
+
+
               
           </div>
     
           
             {% if user.is_authenticated %}
-                <center><p><strong>Mes favoris</strong></p></center>
+                <center><p style='color:black;'><strong>Mes favoris</strong></p></center>
             {% else %}
                 <p><strong>Inscris toi ! et ajoute des favoris !</strong></p>
             {% endif %}
@@ -523,12 +389,6 @@ listeeeee = []
             </div>
 
 
-
-
-
-
-
-
             </center>
           </div>
 
@@ -536,10 +396,16 @@ listeeeee = []
           <div class="col-lg-6" id='vivideo'>
 
             <div id="basic" style="text-align:center; z-index: 4;">
-              <video class="videostream" autoplay style="z-index: 4;"></video>
-              <p><button class="capture-button">Capture video</button>&nbsp;&nbsp;<button id="stop-button">Stop</button></p>
+              <video class="videostream" autoplay style="z-index: 4; border:2px solid black;"></video>
+              <div <div style='border:1px solid red;'>
+              <br>
+              <p><button class="capture-button">Start</button>&nbsp;&nbsp;<button id="stop-button">Stop</button></p>
               <p><button id="cssfilters-apply"> Mettre en noir et blanc conseillé</button></p>
+              <br>
             </div>
+            </div>
+
+            
             <div id="screenshot" style="text-align:center;" style='display:none;'>
               <video class="videostream" autoplay style='display:none;'></video>
               <img id="screenshot-img" style='display:none;'>
@@ -547,24 +413,25 @@ listeeeee = []
               <p><button id="screenshot-button" disabled style='display:none;'> Take screenshot</button></p></div>
 
               <div id="cssfilters" style="text-align:center;" style='display:none;'>
+              
                 <video class="videostream" autoplay title="Click me to apply CSS Filters" alt="Click me to apply CSS Filters"
                   style='display:none;'>
                 </video>
                 <p><button class="capture-button" style='display:none;'>Capture video</button><p>
                 <button id="cssfilters-apply" style='display:none;'>Mettre en noir et blanc (Recommandé)</button></p>
               </div>
-
           </div>
+        
 
 
           <div class="col-lg-3">
 
 
-          <p><center><strong>Coupes</strong></center></p>
+          <center><strong><p style='color:black;'>Coupes</p></strong></center>
 
           <div>
           <center>
-            <div id='placement'>
+            <div id='placement' style='border:1px solid red;'>
               <input type='button' value='coupe longue' onclick='coupe_longue()' style='border:3px solid black;'><br><br>
               <input type='button' value='coupe courte' onclick='coupe_courte()' style='border:3px solid black;'><br><br>
               <input type='button' value='coupe couleur longue' onclick='coupe_longue_coul()' style='border:3px solid black;'><br><br>
@@ -720,6 +587,8 @@ listeeeee = []
             </div>
 
 
+  
+
             <input type='button' id='bout_fermer_longue' value='fermer' onclick='fermer1()'
                 style='display:none; border:3px solid black;'><br><br>
                 
@@ -734,6 +603,10 @@ listeeeee = []
 
             <input type='button' id='bout_fermer_barbe' value='fermer' onclick='fermer5()'
                 style='display:none;border:3px solid black;''><br><br>     
+
+
+       
+
             
           </center>
 
@@ -771,8 +644,12 @@ listeeeee = []
 
 
 
-  <br><br><br>
-</section>
+</header>
+
+<header class="masthead" style='background:#212529'>
+
+</header>
+
 
 
   <!-- Services Section -->
@@ -782,8 +659,8 @@ listeeeee = []
     
       <h2 class="text-center mt-0">Mes services</h2>
       <hr class="divider my-4">
-
       <div class="row">
+      
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im6{width:100px; height:100px;}</style>
@@ -886,9 +763,19 @@ listeeeee = []
 
 
 
-</body>
 
 
+<!-- Bootstrap core JavaScript -->
+<script src="/static/vendor/jquery/jquery.min.js"></script>
+<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="/static/js/creative.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </html>
 
 
