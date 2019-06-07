@@ -108,8 +108,13 @@ def coupe(request):
             for i in les_coiffeurs:
                 horraire1 = horraire(i, coiffure)
                 numéro = numero(i, coiffure)
-
-                horraire_coiffeur.append([i, horraire1, numéro])
+                
+                if horraire1 == [] or horraire1 == '':
+                    pass
+                elif numéro == [] or numéro == '':
+                    pass
+                else:
+                    horraire_coiffeur.append([i, horraire1, numéro])
 
 
 
