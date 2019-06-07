@@ -68,7 +68,7 @@ def home(request):
     return render(request, 'home.html')
 
 
-
+MON_COIFFEUR = []
 @csrf_protect
 def coupe(request):
 
@@ -102,10 +102,16 @@ def coupe(request):
 
         if coiffure:
 
-            horraire_coiffeur = []
+            coif = []
     
             les_coiffeurs = ville(coiffure)
-            for i in les_coiffeurs:
+            
+            MON_COIFFEUR.extend(les_coiffeurs)
+            print(MON_COIFFEUR)
+            
+            for i in MON_COIFFEUR[:4]:
+ 
+                
                 horraire1 = horraire(i, coiffure)
                 numéro = numero(i, coiffure)
                 
@@ -114,11 +120,12 @@ def coupe(request):
                 elif numéro == [] or numéro == '':
                     pass
                 else:
-                    horraire_coiffeur.append([i, horraire1, numéro])
+                    coif.append([i, horraire1, numéro])
 
 
-
-            return HttpResponse(horraire_coiffeur)
+            print(coif)
+            return HttpResponse(coif)
+ 
 
 
         
