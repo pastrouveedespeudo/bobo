@@ -57,8 +57,7 @@ def rayon(ville):
 def ville(ville):
     path = 'https://www.google.com/search?q={}+coiffeur&oq={}+coiffeur'
     path = path.format(ville, ville)
-    #print(path)
-    
+
     r = requests.get(path)
     page = r.content
     
@@ -69,29 +68,28 @@ def ville(ville):
     liste = []
 
     for i in propriete:
-        #print(i.string)
         for j in LISTE:
             a = str(i.string).find(str(j))
             if a >= 0:
                 liste.append(i.string)
-  
+    #print(liste)
     return liste #coiffeur dans ces villes
 
 def horraire(nom, ville):
 
-    path = 'https://www.google.com/search?ei=Gnn5XJP5KIu5gweW1qaQBQ&q={}+{}+horraires&oq={}+{}+horraires'
-    path = path.format(nom, ville, nom, ville)
-    
+    path = 'https://www.google.com/search?ei=Gnn5XJP5KIu5gweW1qaQBQ&q={0}+{1}+horraires&oq={0}+{1}+horraires'
+
+    path = path.format(nom, ville)
     r = requests.get(path)
     page = r.content
     
     soup = BeautifulSoup(page, "html.parser")
-    propriete = soup.find_all("tr")
     
+    propriete = soup.find_all("span")
+
     liste = []
     for i in propriete:
-        liste.append(str(i))
-    
+        liste.append(i.string)
     
     semaine = ['lundi',
               'mardi',
@@ -102,39 +100,22 @@ def horraire(nom, ville):
               'dimanche',
              ]
     
+    jour = ''
+
     liste1 = []
-
-    liste = liste[1:]
-
+    c = 0
     for i in liste:
         heure = ''
-        
-        for j in semaine:
-            b = str(i).find(str(j))
-            if b >= 0:
-                jour = j
-        c = 0
-        for ii in i:
-            try:
-                ii = int(ii)
-                if ii == int(ii) and i[c+1] == ':' or i[c+2] == ':' or\
-                   i[c-1] == ':' or i[c-2] == ':':
-                    heure += str(ii)
-            except:
-                pass
-            
-            if ii == ':':
-                heure += str(ii)
-             
-            if ii == '–':
-                heure += str(ii)
-            if ii == ',':
-                heure += str(ii)
-                    
-            c += 1
-        liste1.append([jour, heure])
 
-    #print(liste1)
+        for j in semaine:
+            a = str(i).find(str(j))
+            if a >= 0:
+                liste1.append([i, liste[c+1]])
+                
+        c+=1
+      
+       
+    print(liste1)
     return liste1
 
 
@@ -161,7 +142,7 @@ def numero(nom, ville):
 
     fini = ''
     for i in liste:
-        #print(i)
+
         c = 0
         for j in i:
             try:
@@ -171,35 +152,43 @@ def numero(nom, ville):
                     tel += i
                     fini = True
                     break
-
             except:
                 pass
-
-            
             c += 1
         if fini == True:
             break
 
-    print(tel)
+ 
     return tel
 
-les_coiffeurs = []
 
-la_ville = 'eurre'
+
+
+
+
+
+
+
+
+#coiffeurs = []
+
+#la_ville = 'eurre'
 
 
 #alentour = rayon(la_ville)
-
+#print(alentour)
+##
 ##for i in alentour:
-##    coif_alentour = les_coiffeurs = ville(i)
-##    les_coiffeurs.extend(coif_alentour)
-##
-##
-##print(les_coiffeurs)
+##    les_coiffeurs = ville(i)
+##    coiffeurs.extend(les_coiffeurs)
+
+#les_coiffeurs = ville(la_ville)
+#print(les_coiffeurs)
     
 #for i in les_coiffeurs:
-#horraire('Coiffure Marilyne', 'crest')
-numero('Coiffure Marilyne', 'crest')
+a = horraire('Coiffure Marilyne', 'crest')
+print(a)
+#numero('Coiffure Marilyne', 'crest')
 
 
 
