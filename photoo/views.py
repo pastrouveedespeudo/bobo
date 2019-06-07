@@ -24,7 +24,7 @@ from django.http import StreamingHttpResponse
 
 import cv2
 
-
+from .magasins.coiffeur import *
 
 
 def mes_images(request):
@@ -68,12 +68,6 @@ def home(request):
     return render(request, 'home.html')
 
 
-def tshirt(request):
-    return render(request, 't-shirt.html')
-
-def pantalon(request):
-    return render(request, 'pantalon.html')
-
 
 @csrf_protect
 def coupe(request):
@@ -83,9 +77,9 @@ def coupe(request):
     try:
         current_user = request.user
 
-        fav = ''#ICIIIIIII IL Y A PEUT ETRE UNE ERREUR c ptetre [] 
+        fav = '' 
         favoris_coupe = affichage_coupe_fav(current_user)
-        print(favoris_coupe)
+        #print(favoris_coupe)
         if favoris_coupe:
             fav = True
 
@@ -99,13 +93,30 @@ def coupe(request):
         image = request.POST.get('posting')
         coupe = request.POST.get('coupe')
         recherche = request.POST.get('coupedecheveux')
-        
         enregistement = request.POST.get('produit')
- 
-        print(recherche,'7777777777777777777777777778888')
-        print(coupe,'656565656565699999999789111111111117777')
-        print(enregistement,'8888888888888897978979879878979')
+    
+            
+        coiffure = request.POST.get('coiffeur')
 
+        print(coiffure,'000000000000000000000000000')
+
+        if coiffure:
+
+            horraire_coiffeur = []
+    
+            les_coiffeurs = ville(coiffure)
+            for i in les_coiffeurs:
+                horraire1 = horraire(i, coiffure)
+                numéro = numero(i, coiffure)
+
+                horraire_coiffeur.append([i, horraire1, numéro])
+
+
+
+            return HttpResponse(horraire_coiffeur)
+
+
+        
         
 
         liste_enre = [[],[],[]]
@@ -252,17 +263,7 @@ def habits(request):
 
 
 
-def essais(request):
 
-    video = cv2.VideoCapture(0 + cv2.CAP_DSHOW)
-
-    check, frame = video.read()
-        
-    video.release()
-
-    cv2.imwrite('eeeeeeeeeeeeeee.jpg', frame)
-
-    return render(request, 'essais.html')
 
 
 
