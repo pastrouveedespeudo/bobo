@@ -668,7 +668,7 @@ listeeeee = []
   <section class="page-section" id="services" style='background:url("/static/img/parquet1.jpg");'>
   
     <div class="container">
-    
+      <p><i>*Cliquez sur les images afin de profiter des services !<i></p>
       <h2 class="text-center mt-0">Mes services</h2>
       <hr class="divider my-4">
       <div class="row">
@@ -676,10 +676,21 @@ listeeeee = []
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im6{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/coiffeur.png"/ id="im6">
+           
+           <img onclick="coiffeur()" src = "/static/img/portfolio/icone/coiffeur.png"
+             onmouseover="stop('p_coif', 'im6', '/static/img/portfolio/icone/coiffeur2.png')"
+             onmouseout="start('p_coif', 'im6', '/static/img/portfolio/icone/coiffeur.png')"
+             id="im6">
+             
             <h3 class="h4 mb-2">Coiffeurs</h3>
+            
             <br><br>
-            <p class="text-muted mb-0">Voir les coiffeurs les plus proches de chez moi</p>
+            
+            <p id ='p_coif'
+            class="text-muted mb-0" style='display:none; position:absolute;'>
+              Voir les coiffeurs les plus proches de chez moi
+            </p>
+            
           </div>
         </div>
 
@@ -687,10 +698,20 @@ listeeeee = []
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im4{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/gym.png"/ id="im4">
+           
+           <img src = "/static/img/portfolio/icone/gym.png"/
+             onmouseover="stop('p_gym', 'im4', '/static/img/portfolio/icone/gym2.png' )"
+             onmouseout="start('p_gym', 'im4', '/static/img/portfolio/icone/gym.png')"
+             id="im4">
+             
             <h3 class="h4 mb-2">Salle de gym</h3>
             <br><br>
-            <p class="text-muted mb-0">Voir les salles de gym les plus proches de chez moi</p>
+            
+            <p id='p_gym'
+              class="text-muted mb-0" style='display:none; position:absolute;'>
+              Voir les salles de gym les plus proches de chez moi
+            </p>
+            
           </div>
         </div>
 
@@ -699,10 +720,21 @@ listeeeee = []
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/vetements.png"/ id="im7">
-            <h3 class="h4 mb-2">Essayer des vêtements</h3>
-            <br>
-            <p class="text-muted mb-0">Essayer des habits</p>
+           
+           <img src = "/static/img/portfolio/icone/vetements.png"/
+             onmouseover="stop('p_habit', 'im7', '/static/img/portfolio/icone/vetements22.png')"
+             onmouseout="start('p_habit', 'im7', '/static/img/portfolio/icone/vetements.png')"
+             id="im7">
+             
+            <h3 class="h4 mb-2">Essayer des vêtements</h3><br>
+            
+            <p id='p_habit'class="text-muted mb-0" style='display:none; position:absolute;'>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Essayer des habits</p>
           </div>
         </div>
 
@@ -710,11 +742,18 @@ listeeeee = []
 
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
-           <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/dresshaircutbodyup.png"/ id="im7">
-            <h3 class="h4 mb-2">Essayer des vêtements</h3>
+           <style>#im8{width:100px; height:100px;}</style>
+           <img src = "/static/img/portfolio/icone/dresshaircutbodyup.png"/
+             onmouseover="stop('p_tendance', 'im8','/static/img/portfolio/icone/dresshaircutbodyup2.png')"
+             onmouseout="start('p_tendance', 'im8', '/static/img/portfolio/icone/dresshaircutbodyup.png')"
+             id="im8">
+            <h3 class="h4 mb-2">
+            Essayer des vêtements</h3>
             <br>
-            <p class="text-muted mb-0">Voir la tendance du moment</p>
+            <p id='p_tendance' class="text-muted mb-0"
+            style='display:none; position:absolute;'>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Voir la tendance du moment</p>
           </div>
         </div>
 
@@ -722,6 +761,38 @@ listeeeee = []
       </div>
     </div>
   </section>
+
+
+
+
+  <script>
+
+    function stop(div, im, im_src){
+   
+      document.getElementById(div).style.display = 'block';
+      document.getElementById(im).src = im_src
+
+    };
+
+    function start(div, im, im_src){
+      document.getElementById(div).style.display = 'none';
+      document.getElementById(im).src = im_src
+    };
+
+  
+    function coiffeur(){
+      console.log('couocu')
+
+    };
+
+  </script>
+
+
+
+
+
+
+
 
 
   <!-- Call to Action Section -->
@@ -801,7 +872,36 @@ listeeeee = []
 
 <script>
 
+  jQuery("#im4").on("click", function(e){
+    alert('coucou');
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              'csrfmiddlewaretoken': '{{csrf_token}}' , 
+              'produit':String(LISTE1[LISTE1.length -1]),
 
+              
+       
+          },
+          type:"POST",
+          url:"/photo/coupe"
+      })
+      .done(function(data){
+          if (data.error){
+              jQuery("#monCadreAlert").text(data.error);
+              jQuery("#is_save");
+              
+              
+          }
+          else{
+              jQuery("#is_save").html(data.data);
+              jQuery("#monCadreAlert");
+              
+              
+          };
+          
+      });
+  });
 
   function favovo(){
   };
