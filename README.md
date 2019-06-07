@@ -1,5 +1,7 @@
 #coder avec vim c classe qu'au début serieux
 
+#récupere le code source sinon fais ca
+
 #purée sans amaze ca sert a rien non pffffff segoe c ok mais... calme tu trouveras
 
 pour eviter le time out
