@@ -1,3 +1,18 @@
+pour eviter le time out
+
+views:
+
+tu fais un par un tu fais un liste (la premiere) puis t'efface au fur et a mesure
+
+tu simules le click
+
+ainsi de suite avec un loading pcque.... faut aussi prendre l'adresse t'as oublié l'adresse pour google map
+
+
+
+
+
+
 
 en gros: 
 
