@@ -1,4 +1,4 @@
-#bug les style ca affiche pas le amaze trop deg le faire telecharger de force ou mettre du segoe print ou l'autre segoe
+#coder avec vim c classe qu'au début serieux
 
 #purée sans amaze ca sert a rien non pffffff segoe c ok mais... calme tu trouveras
 
