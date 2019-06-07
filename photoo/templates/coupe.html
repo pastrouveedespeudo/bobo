@@ -415,7 +415,11 @@ listeeeee = []
               <video class="videostream" autoplay style="z-index: 4; border:5px solid black;"></video>
               
               <center><div style='width:75%;'><br>
+              {% if user.is_authenticated %}
               <p><button class="capture-button" style='border:2px solid black;'>Start</button>&nbsp;&nbsp;
+              {%else%}
+              <p>Connectez-vous !</p>
+              {%endif%}
               <button id="stop-button" style="border:2px solid black;">Stop</button></p>
               <p><button id="cssfilters-apply" style='border:2px solid black;'> Mettre en noir et blanc conseillé</button></p>
               <br>
@@ -667,6 +671,8 @@ listeeeee = []
   <!-- Services Section -->
   <section class="page-section" id="services" style='background:url("/static/img/parquet1.jpg");'>
   
+    {% if user.is_authenticated %}
+    
     <div class="container">
       <p><i>*Cliquez sur les images afin de profiter des services !<i></p>
       <h2 class="text-center mt-0">Mes services</h2>
@@ -699,7 +705,7 @@ listeeeee = []
           <div class="mt-5">
            <style>#im4{width:100px; height:100px;}</style>
            
-           <img src = "/static/img/portfolio/icone/gym.png"/
+           <img onclick="gym()" src = "/static/img/portfolio/icone/gym.png"/
              onmouseover="stop('p_gym', 'im4', '/static/img/portfolio/icone/gym2.png' )"
              onmouseout="start('p_gym', 'im4', '/static/img/portfolio/icone/gym.png')"
              id="im4">
@@ -721,7 +727,7 @@ listeeeee = []
           <div class="mt-5">
            <style>#im7{width:100px; height:100px;}</style>
            
-           <img src = "/static/img/portfolio/icone/vetements.png"/
+           <img onclick="vetements()" src="/static/img/portfolio/icone/vetements.png"/
              onmouseover="stop('p_habit', 'im7', '/static/img/portfolio/icone/vetements22.png')"
              onmouseout="start('p_habit', 'im7', '/static/img/portfolio/icone/vetements.png')"
              id="im7">
@@ -743,7 +749,7 @@ listeeeee = []
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im8{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/dresshaircutbodyup.png"/
+           <img onclick="dresshaircutbodyup()" src="/static/img/portfolio/icone/dresshaircutbodyup.png"/
              onmouseover="stop('p_tendance', 'im8','/static/img/portfolio/icone/dresshaircutbodyup2.png')"
              onmouseout="start('p_tendance', 'im8', '/static/img/portfolio/icone/dresshaircutbodyup.png')"
              id="im8">
@@ -760,12 +766,67 @@ listeeeee = []
         
       </div>
     </div>
+
+
+    {%else%}
+
+      <center><h1><strong>Inscrivez vous pour profiter des services !</strong></h1></center>
+
+    {%endif%}
+
+
+    
   </section>
 
 
 
 
   <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     function stop(div, im, im_src){
    
