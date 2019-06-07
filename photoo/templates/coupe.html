@@ -675,7 +675,10 @@ listeeeee = []
       <center><input type='text' id='coif1' style='text-align:center;' size='30' placeholder='Votre ville'></center><br>
       
       <center><input type='button' value='Retour au menu' onclick='menu()'>
+      
       <input type='button' id='coif2' value='valider'></center><br>
+
+
       
       <center><img src='/static/img/portfolio/icone/chargement.gif' size='200' height='80' id='gifou'
               style='display:none;'><center>
@@ -686,14 +689,117 @@ listeeeee = []
 
 
     <div id='mapmap' style='display:none'>
+    
 
-      <center><div id='info'>Voici la liste</div></center>
+      <center><div id='info'></div></center>
       
       <center><div id='map'></div></center>
 
       <center><input type='button' value='Retour au menu' onclick='menu_map()'>
+      <br><br>
+      <input type='button' value="Voir d'autres coiffeurs">
 
     </div>
+
+
+  <script>
+
+    LISTE = []
+
+
+
+
+  
+    jQuery("#coif2").on("click", function(e){
+    document.getElementById('gifou').style.display = 'block';
+    var a = document.getElementById('coif1').value;
+
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              'csrfmiddlewaretoken': '{{csrf_token}}' , 
+              'coiffeur':a,
+
+              
+       
+          },
+          type:"POST",
+          url:"/photo/coupe"
+      })
+      .done(function(data){
+          if (data.error){
+              jQuery("#monCadreAlert").text(data.error);
+              jQuery("#is_save");
+              
+              
+          }
+          else{
+              jQuery("#is_save").html(data.data);
+              jQuery("#monCadreAlert");
+              document.getElementById('gifou').style.display = 'none';
+              document.getElementById('coifcoif').style.display = 'none';
+              document.getElementById('mapmap').style.display = 'block';
+
+              
+
+              var c = 0
+              var c1 = 0
+              var nom = ''
+              for(var i = 0; i < data.length; i ++){
+
+                
+                
+                if (data[i] == "'" || data[i] == "["){
+                  {}
+                }
+                else if(data[i] == ']'){
+                  {}
+                }
+                else if(data[i] == ',' && data[c1+1] == ' ' && data[c1+2] == '['){
+                  LISTE.push([nom])
+                  c+=1
+                  nom = ''
+                }
+                else{
+                  nom += data[i]
+                };
+                c1 += 1
+
+                
+
+              };
+
+          console.log(LISTE)
+
+
+
+
+
+
+
+              document.getElementById('info').innerHTML = data;
+              
+              
+          };
+          
+      });
+  });
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+
 
 
 
@@ -820,6 +926,12 @@ listeeeee = []
   <script>
 
 
+
+
+
+
+
+
   function coiffeur(){
     document.getElementById('CONTENEUR').style.display = "none";
     document.getElementById('coifcoif').style.display = "block";
@@ -845,38 +957,7 @@ function menu_map(){
 
 
 
-  jQuery("#coif2").on("click", function(e){
-    document.getElementById('gifou').style.display = 'block';
-     e.preventDefault();
-      jQuery.ajax({
-          data:{
-              'csrfmiddlewaretoken': '{{csrf_token}}' , 
-              'coiffeur':'coiffeur',
 
-              
-       
-          },
-          type:"POST",
-          url:"/photo/coupe"
-      })
-      .done(function(data){
-          if (data.error){
-              jQuery("#monCadreAlert").text(data.error);
-              jQuery("#is_save");
-              
-              
-          }
-          else{
-              jQuery("#is_save").html(data.data);
-              jQuery("#monCadreAlert");
-              document.getElementById('gifou').style.display = 'none';
-              document.getElementById('coifcoif').style.display = 'none';
-              document.getElementById('mapmap').style.display = 'block';
-              
-          };
-          
-      });
-  });
 
 
 
@@ -1018,36 +1099,7 @@ function menu_map(){
 
 <script>
 
-  jQuery("#im4").on("click", function(e){
-    alert('coucou');
-     e.preventDefault();
-      jQuery.ajax({
-          data:{
-              'csrfmiddlewaretoken': '{{csrf_token}}' , 
-              'produit':String(LISTE1[LISTE1.length -1]),
 
-              
-       
-          },
-          type:"POST",
-          url:"/photo/coupe"
-      })
-      .done(function(data){
-          if (data.error){
-              jQuery("#monCadreAlert").text(data.error);
-              jQuery("#is_save");
-              
-              
-          }
-          else{
-              jQuery("#is_save").html(data.data);
-              jQuery("#monCadreAlert");
-              
-              
-          };
-          
-      });
-  });
 
   function favovo(){
   };
