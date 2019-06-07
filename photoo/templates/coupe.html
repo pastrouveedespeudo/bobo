@@ -165,13 +165,21 @@ listeeeee = []
        <div class="col-lg-12 align-self-end"><br><br>
 
       <center><h1 style='color:black;'>Essaie des coiffures !</h1></center><br>
-      <center><h2 style='color:black; font-style=justu'>Démarre la vidéo, appuie sur stop et essaie des coiffures. Si tu l'aimes appuie sur j'aime cette coupe !</h2></center>
+      <center><h2 style='color:black; font-style=justu'>Démarre la vidéo, appuie sur stop et essaie des coiffures.
+      Si tu l'aimes appuie sur j'aime cette coupe ! Dans mes services tu peux récupérer tes magasins aux alentoures selon TES horraires</h2></center>
 
       <br><br><br><br><br><br><br><br><br><br><br>
-      <div class="col-lg-12 align-self-end"><br><br><br>
-                  <center><h2 style='color:black;'>
+
+
+
+</header>
+
+<header class="masthead" style='background:#212529'>
+
+      <div class="col-lg-12 align-self-end">
+                  <center><h2 style='color:white;'>
                     Essayons quelques choses
-                  </h2><br><br><br></center>
+                  </h2></center>
           <div class="container>
               <div class="row justify-content-center">
  
@@ -179,13 +187,20 @@ listeeeee = []
               </div>
           </div>
 
+      <style>
+        input{
+            background:white;
 
+          }
+
+      </style>
       <div class="container">
         <div class="row">
         
           <div class="col-xs-12 col-md-12 col-lg-3">
             <center>
-            <div style='border:1px solid red; margint-left:50px; width:220px;'>
+            <div margin-top:-30px; margin-left:-20px; height:380px; width:250px;'>
+            <br>
             <input type='button' value='ajouter de la longueur?'
               style=" border:3px solid black"
               onclick='ajout_longueur()'/><br><br>
@@ -209,7 +224,7 @@ listeeeee = []
                   <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux" value=''>{% csrf_token %}
                   <input type="hidden" name="coupe"
                     value=LISTECOUPE>{% csrf_token %}<br>
-                  <input type="button" id='sauve' value="J'aime cette coupe"
+                  <input type="button" id='sauve' value="J'aime cette coupe" style='border:3px solid black;'
                   <a class="btn btn-light btn-xl js-scroll-trigger">{% csrf_token %}
                 </form>{% csrf_token %}
               </div>
@@ -379,7 +394,8 @@ listeeeee = []
     
           
             {% if user.is_authenticated %}
-                <center><p style='color:black;'><strong>Mes favoris</strong></p></center>
+            <br>
+                <center><p style='color:white;'><strong>Mes favoris</strong></p></center>
             {% else %}
                 <p><strong>Inscris toi ! et ajoute des favoris !</strong></p>
             {% endif %}
@@ -396,13 +412,14 @@ listeeeee = []
           <div class="col-lg-6" id='vivideo'>
 
             <div id="basic" style="text-align:center; z-index: 4;">
-              <video class="videostream" autoplay style="z-index: 4; border:2px solid black;"></video>
-              <div <div style='border:1px solid red;'>
+              <video class="videostream" autoplay style="z-index: 4; border:5px solid black;"></video>
+              
+              <center><div style='width:75%;'><br>
+              <p><button class="capture-button" style='border:2px solid black;'>Start</button>&nbsp;&nbsp;
+              <button id="stop-button" style="border:2px solid black;">Stop</button></p>
+              <p><button id="cssfilters-apply" style='border:2px solid black;'> Mettre en noir et blanc conseillé</button></p>
               <br>
-              <p><button class="capture-button">Start</button>&nbsp;&nbsp;<button id="stop-button">Stop</button></p>
-              <p><button id="cssfilters-apply"> Mettre en noir et blanc conseillé</button></p>
-              <br>
-            </div>
+            </div></center>
             </div>
 
             
@@ -427,11 +444,12 @@ listeeeee = []
           <div class="col-lg-3">
 
 
-          <center><strong><p style='color:black;'>Coupes</p></strong></center>
+          <center><strong><p style='color:white;'>Coupes</p></strong></center>
 
           <div>
           <center>
-            <div id='placement' style='border:1px solid red;'>
+            <div id='placement'>
+              <br>
               <input type='button' value='coupe longue' onclick='coupe_longue()' style='border:3px solid black;'><br><br>
               <input type='button' value='coupe courte' onclick='coupe_courte()' style='border:3px solid black;'><br><br>
               <input type='button' value='coupe couleur longue' onclick='coupe_longue_coul()' style='border:3px solid black;'><br><br>
@@ -642,12 +660,6 @@ listeeeee = []
           {% endfor %}
       {% endfor %}
 
-
-
-</header>
-
-<header class="masthead" style='background:#212529'>
-
 </header>
 
 
@@ -665,7 +677,7 @@ listeeeee = []
           <div class="mt-5">
            <style>#im6{width:100px; height:100px;}</style>
            <img src = "/static/img/portfolio/icone/telecharger.png"/ id="im6">
-            <h3 class="h4 mb-2">Télécharger une image</h3>
+            <h3 class="h4 mb-2">Coiffeur</h3>
             <p class="text-muted mb-0">Télécharge une image et va essayer des coupes de cheveux et des vetements !!</p>
           </div>
         </div>
@@ -675,7 +687,7 @@ listeeeee = []
           <div class="mt-5">
            <style>#im4{width:100px; height:100px;}</style>
            <img src = "/static/img/portfolio/icone/photo.png"/ id="im4">
-            <h3 class="h4 mb-2">Prendre une photo !   </h3>
+            <h3 class="h4 mb-2">Salle de gym</h3>
             <br>
             <p class="text-muted mb-0">Va faire la star ! et va essayer une coupe de cheveux !</p>
           </div>
@@ -686,7 +698,7 @@ listeeeee = []
           <div class="mt-5">
            <style>#im5{width:100px; height:100px;}</style>
            <img src = "/static/img/portfolio/icone/vetements.png"/ id="im5">
-            <h3 class="h4 mb-2">Essaie des vetements !</h3>
+            <h3 class="h4 mb-2">Magasins de vêtement</h3>
             <p class="text-muted mb-0">Selon la tendance du moment va essayer des vetements
             notre algorith fais par un genie chinois te propose les meilleurs couleurs </p>
           </div>
@@ -697,7 +709,7 @@ listeeeee = []
           <div class="mt-5">
            <style>#im7{width:100px; height:100px;}</style>
            <img src = "/static/img/portfolio/icone/magasin.png"/ id="im7">
-            <h3 class="h4 mb-2">e-commerce</h3>
+            <h3 class="h4 mb-2">Essayer des vêtements</h3>
             <br>
             <p class="text-muted mb-0">thune Thune THUNEEEE</p>
           </div>
