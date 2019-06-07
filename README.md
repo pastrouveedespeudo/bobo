@@ -1,7 +1,25 @@
 
-merde c les horraires du jeudi a gauche y'a un encadré avec toutes les dates (scrap avec les jours de la semaine + int + ":")
+en gros: 
 
-+ les avis jdois juste faire des soustractions mais je sais pas comment faire et jdétourne le probleme avec du scrappage pfffffff
+on prend la premeire condition la plus basse en pollu -------------- ok
+
+on récupere toutes les conditions ou y'a une fois qui sort ----------- ok
+
+on compare premeire + les une condi - > on espere que ca sorte une diff -> soustraction
+
+la derniere condi on la compare avec les autres on espere que ca sorte une condi ainsi de suite
+
+on fait la moyenne de toutes les conditions
+
+remplissage database
+
+
+si ca marche a la fin week = 10, bouchon grand = 10, combo condition = 5 ect
+
+sinon refaire la meme chose qu'avant
+
+
+
 
 réfléchis a la prediction low cost et c ok
 
