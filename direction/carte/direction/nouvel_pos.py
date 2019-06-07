@@ -2,7 +2,11 @@ from math import *
 
 def long_lat(lat, long, km, sens):
     print(km)
-    km = float(km)
+    try:
+        km = float(km)
+    except:
+        km = 20.0
+        km = float(km)
     #print(lat, long, km, sens)
 
     #print(sens)
