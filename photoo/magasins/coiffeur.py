@@ -113,21 +113,36 @@ def horraire(nom, ville):
         for j in semaine:
             a = str(i).find(str(j))
             if a >= 0:
-
-                liste1.append([i, liste[c+1]])
+                if i == 'Monday':
+                    p = 'lundi'
+                elif i == 'Tuesday':
+                    p = 'mardi'
+                elif i == 'Wednesday':
+                    p = 'mercredi'
+                elif i == 'Thursday':
+                    p = 'jeudi'
+                elif i == 'Friday':
+                    p = 'vendredi'
+                elif i == 'Saturday':
+                    p = 'samedi'
+                elif i == 'Sunday':
+                    p = 'dimanche'
+                liste1.append([p, liste[c+1]])
                 
         c+=1
       
        
     print(liste1)
-
+    return liste1
 
 def numero(nom, ville):
     
     path = "https://www.google.com/search?ei={}+{}+numero&oq={}+{}+numero"
     path = path.format(nom, ville, nom, ville)
     
-    r = requests.get(path)
+    r = requests.get(path, headers={
+         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
+     })
     page = r.content
     
     soup = BeautifulSoup(page, "html.parser")
