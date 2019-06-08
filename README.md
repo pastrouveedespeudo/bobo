@@ -1,4 +1,4 @@
-est désagréable mais c pour prévenir et pour le groupe tobis et cosmide 
+est désagréable mais c pour prévenir et pour le groupe tobis et cosmide mais ouesh calme
 
 #coder avec vim c classe qu'au début serieux
 
