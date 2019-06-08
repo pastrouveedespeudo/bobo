@@ -80,48 +80,51 @@ def horraire(nom, ville):
     path = 'https://www.google.com/search?ei=Gnn5XJP5KIu5gweW1qaQBQ&q={0}+{1}+horraires&oq={0}+{1}+horraires'
 
     path = path.format(nom, ville)
-    r = requests.get(path)
+    r = requests.get(path, headers={
+         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
+     })
     page = r.content
-    
+
     soup = BeautifulSoup(page, "html.parser")
-    
-    propriete = soup.find_all("span")
+
+    propriete = soup.find_all("td")
 
     liste = []
     for i in propriete:
         liste.append(i.string)
-    
-    semaine = ['lundi',
-              'mardi',
-              'mercredi',
-              'jeudi',
-              'vendredi',
-              'samedi',
-              'dimanche',
+
+    semaine = ['Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday',
+              'Saturday',
+              'Sunday',
              ]
-    
+
     jour = ''
 
     liste1 = []
     c = 0
     for i in liste:
         heure = ''
-
+        print(i)
+        print('\n')
         for j in semaine:
             a = str(i).find(str(j))
             if a >= 0:
+
                 liste1.append([i, liste[c+1]])
                 
         c+=1
       
        
     print(liste1)
-    return liste1
 
 
 def numero(nom, ville):
-
-    path = "https://www.google.com/search?ei=oFr6XJ-0INGua6y9o4gJ&q={}+{}+numero&oq={}+{}+numero"
+    
+    path = "https://www.google.com/search?ei={}+{}+numero&oq={}+{}+numero"
     path = path.format(nom, ville, nom, ville)
     
     r = requests.get(path)
@@ -136,8 +139,7 @@ def numero(nom, ville):
             pass
         else:
             liste.append(i.string)
-
-
+            
     tel = ''
 
     fini = ''
@@ -186,10 +188,9 @@ def numero(nom, ville):
 #print(les_coiffeurs)
     
 #for i in les_coiffeurs:
-a = horraire('Coiffure Marilyne', 'crest')
-print(a)
-#numero('Coiffure Marilyne', 'crest')
-
+#a = horraire('Coiffure Marilyne', 'crest')
+#print(a)
+#print(numero('Coiffure Marilyne', 'crest'))
 
 
 
