@@ -1,3 +1,5 @@
+stop pls
+
 #coder avec vim c classe qu'au début serieux
 
 #récupere le code source sinon fais ca
