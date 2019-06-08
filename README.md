@@ -1,4 +1,4 @@
-stop pls
+est désagréable mais c pour prévenir et pour le groupe tobis et cosmide 
 
 #coder avec vim c classe qu'au début serieux
 
