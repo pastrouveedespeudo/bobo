@@ -120,13 +120,15 @@ def coupe(request):
                     coif = ''
                 else:
                     coif += i
+                    
+            liste.append(coif)
                 
             print(liste,'000000000000000000048787/')
 
             num  = []
             for i in liste:
                 a = numero(i, vivile)
-                num.append(a)
+                num.append([a])
 
             return HttpResponse(num)
 
@@ -149,8 +151,9 @@ def coupe(request):
             MON_COIFFEUR.extend(les_coiffeurs)
             #print(MON_COIFFEUR[:4])
             
+            sécu = 0
             while c <= 4:
-                
+                sécu += 1
                 for i in MON_COIFFEUR:
 
                     horraire1 = horraire(i, coiffure)
@@ -163,7 +166,9 @@ def coupe(request):
                
                         coif.append([i, horraire1, ""])
                         c+=1
-          
+                        
+                if sécu == 10:
+                    break
               
                 
 
