@@ -2,7 +2,7 @@ pour google map mtn
 
 
 
-
+j'ai enfin pu sortir ste citation pfiouuuu jattend de la sortir depuis un bon moment, j'ai crus jtai yoda ^^ puis au pire si c pas un délire ptetre sur github en codant des fois jpe mettre une cirtation ou deux on sait pas et biensur que jme ferai pas assassiné mais sté tard la vidéo était un peu mystique voila 
 
 
 
