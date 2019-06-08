@@ -1,6 +1,8 @@
 
 mettre les inputs en gris foncé sombre (meme si t'aime le mode qui fais de la lumiere en dessous ne le met pas) sinon mettre des href noir
 
+mettre undélimitation en dessous de / entre projet et social
+
 
 en gros: 
 
