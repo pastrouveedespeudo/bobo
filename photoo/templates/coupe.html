@@ -667,16 +667,19 @@ listeeeee = []
 
 
   <!-- Services Section -->
-  <section class="page-section" id="services" style='background:url("/static/img/parquet1.jpg");'>
+  <section class="page-section" id="services" style='background:url("/static/img/parquet1.jpg"); text-align:center'>
 
 
     <div id='coifcoif' style='display:none;'>
     
-      <center><input type='text' id='coif1' style='text-align:center;' size='30' height='20' placeholder='Votre ville'></center><br>
+      <input type='text' id='coif1'
+              style='text-align:center;' size='30'
+              placeholder='Votre ville'>
+      <br><br>
       
-      <center><input type='button' value='Retour au menu' onclick='menu()'>
+      <center><input type='button' onclick='menuuu()' value='Retour au menu'></center>
       
-      <input type='button' id='coif2' value='valider'></center><br>
+      <center><input type='button' id='coif2' value='valider'></center><br>
 
 
       
@@ -688,16 +691,32 @@ listeeeee = []
 
 
 
-    <div id='mapmap' style='display:none'>
-    
+    <div id='mapmap' style='background:#343a40'>
+      <br>
 
-      <center><div id='info' style='border-radius: 2px solid black; backgound:url("/static/img/parquet1.jpg");'></div></center>
-      <center><div id='info'></div></center>
-      <center><div id='info'></div></center>
+    <div class='row'>
+    
+      <div class=''
+      id='info1' style='border-radius: 20px; width:200px; height:200px; background:url("/static/img/parquet1.jpg");'>
+                
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      </div><br><br><br><br>
       
+
+
+      <div class=''
+        id='info2' style='border-radius: 20px; width:200px; height:200px; background:url("/static/img/parquet1.jpg");'></div>
+        
+      <div class=''
+        id='info3' style='border-radius: 20px; width:200px; height:200px; background:url("/static/img/parquet1.jpg");'></div>
+
+
+    </div>
+
+    
       <center><div id='map'></div></center>
 
-      <center><input type='button' value='Retour au menu' onclick='menu_map()'>
+      <center><input type='button' value='Retour au menu' onclick='menu_map()'></center>
  
 
     </div>
@@ -798,7 +817,7 @@ listeeeee = []
 
                               
 
-            document.getElementById('info').innerHTML = info_coiffeur;
+            document.getElementById('info1').innerHTML = info_coiffeur;
 
 
 
@@ -976,7 +995,7 @@ function menu_map(){
     document.getElementById('CONTENEUR').style.display = 'block';
   };
 
-  function menu(){
+  function menuuu(){
     document.getElementById('coifcoif').style.display = 'none';
     document.getElementById('CONTENEUR').style.display = 'block';
   };
