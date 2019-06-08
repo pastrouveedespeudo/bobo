@@ -80,12 +80,17 @@ def horraire(nom, ville):
     path = 'https://www.google.com/search?ei=Gnn5XJP5KIu5gweW1qaQBQ&q={0}+{1}+horraires&oq={0}+{1}+horraires'
 
     path = path.format(nom, ville)
+
+    #print(path)
+
+
+    
     r = requests.get(path, headers={
          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
      })
     page = r.content
 
-    soup = BeautifulSoup(page, "html.parser")
+    soup = BeautifulSoup(page, "html.parser", from_encoding="utf-8")
 
     propriete = soup.find_all("td")
 
@@ -93,14 +98,26 @@ def horraire(nom, ville):
     for i in propriete:
         liste.append(i.string)
 
-    semaine = ['Monday',
-              'Tuesday',
-              'Wednesday',
-              'Thursday',
-              'Friday',
-              'Saturday',
-              'Sunday',
+
+    semaine = ['lundi',
+              'mardi',
+              'mercredi',
+              'jeudi',
+              'vendredi',
+              'samedi',
+              'dimanche',
              ]
+
+
+
+##    semaine = ['Monday',
+##              'Tuesday',
+##              'Wednesday',
+##              'Thursday',
+##              'Friday',
+##              'Saturday',
+##              'Sunday',
+##             ]
 
     jour = ''
 
@@ -108,8 +125,8 @@ def horraire(nom, ville):
     c = 0
     for i in liste:
         heure = ''
-        print(i)
-        print('\n')
+        #print(i)
+        #print('\n')
         for j in semaine:
             a = str(i).find(str(j))
             if a >= 0:
@@ -127,8 +144,10 @@ def horraire(nom, ville):
                     p = 'samedi'
                 elif i == 'Sunday':
                     p = 'dimanche'
-                liste1.append([p, liste[c+1]])
                 
+                #liste1.append([p, liste[c+1]])
+                liste1.append([i, liste[c+1]])
+            
         c+=1
       
        
@@ -199,12 +218,12 @@ def numero(nom, ville):
 ##    les_coiffeurs = ville(i)
 ##    coiffeurs.extend(les_coiffeurs)
 
-#les_coiffeurs = ville(la_ville)
-#print(les_coiffeurs)
+les_coiffeurs = ville('valence')
+print(les_coiffeurs)
     
-#for i in les_coiffeurs:
-#a = horraire('Coiffure Marilyne', 'crest')
-#print(a)
+for i in les_coiffeurs:
+    a = horraire(i, 'valence')
+    print(a)
 #print(numero('Coiffure Marilyne', 'crest'))
 
 
