@@ -3,7 +3,8 @@ from bs4 import *
 import datetime
 
 
-LISTE = ['coiffure', 'COIFFURE', 'salon', 'salon de coiffure']
+LISTE = ['coiffure', 'COIFFURE', 'salon', 'salon de coiffure',
+         'Franck Provost', 'coiffeur' ]
 
 
 
@@ -68,6 +69,7 @@ def ville(ville):
     liste = []
 
     for i in propriete:
+        print(i.string)
         for j in LISTE:
             a = str(i.string).find(str(j))
             if a >= 0:
@@ -99,25 +101,25 @@ def horraire(nom, ville):
         liste.append(i.string)
 
 
-##    semaine = ['lundi',
-##              'mardi',
-##              'mercredi',
-##              'jeudi',
-##              'vendredi',
-##              'samedi',
-##              'dimanche',
-##             ]
-
-
-
-    semaine = ['Monday',
-              'Tuesday',
-              'Wednesday',
-              'Thursday',
-              'Friday',
-              'Saturday',
-              'Sunday',
+    semaine = ['lundi',
+              'mardi',
+              'mercredi',
+              'jeudi',
+              'vendredi',
+              'samedi',
+              'dimanche',
              ]
+
+
+
+##    semaine = ['Monday',
+##              'Tuesday',
+##              'Wednesday',
+##              'Thursday',
+##              'Friday',
+##              'Saturday',
+##              'Sunday',
+##             ]
 
     jour = ''
 
@@ -145,8 +147,8 @@ def horraire(nom, ville):
                 elif i == 'Sunday':
                     p = 'dimanche'
                 
-                liste1.append([p, liste[c+1]])
-                #liste1.append([i, liste[c+1]])
+                #liste1.append([p, liste[c+1]])
+                liste1.append([i, liste[c+1]])
             
         c+=1
       
@@ -208,7 +210,7 @@ def numero(nom, ville):
         if fini == True:
             break
 
-    print(tel)
+    print(tel,'11111111111111111111')
     return tel
 
 
@@ -220,7 +222,7 @@ def numero(nom, ville):
 
 
 
-#coiffeurs = []
+
 
 #la_ville = 'eurre'
 
@@ -228,17 +230,20 @@ def numero(nom, ville):
 #alentour = rayon(la_ville)
 #print(alentour)
 ##
-##for i in alentour:
-##    les_coiffeurs = ville(i)
-##    coiffeurs.extend(les_coiffeurs)
 
+#les_coiffeurs = ville('vénissieux')
+    
+    
+
+
+#print(les_coiffeurs)
 ##les_coiffeurs = ville('valence')
 ##print(les_coiffeurs)
 ##    
 ##for i in les_coiffeurs:
 ##    a = horraire(i, 'valence')
 ##    print(a)
-print(numero('Coiffure Marilyne', 'crest'))
+#print(numero('Coiffure Marilyne', 'crest'))
 
 
 
