@@ -52,11 +52,9 @@ la partie machine a o
 
 #supprimer favoris
 
-##scrapper les horraires et les magasins aux alentours : coiffeur, sale de gym et vetement du genre le mec
+#l'image par email du coiffeur 
 
-remplis les horraires ect genre formulaire km ect un truk qui envoie l'image par email du coiffeur 
 
-# si non efface inscription
 
 #https://myprofilmypollution.herokuapp.com/
 
