@@ -1075,7 +1075,10 @@ listeeeee = []
 
 
 
-
+  <input type='button' value='a' id='declencheur1' style='display:none;'>
+  <input type='button' value='aa' id='declencheur2' style='display:none;'>
+  <input type='button' value='a' id='declencheur3' style='display:none;'>
+  <input type='button' value='aa' id='declencheur4' style='display:none;'>
 
 
   <script>
@@ -1157,10 +1160,10 @@ function menu_map(){
             }
        
             LA_LISTE.push(nom)
-            var a = document.getElementById('yoo1').innerHTML = LA_LISTE[0];
-            var b = document.getElementById('yoo2').innerHTML = LA_LISTE[1];
-            var c = document.getElementById('yoo3').innerHTML = LA_LISTE[2];
-            var d = document.getElementById('yoo4').innerHTML = LA_LISTE[3];
+            var a = document.getElementById('yoo1').innerHTML = LA_LISTE[0] + "<br><br><input type='button' id='but_map1' value='Voir sur la carte' name='" + LISTE[0] + "' onclick='mapo1()'>";                            
+            var b = document.getElementById('yoo2').innerHTML = LA_LISTE[1] + "<br><br><input type='button' id='but_map2' value='Voir sur la carte' name='" + LISTE[7] + "' onclick='mapo2()'>";
+            var c = document.getElementById('yoo3').innerHTML = LA_LISTE[2]  + "<br><br><input type='button' id='but_map3' value='Voir sur la carte' name='" + LISTE[14] + "' onclick='mapo3()'>";
+            var d = document.getElementById('yoo4').innerHTML = LA_LISTE[3]  + "<br><br><input type='button' id='but_map4' value='Voir sur la carte' name='" + LISTE[21] + "' onclick='mapo4()'>";
 
             LISTE_COIFURE = [];
               
@@ -1174,15 +1177,165 @@ function menu_map(){
 
 
 
+  function mapo1(){
+   
+    document.getElementById('declencheur1').click()
+
+    }
+
+  function mapo2(){
+    document.getElementById('declencheur2').click()
+
+    }
+
+  function mapo3(){
+    document.getElementById('declencheur3').click()
+
+    }
+
+  function mapo4(){
+    document.getElementById('declencheur4').click()
+
+    }
+
+  jQuery("#declencheur1").on("click", function(e){
+     var b = document.getElementById('coif1').value;
+     var a = document.getElementById('but_map1').name;
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              'csrfmiddlewaretoken': '{{csrf_token}}' , 
+              'buttony':String(LISTE[0]),
+              'country':b,
+              
+
+              
+       
+          },
+          type:"POST",
+          url:"/photo/coupe"
+      })
+      .done(function(data){
+          if (data.error){
+              jQuery("#monCadreAlert").text(data.error);
+              jQuery("#is_save");
+              
+              
+          }
+          else{
+              jQuery("#is_save").html(data.data);
+              jQuery("#monCadreAlert");
+              
+              
+          };
+          
+      });
+  });
+
+  
+
+
+  jQuery("#declencheur2").on("click", function(e){
+     var b = document.getElementById('coif1').value;
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              'csrfmiddlewaretoken': '{{csrf_token}}' , 
+              'buttony':String(LISTE[7]),
+              'country':b,
+
+              
+       
+          },
+          type:"POST",
+          url:"/photo/coupe"
+      })
+      .done(function(data){
+          if (data.error){
+              jQuery("#monCadreAlert").text(data.error);
+              jQuery("#is_save");
+              
+              
+          }
+          else{
+              jQuery("#is_save").html(data.data);
+              jQuery("#monCadreAlert");
+              
+              
+          };
+          
+      });
+  });
+
+
+
+  jQuery("#declencheur3").on("click", function(e){
+    var a = document.getElementById('but_map3').name;
+    var b = document.getElementById('coif1').value;
+
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              'csrfmiddlewaretoken': '{{csrf_token}}' , 
+              'buttony':String(LISTE[14]),
+              'country':b,
+              
+       
+          },
+          type:"POST",
+          url:"/photo/coupe"
+      })
+      .done(function(data){
+          if (data.error){
+              jQuery("#monCadreAlert").text(data.error);
+              jQuery("#is_save");
+              
+              
+          }
+          else{
+              jQuery("#is_save").html(data.data);
+              jQuery("#monCadreAlert");
+              
+              
+          };
+          
+      });
+  });
 
 
 
 
-
-
-
-
-
+  jQuery("#declencheur4").on("click", function(e){
+     var a = document.getElementById('but_map4').name;
+     var b = document.getElementById('coif1').value;
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              'csrfmiddlewaretoken': '{{csrf_token}}' , 
+               'buttony':String(LISTE[21]),
+               'country':b, 
+              
+       
+          },
+          type:"POST",
+          url:"/photo/coupe"
+      })
+      .done(function(data){
+          if (data.error){
+              jQuery("#monCadreAlert").text(data.error);
+              jQuery("#is_save");
+              
+              
+          }
+          else{
+              jQuery("#is_save").html(data.data);
+              jQuery("#monCadreAlert");
+              
+              
+          };
+          
+      });
+  });
 
 
 
@@ -1244,9 +1397,9 @@ function menu_map(){
           Abonne toi sur nos reseaux sociaux !
         </h2>
 
-       <a href='www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
-       <a href='www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
-       <a href='www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>
+       <a href='https//:www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
+       <a href='https//:www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
+       <a href='https//:www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>
                   
     </div>
   </section>
