@@ -1,6 +1,5 @@
 
-
-
+y'as pas tous les num, faut que jnéttoie, et la carte google mtn et gym
 
 en gros: 
 
