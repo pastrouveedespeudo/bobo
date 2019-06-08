@@ -741,15 +741,20 @@ listeeeee = []
               document.getElementById('mapmap').style.display = 'block';
 
               
-
+              
+              
               var c = 0
               var c1 = 0
               var nom = ''
               for(var i = 0; i < data.length; i ++){
 
                 
-                
-                if (data[i] == "'" || data[i] == "["){
+                if(data[i] == "'" && data[c1+1] == ']' && data[c1+2] == '['){
+                  LISTE.push([nom])
+                  c+=1
+                  nom = ''
+                }
+                else if (data[i] == "'" || data[i] == "["){
                   {}
                 }
                 else if(data[i] == ']'){
@@ -769,15 +774,37 @@ listeeeee = []
 
               };
 
-          console.log(LISTE)
+            console.log(LISTE)
+
+            var info_coiffeur =  "<center>" + 
+                                  "<p style='color:white'>" +
+                                  "Nous avons trouvé quelques coiffeurs près de chez vous" +
+                                  "</p></center>" +
+                                  "<br><br><center><strong>" +
+                                  LISTE[0] + " :" +
+                                  "</strong></center><br>" + "<center>" + LISTE[1] + " " +
+                                  LISTE[2] + " " + LISTE[3] + " " + LISTE[4] + " " + LISTE[5] + " " + LISTE[6] + "</center>"
+                                  + "<br><br>"
+                                  + "<center><strong>" +LISTE[7] + "</strong></center><br>" + "<center>" +
+                                  LISTE[8] + " " + LISTE[9] + " " + LISTE[10] + " " + LISTE[11] + " " + LISTE[12] + " " + LISTE[13] + "</center>"
+                                  + "<br><br>"
+                                  + "<center><strong>" +LISTE[14] + "</strong></center><br>" + "<center>" +
+                                  LISTE[15] + " " + LISTE[16] + " " + LISTE[17] + " " + LISTE[18] + " " + LISTE[19] + " " + LISTE[20] + "</center>"
+                                  + "<br><br>" 
+                                  + "<center><strong>" +LISTE[21] + "</strong></center><br>" + "<center>" +
+                                  LISTE[22] + " " + LISTE[23] + " " + LISTE[24] + " " + LISTE[25] + " " + LISTE[26] +"</center><br><br>";
+                                          
+
+                              
+
+            document.getElementById('info').innerHTML = info_coiffeur;
 
 
 
 
 
 
-
-              document.getElementById('info').innerHTML = data;
+              
               
               
           };
