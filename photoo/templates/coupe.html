@@ -764,24 +764,27 @@ listeeeee = []
 
 
            
-            <br><br>
+            <br>
             
         </div>
     
     
       </center>
           
-
-    
-      <center><div id='map'></div></center>
-
-      <center><input type='button' value='Retour au menu' onclick='menu_map()'></center>
+      <center><input type='button' value='Retour au menu' onclick='menu_map()'></center><br><br>
  
     </div>
     <br><br><br><br><br><br><br>
     </div>
 
+  <div id='the_map' style='display:none;'>
+    <center><div id='map'></div></center>
 
+      <center><input type='button' value='Retour au menu' onclick='menu_map()'></center>
+
+
+
+  </div>
   <script>
 
     
@@ -850,6 +853,10 @@ listeeeee = []
                 else if(data[i] == ','){
                   {}
                 }
+                else if(data[i] == '"'){
+                  {}
+
+                }
                 else{
                   nom += data[i]
                 };
@@ -861,21 +868,7 @@ listeeeee = []
 
             console.log(LISTE)
 
-            if(LISTE[6].length - 1 == ','){
-               LISTE[6] = LISTE[6].slice(0,-2)
-
-            }
-            else if(LISTE[13].length - 1 == ','){
-              LISTE[13] = LISTE[13].slice(0,-2)
-            }
-            else if(LISTE[20].length - 1 == ','){
-              LISTE[20] = LISTE[20].slice(0,-2)
-            }
-            else if(LISTE[26].length - 1 == ','){
-              LISTE[26] = LISTE[26].slice(0,-2)
-            }
-                                
-              
+            
             var info_coiffeur1 =  "<br><br><strong>" + LISTE[0] + " :</strong><br><br>" +
                                   LISTE[1] + "<br>" +
                                   LISTE[2] + "<br>" +
