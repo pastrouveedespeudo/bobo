@@ -1,5 +1,6 @@
 
-y'as pas tous les num, faut que jnéttoie, et la carte google mtn et gym mais c putin de chiant, tu fais un ctrl s sur la views ca recharge tout pendant 10 secondes... et jtic sur sa , ensuite faut push y'a un truk qui marche pas pffffff c super long 
+mettre les inputs en gris foncé sombre (meme si t'aime le mode qui fais de la lumiere en dessous ne le met pas) sinon mettre des href noir
+
 
 en gros: 
 
