@@ -1,5 +1,5 @@
 
-y'as pas tous les num, faut que jnéttoie, et la carte google mtn et gym
+y'as pas tous les num, faut que jnéttoie, et la carte google mtn et gym mais c putin de chiant, tu fais un ctrl s sur la views ca recharge tout pendant 10 secondes... et jtic sur sa , ensuite faut push y'a un truk qui marche pas pffffff c super long 
 
 en gros: 
 
