@@ -151,25 +151,25 @@ def coupe(request):
             MON_COIFFEUR.extend(les_coiffeurs)
   
 
-            while c < 4:
+            
                 
-                for i in MON_COIFFEUR:
-        
-                    horraire1 = horraire(i, coiffure)
-                        
-                    print(horraire1)
-                 
-                    if [horraire1] == [] or horraire1 == []\
-                       or horraire1 == "" or horraire1 == " "\
-                       or horraire1 == None:
+            for i in MON_COIFFEUR:
                 
-                        MON_COIFFEUR.remove(i)
-                        
-                    else:
-                        coif.append([i, horraire1, ""])
-                        MON_COIFFEUR.remove(i)
-                        c+=1
-           
+
+                horraire1 = horraire(i, coiffure)
+                print(i)
+                print(horraire1)
+             
+                if [horraire1] == [] or horraire1 == []\
+                   or horraire1 == "" or horraire1 == " "\
+                   or horraire1 == None:
+                    MON_COIFFEUR.remove(i)
+                    
+                else:
+                    coif.append([i, horraire1, ""])
+                    MON_COIFFEUR.remove(i)
+                
+       
             
               
                 
