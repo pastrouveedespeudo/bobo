@@ -1,20 +1,4 @@
-est désagréable mais c pour prévenir et pour le groupe tobis et cosmide mais ouesh calme faut pas se venre pour rien ca sert a rien de senerver ca sert a quoi de crier ? on voit que ce que l'on a
-
-#coder avec vim c classe qu'au début serieux
-
-#récupere le code source sinon fais ca
-
-#purée sans amaze ca sert a rien non pffffff segoe c ok mais... calme tu trouveras
-
-pour eviter le time out
-
-views:
-
-tu fais un par un tu fais un liste (la premiere) puis t'efface au fur et a mesure
-
-tu simules le click
-
-ainsi de suite avec un loading pcque.... faut aussi prendre l'adresse t'as oublié l'adresse pour google map
+pour google map mtn 
 
 
 
