@@ -3,8 +3,10 @@ from bs4 import *
 import datetime
 
 
-LISTE = ['coiffure', 'COIFFURE', 'salon', 'salon de coiffure',
-         'Franck Provost', 'coiffeur' ]
+LISTE1 = ['coiffure', 'COIFFURE', 'salon', 'salon de coiffure',
+         'Franck Provost', 'coiffeur', 'hairdresser', 'prestige', 'Prestige',
+          'hair', 'bambo', 'haircut', 'Hair', 'Hairdresser', 'Coiffure',
+          'Coiffeur', 'Hairdressers', 'coiffeuse']
 
 
 
@@ -70,11 +72,11 @@ def ville(ville):
 
     for i in propriete:
         print(i.string)
-        for j in LISTE:
+        for j in LISTE1:
             a = str(i.string).find(str(j))
             if a >= 0:
                 liste.append(i.string)
-    #print(liste)
+    print(liste)
     return liste #coiffeur dans ces villes
 
 def horraire(nom, ville):
@@ -100,26 +102,26 @@ def horraire(nom, ville):
     for i in propriete:
         liste.append(i.string)
 
-
-    semaine = ['lundi',
-              'mardi',
-              'mercredi',
-              'jeudi',
-              'vendredi',
-              'samedi',
-              'dimanche',
-             ]
-
-
-
-##    semaine = ['Monday',
-##              'Tuesday',
-##              'Wednesday',
-##              'Thursday',
-##              'Friday',
-##              'Saturday',
-##              'Sunday',
+##
+##    semaine = ['lundi',
+##              'mardi',
+##              'mercredi',
+##              'jeudi',
+##              'vendredi',
+##              'samedi',
+##              'dimanche',
 ##             ]
+
+
+
+    semaine = ['Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday',
+              'Saturday',
+              'Sunday',
+             ]
 
     jour = ''
 
@@ -147,8 +149,8 @@ def horraire(nom, ville):
                 elif i == 'Sunday':
                     p = 'dimanche'
                 
-                #liste1.append([p, liste[c+1]])
-                liste1.append([i, liste[c+1]])
+                liste1.append([p, liste[c+1]])
+                #liste1.append([i, liste[c+1]])
             
         c+=1
       
