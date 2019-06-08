@@ -99,25 +99,25 @@ def horraire(nom, ville):
         liste.append(i.string)
 
 
-    semaine = ['lundi',
-              'mardi',
-              'mercredi',
-              'jeudi',
-              'vendredi',
-              'samedi',
-              'dimanche',
-             ]
-
-
-
-##    semaine = ['Monday',
-##              'Tuesday',
-##              'Wednesday',
-##              'Thursday',
-##              'Friday',
-##              'Saturday',
-##              'Sunday',
+##    semaine = ['lundi',
+##              'mardi',
+##              'mercredi',
+##              'jeudi',
+##              'vendredi',
+##              'samedi',
+##              'dimanche',
 ##             ]
+
+
+
+    semaine = ['Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday',
+              'Saturday',
+              'Sunday',
+             ]
 
     jour = ''
 
@@ -145,27 +145,27 @@ def horraire(nom, ville):
                 elif i == 'Sunday':
                     p = 'dimanche'
                 
-                #liste1.append([p, liste[c+1]])
-                liste1.append([i, liste[c+1]])
+                liste1.append([p, liste[c+1]])
+                #liste1.append([i, liste[c+1]])
             
         c+=1
       
        
-    print(liste1)
+
     return liste1
 
 def numero(nom, ville):
     
-    path = "https://www.google.com/search?ei={}+{}+numero&oq={}+{}+numero"
-    path = path.format(nom, ville, nom, ville)
-    
+    path = "https://annuaire.118712.fr/?s={}+{}"
+    path = path.format(nom, ville)
+
     r = requests.get(path, headers={
          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
      })
     page = r.content
-    
+  
     soup = BeautifulSoup(page, "html.parser")
-    propriete = soup.find_all("div")
+    propriete = soup.find_all("span")
 
     liste = []
     for i in propriete:
@@ -182,9 +182,23 @@ def numero(nom, ville):
         c = 0
         for j in i:
             try:
+                
                 a = int(i[0])
                 b = int(i[1])
-                if a == int(a) and b == int(b):
+                c = int(i[3])
+                d = int(i[4])
+                e = int(i[6])
+                f = int(i[7])
+                g = int(i[9])
+                h = int(i[10])
+                ii = int(i[12])
+                j = int(i[13])
+                
+                if a == int(a) and b == int(b) and\
+                    c == int(c) and d == int(d) and\
+                    e == int(e) and f == int(f) and\
+                    g == int(g) and h == int(h) and\
+                    ii == int(ii) and j == int(j):
                     tel += i
                     fini = True
                     break
@@ -194,7 +208,7 @@ def numero(nom, ville):
         if fini == True:
             break
 
- 
+    print(tel)
     return tel
 
 
@@ -218,13 +232,13 @@ def numero(nom, ville):
 ##    les_coiffeurs = ville(i)
 ##    coiffeurs.extend(les_coiffeurs)
 
-les_coiffeurs = ville('valence')
-print(les_coiffeurs)
-    
-for i in les_coiffeurs:
-    a = horraire(i, 'valence')
-    print(a)
-#print(numero('Coiffure Marilyne', 'crest'))
+##les_coiffeurs = ville('valence')
+##print(les_coiffeurs)
+##    
+##for i in les_coiffeurs:
+##    a = horraire(i, 'valence')
+##    print(a)
+print(numero('Coiffure Marilyne', 'crest'))
 
 
 
