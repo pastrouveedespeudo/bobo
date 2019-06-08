@@ -97,17 +97,49 @@ def coupe(request):
         recherche = request.POST.get('coupedecheveux')
         enregistement = request.POST.get('produit')
     
-            
+        numero_coiffeur = request.POST.get('numero_coiffeur')
+        vivile = request.POST.get('country')
+
+        
         coiffure = request.POST.get('coiffeur')
         MON_COIFFEUR = []
         
         print(coiffure,'000000000000000000000000000')
+        print(numero_coiffeur,'000000000000000000000000000chicha')
+        print(vivile)
+
+        if numero_coiffeur and vivile:
+
+            liste = []
+
+
+            coif = ''
+            for i in numero_coiffeur:
+                if i == ',':
+                    liste.append(coif)
+                    coif = ''
+                else:
+                    coif += i
+                
+            print(liste,'000000000000000000048787/')
+
+            num  = []
+            for i in liste:
+                a = numero(i, vivile)
+                num.append(a)
+
+            return HttpResponse(num)
+
+
+
+
+
 
         c = 0
         if coiffure:
 
             coif = []
-            
+          
             les_coiffeurs = ville(coiffure)
             #for i in les_coiffeurs:
             #    print(i)
@@ -117,21 +149,21 @@ def coupe(request):
             MON_COIFFEUR.extend(les_coiffeurs)
             #print(MON_COIFFEUR[:4])
             
-            for i in MON_COIFFEUR:
-                try:
-                    while c <= 4:
-                    
-                        horraire1 = horraire(i, coiffure)
-                        numéro = numero(i, coiffure)
-                        #print(horraire1)
-                        #print(numéro)
-                        if [horraire, numero] == []:
-                            break
-                        else:
-                            coif.append([i, horraire1, numéro])
-                            c+=1
-                except:
-                    pass
+            while c <= 4:
+                
+                for i in MON_COIFFEUR:
+
+                    horraire1 = horraire(i, coiffure)
+                        
+                    #print(horraire1)
+                    #print(numéro)
+                    if [horraire] == []:
+                        break
+                    else:
+               
+                        coif.append([i, horraire1, ""])
+                        c+=1
+          
               
                 
 
