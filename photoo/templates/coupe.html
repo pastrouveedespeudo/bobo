@@ -677,9 +677,9 @@ listeeeee = []
               placeholder='Votre ville'>
       <br><br>
       
-      <center><input type='button' onclick='menuuu()' value='Retour au menu'></center>
+      <center><input type='button' onclick='menuuu()' value='Retour au menu'>&nbsp;&nbsp;&nbsp;
       
-      <center><input type='button' id='coif2' value='valider'></center><br>
+      <input type='button' id='coif2' value='valider'></center><br>
 
 
       
@@ -691,34 +691,88 @@ listeeeee = []
 
 
 
-    <div id='mapmap' style='background:#343a40'>
-      <br>
+    <div id='mapmap' style='background:#343a40; text-align:center; display:none;'><br>
+  
+      <br><br><br>
+      <div class="container">
 
-    <div class='row'>
-    
-      <div class=''
-      id='info1' style='border-radius: 20px; width:200px; height:200px; background:url("/static/img/parquet1.jpg");'>
-                
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      </div><br><br><br><br>
+      <h3  style='color:white; display:none' id='info'>
+        Nous avons trouvé quelques coiffeurs près de chez vous</h3>
+      <br><br>
+
+
       
+        <div class="row">
 
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <br>
 
-      <div class=''
-        id='info2' style='border-radius: 20px; width:200px; height:200px; background:url("/static/img/parquet1.jpg");'></div>
+            <div class="col-xs-4 col-md-4 col-lg-4"
+            id ='info1'
+            style='border:2px solid black;border-radius: 20px; 
+            height:400px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-2"></div>
+            <br>
+            
+            
         
-      <div class=''
-        id='info3' style='border-radius: 20px; width:200px; height:200px; background:url("/static/img/parquet1.jpg");'></div>
+            <div class="col-xs-4 col-md-4 col-lg-4"
+            id ='info2' style='border:2px solid black;border-radius: 20px; width:200px;
+            height:400px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <br>
+            
+        </div>
+
+        <br><br><br><br>
+  
+        <div class="row">
+
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <br>
+
+            <div class="col-xs-4 col-md-4 col-lg-4"
+            id ='info3'
+            style='border:2px solid black;border-radius: 20px; 
+            height:400px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-2"></div>
+            <br>
+            
+            
+        
+            <div class="col-xs-4 col-md-4 col-lg-4"
+            id ='info4' style='border:2px solid black;border-radius: 20px; width:200px;
+            height:400px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+            <br>
+            
+        </div>
 
 
-    </div>
+           
+            <br><br>
+            
+        </div>
+    
+    
+      </center>
+          
 
     
       <center><div id='map'></div></center>
 
       <center><input type='button' value='Retour au menu' onclick='menu_map()'></center>
  
-
+    </div>
+    <br><br><br><br><br><br><br>
     </div>
 
 
@@ -759,6 +813,7 @@ listeeeee = []
               document.getElementById('gifou').style.display = 'none';
               document.getElementById('coifcoif').style.display = 'none';
               document.getElementById('mapmap').style.display = 'block';
+              document.getElementById('info').style.display = 'block';
 
               LISTE = []
               
@@ -796,28 +851,49 @@ listeeeee = []
 
             console.log(LISTE)
 
-            var info_coiffeur =  "<center>" + 
-                                  "<p style='color:white'>" +
-                                  "Nous avons trouvé quelques coiffeurs près de chez vous" +
-                                  "</p></center>" +
-                                  "<br><br><center><strong>" +
-                                  LISTE[0] + " :" +
-                                  "</strong></center><br>" + "<center>" + LISTE[1] + " " +
-                                  LISTE[2] + " " + LISTE[3] + " " + LISTE[4] + " " + LISTE[5] + " " + LISTE[6] + "</center>"
-                                  + "<br><br>"
-                                  + "<center><strong>" +LISTE[7] + "</strong></center><br>" + "<center>" +
-                                  LISTE[8] + " " + LISTE[9] + " " + LISTE[10] + " " + LISTE[11] + " " + LISTE[12] + " " + LISTE[13] + "</center>"
-                                  + "<br><br>"
-                                  + "<center><strong>" +LISTE[14] + "</strong></center><br>" + "<center>" +
-                                  LISTE[15] + " " + LISTE[16] + " " + LISTE[17] + " " + LISTE[18] + " " + LISTE[19] + " " + LISTE[20] + "</center>"
-                                  + "<br><br>" 
-                                  + "<center><strong>" +LISTE[21] + "</strong></center><br>" + "<center>" +
-                                  LISTE[22] + " " + LISTE[23] + " " + LISTE[24] + " " + LISTE[25] + " " + LISTE[26] +"</center><br><br>";
+     
+                                
+              
+            var info_coiffeur1 =  "<br><br><strong>" + LISTE[0] + " :</strong><br><br>" +
+                                  LISTE[1] + "<br>" +
+                                  LISTE[2] + "<br>" +
+                                  LISTE[3] + "<br>" +
+                                  LISTE[4] + "<br>" +
+                                  LISTE[5] + "<br>" +
+                                  LISTE[6];
+                                  
+
+            var info_coiffeur2 =  "<br><br><strong>" + LISTE[7] + "</strong><br><br>" +
+                                  LISTE[8] +  "<br>" +
+                                  LISTE[9] +  "<br>" +
+                                  LISTE[10] + "<br>" +
+                                  LISTE[11] + "<br>" +
+                                  LISTE[12] + "<br>" +
+                                  LISTE[13];
+              
+            var info_coiffeur3 =  "<br><br><strong>" + LISTE[14] + "</strong><br><br>" +
+                                  LISTE[15] + "<br>" +
+                                  LISTE[16] + "<br>" +
+                                  LISTE[17] + "<br>" +
+                                  LISTE[18] + "<br>" +
+                                  LISTE[19] + "<br>" +
+                                  LISTE[20];
+
+            var info_coiffeur4 =  "<br><br><strong>" +LISTE[21] + "</strong><br><br>" + 
+                                  LISTE[22] + "<br>" +
+                                  LISTE[23] + "<br>" +
+                                  LISTE[24] + "<br>" +
+                                  LISTE[25] + "<br>" +
+                                  LISTE[26];
                                           
+            
 
                               
 
-            document.getElementById('info1').innerHTML = info_coiffeur;
+            document.getElementById('info1').innerHTML = info_coiffeur1;
+            document.getElementById('info2').innerHTML = info_coiffeur2;
+            document.getElementById('info3').innerHTML = info_coiffeur3;
+            document.getElementById('info4').innerHTML = info_coiffeur4;
 
 
 
@@ -854,7 +930,9 @@ listeeeee = []
     {% if user.is_authenticated %}
     
     <div class="container" id='CONTENEUR'>
-      <p><i>*Cliquez sur les images afin de profiter des services !<i></p>
+      <p style='margin-right:70%; margin-top:-20%;'><i>
+      *Cliquez sur les images afin de profiter des services !<i></p>
+      <br>
       <h2 class="text-center mt-0">Mes services</h2>
       <hr class="divider my-4">
       <div class="row">
