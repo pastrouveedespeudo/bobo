@@ -1,4 +1,4 @@
-est désagréable mais c pour prévenir et pour le groupe tobis et cosmide mais ouesh calme
+est désagréable mais c pour prévenir et pour le groupe tobis et cosmide mais ouesh calme faut pas se venre pour rien ca sert a rien de senerver ca sert a quoi de crier ?
 
 #coder avec vim c classe qu'au début serieux
 
