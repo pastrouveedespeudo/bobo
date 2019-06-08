@@ -701,8 +701,8 @@ listeeeee = []
 
         <h3 style='color:white;display:none;' id='info'>Nous avons trouvé quelques coiffeurs près de chez vous</h3><br><br>
         
-        <p style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m veut dire matin <br>
-        *p.m veut dire après-midi</i></p><br><br>
+        <p style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m signifie horraire du matin <br>
+        *p.m signifie horraire de l'après-midi</i></p><br><br>
 
       
         <div class="row">
@@ -789,6 +789,7 @@ listeeeee = []
     jQuery("#coif2").on("click", function(e){
     document.getElementById('gifou').style.display = 'block';
     var a = document.getElementById('coif1').value;
+    LISTE = []
 
      e.preventDefault();
       jQuery.ajax({
@@ -818,7 +819,7 @@ listeeeee = []
               document.getElementById('info').style.display = 'block';
               document.getElementById('p_am_pm').style.display = 'block';
 
-              LISTE = []
+              
               
               
               var c = 0
@@ -857,7 +858,8 @@ listeeeee = []
 
               };
 
-            console.log(LISTE)
+              console.log(LISTE)
+              console.log('000000000000000')
 
 
             
@@ -904,7 +906,7 @@ listeeeee = []
                                   LISTE[24] + "<br>" +
                                   LISTE[25] + "<br>" +
                                   LISTE[26] + "<br>" +
-                                  LISTE[27]+ "<br><br>" +
+                                  LISTE[27] + "<br><br>" +
                                   "<p id='yoo4'><i>Le numéro arrive !</i></p>" +
                                   "<img id='gifou4' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
                                   
@@ -1082,9 +1084,6 @@ listeeeee = []
   function coiffeur(){
     document.getElementById('CONTENEUR').style.display = "none";
     document.getElementById('coifcoif').style.display = "block";
-
-
-
   };
 
 
@@ -1163,30 +1162,7 @@ function menu_map(){
             var c = document.getElementById('yoo3').innerHTML = LA_LISTE[2];
             var d = document.getElementById('yoo4').innerHTML = LA_LISTE[3];
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              
-              document.getElementById('yo').innerHTML = data;
-              LISTE_COIFURE = []
+            LISTE_COIFURE = [];
               
           };
           
@@ -1268,9 +1244,9 @@ function menu_map(){
           Abonne toi sur nos reseaux sociaux !
         </h2>
 
-       <img src = "/static/img/portfolio/icone/facebook.png"/ id="im10">
-       <img src = "/static/img/portfolio/icone/twitter.png"/ id="im11">
-       <img src = "/static/img/portfolio/icone/snap.png"/ id="im12">
+       <a href='www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
+       <a href='www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
+       <a href='www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>
                   
     </div>
   </section>
