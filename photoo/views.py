@@ -89,7 +89,7 @@ def coupe(request):
     
     if request.method == "POST":
 
-        MON_COIFFEUR = []
+        
 
         print('OUIIIIIIIIIIIII')
         image = request.POST.get('posting')
@@ -99,32 +99,41 @@ def coupe(request):
     
             
         coiffure = request.POST.get('coiffeur')
-
+        MON_COIFFEUR = []
+        
         print(coiffure,'000000000000000000000000000')
 
+        c = 0
         if coiffure:
 
             coif = []
-    
+            
             les_coiffeurs = ville(coiffure)
+            #for i in les_coiffeurs:
+            #    print(i)
+
+
             
             MON_COIFFEUR.extend(les_coiffeurs)
-            #print(MON_COIFFEUR)
+            #print(MON_COIFFEUR[:4])
             
-            for i in MON_COIFFEUR[:4]:
- 
-                
-                horraire1 = horraire(i, coiffure)
-                numéro = numero(i, coiffure)
-                #print(horraire1)
-                #print(numéro)
-                if horraire1 == [] or horraire1 == '':
+            for i in MON_COIFFEUR:
+                try:
+                    while c <= 4:
+                    
+                        horraire1 = horraire(i, coiffure)
+                        numéro = numero(i, coiffure)
+                        #print(horraire1)
+                        #print(numéro)
+                        if [horraire, numero] == []:
+                            break
+                        else:
+                            coif.append([i, horraire1, numéro])
+                            c+=1
+                except:
                     pass
-                elif numéro == [] or numéro == '':
-                    pass
+              
                 
-                coif.append([i, horraire1, numéro])
-                #print(coif)
 
             #print(coif)
             #print('iciiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
