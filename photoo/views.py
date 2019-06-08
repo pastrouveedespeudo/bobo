@@ -68,7 +68,7 @@ def home(request):
     return render(request, 'home.html')
 
 
-MON_COIFFEUR = []
+
 @csrf_protect
 def coupe(request):
 
@@ -89,6 +89,8 @@ def coupe(request):
     
     if request.method == "POST":
 
+        MON_COIFFEUR = []
+
         print('OUIIIIIIIIIIIII')
         image = request.POST.get('posting')
         coupe = request.POST.get('coupe')
@@ -107,23 +109,25 @@ def coupe(request):
             les_coiffeurs = ville(coiffure)
             
             MON_COIFFEUR.extend(les_coiffeurs)
-            print(MON_COIFFEUR)
+            #print(MON_COIFFEUR)
             
             for i in MON_COIFFEUR[:4]:
  
                 
                 horraire1 = horraire(i, coiffure)
                 numéro = numero(i, coiffure)
-                
+                #print(horraire1)
+                #print(numéro)
                 if horraire1 == [] or horraire1 == '':
                     pass
                 elif numéro == [] or numéro == '':
                     pass
-                else:
-                    coif.append([i, horraire1, numéro])
+                
+                coif.append([i, horraire1, numéro])
+                #print(coif)
 
-
-            print(coif)
+            #print(coif)
+            #print('iciiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
             return HttpResponse(coif)
  
 
