@@ -671,7 +671,15 @@ listeeeee = []
 
 
     <div id='coifcoif' style='display:none;'>
-    
+
+      <br><br><br>
+
+      <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou'
+          style='display:none;position:absolute;margin-left:47%;'>
+
+      <br><br><br><br>
+
+      
       <input type='text' id='coif1'
               style='text-align:center;' size='30'
               placeholder='Votre ville'>
@@ -682,16 +690,13 @@ listeeeee = []
       <input type='button' id='coif2' value='valider'></center><br>
 
 
-      
-      <center><img src='/static/img/portfolio/icone/chargement.gif' size='200' height='80' id='gifou'
-              style='display:none;'><center>
-                
+             
     </div>
   
 
 
 
-    <div id='mapmap' style='background:#343a40; text-align:center; display:none;'><br>
+    <div id='mapmap' style='background:#343a40; display:none; text-align:center;'><br>
   
       <br><br><br>
       <div class="container">
@@ -699,7 +704,8 @@ listeeeee = []
       <h3  style='color:white; display:none' id='info'>
         Nous avons trouvé quelques coiffeurs près de chez vous</h3>
       <br><br>
-
+      <p style='margin-right:80%;display:none; margin-top:-10px;' id='p_am_pm'><i>* a.m veut dire matin <br>
+            *p.m veut dire après-midi</i></p><br><br>
 
       
         <div class="row">
@@ -814,6 +820,7 @@ listeeeee = []
               document.getElementById('coifcoif').style.display = 'none';
               document.getElementById('mapmap').style.display = 'block';
               document.getElementById('info').style.display = 'block';
+              document.getElementById('p_am_pm').style.display = 'block';
 
               LISTE = []
               
@@ -840,6 +847,9 @@ listeeeee = []
                   c+=1
                   nom = ''
                 }
+                else if(data[i] == ','){
+                  {}
+                }
                 else{
                   nom += data[i]
                 };
@@ -851,7 +861,19 @@ listeeeee = []
 
             console.log(LISTE)
 
-     
+            if(LISTE[6].length - 1 == ','){
+               LISTE[6] = LISTE[6].slice(0,-2)
+
+            }
+            else if(LISTE[13].length - 1 == ','){
+              LISTE[13] = LISTE[13].slice(0,-2)
+            }
+            else if(LISTE[20].length - 1 == ','){
+              LISTE[20] = LISTE[20].slice(0,-2)
+            }
+            else if(LISTE[26].length - 1 == ','){
+              LISTE[26] = LISTE[26].slice(0,-2)
+            }
                                 
               
             var info_coiffeur1 =  "<br><br><strong>" + LISTE[0] + " :</strong><br><br>" +
@@ -864,8 +886,8 @@ listeeeee = []
                                   
 
             var info_coiffeur2 =  "<br><br><strong>" + LISTE[7] + "</strong><br><br>" +
-                                  LISTE[8] +  "<br>" +
-                                  LISTE[9] +  "<br>" +
+                                  LISTE[8]  + "<br>" +
+                                  LISTE[9]  + "<br>" +
                                   LISTE[10] + "<br>" +
                                   LISTE[11] + "<br>" +
                                   LISTE[12] + "<br>" +
