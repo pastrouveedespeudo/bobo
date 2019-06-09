@@ -1,5 +1,5 @@
 
-mettre les inputs en gris foncé sombre (meme si t'aime le mode qui fais de la lumiere en dessous ne le met pas) sinon mettre des href noir
+oh non jlai fais sur vim j'ai oublié de recopié jcrois
 
 mettre undélimitation en dessous de / entre projet et social
 
