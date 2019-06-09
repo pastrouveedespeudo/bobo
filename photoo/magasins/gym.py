@@ -1,6 +1,7 @@
 import requests
 from bs4 import *
 
+#HEROKU MODE
 
 GYM = ['fitness', 'gym', 'body','Body', 'musculation', 'Fitness', 'Club', 'Gym',
        'sport', 'Sport', 'Salle', 'salle', 'Salle de sport', 'salle de sport', 'wellness',
@@ -93,24 +94,24 @@ def horraire_gym(nom, ville):
     for i in propriete:
         liste.append(i.string)
     
-    semaine = ['lundi',
-              'mardi',
-              'mercredi',
-              'jeudi',
-              'vendredi',
-              'samedi',
-              'dimanche',
-             ]
-
-
-##    semaine = ['Monday',
-##              'Tuesday',
-##              'Wednesday',
-##              'Thursday',
-##              'Friday',
-##              'Saturday',
-##              'Sunday',
+##    semaine = ['lundi',
+##              'mardi',
+##              'mercredi',
+##              'jeudi',
+##              'vendredi',
+##              'samedi',
+##              'dimanche',
 ##             ]
+
+
+    semaine = ['Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday',
+              'Saturday',
+              'Sunday',
+             ]
 
 
     jour = ''
@@ -214,7 +215,7 @@ def numero_gym(nom, ville):
 #a = rayon('crest')
 #print(a)
 #grande_ville_gym('crest')
-#horraire_gym("Body's Studio", "crest")
+horraire_gym("Body's Studio", "crest")
 #numero("Body's Studio", "crest")
 
 
