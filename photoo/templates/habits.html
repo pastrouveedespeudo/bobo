@@ -25,150 +25,44 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
       <script type="text/javascript"></script>
 
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      
       
     </head> 
 
-    <body id="page-top">
+<body id="page-top">
+    
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+{% include "navebarre_ui.html" %}
+{% block content %}
+{% endblock %}
 
-
-    <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
-    <style>#my{width:50px;height:50px;}</style>
-    <style>#im1{width:50px;height:50px;margin-left:55px;}</style>
-    <style>#coif_nav{width:50px; height:50px; margin-left:30px;}</style>
-    <style>#im2{width:50px;height:50px;margin-left:40px;}</style>
-    <style>#im3{width:50px; height:50px; margin-left:40px;}</style>
-    <style>#im4{width:50px;height:50px;margin-left:40px;}</style>
-    <style>#h{font:Serif; color:white;}</style>
-    <style>#im6{width:100px; height:100px;}</style>
-    <style>#deco_nav{width:50px; height:50px; margin-left:46px;}</style>
-    <style>#autre{margin-left:-965px;margin-top:-100px;}</style>
-    <style>#h{font:Serif; color:white;}</style>
-    <style>#momode{width:65px; height:50px;margin-left:80px;}</style>
-        
-    <div class="container">
-
-      <img src="/static/img/portfolio/icone/my.png" id="my_prof">
-      <a class="navbar-brand js-scroll-trigger" href="/">
-        My_Profil
-      </a>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  
-      <img src="/static/img/portfolio2/icone/indian.png" id="my">
-      <a class="navbar-brand js-scroll-trigger" href="/polution/polution">
-        My_pollution
-      </a>
-      
-      <button class="navbar-toggler navbar-toggler-right" type="button"
-        data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-
-          <ul class="navbar-nav ml-auto my-2 my-lg-0">
-
-              {% if user.is_authenticated %}
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/momode.png" id="momode">
-                  <a class="nav-link js-scroll-trigger" href="/administrateur/tendance">
-                    <center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La tendance du moment ?</center>
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/coiffure.png" id="coif_nav">
-                  <a class="nav-link js-scroll-trigger" href="/photo/coupe">
-                    <center>Mes coiffures</center>
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/vetements.png" id="im3">
-                  <a class="nav-link js-scroll-trigger" href="/photo/habits">
-                    <center>Mes vetements</center>
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/deco.png" id="deco_nav">
-                  <a class="nav-link js-scroll-trigger" href="/accounts/logout_view">
-                    <center>Se déconnecter</center>
-                  </a>
-              </li>
-      
-          </ul>
-
-            {% else %}
-
-              <style>#ima1{width:55px; height:50px; margin-left:17px;}</style>
-              <style>#im2{width:50px; height:50px; margin-left:40px;}</style>
-              <style>#im1{width:50px; height:50px; margin-left:45px;}</style>
-              <style>#im3{width:50px; height:50px; margin-left:40px;}</style>
-              
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/inscription.png" id="ima1">
-                  <a class="nav-link js-scroll-trigger" href="/accounts/register_view">
-                    S'inscrire
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/login.png" id="im2">
-                  <a class="nav-link js-scroll-trigger" href="/accounts/login">
-                    Se connecter
-                  </a>
-              </li>
-
-              
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/coiffure.png" id="im1">
-                  <a class="nav-link js-scroll-trigger" href="/photo/coupe">
-                    Les coiffures
-                  </a>
-              </li>
-
-              <li class="nav-item">
-                  <img src="/static/img/portfolio/icone/vetements.png" id="im3">
-                  <a class="nav-link js-scroll-trigger" href="/photo/habits">
-                    Les vetements
-                  </a>
-              </li>
-              
-          </ul>
-
-          {% endif %}
-
-      
-          
-      </div>
-    </div>
-  </nav>
 
 
   <style>
     #1, #2,#3,#4,#5,#6,#7,#8,#9,
     #10, #11,#22,#33,#44,#55,
     #66, #77, #88 { width: 0px; height: 0px;}
+    input{
+      border:1px solid black;
+    }
+
   </style>
 
 
   <!-- Masthead -->
-  <header class="masthead">
+  <header class="masthead" background:url("/static/img/parquet1.jpg")>
     <div class="container h-100">
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end"><br><br><br><br>
         
-          <h1 class="text-uppercase text-white font-weight-bold">
-            Essais des habits ! et sans faire la queue !
-          </h1><hr class="divider my-4">
-        </div><br><br><br><br>
+          <center><h1 style='color:black;font-family:"Comic Sans MS, Comic Sans, cursive";'>
+            Essais des habits !
+          </h1></center>
+        </div><br>
+        <h2 style='color:black; font-style=justify'>
+          Sans faire la queue nous te proposons d'essayer les meilleurs ensembles selon ta couleur de cheveux 
+        </h2>
+        <br><br><br>
         
         <div class="col-lg-12 align-self-baseline">
           <p class="text-white-75 font-weight-light mb-5">
@@ -187,16 +81,15 @@
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
           <h2 class="text-white mt-0"></h2>
-          <hr class="divider light my-4">
-
-
-          <p class="text-white-50 mb-4">
+       
+          <h3 style='color:black;'>
               Voici une sélection des habits
               fait par nos experts qui vont le mieux avec cette coupe
-          </p><br><br>
+          </h3><br><br>
 
-          <center><strong><a href='/administrateur/database_mode' style='color:black;'>
-            Une sélection ? laquelle ? </a></strong></center><br><br>
+          <div style='background:url("/static/img/parquet1.jpg"); border:3px solid black;
+          border-radius:50px;'>
+          <br><br>
           
           <input type='button' id='brune' value='brune' onclick='coul("brune")'>
           <input type='button' id='blonde' value='blonde' onclick='coul("blonde")'>
@@ -239,12 +132,166 @@
               </div>
               
             </div>
+          </div>
+          <br><br>
           </div><br><br>
+
+
+
+            <div style='position:absolute;height:100px;width:100px;'>
+            <div style='background:url("/static/img/parquet1.jpg"); border:3px solid black;
+              border-radius:50px; width:150px; margin-left:10%;' id='pantalon_div'>
+                <br>
+                <input type='button' value='Pantalon'
+                  style=" border:3px solid black;"
+                  onclick='voir_pantalon()'><br><br>
+
+              
+            </div>
+            </div>
+
+            
+    
+            <div style='background:url("/static/img/parquet1.jpg"); border:3px solid black;
+              border-radius:50px; width:150px; margin-left:85%;' id='tshirt'>
+                <br>
+                <input type='button' value='t-shirt'
+                  style=" border:3px solid black;"
+                  onclick='voir_shirt()'><br><br>
+
+              
+            </div>
+         
+
+
+
+
+
+
+              
+            <script>
+              var click = 0;
+            
+              function voir_pantalon(){
+                console.log(click%2)
+                if(click % 2 == 0){
+                  document.getElementById('pantalon_div').innerHTML = "<br><input type='button' value='Pantalon'" +
+                                                                      'style="border:3px solid black;"' +
+                                                                       "onclick='voir_pantalon()'><br><br>" +
+                                                                      "<div>"+
+                                                                      "<input type='button' value='Salopette' id='salopette'"+
+                                                                        'style=" border:3px solid black;"'+
+                                                                        "onclick='enlever_largeur()'>&nbsp&nbsp" +
+                                                                      "</div><br>" +
+                                                                      "<div>" +
+                                                                      "<input type='button' value='Jeans' id='jean'" +
+                                                                        'style=" border:3px solid black;"' +
+                                                                        "onclick='ajout_largeur()'>" +
+                                                                     "</div><br>" +
+                                                                      "<div>" +
+                                                                      "<input type='button' value='Toile' id='toile'" +
+                                                                        'style=" border:3px solid black;"' +
+                                                                        "onclick='enlever_longueur()'>" +
+                                                                      "</div><br>";
+
+                  click += 1
+                  }
+                else{
+                  document.getElementById('pantalon_div').innerHTML = "<br><input type='button' value='Pantalon'" +
+                                                                      'style="border:3px solid black;"' +
+                                                                       "onclick='voir_pantalon()'><br><br>";
+                  click += 1
+                };
+              };
+
+
+
+              var click2 = 0;
+              function voir_shirt(){
+      
+                if(click2 % 2 == 0){
+                  document.getElementById('tshirt').innerHTML = "<br><input type='button' value='tshirt'" +
+                                                                      'style="border:3px solid black;"' +
+                                                                       "onclick='voir_shirt()'><br><br>" +
+                                                                      "<div>"+
+                                                                      "<input type='button' value='manche longue' id='longue'"+
+                                                                        'style=" border:3px solid black;"'+
+                                                                        "onclick='enlever_largeur()'>&nbsp&nbsp" +
+                                                                      "</div>" +
+                                                                      "<div>" +
+                                                                      "<input type='button' value='manche courte' id='courte'" +
+                                                                        'style=" border:3px solid black;"' +
+                                                                        "onclick='ajout_largeur()'>" +
+                                                                     "</div><br>" +
+                                                                      "<div>" +
+                                                                      "<input type='button' value='laine' id='laine'" +
+                                                                        'style=" border:3px solid black;"' +
+                                                                        "onclick='enlever_longueur()'>" +
+                                                                      "</div><br>";
+
+                  click2 += 1
+                  }
+                else{
+                  document.getElementById('tshirt').innerHTML = "<br><input type='button' value='tshirt'" +
+                                                                      'style="border:3px solid black;"' +
+                                                                       "onclick='voir_shirt()'><br><br>";
+                  click2 += 1
+                };
+              };
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+            </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           <div class='container' id='habit_bas_blanc' style='display:none;'>
             <div class='row'>
 
-                
+ 
                 <div id='1' onclick='nom_image("bb1")'>
                 <img src='/static/img/portfolio/vetement/femme/bas_blanc/1.png' width='200' height ='250' id='bb1'>
                 </div>
@@ -270,7 +317,7 @@
                 <div id='6' onclick='nom_image("bb6")'>
                 <img src='/static/img/portfolio/vetement/femme/bas_blanc/6.png'  width='250' height ='250' id='bb6'>
                 </div>
-
+      
                 <div id='7' onclick='nom_image("bb7")'>
                 <img src='/static/img/portfolio/vetement/femme/bas_blanc/7.png'  width='200' height ='300' id='bb7'>
                 </div>
@@ -289,7 +336,7 @@
                 <img src='/static/img/portfolio/vetement/femme/bas_blanc/10.png'  width='300' height ='250' id='bb10'>
                 </div>
 
-
+              
             </div>
           </div>
 
@@ -592,23 +639,35 @@
 
 
                  
-           <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
-           <img src = "/static/img/portfolio/icone/facebook.png"/ id="im10">
+        <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
+        <a href='https//:www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
 
                                 
-            <style>#im11{width:100px; height:100px;margin-left:100px;}</style>
-           <img src = "/static/img/portfolio/icone/twitter.png"/ id="im11">
+       <style>#im11{width:100px; height:100px;margin-left:100px;}</style>
+       <a href='https//:www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
 
                   
-           <style>#im12{width:200px; height:200px;margin-left:100px;}</style>
-           <img src = "/static/img/portfolio/icone/snap.png"/ id="im12">
+       <style>#im12{width:200px; height:200px;margin-left:100px;}</style>
+       <a href='https//:www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>
                     
     </div>
   </section>
 
 
 
+<!-- Bootstrap core JavaScript -->
+<script src="/static/vendor/jquery/jquery.min.js"></script>
+<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+<!-- Plugin JavaScript -->
+<script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="/static/js/creative.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqJf5bBiufgiWCK34KcdmPt4Zhsp4oRCc&callback=initMap"
+  async defer></script>
 
 
 
