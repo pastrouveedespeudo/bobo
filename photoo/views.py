@@ -238,7 +238,7 @@ def coupe(request):
             
             if data == ' ' or data == '':
                 return HttpResponse('Oups nous n\'avons rien trouvé')
-            
+
             return HttpResponse(data)
 
 
