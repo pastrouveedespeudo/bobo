@@ -864,7 +864,7 @@ listeeeee = []
     
     <center><strong><h3 id='oups' style='display:none;'>Nous n'avons rien trouvé désolé</h3></strong></center>
     
-the_map
+
 
     <br><br>
     <center><div id='map'></div></center>
@@ -1549,10 +1549,7 @@ jQuery("#gym2").on("click", function(e){
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
               'buttony':String(LISTE[0]),
               'country':b,
-              
 
-              
-       
           },
           type:"POST",
           url:"/photo/coupe"
@@ -1573,36 +1570,39 @@ jQuery("#gym2").on("click", function(e){
               console.log(data)
 
 
-              if (data == 'Oups nous n\'avons rien trouvé'){
+              if (data == "Oups nous n'avons rien trouvé"){
+             
                 document.getElementById('oups').style.display = 'block';
                 document.getElementById('the_map').style.display = 'block';
- 
+                
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
+                document.getElementById('button_lamap_gym').style.display = 'none';
+                document.getElementById('button_lamap').style.display = 'block';
                 }
               else{
             
-              pos = ''
-              for (var i = 0; i < data.length; i++){
-                  console.log(data[i])
-                  if (data[i] == ' '){
-                    liste_lat.push(pos)
-                    pos = ''
+                  pos = ''
+                  for (var i = 0; i < data.length; i++){
+                      console.log(data[i])
+                      if (data[i] == ' '){
+                        liste_lat.push(pos)
+                        pos = ''
+                      }
+                      else{
+                         pos += data[i]
+                     } 
                   }
-                  else{
-                     pos += data[i]
-                 } 
-              }
-              liste_lat.push(pos)
-              console.log(liste_lat)
-              
-              document.getElementById('the_map').style.display = 'block';
-              document.getElementById('button_lamap_gym').style.display = 'none';
-              
-              
-              initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
-              
+                  liste_lat.push(pos)
+                  console.log(liste_lat)
+                  
+                  document.getElementById('the_map').style.display = 'block';
+                  document.getElementById('button_lamap_gym').style.display = 'none';
+                  
+                  
+                  initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
+                  
             };
           };
           
@@ -1620,9 +1620,6 @@ jQuery("#gym2").on("click", function(e){
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
               'buttony':String(LISTE[7]),
               'country':b,
-
-              
-       
           },
           type:"POST",
           url:"/photo/coupe"
@@ -1641,15 +1638,18 @@ jQuery("#gym2").on("click", function(e){
               liste_lat = []
               console.log(data)
 
-              if (data == 'Oups nous n\'avons rien trouvé'){
+              if (data == "Oups nous n'avons rien trouvé"){
                 document.getElementById('oups').style.display = 'block';
                 document.getElementById('the_map').style.display = 'block';
-
-                document.getElementById('map').style.display = 'none';
+                
+                document.getElementById('map').style.display = 'none';  
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
-                };
-
+                document.getElementById('button_lamap_gym').style.display = 'none';
+                document.getElementById('button_lamap').style.display = 'block';
+                }
+              else{
+                
 
 
               pos = ''
@@ -1669,7 +1669,7 @@ jQuery("#gym2").on("click", function(e){
               document.getElementById('button_lamap_gym').style.display = 'none';
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
-              
+           };   
           };
           
       });
@@ -1707,19 +1707,17 @@ jQuery("#gym2").on("click", function(e){
               liste_lat = []
               console.log(data)
 
-              if (data == 'Oups nous n\'avons rien trouvé'){
+              if (data == "Oups nous n'avons rien trouvé"){
                 document.getElementById('oups').style.display = 'block';
                 document.getElementById('the_map').style.display = 'block';
-
-
-                document.getElementById('map').style.display = 'none';
+                
+                document.getElementById('map').style.display = 'none';  
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
-                };
-
-
-
-
+                document.getElementById('button_lamap_gym').style.display = 'none';
+                document.getElementById('button_lamap').style.display = 'block';
+                }
+              else{
 
               pos = ''
               for (var i = 0; i < data.length; i++){
@@ -1739,7 +1737,7 @@ jQuery("#gym2").on("click", function(e){
               
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
-              
+            };  
           };
           
       });
@@ -1777,15 +1775,17 @@ jQuery("#gym2").on("click", function(e){
               liste_lat = []
               console.log(data)
 
-              if (data == 'Oups nous n\'avons rien trouvé'){
+              if (data == "Oups nous n'avons rien trouvé"){
                 document.getElementById('oups').style.display = 'block';
                 document.getElementById('the_map').style.display = 'block';
-   
                 
-                document.getElementById('map').style.display = 'none';
+                document.getElementById('map').style.display = 'none';  
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
-                };
+                document.getElementById('button_lamap_gym').style.display = 'none';
+                document.getElementById('button_lamap').style.display = 'block';
+                }
+              else{
 
 
               pos = ''
@@ -1806,7 +1806,7 @@ jQuery("#gym2").on("click", function(e){
               
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
-              
+            };  
           };
           
       });
@@ -1858,6 +1858,7 @@ jQuery("#gym2").on("click", function(e){
               if (data == "Oups nous n'avons rien trouvé"){
                 document.getElementById('oups').style.display = 'block';
                 document.getElementById('the_map').style.display = 'block';
+                
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
