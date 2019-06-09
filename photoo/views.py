@@ -126,10 +126,14 @@ def coupe(request):
             try:
                 lat_long = ville_geo(la_adresse)
             except:
-                return HttpResponse('Oups nous n\'avons rien trouvé')
+                print('iciiiiiiiiiiiiiii')
+                return HttpResponse("Oups nous n'avons rien trouvé")
 
             data = str(lat_long[0]) + ' ' + str(lat_long[1])
-            print(data)
+            print(data,'0000000000000000000000')
+            if data == ' ' or data == '':
+                return HttpResponse("Oups nous n'avons rien trouvé")
+            
             return HttpResponse(data)
 
 
@@ -231,7 +235,10 @@ def coupe(request):
                 return HttpResponse('Oups nous n\'avons rien trouvé')
 
             data = str(lat_long[0]) + ' ' + str(lat_long[1])
-
+            
+            if data == ' ' or data == '':
+                return HttpResponse('Oups nous n\'avons rien trouvé')
+            
             return HttpResponse(data)
 
 
