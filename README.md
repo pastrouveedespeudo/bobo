@@ -1,5 +1,5 @@
 
-oh non jlai fais sur vim j'ai oublié de recopié jcrois
+faire le commit habit (prix magasin ect) + rajouter dans le onclick une autre fonction qui renseigne ca
 
 mettre undélimitation en dessous de / entre projet et social
 
