@@ -671,27 +671,35 @@ listeeeee = []
 
 
     <div id='coifcoif' style='display:none;text-align:center;'>
+    
+      <br>
 
-      <br><br><br>
-      <div style='position: absolute; left: 50%;'>
-      <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou'
-          style='position:relative; display:none;left: -50%;'>
+      <center><div style='border:5px solid black;
+                          border-radius: 20px; width:50%;
+                          background:url("/static/img/parquet1.jpg");
+                          box-shadow: 5px 5px 5px 5px;'>
+          
+          <br>
+          <div style='position: absolute; left: 50%;'>
+          <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou'
+              style='position:relative; display:none;left: -50%;'>
+          </div>
+          <br><br><br><br>
+
+          
+          <input type='text' id='coif1'
+                  style='text-align:center; border:3px solid black;'
+                  size='30' placeholder='Votre ville'>
+          <br><br>
+          
+          <center><input type='button' onclick='menuuu()' value='Retour au menu' style='border:2px solid black;'>&nbsp;&nbsp;&nbsp;
+          
+          <input type='button' id='coif2' value='valider' style='border:2px solid black;'></center><br>
+          <br><br><br><br>
       </div>
-      <br><br><br><br>
-
-      
-      <input type='text' id='coif1'
-              style='text-align:center;' size='30'
-              placeholder='Votre ville'>
-      <br><br>
-      
-      <center><input type='button' onclick='menuuu()' value='Retour au menu'>&nbsp;&nbsp;&nbsp;
-      
-      <input type='button' id='coif2' value='valider'></center><br>
-
 
              
-    </div>
+    </div></center>
   
 
 
@@ -701,8 +709,8 @@ listeeeee = []
 
         <h3 style='color:white;display:none;' id='info'>Nous avons trouvé quelques coiffeurs près de chez vous</h3><br><br>
         
-        <p style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m signifie horraire du matin <br>
-        *p.m signifie horraire de l'après-midi</i></p><br><br>
+        <p style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m et
+        p.m signifient horraires du matin et de l'après-midi</i></p><br><br>
 
       
         <div class="row">
@@ -711,14 +719,14 @@ listeeeee = []
 
             <div class="col-xs-4 col-md-4 col-lg-4"
               id ='info1'
-              style='border:2px solid black;border-radius: 20px; 
+              style='border:5px solid black;border-radius: 20px; 
               height:450px; background:url("/static/img/parquet1.jpg");'>
             </div>
             
             <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
             
             <div class="col-xs-4 col-md-4 col-lg-4"
-              id ='info2' style='border:2px solid black;border-radius: 20px;
+              id ='info2' style='border:5px solid black;border-radius: 20px;
               height:450px; background:url("/static/img/parquet1.jpg");'>
             </div>
             
@@ -734,14 +742,14 @@ listeeeee = []
 
             <div class="col-xs-1 col-md-4 col-lg-4"
               id ='info3'
-              style='border:2px solid black;border-radius: 20px; 
+              style='border:5px solid black;border-radius: 20px; 
               height:450px; background:url("/static/img/parquet1.jpg");'>
             </div>
             
             <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
 
             <div class="col-xs-1 col-md-4 col-lg-4"
-              id ='info4' style='border:2px solid black;border-radius: 20px; 
+              id ='info4' style='border:5px solid black;border-radius: 20px; 
               height:450px; background:url("/static/img/parquet1.jpg");'>
             </div>
             
@@ -762,6 +770,7 @@ listeeeee = []
 
 
   <style>#map{
+              margin-top:-100px;
               height:350px;
               width:80%;
               border: 5px solid black;
@@ -772,10 +781,17 @@ listeeeee = []
 
   
   <div id='the_map' style='display:none;'>
-  
+
+    <center><h3 style='margin-top:-200px;' id='lapmap'>La map</h3></center>
+    
+    <center><strong><h3 id='oups' style='display:none;'>Nous n'avons rien trouvé désolé</h3></strong></center>
+    <center><input type='button' style='display:none;' id='but_oups'onclick='menu_map()' value='Retour au menu'
+                    style='border:2px solid black;'>
+
+    <br><br>
     <center><div id='map'></div></center>
     <br><br>
-    <center><input type='button' value='Retour au menu' onclick='menu_map()'></center>
+    <center><input type='button' value='Retour au menu' onclick='menu_map()' id='button_lamap'></center>
     
   </div>
 
@@ -933,6 +949,9 @@ listeeeee = []
 function menu_map(){
     document.getElementById('mapmap').style.display = 'none';
     document.getElementById('CONTENEUR').style.display = 'block';
+    document.getElementById('the_map').style.display = 'none';
+    document.getElementById('oups').style.display = 'none';
+    document.getElementById('but_oups').style.display = 'none';
   };
 
   function menuuu(){
@@ -1207,6 +1226,15 @@ LISTE = []
               liste_lat = []
               console.log(data)
 
+
+              if (data == 'Oups nous n\'avons rien trouvé'){
+                document.getElementById('oups').style.display = 'block'; 
+                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('map').style.display = 'none';  
+                document.getElementById('button_lamap').style.display = 'none';
+                document.getElementById('lapmap').style.display = 'none';
+                };
+
               pos = ''
               for (var i = 0; i < data.length; i++){
                   console.log(data[i])
@@ -1263,6 +1291,16 @@ LISTE = []
               liste_lat = []
               console.log(data)
 
+              if (data == 'Oups nous n\'avons rien trouvé'){
+                document.getElementById('oups').style.display = 'block'; 
+                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('map').style.display = 'none';
+                document.getElementById('button_lamap').style.display = 'none';
+                document.getElementById('lapmap').style.display = 'none';
+                };
+
+
+
               pos = ''
               for (var i = 0; i < data.length; i++){
                   console.log(data[i])
@@ -1317,6 +1355,18 @@ LISTE = []
               liste_lat = []
               console.log(data)
 
+              if (data == 'Oups nous n\'avons rien trouvé'){
+                document.getElementById('oups').style.display = 'block'; 
+                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('map').style.display = 'none';
+                document.getElementById('button_lamap').style.display = 'none';
+                document.getElementById('lapmap').style.display = 'none';
+                };
+
+
+
+
+
               pos = ''
               for (var i = 0; i < data.length; i++){
                   console.log(data[i])
@@ -1370,6 +1420,15 @@ LISTE = []
               
               liste_lat = []
               console.log(data)
+
+              if (data == 'Oups nous n\'avons rien trouvé'){
+                document.getElementById('oups').style.display = 'block'; 
+                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('map').style.display = 'none';
+                document.getElementById('button_lamap').style.display = 'none';
+                document.getElementById('lapmap').style.display = 'none';
+                };
+
 
               pos = ''
               for (var i = 0; i < data.length; i++){
@@ -2059,33 +2118,6 @@ const constraints = {video: true};
   }
 })();
 </script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
