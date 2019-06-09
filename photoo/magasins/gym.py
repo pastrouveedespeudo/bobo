@@ -72,10 +72,10 @@ def grande_ville_gym(ville):
                 
     print(liste1)
     return liste1
-    liste = []
+    
     
 
-def horraire(nom, ville):
+def horraire_gym(nom, ville):
     path = 'https://www.google.com/search?ei=Gnn5XJP5KIu5gweW1qaQBQ&q={0}+{1}+horraires&oq={0}+{1}+horraires'
 
     path = path.format(nom, ville)
@@ -86,7 +86,8 @@ def horraire(nom, ville):
     
     soup = BeautifulSoup(page, "html.parser", from_encoding="utf-8")
     
-    propriete = soup.find_all("span")
+    #propriete = soup.find_all("span")
+    propriete = soup.find_all("td")
 
     liste = []
     for i in propriete:
@@ -133,7 +134,7 @@ def horraire(nom, ville):
     
 
 
-def numero(nom, ville):
+def numero_gym(nom, ville):
     
     path = "https://annuaire.118712.fr/?s={}+{}"
     path = path.format(nom, ville)
@@ -213,7 +214,7 @@ def numero(nom, ville):
 #a = rayon('crest')
 #print(a)
 #grande_ville_gym('crest')
-#horraire("Body's Studio", "crest")
+#horraire_gym("Body's Studio", "crest")
 #numero("Body's Studio", "crest")
 
 
