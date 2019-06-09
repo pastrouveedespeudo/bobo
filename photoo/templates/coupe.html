@@ -712,14 +712,14 @@ listeeeee = []
             <div class="col-xs-4 col-md-4 col-lg-4"
               id ='info1'
               style='border:2px solid black;border-radius: 20px; 
-              height:400px; background:url("/static/img/parquet1.jpg");'>
+              height:450px; background:url("/static/img/parquet1.jpg");'>
             </div>
             
             <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
             
             <div class="col-xs-4 col-md-4 col-lg-4"
               id ='info2' style='border:2px solid black;border-radius: 20px;
-              height:400px; background:url("/static/img/parquet1.jpg");'>
+              height:450px; background:url("/static/img/parquet1.jpg");'>
             </div>
             
             <div class="col-xs-1 col-md-1 col-lg-1"></div>
@@ -735,14 +735,14 @@ listeeeee = []
             <div class="col-xs-1 col-md-4 col-lg-4"
               id ='info3'
               style='border:2px solid black;border-radius: 20px; 
-              height:400px; background:url("/static/img/parquet1.jpg");'>
+              height:450px; background:url("/static/img/parquet1.jpg");'>
             </div>
             
             <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
 
             <div class="col-xs-1 col-md-4 col-lg-4"
               id ='info4' style='border:2px solid black;border-radius: 20px; 
-              height:400px; background:url("/static/img/parquet1.jpg");'>
+              height:450px; background:url("/static/img/parquet1.jpg");'>
             </div>
             
             <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
@@ -1478,7 +1478,14 @@ LISTE = []
       
       map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: lattitude, lng: longitude},
-        zoom: 20
+        zoom: 17
+      });
+      
+     var marq1 = {lat: parseFloat(lattitude), lng: parseFloat(longitude)};
+      
+      var marker1 = new google.maps.Marker({
+        position: marq1,
+        map: map,
       });
 
     }
