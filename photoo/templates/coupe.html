@@ -719,8 +719,67 @@ listeeeee = []
 
              
     </div></center>
-  
 
+
+
+
+
+
+
+    <div id='gymgym' style='display:none;text-align:center;'>
+    
+      <br>
+
+      <center><div style='border:5px solid black;
+                          border-radius: 20px; width:50%;
+                          background:url("/static/img/parquet1.jpg");
+                          box-shadow: 5px 5px 5px 5px;'>
+          
+          <br>
+          <div style='position: absolute; left: 50%;'>
+          <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou_gym'
+              style='position:relative; display:none;left: -50%;'>
+          </div>
+          <br><br><br><br>
+
+          
+          <input type='text' id='gym1'
+                  style='text-align:center; border:3px solid black;'
+                  size='30' placeholder='Votre ville'>
+          <br><br>
+          
+          <center><input type='button' onclick='menuuu()' value='Retour au menu' style='border:2px solid black;'>&nbsp;&nbsp;&nbsp;
+          
+          <input type='button' id='gym2' value='valider' style='border:2px solid black;'></center><br>
+          <br><br><br><br>
+      </div>
+
+             
+    </div></center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
     <div id='mapmap' style='background:#343a40;text-align:center;display:none;'><br><br><br><br>
     
@@ -810,9 +869,103 @@ listeeeee = []
     <br><br>
     <center><div id='map'></div></center>
     <br><br>
-    <center><input type='button' value='Retour au menu' style='border:2px solid black;' onclick='menu_map()' id='button_lamap'></center>
+    <center><input type='button' value='Retour au menu' style='border:2px solid black;' onclick='return_choice_coif()' id='button_lamap'></center>
+    <center><input type='button' value='Retour au menu' style='border:2px solid black;' onclick='return_choice_gym()' id='button_lamap_gym'></center>
     
   </div>
+
+
+
+
+
+
+
+
+
+
+    <div id='mapmap_gym' style='background:#343a40;text-align:center;display:none;'><br><br><br><br>
+    
+      <div class="container">
+
+        <h3 style='color:white;display:none;' id='info'>Nous avons trouvé quelques salles de gym près de chez vous</h3><br><br>
+        
+        <p style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m et
+        p.m signifient horraires du matin et de l'après-midi</i></p><br><br>
+
+      
+        <div class="row">
+
+            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
+
+            <div class="col-xs-4 col-md-4 col-lg-4"
+              id ='info1_gym'
+              style='border:5px solid black;border-radius: 20px; 
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
+            
+            <div class="col-xs-4 col-md-4 col-lg-4"
+              id ='info2_gym' style='border:5px solid black;border-radius: 20px;
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+
+        </div>
+        <br><br><br><br><br>
+        <div class="row">
+            
+  
+    
+            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
+
+            <div class="col-xs-1 col-md-4 col-lg-4"
+              id ='info3_gym'
+              style='border:5px solid black;border-radius: 20px; 
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
+
+            <div class="col-xs-1 col-md-4 col-lg-4"
+              id ='info4_gym' style='border:5px solid black;border-radius: 20px; 
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
+
+
+            
+        </div><br><br><br>
+            
+      </div>
+        
+      <center><input type='button' style='border:2px solid black;' value='Retour au menu' onclick='menu_map()'></center><br><br>
+ 
+    </div><br><br><br><br><br><br><br><br><br><br><br>
+    
+  </div>
+  </div>
+
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -830,7 +983,7 @@ listeeeee = []
     {% if user.is_authenticated %}
     
     <div class="container" id='CONTENEUR'>
-      <p style='margin-right:70%; margin-top:-20%;'><i>
+      <p style='margin-right:70%; margin-top:-50%;'><i>
       *Cliquez sur les images afin de profiter des services !<i></p>
       <br>
       <h2 class="text-center mt-0">Mes services</h2>
@@ -864,9 +1017,6 @@ listeeeee = []
 
         
         
-
-
-        
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im4{width:100px; height:100px;}</style>
@@ -879,7 +1029,7 @@ listeeeee = []
             <h3 class="h4 mb-2" >Salle de gym</h3>
             <br>
             
-            <p id='p_gym' style='color:white; font-size:1em;display:none; position:absolute;left:15%;'>
+            <p id='p_gym' style='color:white; font-size:1em;display:²none; position:absolute;left:4%;'>
               Voir les salles de gym les plus proches de chez moi
             </p>
     
@@ -966,6 +1116,7 @@ listeeeee = []
 
 
   <input type='button' style='display:none;' id='bubuton' style='border:2px solid black;'>
+  <input type='button' style='display:none;' id='bubuton_gym' style='border:2px solid black;'>
 
 
 
@@ -975,6 +1126,11 @@ listeeeee = []
   <input type='button' value='aa' id='declencheur4' style='display:none;'>
 
 
+  <input type='button' value='a' id='declencheur_gym1' style='display:none;'>
+  <input type='button' value='aa' id='declencheur_gym2' style='display:none;'>
+  <input type='button' value='a' id='declencheur_gym3' style='display:none;'>
+  <input type='button' value='aa' id='declencheur_gym4' style='display:none;'>
+
   <script>
 
 
@@ -983,11 +1139,33 @@ listeeeee = []
     document.getElementById('coifcoif').style.display = "block";
   };
 
+  function gym(){
+    document.getElementById('CONTENEUR').style.display = "none";
+    document.getElementById('gymgym').style.display = "block";
+
+ };
+
+
+
+function return_choice_coif(){
+    document.getElementById('the_map').style.display = 'none';
+    document.getElementById('mapmap').style.display = 'block';
+
+    }
+
+function return_choice_gym(){
+    document.getElementById('the_map').style.display = 'none';
+    document.getElementById('mapmap_gym').style.display = 'block';
+
+    }
+
 
 function menu_map(){
     document.getElementById('mapmap').style.display = 'none';
+    document.getElementById('mapmap_gym').style.display = 'none';
     document.getElementById('CONTENEUR').style.display = 'block';
     document.getElementById('the_map').style.display = 'none';
+    document.getElementById('the_map_gym').style.display = 'none';
     document.getElementById('oups').style.display = 'none';
     document.getElementById('but_oups').style.display = 'none';
   };
@@ -1152,7 +1330,136 @@ LISTE = []
 
 
 
+jQuery("#gym2").on("click", function(e){
+    
+    document.getElementById('gifou_gym').style.display = 'block';
+    var a = document.getElementById('gym1').value;
 
+    LISTE_GYM = []
+    LISTE_GYMGYM = []
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+          'gymnastique':a,
+
+          
+   
+      },
+      type:"POST",
+      url:"/photo/coupe"
+  })
+  .done(function(data){
+      if (data.error){
+          jQuery("#monCadreAlert").text(data.error);
+          jQuery("#is_save");
+          
+          
+      }
+      else{
+          jQuery("#is_save").html(data.data);
+          jQuery("#monCadreAlert");
+          document.getElementById('gifou_gym').style.display = 'none';
+          document.getElementById('gymgym').style.display = 'none';
+          document.getElementById('mapmap_gym').style.display = 'block';
+          console.log(data)
+
+          var c = 0
+          var c1 = 0
+          var nom = ''
+          
+          for (var i = 0; i < data.length; i++){
+            
+            if(data[i] == "'" && data[c1+1] == ']' && data[c1+2] == '['){
+              LISTE_GYM.push([nom])
+              c+=1
+              nom = ''
+            }
+            else if (data[i] == "'" || data[i] == "["){
+              {}
+            }
+            else if(data[i] == ']'){
+              {}
+            }
+            else if(data[i] == ',' && data[c1+1] == ' ' && data[c1+2] == '['){
+              LISTE_GYM.push([nom])
+              c+=1
+              nom = ''
+            }
+            else if(data[i] == ','){
+              {}
+            }
+            else if(data[i] == '"'){
+              {}
+
+            }
+            else{
+              nom += data[i]
+            };
+            c1 += 1
+
+          };
+
+          console.log(LISTE_GYM)
+          console.log('000000000000000')
+
+        
+        var info_gym1 =  "<br><br><strong>" + LISTE_GYM[0] + " :</strong><br><br>" +
+                              LISTE_GYM[1] + "<br>" +
+                              LISTE_GYM[2] + "<br>" +
+                              LISTE_GYM[3] + "<br>" +
+                              LISTE_GYM[4] + "<br>" +
+                              LISTE_GYM[5] + "<br>" +
+                              LISTE_GYM[6] + "<br><br>" +
+                              "<input type='button' value='Voir la map' onclick='declencheur_gym1f()'>";
+                              
+                            
+                              
+
+        var info_gym2 =  "<br><br><strong>" + LISTE_GYM[7] + "</strong><br><br>" +
+                              LISTE_GYM[8]  + "<br>" +
+                              LISTE_GYM[9]  + "<br>" +
+                              LISTE_GYM[10] + "<br>" +
+                              LISTE_GYM[11] + "<br>" +
+                              LISTE_GYM[12] + "<br>" +
+                              LISTE_GYM[13] + "<br><br>" +
+                              "<input type='button' value='Voir la map' onclick='declencheur_gym2f()'>";
+                      
+          
+        var info_gym3 =  "<br><br><strong>" + LISTE_GYM[14] + "</strong><br><br>" +
+                              LISTE_GYM[15] + "<br>" +
+                              LISTE_GYM[16] + "<br>" +
+                              LISTE_GYM[17] + "<br>" +
+                              LISTE_GYM[18] + "<br>" +
+                              LISTE_GYM[19] + "<br>" +
+                              LISTE_GYM[20] + "<br><br>" +
+                              "<input type='button' value='Voir la map' onclick='declencheur_gym3f()'>";
+                     
+
+        var info_gym4 =  "<br><br><strong>" + LISTE_GYM[21] + "</strong><br><br>" + 
+                              LISTE_GYM[22] + "<br>" +
+                              LISTE_GYM[23] + "<br>" +
+                              LISTE_GYM[24] + "<br>" +
+                              LISTE_GYM[25] + "<br>" +
+                              LISTE_GYM[26] + "<br>" +
+                              LISTE_GYM[27] + "<br><br>" +
+                              "<input type='button' value='Voir la map' onclick='declencheur_gym4f()'>";
+                              
+                                      
+        LISTE_GYMGYM.push([LISTE_GYM[0], LISTE_GYM[7], LISTE_GYM[14], LISTE_GYM[21]]);
+ 
+                        
+        document.getElementById('info1_gym').innerHTML = info_gym1;
+        document.getElementById('info2_gym').innerHTML = info_gym2;
+        document.getElementById('info3_gym').innerHTML = info_gym3;
+        document.getElementById('info4_gym').innerHTML = info_gym4;
+        
+
+      };
+      
+  });
+});
 
 
 
@@ -1288,6 +1595,8 @@ LISTE = []
               console.log(liste_lat)
               
               document.getElementById('the_map').style.display = 'block';
+              document.getElementById('button_lamap_gym').style.display = 'none';
+              
               
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
@@ -1353,6 +1662,7 @@ LISTE = []
               liste_lat.push(pos)
               console.log(liste_lat)
               document.getElementById('the_map').style.display = 'block';
+              document.getElementById('button_lamap_gym').style.display = 'none';
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
               
@@ -1419,6 +1729,8 @@ LISTE = []
               liste_lat.push(pos)
               console.log(liste_lat)
               document.getElementById('the_map').style.display = 'block';
+              document.getElementById('button_lamap_gym').style.display = 'none';
+              
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
               
@@ -1482,6 +1794,8 @@ LISTE = []
               liste_lat.push(pos)
               console.log(liste_lat)
               document.getElementById('the_map').style.display = 'block';
+              document.getElementById('button_lamap_gym').style.display = 'none';
+              
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
               
@@ -1502,6 +1816,252 @@ LISTE = []
 
 
 
+  jQuery("#declencheur_gym1").on("click", function(e){
+ 
+
+     var b = document.getElementById('gym1').value;
+     
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              'csrfmiddlewaretoken': '{{csrf_token}}' , 
+               'buttony_gym':String(LISTE_GYMGYM[0]),
+               'country_gym':b, 
+              
+       
+          },
+          type:"POST",
+          url:"/photo/coupe"
+      })
+      .done(function(data){
+          if (data.error){
+              jQuery("#monCadreAlert").text(data.error);
+              jQuery("#is_save");
+              
+              
+          }
+          else{
+              jQuery("#is_save").html(data.data);
+              jQuery("#monCadreAlert");
+              
+              liste_lat = []
+              console.log(data)
+              if (data == 'Oups nous n\'avons rien trouvé'){
+                document.getElementById('oups').style.display = 'block'; 
+                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('map').style.display = 'none';  
+                document.getElementById('button_lamap').style.display = 'none';
+                document.getElementById('lapmap').style.display = 'none';
+                };
+
+              pos = ''
+              for (var i = 0; i < data.length; i++){
+            
+                  if (data[i] == ' '){
+                    liste_lat.push(pos)
+                    pos = ''
+                  }
+                  else{
+                     pos += data[i]
+                 } 
+              }
+              liste_lat.push(pos)
+              console.log(liste_lat)
+              
+              document.getElementById('the_map').style.display = 'block';
+              document.getElementById('button_lamap').style.display = 'none';
+              
+              initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
+             
+              
+
+          };
+          
+      });
+  });
+
+
+
+
+  jQuery("#declencheur_gym2").on("click", function(e){
+
+     var b = document.getElementById('gym1').value;
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              'csrfmiddlewaretoken': '{{csrf_token}}' , 
+               'buttony_gym':String(LISTE_GYMGYM[7]),
+               'country_gym':b, 
+              
+       
+          },
+          type:"POST",
+          url:"/photo/coupe"
+      })
+      .done(function(data){
+          if (data.error){
+              jQuery("#monCadreAlert").text(data.error);
+              jQuery("#is_save");
+              
+              
+          }
+          else{
+              jQuery("#is_save").html(data.data);
+              jQuery("#monCadreAlert");
+              
+               if (data == 'Oups nous n\'avons rien trouvé'){
+                document.getElementById('oups').style.display = 'block'; 
+                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('map').style.display = 'none';  
+                document.getElementById('button_lamap').style.display = 'none';
+                document.getElementById('lapmap').style.display = 'none';
+                };
+
+              pos = ''
+              for (var i = 0; i < data.length; i++){
+                  console.log(data[i])
+                  if (data[i] == ' '){
+                    liste_lat.push(pos)
+                    pos = ''
+                  }
+                  else{
+                     pos += data[i]
+                 } 
+              }
+              liste_lat.push(pos)
+              console.log(liste_lat)
+              
+              document.getElementById('the_map').style.display = 'block';
+              document.getElementById('button_lamap').style.display = 'none';
+              
+              initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
+          };
+          
+      });
+  });
+
+
+
+  jQuery("#declencheur_gym3").on("click", function(e){
+
+     var b = document.getElementById('gym1').value;
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              'csrfmiddlewaretoken': '{{csrf_token}}' , 
+               'buttony_gym':String(LISTE_GYMGYM[14]),
+               'country_gym':b, 
+              
+       
+          },
+          type:"POST",
+          url:"/photo/coupe"
+      })
+      .done(function(data){
+          if (data.error){
+              jQuery("#monCadreAlert").text(data.error);
+              jQuery("#is_save");
+              
+              
+          }
+          else{
+              jQuery("#is_save").html(data.data);
+              jQuery("#monCadreAlert");
+              
+                if (data == 'Oups nous n\'avons rien trouvé'){
+                document.getElementById('oups').style.display = 'block'; 
+                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('map').style.display = 'none';  
+                document.getElementById('button_lamap').style.display = 'none';
+                document.getElementById('lapmap').style.display = 'none';
+                };
+
+              pos = ''
+              for (var i = 0; i < data.length; i++){
+                  console.log(data[i])
+                  if (data[i] == ' '){
+                    liste_lat.push(pos)
+                    pos = ''
+                  }
+                  else{
+                     pos += data[i]
+                 } 
+              }
+              liste_lat.push(pos)
+              console.log(liste_lat)
+              
+              document.getElementById('the_map').style.display = 'block';
+              document.getElementById('button_lamap').style.display = 'none';
+              
+              initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
+                
+          };
+          
+      });
+  });
+
+
+
+
+
+  jQuery("#declencheur_gym4").on("click", function(e){
+ 
+     var b = document.getElementById('gym1').value;
+     e.preventDefault();
+      jQuery.ajax({
+          data:{
+              'csrfmiddlewaretoken': '{{csrf_token}}' , 
+               'buttony_gym':String(LISTE_GYMGYM[21]),
+               'country_m':b, 
+              
+       
+          },
+          type:"POST",
+          url:"/photo/coupe"
+      })
+      .done(function(data){
+          if (data.error){
+              jQuery("#monCadreAlert").text(data.error);
+              jQuery("#is_save");
+              
+              
+          }
+          else{
+              jQuery("#is_save").html(data.data);
+              jQuery("#monCadreAlert");
+              
+              if (data == 'Oups nous n\'avons rien trouvé'){
+                document.getElementById('oups').style.display = 'block'; 
+                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('map').style.display = 'none';  
+                document.getElementById('button_lamap').style.display = 'none';
+                document.getElementById('lapmap').style.display = 'none';
+                };
+
+              pos = ''
+              for (var i = 0; i < data.length; i++){
+                  console.log(data[i])
+                  if (data[i] == ' '){
+                    liste_lat.push(pos)
+                    pos = ''
+                  }
+                  else{
+                     pos += data[i]
+                 } 
+              }
+              liste_lat.push(pos)
+              console.log(liste_lat)
+              
+              document.getElementById('the_map').style.display = 'block';
+              document.getElementById('button_lamap').style.display = 'none';
+              
+              initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
+              
+              
+          };
+          
+      });
+  });
 
 
 
@@ -1509,26 +2069,43 @@ LISTE = []
 
 
 
+   function declencheur_gym1f(){
+
+    document.getElementById('declencheur_gym1').click()
+    document.getElementById('mapmap_gym').style.display = 'none';
+
+    };
+
+
+   function declencheur_gym2f(){
+
+    document.getElementById('declencheur_gym2').click()
+    document.getElementById('mapmap_gym').style.display = 'none';
+
+    };
+
+
+    function declencheur_gym3f(){
+
+    document.getElementById('declencheur_gym3').click()
+    document.getElementById('mapmap_gym').style.display = 'none';
+
+    };
+
+
+
+    function declencheur_gym4f(){
+    document.getElementById('declencheur_gym4').click()
+    document.getElementById('mapmap_gym').style.display = 'none';
+
+
+    };
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+         
   function mapo1(){
    
     document.getElementById('declencheur1').click()
