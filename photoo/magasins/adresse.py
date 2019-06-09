@@ -1,8 +1,8 @@
 import requests
 from bs4 import *
+from geopy.geocoders import Nominatim
 
-
-def addresse(nom, ville):
+def addresse_geo(nom, ville):
     path = "https://www.google.com/search?q=adresse+{}+{}+&oq=adresse+{}+{}"
     path = path.format(nom, ville, nom, ville)
     print(path)
@@ -31,7 +31,7 @@ def addresse(nom, ville):
     return addresse
 
 
-def ville(parametre):
+def ville_geo(parametre):
     """Here we searching from Python modul(geopy.geocoders)"""
     """address from the input from html page"""
 
