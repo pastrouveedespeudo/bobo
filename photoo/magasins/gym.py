@@ -2,7 +2,9 @@ import requests
 from bs4 import *
 
 
-GYM = ['fitness', 'gym', 'body','Body', 'musculation']
+GYM = ['fitness', 'gym', 'body','Body', 'musculation', 'Fitness', 'Club', 'Gym',
+       'sport', 'Sport', 'Salle', 'salle', 'Salle de sport', 'salle de sport', 'wellness',
+       'Wellness', 'Keep cool', 'KEEP COOL', 'keep cool', ]
 
 def rayon(ville):
     path = "https://www.villorama.com/ville/{}/villes-proches.html"
@@ -51,7 +53,7 @@ def rayon(ville):
 
 def grande_ville_gym(ville):
     
-    path = "https://www.google.com/search?ei=w2n6XJ3hMMeOatXLjOgB&q=sale+de+gym+{0}&oq=sale+de+gym+{0}"
+    path = "https://www.google.com/search?ei=w2n6XJ3hMMeOatXLjOgB&q=sale+de+gym+{0}+france&oq=sale+de+gym+{0}+france"
     
     path = path.format(ville)
     r = requests.get(path)
@@ -67,6 +69,7 @@ def grande_ville_gym(ville):
             a = str(i.string).find(str(j))
             if a >= 0:
                 liste1.append(i.string)
+                
     print(liste1)
     return liste1
     liste = []
@@ -76,10 +79,12 @@ def horraire(nom, ville):
     path = 'https://www.google.com/search?ei=Gnn5XJP5KIu5gweW1qaQBQ&q={0}+{1}+horraires&oq={0}+{1}+horraires'
 
     path = path.format(nom, ville)
-    r = requests.get(path)
+    r = requests.get(path, headers={
+         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
+     })
     page = r.content
     
-    soup = BeautifulSoup(page, "html.parser")
+    soup = BeautifulSoup(page, "html.parser", from_encoding="utf-8")
     
     propriete = soup.find_all("span")
 
@@ -95,7 +100,18 @@ def horraire(nom, ville):
               'samedi',
               'dimanche',
              ]
-    
+
+
+##    semaine = ['Monday',
+##              'Tuesday',
+##              'Wednesday',
+##              'Thursday',
+##              'Friday',
+##              'Saturday',
+##              'Sunday',
+##             ]
+
+
     jour = ''
 
     liste1 = []
@@ -117,17 +133,18 @@ def horraire(nom, ville):
     
 
 
-
 def numero(nom, ville):
+    
+    path = "https://annuaire.118712.fr/?s={}+{}"
+    path = path.format(nom, ville)
 
-    path = "https://www.google.com/search?ei=oFr6XJ-0INGua6y9o4gJ&q={}+{}+numero&oq={}+{}+numero"
-    path = path.format(nom, ville, nom, ville)
-    
-    r = requests.get(path)
+    r = requests.get(path, headers={
+         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
+     })
     page = r.content
-    
+  
     soup = BeautifulSoup(page, "html.parser")
-    propriete = soup.find_all("div")
+    propriete = soup.find_all("span")
 
     liste = []
     for i in propriete:
@@ -135,8 +152,7 @@ def numero(nom, ville):
             pass
         else:
             liste.append(i.string)
-
-
+            
     tel = ''
 
     fini = ''
@@ -145,9 +161,23 @@ def numero(nom, ville):
         c = 0
         for j in i:
             try:
+                
                 a = int(i[0])
                 b = int(i[1])
-                if a == int(a) and b == int(b):
+                c = int(i[3])
+                d = int(i[4])
+                e = int(i[6])
+                f = int(i[7])
+                g = int(i[9])
+                h = int(i[10])
+                ii = int(i[12])
+                j = int(i[13])
+                
+                if a == int(a) and b == int(b) and\
+                    c == int(c) and d == int(d) and\
+                    e == int(e) and f == int(f) and\
+                    g == int(g) and h == int(h) and\
+                    ii == int(ii) and j == int(j):
                     tel += i
                     fini = True
                     break
@@ -157,9 +187,8 @@ def numero(nom, ville):
         if fini == True:
             break
 
-    print(tel)
+    print(tel,'11111111111111111111')
     return tel
-
 
 
 
@@ -185,7 +214,7 @@ def numero(nom, ville):
 #print(a)
 #grande_ville_gym('crest')
 #horraire("Body's Studio", "crest")
-numero("Body's Studio", "crest")
+#numero("Body's Studio", "crest")
 
 
 
