@@ -25,7 +25,9 @@ from django.http import StreamingHttpResponse
 import cv2
 
 from .magasins.coiffeur import *
+from .magasins.adresse import *
 
+from .magasins.gym import *
 
 def mes_images(request):
     
@@ -96,22 +98,108 @@ def coupe(request):
         coupe = request.POST.get('coupe')
         recherche = request.POST.get('coupedecheveux')
         enregistement = request.POST.get('produit')
-    
+
+        map_coiffure = request.POST.get('buttony')
         numero_coiffeur = request.POST.get('numero_coiffeur')
         vivile = request.POST.get('country')
+        coiffure = request.POST.get('coiffeur')
+
+        gymm = request.POST.get('gymnastique')
+        gymm_map = request.POST.get('buttony_gym')
+        gym_pays = request.POST.get('country_gym')
+
+
 
         
-        coiffure = request.POST.get('coiffeur')
         MON_COIFFEUR = []
         
-        print(coiffure,'000000000000000000000000000')
-        print(numero_coiffeur,'000000000000000000000000000chicha')
+        print(coiffure,'000000000000000000000000000COIFFURE')
+        print(numero_coiffeur,'000000000000000000000000000chichanumero')
         print(vivile)
+        print(map_coiffure,'000000000000000000000000000MAPCOIFFURE')
+
+
+        if gymm_map:
+            print(gymm_map, gym_pays, '0897498464636ugdsvhoisdjs')
+            
+            la_adresse = addresse_geo(gymm_map, gym_pays)
+            try:
+                lat_long = ville_geo(la_adresse)
+            except:
+                return HttpResponse('Oups nous n\'avons rien trouvé')
+
+            data = str(lat_long[0]) + ' ' + str(lat_long[1])
+            print(data)
+            return HttpResponse(data)
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        if gymm:
+            gym_liste = []
+            print('ouiiiiiiiiiiii')
+            print(gymm)
+            les_villes = grande_ville_gym(gymm)
+            
+            for i in les_villes:
+                
+                if len(gym_liste) == 4:
+                    return HttpResponse(gym_liste)
+                    
+                a = horraire_gym(i, gymm)
+
+                if a != []:
+                    gym_liste.append([i, a, ""])
+            
+
+            return HttpResponse(gym_liste)
+
+
+
+
+        c = 0
+        if coiffure:
+
+            coif = []
+          
+            les_coiffeurs = ville(coiffure)
+            #for i in les_coiffeurs:
+            #    print(i)
+
+            MON_COIFFEUR.extend(les_coiffeurs)
+
+            for i in MON_COIFFEUR:
+                
+                horraire1 = horraire(i, coiffure)
+                print(i)
+                print(horraire1)
+             
+                if [horraire1] == [] or horraire1 == []\
+                   or horraire1 == "" or horraire1 == " "\
+                   or horraire1 == None:
+                    MON_COIFFEUR.remove(i)
+                    
+                else:
+                    coif.append([i, horraire1, ""])
+                    MON_COIFFEUR.remove(i)
+
+
+            #print(coif)
+            #print('iciiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
+            return HttpResponse(coif)
+ 
 
         if numero_coiffeur and vivile:
-
             liste = []
-
 
             coif = ''
             for i in numero_coiffeur:
@@ -133,51 +221,25 @@ def coupe(request):
             return HttpResponse(num)
 
 
+        
+        if map_coiffure:
+            print('ouiiiiiiiiiiiiiiiiiiiii')
+            la_adresse = addresse_geo(map_coiffure, vivile)
+            try:
+                lat_long = ville_geo(la_adresse)
+            except:
+                return HttpResponse('Oups nous n\'avons rien trouvé')
+
+            data = str(lat_long[0]) + ' ' + str(lat_long[1])
+
+            return HttpResponse(data)
 
 
 
 
-        c = 0
-        if coiffure:
-
-            coif = []
-          
-            les_coiffeurs = ville(coiffure)
-            #for i in les_coiffeurs:
-            #    print(i)
 
 
-            
-            MON_COIFFEUR.extend(les_coiffeurs)
-  
 
-            
-                
-            for i in MON_COIFFEUR:
-                
-
-                horraire1 = horraire(i, coiffure)
-                print(i)
-                print(horraire1)
-             
-                if [horraire1] == [] or horraire1 == []\
-                   or horraire1 == "" or horraire1 == " "\
-                   or horraire1 == None:
-                    MON_COIFFEUR.remove(i)
-                    
-                else:
-                    coif.append([i, horraire1, ""])
-                    MON_COIFFEUR.remove(i)
-                
-       
-            
-              
-                
-
-            #print(coif)
-            #print('iciiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
-            return HttpResponse(coif)
- 
 
 
         
