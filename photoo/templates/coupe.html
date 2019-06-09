@@ -758,12 +758,23 @@ listeeeee = []
     </div><br><br><br><br><br><br><br>
     
   </div>
+  </div>
 
 
+  <style>#map{
+              height:350px;
+              width:80%;
+              border: 5px solid black;
+                  
+        };
+  </style>
+
+
+  
   <div id='the_map' style='display:none;'>
   
     <center><div id='map'></div></center>
-
+    <br><br>
     <center><input type='button' value='Retour au menu' onclick='menu_map()'></center>
     
   </div>
@@ -778,177 +789,6 @@ listeeeee = []
 
 
 
-
-
-  
-  <script>
-
-    LISTE_COIFURE = []
-
-    
-    jQuery("#coif2").on("click", function(e){
-    document.getElementById('gifou').style.display = 'block';
-    var a = document.getElementById('coif1').value;
-    LISTE = []
-
-     e.preventDefault();
-      jQuery.ajax({
-          data:{
-              'csrfmiddlewaretoken': '{{csrf_token}}' , 
-              'coiffeur':a,
-
-              
-       
-          },
-          type:"POST",
-          url:"/photo/coupe"
-      })
-      .done(function(data){
-          if (data.error){
-              jQuery("#monCadreAlert").text(data.error);
-              jQuery("#is_save");
-              
-              
-          }
-          else{
-              jQuery("#is_save").html(data.data);
-              jQuery("#monCadreAlert");
-              document.getElementById('gifou').style.display = 'none';
-              document.getElementById('coifcoif').style.display = 'none';
-              document.getElementById('mapmap').style.display = 'block';
-              document.getElementById('info').style.display = 'block';
-              document.getElementById('p_am_pm').style.display = 'block';
-
-              
-              
-              
-              var c = 0
-              var c1 = 0
-              var nom = ''
-              for(var i = 0; i < data.length; i ++){
-
-                
-                if(data[i] == "'" && data[c1+1] == ']' && data[c1+2] == '['){
-                  LISTE.push([nom])
-                  c+=1
-                  nom = ''
-                }
-                else if (data[i] == "'" || data[i] == "["){
-                  {}
-                }
-                else if(data[i] == ']'){
-                  {}
-                }
-                else if(data[i] == ',' && data[c1+1] == ' ' && data[c1+2] == '['){
-                  LISTE.push([nom])
-                  c+=1
-                  nom = ''
-                }
-                else if(data[i] == ','){
-                  {}
-                }
-                else if(data[i] == '"'){
-                  {}
-
-                }
-                else{
-                  nom += data[i]
-                };
-                c1 += 1
-
-              };
-
-              console.log(LISTE)
-              console.log('000000000000000')
-
-
-            
-
-
-            
-            var info_coiffeur1 =  "<br><br><strong>" + LISTE[0] + " :</strong><br><br>" +
-                                  LISTE[1] + "<br>" +
-                                  LISTE[2] + "<br>" +
-                                  LISTE[3] + "<br>" +
-                                  LISTE[4] + "<br>" +
-                                  LISTE[5] + "<br>" +
-                                  LISTE[6] + "<br><br>" +
-                                  "<p id='yoo1'><i>Le numéro arrive !</i></p>" +
-                                  "<img id='gifou1' src='/static/img/portfolio/icone/chargement1.gif' width='40'>";
-                                
-                                  
-
-            var info_coiffeur2 =  "<br><br><strong>" + LISTE[7] + "</strong><br><br>" +
-                                  LISTE[8]  + "<br>" +
-                                  LISTE[9]  + "<br>" +
-                                  LISTE[10] + "<br>" +
-                                  LISTE[11] + "<br>" +
-                                  LISTE[12] + "<br>" +
-                                  LISTE[13] + "<br><br>" +
-                                  "<p id='yoo2'><i>Le numéro arrive !</i></p>" +
-                                  "<img id='gifou2' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
-                          
-              
-            var info_coiffeur3 =  "<br><br><strong>" + LISTE[14] + "</strong><br><br>" +
-                                  LISTE[15] + "<br>" +
-                                  LISTE[16] + "<br>" +
-                                  LISTE[17] + "<br>" +
-                                  LISTE[18] + "<br>" +
-                                  LISTE[19] + "<br>" +
-                                  LISTE[20] + "<br><br>" +
-                                  "<p id='yoo3'><i>Le numéro arrive !</i></p>" +
-                                  "<img id='gifou3' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
-                         
-
-            var info_coiffeur4 =  "<br><br><strong>" + LISTE[21] + "</strong><br><br>" + 
-                                  LISTE[22] + "<br>" +
-                                  LISTE[23] + "<br>" +
-                                  LISTE[24] + "<br>" +
-                                  LISTE[25] + "<br>" +
-                                  LISTE[26] + "<br>" +
-                                  LISTE[27] + "<br><br>" +
-                                  "<p id='yoo4'><i>Le numéro arrive !</i></p>" +
-                                  "<img id='gifou4' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
-                                  
-                                          
-            LISTE_COIFURE.push([LISTE[0], LISTE[7], LISTE[14], LISTE[21]]);
-     
-                              
-
-            document.getElementById('info1').innerHTML = info_coiffeur1;
-            document.getElementById('info2').innerHTML = info_coiffeur2;
-            document.getElementById('info3').innerHTML = info_coiffeur3;
-            document.getElementById('info4').innerHTML = info_coiffeur4;
-            document.getElementById('bubuton').click();
-
-
-
-
-
-              
-              
-              
-          };
-          
-      });
-  });
-
-
-
-
-
-
-
-
-  </script>
-
-
-
-
-
-
-
-    
 
 
   
@@ -1104,6 +944,165 @@ function menu_map(){
   
 
 
+
+
+
+LISTE_COIFURE = []
+
+
+jQuery("#coif2").on("click", function(e){
+    
+    document.getElementById('gifou').style.display = 'block';
+    var a = document.getElementById('coif1').value;
+
+LISTE = []
+
+ e.preventDefault();
+  jQuery.ajax({
+      data:{
+          'csrfmiddlewaretoken': '{{csrf_token}}' , 
+          'coiffeur':a,
+
+          
+   
+      },
+      type:"POST",
+      url:"/photo/coupe"
+  })
+  .done(function(data){
+      if (data.error){
+          jQuery("#monCadreAlert").text(data.error);
+          jQuery("#is_save");
+          
+          
+      }
+      else{
+          jQuery("#is_save").html(data.data);
+          jQuery("#monCadreAlert");
+          document.getElementById('gifou').style.display = 'none';
+          document.getElementById('coifcoif').style.display = 'none';
+          document.getElementById('mapmap').style.display = 'block';
+          document.getElementById('info').style.display = 'block';
+          document.getElementById('p_am_pm').style.display = 'block';
+
+          
+          
+          
+          var c = 0
+          var c1 = 0
+          var nom = ''
+          for(var i = 0; i < data.length; i ++){
+
+            
+            if(data[i] == "'" && data[c1+1] == ']' && data[c1+2] == '['){
+              LISTE.push([nom])
+              c+=1
+              nom = ''
+            }
+            else if (data[i] == "'" || data[i] == "["){
+              {}
+            }
+            else if(data[i] == ']'){
+              {}
+            }
+            else if(data[i] == ',' && data[c1+1] == ' ' && data[c1+2] == '['){
+              LISTE.push([nom])
+              c+=1
+              nom = ''
+            }
+            else if(data[i] == ','){
+              {}
+            }
+            else if(data[i] == '"'){
+              {}
+
+            }
+            else{
+              nom += data[i]
+            };
+            c1 += 1
+
+          };
+
+          console.log(LISTE)
+          console.log('000000000000000')
+
+
+        
+
+
+        
+        var info_coiffeur1 =  "<br><br><strong>" + LISTE[0] + " :</strong><br><br>" +
+                              LISTE[1] + "<br>" +
+                              LISTE[2] + "<br>" +
+                              LISTE[3] + "<br>" +
+                              LISTE[4] + "<br>" +
+                              LISTE[5] + "<br>" +
+                              LISTE[6] + "<br><br>" +
+                              "<p id='yoo1'><i>Le numéro arrive !</i></p>" +
+                              "<img id='gifou1' src='/static/img/portfolio/icone/chargement1.gif' width='40'>";
+                            
+                              
+
+        var info_coiffeur2 =  "<br><br><strong>" + LISTE[7] + "</strong><br><br>" +
+                              LISTE[8]  + "<br>" +
+                              LISTE[9]  + "<br>" +
+                              LISTE[10] + "<br>" +
+                              LISTE[11] + "<br>" +
+                              LISTE[12] + "<br>" +
+                              LISTE[13] + "<br><br>" +
+                              "<p id='yoo2'><i>Le numéro arrive !</i></p>" +
+                              "<img id='gifou2' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
+                      
+          
+        var info_coiffeur3 =  "<br><br><strong>" + LISTE[14] + "</strong><br><br>" +
+                              LISTE[15] + "<br>" +
+                              LISTE[16] + "<br>" +
+                              LISTE[17] + "<br>" +
+                              LISTE[18] + "<br>" +
+                              LISTE[19] + "<br>" +
+                              LISTE[20] + "<br><br>" +
+                              "<p id='yoo3'><i>Le numéro arrive !</i></p>" +
+                              "<img id='gifou3' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
+                     
+
+        var info_coiffeur4 =  "<br><br><strong>" + LISTE[21] + "</strong><br><br>" + 
+                              LISTE[22] + "<br>" +
+                              LISTE[23] + "<br>" +
+                              LISTE[24] + "<br>" +
+                              LISTE[25] + "<br>" +
+                              LISTE[26] + "<br>" +
+                              LISTE[27] + "<br><br>" +
+                              "<p id='yoo4'><i>Le numéro arrive !</i></p>" +
+                              "<img id='gifou4' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
+                              
+                                      
+        LISTE_COIFURE.push([LISTE[0], LISTE[7], LISTE[14], LISTE[21]]);
+ 
+                          
+
+        document.getElementById('info1').innerHTML = info_coiffeur1;
+        document.getElementById('info2').innerHTML = info_coiffeur2;
+        document.getElementById('info3').innerHTML = info_coiffeur3;
+        document.getElementById('info4').innerHTML = info_coiffeur4;
+        document.getElementById('bubuton').click();
+
+      };
+      
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
   jQuery("#bubuton").on("click", function(e){
    
      var a = document.getElementById('coif1').value;
@@ -1174,33 +1173,11 @@ function menu_map(){
 
 
 
-
-
-
-  function mapo1(){
-   
-    document.getElementById('declencheur1').click()
-
-    }
-
-  function mapo2(){
-    document.getElementById('declencheur2').click()
-
-    }
-
-  function mapo3(){
-    document.getElementById('declencheur3').click()
-
-    }
-
-  function mapo4(){
-    document.getElementById('declencheur4').click()
-
-    }
-
   jQuery("#declencheur1").on("click", function(e){
+      
      var b = document.getElementById('coif1').value;
      var a = document.getElementById('but_map1').name;
+     
      e.preventDefault();
       jQuery.ajax({
           data:{
@@ -1225,6 +1202,28 @@ function menu_map(){
           else{
               jQuery("#is_save").html(data.data);
               jQuery("#monCadreAlert");
+             
+
+              liste_lat = []
+              console.log(data)
+
+              pos = ''
+              for (var i = 0; i < data.length; i++){
+                  console.log(data[i])
+                  if (data[i] == ' '){
+                    liste_lat.push(pos)
+                    pos = ''
+                  }
+                  else{
+                     pos += data[i]
+                 } 
+              }
+              liste_lat.push(pos)
+              console.log(liste_lat)
+              
+              document.getElementById('the_map').style.display = 'block';
+              
+              initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
               
           };
@@ -1261,6 +1260,25 @@ function menu_map(){
               jQuery("#is_save").html(data.data);
               jQuery("#monCadreAlert");
               
+              liste_lat = []
+              console.log(data)
+
+              pos = ''
+              for (var i = 0; i < data.length; i++){
+                  console.log(data[i])
+                  if (data[i] == ' '){
+                    liste_lat.push(pos)
+                    pos = ''
+                  }
+                  else{
+                     pos += data[i]
+                 } 
+              }
+              liste_lat.push(pos)
+              console.log(liste_lat)
+              document.getElementById('the_map').style.display = 'block';
+              initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
+              
               
           };
           
@@ -1295,6 +1313,25 @@ function menu_map(){
           else{
               jQuery("#is_save").html(data.data);
               jQuery("#monCadreAlert");
+              
+              liste_lat = []
+              console.log(data)
+
+              pos = ''
+              for (var i = 0; i < data.length; i++){
+                  console.log(data[i])
+                  if (data[i] == ' '){
+                    liste_lat.push(pos)
+                    pos = ''
+                  }
+                  else{
+                     pos += data[i]
+                 } 
+              }
+              liste_lat.push(pos)
+              console.log(liste_lat)
+              document.getElementById('the_map').style.display = 'block';
+              initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
               
           };
@@ -1331,6 +1368,25 @@ function menu_map(){
               jQuery("#is_save").html(data.data);
               jQuery("#monCadreAlert");
               
+              liste_lat = []
+              console.log(data)
+
+              pos = ''
+              for (var i = 0; i < data.length; i++){
+                  console.log(data[i])
+                  if (data[i] == ' '){
+                    liste_lat.push(pos)
+                    pos = ''
+                  }
+                  else{
+                     pos += data[i]
+                 } 
+              }
+              liste_lat.push(pos)
+              console.log(liste_lat)
+              document.getElementById('the_map').style.display = 'block';
+              initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
+              
               
           };
           
@@ -1344,6 +1400,88 @@ function menu_map(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function mapo1(){
+   
+    document.getElementById('declencheur1').click()
+    document.getElementById('mapmap').style.display = 'none';
+    
+
+    };
+
+  function mapo2(){
+    document.getElementById('declencheur2').click()
+    document.getElementById('mapmap').style.display = 'none';
+
+
+    };
+
+  function mapo3(){
+    document.getElementById('declencheur3').click()
+    document.getElementById('mapmap').style.display = 'none';
+
+
+    };
+
+  function mapo4(){
+    document.getElementById('declencheur4').click()
+    document.getElementById('mapmap').style.display = 'none';
+
+
+    };
+
+
+
+
+
+
+
+    var map;
+
+    function initMap(lattitude, longitude) {
+
+   
+
+      lattitude = parseFloat(lattitude)
+      longitude = parseFloat(longitude)
+      
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: lattitude, lng: longitude},
+        zoom: 20
+      });
+
+    }
 
 
 
@@ -1455,6 +1593,9 @@ function menu_map(){
 <!-- Custom scripts for this template -->
 <script src="/static/js/creative.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqJf5bBiufgiWCK34KcdmPt4Zhsp4oRCc&callback=initMap"
+  async defer></script>
+
 </html>
 
 
