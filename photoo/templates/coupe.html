@@ -1719,6 +1719,7 @@ jQuery("#gym2").on("click", function(e){
                 document.getElementById('lapmap').style.display = 'none';
                 document.getElementById('button_lamap_gym').style.display = 'none';
                 document.getElementById('button_lamap').style.display = 'block';
+                
                 }
               else{
 
@@ -1737,8 +1738,9 @@ jQuery("#gym2").on("click", function(e){
               console.log(liste_lat)
               document.getElementById('the_map').style.display = 'block';
               document.getElementById('button_lamap_gym').style.display = 'none';
-              
+              document.getElementById('button_lamap').style.display = 'block';
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
+              
               
             };  
           };
@@ -1806,7 +1808,7 @@ jQuery("#gym2").on("click", function(e){
               console.log(liste_lat)
               document.getElementById('the_map').style.display = 'block';
               document.getElementById('button_lamap_gym').style.display = 'none';
-              
+              document.getElementById('button_lamap').style.display = 'block';
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
             };  
