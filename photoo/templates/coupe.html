@@ -863,8 +863,8 @@ listeeeee = []
     <center><h3 style='margin-top:-200px;' id='lapmap'>La map</h3></center>
     
     <center><strong><h3 id='oups' style='display:none;'>Nous n'avons rien trouvé désolé</h3></strong></center>
-    <center><input type='button' style='display:none;' id='but_oups'onclick='menu_map()' value='Retour au menu'
-                    style='border:2px solid black;'>
+    
+the_map
 
     <br><br>
     <center><div id='map'></div></center>
@@ -1167,12 +1167,13 @@ function menu_map(){
     document.getElementById('the_map').style.display = 'none';
     document.getElementById('the_map_gym').style.display = 'none';
     document.getElementById('oups').style.display = 'none';
-    document.getElementById('but_oups').style.display = 'none';
+
   };
 
   function menuuu(){
     document.getElementById('coifcoif').style.display = 'none';
     document.getElementById('CONTENEUR').style.display = 'block';
+    document.getElementById('gymgym').style.display = 'none';
   };
 
 
@@ -1573,13 +1574,15 @@ jQuery("#gym2").on("click", function(e){
 
 
               if (data == 'Oups nous n\'avons rien trouvé'){
-                document.getElementById('oups').style.display = 'block'; 
-                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('oups').style.display = 'block';
+                document.getElementById('the_map').style.display = 'block';
+ 
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
-                };
-
+                }
+              else{
+            
               pos = ''
               for (var i = 0; i < data.length; i++){
                   console.log(data[i])
@@ -1600,7 +1603,7 @@ jQuery("#gym2").on("click", function(e){
               
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
-              
+            };
           };
           
       });
@@ -1639,8 +1642,9 @@ jQuery("#gym2").on("click", function(e){
               console.log(data)
 
               if (data == 'Oups nous n\'avons rien trouvé'){
-                document.getElementById('oups').style.display = 'block'; 
-                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('oups').style.display = 'block';
+                document.getElementById('the_map').style.display = 'block';
+
                 document.getElementById('map').style.display = 'none';
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
@@ -1704,8 +1708,10 @@ jQuery("#gym2").on("click", function(e){
               console.log(data)
 
               if (data == 'Oups nous n\'avons rien trouvé'){
-                document.getElementById('oups').style.display = 'block'; 
-                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('oups').style.display = 'block';
+                document.getElementById('the_map').style.display = 'block';
+
+
                 document.getElementById('map').style.display = 'none';
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
@@ -1772,8 +1778,10 @@ jQuery("#gym2").on("click", function(e){
               console.log(data)
 
               if (data == 'Oups nous n\'avons rien trouvé'){
-                document.getElementById('oups').style.display = 'block'; 
-                document.getElementById('but_oups').style.display = 'block';
+                document.getElementById('oups').style.display = 'block';
+                document.getElementById('the_map').style.display = 'block';
+   
+                
                 document.getElementById('map').style.display = 'none';
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
@@ -1846,13 +1854,15 @@ jQuery("#gym2").on("click", function(e){
               
               liste_lat = []
               console.log(data)
-              if (data == 'Oups nous n\'avons rien trouvé'){
-                document.getElementById('oups').style.display = 'block'; 
-                document.getElementById('but_oups').style.display = 'block';
+              
+              if (data == "Oups nous n'avons rien trouvé"){
+                document.getElementById('oups').style.display = 'block';
+                document.getElementById('the_map').style.display = 'block';
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
-                };
+                }
+              else{
 
               pos = ''
               for (var i = 0; i < data.length; i++){
@@ -1874,7 +1884,7 @@ jQuery("#gym2").on("click", function(e){
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
              
               
-
+            };
           };
           
       });
@@ -1908,14 +1918,17 @@ jQuery("#gym2").on("click", function(e){
           else{
               jQuery("#is_save").html(data.data);
               jQuery("#monCadreAlert");
-              
-               if (data == 'Oups nous n\'avons rien trouvé'){
-                document.getElementById('oups').style.display = 'block'; 
-                document.getElementById('but_oups').style.display = 'block';
+              console.log(data)
+               if (data == "Oups nous n'avons rien trouvé"){
+                document.getElementById('oups').style.display = 'block';
+                document.getElementById('the_map').style.display = 'block';
+           
+                
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
-                };
+                }
+              else{
 
               pos = ''
               for (var i = 0; i < data.length; i++){
@@ -1936,7 +1949,7 @@ jQuery("#gym2").on("click", function(e){
               
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
           };
-          
+          };
       });
   });
 
@@ -1968,13 +1981,16 @@ jQuery("#gym2").on("click", function(e){
               jQuery("#is_save").html(data.data);
               jQuery("#monCadreAlert");
               
-                if (data == 'Oups nous n\'avons rien trouvé'){
-                document.getElementById('oups').style.display = 'block'; 
-                document.getElementById('but_oups').style.display = 'block';
+                if (data == "Oups nous n'avons rien trouvé"){
+                document.getElementById('oups').style.display = 'block';
+                document.getElementById('the_map').style.display = 'block';
+ 
+                
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
-                };
+                }
+              else{
 
               pos = ''
               for (var i = 0; i < data.length; i++){
@@ -1994,7 +2010,7 @@ jQuery("#gym2").on("click", function(e){
               document.getElementById('button_lamap').style.display = 'none';
               
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
-                
+            };    
           };
           
       });
@@ -2030,13 +2046,16 @@ jQuery("#gym2").on("click", function(e){
               jQuery("#is_save").html(data.data);
               jQuery("#monCadreAlert");
               
-              if (data == 'Oups nous n\'avons rien trouvé'){
-                document.getElementById('oups').style.display = 'block'; 
-                document.getElementById('but_oups').style.display = 'block';
+              if (data == "Oups nous n'avons rien trouvé"){
+                document.getElementById('oups').style.display = 'block';
+                document.getElementById('the_map').style.display = 'block';
+  
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
-                };
+                
+                }
+              else{
 
               pos = ''
               for (var i = 0; i < data.length; i++){
@@ -2057,7 +2076,7 @@ jQuery("#gym2").on("click", function(e){
               
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
-              
+            };  
           };
           
       });
