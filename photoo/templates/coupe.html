@@ -38,6 +38,25 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 
@@ -757,13 +776,13 @@ listeeeee = []
 
 
             
-        </div><br>
+        </div><br><br><br>
             
       </div>
-    
-      <center><input type='button' value='Retour au menu' onclick='menu_map()'></center><br><br>
+        
+      <center><input type='button' style='border:2px solid black;' value='Retour au menu' onclick='menu_map()'></center><br><br>
  
-    </div><br><br><br><br><br><br><br>
+    </div><br><br><br><br><br><br><br><br><br><br><br>
     
   </div>
   </div>
@@ -791,7 +810,7 @@ listeeeee = []
     <br><br>
     <center><div id='map'></div></center>
     <br><br>
-    <center><input type='button' value='Retour au menu' onclick='menu_map()' id='button_lamap'></center>
+    <center><input type='button' value='Retour au menu' style='border:2px solid black;' onclick='menu_map()' id='button_lamap'></center>
     
   </div>
 
@@ -832,15 +851,16 @@ listeeeee = []
              
             <h3 class="h4 mb-2">Coiffeurs</h3>
             
-            <br><br>
+            <br>
             
-            <p id ='p_coif'
-            class="text-muted mb-0" style='display:none; position:absolute;'>
+     
+            <center><p id ='p_coif'  style='color:white; font-size:1em;display:none; position:absolute;left:0%;'>
               Voir les coiffeurs les plus proches de chez moi
-            </p>
+            </p></center>
             
           </div>
-        </div>
+        
+        </div><br><br>
 
         
         
@@ -856,16 +876,16 @@ listeeeee = []
              onmouseout="start('p_gym', 'im4', '/static/img/portfolio/icone/gym.png')"
              id="im4">
              
-            <h3 class="h4 mb-2">Salle de gym</h3>
-            <br><br>
+            <h3 class="h4 mb-2" >Salle de gym</h3>
+            <br>
             
-            <p id='p_gym'
-              class="text-muted mb-0" style='display:none; position:absolute;'>
+            <p id='p_gym' style='color:white; font-size:1em;display:none; position:absolute;left:15%;'>
               Voir les salles de gym les plus proches de chez moi
             </p>
+    
             
           </div>
-        </div>
+        </div><br><br>
 
       
 
@@ -880,13 +900,9 @@ listeeeee = []
              
             <h3 class="h4 mb-2">Essayer des vêtements</h3><br>
             
-            <p id='p_habit'class="text-muted mb-0" style='display:none; position:absolute;'>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Essayer des habits</p>
+            <p id='p_habit'class="h4 mb-2" style='color:white; font-size:1em;display:none; position:absolute;right:0%;'>
+
+            Essayer des habits sans faire la queue</p>
           </div>
         </div>
 
@@ -902,10 +918,10 @@ listeeeee = []
             <h3 class="h4 mb-2">
             Essayer des vêtements</h3>
             <br>
-            <p id='p_tendance' class="text-muted mb-0"
-            style='display:none; position:absolute;'>
+            <p id='p_tendance'
+            style='color:white; font-size:1em;display:none; position:absolute;left:0%;'>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Voir la tendance du moment</p>
+            Voir la tendance de cet été pour etre à jour</p>
           </div>
         </div>
 
@@ -927,7 +943,29 @@ listeeeee = []
   </section>
 
 
-  <input type='button' style='display:none;' id='bubuton'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <input type='button' style='display:none;' id='bubuton' style='border:2px solid black;'>
 
 
 
@@ -2118,6 +2156,33 @@ const constraints = {video: true};
   }
 })();
 </script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
