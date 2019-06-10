@@ -158,11 +158,13 @@
                   <br>
                   <strong><center><p style='font-family:segoe print;'>Nos info habits</p></center></strong>
                   <div id='infofo' style='text-align:left; padding-left:50px;'>
-                    <p id='name'></p>
-                    <p id='store'></p>
-                    <p id='online'></p>
-                    <p id='price'></p>
-                    <p id='stock'></p>
+                  
+                    <p style='float:right;width:200px;' id='mage'></p>
+                    <p id='name' style='width:200px'>aaa</p>
+                    <p id='store' style='width:200px'>aa</p>
+                    <p id='online' style='width:200px'>aaa</p>
+                    <p id='price' style='width:200px'>aaa</p>
+                    <p id='stock' style='width:200px'>aaa</p>
                   </div>
               </div><br>
               <p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une catégorie d'habit</i></strong></p>
@@ -962,49 +964,47 @@ function voir_shirt(){
   LISTE1 = []
 
 
-liste_info_prix = [['hb9','xxx', '<a href="" style="color:white;">www.xxx.fr</a>', '2550 euros', 'épuisé', 'xxx'],
-                   ['bb1' ,'xxx', '<a href="" style="color:white;">www.xxx.fr</a>', '2550 euros', 'en stock', 'xxx'],
-                   ['bb2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '5520 euros', 'en stock', 'xxx'],
-                   ['bb3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '280 euros', 'en stock', 'xxx'],
-                   ['bb4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '25580 euros', 'épuisé', 'xxx'],
-                   ['bb5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '280 euros', 'en stock', 'xxx'],
-                   ['bb6' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '290 euros', 'en stock', 'xxx'],
-                   ['bb7' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20 euros', 'épuisé', 'xxx'],
-                   ['bb8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20 euros', 'en stock', 'xxx'],
-                   ['bb9' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '290 euros', 'épuisé', 'xxx'],
-                   ['bb10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '23660 euros', 'en stock', 'xxx'],
-                   ['bbl1' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20 euros', 'en stock', 'xxx'],
-                   ['bbl2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '280 euros', 'en stock', 'xxx'],
-                   ['bbl3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '47 euros', 'en stock', 'xxx'],
-                   ['bbl4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '240 euros', 'en stock', 'xxx'],
-                   ['bbl5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '274874 euros', 'épuisé', 'xxx'],
-                   ['bbl6' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '26848 euros', 'en stock', 'xxx'],
-                   ['bbl17' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2048 euros', 'en stock', 'xxx'],
-                   ['bbl8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2064548 euros', 'en stock', 'xxx'],
-                   ['bbl19' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '25498 euros', 'épuisé', 'xxx'],
-                   ['bbl10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2588 euros', 'en stock', 'xxx'],
-                   ['bbl11' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '255 euros', 'épuisé', 'xxx'],
-                   ['bbl12' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '550 euros', 'en stock', 'xxx'],
-                   ['hb1' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2088 euros', 'épuisé', 'xxx'],
-                   ['hb2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2000 euros', 'épuisé', 'xxx'],
-                   ['hb3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2155 euros', 'en stock', 'xxx'],
-                   ['hb4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2015 euros', 'en stock', 'xxx'],
-                   ['hb5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20789 euros', 'épuisé', 'xxx'],
-                   ['hb6' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2033 euros', 'en stock', 'xxx'],
-                   ['hb7' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2121 euros', 'épuisé', 'xxx'],
-                   ['hb8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '1987 euros', 'en stock', 'xxx'],
-                   ['hb9' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '231 euros', 'en stock', 'xxx'],
-                   ['hb10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '890 euros', 'en stock', 'xxx'],
-                   ['hg1' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '17 euros', 'en stock', 'xxx'],
-                   ['hg2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '202102 euros', 'épuisé', 'xxx'],
-                   ['hg3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2084 euros', 'en stock', 'xxx'],
-                   ['hg4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '200 euros', 'épuisé', 'xxx'],
-                   ['hg5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '23 euros', 'en stock', 'xxx'],
-                   ['hg6' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '15 euros', 'en stock', 'xxx'],
-                   ['hg7' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '17 euros', 'en stock', 'xxx'],
-                   ['hg8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '18 euros', 'en stock', 'xxx'],
-                   ['hg9' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '19 euros', 'en stock', 'xxx'],
-                   ['hg10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '21 euros', 'en stock', 'xxx'],
+liste_info_prix = [['bb1' ,'xxx', '<a href="" style="color:white;">www.xxx.fr</a>', '2550 euros', 'en stock', 'xxx', '<img src="/static/img/portfolio/vetement/femme/bas_blanc/1.png" style="height:200px>"'],
+                   ['bb2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '5520 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/2.2.png style='height:200px'>"],
+                   ['bb3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '280 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/3.png' style='height:200px'>"],
+                   ['bb4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '25580 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/4.png' style='height:200px'>"],
+                   ['bb5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '280 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/5.png' style='height:200px'>"],
+                   ['bb6' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '290 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/6.png'> style='height:200px'>"],
+                   ['bb7' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/7.png' style='height:200px'>"],
+                   ['bb8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/8.png' style='height:200px'>"],
+                   ['bb9' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '290 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/9.png' style='height:200px'>"],
+                   ['bb10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '23660 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/10.png style='height:200px'>"],
+                   ['bbl1' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/1.png' style='height:200px'>"],
+                   ['bbl2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '280 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/2.png' style='height:200px'>"],
+                   ['bbl3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '47 euros', 'en stock', 'xxx', " <img src='/static/img/portfolio/vetement/femme/bas_bleu/3.png' style='height:200px'>"],
+                   ['bbl4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '240 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/4.png' style='height:200px'>"],
+                   ['bbl5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '274874 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/5.png' style='height:200px'>"],
+                   ['bbl6' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '26848 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/6.png' style='height:200px'>"],
+                   ['bbl17' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2048 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/7.png' style='height:200px'>"],
+                   ['bbl8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2064548 euros', 'en stock', 'xxx', " <img src='/static/img/portfolio/vetement/femme/bas_bleu/8.png' style='height:200px'>"],
+                   ['bbl19' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '25498 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/9.png' style='height:200px'>"],
+                   ['bbl10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2588 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/10.png' style='height:200px'>"],
+                   ['bbl11' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '255 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/11.png' style='height:200px'>"],
+                   ['bbl12' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '550 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/12.png' style='height:200px'>"],
+                   ['hb1' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2088 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/1.png style='height:200px'>"],
+                   ['hb2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2000 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/2.png' style='height:200px'>"],
+                   ['hb3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2155 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/3.png' style='height:200px'>"],
+                   ['hb4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2015 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/4.png' style='height:200px'>"],
+                   ['hb5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20789 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/5.png' style='height:200px'>"],
+                   ['hb7' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2121 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/6.png' style='height:200px'>"],
+                   ['hb8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '1987 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/7.png' style='height:200px'>"],
+                   ['hb9' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '231 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/9.png' style='height:200px'>"],
+                   ['hb10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '890 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/10.png' style='height:200px'>"],
+                   ['hg1' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '17 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/1.png' style='height:200px'>"],
+                   ['hg2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '202102 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/2.png' style='height:200px'>"],
+                   ['hg3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2084 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/3.png' style='height:200px'>"],
+                   ['hg4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '200 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/4.png' style='height:200px'>"],
+                   ['hg5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '23 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/5.png' style='height:200px'>"],
+                   ['hg6' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '15 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/6.png' style='height:200px'>"],
+                   ['hg7' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '17 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/7.png' style='height:200px'>"],
+                   ['hg8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '18 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/8.png' style='height:200px'>"],
+                   ['hg9' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '19 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/9.png' style='height:200px'>"],
+                   ['hg10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '21 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/10.png' style='height:200px'>"],
                    ]
 
 
@@ -1019,6 +1019,7 @@ liste_info_prix = [['hb9','xxx', '<a href="" style="color:white;">www.xxx.fr</a>
         document.getElementById('online').innerHTML = 'En ligne: ' + liste_info_prix[i][2]
         document.getElementById('price').innerHTML = 'Prix: ' + liste_info_prix[i][3]
         document.getElementById('stock').innerHTML =  'En stock: ' + liste_info_prix[i][4]
+        document.getElementById('mage').innerHTML =  liste_info_prix[i][6]
       }
     }
   
