@@ -152,19 +152,24 @@
             </div>
 
 
-
             <center>
-            <div style='background:url("/static/img/parquet1.jpg"); border:3px solid black;
-                border-radius:50px; width:500px; height:250px;'>
-                <br>
-                <strong><center><p style='font-family:segoe print;'>Nos info habits</p></center></strong>
-            </div>
-            <br>
-            <p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une catégorie d'habit</i></strong></p>
+              <div style='background:url("/static/img/parquet1.jpg"); border:3px solid black;
+                  border-radius:50px; width:500px; height:280px;'>
+                  <br>
+                  <strong><center><p style='font-family:segoe print;'>Nos info habits</p></center></strong>
+                  <div id='infofo' style='text-align:left; padding-left:50px;'>
+                    <p id='name'></p>
+                    <p id='store'></p>
+                    <p id='online'></p>
+                    <p id='price'></p>
+                    <p id='stock'></p>
+                  </div>
+              </div><br>
+              <p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une catégorie d'habit</i></strong></p>
             </center>
 
 
-            <div style='margin-left:81%; margin-top:-310px;width:150px;position:absolute;'>
+            <div style='margin-left:81%; margin-top:-350px;width:150px;position:absolute;'>
             <div style='background:url("/static/img/parquet1.jpg"); border:3px solid black;
               border-radius:50px;' id='tshirt'>
                 <br>
@@ -176,43 +181,7 @@
             </div>
 
 
-         
-
-              
-
-            
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                   
           <div class='container' id='habit_bas_blanc'>
             <div class='row'>
 
@@ -797,39 +766,6 @@ function voir_t_laine(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
                     
 
@@ -1025,6 +961,70 @@ function voir_shirt(){
 
   LISTE1 = []
 
+
+liste_info_prix = [['hb9','xxx', 'www.xxx.fr', '2550 euros', 'épuisé', 'xxx'],
+                   ['bb1' ,'xxx', 'www.xxx.fr', '2550 euros', 'en stock', 'xxx'],
+                   ['bb2' ,'xxx', 'www.xxx.fr', '5520 euros', 'en stock', 'xxx'],
+                   ['bb3' ,'xxx', 'www.xxx.fr', '280 euros', 'en stock', 'xxx'],
+                   ['bb4' ,'xxx', 'www.xxx.fr', '25580 euros', 'épuisé', 'xxx'],
+                   ['bb5' ,'xxx', 'www.xxx.fr', '280 euros', 'en stock', 'xxx'],
+                   ['bb6' ,'xxx', 'www.xxx.fr', '290 euros', 'en stock', 'xxx'],
+                   ['bb7' ,'xxx', 'www.xxx.fr', '20 euros', 'épuisé', 'xxx'],
+                   ['bb8' ,'xxx', 'www.xxx.fr', '20 euros', 'en stock', 'xxx'],
+                   ['bb9' ,'xxx', 'www.xxx.fr', '290 euros', 'épuisé', 'xxx'],
+                   ['bb10' ,'xxx', 'www.xxx.fr', '23660 euros', 'en stock', 'xxx'],
+                   ['bbl1' ,'xxx', 'www.xxx.fr', '20 euros', 'en stock', 'xxx'],
+                   ['bbl2' ,'xxx', 'www.xxx.fr', '280 euros', 'en stock', 'xxx'],
+                   ['bbl3' ,'xxx', 'www.xxx.fr', '47 euros', 'en stock', 'xxx'],
+                   ['bbl4' ,'xxx', 'www.xxx.fr', '240 euros', 'en stock', 'xxx'],
+                   ['bbl5' ,'xxx', 'www.xxx.fr', '274874 euros', 'épuisé', 'xxx'],
+                   ['bbl6' ,'xxx', 'www.xxx.fr', '26848 euros', 'en stock', 'xxx'],
+                   ['bbl17' ,'xxx', 'www.xxx.fr', '2048 euros', 'en stock', 'xxx'],
+                   ['bbl8' ,'xxx', 'www.xxx.fr', '2064548 euros', 'en stock', 'xxx'],
+                   ['bbl19' ,'xxx', 'www.xxx.fr', '25498 euros', 'épuisé', 'xxx'],
+                   ['bbl10' ,'xxx', 'www.xxx.fr', '2588 euros', 'en stock', 'xxx'],
+                   ['bbl11' ,'xxx', 'www.xxx.fr', '255 euros', 'épuisé', 'xxx'],
+                   ['bbl12' ,'xxx', 'www.xxx.fr', '550 euros', 'en stock', 'xxx'],
+                   ['hb1' ,'xxx', 'www.xxx.fr', '2088 euros', 'épuisé', 'xxx'],
+                   ['hb2' ,'xxx', 'www.xxx.fr', '2000 euros', 'épuisé', 'xxx'],
+                   ['hb3' ,'xxx', 'www.xxx.fr', '2155 euros', 'en stock', 'xxx'],
+                   ['hb4' ,'xxx', 'www.xxx.fr', '2015 euros', 'en stock', 'xxx'],
+                   ['hb5' ,'xxx', 'www.xxx.fr', '20789 euros', 'épuisé', 'xxx'],
+                   ['hb6' ,'xxx', 'www.xxx.fr', '2033 euros', 'en stock', 'xxx'],
+                   ['hb7' ,'xxx', 'www.xxx.fr', '2121 euros', 'épuisé', 'xxx'],
+                   ['hb8' ,'xxx', 'www.xxx.fr', '1987 euros', 'en stock', 'xxx'],
+                   ['hb9' ,'xxx', 'www.xxx.fr', '231 euros', 'en stock', 'xxx'],
+                   ['hb10' ,'xxx', 'www.xxx.fr', '890 euros', 'en stock', 'xxx'],
+                   ['hg1' ,'xxx', 'www.xxx.fr', '17 euros', 'en stock', 'xxx'],
+                   ['hg2' ,'xxx', 'www.xxx.fr', '202102 euros', 'épuisé', 'xxx'],
+                   ['hg3' ,'xxx', 'www.xxx.fr', '2084 euros', 'en stock', 'xxx'],
+                   ['hg4' ,'xxx', 'www.xxx.fr', '200 euros', 'épuisé', 'xxx'],
+                   ['hg5' ,'xxx', 'www.xxx.fr', '23 euros', 'en stock', 'xxx'],
+                   ['hg6' ,'xxx', 'www.xxx.fr', '15 euros', 'en stock', 'xxx'],
+                   ['hg7' ,'xxx', 'www.xxx.fr', '17 euros', 'en stock', 'xxx'],
+                   ['hg8' ,'xxx', 'www.xxx.fr', '18 euros', 'en stock', 'xxx'],
+                   ['hg9' ,'xxx', 'www.xxx.fr', '19 euros', 'en stock', 'xxx'],
+                   ['hg10' ,'xxx', 'www.xxx.fr', '21 euros', 'en stock', 'xxx'],
+                   ]
+
+  function inf(image){
+
+    for(var i = 0; i < liste_info_prix.length; i ++){
+      if(image == liste_info_prix[i][0]){
+     
+        document.getElementById('name').innerHTML = 'Nom: ' + liste_info_prix[i][5]
+        document.getElementById('store').innerHTML = 'Magasin: ' + liste_info_prix[i][1]
+        document.getElementById('online').innerHTML = 'En ligne: ' + liste_info_prix[i][2]
+        document.getElementById('price').innerHTML = 'Prix: ' + liste_info_prix[i][3]
+        document.getElementById('stock').innerHTML =  'En stock: ' + liste_info_prix[i][4]
+      }
+    }
+  
+
+  };
+
+
+
   function nom_image(id_im){
       console.log(id_im)
       var a = document.getElementById(id_im).height;
@@ -1037,6 +1037,7 @@ function voir_shirt(){
       console.log(LISTE_RESIZE)
       console.log(LISTE1)
 
+      inf(id_im)
     };
 
 </script>
