@@ -1,5 +1,9 @@
 
-faire le commit habit (prix magasin ect) + rajouter dans le onclick une autre fonction qui renseigne ca
+finir les liens de / + les descriptions des projets
+
+commencer polution + finir predi 
+
+titre et h2 de tendance en cursive
 
 mettre undélimitation en dessous de / entre projet et social
 
