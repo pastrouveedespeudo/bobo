@@ -1,5 +1,6 @@
 répliquer ca sur toutes les vagues mtn, nuit = 35-18 hihihi
 
+ok soit demain tu te leve en ayant une reponse soit tu refais comme la derniere fois et un jour tu referas ca mais la le js m'a tout degomme j'en chis a faire des boucle de boucle de boucle de boucle putin ca me degomme le moral la pfffff
 
 finir les liens de / + les descriptions des projets
 
