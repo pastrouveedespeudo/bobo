@@ -5,6 +5,8 @@ commencer polution + finir predi
 
 titre et h2 de tendance en cursive
 
+finir les liens de mes services (coupe)
+
 mettre undélimitation en dessous de / entre projet et social
 
 
