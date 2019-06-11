@@ -694,9 +694,9 @@ listeeeee = []
       <br>
 
       <center><div style='border:5px solid black;
-                          border-radius: 20px; width:50%;
-                          background:url("/static/img/parquet1.jpg");
-                          box-shadow: 5px 5px 5px 5px;'>
+                    border-radius: 20px; width:50%;
+                    background:url("/static/img/parquet1.jpg");
+                    box-shadow: 5px 5px 5px 5px;'>
           
           <br>
           <div style='position: absolute; left: 50%;'>
@@ -707,8 +707,8 @@ listeeeee = []
 
           
           <input type='text' id='coif1'
-                  style='text-align:center; border:3px solid black;'
-                  size='30' placeholder='Votre ville'>
+                  style='text-align:center; border:3px solid black; width:70%'
+                   placeholder='Votre ville'>
           <br><br>
           
           <center><input type='button' onclick='menuuu()' value='Retour au menu' style='border:2px solid black;'>&nbsp;&nbsp;&nbsp;
@@ -744,8 +744,8 @@ listeeeee = []
 
           
           <input type='text' id='gym1'
-                  style='text-align:center; border:3px solid black;'
-                  size='30' placeholder='Votre ville'>
+                  style='text-align:center; border:3px solid black; width:70%;'
+                   placeholder='Votre ville'>
           <br><br>
           
           <center><input type='button' onclick='menuuu()' value='Retour au menu' style='border:2px solid black;'>&nbsp;&nbsp;&nbsp;
@@ -781,11 +781,11 @@ listeeeee = []
 
   
 
-    <div id='mapmap' style='background:#343a40;text-align:center;display:none;'><br><br><br><br>
+    <div id='mapmap' style='background:#343a40;text-align:center;display:none;'>
     
       <div class="container">
         <center><h3 id='aucas_ou_coif'></h3></center>
-        <h3 style='color:white;display:none;' id='info'>Nous avons trouvé quelques coiffeurs près de chez vous</h3><br><br>
+        <h3 id='coifcoifcoif' style='color:white;display:none;' id='info'>Nous avons trouvé quelques coiffeurs près de chez vous</h3><br><br>
         
         <p id='cons'style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m et
         p.m signifient horraires du matin et de l'après-midi</i></p><br><br>
@@ -835,13 +835,13 @@ listeeeee = []
 
 
             
-        </div><br><br><br>
+        </div>
             
       </div>
         
       <center><input type='button' style='border:2px solid black;' value='Retour au menu' onclick='menu_map()'></center><br><br>
  
-    </div><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
     
   </div>
   </div>
@@ -912,8 +912,8 @@ listeeeee = []
             
             <div class="col-xs-1 col-md-1 col-lg-1"></div>
 
-        </div>
-        <br><br><br><br><br>
+        </div><br><br>
+          
         <div class="row">
             
   
@@ -943,39 +943,12 @@ listeeeee = []
         
       <center><input type='button' style='border:2px solid black;' value='Retour au menu' onclick='menu_map()'></center><br><br>
  
-    </div><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
     
+    
+   
   </div>
   </div>
-
-
-
-  
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -983,7 +956,7 @@ listeeeee = []
     {% if user.is_authenticated %}
     
     <div class="container" id='CONTENEUR'>
-      <p style='margin-right:70%; margin-top:-50%;'><i>
+      <p style='margin-right:70%; margin-top:1%;'><i>
       *Cliquez sur les images afin de profiter des services !<i></p>
       <br>
       <h2 class="text-center mt-0">Mes services</h2>
@@ -1435,12 +1408,17 @@ LISTE = []
                                       
         LISTE_COIFURE.push([LISTE[0], LISTE[8], LISTE[16], LISTE[24]]);
  
-                          
+        var a = document.getElementById('info1');
+        var b = document.getElementById('info2');
+        var c = document.getElementById('info3');
+        var d = document.getElementById('info4');
 
         if(a.style.display == 'none' && b.style.display == 'none' && c.style.display == 'none' && d.style.display == 'none'){
 
-            document.getElementById('aucas_ou_coif').innerHTML = "<center><h3>Veuillez nous excusez nous n'avons rien trouvé</h3></center>";
+            document.getElementById('aucas_ou_coif').innerHTML = "<center><h3><br><br>Veuillez nous excusez nous n'avons rien trouvé</h3></center>";
             document.getElementById('cons').style.display = 'none';
+            document.getElementById('coifcoifcoif').style.display = 'none';
+        
         }
         
         
@@ -1659,6 +1637,8 @@ jQuery("#gym2").on("click", function(e){
         if(a.style.display == 'none' && b.style.display == 'none' && c.style.display == 'none' && d.style.display == 'none'){
 
             document.getElementById('aucas_ou').innerHTML = "<center><h3>Veuillez nous excusez nous n'avons rien trouvé</h3></center>";
+            document.getElementById('p_am_pm').style.display = 'none';
+            document.getElementById('info').style.display = 'none';
         }
 
         LISTE_GYMGYM.push([LISTE_GYM[0], LISTE_GYM[8], LISTE_GYM[16], LISTE_GYM[24]]);
