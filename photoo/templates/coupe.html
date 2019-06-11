@@ -1104,16 +1104,25 @@ listeeeee = []
 
 
 
+<script>
 
 
+    function declencheur1_f(){
+        document.getElementById('declencheur1').click()
+    }
 
+    function declencheur2_f(){
+        document.getElementById('declencheur2').click()
+    }
 
+    function declencheur3_f(){
+        document.getElementById('declencheur3').click()
+    }
 
-
-
-
-
-
+    function declencheur4_f(){
+        document.getElementById('declencheur4').click()
+    }
+</script>
 
 
 
@@ -1291,10 +1300,11 @@ LISTE = []
                                   LISTE[5] + "<br>" +
                                   LISTE[6] + "<br>" +
                                   LISTE[7] + "<br><br>" +
-                                  "<p id='yoo1'><i>Le numéro arrive !</i></p>" +
-                                  "<img id='gifou1' src='/static/img/portfolio/icone/chargement1.gif' width='40'>";
+                                  "<input type='button' value='Voir la map' onclick='declencheur1_f()'>";
+                                  
+    
 
-            
+                  
              document.getElementById('info1').innerHTML = info_coiffeur1;                   
             };           
 
@@ -1323,9 +1333,10 @@ LISTE = []
                                   LISTE[13] + "<br>" +
                                   LISTE[14] + "<br>" +
                                   LISTE[15] + "<br><br>" +
-                                  "<p id='yoo2'><i>Le numéro arrive !</i></p>" +
-                                  "<img id='gifou2' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
+                                 "<input type='button' value='Voir la map' onclick='declencheur2_f()'>";
+                                  
             document.getElementById('info2').innerHTML = info_coiffeur2;
+      
 
         }
 
@@ -1353,10 +1364,11 @@ LISTE = []
                                   LISTE[21] + "<br>" +
                                   LISTE[22] + "<br>" +   
                                   LISTE[23] + "<br><br>" +
-                                  "<p id='yoo3'><i>Le numéro arrive !</i></p>" +
-                                  "<img id='gifou3' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
+                                  "<input type='button' value='Voir la map' onclick='declencheur3_f()'>";
+                                 
 
             document.getElementById('info3').innerHTML = info_coiffeur3;
+        
          }
 
 
@@ -1383,8 +1395,8 @@ LISTE = []
                                   LISTE[39] + "<br>" +
                                   LISTE[30] + "<br>" +
                                   LISTE[31] + "<br><br>" +
-                                  "<p id='yoo4'><i>Le numéro arrive !</i></p>" +
-                                  "<img id='gifou4' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
+                                  "<input type='button' value='Voir la map' onclick='declencheur4_f()'>";
+                                  
             
             document.getElementById('info4').innerHTML = info_coiffeur4;
                                   
@@ -1401,10 +1413,9 @@ LISTE = []
             document.getElementById('cons').style.display = 'none';
         }
         
-        document.getElementById('bubuton').click();
+        
 
       };
-      
   });
 });
 
@@ -1638,82 +1649,10 @@ jQuery("#gym2").on("click", function(e){
 
 
 
-
-
-  jQuery("#bubuton").on("click", function(e){
-   
-     var a = document.getElementById('coif1').value;
-     e.preventDefault();
-      jQuery.ajax({
-          data:{
-              'csrfmiddlewaretoken': '{{csrf_token}}' , 
-              'numero_coiffeur': String(LISTE_COIFURE),
-              'country' : a,
-          },
-          type:"POST",
-          url:"/photo/coupe"
-      })
-      .done(function(data){
-          if (data.error){
-              jQuery("#monCadreAlert").text(data.error);
-              jQuery("#is_save");
-              
-              
-          }
-          else{
-              jQuery("#is_save").html(data.data);
-              jQuery("#monCadreAlert");
-              
-         
-              var a = document.getElementById('gifou1');
-              var b = document.getElementById('gifou2');
-              var c = document.getElementById('gifou3');
-              var d = document.getElementById('gifou4');
-              
-              a.parentNode.removeChild(a);
-              b.parentNode.removeChild(b);
-              c.parentNode.removeChild(c);
-              d.parentNode.removeChild(d);
-
-              LA_LISTE = []
-              var c = 0
-              var nom = ''
-              for(var i = 0; i < data.length; i ++){
-                if(data[i] == ']' && data[c + 1] == '['){
-                  LA_LISTE.push(nom);
-                  nom = ''
-                }
-                else if(data[i] == ']' || data[i] == '[' || data[i] == "'"){
-                  {}
-
-                }
-                else{
-                  nom += data[i]
-                };
-              
-              c += 1
-                
-            }
-       
-            LA_LISTE.push(nom)
-            var a = document.getElementById('yoo1').innerHTML = LA_LISTE[0] + "<br><br><input type='button' id='but_map1' value='Voir sur la carte' name='" + LISTE[0] + "' onclick='mapo1()'>";                            
-            var b = document.getElementById('yoo2').innerHTML = LA_LISTE[1] + "<br><br><input type='button' id='but_map2' value='Voir sur la carte' name='" + LISTE[7] + "' onclick='mapo2()'>";
-            var c = document.getElementById('yoo3').innerHTML = LA_LISTE[2]  + "<br><br><input type='button' id='but_map3' value='Voir sur la carte' name='" + LISTE[14] + "' onclick='mapo3()'>";
-            var d = document.getElementById('yoo4').innerHTML = LA_LISTE[3]  + "<br><br><input type='button' id='but_map4' value='Voir sur la carte' name='" + LISTE[21] + "' onclick='mapo4()'>";
-
-            LISTE_COIFURE = [];
-              
-          };
-          
-      });
-  });
-
-
-
   jQuery("#declencheur1").on("click", function(e){
       
      var b = document.getElementById('coif1').value;
-     var a = document.getElementById('but_map1').name;
+     document.getElementById('mapmap').style.display = 'none';
      
      e.preventDefault();
       jQuery.ajax({
@@ -1741,7 +1680,6 @@ jQuery("#gym2").on("click", function(e){
               liste_lat = []
               console.log(data)
 
-              if(data == [])
 
               if (data == "Oups nous n'avons rien trouvé"){
              
@@ -1755,7 +1693,7 @@ jQuery("#gym2").on("click", function(e){
                 document.getElementById('button_lamap').style.display = 'block';
                 }
               else{
-            
+          
                   pos = ''
                   for (var i = 0; i < data.length; i++){
                       console.log(data[i])
@@ -1769,11 +1707,11 @@ jQuery("#gym2").on("click", function(e){
                   }
                   liste_lat.push(pos)
                   console.log(liste_lat)
+                  console.log("fini")
                   
                   document.getElementById('the_map').style.display = 'block';
                   document.getElementById('button_lamap_gym').style.display = 'none';
-                  
-                                
+       
                   document.getElementById('button_lamap').style.display = 'block';
                   initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
                   
@@ -1787,12 +1725,15 @@ jQuery("#gym2").on("click", function(e){
 
 
   jQuery("#declencheur2").on("click", function(e){
+      
      var b = document.getElementById('coif1').value;
+     document.getElementById('mapmap').style.display = 'none';
+     
      e.preventDefault();
       jQuery.ajax({
           data:{
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
-              'buttony':String(LISTE[7]),
+              'buttony':String(LISTE[8]),
               'country':b,
           },
           type:"POST",
@@ -1854,14 +1795,15 @@ jQuery("#gym2").on("click", function(e){
 
 
   jQuery("#declencheur3").on("click", function(e){
-    var a = document.getElementById('but_map3').name;
+   
     var b = document.getElementById('coif1').value;
-
+    document.getElementById('mapmap').style.display = 'none';
+    
      e.preventDefault();
       jQuery.ajax({
           data:{
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
-              'buttony':String(LISTE[14]),
+              'buttony':String(LISTE[16]),
               'country':b,
               
        
@@ -1925,13 +1867,16 @@ jQuery("#gym2").on("click", function(e){
 
 
   jQuery("#declencheur4").on("click", function(e){
-     var a = document.getElementById('but_map4').name;
+
      var b = document.getElementById('coif1').value;
+     document.getElementById('mapmap').style.display = 'none';
+
+     
      e.preventDefault();
       jQuery.ajax({
           data:{
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
-               'buttony':String(LISTE[21]),
+               'buttony':String(LISTE[24]),
                'country':b, 
               
        
@@ -2083,7 +2028,7 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
-               'buttony_gym':String(LISTE_GYMGYM[7]),
+               'buttony_gym':String(LISTE_GYMGYM[8]),
                'country_gym':b, 
               
        
@@ -2149,7 +2094,7 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
-               'buttony_gym':String(LISTE_GYMGYM[14]),
+               'buttony_gym':String(LISTE_GYMGYM[16]),
                'country_gym':b, 
               
        
@@ -2218,7 +2163,7 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
-               'buttony_gym':String(LISTE_GYMGYM[21]),
+               'buttony_gym':String(LISTE_GYMGYM[24]),
                'country_m':b, 
               
        
