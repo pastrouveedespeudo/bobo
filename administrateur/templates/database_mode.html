@@ -95,7 +95,7 @@ header.masthead {
 
                                             
       
-      <i><p>Clique sur une des images pour voir ces caractéristiques</p></i><br><br>
+      <i><p>Voici les images sur lesquelles nous basons notre mode. Elles vous sont accessibles afin que vous puissiez puiser dans votre imagination</p></i><br><br>
       
           <div class="container" id='container' style='display:none;'>
             <div class="row">
@@ -133,7 +133,7 @@ header.masthead {
                                                                      b() + "'" + "style='width:100px; height:100px;'><br>" +
                                                                      "<input type='image' src='/static/bobo/" + a() +
                                                                      "'"+ "style='width:100px; height:250px;'" +
-                                                                     "id='"+ c()+ "'"+ "onclick='info(id)'><br>";
+                                                                     "id='"+ c()+ "'"+ "'><br>";
                 </script>
 
               {% endfor %}
@@ -389,9 +389,7 @@ header.masthead {
     document.getElementById('image_into_vetement').src = '/static/bobo/' +
                                                       LISTE_IMAGE[LISTE[LISTE.length-1]]
       
-    document.getElementById('couleur_haut').innerHTML = '<input type="button" value="voir les couleurs du haut" onclick="coul_haut()">';
-    document.getElementById('couleur_bas').innerHTML = '<input type="button" value="voir les couleurs du bas" onclick="coul_bas()">';
-    document.getElementById('couleur_coupe').innerHTML = '<input type="button" value="voir la coupe" onclick="couleur_coupe()">';
+
       
   };
   
