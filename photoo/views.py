@@ -29,129 +29,70 @@ from .magasins.adresse import *
 
 from .magasins.gym import *
 
-def mes_images(request):
-    
-    current_user = request.user
-    print(current_user)
-
-    liste1 = []
-    liste2 = []
-    
-    image = Accounts.objects.filter(name=current_user).all()
-    for i in image:
-        print(i.photo_habit, i.photo_cheveux)
-        liste1.append(i.photo_habit)
-        liste2.append(i.photo_cheveux)
-        
-
-    print(liste1)
-    
-    liste11 = []
-    liste22 = []
-    
-    for i in liste1:
-        if i == '':
-            pass
-        else:
-            liste11.append(i)
-            
-    for i in liste2:
-        if i == '':
-            pass
-        else:
-            liste22.append(i)
-            
-    return render(request, 'mes_images.html', {'user':current_user, 'liste1':liste11,
-                                               'liste2':liste22})
-
-
 
 def home(request):
+    """Here we return a home html respons"""
     return render(request, 'home.html')
 
 
 
 @csrf_protect
 def coupe(request):
-
+    """this is the interraction between
+    the view and the template hair"""
+    
     no_choice = 'no_choice'
     
     try:
-        current_user = request.user
+        """here we look if the user has favorites,
+        if yes we return true with fav variable"""
 
         fav = '' 
+        current_user = request.user
         favoris_coupe = affichage_coupe_fav(current_user)
-        #print(favoris_coupe)
         if favoris_coupe:
             fav = True
-
-
     except:
         pass
     
     if request.method == "POST":
 
-        
-
-        print('OUIIIIIIIIIIIII')
         image = request.POST.get('posting')
         coupe = request.POST.get('coupe')
         recherche = request.POST.get('coupedecheveux')
         enregistement = request.POST.get('produit')
 
-        map_coiffure = request.POST.get('buttony')
-        numero_coiffeur = request.POST.get('numero_coiffeur')
-        vivile = request.POST.get('country')
-        coiffure = request.POST.get('coiffeur')
+        map_coiffure = request.POST.get('buttony')#city for hairdresser
+        numero_coiffeur = request.POST.get('numero_coiffeur')#number phone for hairdresser
+        vivile = request.POST.get('country')#city for hairdresser map
+        coiffure = request.POST.get('coiffeur')#this is request for a hairdress ?
 
-        gymm = request.POST.get('gymnastique')
-        gymm_map = request.POST.get('buttony_gym')
-        gym_pays = request.POST.get('country_gym')
+        gymm = request.POST.get('gymnastique')#this is request for a gym ?
+        gymm_map = request.POST.get('buttony_gym')#this is country for map gym
+        gym_pays = request.POST.get('country_gym')#this is country for search gym
 
 
-
-        
         MON_COIFFEUR = []
         
-        print(coiffure,'000000000000000000000000000COIFFURE')
-        print(numero_coiffeur,'000000000000000000000000000chichanumero')
-        print(vivile)
-        print(map_coiffure,'000000000000000000000000000MAPCOIFFURE')
-
-
-        if gymm_map:
-            print(gymm_map, gym_pays, '0897498464636ugdsvhoisdjs')
+        if gymm_map:#if user call the gym card
+            la_adresse = addresse_geo(gymm_map, gym_pays)#we search the address by scrapping
             
-            la_adresse = addresse_geo(gymm_map, gym_pays)
             try:
-                lat_long = ville_geo(la_adresse)
+                lat_long = ville_geo(la_adresse)#and recup it with nominatim (with lat et long)
             except:
-                print('iciiiiiiiiiiiiiii')
-                return HttpResponse("Oups nous n'avons rien trouvé")
+                return HttpResponse("Oups nous n'avons rien trouvé")#if nothing is found we return it
 
-            data = str(lat_long[0]) + ' ' + str(lat_long[1])
-            print(data,'0000000000000000000000')
+            data = str(lat_long[0]) + ' ' + str(lat_long[1])#if no exception, we traiting data
+     
             if data == ' ' or data == '':
-                return HttpResponse("Oups nous n'avons rien trouvé")
+                return HttpResponse("Oups nous n'avons rien trouvé")#for sure we return again an exception
             
-            return HttpResponse(data)
+            return HttpResponse(data)#if no exception, we return data on page
 
 
-
-
-
-
-
-
-
-
-
-
-        
-        if gymm:
+        if gymm:#if user call the gym location
             gym_liste = []
-            print('ouiiiiiiiiiiii')
-            print(gymm)
+
             les_villes = grande_ville_gym(gymm)
             
             for i in les_villes:
@@ -168,24 +109,19 @@ def coupe(request):
             return HttpResponse(gym_liste)
 
 
-
-
         c = 0
         if coiffure:
 
             coif = []
           
             les_coiffeurs = ville(coiffure)
-            #for i in les_coiffeurs:
-            #    print(i)
 
             MON_COIFFEUR.extend(les_coiffeurs)
 
             for i in MON_COIFFEUR:
                 
                 horraire1 = horraire(i, coiffure)
-                print(i)
-                print(horraire1)
+ 
              
                 if [horraire1] == [] or horraire1 == []\
                    or horraire1 == "" or horraire1 == " "\
@@ -197,8 +133,6 @@ def coupe(request):
                     MON_COIFFEUR.remove(i)
 
 
-            #print(coif)
-            #print('iciiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii')
             return HttpResponse(coif)
  
 
@@ -215,7 +149,7 @@ def coupe(request):
                     
             liste.append(coif)
                 
-            print(liste,'000000000000000000048787/')
+
 
             num  = []
             for i in liste:
@@ -227,7 +161,6 @@ def coupe(request):
 
         
         if map_coiffure:
-            print('ouiiiiiiiiiiiiiiiiiiiii')
             la_adresse = addresse_geo(map_coiffure, vivile)
             try:
                 lat_long = ville_geo(la_adresse)
@@ -242,15 +175,6 @@ def coupe(request):
             return HttpResponse(data)
 
 
-
-
-
-
-
-
-
-        
-        
 
         liste_enre = [[],[],[]]
         c = 0
@@ -268,7 +192,6 @@ def coupe(request):
             
 
         if recherche:
-            print('RECHERHCEEEEEEEEEEEEEEEEEEEEE', recherche)
             for cle, value in DICO_COIF.items():
                 pass
             
@@ -279,7 +202,6 @@ def coupe(request):
         
         if image:
             no_choice = ''
-            print(image,"0100000000000000000000000000000000000")
             current_user = request.user
             
             try:
@@ -292,11 +214,6 @@ def coupe(request):
                 
             except:
                 return render(request, 'coupe.html', {'image':image, 'user':current_user})
-
-
-        if coupe:
-            print(coupe,'pppppppppppppppppppppppppppppppppp')
-
 
 
     try:
@@ -325,17 +242,7 @@ def habits(request):
         draggable = request.POST.get('b')
         image_to_vet = request.POST.get('posting2')
 
-        print(couleur, draggable, '0000000000000000000000000000000000000')
-        print(image_to_vet,'000000000000000000000000000000000000000000000')
-
-
-    
         if image_to_vet:
-            
-            print('pouoioioioioioioioioioioioioioioioioioioioioioioioioioioioioi')
-            print('ouaiiiiiiiiiiiiiiiiiiiiiiiis')
-            print(image_to_vet)
-            
             current_user = request.user
 
 
@@ -348,7 +255,6 @@ def habits(request):
             pass
 
         if couleur:
-            print('oui')
 
             couleur = couleur.split()
             couleur = couleur[-1]
@@ -363,28 +269,20 @@ def habits(request):
             liste9 = les_tendances_couleurs(liste8)
             liste10 = analyse_tendance(liste9)
 
-            print(liste10,'0000000000000000000000000')
     
             if couleur == 'blonde':
-                print(liste10[1], '1111111111111111111111111111')
-
                 coul_analyse_haut = liste10[1][0]
                 coul_analyse_bas = liste10[1][1]
                  
             elif couleur == 'brune' or couleur == 'noire':
-                print(liste10[0],  '1111111111111111111111111111')
-                
                 coul_analyse_haut = liste10[0][0]
                 coul_analyse_bas = liste10[0][1]
 
             elif couleur == 'chatain' or couleur == 'rousse':
-                print(liste10[2], '1111111111111111111111111111')
                 
                 coul_analyse_haut = liste10[2][0]
                 coul_analyse_bas = liste10[2][1]
 
-            print(coul_analyse_haut)
-            print(coul_analyse_bas)
 
             return HttpResponse((coul_analyse_haut,' ', coul_analyse_bas))
 
