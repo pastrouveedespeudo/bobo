@@ -1016,6 +1016,36 @@ listeeeee = []
         </div><br><br>
 
         
+        <style>
+
+        @media screen and (min-width: 0px) and (max-width:766px) {
+            #p_coif {
+              margin-left:100px;
+              
+            }
+           #p_gym{
+            margin-left:80px;
+              
+            }
+           #p_habit{
+            margin-left:90px;
+            margin-right:130px;
+
+            }
+           #p_tendance{
+            margin-left:80px;
+
+           }
+        }
+
+
+        </style>
+
+
+
+
+
+
         
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
@@ -1030,7 +1060,7 @@ listeeeee = []
             <br>
             
             <p id='p_gym' style='color:white; font-size:1em;display:²none; position:absolute;left:4%;'>
-              Voir les salles de gym les plus proches de chez moi
+              Les salles de gym les plus proches de chez moi
             </p>
     
             
@@ -1050,7 +1080,7 @@ listeeeee = []
              
             <h3 class="h4 mb-2">Essayer des vêtements</h3><br>
             
-            <p id='p_habit'class="h4 mb-2" style='color:white; font-size:1em;display:none;
+            <p id='p_habit' style='color:white; font-size:1em;display:none;
                 position:absolute;right:0%;'>
 
             Essayer des habits sans faire la queue</p>
@@ -1955,7 +1985,7 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
-               'buttony_gym':String(LISTE_GYM),
+               'buttony_gym':String(LISTE_GYM[0]),
                'country_gym':b, 
               
        
