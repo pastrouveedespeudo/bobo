@@ -36,11 +36,13 @@ def heure_jour():
 
 heure_jour = heure_jour()
 
-liste = ['lyon','paris','marseille']
-
-
+#liste = ['lyon','paris','marseille']
+#liste = ['paris']
+liste = ['marseille']
 
 for i in liste:
+
+    
     m = particule2(i)
     print('taux de particule de', m, 'a', i)
 
@@ -123,6 +125,8 @@ for i in liste:
     print('incendie a', i ,'ojd ?', f)
     insertion_incendie(i, f, heure_jour[0], heure_jour[1], m)
 
+
+    print('\n')
 
 
 
