@@ -784,10 +784,10 @@ listeeeee = []
     <div id='mapmap' style='background:#343a40;text-align:center;display:none;'><br><br><br><br>
     
       <div class="container">
-
+        <center><h3 id='aucas_ou_coif'></h3></center>
         <h3 style='color:white;display:none;' id='info'>Nous avons trouvé quelques coiffeurs près de chez vous</h3><br><br>
         
-        <p style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m et
+        <p id='cons'style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m et
         p.m signifient horraires du matin et de l'après-midi</i></p><br><br>
 
       
@@ -886,7 +886,7 @@ listeeeee = []
     <div id='mapmap_gym' style='background:#343a40;text-align:center;display:none;'><br><br><br><br>
     
       <div class="container">
-
+        <center><h3 id='aucas_ou'></h3></center>
         <h3 style='color:white;display:none;' id='info'>Nous avons trouvé quelques salles de gym près de chez vous</h3><br><br>
         
         <p style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m et
@@ -1266,64 +1266,123 @@ LISTE = []
           console.log(LISTE)
           console.log('000000000000000')
 
-
         
+                         
+        if(LISTE[0] == undefined &&
+          LISTE[1] == undefined &&
+          LISTE[2] == undefined && 
+          LISTE[3] == undefined &&
+          LISTE[4] == undefined &&
+          LISTE[5] == undefined &&
+          LISTE[6] == undefined){
+              document.getElementById('info1').style.display = 'none';
+        }
+        else{
+                
+            var info_coiffeur1 =  "<br><br><strong>" + LISTE[0] + " :</strong><br><br>" +
+                                  LISTE[1] + "<br>" +
+                                  LISTE[2] + "<br>" +
+                                  LISTE[3] + "<br>" +
+                                  LISTE[4] + "<br>" +
+                                  LISTE[5] + "<br>" +
+                                  LISTE[6] + "<br><br>" +
+                                  "<p id='yoo1'><i>Le numéro arrive !</i></p>" +
+                                  "<img id='gifou1' src='/static/img/portfolio/icone/chargement1.gif' width='40'>";
+
+            
+             document.getElementById('info1').innerHTML = info_coiffeur1;                   
+            };           
 
 
-        
-        var info_coiffeur1 =  "<br><br><strong>" + LISTE[0] + " :</strong><br><br>" +
-                              LISTE[1] + "<br>" +
-                              LISTE[2] + "<br>" +
-                              LISTE[3] + "<br>" +
-                              LISTE[4] + "<br>" +
-                              LISTE[5] + "<br>" +
-                              LISTE[6] + "<br><br>" +
-                              "<p id='yoo1'><i>Le numéro arrive !</i></p>" +
-                              "<img id='gifou1' src='/static/img/portfolio/icone/chargement1.gif' width='40'>";
-                            
-                              
 
-        var info_coiffeur2 =  "<br><br><strong>" + LISTE[7] + "</strong><br><br>" +
-                              LISTE[8]  + "<br>" +
-                              LISTE[9]  + "<br>" +
-                              LISTE[10] + "<br>" +
-                              LISTE[11] + "<br>" +
-                              LISTE[12] + "<br>" +
-                              LISTE[13] + "<br><br>" +
-                              "<p id='yoo2'><i>Le numéro arrive !</i></p>" +
-                              "<img id='gifou2' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
-                      
-          
-        var info_coiffeur3 =  "<br><br><strong>" + LISTE[14] + "</strong><br><br>" +
-                              LISTE[15] + "<br>" +
-                              LISTE[16] + "<br>" +
-                              LISTE[17] + "<br>" +
-                              LISTE[18] + "<br>" +
-                              LISTE[19] + "<br>" +
-                              LISTE[20] + "<br><br>" +
-                              "<p id='yoo3'><i>Le numéro arrive !</i></p>" +
-                              "<img id='gifou3' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
-                     
 
-        var info_coiffeur4 =  "<br><br><strong>" + LISTE[21] + "</strong><br><br>" + 
-                              LISTE[22] + "<br>" +
-                              LISTE[23] + "<br>" +
-                              LISTE[24] + "<br>" +
-                              LISTE[25] + "<br>" +
-                              LISTE[26] + "<br>" +
-                              LISTE[27] + "<br><br>" +
-                              "<p id='yoo4'><i>Le numéro arrive !</i></p>" +
-                              "<img id='gifou4' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
-                              
+        if(LISTE[7] == undefined &&
+          LISTE[8] == undefined &&
+          LISTE[9] == undefined && 
+          LISTE[10] == undefined &&
+          LISTE[11] == undefined &&
+          LISTE[12] == undefined &&
+          LISTE[13] == undefined){
+              document.getElementById('info2').style.display = 'none';
+        }
+        else{
+            
+            var info_coiffeur2 =  "<br><br><strong>" + LISTE[7] + "</strong><br><br>" +
+                                  LISTE[8]  + "<br>" +
+                                  LISTE[9]  + "<br>" +
+                                  LISTE[10] + "<br>" +
+                                  LISTE[11] + "<br>" +
+                                  LISTE[12] + "<br>" +
+                                  LISTE[13] + "<br><br>" +
+                                  "<p id='yoo2'><i>Le numéro arrive !</i></p>" +
+                                  "<img id='gifou2' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
+            document.getElementById('info2').innerHTML = info_coiffeur2;
+
+        }
+
+
+
+        if(LISTE[14] == undefined &&
+          LISTE[15] == undefined &&
+          LISTE[16] == undefined && 
+          LISTE[17] == undefined &&
+          LISTE[18] == undefined &&
+          LISTE[19] == undefined &&
+          LISTE[20] == undefined){
+              document.getElementById('info3').style.display = 'none';
+        }
+        else{
+            
+            var info_coiffeur3 =  "<br><br><strong>" + LISTE[14] + "</strong><br><br>" +
+                                  LISTE[15] + "<br>" +
+                                  LISTE[16] + "<br>" +
+                                  LISTE[17] + "<br>" +
+                                  LISTE[18] + "<br>" +
+                                  LISTE[19] + "<br>" +
+                                  LISTE[20] + "<br><br>" +
+                                  "<p id='yoo3'><i>Le numéro arrive !</i></p>" +
+                                  "<img id='gifou3' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
+
+            document.getElementById('info3').innerHTML = info_coiffeur3;
+         }
+
+
+        if(LISTE[21] == undefined &&
+          LISTE[22] == undefined &&
+          LISTE[23] == undefined && 
+          LISTE[24] == undefined &&
+          LISTE[25] == undefined &&
+          LISTE[26] == undefined &&
+          LISTE[27] == undefined){
+            document.getElementById('info4').style.display = 'none';
+        }
+        else{              
+
+            var info_coiffeur4 =  "<br><br><strong>" + LISTE[21] + "</strong><br><br>" + 
+                                  LISTE[22] + "<br>" +
+                                  LISTE[23] + "<br>" +
+                                  LISTE[24] + "<br>" +
+                                  LISTE[25] + "<br>" +
+                                  LISTE[26] + "<br>" +
+                                  LISTE[27] + "<br><br>" +
+                                  "<p id='yoo4'><i>Le numéro arrive !</i></p>" +
+                                  "<img id='gifou4' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
+            
+            document.getElementById('info4').innerHTML = info_coiffeur4;
+                                  
+        }
+
                                       
         LISTE_COIFURE.push([LISTE[0], LISTE[7], LISTE[14], LISTE[21]]);
  
                           
 
-        document.getElementById('info1').innerHTML = info_coiffeur1;
-        document.getElementById('info2').innerHTML = info_coiffeur2;
-        document.getElementById('info3').innerHTML = info_coiffeur3;
-        document.getElementById('info4').innerHTML = info_coiffeur4;
+        if(a.style.display == 'none' && b.style.display == 'none' && c.style.display == 'none' && d.style.display == 'none'){
+
+            document.getElementById('aucas_ou_coif').innerHTML = "<center><h3>Veuillez nous excusez nous n'avons rien trouvé</h3></center>";
+            document.getElementById('cons').style.display = 'none';
+        }
+        
         document.getElementById('bubuton').click();
 
       };
@@ -1408,7 +1467,18 @@ jQuery("#gym2").on("click", function(e){
           console.log(LISTE_GYM)
           console.log('000000000000000')
 
-        
+              
+       if(LISTE_GYM[0] == undefined &&
+          LISTE_GYM[1] == undefined &&
+          LISTE_GYM[2] == undefined && 
+          LISTE_GYM[3] == undefined &&
+          LISTE_GYM[4] == undefined &&
+          LISTE_GYM[5] == undefined &&
+          LISTE_GYM[6] == undefined){
+            document.getElementById('info1_gym').style.display = 'none';
+        }
+
+      else{
         var info_gym1 =  "<br><br><strong>" + LISTE_GYM[0] + " :</strong><br><br>" +
                               LISTE_GYM[1] + "<br>" +
                               LISTE_GYM[2] + "<br>" +
@@ -1417,9 +1487,26 @@ jQuery("#gym2").on("click", function(e){
                               LISTE_GYM[5] + "<br>" +
                               LISTE_GYM[6] + "<br><br>" +
                               "<input type='button' value='Voir la map' onclick='declencheur_gym1f()'>";
+        
+         document.getElementById('info1_gym').innerHTML = info_gym1;                     
+    }     
                               
-                            
-                              
+
+
+
+
+
+       if(LISTE_GYM[7] == undefined &&
+          LISTE_GYM[8] == undefined &&
+          LISTE_GYM[9] == undefined && 
+          LISTE_GYM[10] == undefined &&
+          LISTE_GYM[11] == undefined &&
+          LISTE_GYM[12] == undefined &&
+          LISTE_GYM[13] == undefined){
+            document.getElementById('info2_gym').style.display = 'none';
+        }
+        else{
+
 
         var info_gym2 =  "<br><br><strong>" + LISTE_GYM[7] + "</strong><br><br>" +
                               LISTE_GYM[8]  + "<br>" +
@@ -1429,35 +1516,80 @@ jQuery("#gym2").on("click", function(e){
                               LISTE_GYM[12] + "<br>" +
                               LISTE_GYM[13] + "<br><br>" +
                               "<input type='button' value='Voir la map' onclick='declencheur_gym2f()'>";
-                      
-          
-        var info_gym3 =  "<br><br><strong>" + LISTE_GYM[14] + "</strong><br><br>" +
-                              LISTE_GYM[15] + "<br>" +
-                              LISTE_GYM[16] + "<br>" +
-                              LISTE_GYM[17] + "<br>" +
-                              LISTE_GYM[18] + "<br>" +
-                              LISTE_GYM[19] + "<br>" +
-                              LISTE_GYM[20] + "<br><br>" +
-                              "<input type='button' value='Voir la map' onclick='declencheur_gym3f()'>";
-                     
 
-        var info_gym4 =  "<br><br><strong>" + LISTE_GYM[21] + "</strong><br><br>" + 
-                              LISTE_GYM[22] + "<br>" +
-                              LISTE_GYM[23] + "<br>" +
-                              LISTE_GYM[24] + "<br>" +
-                              LISTE_GYM[25] + "<br>" +
-                              LISTE_GYM[26] + "<br>" +
-                              LISTE_GYM[27] + "<br><br>" +
-                              "<input type='button' value='Voir la map' onclick='declencheur_gym4f()'>";
-                              
-                                      
+            document.getElementById('info2_gym').innerHTML = info_gym2;
+        }
+
+
+
+
+       if(LISTE_GYM[14] == undefined &&
+          LISTE_GYM[15] == undefined &&
+          LISTE_GYM[16] == undefined && 
+          LISTE_GYM[17] == undefined &&
+          LISTE_GYM[18] == undefined &&
+          LISTE_GYM[19] == undefined &&
+          LISTE_GYM[20] == undefined){
+            document.getElementById('info3_gym').style.display = 'none';
+        }
+        else{
+            var info_gym3 =  "<br><br><strong>" + LISTE_GYM[14] + "</strong><br><br>" +
+                                  LISTE_GYM[15] + "<br>" +
+                                  LISTE_GYM[16] + "<br>" +
+                                  LISTE_GYM[17] + "<br>" +
+                                  LISTE_GYM[18] + "<br>" +
+                                  LISTE_GYM[19] + "<br>" +
+                                  LISTE_GYM[20] + "<br><br>" +
+                                  "<input type='button' value='Voir la map' onclick='declencheur_gym3f()'>";
+
+            document.getElementById('info3_gym').innerHTML = info_gym3;
+        }
+
+
+                         
+        if(LISTE_GYM[21] == undefined &&
+          LISTE_GYM[22] == undefined &&
+          LISTE_GYM[23] == undefined && 
+          LISTE_GYM[24] == undefined &&
+          LISTE_GYM[25] == undefined &&
+          LISTE_GYM[26] == undefined &&
+          LISTE_GYM[27] == undefined){
+            document.getElementById('info4_gym').style.display = 'none';
+        }
+        else{
+            
+            var info_gym4 =  "<br><br><strong>" + LISTE_GYM[21] + "</strong><br><br>" + 
+                                  LISTE_GYM[22] + "<br>" +
+                                  LISTE_GYM[23] + "<br>" +
+                                  LISTE_GYM[24] + "<br>" +
+                                  LISTE_GYM[25] + "<br>" +
+                                  LISTE_GYM[26] + "<br>" +
+                                  LISTE_GYM[27] + "<br><br>" +
+                                  "<input type='button' value='Voir la map' onclick='declencheur_gym4f()'>";
+                                  
+            document.getElementById('info4_gym').innerHTML = info_gym4;
+        }
+
+
+
+        var a = document.getElementById('info1_gym')
+        var b = document.getElementById('info2_gym')
+        var c = document.getElementById('info3_gym')
+        var d = document.getElementById('info4_gym')
+
+        
+        if(a.style.display == 'none' && b.style.display == 'none' && c.style.display == 'none' && d.style.display == 'none'){
+
+            document.getElementById('aucas_ou').innerHTML = "<center><h3>Veuillez nous excusez nous n'avons rien trouvé</h3></center>";
+        }
+
         LISTE_GYMGYM.push([LISTE_GYM[0], LISTE_GYM[7], LISTE_GYM[14], LISTE_GYM[21]]);
  
                         
-        document.getElementById('info1_gym').innerHTML = info_gym1;
-        document.getElementById('info2_gym').innerHTML = info_gym2;
-        document.getElementById('info3_gym').innerHTML = info_gym3;
-        document.getElementById('info4_gym').innerHTML = info_gym4;
+        
+        
+        
+        
         
 
       };
@@ -1572,6 +1704,7 @@ jQuery("#gym2").on("click", function(e){
               liste_lat = []
               console.log(data)
 
+              if(data == [])
 
               if (data == "Oups nous n'avons rien trouvé"){
              
@@ -2209,23 +2342,6 @@ jQuery("#gym2").on("click", function(e){
       });
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
