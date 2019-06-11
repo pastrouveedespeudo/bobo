@@ -1267,15 +1267,19 @@ LISTE = []
           console.log('000000000000000')
 
         
-                         
-        if(LISTE[0] == undefined &&
-          LISTE[1] == undefined &&
-          LISTE[2] == undefined && 
-          LISTE[3] == undefined &&
-          LISTE[4] == undefined &&
-          LISTE[5] == undefined &&
-          LISTE[6] == undefined){
+                    
+        var a = 0
+        if(LISTE[0] == undefined){a += 1};
+        if(LISTE[1] == undefined){a += 1};
+        if(LISTE[2] == undefined){a += 1};
+        if(LISTE[3] == undefined){a += 1};
+        if(LISTE[4] == undefined){a += 1};
+        if(LISTE[5] == undefined){a += 1};
+        if(LISTE[6] == undefined){a += 1};
+        if(LISTE[7] == undefined){a += 1};
+        if(a>4){
               document.getElementById('info1').style.display = 'none';
+              a = 0
         }
         else{
                 
@@ -1285,7 +1289,8 @@ LISTE = []
                                   LISTE[3] + "<br>" +
                                   LISTE[4] + "<br>" +
                                   LISTE[5] + "<br>" +
-                                  LISTE[6] + "<br><br>" +
+                                  LISTE[6] + "<br>" +
+                                  LISTE[7] + "<br><br>" +
                                   "<p id='yoo1'><i>Le numéro arrive !</i></p>" +
                                   "<img id='gifou1' src='/static/img/portfolio/icone/chargement1.gif' width='40'>";
 
@@ -1295,25 +1300,29 @@ LISTE = []
 
 
 
-
-        if(LISTE[7] == undefined &&
-          LISTE[8] == undefined &&
-          LISTE[9] == undefined && 
-          LISTE[10] == undefined &&
-          LISTE[11] == undefined &&
-          LISTE[12] == undefined &&
-          LISTE[13] == undefined){
+        var b = 0
+        if(LISTE[8] == undefined){b += 1};
+        if(LISTE[9] == undefined){b += 1};
+        if(LISTE[10] == undefined){b += 1};
+        if(LISTE[11] == undefined){b += 1};
+        if(LISTE[12] == undefined){b += 1};
+        if(LISTE[13] == undefined){b += 1};
+        if(LISTE[14] == undefined){b += 1};
+        if(LISTE[15] == undefined){b += 1};
+        if(b>4){
               document.getElementById('info2').style.display = 'none';
+              b = 0
         }
         else{
             
-            var info_coiffeur2 =  "<br><br><strong>" + LISTE[7] + "</strong><br><br>" +
-                                  LISTE[8]  + "<br>" +
+            var info_coiffeur2 =  "<br><br><strong>" + LISTE[8] + "</strong><br><br>" +
                                   LISTE[9]  + "<br>" +
-                                  LISTE[10] + "<br>" +
+                                  LISTE[10]  + "<br>" +
                                   LISTE[11] + "<br>" +
                                   LISTE[12] + "<br>" +
-                                  LISTE[13] + "<br><br>" +
+                                  LISTE[13] + "<br>" +
+                                  LISTE[14] + "<br>" +
+                                  LISTE[15] + "<br><br>" +
                                   "<p id='yoo2'><i>Le numéro arrive !</i></p>" +
                                   "<img id='gifou2' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
             document.getElementById('info2').innerHTML = info_coiffeur2;
@@ -1321,25 +1330,29 @@ LISTE = []
         }
 
 
-
-        if(LISTE[14] == undefined &&
-          LISTE[15] == undefined &&
-          LISTE[16] == undefined && 
-          LISTE[17] == undefined &&
-          LISTE[18] == undefined &&
-          LISTE[19] == undefined &&
-          LISTE[20] == undefined){
+        var c = 0
+        if(LISTE[16] == undefined){c += 1};
+        if(LISTE[17] == undefined){c += 1};
+        if(LISTE[18] == undefined){c += 1};
+        if(LISTE[19] == undefined){c += 1};
+        if(LISTE[20] == undefined){c += 1};
+        if(LISTE[21] == undefined){c += 1};
+        if(LISTE[22] == undefined){c += 1};
+        if(LISTE[23] == undefined){c += 1};
+        if(c>4){
               document.getElementById('info3').style.display = 'none';
+              c = 0
         }
         else{
             
-            var info_coiffeur3 =  "<br><br><strong>" + LISTE[14] + "</strong><br><br>" +
-                                  LISTE[15] + "<br>" +
-                                  LISTE[16] + "<br>" +
+            var info_coiffeur3 =  "<br><br><strong>" + LISTE[16] + "</strong><br><br>" +
                                   LISTE[17] + "<br>" +
                                   LISTE[18] + "<br>" +
                                   LISTE[19] + "<br>" +
-                                  LISTE[20] + "<br><br>" +
+                                  LISTE[20] + "<br>" +
+                                  LISTE[21] + "<br>" +
+                                  LISTE[22] + "<br>" +   
+                                  LISTE[23] + "<br><br>" +
                                   "<p id='yoo3'><i>Le numéro arrive !</i></p>" +
                                   "<img id='gifou3' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
 
@@ -1347,24 +1360,29 @@ LISTE = []
          }
 
 
-        if(LISTE[21] == undefined &&
-          LISTE[22] == undefined &&
-          LISTE[23] == undefined && 
-          LISTE[24] == undefined &&
-          LISTE[25] == undefined &&
-          LISTE[26] == undefined &&
-          LISTE[27] == undefined){
+        var d = 0
+        if(LISTE[24] == undefined){d += 1};
+        if(LISTE[25] == undefined){d += 1};
+        if(LISTE[26] == undefined){d += 1};
+        if(LISTE[27] == undefined){d += 1};
+        if(LISTE[28] == undefined){d += 1};
+        if(LISTE[29] == undefined){d += 1};
+        if(LISTE[30] == undefined){d += 1};
+        if(LISTE[31] == undefined){d += 1};
+        if(d>4){
             document.getElementById('info4').style.display = 'none';
+            d = 0
         }
         else{              
 
-            var info_coiffeur4 =  "<br><br><strong>" + LISTE[21] + "</strong><br><br>" + 
-                                  LISTE[22] + "<br>" +
-                                  LISTE[23] + "<br>" +
-                                  LISTE[24] + "<br>" +
+            var info_coiffeur4 =  "<br><br><strong>" + LISTE[24] + "</strong><br><br>" + 
                                   LISTE[25] + "<br>" +
                                   LISTE[26] + "<br>" +
-                                  LISTE[27] + "<br><br>" +
+                                  LISTE[27] + "<br>" +
+                                  LISTE[28] + "<br>" +
+                                  LISTE[39] + "<br>" +
+                                  LISTE[30] + "<br>" +
+                                  LISTE[31] + "<br><br>" +
                                   "<p id='yoo4'><i>Le numéro arrive !</i></p>" +
                                   "<img id='gifou4' src='/static/img/portfolio/icone/chargement1.gif' width='40' height='40'>";
             
@@ -1467,15 +1485,18 @@ jQuery("#gym2").on("click", function(e){
           console.log(LISTE_GYM)
           console.log('000000000000000')
 
-              
-       if(LISTE_GYM[0] == undefined &&
-          LISTE_GYM[1] == undefined &&
-          LISTE_GYM[2] == undefined && 
-          LISTE_GYM[3] == undefined &&
-          LISTE_GYM[4] == undefined &&
-          LISTE_GYM[5] == undefined &&
-          LISTE_GYM[6] == undefined){
+       var e = 0
+       if(LISTE_GYM[0] == undefined){e += 1}
+       if(LISTE_GYM[1] == undefined){e += 1}
+       if(LISTE_GYM[2] == undefined){e += 1}
+       if(LISTE_GYM[3] == undefined){e += 1}
+       if(LISTE_GYM[4] == undefined){e += 1}
+       if(LISTE_GYM[5] == undefined){e += 1}
+       if(LISTE_GYM[6] == undefined){e += 1}
+       if(LISTE_GYM[7] == undefined){e += 1}
+       if(e > 4){
             document.getElementById('info1_gym').style.display = 'none';
+            e = 0
         }
 
       else{
@@ -1485,7 +1506,8 @@ jQuery("#gym2").on("click", function(e){
                               LISTE_GYM[3] + "<br>" +
                               LISTE_GYM[4] + "<br>" +
                               LISTE_GYM[5] + "<br>" +
-                              LISTE_GYM[6] + "<br><br>" +
+                              LISTE_GYM[6] + "<br>" +
+                              LISTE_GYM[7] + "<br><br>" +
                               "<input type='button' value='Voir la map' onclick='declencheur_gym1f()'>";
         
          document.getElementById('info1_gym').innerHTML = info_gym1;                     
@@ -1496,25 +1518,30 @@ jQuery("#gym2").on("click", function(e){
 
 
 
-       if(LISTE_GYM[7] == undefined &&
-          LISTE_GYM[8] == undefined &&
-          LISTE_GYM[9] == undefined && 
-          LISTE_GYM[10] == undefined &&
-          LISTE_GYM[11] == undefined &&
-          LISTE_GYM[12] == undefined &&
-          LISTE_GYM[13] == undefined){
+       var f = 0
+       if(LISTE_GYM[8] == undefined){f += 1}
+       if(LISTE_GYM[9] == undefined){f += 1}
+       if(LISTE_GYM[10] == undefined){f += 1}
+       if(LISTE_GYM[11] == undefined){f += 1}
+       if(LISTE_GYM[12] == undefined){f += 1}
+       if(LISTE_GYM[13] == undefined){f += 1}
+       if(LISTE_GYM[14] == undefined){f += 1}
+       if(LISTE_GYM[15] == undefined){f += 1}
+       if(f > 4){
             document.getElementById('info2_gym').style.display = 'none';
+            f = 0
         }
         else{
 
 
-        var info_gym2 =  "<br><br><strong>" + LISTE_GYM[7] + "</strong><br><br>" +
-                              LISTE_GYM[8]  + "<br>" +
+        var info_gym2 =  "<br><br><strong>" + LISTE_GYM[8] + "</strong><br><br>" +
                               LISTE_GYM[9]  + "<br>" +
-                              LISTE_GYM[10] + "<br>" +
+                              LISTE_GYM[10]  + "<br>" +
                               LISTE_GYM[11] + "<br>" +
                               LISTE_GYM[12] + "<br>" +
-                              LISTE_GYM[13] + "<br><br>" +
+                              LISTE_GYM[13] + "<br>" +
+                              LISTE_GYM[14] + "<br>" +
+                              LISTE_GYM[15] + "<br><br>" +
                               "<input type='button' value='Voir la map' onclick='declencheur_gym2f()'>";
 
             document.getElementById('info2_gym').innerHTML = info_gym2;
@@ -1523,23 +1550,28 @@ jQuery("#gym2").on("click", function(e){
 
 
 
-       if(LISTE_GYM[14] == undefined &&
-          LISTE_GYM[15] == undefined &&
-          LISTE_GYM[16] == undefined && 
-          LISTE_GYM[17] == undefined &&
-          LISTE_GYM[18] == undefined &&
-          LISTE_GYM[19] == undefined &&
-          LISTE_GYM[20] == undefined){
+       var g = 0
+       if(LISTE_GYM[16] == undefined){g += 1}
+       if(LISTE_GYM[17] == undefined){g += 1}
+       if(LISTE_GYM[18] == undefined){g += 1}
+       if(LISTE_GYM[19] == undefined){g += 1}
+       if(LISTE_GYM[20] == undefined){g += 1}
+       if(LISTE_GYM[21] == undefined){g += 1}
+       if(LISTE_GYM[22] == undefined){g += 1}
+       if(LISTE_GYM[23] == undefined){g += 1}
+       if(g > 4){
             document.getElementById('info3_gym').style.display = 'none';
+            g = 0
         }
         else{
-            var info_gym3 =  "<br><br><strong>" + LISTE_GYM[14] + "</strong><br><br>" +
-                                  LISTE_GYM[15] + "<br>" +
-                                  LISTE_GYM[16] + "<br>" +
+            var info_gym3 =  "<br><br><strong>" + LISTE_GYM[16] + "</strong><br><br>" +
                                   LISTE_GYM[17] + "<br>" +
                                   LISTE_GYM[18] + "<br>" +
                                   LISTE_GYM[19] + "<br>" +
-                                  LISTE_GYM[20] + "<br><br>" +
+                                  LISTE_GYM[20] + "<br>" +
+                                  LISTE_GYM[21] + "<br>" +
+                                  LISTE_GYM[22] + "<br>" +
+                                  LISTE_GYM[23] + "<br><br>" +
                                   "<input type='button' value='Voir la map' onclick='declencheur_gym3f()'>";
 
             document.getElementById('info3_gym').innerHTML = info_gym3;
@@ -1547,24 +1579,29 @@ jQuery("#gym2").on("click", function(e){
 
 
                          
-        if(LISTE_GYM[21] == undefined &&
-          LISTE_GYM[22] == undefined &&
-          LISTE_GYM[23] == undefined && 
-          LISTE_GYM[24] == undefined &&
-          LISTE_GYM[25] == undefined &&
-          LISTE_GYM[26] == undefined &&
-          LISTE_GYM[27] == undefined){
+       var h = 0
+       if(LISTE_GYM[24] == undefined){h += 1}
+       if(LISTE_GYM[25] == undefined){h += 1}
+       if(LISTE_GYM[26] == undefined){h += 1}
+       if(LISTE_GYM[27] == undefined){h += 1}
+       if(LISTE_GYM[28] == undefined){h += 1}
+       if(LISTE_GYM[29] == undefined){h += 1}
+       if(LISTE_GYM[30] == undefined){h += 1}
+       if(LISTE_GYM[31] == undefined){h += 1}
+       if(h > 4){
             document.getElementById('info4_gym').style.display = 'none';
+            h = 0
         }
         else{
             
-            var info_gym4 =  "<br><br><strong>" + LISTE_GYM[21] + "</strong><br><br>" + 
-                                  LISTE_GYM[22] + "<br>" +
-                                  LISTE_GYM[23] + "<br>" +
-                                  LISTE_GYM[24] + "<br>" +
+            var info_gym4 =  "<br><br><strong>" + LISTE_GYM[24] + "</strong><br><br>" + 
                                   LISTE_GYM[25] + "<br>" +
                                   LISTE_GYM[26] + "<br>" +
-                                  LISTE_GYM[27] + "<br><br>" +
+                                  LISTE_GYM[27] + "<br>" +
+                                  LISTE_GYM[28] + "<br>" +
+                                  LISTE_GYM[29] + "<br>" +
+                                  LISTE_GYM[30] + "<br>" +
+                                  LISTE_GYM[31] + "<br><br>" +
                                   "<input type='button' value='Voir la map' onclick='declencheur_gym4f()'>";
                                   
             document.getElementById('info4_gym').innerHTML = info_gym4;
