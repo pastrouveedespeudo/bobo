@@ -2,31 +2,37 @@ import requests
 from bs4 import *
 from geopy.geocoders import Nominatim
 
+scrap = ['Rue', 'Avenue', 'Allée', 'allée', 'Impasse', 'Adresse']
+
 def addresse_geo(nom, ville):
     path = "https://www.google.com/search?q=adresse+{}+{}+&oq=adresse+{}+{}"
     path = path.format(nom, ville, nom, ville)
-    print(path)
-    r = requests.get(path)
+
+    r = requests.get(path, headers={
+         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
+     })
+    page = r
     page = r.content
     
     soup = BeautifulSoup(page, "html.parser")
     
     propriete = soup.find_all("span")
 
-    mot = 'Address'
-    motfr = 'Adresse'
-    addresse = ''
-    c = 0
-    for i in propriete:
-        print(i.string)
-        if c == 2:
-            addresse += i.string
-            break
-        a = str(i.string).find(str(mot))
-        b = str(i.string).find(str(motfr))
-        if a >= 0 or b >= 0:
-            c += 1
+    stop = ''
+    addresse = []
 
+    for i in propriete:
+        if stop == True:
+            break
+        if i.string == None:
+            pass
+        else:
+            for j in scrap:
+                a = str(i.string).find(str(j))
+                if a >= 0:
+                    addresse.append(i.string)
+                    stop = True
+                    
     print(addresse)
     return addresse
 
@@ -35,6 +41,7 @@ def ville_geo(parametre):
     """Here we searching from Python modul(geopy.geocoders)"""
     """address from the input from html page"""
 
+    print(parametre)
     geocoder = Nominatim(user_agent="app.py")
     #parametre is data recup from data()
     
@@ -55,8 +62,8 @@ def ville_geo(parametre):
 
 
 
-#addresse('lof coiffure', 'crest')
-#ville('Avenue Félix Rozier, 26400 Crest')
+#addresse_geo('Hair salon · Avenue Félix Rozier', 'crest')
+#ville_geo('106 Rue Professeur Beauvisage')
 
 
 
