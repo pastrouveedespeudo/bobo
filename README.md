@@ -1,48 +1,17 @@
+ca affiche la map mais ca dit oups nous navons rien trouvé
 
-finir les liens de / + les descriptions des projets
+habits espacer les boutons
 
-commencer polution + finir predi 
+si le mec appuis sur openclassrooms mettre un alert nos projet commennt par projet
 
-titre et h2 de tendance en cursive
-
-finir les liens de mes services (coupe)
-
-mettre undélimitation en dessous de / entre projet et social
-
-
-en gros: 
-
-on prend la premeire condition la plus basse en pollu -------------- ok
-
-on récupere toutes les conditions ou y'a une fois qui sort ----------- ok
-
-on compare premeire + les une condi - > on espere que ca sorte une diff -> soustraction
-
-la derniere condi on la compare avec les autres on espere que ca sorte une condi ainsi de suite
-
-on fait la moyenne de toutes les conditions
+documenter le github et finir les truk mais avant faire popo et remplir la database
 
 remplissage database
-
-
-si ca marche a la fin week = 10, bouchon grand = 10, combo condition = 5 ect
-
-sinon refaire la meme chose qu'avant
-
-
-
-
-réfléchis a la prediction low cost et c ok
 
 #uncomment coupe nalysis et mode_analyse.py (static/bobo)
 
 #analysa() et mode_w_data () (administrateur/analyse) 
 
-#navebarre responsive
-
-#faire les href de services
-
-#bien mettre des message du genre: appuie sur l'image
 
 #tout mettre dans des fichier js mais ca marche pas des que je met une fonction en haut ou bas...
 
@@ -54,13 +23,9 @@ la partie machine a o
 
 #video par contre me faut des glacons
 
-#mettre un menu a pollution.html + explication démarche
-
-#responsivité des
-
 #supprimer favoris
 
-#l'image par email du coiffeur 
+
 
 
 
