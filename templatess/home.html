@@ -1,4 +1,4 @@
-{% include "navebarre_account.html" %}
+{% include "navebarre.html" %}
 {% block content %}
 {% endblock %}
 
@@ -360,13 +360,13 @@
               <marquee direction="right" id='marc'
               scrollamount="10" height="210">
               
-                <a href=""><img src='/static/img/phrase.png' onmouseover="stop('im4')" onmouseout="start()"></a>
-                <a href=""><img src='/static/img/map.png' onmouseover="stop('im1')" onmouseout="start()"></a>
-                <a href=""><img src='/static/img/mot.png' onmouseover="stop('im5')" onmouseout="start()"></a>
-                <a href=""><img src='/static/img/algoalgo1.png' onmouseover="stop('im2')" onmouseout="start()"></a>
-                <a href=""><img src='/static/img/voiture.png' onmouseover="stop('im6')" onmouseout="start()"></a>
-                <a href=""><img src='/static/img/jeux.png' height='100' width='250' onmouseover="stop('im3')" onmouseout="start()"></a>
-                <a href=""><img src='/static/img/magazine.jpg' onmouseover="stop('im7')" onmouseout="start()"></a>
+                <a href="https://github.com/pastrouveedespeudo/mot_fonction"><img src='/static/img/phrase.png' onmouseover="stop('im4')" onmouseout="start()"></a>
+                <a href="https://github.com/pastrouveedespeudo/bobo/tree/master/direction/carte"><img src='/static/img/map.png' onmouseover="stop('im1')" onmouseout="start()"></a>
+                <a href="https://github.com/pastrouveedespeudo/momot"><img src='/static/img/mot.png' onmouseover="stop('im5')" onmouseout="start()"></a>
+                <a href="https://github.com/pastrouveedespeudo/algoalgo"><img src='/static/img/algoalgo1.png' onmouseover="stop('im2')" onmouseout="start()"></a>
+                <a href="https://github.com/pastrouveedespeudo/reconstruction_image/blob/master/apprentissage/dessin.py"><img src='/static/img/voiture.png' onmouseover="stop('im6')" onmouseout="start()"></a>
+                <a href="https://github.com/pastrouveedespeudo/jeux-speech"><img src='/static/img/jeux.png' height='100' width='250' onmouseover="stop('im3')" onmouseout="start()"></a>
+                <a href="https://github.com/pastrouveedespeudo/bobo"><img src='/static/img/magazine.jpg' onmouseover="stop('im7')" onmouseout="start()"></a>
                 
   
                 
@@ -395,25 +395,85 @@
                                                                   '</center>';
               document.getElementById('description').style.textAlign = 'justify';
             }
+            
             else if(im == 'im2'){
-              document.getElementById('description').innerHTML = '<br><br><center>cou858cou</center>';
+              
+              document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
+              document.getElementById('description').innerHTML = '<center>' +
+                                                                  'Saisissez une phrase ! ' +
+                                                                  'Nous la récupérons et la traitons, ' +
+                                                                  'Au choix une table de multiplication, ' +
+                                                                  'un affichage et une recherche de définition.' +
+                                                                  "Banal, oui sauf que nous n'avons pas coder de fonction</center>";
+
+              document.getElementById('description').style.textAlign = 'justify';
+              
             }
+
+            
             else if(im == 'im3'){
-              document.getElementById('description').innerHTML = '<br><br><center>cou777777cou</center>';
+              
+              document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
+              document.getElementById('description').innerHTML = '<center>' +
+                                                                  "Un jeux d'arcarde ! " +
+                                                                  'basé sur speech recognition de google, ' +
+                                                                  "J'ai besoin d'un bouclier et vite. " +
+                                                                  "SHIELDDD !!</center>";
+              
+              document.getElementById('description').style.textAlign = 'justify';
+              
             }
             else if(im == 'im4'){
-              document.getElementById('description').innerHTML = '<br><br><center>cou7876989cou</center>';
+              
+              document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
+              document.getElementById('description').innerHTML = '<center>' +
+                                                                  'Saisissez une phrase ! ' +
+                                                                  'Nous la récupérons et la traitons, ' +
+                                                                  'nous vous donnons ensuite la fonction de chaque mot, ' +
+                                                                  'pronom, verbe, nominal...' +
+                                                                  "</center>";
+              
+              document.getElementById('description').style.textAlign = 'justify';
             }
+            
             else if(im == 'im5'){
-              document.getElementById('description').innerHTML = '<br><br><center>cou7578cou</center>';
+              
+              document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
+              
+              document.getElementById('description').innerHTML = '<center>' +
+                                                                  'Un script qui permet ' +
+                                                                  'de dire les mots récurrents, ' +
+                                                                  "d'un texte triste " +
+                                                                  "</center>";
+              
+              document.getElementById('description').style.textAlign = 'justify';
             }
+            
             else if(im == 'im6'){
-              document.getElementById('description').innerHTML = '<br><br><center>2542</center>';
+              
+              document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
+              document.getElementById('description').innerHTML = '<center>' +
+                                                                  'Un script qui permet de déssiner ! ' +
+                                                                  'sommairement une voiture ' +
+                                                                  'par sa description, ' +
+                                                                  '(4 routes, une caisse ect...' +
+                                                                  "</center>";
+              
+              document.getElementById('description').style.textAlign = 'justify';
             }
+            
             else if(im == 'im7'){
-              document.getElementById('description').innerHTML = '<br><br><center>2542</center>';
+              document.getElementById('status').innerHTML = '<center>Status : En cours de finition</center>';
+              
+              document.getElementById('description').innerHTML = "<center>Un magazine virtuel " +
+                                                                "avec une rubrique mode et une rubrique de pollution. " +
+                                                                "Avez vous déja lu un magazine de spycho ? Et... en ligne ?" +
+                                                                "</center>";
+              
+              document.getElementById('description').style.textAlign = 'justify';
             }
           };
+          
           function start(){
             document.getElementById('marc').start();
               document.getElementById('description').innerHTML = "";
@@ -433,15 +493,13 @@
           <h2><center>Nos liens tuto</center></h2>
           <br>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            
+            <a href ="https://www.femmeactuelle.fr/beaute/news-beaute/video-camille-cerf-miss-france-2015-son-tuto-pour-se-maquiller-dans-un-train-2077617"><li style='color:black;'>Les conseils beauté d'un Miss France</li></a>
+            <a href="https://www.youtube.com/watch?v=UfuGIZFJ01U"><li style='color:black;'>Tuto pour la vraie vie</li></a>
+            <a href="https://www.grazia.fr/beaute/maquillage/tutoriels-maquillage-nos-conseils-avant-de-s-y-mettre-813991"><li style='color:black;'>Maquillage et video</li></a>
+            <a href="https://www.grazia.fr/beaute/maquillage/notre-selection-des-meilleures-youtubeuses-maquillage-a-suivre-813990"><li style='color:black;'>Devenir Youtubeuse en maquillage</li></a>
+            <a href="https://www.fr.clinique.com/thewink/how-tos"><li style='color:black;'>Le maquillage et des astuces cliniques</li></a>
+            <a href="https://www.bibamagazine.fr/beaute/maquillage/une-fillette-de-6-ans-realise-un-tuto-beaute-57377"><li style='color:black;'>Des conseils venuent des plus jeunes</li></a>
+
           </ul>
     
         </div>
