@@ -1403,7 +1403,7 @@ LISTE = []
         }
 
                                       
-        LISTE_COIFURE.push([LISTE[0], LISTE[7], LISTE[14], LISTE[21]]);
+        LISTE_COIFURE.push([LISTE[0], LISTE[8], LISTE[16], LISTE[24]]);
  
                           
 
@@ -1631,7 +1631,7 @@ jQuery("#gym2").on("click", function(e){
             document.getElementById('aucas_ou').innerHTML = "<center><h3>Veuillez nous excusez nous n'avons rien trouvé</h3></center>";
         }
 
-        LISTE_GYMGYM.push([LISTE_GYM[0], LISTE_GYM[7], LISTE_GYM[14], LISTE_GYM[21]]);
+        LISTE_GYMGYM.push([LISTE_GYM[0], LISTE_GYM[8], LISTE_GYM[16], LISTE_GYM[24]]);
  
                         
         
@@ -1728,7 +1728,7 @@ jQuery("#gym2").on("click", function(e){
       
      var b = document.getElementById('coif1').value;
      document.getElementById('mapmap').style.display = 'none';
-     
+
      e.preventDefault();
       jQuery.ajax({
           data:{
@@ -1949,14 +1949,13 @@ jQuery("#gym2").on("click", function(e){
 
   jQuery("#declencheur_gym1").on("click", function(e){
  
-
      var b = document.getElementById('gym1').value;
      
      e.preventDefault();
       jQuery.ajax({
           data:{
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
-               'buttony_gym':String(LISTE_GYMGYM[0]),
+               'buttony_gym':String(LISTE_GYM),
                'country_gym':b, 
               
        
@@ -2028,7 +2027,7 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
-               'buttony_gym':String(LISTE_GYMGYM[8]),
+               'buttony_gym':String(LISTE_GYM[8]),
                'country_gym':b, 
               
        
@@ -2094,7 +2093,7 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
-               'buttony_gym':String(LISTE_GYMGYM[16]),
+               'buttony_gym':String(LISTE_GYM[16]),
                'country_gym':b, 
               
        
@@ -2163,7 +2162,7 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
               'csrfmiddlewaretoken': '{{csrf_token}}' , 
-               'buttony_gym':String(LISTE_GYMGYM[24]),
+               'buttony_gym':String(LISTE_GYM[24]),
                'country_m':b, 
               
        
