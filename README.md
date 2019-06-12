@@ -1,15 +1,20 @@
-corriger toutes les fautes que léa t'as dit
+corriger toutes les fautes
+
+finir la prévision
+
+refaire un cron window que pour marseille et c chiant a faire ca dépasse la minute, ca prend 8 sec sur heroku donc rajotue les autres condtions
+
+graphe on peut amélioré un peu 
 
 documenter le github et finir les truk mais avant faire popo et remplir la database
 
-remplissage database
+tout commenter et tout ranger
+
+enlevé tous les styles et les remettre et ensuite tu pourras t'amuser sur les autres truks
 
 #uncomment coupe nalysis et mode_analyse.py (static/bobo)
 
 #analysa() et mode_w_data () (administrateur/analyse) 
-
-#visuel my_polution
-
 
 #tout mettre dans des fichier js mais ca marche pas des que je met une fonction en haut ou bas...
 
@@ -17,7 +22,7 @@ remplissage database
 
 la partie machine a o 
 
-#supprimer favoris
+
 
 
 
@@ -34,7 +39,7 @@ la partie machine a o
  http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html
 
 
-# récupérer macguyvert dans les fichiers supprimer avec un logiciel
+# récupérer macguyvert dans les fichiers supprimer avec un logiciel 
 
 # ranger tout les github en les clonnant
 
