@@ -1,168 +1,62 @@
-<!DOCTYPE html>
-  <html lang="en">
+{% include "navebarre_pollu.html" %}
+{% block content %}
+{% endblock %}
 
-    <head>
 
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="">
-      <meta name="author" content="">
+  <style>
+    h1{font-family:recursive;}
+    h2{font-family:"Comic Sans MS, Comic Sans, cursive";
 
-      <title>Magazine virtuel</title>
+       }
+  input{border:2px solid black;}
+  </style>
 
-      <!-- Font Awesome Icons -->
-      <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-      <!-- Google Fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-      <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
-      <!-- Plugin CSS -->
-      <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-      <!-- Theme CSS - Includes Bootstrap -->
-      <link href="/static/css/creative.min.css" rel="stylesheet">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center text-center">
+        <div class="col-lg-10 align-self-end">
       
-    </head>
-    
-    <style> 
-      #my{width:50px; height:50px;margin-left:-70px;}
-      #my_prof{height:50px; height:50px;margin-left:-10px;}
-      #im3{width:50px;height:50px;margin-left:25px;}
-      #im3{width:50px;height:50px;margin-left:0px;}
-      #imim{width:50px;height:50px;margin-left:68px;}
-      #toususr{width:200px;height:50px;margin-left:0px;} 
-      #im1{width:50px; height:50px; margin-left:110px;}
-      #graph{margin-left:35px; width:200px;}
-      #im2{width:50px;height:50px;margin-left:45px;}
-      #donnée{width:200px;height:50px;margin-left:-25px;}
-      #impredi{width:50px;height:50px; margin-left:55px;}
-      #prédiction{width:200px;height:50px; margin-left:-20px;}
-    </style>
-
-    <body id="page-top">
-
-      <!-- Navigation -->
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-
-        <div class="container">
-        
-          <img src="/static/img/portfolio2/icone/indian.png" id="my">
-          <a class="navbar-brand js-scroll-trigger" href="/polution/polution">My_Polution</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-          <img src="/static/img/portfolio/icone/my.png" id="my_prof">
-          <a class="navbar-brand js-scroll-trigger" href="/">My_Profil</a>
          
-          <button class="navbar-toggler navbar-toggler-right" type="button"
-            data-toggle="collapse" data-target="#navbarResponsive"
-            aria-controls="navbarResponsive" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <h1>Nos graphiques !</h1><br>
+           
+          <h2>Les graphiques permettent de visualiser la pollution selon les différentes conditions.
+            Bien sur, le combo de plusieurs conditions augmentent la pollution. Ici, vous n'avez
+            que les conditions isolées !
+            <br><br>Mais cela nous permet de nous faire une petite idée des attributs de la pollution.</h2>
 
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto my-2 my-lg-0">
-
-
-              <li class="nav-item">
-                <a href = "/photo/photo">
-                  <img src="/static/img/portfolio2/icone/graphe.png" id="im1">
-                  <center><a class="nav-link js-scroll-trigger" href="/photo/photo" id='graph'>Nos graphiques</a></center>
-                </a>
-              </li>
-
-              <li class="nav-item">
-               <a href = "/polution/donnée">
-                <img src="/static/img/portfolio2/icone/pol.png" id="im2">
-                <center><a class="nav-link js-scroll-trigger" href="/polution/donnée" id='donnée'>Nos données pollution</a></center>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href = "/photo/coupe">
-                  <img src="/static/img/portfolio/icone/coiffure.png" id="impredi">
-                  <center><a class="nav-link js-scroll-trigger" href="/photo/coupe" id='prédiction'>Nos predictions</a></center>
-                </a>
-              </li>
-
-              <li class="nav-item">
-               <a href = "/photo/habits">
-                <img src="/static/img/portfolio2/icone/pollution.png" id="imim">
-                <center><a class="nav-link js-scroll-trigger" href="/polution/info_pollu" id='toususr'>Tous sur la pollution</a></center>
-                </a>
-              </li>
-
-              <li class="nav-item">
-               <a href = "/photo/habits">
-                <img src="/static/img/portfolio2/icone/fight.png" id="im3">
-                <a class="nav-link js-scroll-trigger" href="/photo/habits">Comment lutter ?</a>
-                </a>
-              </li>
-
-            </ul>
-
-            
-          </div>
         </div>
-      </nav>
+    
+        <div class="col-lg-8 align-self-baseline">
+          <p class="text-white-75 font-weight-light mb-5"></p>
 
-
-      <!-- Masthead -->
-      <header class="masthead">
-        <div class="container h-100">
-          <div class="row h-100 align-items-center justify-content-center text-center">
-            <div class="col-lg-10 align-self-end">
-             <br><br>
-              <h1 class="text-uppercase text-white font-weight-bold">GRAPHIQUE !</h1>
-              
-              <style>#h{font:Serif; color:white;}</style> 
-              <h3 id="h"></h3>
-              <hr class="divider my-4">
-            </div>
-        
-            <div class="col-lg-8 align-self-baseline">
-              <p class="text-white-75 font-weight-light mb-5"></p>
-
-            </div>
-          </div>
         </div>
-      </header>
-
-
-     <input type='button' value='ville' onclick='graphe("condition")'>&nbsp;&nbsp;
-
-
-      <!-- About Section -->
+      </div>
       
-      <section class="page-section bg-primary" id="about">
-        <div class="container">
+    </div>
+  </header>
 
-          <div class="row justify-content-center">
 
-            <div class="row">
 
-              <div class="col-sm-4">
-               <input type='button' value='graphique lyon' onclick='lyon()'>
-              </div>
-
-              <div class="col-sm-4">
-               <input type='button' value='graphique paris' onclick='paris()'>
-              </div>
-              
-              <div class="col-sm-4">
-               <input type='button' value='graphique marseille' onclick='marseille()'>
-              </div>
-
-          </div>
-        </div>
-      </section>
 
       <!-- Call to Action Section -->
-      <section class="page-section bg-dark text-white" id='section_graphe' style='display:none;'>
-        
-        <div class="container text-center">
+      <section class="page-section bg-dark text-white" id='section_graphe' style='margin-top:-100px;'>
+
+          <p style='margin-left:100px;color:black;'><i><strong>*Choisis une ville et clique sur une des conditions</strong></i></p>
+
+          <br>
+           <div class="row justify-content-center">
+           
+               <input type='button' value='Graphique de Lyon' onclick='lyon()'>
+               <input type='button' value='Graphique de Paris' onclick='paris()'><br>
+               <input type='button' value='Graphique de Marseille' onclick='marseille()'>
+    
+          </div><br>
+     
+     
+          <div class="container text-center">
 
             <div class="row justify-content-center">
             
@@ -179,8 +73,23 @@
                
             </div><br><br>
 
-            <div id='graphique1'></div>
-        </div>
+                 
+           
+      
+
+
+              <center>
+              <div id='graphique1' class='col-xs-12 col-md-12 col-lg-8'>
+              </div></center>
+
+
+              
+    
+        <br><br><br><br>
+        </div><br><br>
+
+            
+  
       </section>
 
       <!-- Contact Section -->
