@@ -848,8 +848,8 @@ listeeeee = []
 
 
   <style>#map{
-              margin-top:200px;
-              height:350px;
+              margin-top:50px;
+              height:400px;
               width:80%;
               border: 5px solid black;
                   
@@ -859,13 +859,7 @@ listeeeee = []
 
   
   <div id='the_map' style='display:none;'>
-
-    <center><h3 style='margin-top:-200px;' id='lapmap'>La map</h3></center>
-    
-    <center><strong><h3 id='oups' style='display:none;'>Nous n'avons rien trouvé désolé</h3></strong></center>
-    
-
-
+    <p id='oups'><h3><center></center></h3></p>
     <br><br>
     <center><div id='map'></div></center>
     <br><br>
@@ -1181,7 +1175,7 @@ function menu_map(){
     document.getElementById('CONTENEUR').style.display = 'block';
     document.getElementById('the_map').style.display = 'none';
     document.getElementById('the_map_gym').style.display = 'none';
-    document.getElementById('oups').style.display = 'none';
+
 
   };
 
@@ -1635,7 +1629,7 @@ jQuery("#gym2").on("click", function(e){
 
         
         if(a.style.display == 'none' && b.style.display == 'none' && c.style.display == 'none' && d.style.display == 'none'){
-
+            alert('oui')
             document.getElementById('aucas_ou').innerHTML = "<center><h3>Veuillez nous excusez nous n'avons rien trouvé</h3></center>";
             document.getElementById('p_am_pm').style.display = 'none';
             document.getElementById('info').style.display = 'none';
@@ -1663,6 +1657,7 @@ jQuery("#gym2").on("click", function(e){
       
      var b = document.getElementById('coif1').value;
      document.getElementById('mapmap').style.display = 'none';
+     document.getElementById('oups').innerHTML = '';
      
      e.preventDefault();
       jQuery.ajax({
@@ -1693,12 +1688,13 @@ jQuery("#gym2").on("click", function(e){
 
               if (data == "Oups nous n'avons rien trouvé"){
              
-                document.getElementById('oups').style.display = 'block';
+      
                 document.getElementById('the_map').style.display = 'block';
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvé désolé";
                 
                 document.getElementById('map').style.display = 'none';  
-                document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
+                
                 document.getElementById('button_lamap_gym').style.display = 'none';
                 document.getElementById('button_lamap').style.display = 'block';
                 }
@@ -1738,6 +1734,7 @@ jQuery("#gym2").on("click", function(e){
       
      var b = document.getElementById('coif1').value;
      document.getElementById('mapmap').style.display = 'none';
+     document.getElementById('oups').innerHTML = '';
 
      e.preventDefault();
       jQuery.ajax({
@@ -1764,12 +1761,13 @@ jQuery("#gym2").on("click", function(e){
               console.log(data)
 
               if (data == "Oups nous n'avons rien trouvé"){
-                document.getElementById('oups').style.display = 'block';
+     
                 document.getElementById('the_map').style.display = 'block';
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvé désolé";
                 
                 document.getElementById('map').style.display = 'none';  
-                document.getElementById('button_lamap').style.display = 'none';
                 document.getElementById('lapmap').style.display = 'none';
+                
                 document.getElementById('button_lamap_gym').style.display = 'none';
                 document.getElementById('button_lamap').style.display = 'block';
                 }
@@ -1808,6 +1806,7 @@ jQuery("#gym2").on("click", function(e){
    
     var b = document.getElementById('coif1').value;
     document.getElementById('mapmap').style.display = 'none';
+    document.getElementById('oups').innerHTML = '';
     
      e.preventDefault();
       jQuery.ajax({
@@ -1836,13 +1835,15 @@ jQuery("#gym2").on("click", function(e){
               console.log(data)
 
               if (data == "Oups nous n'avons rien trouvé"){
-                document.getElementById('oups').style.display = 'block';
+           
                 document.getElementById('the_map').style.display = 'block';
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvé désolé";
                 
                 document.getElementById('map').style.display = 'none';  
-                document.getElementById('button_lamap').style.display = 'none';
+    
                 document.getElementById('lapmap').style.display = 'none';
                 document.getElementById('button_lamap_gym').style.display = 'none';
+                
                 document.getElementById('button_lamap').style.display = 'block';
                 
                 }
@@ -1861,8 +1862,10 @@ jQuery("#gym2").on("click", function(e){
               }
               liste_lat.push(pos)
               console.log(liste_lat)
+              
               document.getElementById('the_map').style.display = 'block';
               document.getElementById('button_lamap_gym').style.display = 'none';
+              
               document.getElementById('button_lamap').style.display = 'block';
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
               
@@ -1880,7 +1883,7 @@ jQuery("#gym2").on("click", function(e){
 
      var b = document.getElementById('coif1').value;
      document.getElementById('mapmap').style.display = 'none';
-
+     document.getElementById('oups').innerHTML = '';
      
      e.preventDefault();
       jQuery.ajax({
@@ -1909,13 +1912,15 @@ jQuery("#gym2").on("click", function(e){
               console.log(data)
 
               if (data == "Oups nous n'avons rien trouvé"){
-                document.getElementById('oups').style.display = 'block';
+              
                 document.getElementById('the_map').style.display = 'block';
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvé désolé";
                 
                 document.getElementById('map').style.display = 'none';  
-                document.getElementById('button_lamap').style.display = 'none';
+        
                 document.getElementById('lapmap').style.display = 'none';
                 document.getElementById('button_lamap_gym').style.display = 'none';
+                
                 document.getElementById('button_lamap').style.display = 'block';
                 }
               else{
@@ -1960,6 +1965,8 @@ jQuery("#gym2").on("click", function(e){
   jQuery("#declencheur_gym1").on("click", function(e){
  
      var b = document.getElementById('gym1').value;
+     document.getElementById('oups').innerHTML = '';
+     document.getElementById('button_lamap').style.display = 'none';
      
      e.preventDefault();
       jQuery.ajax({
@@ -1988,16 +1995,17 @@ jQuery("#gym2").on("click", function(e){
               console.log(data)
               
               if (data == "Oups nous n'avons rien trouvé"){
-                document.getElementById('oups').style.display = 'block';
-                document.getElementById('the_map').style.display = 'block';
-                
-                document.getElementById('map').style.display = 'none';  
-                document.getElementById('button_lamap').style.display = 'none';
-                document.getElementById('lapmap').style.display = 'none';
 
                 document.getElementById('button_lamap_gym').style.display = 'block';
-                document.getElementById('button_lamap').style.display = 'none';
-                }
+              
+                document.getElementById('the_map').style.display = 'block';
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvé désolé";
+                
+                document.getElementById('map').style.display = 'none';  
+                document.getElementById('lapmap').style.display = 'none';
+
+
+              }
               else{
 
               pos = ''
@@ -2033,6 +2041,9 @@ jQuery("#gym2").on("click", function(e){
   jQuery("#declencheur_gym2").on("click", function(e){
 
      var b = document.getElementById('gym1').value;
+     document.getElementById('oups').innerHTML = '';
+     document.getElementById('button_lamap').style.display = 'none';
+     
      e.preventDefault();
       jQuery.ajax({
           data:{
@@ -2057,16 +2068,18 @@ jQuery("#gym2").on("click", function(e){
               jQuery("#monCadreAlert");
               console.log(data)
                if (data == "Oups nous n'avons rien trouvé"){
-                document.getElementById('oups').style.display = 'block';
-                document.getElementById('the_map').style.display = 'block';
-           
-                
-                document.getElementById('map').style.display = 'none';  
-                document.getElementById('button_lamap').style.display = 'none';
-                document.getElementById('lapmap').style.display = 'none';
+
 
                 document.getElementById('button_lamap_gym').style.display = 'block';
-                document.getElementById('button_lamap').style.display = 'none';
+             
+                document.getElementById('the_map').style.display = 'block';
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvé désolé";
+                
+                document.getElementById('map').style.display = 'none';  
+                document.getElementById('lapmap').style.display = 'none';
+
+                
+   
                 }
               else{
 
@@ -2087,7 +2100,7 @@ jQuery("#gym2").on("click", function(e){
               document.getElementById('the_map').style.display = 'block';
               document.getElementById('button_lamap').style.display = 'none';
               document.getElementById('button_lamap_gym').style.display = 'block';
-              document.getElementById('button_lamap').style.display = 'none';
+  
               initMap(parseFloat(liste_lat[0]), parseFloat(liste_lat[1]));
           };
           };
@@ -2099,6 +2112,9 @@ jQuery("#gym2").on("click", function(e){
   jQuery("#declencheur_gym3").on("click", function(e){
 
      var b = document.getElementById('gym1').value;
+     document.getElementById('oups').innerHTML = '';
+     document.getElementById('button_lamap').style.display = 'none';
+     
      e.preventDefault();
       jQuery.ajax({
           data:{
@@ -2123,16 +2139,18 @@ jQuery("#gym2").on("click", function(e){
               jQuery("#monCadreAlert");
               
                 if (data == "Oups nous n'avons rien trouvé"){
-                document.getElementById('oups').style.display = 'block';
-                document.getElementById('the_map').style.display = 'block';
- 
-                
-                document.getElementById('map').style.display = 'none';  
-                document.getElementById('button_lamap').style.display = 'none';
-                document.getElementById('lapmap').style.display = 'none';
+
 
                 document.getElementById('button_lamap_gym').style.display = 'block';
-                document.getElementById('button_lamap').style.display = 'none';
+          
+                document.getElementById('the_map').style.display = 'block';
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvé désolé";
+                
+                document.getElementById('map').style.display = 'none';  
+                document.getElementById('lapmap').style.display = 'none';
+
+                
+                
                 }
               else{
 
@@ -2166,8 +2184,11 @@ jQuery("#gym2").on("click", function(e){
 
 
   jQuery("#declencheur_gym4").on("click", function(e){
- 
+      
+     document.getElementById('button_lamap').style.display = 'none';
      var b = document.getElementById('gym1').value;
+     document.getElementById('oups').innerHTML = '';
+     
      e.preventDefault();
       jQuery.ajax({
           data:{
@@ -2192,15 +2213,17 @@ jQuery("#gym2").on("click", function(e){
               jQuery("#monCadreAlert");
               
               if (data == "Oups nous n'avons rien trouvé"){
-                document.getElementById('oups').style.display = 'block';
-                document.getElementById('the_map').style.display = 'block';
-  
-                document.getElementById('map').style.display = 'none';  
-                document.getElementById('button_lamap').style.display = 'none';
-                document.getElementById('lapmap').style.display = 'none';
 
                 document.getElementById('button_lamap_gym').style.display = 'block';
-                document.getElementById('button_lamap').style.display = 'none';
+                
+                document.getElementById('the_map').style.display = 'block';
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvé désolé";
+                
+                document.getElementById('map').style.display = 'none';  
+                document.getElementById('lapmap').style.display = 'none';
+
+                
+     
                 
                 }
               else{
