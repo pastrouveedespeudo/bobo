@@ -1,151 +1,6 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Creative - Start Bootstrap Theme</title>
-
-  <!-- Font Awesome Icons -->
-  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
-  <!-- Plugin CSS -->
-  <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="/static/css/creative.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-
-  
-</head>
-
-
-
-
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-
-    
-    
-    <div class="container">
-    
-      <style> #my{width:50px; height:50px;margin-left:-70px;}</style>
-      <img src="/static/img/portfolio2/icone/indian.png" id="my">
-      <a class="navbar-brand js-scroll-trigger" href="/polution/polution">My_Polution</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-      <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
-      <img src="/static/img/portfolio/icone/my.png" id="my_prof">
-      <a class="navbar-brand js-scroll-trigger" href="/">My_Profil</a>
-     
-      
-      <button class="navbar-toggler navbar-toggler-right" type="button"
-        data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-
-
-
-
-
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-
-
-
-
-          <style>
-              #im1{width:50px; height:50px; margin-left:110px;}
-              #graph{margin-left:35px; width:200px;}
-          </style>
-          
-          <li class="nav-item">
-            <a href = "/photo/photo">
-              <img src="/static/img/portfolio2/icone/graphe.png" id="im1">
-              <center><a class="nav-link js-scroll-trigger" href="/photo/photo" id='graph'>Nos graphiques</a></center>
-            </a>
-          </li>
-
-
-          <style>
-            #im2{width:50px;height:50px;margin-left:45px;}
-            #donnée{width:200px;height:50px;margin-left:-25px;}
-          </style>
-          
-          <li class="nav-item">
-           <a href = "/polution/donnée">
-            <img src="/static/img/portfolio2/icone/pol.png" id="im2">
-            <center><a class="nav-link js-scroll-trigger" href="/polution/donnée" id='donnée'>Nos données pollution</a></center>
-            </a>
-          </li>
-
-
-          <style>
-              #impredi{width:50px;height:50px; margin-left:55px;}
-              #prédiction{width:200px;height:50px; margin-left:-20px;}
-
-          </style>
-
-          <li class="nav-item">
-            <a href = "/photo/coupe">
-              <img src="/static/img/portfolio/icone/coiffure.png" id="impredi">
-              <center><a class="nav-link js-scroll-trigger" href="/photo/coupe" id='prédiction'>Nos predictions</a></center>
-            </a>
-          </li>
-
-
-          
-
-          <style>
-            #im3{width:50px;height:50px;margin-left:0px;}
-            #imim{width:50px;height:50px;margin-left:68px;}
-            #toususr{width:200px;height:50px;margin-left:0px;}
-          </style>
-          
-          <li class="nav-item">
-           <a href = "/photo/habits">
-            <img src="/static/img/portfolio2/icone/pollution.png" id="imim">
-            <center><a class="nav-link js-scroll-trigger" href="/polution/info_pollu" id='toususr'>Tous sur la pollution</a></center>
-            </a>
-          </li>
-
-          <style>
-            #im3{width:50px;height:50px;margin-left:25px;}
-          </style>
-          
-          <li class="nav-item">
-           <a href = "/photo/habits">
-            <img src="/static/img/portfolio2/icone/fight.png" id="im3">
-            <a class="nav-link js-scroll-trigger" href="/photo/habits">Comment lutter ?</a>
-            </a>
-          </li>
-
-
-          
-        </ul>
-
-        
-      </div>
-    </div>
-  </nav>
-
-
-
-
-
+{% include "navebarre_pollu.html" %}
+{% block content %}
+{% endblock %}
 
 
   <!-- Masthead -->
@@ -170,42 +25,60 @@
 
 
 
-  <!-- About Section -->
-  <section class="page-section bg-primary" id="about">
-    <div class="container">
+  <style>
+    input{border:2px solid black;}
+  </style>
 
+
+
+
+  <!-- About Section -->
+  <section class="page-section bg-dark text-white">
+
+  <p style='margin-left:50px;color:black;'>
+    <i>*AQI signifie indice de qualité de l'air<br> par la mesure de l'O3, le SO2, le NO2 et PM10.</i>
+  </p>
+  
+  <br><br>
+  
+    <div class="container">
 
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
-          <h2 class="text-white mt-0"></h2>
           
-
-
-
+        
         <div class="row">
-
           
-          <div class="col-sm-4">
-          
-            <h5>Taux de pollution de particules fines à Lyon</h5><br><br>
+          <div class="col-sm-3" style='background:url("/static/img/parquet1.jpg");
+                                      margin:auto; height:350px; border:2px solid black;
+                                      border-radius:80px;'>
+            <br>
+            <h5>Taux de pollution de particules fines à<br>Lyon</h5><br><br>
+            <center><strong><h5 id='lyon_pol'>{{lyon}}</h5>AQI</strong></center><br><br>
             <center><input type='button' value='Voir les données' onclick='donnée_lyon()'></center>
-            <center><strong><h5>{{lyon}}</h5></strong></center><br>
-            
+            <br>
           </div>
           
-          <div class="col-sm-4">
-          
-              <h5>Taux de pollution de particules fines à Paris</h5><br><br>
+          <div class="col-sm-3" style='background:url("/static/img/parquet1.jpg");
+                                      margin:auto; height:350px;border:2px solid black;
+                                      border-radius:80px;'>
+                                      
+              <br>
+              <h5>Taux de pollution de particules fines à<br>Paris</h5><br><br>
+              <center><strong><h5 id='paris_pol'>{{paris}}</h5>AQI</strong></center><br><br>
               <center><input type='button' value='Voir les données' onclick='donnée_paris()'></center>
-              <center><strong><h5>{{paris}}</h5></strong></center><br>
-              
+              <br>  
           </div>
 
-          <div class="col-sm-4">
-          
+
+          <div class="col-sm-3" style='background:url("/static/img/parquet1.jpg");
+                                      margin:auto; height:350px;
+                                      border:2px solid black;
+                                      border-radius:80px;'>
+              <br>
               <h5>Taux de pollution de particules fines à Marseille</h5><br><br>
+              <center><strong><h5 id='marseille_pol'>{{marseille}}</h5>AQI</strong></center><br><br>
               <center><input type='button' value='Voir les données' onclick='donnée_marseille()'></center>
-              <center><strong><h5>{{marseille}}</h5></strong></center><br>
               
           </div>
 
@@ -216,23 +89,75 @@
        <br><br>
 
        <div id='info1' style='display:none;'>
+       
+        <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+          <div class="row">
+          
+            <div class="col-sm">
+              <span style='color:black;'>Météo de Lyon</span><br><br>{{météo_lyon}}
+            </div>
+            
+            <div class="col-sm">
+              <span style='color:black;'>Vent de Lyon</span><br><br>{{vent_lyon}} m/s
+            </div>
+            
+            <div class="col-sm">
+              <span style='color:black;'>Température de Lyon</span><br>{{température_lyon}} degrès
+            </div>
+            
+            <div class="col-sm">
+             <span style='color:black;'>Pression de Lyon</span><br>{{pression_lyon}} hpa
+            </div>
+            
+            <div class="col-sm">
+              <span style='color:black;'>Saison actuelle</span><br><br>{{saison_actuelle}}
+            </div>
+            
+            <div class="col-sm">
+              <span style='color:black;'>Départ à routier à Lyon</span><br>{{départ_routier_lyon}}
+            </div>
+            
+            <div class="col-sm">
+              <span style='color:black;'>C'est jour regulier à lyon</span><br>{{regulier_jour_lyon}}
+            </div>
+            
+        </div>
+        </div><br><br>
 
-          Météo de Lyon :  {{météo_lyon}}<br><br>
-          Vent de Lyon  :  {{vent_lyon}} m/s <br><br>
-          Température de Lyon  :  {{température_lyon}} degrès <br><br>
-          Pression de Lyon  :  {{pression_lyon}} hpa <br><br>
-          Saison actuelle : {{saison_actuelle}}<br><br>
-          départ à routier à Lyon :  {{départ_routier_lyon}}<br><br>
-          heure de pointe à lyon :  {{heure_pointe_lyon}}<br><br>
-          c'est jour regulier à lyon :  {{regulier_jour_lyon}}<br><br>
-          ce n'est pas une heure de pointe à lyon :  {{non_pointe_lyon}}<br><br>
-          Week end :  {{weekend}}<br><br>
-          Jour de semaine :  {{jour_semaine}}<br><br>
-          Rang de la ville la plus polluée en France  :  {{classement_lyon}} / 20 <br><br>
-          Site industrielle les plus polluant de France :  {{pole_lyon}}<br><br>
-          Manifestation en ce moment à Lyon :  {{manif_lyon}} <br><br>
-          Population active de 15 à 59 ans:  {{socio_lyon}} personnes<br><br>
-          Bouchons à Lyon :  {{bouchons_lyon}} Km
+         <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+          <div class="row">
+          
+            <div class="col-sm">
+              <span style='color:black;'>Ce n'est pas une heure de pointe à lyon</span><br><br>{{non_pointe_lyon}}
+            </div>
+            
+            <div class="col-sm">
+              <span style='color:black;'>Week end</span><br><br><br><br>{{weekend}}
+            </div>
+            
+            <div class="col-sm">
+              <span style='color:black;'>Jour de semaine</span><br><br><br><br>{{jour_semaine}}
+            </div>
+            
+            <div class="col-sm">
+             <span style='color:black;'>Rang de la ville la plus polluée en France</span><br><br>{{classement_lyon}} / 20
+            </div>
+            
+            <div class="col-sm">
+              <span style='color:black;'>Site industrielle les plus polluant de France</span><br>{{pole_lyon}}
+            </div>
+            
+            <div class="col-sm">
+              <span style='color:black;'>Population active de 15 à 59 ans</span><br><br>{{socio_lyon}} personnes
+            </div>
+            
+            <div class="col-sm">
+              <span style='color:black;'>Bouchons à Lyon</span><br><br><br>{{bouchons_lyon}} Km
+            </div>
+            
+        </div>
+        </div><br><br>
+
 
           <br><br>
           <input type='button' value='fermer' onclick='fermer()'>
@@ -261,6 +186,7 @@
             style='color:black;'><i>moncoyote</a></i></div><br>
 
       </div>
+      
 
 
 
@@ -377,6 +303,50 @@
   </section>
 
 
+
+
+
+  <script>
+    var a = document.getElementById('lyon_pol').innerHTML;
+    var b = document.getElementById('marseille_pol').innerHTML;
+    var c = document.getElementById('paris_pol').innerHTML;
+
+    function coul_pol(variable, id){
+      if(variable <= 20){
+        document.getElementById(id).style.color='green';
+      }
+      else if (variable > 20 && variable <= 50){
+        document.getElementById(id).style.color='orange';
+      }
+      else if (variable > 20 && variable <= 50){
+        document.getElementById(id).style.color='red';
+      }
+
+    }
+
+    coul_pol(a, 'lyon_pol');
+    coul_pol(b, 'marseille_pol');
+    coul_pol(c, 'paris_pol');
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   <script>
 
@@ -413,226 +383,7 @@
   </section>
 
 
-
-
-
-
-
-  
- 
-  <!-- Services Section -->
-  <section class="page-section" id="services">
-  
-    <div class="container">
-    
-      <h2 class="text-center mt-0">Mes services</h2>
-      <hr class="divider my-4">
-
-
-      
-      <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im6{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/graphe.png"/ id="im6">
-            <h3 class="h4 mb-2">Un recit sans preuve ca sert a rien...</h3>
-            <p class="text-muted mb-0">Nos graphiques</p>
-          </div>
-        </div>
-
-
-
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im4{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/pol.png"/ id="im4">
-            <h3 class="h4 mb-2">Nos données</h3>
-            <br>
-            <p class="text-muted mb-0">Nos données pollution</p>
-          </div>
-        </div>
-
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im5{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/coiffure.png"/ id="im5">
-            <h3 class="h4 mb-2">qui... ne marche pas super..</h3>
-            <p class="text-muted mb-0">Nos prédictions</p>
-          </div>
-        </div>
-
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/pollution.png"/ id="im7">
-            <h3 class="h4 mb-2">La pollution ! ah enfete c'est quoi ? </h3>
-            <br>
-            <p class="text-muted mb-0">Tous absolument tous sur la polltuion </p>
-          </div>
-        </div>
-
-
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/wind.png"/ id="im7">
-            <h3 class="h4 mb-2">Nos données sur le vent</h3>
-            <br>
-            <p class="text-muted mb-0">Devenir un ballon de baudruche !</p>
-          </div>
-        </div>
-
-
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/fight.png"/ id="im7">
-            <h3 class="h4 mb-2">Notre solution</h3>
-            <br>
-            <p class="text-muted mb-0">Luttons</p>
-          </div>
-        </div>
-
-
-        
-
-        
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-
-  
-    <div class="container-fluid p-0">
-      <div class="row no-gutters">
-
-      
-        <div class="col-lg-4 col-sm-6">
-        
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/1.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/1.jpg" alt="">
-            <div class="portfolio-box-caption">
-            
-              <div class="project-category text-white-50">
-                Conerad 26 ans
-              </div>
-                
-              
-              <div class="project-name">
-                A enfin arréter les pull orange et vert !
-              </div>
-            </div>
-          </a>
-        </div>
-
-        
-        <div class="col-lg-4 col-sm-6">
-        
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/2.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/2.jpg" alt="">
-            
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Sarah 24 ans
-              </div>
-              <div class="project-name">
-                Ne fais plus d'achat inutil
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/3.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/3.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Jo 35 ans
-              </div>
-              <div class="project-name">
-                a kiffé le projet
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/4.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/4.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Marion 17 ans
-              </div>
-              <div class="project-name">
-                a adoré le site ! (elle est aujourd'hui manequin)
-              </div>
-            </div>
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/5.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/5.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                Rey 22 ans Professionel de Tennis
-              </div>
-              <div class="project-name">
-                Ne fais pas un match sans avoir tester des habits sur My Profil
-              </div>
-            </div>
-          </a>
-        </div>
-
-        
-        <div class="col-lg-4 col-sm-6">
-          <a class="portfolio-box" href="/static/img/portfolio/fullsize/6.jpg">
-            <img class="img-fluid" src="/static/img/portfolio/thumbnails/6.jpg" alt="">
-            <div class="portfolio-box-caption p-3">
-              <div class="project-category text-white-50">
-                Ginette 82 ans
-              </div>
-              <div class="project-name">
-                N'a rien compris
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-
+  <div style='background:url("/static/img/parquet1.jpg");'><br><br><br><br><br></div>
 
 
   <!-- Call to Action Section -->
