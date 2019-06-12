@@ -1,8 +1,4 @@
-ca affiche la map mais ca dit oups nous navons rien trouvé
-
-habits espacer les boutons
-
-si le mec appuis sur openclassrooms mettre un alert nos projet commennt par projet
+corriger toutes les fautes que léa t'as dit
 
 documenter le github et finir les truk mais avant faire popo et remplir la database
 
@@ -12,16 +8,14 @@ remplissage database
 
 #analysa() et mode_w_data () (administrateur/analyse) 
 
+#visuel my_polution
+
 
 #tout mettre dans des fichier js mais ca marche pas des que je met une fonction en haut ou bas...
-
-#normalement tu devrais tout effacer a cause des bouchons ...
 
 #finir les textes et info_polu et machine a eau
 
 la partie machine a o 
-
-#video par contre me faut des glacons
 
 #supprimer favoris
 
@@ -46,10 +40,7 @@ la partie machine a o
 
 # mettre tous les code js dans un fichier js et css aussi
 
-
 # go fini les projets en cours (certains sont pratiquement fini donc c pas mentir) faut juste tout mettre en listcompréhension pcque c trop classe
-
-
 
 # répliquer ca sur toutes les vagues mtn, nuit = 32-18 hihihi on sait que jour == 15 de polution remplir tous les jours et ca marchera bien un jour !
  
