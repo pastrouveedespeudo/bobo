@@ -1,50 +1,249 @@
-{% include "navebarre.html" %}
-{% block content %}
-{% endblock %}
+<!DOCTYPE html>
+  <html lang="en">
+
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <br><br>
+      <title>Magazine virtuel</title>
+
+      <!-- Font Awesome Icons -->
+      <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+      <!-- Plugin CSS -->
+      <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+      <!-- Theme CSS - Includes Bootstrap -->
+      <link href="/static/css/creative.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+
+    </head> 
+
+    <body id="page-top" style='margin-top:-50px;'>
 
 
-<style>
-  #bienvenue{
-    font-family:"cursive";
-    color:black;
-  }
-  #h{
-    font-family:"Comic Sans MS, Comic Sans, cursive";
-    color:black;
-  }
-</style>
 
 
 
-
-<!-- Masthead -->
-<header class="masthead">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center justify-content-center text-center">
-    
-      <div class="col-lg-10 align-self-end"><br><br>
-
-          <h1  id='bienvenue'>
-            Bienvenue
-          </h1><br>
-          
-          <h2 id="h" >
-            My Profil est un site qui vous propose d'essayer
-            des coupes de cheveux ainsi que des habits. Par notre algorithme,
-            nous nous basons sur votre coiffure et vous proposons
-            les meilleures tenues du moment.<br><br>
-            Ce site est un magazine virtuel. Il a une rubrique mode et une rubrique prévention.
-            Se sentir beau et belle tout en ayant une conscience environemental ca fait pas de mal.
-          </h2><hr>
-         
-      </div>
-
-      <div class="col-lg-8 align-self-baseline"></div>
+  <!-- Masthead -->
+  <header class="masthead" style='background:url("/static/img/parquet1.jpg");'>
+    <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center text-center">
+      
+        <div class="col-lg-10 align-self-end">
         
+          <h1>Le magasine virtuel !</h1><br>
+          
+          <h2>Le magazine virtuel est un site web sous forme de revue. Ce magazine propose deux rubriques.
+            Une accès sur le divertissement et le bien etre. En effet vous pourrez vous amusez à vous
+            prendre en photo et à essayer des coupes de cheveux. Mais aussi à chercher des coiffeurs ou bien des salles de gym
+            de votre ville.
+            <br><br>L'autre accès sur la pollution, la prévention et l'accès à l'information. Par des données en temps réel,
+            par des graphiques de donnée et vous découvrirez peut etre une solution qui pourrait abaisser le taux de pollution.
+            <br><br>Amusez vous, cultivez vous, c'est le principal !
+
+          </h2>
+          
+
+
+
+
+        
+        <div class="col-lg-8 align-self-baseline">
+        
+          <p class="text-white-75 font-weight-light mb-5"></p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div style='background:url("/static/img/parquet1.jpg");'><br><br><br><br><br></div>
+
+
+
+
+
+
+    <style>
+    #my{width:100px; height:100px;}
+    #pol{width:100px; height:100px;}
+    p{color:black;}
+
+    
+    
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    </style>
+
+
+
+
+
+
+
+
+  <!-- Call to Action Section -->
+  <section class="page-section bg-dark text-white">
+    <div class="container text-center">
+    
+        <center><h1 style='color:black;'>Notre sommaire</h1></center><br><br><br>
+        
+        <div class="container">
+
+        
+            <div class="row">
+            
+                <div class="col-sm">
+                
+                    <img src="/static/img/portfolio2/icone/indian.png" id='pol'><br>
+                    <a href=""><center><h4 style='color:black;'>My_pollution</h4></center></a><br><br>
+                    
+                    <center><div id='som_po' style='background:url("/static/img/parquet1.jpg");
+                                                width:60%; border:2px solid black;
+                                                border-radius:100px;'>
+
+                    
+                          <br><br><br><br>
+                          <a href=""><p>Les graphiques sur nos données pollutions</p></a>
+                          <br><br>
+                          <a href=""><p>Nos données pollution</p></a>
+                          <br><br>
+                          <a href=""><p>Nos prévisions</p></a>
+                          <br><br>
+                          <a href=""><p>Nos informations</p></a>
+                          <br><br>
+                          <a href=""><p>Notre carte des vents</p></a>
+                          <br><br>
+                          <a href=""><p>Notre solution</p></a>
+                          <br><br><br><br>
+                          
+                       
+                    </div>
+
+                        
+                    </center>
+
+                    
+                </div>
+                
+                <div class="col-sm">
+                
+                  <img src="/static/img/portfolio/icone/my.png" id='my'><br>
+                  <a href=""><center><h4 style='color:black;'>My_profil</h4></center><br><br></a>
+                  
+                  <center><div id='som_my' style='background:url("/static/img/parquet1.jpg");
+                                                  width:60%;border:2px solid black;
+                                                  border-radius:100px;'>
+
+
+                          <br><br><br><br>
+                          <a href=""><p>Notre tendance</p></a>
+                          <br><br>
+                          <a href=""><p>J'essaie des coiffures</p></a>
+                          <br><br>
+                          <a href=""><p>Mes coiffeurs les plus proches de chez moi</p></a>
+                          <br><br>
+                          <a href=""><p>Mes salle de gym les plus proches de chez moi</p></a>
+                          <br><br>
+                          <a href=""><p>J'essaie des vetements</p></a>
+                          <br><br>
+                          
+                          <br><br><br><br>
+
+
+                      </div>
+                      
+                </center>
+
+
+
+
+                  
+                </div>
+
+            </div>
+
+            
+    </div>
+
+
+
+
+        <script>
+
+
+        </script>
+    
+        <br><br><br><br><br><br><br><br><br><br>
 
     </div>
-  </div>
-</header>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style='background:url("/static/img/parquet1.jpg");'>
+<br><br><br>
+</div>
+
+
+
+
 
 
 <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
@@ -655,18 +854,13 @@
 
 
 
+  <style>
+  
+    h1{font-family:recursive;}
+    h2{font-family:"Comic Sans MS, Comic Sans, cursive";
 
-
-
-
-
-
-
-
-
-
-
-
+       }
+  </style>
 
 
 
