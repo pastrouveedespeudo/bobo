@@ -24,8 +24,15 @@ from.polu_ana.polution.traitement_de_donnée import recuperation_data
 from.polu_ana.polution.traitement_de_donnée import condition
 
 from .polu_ana.polution.database2 import *
-
 from .donnée_site.pollution import *
+
+from .donnée_site.angrais import *
+from .donnée_site.diesel import *
+from .donnée_site.eruption import *
+from .donnée_site.incendie import *
+from .donnée_site.jour_nuit import *
+from .donnée_site.polenne import *
+
 
 def home(request):
     return render(request, 'home.html')
@@ -111,6 +118,24 @@ def donnée(request):
     bouchons_paris = bouchons('paris')
 
 
+    errup = eruption()
+    
+    diesel = recup_balise()
+    dollard = cours_dollar()
+    
+    incendie_lyon = incendie('lyon')
+    incendie_marseille = incendie('marseille')
+    incendie_paris = incendie('paris')
+
+    angrais = periode_angrais()
+
+    periode = nuit_jour()
+
+
+    po_lyon = polenne('lyon')
+    po_marseille = polenne('marseille')
+    po_paris = polenne('paris')
+
 
 
 
@@ -158,7 +183,18 @@ def donnée(request):
                                            'socio_marseille':socio_marseille,
                                            'socio_paris':socio_paris,
                                            'bouchons_lyon':bouchons_lyon,
-                                           'bouchons_paris':bouchons_paris})
+                                           'bouchons_paris':bouchons_paris,
+                                           'eruption':errup,
+                                           'diesel':diesel,
+                                           'dollard':dollard,
+                                           'incendie_lyon':incendie_lyon,
+                                           'incendie_marseille':incendie_marseille,
+                                           'incendie_paris':incendie_paris,
+                                           'angrais':angrais,
+                                           'periode':periode,
+                                           'po_lyon':po_lyon,
+                                           'po_paris':po_paris,
+                                           'po_marseille':po_marseille})
 
 
     return render(request, 'donnée.html')
@@ -230,11 +266,13 @@ def polution_paris(request):
 
 def supp():
     
-    os.chdir('/app/static/popo')
-    liste = os.listdir()
-    for i in liste[1:-4]:
-        os.remove(i)
-    os.chdir('/app/polution')
+    pass
+
+##    os.chdir('/app/static/popo')
+##    liste = os.listdir()
+##    for i in liste[1:-4]:
+##        os.remove(i)
+##    os.chdir('/app/polution')
 
 
 def graphe(request):
