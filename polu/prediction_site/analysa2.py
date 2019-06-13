@@ -1,17 +1,17 @@
 import psycopg2
 import datetime
 
-from angrais import *
-from climat import *
-from diesel import *
-from eruption import *
-from incendie import *
-from jour_nuit import *
-from météo import *
-from particule import *
-from polenne import *
-from socio import *
-from trafique import *
+from .angrais import *
+from .climat import *
+from .diesel import *
+from .eruption import *
+from .incendie import *
+from .jour_nuit import *
+from .météo import *
+from .particule import *
+from .polenne import *
+from .socio import *
+from .trafique import *
 
 from aide_analysa2 import *
 
