@@ -1,5 +1,7 @@
 corriger toutes les fautes
 
+mettre des alert pour chaque lien vers mes données
+
 finir la prévision
 
 refaire un cron window que pour marseille et c chiant a faire ca dépasse la minute, ca prend 8 sec sur heroku donc rajotue les autres condtions
