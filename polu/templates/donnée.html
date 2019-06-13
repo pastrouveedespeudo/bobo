@@ -32,21 +32,17 @@
 
 
 
-
   <!-- About Section -->
   <section class="page-section bg-dark text-white">
 
-  <p style='margin-left:50px;color:black;'>
-    <i>*AQI signifie indice de qualité de l'air<br> par la mesure de l'O3, le SO2, le NO2 et PM10.</i>
-  </p>
-  
-  <br>
-  
-  <p style='margin-left:50px;color:black;'><i>*le cours du dollard et le taux de vente du diesel<br>
-    représentent le taux de présence des voitures diesel en circulation</i>
-  </p>
+    <p style='margin-left:50px;color:black;'>
+      <i>*AQI signifie indice de qualité de l'air<br> par la mesure de l'O3, le SO2, le NO2 et PM10.</i>
+    </p><br>
     
-  <br><br>
+    <p style='margin-left:50px;color:black;'><i>*le cours du dollard et le taux de vente du diesel<br>
+      représentent le taux de présence des voitures diesel en circulation</i>
+    </p><br><br>
+
   
     <div class="container">
 
@@ -57,49 +53,33 @@
         <div class="row">
           
           <div class="col-lg-3 col-sm-5 col-md-5" style='background:url("/static/img/parquet1.jpg");
-                                      margin:auto; height:350px; border:2px solid black;
-                                      border-radius:80px;'>
-            <br>
+              margin:auto; height:350px; border:2px solid black;border-radius:80px;'><br>
+            
             <h5>Taux de pollution de particules fines à<br>Lyon</h5><br><br>
             <center><strong><h5 id='lyon_pol'>{{lyon}}</h5>AQI</strong></center><br><br>
-            <center><input type='button' value='Voir les données' onclick='donnée_lyon()'></center>
-            <br>
+            <center><input type='button' value='Voir les données' onclick='donnée_lyon()'></center><br>
           </div>
 
-
-          
           <div class="col-lg-3 col-sm-5 col-md-5" style='background:url("/static/img/parquet1.jpg");
-                                      margin:auto; height:350px;border:2px solid black;
-                                      border-radius:80px;'>
+              margin:auto; height:350px;border:2px solid black;border-radius:80px;'><br>
                                       
-              <br>
               <h5>Taux de pollution de particules fines à<br>Paris</h5><br><br>
               <center><strong><h5 id='paris_pol'>{{paris}}</h5>AQI</strong></center><br><br>
-              <center><input type='button' value='Voir les données' onclick='donnée_paris()'></center>
-              <br>  
+              <center><input type='button' value='Voir les données' onclick='donnée_paris()'></center><br>
           </div>
 
-
-          
           <div class="col-lg-3 col-sm-5 col-md-5" style='background:url("/static/img/parquet1.jpg");
-                                      margin:auto; height:350px;
-                                      border:2px solid black;
-                                      border-radius:80px;'>
-              <br>
+              margin:auto; height:350px;border:2px solid black;border-radius:80px;'><br>
+              
               <h5>Taux de pollution de particules fines à Marseille</h5><br><br>
               <center><strong><h5 id='marseille_pol'>{{marseille}}</h5>AQI</strong></center><br><br>
-              <center><input type='button' value='Voir les données' onclick='donnée_marseille()'></center>
-              
+              <center><input type='button' value='Voir les données' onclick='donnée_marseille()'></center> 
           </div>
 
+      </div><br><br>
 
 
 
-
-      </div>
-
-
-       <br><br>
 
        <div id='info1' style='display:none;'>
        
@@ -107,10 +87,10 @@
           <div class="row">
           
             <div class="col-sm">
-              <span style='color:black;'>Météo de Lyon</span><br><br>{{météo_lyon}}
+              <span style='color:black;'>Météo de Lyon</span><br><br><br>{{météo_lyon}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Vent de Lyon</span><br><br>{{vent_lyon}} m/s
+              <span style='color:black;'>Vent de Lyon</span><br><br><br>{{vent_lyon}} m/s
             </div>
             <div class="col-sm">
               <span style='color:black;'>Température de Lyon</span><br><br>{{température_lyon}} degrès
@@ -119,13 +99,13 @@
              <span style='color:black;'>Pression de Lyon</span><br><br>{{pression_lyon}} hpa
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Saison actuelle</span><br><br>{{saison_actuelle}}
+              <span style='color:black;'>Saison actuelle</span><br><br><br>{{saison_actuelle}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Départ à routier à Lyon</span><br>{{départ_routier_lyon}}
+              <span style='color:black;'>Départ à routier à Lyon</span><br><br>{{départ_routier_lyon}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>C'est jour regulier à lyon</span><br>{{regulier_jour_lyon}}
+              <span style='color:black;'>C'est jour regulier à lyon</span><br><br>{{regulier_jour_lyon}}
             </div>
             
           </div>
@@ -138,7 +118,7 @@
               <span style='color:black;'>Ce n'est pas une heure de pointe à lyon</span><br><br>{{non_pointe_lyon}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Week end</span><br><br><br><br><br>{{weekend}}
+              <span style='color:black;'>Week end</span><br><br><br><br>{{weekend}}
             </div>
             <div class="col-sm">
               <span style='color:black;'>Jour de semaine</span><br><br><br><br>{{jour_semaine}}
@@ -153,7 +133,7 @@
               <span style='color:black;'>Population active de 15 à 59 ans</span><br><br>{{socio_lyon}} personnes
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Bouchons à Lyon</span><br><br><br><br>{{bouchons_lyon}}
+              <span style='color:black;'>Bouchons à Lyon</span><br><br><br>{{bouchons_lyon}}
             </div>
             
           </div>
@@ -169,16 +149,16 @@
               <span style='color:black;'>Vente du diesel</span><br><br><br><br>{{diesel}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Le cours du dollard</span><br><br><br><br>{{dollard}} 
+              <span style='color:black;'>Le cours du dollard</span><br><br>{{dollard}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Période d'angrais</span><br><br><br><br>{{angrais}} 
+              <span style='color:black;'>Période d'angrais</span><br><br><br>{{angrais}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Le jour ou la nuit</span><br><br><br><br>{{periode}} 
+              <span style='color:black;'>Le jour ou la nuit</span><br><br><br>{{periode}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Taux de polenne</span><br><br><br><br>{{po_lyon}} 
+              <span style='color:black;'>Taux de polenne</span><br><br><br>{{po_lyon}} 
             </div>
             <div class="col-sm">
               <span style='color:black;'>Incendie à Lyon</span><br><br><br><br>{{incendie_lyon}}
@@ -221,10 +201,10 @@
           <div class="row">
           
             <div class="col-sm">
-              <span style='color:black;'>Météo de Paris</span><br><br>{{météo_paris}}
+              <span style='color:black;'>Météo de Paris</span><br><br><br>{{météo_paris}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Vent de Paris</span><br><br>{{vent_paris}} m/s
+              <span style='color:black;'>Vent de Paris</span><br><br><br>{{vent_paris}} m/s
             </div>
             <div class="col-sm">
               <span style='color:black;'>Température de Paris</span><br><br>{{température_paris}} degrès
@@ -233,13 +213,13 @@
              <span style='color:black;'>Pression de Paris</span><br><br>{{pression_paris}} hpa
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Saison actuelle</span><br><br>{{saison_actuelle}}
+              <span style='color:black;'>Saison actuelle</span><br><br><br>{{saison_actuelle}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Départ à routier à Paris</span><br>{{départ_routier_paris}}
+              <span style='color:black;'>Départ à routier à Paris</span><br><br>{{départ_routier_paris}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>C'est jour regulier à Paris</span><br>{{regulier_jour_paris}}
+              <span style='color:black;'>C'est jour regulier à Paris</span><br><br>{{regulier_jour_paris}}
             </div>
             
           </div>
@@ -252,7 +232,7 @@
               <span style='color:black;'>Ce n'est pas une heure de pointe à Paris</span><br><br>{{non_pointe_paris}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Week end</span><br><br><br><br><br>{{weekend}}
+              <span style='color:black;'>Week end</span><br><br><br><br>{{weekend}}
             </div>
             <div class="col-sm">
               <span style='color:black;'>Jour de semaine</span><br><br><br><br>{{jour_semaine}}
@@ -267,7 +247,7 @@
               <span style='color:black;'>Population active de 15 à 59 ans</span><br><br>{{socio_paris}} personnes
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Bouchons à Paris</span><br><br><br><br>{{bouchons_paris}} Km
+              <span style='color:black;'>Bouchons à Paris</span><br><br><br>{{bouchons_paris}} Km
             </div>
             
           </div>
@@ -284,16 +264,16 @@
               <span style='color:black;'>Vente du diesel</span><br><br><br><br>{{diesel}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Le cours du dollard</span><br><br><br><br>{{dollard}} 
+              <span style='color:black;'>Le cours du dollard</span><br><br>{{dollard}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Période d'angrais</span><br><br><br><br>{{angrais}} 
+              <span style='color:black;'>Période d'angrais</span><br><br><br>{{angrais}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Le jour ou la nuit</span><br><br><br><br>{{periode}} 
+              <span style='color:black;'>Le jour ou la nuit</span><br><br><br>{{periode}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Taux de polenne</span><br><br><br><br>{{po_paris}} 
+              <span style='color:black;'>Taux de polenne</span><br><br><br>{{po_paris}} 
             </div>
             <div class="col-sm">
               <span style='color:black;'>Incendie à Paris</span><br><br><br><br>{{incendie_paris}}
@@ -352,10 +332,10 @@
              <span style='color:black;'>Pression de Marseille</span><br><br>{{pression_marseille}} hpa
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Saison actuelle</span><br><br>{{saison_actuelle}}
+              <span style='color:black;'>Saison actuelle</span><br><br><br>{{saison_actuelle}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Départ à routier à Marseille</span><br>{{départ_routier_lyon}}
+              <span style='color:black;'>Départ à routier à Marseille</span><br><br>{{départ_routier_lyon}}
             </div>
             <div class="col-sm">
               <span style='color:black;'>C'est jour regulier à Marseille</span><br>{{regulier_jour_marseille}}
@@ -371,7 +351,7 @@
               <span style='color:black;'>Ce n'est pas une heure de pointe à Marseille</span><br><br>{{non_pointe_marseille}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Week end</span><br><br><br><br><br>{{weekend}}
+              <span style='color:black;'>Week end</span><br><br><br><br>{{weekend}}
             </div>
             <div class="col-sm">
               <span style='color:black;'>Jour de semaine</span><br><br><br><br>{{jour_semaine}}
@@ -383,10 +363,10 @@
               <span style='color:black;'>Site industrielle les plus polluant de France</span><br>{{pole_marseille}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Population active de 15 à 59 ans</span><br><br>{{socio_marseille}} personnes
+              <span style='color:black;'>Population active de 15 à 59 ans</span><br>{{socio_marseille}} personnes
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Bouchons à Marseille</span><br><br><br><br>{{bouchons_marseille}} Km
+              <span style='color:black;'>Bouchons à Marseille</span><br><br>{{bouchons_marseille}} Km
             </div>
             
           </div>
@@ -402,19 +382,19 @@
               <span style='color:black;'>Vente du diesel</span><br><br><br><br>{{diesel}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Le cours du dollard</span><br><br><br><br>{{dollard}} 
+              <span style='color:black;'>Le cours du dollard</span><br><br>{{dollard}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Période d'angrais</span><br><br><br><br>{{angrais}} 
+              <span style='color:black;'>Période d'angrais</span><br><br><br>{{angrais}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Le jour ou la nuit</span><br><br><br><br>{{periode}} 
+              <span style='color:black;'>Le jour ou la nuit</span><br><br><br>{{periode}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Taux de polenne</span><br><br><br><br>{{po_marseille}} 
+              <span style='color:black;'>Taux de polenne</span><br><br><br>{{po_marseille}} 
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Incendie à Marseille</span><br><br><br><br>{{incendie_marseille}} 
+              <span style='color:black;'>Incendie à Marseille</span><br><br><br>{{incendie_marseille}} 
             </div>
           </div>
         </div><br><br>
