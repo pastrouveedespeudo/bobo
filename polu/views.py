@@ -100,7 +100,14 @@ def donnée(request):
         traffique_marseille = traffique('marseille')
 
         jour = habitude()
-
+        weekend = ''
+        if jour == 'jour_semaine':
+            jour = 'semaine'
+            weekend = 'non'
+        else:
+            jour = 'week end'
+            weekend = 'oui'
+            
         classement_lyon = ville_pollué_classement('lyon')
         classement_paris = ville_pollué_classement('paris')
         classement_marseille = ville_pollué_classement('marseille')
@@ -127,13 +134,34 @@ def donnée(request):
 
 
         errup = eruption()
+        if errup == 'oui':
+            pass
+        else:
+            errup = 'non'
         
         diesel = recup_balise()
         dollard = cours_dollar()
         
         incendie_lyon = incendie('lyon')
+        
+        if incendie_lyon == 'oui':
+            incendie_lyon = 'oui'
+        else:
+            incendie_lyon = 'non'
+        
         incendie_marseille = incendie('marseille')
+        
+        if incendie_marseille == 'oui':
+            incendie_marseille = 'oui'
+        else:
+            incendie_marseille = 'non'
+            
         incendie_paris = incendie('paris')
+        if incendie_paris == 'oui':
+            incendie_paris = 'oui'
+        else:
+            incendie_paris = 'non'
+
 
         angrais = periode_angrais()
 
@@ -173,8 +201,8 @@ def donnée(request):
                                                'heure_pointe_paris':heure_pointe_paris,
                                                'regulier_jour_paris':regulier_jour_paris,
                                                'non_pointe_paris':non_pointe_paris,
-                                               'weekend':jour[0],
-                                               'jour_semaine':jour[1],
+                                               'weekend':weekend,
+                                               'jour_semaine':jour,
                                                'classement_lyon':classement_lyon,
                                                'classement_paris':classement_paris,
                                                'classement_marseille':classement_marseille,
