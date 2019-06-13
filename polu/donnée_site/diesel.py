@@ -38,7 +38,7 @@ def recup_balise():
 
     
 
-    if gas == True and gasplus == True and dol  == 'dollard baisse':
+    if gas == True and gasplus == True and dol  == 'dollard baisse  ':
         return 'tres fort'
 
     elif gas == True and gasplus == False and dol == 'dollard augmente':
@@ -52,10 +52,10 @@ def recup_balise():
         return 'bas'
 
 
-    elif gas == True and gasplus == False and dol == 'dollard baisse':
+    elif gas == True and gasplus == False and dol == 'dollard baisse  ':
         return 'fort'
 
-    elif gas == False and gasplus == True and dol == 'dollard baisse':
+    elif gas == False and gasplus == True and dol == 'dollard baisse  ':
         return 'fort'
 
 
@@ -81,7 +81,7 @@ def cours_dollar():
     if dollar[0] == '+':
         return 'dollard augmente'
     else:
-       return 'dollard baisse'
+       return 'dollard baisse  '
 
 
 
