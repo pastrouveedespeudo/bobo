@@ -7,6 +7,11 @@ def long_lat(lat, long, km, sens):
     except:
         km = 20.0
         km = float(km)
+
+    if km > 1000:
+        km = 20.0
+
+        
     #print(lat, long, km, sens)
 
     #print(sens)
