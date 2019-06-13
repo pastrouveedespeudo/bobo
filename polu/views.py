@@ -33,6 +33,7 @@ from .donnée_site.incendie import *
 from .donnée_site.jour_nuit import *
 from .donnée_site.polenne import *
 
+from .prediction_site.analysa2 import *
 
 def home(request):
     return render(request, 'home.html')
@@ -49,158 +50,161 @@ def charger(request):
 
 def donnée(request):
 
-    data_lyon = taux_particule('lyon')
-    data_paris = taux_particule('paris')
-    data_marseille = taux_particule('marseille')
+    try:
+
+        data_lyon = taux_particule('lyon')
+        data_paris = taux_particule('paris')
+        data_marseille = taux_particule('marseille')
 
 
 
-    météo_lyon = temps_ville('lyon', 'météo')
-    vent_lyon = temps_ville('lyon', 'vent')
+        météo_lyon = temps_ville('lyon', 'météo')
+        vent_lyon = temps_ville('lyon', 'vent')
 
-    météo_paris = temps_ville('paris', 'météo')
-    vent_paris = temps_ville('paris', 'vent')
+        météo_paris = temps_ville('paris', 'météo')
+        vent_paris = temps_ville('paris', 'vent')
 
-    météo_marseille = temps_ville('marseille', 'météo')
-    vent_marseille = temps_ville('marseille', 'vent')
+        météo_marseille = temps_ville('marseille', 'météo')
+        vent_marseille = temps_ville('marseille', 'vent')
 
-    température_lyon = climat_ville('lyon')
-    température_paris = climat_ville('paris')
-    température_marseille = climat_ville('marseille')
+        température_lyon = climat_ville('lyon')
+        température_paris = climat_ville('paris')
+        température_marseille = climat_ville('marseille')
 
-    saison_actuelle =  saison()
+        saison_actuelle =  saison()
 
-    traffique_lyon = traffique('lyon')
-    départ_routier_lyon = traffique_lyon[0] 
-    heure_pointe_lyon = traffique_lyon[1]
-    heure_pointe_paris = heure_pointe_lyon
-    regulier_jour_lyon = traffique_lyon[2] 
-    heure_pointe_marseille = heure_pointe_lyon
+        traffique_lyon = traffique('lyon')
+        départ_routier_lyon = traffique_lyon[0] 
+        heure_pointe_lyon = traffique_lyon[1]
+        heure_pointe_paris = heure_pointe_lyon
+        regulier_jour_lyon = traffique_lyon[2] 
+        heure_pointe_marseille = heure_pointe_lyon
 
-    if heure_pointe_marseille == 'oui':
-        non_pointe_lyon = 'non'
-        non_pointe_paris = 'non'
-        non_pointe_marseille = 'non'
-    else:
-        non_pointe_lyon = 'oui'
-        non_pointe_paris = 'oui'
-        non_pointe_marseille = 'oui'
+        if heure_pointe_marseille == 'oui':
+            non_pointe_lyon = 'non'
+            non_pointe_paris = 'non'
+            non_pointe_marseille = 'non'
+        else:
+            non_pointe_lyon = 'oui'
+            non_pointe_paris = 'oui'
+            non_pointe_marseille = 'oui'
 
-    regulier_jour_paris = regulier_jour_lyon
-    regulier_jour_marseille = regulier_jour_lyon
+        regulier_jour_paris = regulier_jour_lyon
+        regulier_jour_marseille = regulier_jour_lyon
 
-    départ_routier_paris = départ_routier_lyon
-    départ_routier_marseille = départ_routier_lyon
-    
-    traffique_paris = traffique('paris')
+        départ_routier_paris = départ_routier_lyon
+        départ_routier_marseille = départ_routier_lyon
+        
+        traffique_paris = traffique('paris')
 
-    traffique_marseille = traffique('marseille')
+        traffique_marseille = traffique('marseille')
 
-    jour = habitude()
+        jour = habitude()
 
-    classement_lyon = ville_pollué_classement('lyon')
-    classement_paris = ville_pollué_classement('paris')
-    classement_marseille = ville_pollué_classement('marseille')
+        classement_lyon = ville_pollué_classement('lyon')
+        classement_paris = ville_pollué_classement('paris')
+        classement_marseille = ville_pollué_classement('marseille')
 
-    pole_lyon = region_industrielle('lyon')
-    pole_paris = region_industrielle('paris')
-    pole_marseille = region_industrielle('marseille')
+        pole_lyon = region_industrielle('lyon')
+        pole_paris = region_industrielle('paris')
+        pole_marseille = region_industrielle('marseille')
 
-    pression_lyon = pression_ville('lyon')
-    pression_paris = pression_ville('paris')
-    pression_marseille = pression_ville('marseille')
+        pression_lyon = pression_ville('lyon')
+        pression_paris = pression_ville('paris')
+        pression_marseille = pression_ville('marseille')
 
-    manif_lyon = activité_execptionnelle('lyon')
-    manif_paris = activité_execptionnelle('paris')
-    manif_marseille = activité_execptionnelle('marseille')
-    
+        manif_lyon = activité_execptionnelle('lyon')
+        manif_paris = activité_execptionnelle('paris')
+        manif_marseille = activité_execptionnelle('marseille')
+        
 
-    socio_lyon = socio('lyon')
-    socio_paris = socio('paris')
-    socio_marseille = socio('marseille')
+        socio_lyon = socio('lyon')
+        socio_paris = socio('paris')
+        socio_marseille = socio('marseille')
 
-    bouchons_lyon = bouchons('lyon')
-    bouchons_paris = bouchons('paris')
-
-
-    errup = eruption()
-    
-    diesel = recup_balise()
-    dollard = cours_dollar()
-    
-    incendie_lyon = incendie('lyon')
-    incendie_marseille = incendie('marseille')
-    incendie_paris = incendie('paris')
-
-    angrais = periode_angrais()
-
-    periode = nuit_jour()
+        bouchons_lyon = bouchons('lyon')
+        bouchons_paris = bouchons('paris')
 
 
-    po_lyon = polenne('lyon')
-    po_marseille = polenne('marseille')
-    po_paris = polenne('paris')
+        errup = eruption()
+        
+        diesel = recup_balise()
+        dollard = cours_dollar()
+        
+        incendie_lyon = incendie('lyon')
+        incendie_marseille = incendie('marseille')
+        incendie_paris = incendie('paris')
+
+        angrais = periode_angrais()
+
+        periode = nuit_jour()
 
 
+        po_lyon = polenne('lyon')
+        po_marseille = polenne('marseille')
+        po_paris = polenne('paris')
 
 
 
-    return render(request, 'donnée.html', {'lyon':data_lyon,
-                                           'paris':data_paris,
-                                           'marseille':data_marseille,
-                                           'météo_lyon':météo_lyon,
-                                           'météo_marseille':météo_marseille,
-                                           'météo_paris':météo_paris,
-                                           'vent_lyon':vent_lyon,
-                                           'vent_paris':vent_paris,
-                                           'vent_marseille':vent_marseille,
-                                           'température_lyon':round(température_lyon),
-                                           'température_paris':round(température_paris),
-                                           'température_marseille':round(température_marseille),
-                                           'saison_actuelle':saison_actuelle,
-                                           'départ_routier_lyon':départ_routier_lyon,
-                                           'heure_pointe_lyon':heure_pointe_lyon,
-                                           'regulier_jour_lyon':regulier_jour_lyon,
-                                           'non_pointe_lyon':non_pointe_lyon,
-                                           'départ_routier_paris':départ_routier_paris,
-                                           'heure_pointe_paris':heure_pointe_paris,
-                                           'regulier_jour_marseille':regulier_jour_marseille,
-                                           'non_pointe_marseille':non_pointe_marseille,
-                                           'départ_routier_paris':départ_routier_paris,
-                                           'heure_pointe_paris':heure_pointe_paris,
-                                           'regulier_jour_paris':regulier_jour_paris,
-                                           'non_pointe_paris':non_pointe_paris,
-                                           'weekend':jour[0],
-                                           'jour_semaine':jour[1],
-                                           'classement_lyon':classement_lyon,
-                                           'classement_paris':classement_paris,
-                                           'classement_marseille':classement_marseille,
-                                           'pole_lyon':pole_lyon,
-                                           'pole_paris':pole_paris,
-                                           'pole_marseille':pole_marseille,
-                                           'pression_lyon':pression_lyon,
-                                           'pression_paris':pression_paris,
-                                           'pression_marseille':pression_marseille,
-                                           'manif_lyon':manif_lyon,
-                                           'manif_paris':manif_paris,
-                                           'manif_marseille':manif_marseille,
-                                           'socio_lyon':socio_lyon,
-                                           'socio_marseille':socio_marseille,
-                                           'socio_paris':socio_paris,
-                                           'bouchons_lyon':bouchons_lyon,
-                                           'bouchons_paris':bouchons_paris,
-                                           'eruption':errup,
-                                           'diesel':diesel,
-                                           'dollard':dollard,
-                                           'incendie_lyon':incendie_lyon,
-                                           'incendie_marseille':incendie_marseille,
-                                           'incendie_paris':incendie_paris,
-                                           'angrais':angrais,
-                                           'periode':periode,
-                                           'po_lyon':po_lyon,
-                                           'po_paris':po_paris,
-                                           'po_marseille':po_marseille})
 
+
+        return render(request, 'donnée.html', {'lyon':data_lyon,
+                                               'paris':data_paris,
+                                               'marseille':data_marseille,
+                                               'météo_lyon':météo_lyon,
+                                               'météo_marseille':météo_marseille,
+                                               'météo_paris':météo_paris,
+                                               'vent_lyon':vent_lyon,
+                                               'vent_paris':vent_paris,
+                                               'vent_marseille':vent_marseille,
+                                               'température_lyon':round(température_lyon),
+                                               'température_paris':round(température_paris),
+                                               'température_marseille':round(température_marseille),
+                                               'saison_actuelle':saison_actuelle,
+                                               'départ_routier_lyon':départ_routier_lyon,
+                                               'heure_pointe_lyon':heure_pointe_lyon,
+                                               'regulier_jour_lyon':regulier_jour_lyon,
+                                               'non_pointe_lyon':non_pointe_lyon,
+                                               'départ_routier_paris':départ_routier_paris,
+                                               'heure_pointe_paris':heure_pointe_paris,
+                                               'regulier_jour_marseille':regulier_jour_marseille,
+                                               'non_pointe_marseille':non_pointe_marseille,
+                                               'départ_routier_paris':départ_routier_paris,
+                                               'heure_pointe_paris':heure_pointe_paris,
+                                               'regulier_jour_paris':regulier_jour_paris,
+                                               'non_pointe_paris':non_pointe_paris,
+                                               'weekend':jour[0],
+                                               'jour_semaine':jour[1],
+                                               'classement_lyon':classement_lyon,
+                                               'classement_paris':classement_paris,
+                                               'classement_marseille':classement_marseille,
+                                               'pole_lyon':pole_lyon,
+                                               'pole_paris':pole_paris,
+                                               'pole_marseille':pole_marseille,
+                                               'pression_lyon':pression_lyon,
+                                               'pression_paris':pression_paris,
+                                               'pression_marseille':pression_marseille,
+                                               'manif_lyon':manif_lyon,
+                                               'manif_paris':manif_paris,
+                                               'manif_marseille':manif_marseille,
+                                               'socio_lyon':socio_lyon,
+                                               'socio_marseille':socio_marseille,
+                                               'socio_paris':socio_paris,
+                                               'bouchons_lyon':bouchons_lyon,
+                                               'bouchons_paris':bouchons_paris,
+                                               'eruption':errup,
+                                               'diesel':diesel,
+                                               'dollard':dollard,
+                                               'incendie_lyon':incendie_lyon,
+                                               'incendie_marseille':incendie_marseille,
+                                               'incendie_paris':incendie_paris,
+                                               'angrais':angrais,
+                                               'periode':periode,
+                                               'po_lyon':po_lyon,
+                                               'po_paris':po_paris,
+                                               'po_marseille':po_marseille})
+    except:
+        pass
 
     return render(request, 'donnée.html')
 
@@ -217,23 +221,27 @@ def machine_a_o(request):
 
 def prediction(request):
     if request.method == "POST":
-        
-            clean_data()
-            clean_data2()
-            clean_data3()
-            clean_data4()
-            predi = []
-            liste = ['paris', 'lyon', 'marseille']
+
+            ville1 = request.POST.get('lyon')
+            ville2 = request.POST.get('paris')
+            ville3 = request.POST.get('marseille')
+
+            if ville1:
+                predi = predi_analysa2('lyon')
+                return HttpResponse(predi)
+
+            if ville2:
+                predi = predi_analysa2('paris')
+                return HttpResponse(predi)
+
+            if ville3:
+                predi = predi_analysa2('marseille')
+                return HttpResponse(predi)
+                
+
             
-            for i in liste:
-                print(i)
-                donnée = recuperation_data(i)
             
-                pred = condition(donnée[0], donnée[1], donnée[2],
-                        donnée[3], donnée[4], donnée[5], i)
-                predi.append((i, pred))
             
-            return HttpResponse(predi)
     
     return render(request, 'prediction.html')
 
