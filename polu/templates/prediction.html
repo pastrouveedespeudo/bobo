@@ -25,11 +25,9 @@
         
           <h1>Nos prévisions !</h1><br>
           
-          <h2>
-
-
-
-
+          <h2 style="color:black;font-family:"cursive";">
+            Nous vous proposons une prédiction en temps réel du taux de pollution à Marseille, Paris et Lyon.
+            Allez voir son mode de fonctionnement en fin de page !
           </h2>
 
         </div>
@@ -65,6 +63,11 @@
         <input type='button' value='paris' id='paris'>
         
         <input type='button' value='marseille' id='marseille'>
+        <br><br>
+        <p id='choix'></p>
+        <br><br>
+        <p id='chargement' style='display:none'><img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80'></p>
+
 
         <div id='pred'></div>
 
@@ -72,7 +75,11 @@
         <script>
 
             jQuery("#lyon").on("click", function(e){
-              
+
+
+                    document.getElementById('pred').innerHTML = ""
+                    document.getElementById('choix').innerHTML = 'Vous avez choisis Lyon';
+                    document.getElementById('chargement').style.display = "block";
   
                     
                     jQuery.ajax({
@@ -97,19 +104,21 @@
                             jQuery("#is_save").html(data.data);
                             jQuery("#monCadreAlert");
 
+                            document.getElementById('chargement').style.display = "none";      
+                            
                             if (data == "pas de donnée"){
                                 document.getElementById('pred').innerHTML = "<br><br><strong>pas de donnée</strong>";
                             }
                             else{
                               
                               document.getElementById('pred').innerHTML = '<br><br>' +
-                                                                          'Nous pensons que le taux de polution est de :'+
+                                                                          'Nous pensons que le taux de polution est de: '+
                                                                           '<strong>' +
                                                                           data +
-                                                                            '</strong>';
-                            }
+                                                                          ' AQI</strong>';
+                            };
                             
-                                       
+                                 
                         };
                         
                     });
@@ -118,7 +127,9 @@
 
            jQuery("#paris").on("click", function(e){
               
-  
+                    document.getElementById('choix').innerHTML = 'Vous avez choisis Paris';
+                    document.getElementById('chargement').style.display = "block";
+                    document.getElementById('pred').innerHTML = ""
                     
                     jQuery.ajax({
                         data:{
@@ -141,13 +152,20 @@
                         else{
                             jQuery("#is_save").html(data.data);
                             jQuery("#monCadreAlert");
+
+                            document.getElementById('chargement').style.display = "none";
+                            
+                          if (data == "pas de donnée"){
+                                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donnée</strong>";
+                            }
+                            else{
                             document.getElementById('pred').innerHTML = '<br><br>' +
-                                                                        'Nous pensons que le taux de polution est de :'+
+                                                                        'Nous pensons que le taux de polution est de : '+
                                                                         '<strong>' +
                                                                         data +
                                                                         '</strong>';
 
-                            
+                            };
                                        
                         };
                         
@@ -160,7 +178,9 @@
 
            jQuery("#marseille").on("click", function(e){
               
-  
+                    document.getElementById('choix').innerHTML = 'Vous avez choisis Marseille';
+                    document.getElementById('chargement').style.display = "block";
+                    document.getElementById('pred').innerHTML = ""
                     
                     jQuery.ajax({
                         data:{
@@ -183,12 +203,20 @@
                         else{
                             jQuery("#is_save").html(data.data);
                             jQuery("#monCadreAlert");
-                            document.getElementById('pred').innerHTML = '<br><br>' +
-                                                                        'Nous pensons que le taux de polution est de :'+
+                            
+                            document.getElementById('chargement').style.display = "none";
+                            
+                          if (data == "pas de donnée"){
+                                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donnée</strong>";
+                            }
+
+                            else{
+                              document.getElementById('pred').innerHTML = '<br><br>' +
+                                                                        'Nous pensons que le taux de polution est de : '+
                                                                         '<strong>' +
                                                                         data +
                                                                         '</strong>';
-
+                            };
                             
                                        
                         };
@@ -229,7 +257,7 @@
 
 
 
-<div style='background:url("/static/img/parquet1.jpg")'><br><br><br></div>
+  <div style='background:url("/static/img/parquet1.jpg")'><br><br><br></div>
   
 
 
@@ -260,21 +288,38 @@
       <br><br>
       <div class="row">
     
-  
-        <div class="col-lg-3 col-md-6 text-center" style='margin:auto;color:black;'>
-         <h5>Son fonctionnement</h5>
-         <br><br>
-         <p style='color:#808080'></p>
+      
+        <div class="col-lg-8 col-md-6 text-center" style='margin:auto;color:black;'>
+         <h3>Son fonctionnement</h3>
+         <br>
+         <p style='color:#808080'>Afin de faire notre prévoyance nous avons récupérer à partir de différentes sources
+         plusieurs informations que vous pouvez voir dans la rubrique Nos données.<br><br>
+         Chaque jour et à chaque heure par une tache cron nous avons alimenté notre base de donnée.
+         Nous récupérons alors chaque condition en temps réel lorsque vous appuyer sur une des entrées.
+         Nous les comparons à notre base de donnée. Faisons ressortir toutes les situations identiques
+         à la situation présente et récupérons la moyenne des données de pollution.
+         Puis en faisons une moyenne.</p>
         </div>
 
         
-        <div class="col-lg-3 col-md-6 text-center" style='margin:auto;color:black;'>
-         <h5>Son interet</h5>
-         <br><br>
-         <p style='color:#808080'></p>
+        <div class="col-lg-8 col-md-6 text-center" style='margin:auto;color:black;'>
+        <br><br>
+         <h3>Son interet</h3>
+         <br>
+         <p style='color:#808080'>Par cela nous pouvons vous tenir informer du taux de pollution dans ces villes. Mais aussi
+         de pouvoir comprendre d'ou vient la pollution/<br><br>
+         Bien sur, nos données peuvent etre fausse et ne sont pas complètes.</p>
         </div>
  
-     
+        <div class="col-lg-8 col-md-6 text-center" style='margin:auto;color:black;'>
+         <br><br>
+         <h3>Son amélioration</h3>
+         <br>
+         <p style='color:#808080'>Bien sur, nos prédictions ne semblent pas etre fiable.
+         Par le manque de donnée et de connaissance en pollution et en développement.<br><br>
+         Nous avons tenté une approche ou l'on coterait chaque conditions mais nous n'avons pas assez
+         de donnée pour le moment.</p>
+        </div>
 
         
 
@@ -286,17 +331,6 @@
 
 
 <div style='background:url("/static/img/parquet1.jpg")'><br><br><br></div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
