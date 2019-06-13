@@ -72,24 +72,29 @@ def donnée(request):
 
     traffique_lyon = traffique('lyon')
     départ_routier_lyon = traffique_lyon[0] 
-    heure_pointe_lyon = traffique_lyon[1] 
+    heure_pointe_lyon = traffique_lyon[1]
+    heure_pointe_paris = heure_pointe_lyon
     regulier_jour_lyon = traffique_lyon[2] 
-    non_pointe_lyon = traffique_lyon[3] 
+    heure_pointe_marseille = heure_pointe_lyon
 
+    if heure_pointe_marseille == 'oui':
+        non_pointe_lyon = 'non'
+        non_pointe_paris = 'non'
+        non_pointe_marseille = 'non'
+    else:
+        non_pointe_lyon = 'oui'
+        non_pointe_paris = 'oui'
+        non_pointe_marseille = 'oui'
 
-    traffique_paris = traffique('paris')
-    départ_routier_paris = traffique_paris[0] 
-    heure_pointe_paris = traffique_paris[1] 
-    regulier_jour_paris = traffique_paris[2] 
-    non_pointe_paris = traffique_paris[3] 
+    regulier_jour_paris = regulier_jour_lyon
+    regulier_jour_marseille = regulier_jour_lyon
 
-
+    départ_routier_paris = départ_routier_lyon
+    départ_routier_marseille = départ_routier_lyon
     
+    traffique_paris = traffique('paris')
+
     traffique_marseille = traffique('marseille')
-    départ_routier_marseille = traffique_marseille[0] 
-    heure_pointe_marseille = traffique_marseille[1] 
-    regulier_jour_marseille = traffique_marseille[2] 
-    non_pointe_marseille = traffique_marseille[3] 
 
     jour = habitude()
 
