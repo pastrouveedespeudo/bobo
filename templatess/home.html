@@ -574,7 +574,9 @@
                 <a href="https://github.com/pastrouveedespeudo/algoalgo"><img src='/static/img/algoalgo1.png' onmouseover="stop('im2')" onmouseout="start()"></a>
                 <a href="https://github.com/pastrouveedespeudo/reconstruction_image/blob/master/apprentissage/dessin.py"><img src='/static/img/voiture.png' onmouseover="stop('im6')" onmouseout="start()"></a>
                 <a href="https://github.com/pastrouveedespeudo/jeux-speech"><img src='/static/img/jeux.png' height='100' width='250' onmouseover="stop('im3')" onmouseout="start()"></a>
-                <a href="https://github.com/pastrouveedespeudo/bobo"><img src='/static/img/magazine.jpg' onmouseover="stop('im7')" onmouseout="start()"></a>
+                <a href="https://github.com/pastrouveedespeudo/bobo"><img src='/static/img/magazine.jpg' onmouseover="stop('im7')" width='150' onmouseout="start()"></a>
+                <a href="https://github.com/pastrouveedespeudo/p11"><img src='/static/img/dk.png' onmouseover="stop('im10')" height='100' width='150' onmouseout="start()"></a>
+                <a href="https://github.com/pastrouveedespeudo/p8"><img src='/static/img/open.png' onmouseover="stop('im11')" height='100' width='150' onmouseout="start()"></a>
                 
   
                 
@@ -680,6 +682,34 @@
               
               document.getElementById('description').style.textAlign = 'justify';
             }
+
+            else if(im == 'im10'){
+              document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
+              
+              document.getElementById('description').innerHTML = "<center>Dk labyrinth " +
+                                                                "Dk apprend à se déplacer tout seul " +
+                                                                "via un algorithme génétique (par Brute force)" +
+                                                                "qui n'est pas la meilleur solution</center>";
+              
+              document.getElementById('description').style.textAlign = 'justify';
+            }
+
+
+            else if(im == 'im11'){
+              document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
+              
+              document.getElementById('description').innerHTML = "<center>Openfoodfact " +
+                                                                "Un jeu ou il faut choisir la meilleure bouffe. " +
+                                                                "Ce projet contient un détecteur d'objet !" +
+                                                                "</center>";
+              
+              document.getElementById('description').style.textAlign = 'justify';
+            }
+
+
+
+
+            
           };
           
           function start(){
