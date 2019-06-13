@@ -57,7 +57,7 @@ la partie machine a o
 
 # répliquer ca sur toutes les vagues mtn, nuit = 32-18 hihihi on sait que jour == 15 de polution remplir tous les jours et ca marchera bien un jour !
  
-
+#pcqu ok c une moyenne sur le site de aiplum ok un jour le chiffre stagnera MAIS comme y'a un plus de de donnée, y'aura plus de chiffre qui stagneront donc s a chiffre
 
 
 
