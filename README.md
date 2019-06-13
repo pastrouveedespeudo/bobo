@@ -1,5 +1,9 @@
 corriger toutes les fautes
 
+faire les tests ca ok c cool
+
+tout mettre en anglais ca c chiant MAIS REFACTORé en mm temps
+
 rajouter dk et le jeu dans mes projets
 
 sans prévenir la navebarre a rapetit (<740 regler la hauteur)
@@ -10,11 +14,7 @@ mettre des pages 404 et 505
 
 mettre des alert pour chaque lien vers mes données
 
-finir la prévision
-
-refaire un cron window que pour marseille et c chiant a faire ca dépasse la minute, ca prend 8 sec sur heroku donc rajotue les autres condtions
-
-graphe on peut amélioré un peu 
+finir de tout commenter
 
 documenter le github et finir les truk mais avant faire popo et remplir la database
 
