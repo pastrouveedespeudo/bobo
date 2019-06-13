@@ -3,15 +3,29 @@
 {% endblock %}
 
 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
   <!-- Masthead -->
   <header class="masthead">
     <div class="container h-100">
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">Pollution</h1>
+          <center><h1 style='color:black;font-family:"Comic Sans MS, Comic Sans, cursive";'>Nos données sur la pollution !</h1></center><br>
           <br>
-          <style>#h{font:Serif; color:white;}</style>
-          <hr class="divider my-4">
+          <center><h2 style='color:black; font-style=justufy'>Suis la pollution en temps réel</h2></center>
+          
         </div>
         <div class="col-lg-8 align-self-baseline">
           <p class="text-white-75 font-weight-light mb-5"></p>
@@ -39,6 +53,12 @@
     <i>*AQI signifie indice de qualité de l'air<br> par la mesure de l'O3, le SO2, le NO2 et PM10.</i>
   </p>
   
+  <br>
+  
+  <p style='margin-left:50px;color:black;'><i>*le cours du dollard et le taux de vente du diesel<br>
+    représentent le taux de présence des voitures diesel en circulation</i>
+  </p>
+    
   <br><br>
   
     <div class="container">
@@ -96,32 +116,26 @@
             <div class="col-sm">
               <span style='color:black;'>Météo de Lyon</span><br><br>{{météo_lyon}}
             </div>
-            
             <div class="col-sm">
               <span style='color:black;'>Vent de Lyon</span><br><br>{{vent_lyon}} m/s
             </div>
-            
             <div class="col-sm">
-              <span style='color:black;'>Température de Lyon</span><br>{{température_lyon}} degrès
+              <span style='color:black;'>Température de Lyon</span><br><br>{{température_lyon}} degrès
             </div>
-            
             <div class="col-sm">
-             <span style='color:black;'>Pression de Lyon</span><br>{{pression_lyon}} hpa
+             <span style='color:black;'>Pression de Lyon</span><br><br>{{pression_lyon}} hpa
             </div>
-            
             <div class="col-sm">
               <span style='color:black;'>Saison actuelle</span><br><br>{{saison_actuelle}}
             </div>
-            
             <div class="col-sm">
               <span style='color:black;'>Départ à routier à Lyon</span><br>{{départ_routier_lyon}}
             </div>
-            
             <div class="col-sm">
               <span style='color:black;'>C'est jour regulier à lyon</span><br>{{regulier_jour_lyon}}
             </div>
             
-        </div>
+          </div>
         </div><br><br>
 
          <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
@@ -130,35 +144,56 @@
             <div class="col-sm">
               <span style='color:black;'>Ce n'est pas une heure de pointe à lyon</span><br><br>{{non_pointe_lyon}}
             </div>
-            
             <div class="col-sm">
-              <span style='color:black;'>Week end</span><br><br><br><br>{{weekend}}
+              <span style='color:black;'>Week end</span><br><br><br><br><br>{{weekend}}
             </div>
-            
             <div class="col-sm">
               <span style='color:black;'>Jour de semaine</span><br><br><br><br>{{jour_semaine}}
             </div>
-            
             <div class="col-sm">
              <span style='color:black;'>Rang de la ville la plus polluée en France</span><br><br>{{classement_lyon}} / 20
             </div>
-            
             <div class="col-sm">
               <span style='color:black;'>Site industrielle les plus polluant de France</span><br>{{pole_lyon}}
             </div>
-            
             <div class="col-sm">
               <span style='color:black;'>Population active de 15 à 59 ans</span><br><br>{{socio_lyon}} personnes
             </div>
-            
             <div class="col-sm">
-              <span style='color:black;'>Bouchons à Lyon</span><br><br><br>{{bouchons_lyon}} Km
+              <span style='color:black;'>Bouchons à Lyon</span><br><br><br><br>{{bouchons_lyon}}
             </div>
             
-        </div>
+          </div>
         </div><br><br>
 
+       <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+          <div class="row">
+          
+            <div class="col-sm">
+              <span style='color:black;'>Erruption volicanique cette semaine</span><br><br>{{eruption}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Vente du diesel</span><br><br><br><br>{{diesel}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Le cours du dollard</span><br><br><br><br>{{dollard}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Période d'angrais</span><br><br><br><br>{{angrais}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Le jour ou la nuit</span><br><br><br><br>{{periode}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Taux de polenne</span><br><br><br><br>{{po_lyon}} 
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Incendie à Lyon</span><br><br><br><br>{{incendie_lyon}}
+            </div>
 
+          </div>
+        </div><br><br>
+        
           <br><br>
           <input type='button' value='fermer' onclick='fermer()'>
 
@@ -186,104 +221,239 @@
             style='color:black;'><i>moncoyote</a></i></div><br>
 
       </div>
-      
+
+         <div id='info2' style='display:none;'>
+       
+        <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+          <div class="row">
+          
+            <div class="col-sm">
+              <span style='color:black;'>Météo de Paris</span><br><br>{{météo_paris}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Vent de Paris</span><br><br>{{vent_paris}} m/s
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Température de Paris</span><br><br>{{température_paris}} degrès
+            </div>
+            <div class="col-sm">
+             <span style='color:black;'>Pression de Paris</span><br><br>{{pression_paris}} hpa
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Saison actuelle</span><br><br>{{saison_actuelle}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Départ à routier à Paris</span><br>{{départ_routier_paris}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>C'est jour regulier à Paris</span><br>{{regulier_jour_paris}}
+            </div>
+            
+          </div>
+        </div><br><br>
+
+         <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+          <div class="row">
+          
+            <div class="col-sm">
+              <span style='color:black;'>Ce n'est pas une heure de pointe à Paris</span><br><br>{{non_pointe_paris}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Week end</span><br><br><br><br><br>{{weekend}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Jour de semaine</span><br><br><br><br>{{jour_semaine}}
+            </div>
+            <div class="col-sm">
+             <span style='color:black;'>Rang de la ville la plus polluée en France</span><br><br>{{classement_paris}} / 20
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Site industrielle les plus polluant de France</span><br>{{pole_paris}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Population active de 15 à 59 ans</span><br><br>{{socio_paris}} personnes
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Bouchons à Paris</span><br><br><br><br>{{bouchons_paris}} Km
+            </div>
+            
+          </div>
+        </div><br><br>
+
+       <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+          <div class="row">
 
 
+            <div class="col-sm">
+              <span style='color:black;'>Erruption volicanique cette semaine</span><br><br>{{eruption}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Vente du diesel</span><br><br><br><br>{{diesel}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Le cours du dollard</span><br><br><br><br>{{dollard}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Période d'angrais</span><br><br><br><br>{{angrais}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Le jour ou la nuit</span><br><br><br><br>{{periode}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Taux de polenne</span><br><br><br><br>{{po_paris}} 
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Incendie à Paris</span><br><br><br><br>{{incendie_paris}}
+            </div>
+          </div>
+        </div><br><br>
 
-      
-      <div id='info2' style='display:none;'>
-        Météo de Paris :  {{météo_paris}}<br><br>
-        Vent de Paris :  {{vent_paris}} m/s<br><br>
-        Température de Paris  :  {{température_paris}} degrès <br><br>
-        Pression de Paris  :  {{pression_paris}} hpa <br><br>
-        Saison actuelle : {{saison_actuelle}}<br><br>
-        départ à routier à Paris :  {{départ_routier_paris}}<br><br>
-        heure de pointe à Paris :  {{heure_pointe_paris}}<br><br>
-        c'est jour regulier à Paris :  {{regulier_jour_paris}}<br><br>
-        ce n'est pas une heure de pointe à Paris :  {{non_pointe_paris}}<br><br>
-        Week end :  {{weekend}}<br><br>
-        Jour de semaine :  {{jour_semaine}}<br><br>
-        Rang de la ville la plus polluée en France  :  {{classement_paris}} / 20 <br><br>
-        Site industrielle les plus polluant de France :  {{pole_paris}}<br><br>
-        Manifestation en ce moment à Paris :  {{manif_paris}} <br><br>
-        Population active de 15 à 59 ans:  {{socio_paris}} personnes<br><br>
-        Bouchons à Paris :  {{bouchons_paris}} Km
+          <br><br>
+          <input type='button' value='fermer' onclick='fermer()'>
 
-        <br><br>
-        <input type='button' value='fermer' onclick='fermer()'>
+        
+          <br><br><br><br>
+          <div style='float:left;'><i>Donnée fournis par openweathermap :
+          <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
+          </a></i></div><br>
 
-        <br><br><br><br>
-        <div style='float:left;'><i>Donnée fournis par openweathermap</i></div><br>
-
-        <div style='float:left;'>
-        <i>Classement de 1 a 7 des villes les plus polluée :</i>
-        <a href="http://www.linternaute.com/ville/c-ville-pollution-de-l-air"
-         style='color:black;'><i>Internaute</a></i></div><br>
+          <div style='float:left;'>
+          <i>Classement de 1 a 7 des villes les plus polluée :</i>
+          <a href="http://www.linternaute.com/ville/c-ville-pollution-de-l-air"
+           style='color:black;'><i>Internaute</a></i></div><br>
 
 
-        <div style='float:left;'><i>Classement des sites industriels les plus pollués :</i>
-        <a href="https://www.greenunivers.com/2009/05/quinze-sites-industriels-plus-pollueurs-de-france-6981/"
+          <div style='float:left;'><i>Classement des sites industriels les plus pollués : 
+          </i><a href="https://www.greenunivers.com/2009/05/quinze-sites-industriels-plus-pollueurs-de-france-6981/"
           style='color:black;'><i>Grenunivers</a></i></div><br>
 
-        <div style='float:left;'><i>Bouchons à lyon : </i>
-        <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
-          style='color:black;'><i>moncoyote</a></i></div><br>
-          
-        <div style='float:left;'><i>Manifestation à Patis : </i>
-        <a href="https://paris.demosphere.net/manifestations-paris"
-        style='color:black;'><i>demosphere</a></i></div><br>
+          <div style='float:left;'><i>Manifestation à Paris : </i>
+          <a href="https://www.onlymoov.com/trafic/" style='color:black;'><i>onlymoov</a></i></div><br>
 
+          <div style='float:left;'><i>Bouchons à Paris : </i>
+          <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
+            style='color:black;'><i>moncoyote</a></i></div><br>
 
       </div>
 
 
 
-      <div id='info3' style='display:none;'>
-        Météo de Marseille :  {{météo_marseille}}<br><br>
-        Vent de Marseille :  {{vent_marseille}} m/s<br><br>
-        Température de marseille  :  {{température_marseille}} degrès <br><br>
-        Pression de marseille  :  {{pression_marseille}} hpa <br><br>
-        Saison actuelle : {{saison_actuelle}}<br><br>
-        départ à routier à marseille :  {{départ_routier_marseille}}<br><br>
-        heure de pointe à marseille :  {{heure_pointe_marseille}}<br><br>
-        c'est jour regulier à marseille :  {{regulier_jour_marseille}}<br><br>
-        ce n'est pas une heure de pointe à marseille :  {{non_pointe_marseille}}<br><br>
-        Week end :  {{weekend}}<br><br>
-        Jour de semaine :  {{jour_semaine}}<br><br>
-        Rang de la ville la plus polluée en France  :  {{classement_marseille}} / 20 <br><br>
-        Site industrielle les plus polluant de France :  {{pole_marseille}}<br><br>
-        Manifestation en ce moment à marseille :  {{manif_marseille}} <br><br>
-        Population active de 15 à 59 ans:  {{socio_marseille}} personnes<br><br>
-        Bouchons à marseille :  {{bouchons_marseille}} Km
 
-        <br><br>
-        <input type='button' value='fermer' onclick='fermer()'>
+
+      
+      <div id='info3' style='display:none;'>
+       
+        <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+          <div class="row">
+          
+            <div class="col-sm">
+              <span style='color:black;'>Météo de Marseille</span><br><br>{{météo_marseille}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Vent de Marseille</span><br><br>{{vent_marseille}} m/s
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Température de Marseille</span><br><br>{{température_marseille}} degrès
+            </div>
+            <div class="col-sm">
+             <span style='color:black;'>Pression de Marseille</span><br><br>{{pression_marseille}} hpa
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Saison actuelle</span><br><br>{{saison_actuelle}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Départ à routier à Marseille</span><br>{{départ_routier_lyon}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>C'est jour regulier à Marseille</span><br>{{regulier_jour_marseille}}
+            </div>
+            
+          </div>
+        </div><br><br>
+
+         <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+          <div class="row">
+          
+            <div class="col-sm">
+              <span style='color:black;'>Ce n'est pas une heure de pointe à Marseille</span><br><br>{{non_pointe_marseille}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Week end</span><br><br><br><br><br>{{weekend}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Jour de semaine</span><br><br><br><br>{{jour_semaine}}
+            </div>
+            <div class="col-sm">
+             <span style='color:black;'>Rang de la ville la plus polluée en France</span><br><br>{{classement_marseille}} / 20
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Site industrielle les plus polluant de France</span><br>{{pole_marseille}}
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Population active de 15 à 59 ans</span><br><br>{{socio_marseille}} personnes
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Bouchons à Marseille</span><br><br><br><br>{{bouchons_marseille}} Km
+            </div>
+            
+          </div>
+        </div><br><br>
+
+       <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+          <div class="row">
+    
+            <div class="col-sm">
+              <span style='color:black;'>Erruption volicanique cette semaine</span><br><br>{{eruption}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Vente du diesel</span><br><br><br><br>{{diesel}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Le cours du dollard</span><br><br><br><br>{{dollard}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Période d'angrais</span><br><br><br><br>{{angrais}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Le jour ou la nuit</span><br><br><br><br>{{periode}} 
+            </div>
+             <div class="col-sm">
+              <span style='color:black;'>Taux de polenne</span><br><br><br><br>{{po_marseille}} 
+            </div>
+            <div class="col-sm">
+              <span style='color:black;'>Incendie à Marseille</span><br><br><br><br>{{incendie_marseille}} 
+            </div>
+          </div>
+        </div><br><br>
+        
+          <br><br>
+          <input type='button' value='fermer' onclick='fermer()'>
 
         
-        <br><br><br><br>
-        <div style='float:left;'><i>Donnée fournis par openweathermap</i></div>
+          <br><br><br><br>
+          <div style='float:left;'><i>Donnée fournis par openweathermap :
+          <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
+          </a></i></div><br>
 
-        <div style='float:left;'>
-        <i>Classement de 1 a 7 des villes les plus polluée :</i>
-        <a href="http://www.linternaute.com/ville/c-ville-pollution-de-l-air"
-         style='color:black;'><i>Internaute</a></i></div><br>
+          <div style='float:left;'>
+          <i>Classement de 1 a 7 des villes les plus polluée :</i>
+          <a href="http://www.linternaute.com/ville/c-ville-pollution-de-l-air"
+           style='color:black;'><i>Internaute</a></i></div><br>
 
 
-        <div style='float:left;'><i>Classement des sites industriels les plus pollués :</i>
-        <a href="https://www.greenunivers.com/2009/05/quinze-sites-industriels-plus-pollueurs-de-france-6981/"
+          <div style='float:left;'><i>Classement des sites industriels les plus pollués : 
+          </i><a href="https://www.greenunivers.com/2009/05/quinze-sites-industriels-plus-pollueurs-de-france-6981/"
           style='color:black;'><i>Grenunivers</a></i></div><br>
 
-        <div style='float:left;'><i>Bouchons à lyon : </i>
-        <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
-          style='color:black;'><i>moncoyote</a></i></div><br>
-          
-        <div style='float:left;'><i>Manifestation à Marseille :</i>
-        <a href="https://mars-infos.org/spip.php?page=agenda"
-          style='color:black;'><i>mars-info</a></i></div><br>
+          <div style='float:left;'><i>Manifestation à Marseille : </i>
+          <a href="https://www.onlymoov.com/trafic/" style='color:black;'><i>onlymoov</a></i></div><br>
 
+          <div style='float:left;'><i>Bouchons à Paris : </i>
+          <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
+            style='color:black;'><i>moncoyote</a></i></div><br>
 
-          
-        </div>
+      </div>
+      
 
 
 
@@ -318,7 +488,7 @@
       else if (variable > 20 && variable <= 50){
         document.getElementById(id).style.color='orange';
       }
-      else if (variable > 20 && variable <= 50){
+      else if (variable > 50){
         document.getElementById(id).style.color='red';
       }
 
