@@ -1,5 +1,9 @@
 corriger toutes les fautes
 
+mettre toutes les sites que t'as utiliser en bas de page et dans mentions legales
+
+mettre des pages 404 et 505
+
 mettre des alert pour chaque lien vers mes données
 
 finir la prévision
