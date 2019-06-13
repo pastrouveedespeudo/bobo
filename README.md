@@ -1,5 +1,7 @@
 corriger toutes les fautes
 
+rajouter dk et le jeu dans mes projets
+
 sans prévenir la navebarre a rapetit (<740 regler la hauteur)
 
 mettre toutes les sites que t'as utiliser en bas de page et dans mentions legales
