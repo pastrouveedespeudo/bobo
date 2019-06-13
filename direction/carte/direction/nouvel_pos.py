@@ -16,83 +16,83 @@ def long_lat(lat, long, km, sens):
     #print('metre, kilometre: ',km, kilometre)
 
     
-    if sens == 'nordnordouest':
+    if sens == 'sud':
         lat1 = kilometre
         nouvel_lat = lat + lat1
         return nouvel_lat, long
 
-    elif sens == 'nord':
+    elif sens == 'sudsudouest':
         lat = lat + kilometre
         long = long + kilometre * cos(radians(67.7))
         return lat, long
 
-    elif sens == 'nordnordest':
+    elif sens == 'sudouest':
         lat = lat + kilometre
         long = long + kilometre * cos(radians(45))
         return lat, long
         
-    elif sens == 'nordest':
+    elif sens == 'ouestsudouest':
         lat = lat + kilometre
         long = long + kilometre * cos(radians(22.5))
         return lat, long
 
-    elif sens == 'estnordest':
+    elif sens == 'ouest':
         long = long + kilometre
         return lat, long
         
-    elif sens == 'est':
+    elif sens == 'ouestnordouest':
         lat = lat - kilometre
         long = long - kilometre * cos(radians(157.5))
         return lat, long
         
-    elif sens == 'estsudest':
+    elif sens == 'nordouest':
         lat = lat - kilometre
         long = long - kilometre * cos(radians(135))
         return lat, long
         
-    elif sens == 'sudest':
+    elif sens == 'nordnordouest':
         lat = lat - kilometre
         long = long - kilometre * cos(radians(112.5))
         return lat, long
 
-    elif sens == 'sudsudest':
+    elif sens == 'nord':
         lat1 = kilometre
         nouvel_lat = lat - lat1
         return nouvel_lat, long
 
-    elif sens == 'sud':
+    elif sens == 'nordnordest':
         lat = lat - kilometre
         long = long - kilometre * cos(radians(337))
         return lat, long
 
-    elif sens == 'sudsudouest':
+    elif sens == 'nordest':
         lat = lat - kilometre
         long = long - kilometre * cos(radians(315))
         return lat, long
         
-    elif sens == 'sudouest':
+    elif sens == 'estnordest':
         lat = lat - kilometre
         long = long - kilometre * cos(radians(292.5))
         return lat, long
 
-    elif sens == 'ouestsudouest':
+    elif sens == 'est':
         
         kilo = kilometre
         long1 = long - kilo
       
         return lat, long1
 
-    elif sens == 'ouest':
+    elif sens == 'estsudest':
         lat = lat + kilometre
         long = long - kilometre * cos(radians(337))
         return lat, long
         
-    elif sens == 'ouestnordouest':
+    elif sens == 'sudest':
         lat = lat + kilometre
         long = long - kilometre * cos(radians(315))
         return lat, long
         
-    elif sens == 'nordouest':
+    elif sens == 'sudsudest':
         lat = lat + kilometre
         long = long - kilometre * cos(radians(292.5))
         return lat, long
