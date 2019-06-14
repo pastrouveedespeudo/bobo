@@ -2,6 +2,83 @@
 {% block content %}
 {% endblock %}
 
+
+<!-- Title section -->
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center justify-content-center text-center">
+      <div class="col-lg-10 align-self-end"><br><br>
+          <h1>Connecte toi !</h1>
+          <br>
+          <h2 id="h" style='color:black;'>
+            Va essayer des coiffures en noir et blanc,
+            en couleur, longue, courte il y
+            a tous ce que tu veux !</2>
+      </div>
+      <div class="col-lg-8 align-self-baseline">
+      <p class="text-white-75 font-weight-light mb-5"></p>  
+    </div>
+  </div>  
+</header>
+
+
+<!-- Form section -->
+<section id="about"><br><br>
+    <center>
+        <h3 id='se_connecter'>
+          Se connecter
+        </h3>
+        <br><br><br>
+    </center>
+
+
+    <!-- Form section -->
+    <div id='div_form'>
+        <center><form method="POST" id="formm">{% csrf_token%}<br><br><center>
+
+        
+            <!-- Fisrt Input - Username -->
+            <p id='p_user_name'>
+                <strong>nom utilisateur :</strong>
+            </p>
+            <input type='text' id ="input_username"
+              {{form.username}}
+            <br><br>
+
+
+            <!-- Second Input - Password -->
+            <center><p id='p_input_password'>
+              <strong> mot de passe :</strong></p>
+              <input type='text' id="input_password"
+              {{form.password}}
+            </center><br><br><br>
+
+
+            <!-- Third Input - Submit -->
+            <center><input type="submit" id="input_submit"></center>
+            <br><br>
+        </form>
+    </div>
+</section>
+
+          
+<!-- Separate section for visual aspect-->
+<div id='separate'>
+    <br><br><br>
+</div>
+
+{% include "bottom_page2.html" %}
+{% block content2 %}
+{% endblock content2%}
+
+
+
+
+
+
+
+
+
 <style>#autre{margin-left:-965px;;margin-top:-100px;}</style>
 <style>#h{font:Serif; color:white;}</style>
 
@@ -9,88 +86,50 @@
   h1{
     color:black;
     font-family:"cursive";
-  };
+  }
   #h{
     color:black;
     font-family:"cursive";
-  };
-
+  }
+  #about{
+     background:#212529;
+  }
+  #se_connecter{
+    color:white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+  }
+  #div_form{
+    text-align:center;
+  }
+  #formm{
+    border:1px solid black;
+    width:50%;
+    background:url('/static/img/parquet1.jpg');
+  }
+  #p_user_name{
+    color:white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+  }
+  #input_username{
+    text-align:center;
+    width:250px;
+    border:1px solid black;
+    border:1px solid black;
+  }
+  #p_input_password{
+    color:white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+  }
+  #input_password{
+     text-align:center;
+     width:250px;
+     border:1px solid black;
+     border:1px solid black;'
+  }
+  #input_submit{
+    border:2px solid black;
+  }
+  #separate{
+    background:#212529;
+  }
 </style>
-
-
-
-
-
-<!-- Masthead -->
-<header class="masthead">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center justify-content-center text-center">
-    
-      <div class="col-lg-10 align-self-end"><br><br>
-
-          <h1>Connecte toi !</h1><br>
-          
-          <h2 id="h" style='color:black;'>
-            et va essayer des coiffures en noir et blanc, en couleur, longue, courte il y
-            a tous ce que tu veux !
-      
-      </div>
-      
-      <div class="col-lg-8 align-self-baseline">
-      <p class="text-white-75 font-weight-light mb-5"></p>
-         
-    </div>
-  </div>  
-</header>
-
-
-
-<section id="about" style='background:#212529'><br><br>
-
-  <center><h3 style='color:white;text-shadow: black 0.1em 0.1em 0.2em'>
-        Se connecter</h3><br><br><br></center>
-        
-  <div style="text-align:center">
-
-  <center>
-      
-      <form method="POST" id="formm"
-        style="border:1px solid black; width:50%;
-        background:url('/static/img/parquet1.jpg');">{% csrf_token%}<br><br>
-      
-        <center>
-          <p style='color:white; 'text-shadow: black 0.1em 0.1em 0.2em'>
-            <strong>nom utilisateur :</strong></p>
-
-          <input type='text' style='text-align:center; width:250px; border:1px solid black;
-          border:1px solid black;'
-          {{form.username}}
-
-        </center><br><br>
-
-        <center>
-          <p style='color:white; 'text-shadow: black 0.1em 0.1em 0.2em'>
-          <strong> mot de passe :</strong></p>
-          
-          <input type='text' style='text-align:center; width:250px; border:1px solid black;
-            border:1px solid black;'
-          {{form.password}}
-        </center><br><br><br>
-
-        
-        <center><input type="submit" style='border:2px solid black;'></center>
-
-
-      <br><br>
-      </form><br><br><br><br><br><br><br><br>
-
-  </center>
-
-  </div>
-  
-</section>
-
-{% include "bottom_page2.html" %}
-{% block content2 %}
-{% endblock content2%}
-
