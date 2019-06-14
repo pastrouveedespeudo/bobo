@@ -1,22 +1,6 @@
-    
 {% include "navebarre_pollu.html" %}
 {% block content %}
 {% endblock %}
-
-
-
-
-<style>
-  h1{
-    color:black;
-    font-family:"cursive";
-  };
-  h2{
-    color:black;
-    font-family:"cursive";
-  };
-
-</style>
 
 
   <!-- Masthead -->
@@ -27,54 +11,30 @@
           <h1>Notre carte du vent</h1>
           <br><h2>Visualisez la pollution par son meilleur moyen de transport, le vent.
           <br>Exclusivement en France</h2>
-         
-     
-          
         </div>
         <div class="col-lg-8 align-self-baseline">
           <p class="text-white-75 font-weight-light mb-5"></p>
-          
-  
-          
         </div>
       </div>
     </div>
   </header>
 
 
-
   <!-- About Section -->
   <section class="page-section bg-dark text-white">
     <div class="container">
-
-
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
           <h2 class="text-white mt-0"></h2>
-
-
-          <style>#map{margin-left:0px; padding:10px; height: 400px; width: 100%; display:none;}</style>
-          <style>#map22{height: 300px; width: 650px;}</style>
-
-          
-          <div id="map2"><center><img id='map22' src='/static/direction/map.png'></center></div>
+          <div id="map2"><center><img id='map22' src='/static/direction/map.png'
+            alt="This the world map"></center></div>
           <br><br><br>
-
-          
-
-
           <div id='secret' value=''>
-
-          
           <div id="map"></div>
           <div class='container'>
-          <input type='text' placeholder='Placez une ville' style='text-align:center;border:2px solid black;'
-              id='input_text'>
-          
-          <input type='button' value='valider' id='button_valider' style='border:2px solid black;'>
-  
+          <input type='text' placeholder='Placez une ville' id='input_text'>
+          <input type='button' value='valider' id='button_valider'>
             <div>
-            
             <center><input style='display:none;'
             type='button' value='valider'
               id='button_valider2'>
@@ -85,9 +45,169 @@
               onclick='stop()'></center>
             </div>
           </div>
+      </div>
+  </section>
 
-         
 
+  <!-- Services Section -->
+  <section class="page-section" id="services">
+    <div class="container">
+      <h2 class="text-center mt-0">Notre carte</h2><br><br>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 text-center" style='margin:auto;'>
+          <strong>Son fonctionement</strong>
+          <br><br>
+          <p id="Fonctionement">Afin de la pouvoir visualiser le vent depuis notre carte google map.
+          Nous nous servons de plusieurs sources.<br><br>
+          La première est un site web sur la météo sur lequel nous prenons le sens du vent
+          par identification de la ville et du code postal que nous prenons sur Wikipédial.<br><br>
+          Ensuite nous utilisons le service de google map afin de pouvoir afficher la carte.
+          <brAfin de pouvoir utiliser cette map, nous utilisons des coordonées GPS par
+          Nominatim Geocoder. Et utilisons Google pour récupérer la superficie de la ville pour
+          calculer les nouvelles coordonées.</p><br><br><br>
+          <span><i>*www.Wikipédia.fr</i></span><br>
+          <span><i>*www.google.fr</i></span><br>
+          <span><i>*https://pypi.org/project/geopy/</i></span><br>
+          <span><i>*https://www.lameteoagricole.net/</i></span><br>
+          <span><i>*https://www.google.fr/maps/</i></span><br>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center">
+          <strong>Son Interet</strong><br><br>
+          <p id="Explication">La pollution est transportable par les airs.
+          De ce fait le vent la transporte. Nous pensons que cet carte permet de pouvoir savoir
+          si le vent nous amène ou nous enelève la pollution et de pouvoir par une simple visualisation
+          constater le mouvement du vent et donc de la pollution.<br><br>
+          Nous pouvons donc voir la pollution et son déplacement.</p>
+        </div>
+        <div class="col-lg-4 col-md-6 text-center">
+          <strong>Son utilisation</strong><br><br>
+          <p id="Rentre">Entrez une ville de France, laissez charger,
+            et regardez !
+            <br><br> Appuyer sur stop arrete le processus. Les marqueures ne seront pas
+            réinitialisés.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Call to Action Section -->
+  <section class="page-section bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
+        <img src = "/static/img/portfolio/icone/facebook.png" alt="Facebook logo" id="im10">
+        <img src = "/static/img/portfolio/icone/twitter.png" alt="Twitter logo" id="im11">
+        <img src = "/static/img/portfolio/icone/snap.png" alt="Snapchat logo" id="im12">            
+    </div>
+  </section>
+
+
+
+  <!-- Contact Section -->
+  <section class="page-section" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Let's Get In Touch!</h2>
+          <hr class="divider my-4">
+          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+          <div>+1 (202) 555-0149</div>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+          <!-- Make sure to change the email address in anchor text AND the link below! -->
+          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-light py-5">
+    <div class="container">
+      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/static/js/creative.min.js"></script>
+
+
+</body>
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqJf5bBiufgiWCK34KcdmPt4Zhsp4oRCc&callback=initMap"
+  async defer></script>
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  #input_text{
+    text-align:center;
+    border:2px solid black;
+  }
+  #button_valider{
+    border:2px solid black;
+  }
+  #services{
+    background:url("/static/img/parquet1.jpg");
+  }
+  span{
+    float:left;
+    color:black;
+  }
+  #Rentre,
+  #Fonctionement,
+  #Explication{
+    color:#808080
+  }
+
+
+</style>
 
 
 
@@ -369,75 +489,24 @@
           </script>
 
    
-      </div>
-    </section>
 
 
+<style>#im10{width:100px; height:100px;margin-left:50px;}</style>
+<style>#im12{width:200px; height:200px;margin-left:100px;}</style>             
+<style>#im11{width:100px; height:100px;margin-left:100px;}</style>
+<style>
+  h1{
+    color:black;
+    font-family:"cursive";
+  };
+  h2{
+    color:black;
+    font-family:"cursive";
+  };
 
-
-
-  <!-- Services Section -->
-  <section class="page-section" id="services" style='background:url("/static/img/parquet1.jpg");'>
-  
-    <div class="container">
-    
-      <h2 class="text-center mt-0">Notre carte</h2><br><br>
-
-
-      <div class="row">
-
-        <div class="col-lg-4 col-md-6 text-center" style='margin:auto;'>
-          <strong>Son fonctionement</strong>
-          <br><br>
-          <p style='color:#808080'>Afin de la pouvoir visualiser le vent depuis notre carte google map.
-          Nous nous servons de plusieurs sources.<br><br>
-          
-          La première est un site web sur la météo sur lequel nous prenons le sens du vent
-          par identification de la ville et du code postal que nous prenons sur Wikipédial.<br><br>
-          
-          Ensuite nous utilisons le service de google map afin de pouvoir afficher la carte.
-          <brAfin de pouvoir utiliser cette map, nous utilisons des coordonées GPS par
-          Nominatim Geocoder. Et utilisons Google pour récupérer la superficie de la ville pour
-          calculer les nouvelles coordonées.</p><br><br><br>
-
-          <span style='float:left; color:black;'><i>*www.Wikipédia.fr</i></span><br>
-          <span style='float:left; color:black;'><i>*www.google.fr</i></span><br>
-          <span style='float:left; color:black;'><i>*https://pypi.org/project/geopy/</i></span><br>
-          <span style='float:left; color:black;'><i>*https://www.lameteoagricole.net/</i></span><br>
-          <span style='float:left; color:black;'><i>*https://www.google.fr/maps/</i></span><br>
-    
-        </div>
-     
-
-
-        <div class="col-lg-4 col-md-6 text-center">
-          <strong>Son Interet</strong><br><br>
-          
-          <p style='color:#808080'>La pollution est transportable par les airs.
-          De ce fait le vent la transporte. Nous pensons que cet carte permet de pouvoir savoir
-          si le vent nous amène ou nous enelève la pollution et de pouvoir par une simple visualisation
-          constater le mouvement du vent et donc de la pollution.<br><br>
-          Nous pouvons donc voir la pollution et son déplacement.</p>
-        </div>
-
-        <div class="col-lg-4 col-md-6 text-center">
-          <strong>Son utilisation</strong><br><br>
-
-          <p style='color:#808080'>Entrez une ville de France, laissez charger,
-          et regardez !
-          <br><br> Appuyer sur stop arrete le processus. Les marqueures ne seront pas
-          réinitialisés.
-
-          </p>
-        </div>
-
-        
-      </div>
-
-        
-      
-    </div>
-  </section>
+</style>
+<style>#map{margin-left:0px; padding:10px; height: 400px; width: 100%; display:none;}</style>
+<style>#map22{height: 300px; width: 650px;}</style>
 
 
 
@@ -449,91 +518,3 @@
 
 
 
-
-
-
-
-
-  <!-- Call to Action Section -->
-  <section class="page-section bg-dark text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
-
-
-                 
-           <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
-           <img src = "/static/img/portfolio/icone/facebook.png"/ id="im10">
-
-                                
-            <style>#im11{width:100px; height:100px;margin-left:100px;}</style>
-           <img src = "/static/img/portfolio/icone/twitter.png"/ id="im11">
-
-                  
-           <style>#im12{width:200px; height:200px;margin-left:100px;}</style>
-           <img src = "/static/img/portfolio/icone/snap.png"/ id="im12">
-                    
-    </div>
-  </section>
-
-
-
-
-
-
-
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Let's Get In Touch!</h2>
-          <hr class="divider my-4">
-          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 ml-auto text-center">
-          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div>+1 (202) 555-0149</div>
-        </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-          <!-- Make sure to change the email address in anchor text AND the link below! -->
-          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="/static/vendor/jquery/jquery.min.js"></script>
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="/static/js/creative.min.js"></script>
-
-</body>
-
-
-
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqJf5bBiufgiWCK34KcdmPt4Zhsp4oRCc&callback=initMap"
-  async defer></script>
-
-
-
-
-
-
-</html>
