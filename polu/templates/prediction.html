@@ -16,62 +16,187 @@
 </style>
 
 
-  <!-- Masthead -->
+  <!-- Title Section -->
   <header class="masthead" id='sec'>
     <div class="container h-100">
-    
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
-        
           <h1>Nos prévisions !</h1><br>
-          
           <h2 style="color:black;font-family:"cursive";">
             Nous vous proposons une prédiction en temps réel du taux de pollution à Marseille, Paris et Lyon.
             Allez voir son mode de fonctionnement en fin de page !
           </h2>
-
         </div>
         <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5"></p>
-          
-          </div>
-        </div>
+        <p class="text-white-75 font-weight-light mb-5"></p>
       </div>
     </div>
   </header>
 
 
-
-
-  <!-- About Section -->
+  <!-- Prediction Section -->
   <section class="page-section bg-dark text-white">
     <div class="container">
-
-
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
           <h2 class="text-white mt-0"></h2>
-          
- 
-         <p>Clique sur un boutton, et nous te donnerons notre taux d'AQI ou indice de qualité de l'air selon de
-         ces trois villes ci dessous. Bien sur notre estimation est très loin de la réalité à un taux d'erreur de
-         plus ou moins 10 AQI.</p><br><br>
-          
-          
+          <p>Clique sur un boutton, et nous te donnerons notre taux d'AQI ou indice de qualité de l'air selon de
+            ces trois villes ci dessous. Bien sur notre estimation est très loin de la réalité à un taux d'erreur de
+            plus ou moins 10 AQI.</p><br><br>
         <input type='button' value='lyon' id='lyon'>
-        
         <input type='button' value='paris' id='paris'>
-        
         <input type='button' value='marseille' id='marseille'>
         <br><br>
         <p id='choix'></p>
         <br><br>
         <p id='chargement' style='display:none'><img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80'></p>
-
-
         <div id='pred'></div>
+      </div>
+    </div>
+  </section>
 
-      
+
+  <!-- Separate Section for visual aspect -->
+  <div id="separate"><br><br><br></div>
+
+
+
+  <!-- Explication Section -->
+  <section class="page-section bg-dark text-white">
+    <div class="container">
+      <h2 class="text-center mt-0" style='color:black;'>Nos Prévoyances</h2>
+      <br><br>
+      <div class="row">
+        <div class="col-lg-8 col-md-6 text-center" id="resumText">
+         <h3>Son fonctionnement</h3>
+         <br>
+         <p id="resum">Afin de faire notre prévoyance nous avons récupérer à partir de différentes sources
+         plusieurs informations que vous pouvez voir dans la rubrique Nos données.<br><br>
+         Chaque jour et à chaque heure par une tache cron nous avons alimenté notre base de donnée.
+         Nous récupérons alors chaque condition en temps réel lorsque vous appuyer sur une des entrées.
+         Nous les comparons à notre base de donnée. Faisons ressortir toutes les situations identiques
+         à la situation présente et récupérons les données de pollution lui associé.
+         Puis en faisons une moyenne.</p>
+        </div>
+        <div class="col-lg-8 col-md-6 text-center" id="resumText">
+        <br><br>
+         <h3>Son interet</h3>
+         <br>
+         <p id="resum">Par cela nous pouvons vous tenir informer du taux de pollution dans ces villes. Mais aussi
+         de pouvoir comprendre d'ou vient la pollution/<br><br>
+         Bien sur, nos données peuvent etre fausse et ne sont pas complètes.</p>
+        </div>
+        <div class="col-lg-8 col-md-6 text-center" id="resumText">
+         <br><br>
+         <h3>Son amélioration</h3>
+         <br>
+         <p id="resum">Bien sur, nos prédictions ne semblent pas etre fiable.
+         Par le manque de donnée et de connaissance en pollution et en développement.<br><br>
+         Nous avons tenté une approche ou l'on coterait chaque conditions mais nous n'avons pas assez
+         de donnée pour le moment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Separate Section for visual aspect -->
+  <div id="separate"><br><br><br></div>
+
+
+
+  <!-- Call to Action Section -->
+  <section class="page-section bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2> 
+        <a href='https://www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
+        <a href='https://www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
+        <a href='https://www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>            
+    </div>
+  </section>
+
+
+
+  <!-- Contact Section -->
+  <section class="page-section" id="contact">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Let's Get In Touch!</h2>
+          <hr class="divider my-4">
+          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+          <div>+1 (202) 555-0149</div>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+          <!-- Make sure to change the email address in anchor text AND the link below! -->
+          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-light py-5">
+    <div class="container">
+      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/static/js/creative.min.js"></script>
+
+</body>
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+<style>#im12{width:200px; height:200px;margin-left:100px;}</style>
+<style>#im10{width:100px; height:100px;margin-left:50px;}</style>              
+<style>#im11{width:100px; height:100px;margin-left:100px;}</style>
+
+
+
+
+  <style>
+    #resumText{
+      margin:auto;
+      color:black;
+    }
+    #separate{
+      background:url("/static/img/parquet1.jpg");
+    }
+    #resum{
+      color:#808080;
+    }
+  </style>
+
+
+  
         <script>
 
             jQuery("#lyon").on("click", function(e){
@@ -251,167 +376,9 @@
 
             </script>
 
-      </div>
-    </div>
-  </section>
-
-
-
-  <div style='background:url("/static/img/parquet1.jpg")'><br><br><br></div>
-  
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <!-- Services Section -->
-  <section class="page-section bg-dark text-white">
-  
-    <div class="container">
-    
-      <h2 class="text-center mt-0" style='color:black;'>Nos Prévoyances</h2>
-      <br><br>
-      <div class="row">
-    
-      
-        <div class="col-lg-8 col-md-6 text-center" style='margin:auto;color:black;'>
-         <h3>Son fonctionnement</h3>
-         <br>
-         <p style='color:#808080'>Afin de faire notre prévoyance nous avons récupérer à partir de différentes sources
-         plusieurs informations que vous pouvez voir dans la rubrique Nos données.<br><br>
-         Chaque jour et à chaque heure par une tache cron nous avons alimenté notre base de donnée.
-         Nous récupérons alors chaque condition en temps réel lorsque vous appuyer sur une des entrées.
-         Nous les comparons à notre base de donnée. Faisons ressortir toutes les situations identiques
-         à la situation présente et récupérons les données de pollution lui associé.
-         Puis en faisons une moyenne.</p>
-        </div>
-
-        
-        <div class="col-lg-8 col-md-6 text-center" style='margin:auto;color:black;'>
-        <br><br>
-         <h3>Son interet</h3>
-         <br>
-         <p style='color:#808080'>Par cela nous pouvons vous tenir informer du taux de pollution dans ces villes. Mais aussi
-         de pouvoir comprendre d'ou vient la pollution/<br><br>
-         Bien sur, nos données peuvent etre fausse et ne sont pas complètes.</p>
-        </div>
- 
-        <div class="col-lg-8 col-md-6 text-center" style='margin:auto;color:black;'>
-         <br><br>
-         <h3>Son amélioration</h3>
-         <br>
-         <p style='color:#808080'>Bien sur, nos prédictions ne semblent pas etre fiable.
-         Par le manque de donnée et de connaissance en pollution et en développement.<br><br>
-         Nous avons tenté une approche ou l'on coterait chaque conditions mais nous n'avons pas assez
-         de donnée pour le moment.</p>
-        </div>
-
-        
-
-        
-      </div>
-    </div>
-  </section>
-
-
-
-<div style='background:url("/static/img/parquet1.jpg")'><br><br><br></div>
-
-
-
-
-  <!-- Call to Action Section -->
-  <section class="page-section bg-dark text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
-
-
-                 
-           <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
-           <a href='https://www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
-
-                                
-            <style>#im11{width:100px; height:100px;margin-left:100px;}</style>
-            <a href='https://www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
-
-                  
-           <style>#im12{width:200px; height:200px;margin-left:100px;}</style>
-           <a href='https://www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>
-                    
-    </div>
-  </section>
-
-
-
-
-
-
-
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Let's Get In Touch!</h2>
-          <hr class="divider my-4">
-          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 ml-auto text-center">
-          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div>+1 (202) 555-0149</div>
-        </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-          <!-- Make sure to change the email address in anchor text AND the link below! -->
-          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="/static/vendor/jquery/jquery.min.js"></script>
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="/static/js/creative.min.js"></script>
-
-</body>
-
-
-
-
-
-
-
-
-
-</html>
