@@ -3,8 +3,200 @@
 {% endblock %}
 
 
+<!-- Title Section -->
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center justify-content-center text-center">
+      <div class="col-lg-10 align-self-end">
+          <h1>La tendance du moment</h1>
+          <br>
+      </div>
+      <div class="col-lg-8 align-self-baseline">
+        <h2>Nous vous proposons des habits selon un critère, la tendance du moment.</h2>
+        <div id='latendance'></div>    
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<!-- First Separate Blue Section for visual aspect -->
+<div id='separate'>
+    <br><br><br><br><br>
+</div>
+
+
+
+<!-- Main Section - Tendance of moment -->
+<section class="page-section bg-dark text-white" id='section'>
+  <div class="container text-center">
+    <center>
+      <div id="cart_color">
+        <br>
+        <center><h1 id="cart_h1">Notre tendance</h1></center><br>
+        <center>
+          <div id='brun'></div><br><br>
+          <div id='blond'></div><br><br>
+          <div id='chatain'></div>
+          <br>
+        </center>
+      </div>
+    </center>
+  </div>
+</section>
+
+
+
+<!-- Second Separate Blue Section for visual aspect -->
+<div id='separate'>
+  <br><br><br><br><br>
+</div>
+
+
+<!-- Iframe from an other page. Give feeling to consult a book -->
+<div id="div_iframe">
+  <center>
+    <iframe id="inlineFrameExample"
+        title="Inline Frame Example"
+        src="/administrateur/database_mode">
+    </iframe>
+  </center>
+</div>
+
+
+
+<!-- Third Separate Blue Section for visual aspect -->
+<div id='separate'>
+  <br><br><br><br><br>
+</div>
+
+
+
+<!-- Bottom Section number 2 -->
+<div id='botttom'> 
+  {% include "bottom_page2.html" %}
+  {% block content2 %}
+  {% endblock content2%}
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+
+  //This functions are a result from a mistake.
+  //Indeed, before we gave possibility to
+  //choose to watch one database (women or men)
+  //with input like (do you want watch database ? yes women ? men ?)
+  // so here we action this input who are now invisible.
+
+  // ---> Evenement Function <---
+
+  function data(){
+    document.location.href="/administrateur/database_mode/"
+  };
+
+  function tendance(){
+    document.getElementById('latendance').innerHTML = '<br><h3>La tendance du moment selon : </h3>';
+    document.getElementById('section').style.display = 'block';
+    document.getElementById('botttom').style.display = 'none';
+  };
+
+  function decodeHtml(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  };
+
+
+  var a = decodeHtml("{{liste10|slice:'1'}}");
+  var b = decodeHtml("{{liste10|slice:'1:2'}}");
+  var c = decodeHtml("{{liste10|slice:'2:3'}}");
+    
+  a = a.slice(3,-4)
+  b = b.slice(3,-4)
+  c = c.slice(3,-4)
+
+  function enelve(lettre){
+    liste = ""
+    for(var i = 0; i < lettre.length; i ++){
+      if (lettre[i] == "'"){
+      }
+      else if(lettre[i] == ","){
+        liste += " et "
+      }
+      else{
+        liste += lettre[i]
+      }
+    }
+    return liste
+  };
+
+  a = enelve(a)
+  b = enelve(b)
+  c = enelve(c)
+
+  document.getElementById('brun').innerHTML = "<center><strong>Brune :</strong>&nbsp;&nbsp;&nbsp;</center>" +
+                                              "<center><p style='font-family:amaze, segoe print, segoe script; font-size:2em;'>" + a + "</p></center>";
+
+                                                
+  document.getElementById('blond').innerHTML = "<center><strong>Blonde :</strong>" +
+                                                "&nbsp;&nbsp;&nbsp;<p style='font-family:amaze,segoe print, segoe script; font-size:2em;'>" + b + "</p></center>";
+
+                                                  
+  document.getElementById('chatain').innerHTML = "<center><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chatain :" +
+                                                  "</strong>&nbsp;&nbsp;&nbsp;<p style='font-family:amaze, segoe print, segoe script;font-size:2em;'>" + c + "</p></center>";
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    #inlineFrameExample{
+      border:2px solid black;
+      style='border:none; scrolling:no;
+      allowfullscreen="true;
+      frameborder=0';
+      overflow: hidden;
+      width:90%;
+      height:500px;
+      }
+    #div_iframe{
+      background:url('/static/img/parquet1.jpg');
+
+    }
+</style>
+
+
+
 <style>#autre{margin-left:-965px;;margin-top:-100px;}</style>
 <style>#h{font:Serif; color:white;}</style>
+
 <style>
 
 #database,
@@ -19,181 +211,34 @@
 </style>
 
 
-
-
-
-
-
-<!-- Masthead -->
-<header class="masthead">
-
-  <div class="container h-100">
-    <div class="row h-100 align-items-center justify-content-center text-center">
-    
-      <div class="col-lg-10 align-self-end">
-
-          <h1>La tendance du moment</h1><br>
-          
-      </div>
- 
-      <div class="col-lg-8 align-self-baseline">
-        
-        <h2>Nous vous proposons des habits selon un critère, la tendance du moment.</h2>
-        
-        <div id='latendance'></div>
-
-        
-        
-      </div>
-    </div>
-  </div>
-</header>
-  <div style='background:#212529'>
-    <br><br><br><br><br>
-  </div>
-
-
-
-
-
-<!-- Call to Action Section -->
-<section class="page-section bg-dark text-white" id='section'>
-  <div class="container text-center">
-
-      <center>
-      
-      <div style="background:url('/static/img/parquet1.jpg');
-        width:45%; border:2px solid black;">
-      <br>
-      <center><h1 style='color:black; font-family:segoe script'>Notre tendance</h1></center><br>
-
-      <center>
-
-      
-      <div id='brun' style='font-size:1.5em;'></div><br><br>
-      <div id='blond' style='font-size:1.5em;'></div><br><br>
-      <div id='chatain' style='font-size:1.5em;'></div>
-      <br>
-      </div>
-      </center>
-
-  </div>
-</section>
-
-
-
-  <div style='background:#212529'>
-    <br><br><br><br><br>
-  </div>
-
 <style>
-    #inlineFrameExample{
-      border:2px solid black;
-      style='border:none; scrolling:no;
-      allowfullscreen="true;
-      frameborder=0';
-      overflow: hidden;
-      }
 
+  #cart_h1{
+    color:black; font-family:segoe script
+  }
+
+  #cart_color{
+    background:url('/static/img/parquet1.jpg');
+    width:45%;
+    border:2px solid black;
+  }
+  #brun,
+  #blond,
+  #chatain{
+    font-size:1.5em;
+  }
 </style>
+<style>
+  h1{
+    color:black;
+    font-family:"recursive";
+  }
+  h2{
+    color:black;
+  }
+  #separate{
+    background:#212529;
+  }
 
-<div style="background:url('/static/img/parquet1.jpg');">
-  <center>
-    <iframe id="inlineFrameExample"
-        title="Inline Frame Example"
-        style='width:90%; height:500px;'
-        src="/administrateur/database_mode">
-    </iframe>
-  </center>
-</div>
-
-
-
-  <div style='background:#212529'>
-    <br><br><br><br><br>
-  </div>
-
-
-  <div id='botttom'> 
-    {% include "bottom_page2.html" %}
-    {% block content2 %}
-    {% endblock content2%}
-  </div>
-
-
-
-
-<script>
-
-
-    function data(){
-      document.location.href="/administrateur/database_mode/"
-
-      }
-
-
-
-
-    function tendance(){
   
-       document.getElementById('latendance').innerHTML = '<br><h3>La tendance du moment selon : </h3>';
-       document.getElementById('section').style.display = 'block';
-       document.getElementById('botttom').style.display = 'none';
-    };
-
-
-    function decodeHtml(html) {
-        var txt = document.createElement("textarea");
-        txt.innerHTML = html;
-        return txt.value;
-    };
-
-    var a = decodeHtml("{{liste10|slice:'1'}}");
-    var b = decodeHtml("{{liste10|slice:'1:2'}}");
-    var c = decodeHtml("{{liste10|slice:'2:3'}}");
-    
-    a = a.slice(3,-4)
-    b = b.slice(3,-4)
-    c = c.slice(3,-4)
-
-    function enelve(lettre){
-      liste = ""
-      for(var i = 0; i < lettre.length; i ++){
-        if (lettre[i] == "'"){
-
-        }
-        else if(lettre[i] == ","){
-          liste += " et "
-        }
-        else{
-          liste += lettre[i]
-        }
-
-      }
-
-      return liste
-    }
-
-    a = enelve(a)
-    b = enelve(b)
-    c = enelve(c)
-
-    document.getElementById('brun').innerHTML = "<center><strong>Brune :</strong>&nbsp;&nbsp;&nbsp;</center>" +
-                                                "<center><p style='font-family:amaze, segoe print, segoe script; font-size:2em;'>" + a + "</p></center>";
-
-                                                
-    document.getElementById('blond').innerHTML = "<center><strong>Blonde :</strong>" +
-                                                  "&nbsp;&nbsp;&nbsp;<p style='font-family:amaze,segoe print, segoe script; font-size:2em;'>" + b + "</p></center>";
-
-                                                  
-    document.getElementById('chatain').innerHTML = "<center><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chatain :" +
-                                                   "</strong>&nbsp;&nbsp;&nbsp;<p style='font-family:amaze, segoe print, segoe script;font-size:2em;'>" + c + "</p></center>";
-
-</script>
-
-
-
-
-
-
-
+</style>
