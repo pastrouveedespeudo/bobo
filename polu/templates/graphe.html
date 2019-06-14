@@ -3,142 +3,156 @@
 {% endblock %}
 
 
-  <style>
-    h1{font-family:recursive; color:black;}
-    h2{font-family:"Comic Sans MS, Comic Sans, cursive";
-      color:black;
-       }
-  input{border:2px solid black;}
-  </style>
-
-
-
-  <!-- Masthead -->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10 align-self-end">
-      
-         
-          <h1>Nos graphiques !</h1><br>
-           
-          <h2>Les graphiques permettent de visualiser la pollution selon les différentes conditions.
-            Bien sur, le combo de plusieurs conditions augmentent la pollution. Ici, vous n'avez
-            que les conditions isolées !
-            <br><br>Mais cela nous permet de nous faire une petite idée des attributs de la pollution.</h2>
-
-        </div>
-    
-        <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5"></p>
-
+    <!-- Title Section -->
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+          <div class="col-lg-10 align-self-end">
+            <h1>Nos graphiques !</h1><br>
+            <h2>Les graphiques permettent de visualiser la pollution selon les différentes conditions.
+              Bien sur, le combo de plusieurs conditions augmentent la pollution. Ici, vous n'avez
+              que les conditions isolées !
+              <br><br>Mais cela nous permet de nous faire une petite idée des attributs de la pollution.
+            </h2>
+          </div>
+          <div class="col-lg-8 align-self-baseline">
+            <p class="text-white-75 font-weight-light mb-5"></p>
+          </div>
         </div>
       </div>
-      
-    </div>
-  </header>
+    </header>
 
 
 
+    <!-- Main Section -->
+    <section class="page-section bg-dark text-white" id='section_graphe'>
 
-      <!-- Call to Action Section -->
-      <section class="page-section bg-dark text-white" id='section_graphe' style='margin-top:-100px;'>
-
-          <p style='margin-left:100px;color:black;'><i><strong>*Choisis une ville et clique sur une des conditions</strong></i></p>
-
-          <br>
-           <div class="row justify-content-center">
-           
-               <input type='button' value='Graphique de Lyon' onclick='lyon()'>
-               <input type='button' value='Graphique de Paris' onclick='paris()'><br>
-               <input type='button' value='Graphique de Marseille' onclick='marseille()'>
-    
-          </div><br>
-     
-     
-          <div class="container text-center">
-
-            <div class="row justify-content-center">
-            
-               <input type='button' value='bouchon' onclick='graphe("bouchon")'>&nbsp;&nbsp;
-               <input type='button' value='heure' onclick='graphe("heure")'>&nbsp;&nbsp;
-               <input type='button' value='manif' onclick='graphe("manif")'>&nbsp;&nbsp;
-               <input type='button' value='météo' onclick='graphe("météo")'>&nbsp;&nbsp;
-               <input type='button' value='population' onclick='graphe("population")'>&nbsp;&nbsp;
-               <input type='button' value='pression' onclick='graphe("pression")'>&nbsp;&nbsp;
-               <input type='button' value='saison' onclick='graphe("saison")'>&nbsp;&nbsp;
-               <input type='button' value='vent' onclick='graphe("vent")'>&nbsp;&nbsp;
-               <input type='button' value='weekend' onclick='graphe("weekend")'>&nbsp;&nbsp;
-               <input type='button' value='traffique' onclick='graphe("traffique")'>
-               
-            </div><br><br>
-
-                 
-           
-      
-
-
-              <center>
-              <div id='graphique1' class='col-xs-12 col-md-12 col-lg-8'>
-              </div></center>
-
-
-              
-    
-        <br><br><br><br>
+      <p id="information_click"><i><strong>*Choisis une ville et clique sur une des conditions</strong></i></p>
+      <br>
+      <div class="row justify-content-center">
+        <input type='button' value='Graphique de Lyon' onclick='lyon()'>
+        <input type='button' value='Graphique de Paris' onclick='paris()'><br>
+        <input type='button' value='Graphique de Marseille' onclick='marseille()'>
+      </div><br>
+      <div class="container text-center">
+        <div class="row justify-content-center">
+            <input type='button' value='bouchon' onclick='graphe("bouchon")'>&nbsp;&nbsp;
+            <input type='button' value='heure' onclick='graphe("heure")'>&nbsp;&nbsp;
+            <input type='button' value='manif' onclick='graphe("manif")'>&nbsp;&nbsp;
+            <input type='button' value='météo' onclick='graphe("météo")'>&nbsp;&nbsp;
+            <input type='button' value='population' onclick='graphe("population")'>&nbsp;&nbsp;
+            <input type='button' value='pression' onclick='graphe("pression")'>&nbsp;&nbsp;
+            <input type='button' value='saison' onclick='graphe("saison")'>&nbsp;&nbsp;
+            <input type='button' value='vent' onclick='graphe("vent")'>&nbsp;&nbsp;
+            <input type='button' value='weekend' onclick='graphe("weekend")'>&nbsp;&nbsp;
+            <input type='button' value='traffique' onclick='graphe("traffique")'> 
         </div><br><br>
 
 
+        <!-- Graphe Section -->
+        <center><div id='graphique1' class='col-xs-12 col-md-12 col-lg-8'></div></center>
+        <br><br><br><br>
+      </div><br><br>
+    </section>
 
 
 
-            
-  
-      </section>
-
-      <!-- Contact Section -->
-      <section class="page-section" id="contact">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-              <h2 class="mt-0">Let's Get In Touch!</h2>
-              <hr class="divider my-4">
-              <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 ml-auto text-center">
-              <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-              <div>+1 (202) 555-0149</div>
-            </div>
-            <div class="col-lg-4 mr-auto text-center">
-              <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-              <!-- Make sure to change the email address in anchor text AND the link below! -->
-              <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
-            </div>
+    <!-- Contact Section -->
+    <section class="page-section" id="contact">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="mt-0">Let's Get In Touch!</h2>
+            <hr class="divider my-4">
+            <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
           </div>
         </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="bg-light py-5">
-        <div class="container">
-          <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+            <div>+1 (202) 555-0149</div>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+            <!-- Make sure to change the email address in anchor text AND the link below! -->
+            <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+          </div>
         </div>
-      </footer>
+      </div>
+    </section>
 
-      <!-- Bootstrap core JavaScript -->
-      <script src="/static/vendor/jquery/jquery.min.js"></script>
-      <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+      <div class="container">
+        <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+      </div>
+    </footer>
 
-      <!-- Plugin JavaScript -->
-      <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-      <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-      <!-- Custom scripts for this template -->
-      <script src="/static/js/creative.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-    </body>
+    <!-- Custom scripts for this template -->
+    <script src="/static/js/creative.min.js"></script>
+
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+      h1{
+        font-family:recursive;
+        color:black;
+      }
+      h2{
+        font-family:"Comic Sans MS, Comic Sans, cursive";
+        color:black;
+      }
+      input{
+        border:2px solid black;
+      }
+      #section_graphe{
+        margin-top:-100px;
+      }
+      #information_click{
+        margin-left:100px;
+        color:black;
+      }
+      
+    </style>
+
+
+
+
+
 
 
     <script>
