@@ -2,140 +2,191 @@
 {% block content %}
 {% endblock %}
 
+
+
 <style>#autre{margin-left:-965px;;margin-top:-100px;}</style>
 <style>#h{font:Serif; color:white;}</style>
 
 <style>
-  #sins{
-    color:black;
-    font-family:"cursive";
-    color:black;
-  }
-
-  #h{
-    color:black;
-    font-family:"Comic Sans MS, Comic Sans, cursive";
-
-  }
-
-  p{
-    color:white;
-  }
-
-
-  #data{
-    text-align:center;
-  }
-
-  #formm{
-  border:5px solid black;
-  width:50%;
-  background:url("/static/img/parquet1.jpg");
-  }
+    #sins{
+        color:black;
+        font-family:"cursive";
+        color:black;
+    }
+    #h{
+        color:black;
+        font-family:"Comic Sans MS, Comic Sans, cursive";
+    }
+    p{
+        color:white;
+    }
+    #data{
+        text-align:center;
+    }
+    #formm{
+        border:5px solid black;
+        width:50%;
+        background:url("/static/img/parquet1.jpg");
+    }
+    #about{
+        background:#212529;
+    }
+    h3{
+        color:white;
+        text-shadow: black 0.2em 0.1em 0.2em;
+    }
+    #div_form{
+        text-align:center;
+    }
+    input{
+      text-align:center;
+      width:250px;
+      border:1px solid black;
+    }
+    #input_mail{
+        text-align:center;
+        width:250px;
+        border:1px solid black;
+    }
+    #input_mail2{
+        text-align:center;
+        width:250px;
+        border:1px solid black;
+    }
+    #input_password{
+        text-align:center;
+        width:250px;
+        border:1px solid black;
+    }
+    #submit_input{
+        color:black;
+        border:2px solid black;
+    }
 </style>
 
 
 
-
-<!-- Masthead -->
+<!-- Title section -->
 <header class="masthead"> 
   <div class="container h-100">
     <div class="row h-100 align-items-center justify-content-center text-center">
-    
         <div class="col-lg-10 align-self-end"><br><br>
-          
           <h1 id='sins'>S'inscrire</h1><br>
-          
           <h2 id="h" >Et pourquoi ne pas s'inscrire ?
-                      Par l'inscription tu pourras enregistrer des
-                      coupes en favoris, voir les coiffeurs, salle de gym
-                      selon tes horraires ainsi que les magasins les plus proches
-                      et au cout le plus bas !
-
-
+                Par l'inscription tu pourras enregistrer des
+                coupes en favoris, voir les coiffeurs, salle de gym
+                selon tes horraires ainsi que les magasins les plus proches
+                et au cout le plus bas !
           </h2>
-          
         </div>
-        
         <div class="col-lg-8 align-self-baseline">
           <p class="text-white-75 font-weight-light mb-5"></p>
         </div>
-        
     </div>  
   </div>
 </header>
 
 
-<section id="about" style='background:#212529'>
-  <br><br><center><h3 style='color:white;
-    text-shadow: black 0.2em 0.1em 0.2em'>
-    L'inscription</h3></center><br><br><br>
+<!-- Form section when user put his informations we
+change title input to green-->
+<section id="about">
+    <br><br>
+    <center><h3>
+      L'inscription
+    </h3></center>
+    <br><br><br>
     
-  <div style="text-align:center">
+    <!-- Form section -->
+    <div id='div_form'>
+        <center><form id='formm'method="POST">{% csrf_token%}
+        <br><br><br>
 
 
-      <center><form id='formm'method="POST">{% csrf_token%}
-      <br><br><br>
-          <center><p id='1' style='text-shadow: black 0.1em 0.1em 0.2em'><strong>Ton nom :</strong></p></center>
-          
-          <input type='text' style='text-align:center; width:250px; border:1px solid black;'
-            onmouseover="stop('1', '11')" onmouseout="start('1', '11')"
-            oninput="myFunction('1')"
-            {{form.username}}<br>
-            
-          <center><div><p id='11'>&nbsp;</p></div></center><br>
+            <!-- First input - Name -->
+            <p id='1' style="text-shadow: black 0.1em 0.1em 0.2em;">
+                <strong>Ton nom :</strong>
+            </p>
+            <input type='text'
+                onmouseover="stop('1', '11')" onmouseout="start('1', '11')"
+                oninput="myFunction('1')"
+                {{form.username}}<br>
+            <center><div><p id='11'>
+                &nbsp;</p>
+            </div></center>
+            <br>
 
-         
-          <p id='2' style='text-shadow: black 0.1em 0.1em 0.2em'><strong>Ton email :</strong></p>
-            <input type='text' style='text-align:center; width:250px; border:1px solid black;'
-              onmouseover="stop('2', '22')" onmouseout="start('2', '22')"
-              oninput="myFunction('2')"
-              {{form.email}}<br>
-          
-          <center><div><p id='22'>&nbsp;</p></div></center><br>
-          
 
-          <p id='3' style='text-shadow: black 0.1em 0.1em 0.2em'><strong>Confirme ton mail :</strong></p>
-            <input type='text' style='text-align:center; width:250px; border:1px solid black;'
+            <!-- Second input - Mail-->
+            <p id='2' style='text-shadow: black 0.1em 0.1em 0.2em'>
+                <strong>Ton email :</strong>
+            </p>
+            <input type='text' id='input_mail'
+                onmouseover="stop('2', '22')" onmouseout="start('2', '22')"
+                oninput="myFunction('2')"
+                {{form.email}}<br>
+            <center><div><p id='22'>
+                &nbsp;</p>
+            </div></center>
+            <br>
+
+              
+            <!-- Third input - Mail2-->
+            <p id='3' style='text-shadow: black 0.1em 0.1em 0.2em'>
+                <strong>Confirme ton mail :</strong>
+            </p>
+            <input type='text' id='input_mail2'
               onmouseover="stop('3', '33')" onmouseout="start('3', '33')"
               oninput="myFunction('3')"
               {{form.email2}}<br>
+            <center><div><p id='33'>
+                &nbsp;</p>
+            </div></center>
+            <br>
 
-          <center><div><p id='33'>&nbsp;</p></div></center><br>
+
+            <!-- Fourth input - Password-->      
+            <p id='4' style='text-shadow: black 0.1em 0.1em 0.2em'>
+               <strong>Et ton mot de passe :</strong>
+            </p>
+            <input type='password' id='input_password'
+              onmouseover="stop('4', '44')" onmouseout="start('4', '44')"
+              oninput="myFunction2('4')"
+              {{form.password}}<br>
+            <center><div><p id='44'>
+                &nbsp;</p>
+            </div></center>
+            <br>
 
 
-          
-          <p id='4' style='text-shadow: black 0.1em 0.1em 0.2em'><strong>Et ton mot de passe :</strong></p>
-          
-          <input type='password' style='text-align:center; width:250px; border:1px solid black;'
-            onmouseover="stop('4', '44')" onmouseout="start('4', '44')"
-            oninput="myFunction2('4')"
-            {{form.password}}<br>
+            <!-- fifth input - Submit-->      
+            <input type="submit" id='submit_input'>
+            <br><br><br><br>
             
-          <center><div><p id='44'>&nbsp;</p></div></center><br>
-
-
-
-
-          
-          <input type="submit" style="color:black; border:2px solid black;"/>
-          <br><br><br><br>
-      </form><br><br><br><br></center>
-
-
-
-
-
-      
-    </div>
+    </form><br><br><br><br></center>
+  </div>
 </section>
+
+
+
+{% include "bottom_page2.html" %}
+{% block content2 %}
+{% endblock content2%}
+
+
+
+
+
 
 
 <script>
 
-  function stop(titre, div){
-    document.getElementById(titre)
+//Here we displaying exemple when user get click on an input.
+// ---> Visual function <--- en gros on met une exemple quand le mec appuie
 
+
+function stop(titre, div){
+    
+    document.getElementById(titre)
     if(div == '11'){
       document.getElementById(div).innerHTML = '<i>Par exemple Emma</i>'
     }
@@ -147,18 +198,24 @@
     }
     else if(div == '44'){
       document.getElementById(div).innerHTML = '<i>Nous te conseillons de mettre des chiffres et des majuscules</i>'
-    }
-    
-    
-  }
+    };
+};
 
-  function start(titre, div){
+
+//Here we put an espace when user have finish to enter his info.
+// ---> Visual function <--- on detruit l'exemple
+
+function start(titre, div){
     document.getElementById(div).innerHTML = '&nbsp;';
-  }
+};
 
 
-  function myFunction(titre){
-    console.log(titre)
+//Here we change title color when user get his informations.
+// ---> Visual function <--- en gros on change le titre de couleur selon
+//l'input
+
+function myFunction(titre){
+    
     if(titre == '1'){
       document.getElementById(titre).style.color = 'green';
       }
@@ -167,21 +224,24 @@
     }
     else if(titre == '3'){
       document.getElementById(titre).style.color = 'green';
-    }
+    };
+};
 
-  }
 
-  var c = 0
-  function myFunction2(titre){
+//Function for a bug who is done.
+//We let it in case
+
+var c = 0
+function myFunction2(titre){
     if (c == 0){
       c += 1
-      }
-    else{
-      console.log('laaaaaa')
-      document.getElementById(titre).style.color = 'green';
     }
+    else{
+      document.getElementById(titre).style.color = 'green';
+    };
+ };
 
-  }
+
 </script>
 
 
@@ -190,35 +250,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% include "bottom_page2.html" %}
-{% block content2 %}
-{% endblock content2%}
