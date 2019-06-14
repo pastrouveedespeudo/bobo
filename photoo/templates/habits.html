@@ -1,8 +1,8 @@
 <!DOCTYPE html>
   <html lang="en">
 
+    <!-- We load CDN -->
     <head>
-
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="">
@@ -24,491 +24,450 @@
       <link href="/static/css/creative.min.css" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
       <script type="text/javascript"></script>
-
-      
-      
     </head> 
 
-<body id="page-top">
+
+    <!-- Body Section -->
+    <body id="page-top">
     
+       <!-- Navebarre Section -->
+       {% include "navebarre_ui.html" %}
+       {% block content %}
+       {% endblock %}
 
-{% include "navebarre_ui.html" %}
-{% block content %}
-{% endblock %}
-
-
-
-<style>
-    #1, #2,#3,#4,#5,#6,#7,#8,#9,
-    #10, #11,#22,#33,#44,#55,
-    #66, #77, #88 { width: 0px; height: 0px;}
-    input{
-      border:1px solid black;
-    }
-
-
-
-@media screen and (min-width: 768px) and (max-width:991px) {
-  #shirt_tshirt {
-    margin-left:10%;
-  }
-  #pantaloune {
-    margin-left:-7.5%;
-  }
-}
-
-
-@media screen and (min-width: 0px) and (max-width:767px) {
-
-  #tshirt {
-    
-    margin-right:9%;
-    margin-top:450%;
-  }
-  #pantaloune {
-
-    margin-left:-16%;
-    margin-top:127%;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</style>
-
-
-  <!-- Masthead -->
-  <header class="masthead" background:url("/static/img/parquet1.jpg")>
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10 align-self-end"><br><br><br><br>
-
-          <center>
-            <h1 style='color:black;font-family:"Comic Sans MS, Comic Sans, cursive";'>
-              Essais des habits !
-            </h1>
-          </center>
+    <style>
+        h1{
+            color:black;
+            font-family:"Comic Sans MS, Comic Sans, cursive";
+        }
+        h2{
+            color:black;
+            font-style:justify;
+        }
+        h3{
+            color:black;
+        }
+        #Color_hair{
+            background:url("/static/img/parquet1.jpg");
+            border:3px solid black;
+            border-radius:50px;
+        }
         
-        </div><br>
-        
-        <h2 style='color:black; font-style=justify'>
-          Sans faire la queue nous te proposons d'essayer les meilleurs ensembles selon ta couleur de cheveux 
-        </h2><br><br><br>
-        
-        <div class="col-lg-12 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">
+    </style>
+
+
+
+
+      <!-- Title Section -->
+      <header class="masthead" background:url("/static/img/parquet1.jpg")>
+        <div class="container h-100">
+          <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end"><br><br><br><br>
+              <center><h1>Essais des habits !</h1></center>
+              <h2>
+                  Sans faire la queue nous te proposons d'essayer les meilleurs ensembles selon ta couleur de cheveux 
+              </h2><br><br><br>
+            </div><br>
+            <div class="col-lg-8 align-self-baseline">
+              <p class="text-white-75 font-weight-light mb-5">
+            </div>
+          </div>
         </div>
-        
-      </div>
-    </div>
-  </header>
+      </header>
+
+
+      <!-- Haircut Color Section -->
+      <section class="page-section bg-dark text-white">
+        <div class="container text-center">
+          <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+              <h2 class="text-white mt-0"></h2>
+              <h3>Voici une sélection d'habits
+                  fait par nos experts. Théoriquement ce sont eux qui vont le mieux avec votre coupe de cheveux !
+              </h3><br><br>
+              <div id="Color_hair"><br><br>
+                  <input type='button' id='brune' value='Brune' onclick='coul("brune")'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type='button' id='blonde' value='Blonde' onclick='coul("blonde")'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type='button' id='chatain' value='Chatain' onclick='coul("chatain")'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type='button' id='rousse' value='Rousse' onclick='coul("rousse")'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type='button' id='noire' value='Noire' onclick='coul("noire")'><br><br>
+                  <div id='couleur' style='display:none;'></div>
+                  <div id='info_mode'><br><br></div>
+                  <div id='recherche' style='display:none;' value=''></div>
+                  <div id='profil'></div>
+                  <div id ='ess'></div>
+                 <br><br>
+             </div><br><br>
 
 
 
-
-  <!-- Call to Action Section -->
-  <section class="page-section bg-dark text-white">
-    <div class="container text-center">
-      <div class="row justify-content-center">
-        <div class="col-lg-12 text-center">
-          <h2 class="text-white mt-0"></h2>
-       
-          <h3 style='color:black;'>
-              Voici une sélection d'habits
-              fait par nos experts. Théoriquement ce sont eux qui vont le mieux avec votre coupe de cheveux !
-          </h3><br><br>
-
-          <div style='background:url("/static/img/parquet1.jpg"); border:3px solid black;
-            border-radius:50px;'><br><br>
-          
-          
-          <input type='button' id='brune' value='Brune' onclick='coul("brune")'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type='button' id='blonde' value='Blonde' onclick='coul("blonde")'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type='button' id='chatain' value='Chatain' onclick='coul("chatain")'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type='button' id='rousse' value='Rousse' onclick='coul("rousse")'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type='button' id='noire' value='Noire' onclick='coul("noire")'><br><br>
-          
-          <div id='couleur' style='display:none;'></div>
-          <div id='info_mode'><br><br></div>
-          
-          <div id='recherche' style='display:none;' value=''></div>
-
-          <div id='profil'></div>
-          <div id ='ess'></div>
+            <!-- Clothes, Informations Section -->
+            <div id="clothes_section">
 
 
-        <br><br>
-          
-        </div><br><br>
-
-
-        <div style="width:101%; text-align:center;">
-        
-            <div style='position:absolute;height:100px;width:100px;' id='pantaloune'>
-              <div style='background:url("/static/img/parquet1.jpg"); border:3px solid black;
-                border-radius:50px; width:150px; margin-left:20%;' id='pantalon_div'>
-                  <br>
-                  <input type='button' value='Pantalon'
-                    style=" border:3px solid black; font-family:segoe print;"
-                    onclick='voir_pantalon()'><br><br>
-
-            </div>
-            </div>
-
-
-            <center>
-              <div style='background:url("/static/img/parquet1.jpg"); border:3px solid black;
-                  border-radius:50px; width:500px; height:280px;'>
-                  <br>
-                  <strong><center><p style='font-family:segoe print;'>Nos info habits</p></center></strong>
-                  <div id='infofo' style='text-align:left; padding-left:50px;'>
-                  
-                    <p style='float:right;width:200px;' id='mage'></p>
-                    <p id='name' style='width:200px'></p>
-                    <p id='store' style='width:200px'></p>
-                    <p id='online' style='width:200px'></p>
-                    <p id='price' style='width:200px'></p>
-                    <p id='stock' style='width:200px'></p>
+                <!-- Trousers Section -->
+                <div id='pantaloune'>
+                  <div id='pantalon_div'><br>
+                      <input type='button' value='Pantalon' onclick='voir_pantalon()'><br><br>
                   </div>
-              </div><br>
-              <p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une catégorie d'habit</i></strong></p>
-            </center>
-
-
-            <div id='shirt_tshirt' style='margin-left:82%; margin-top:-350px;width:150px;position:absolute;'>
-            <div style='background:url("/static/img/parquet1.jpg"); border:3px solid black;
-              border-radius:50px;' id='tshirt'>
-                <br>
-                <input type='button' value='t-shirt'
-                  style=" border:3px solid black; font-family:segoe print;"
-                  onclick='voir_shirt()'><br><br>
-              
-            </div>
-            </div>
-          </div>
-
-
-          <div class='container'
-          style='background:url("/static/img/parquet1.jpg"); border:2px solid black;
-          border-radius:50px;'><br>
-              <div class = "row">
-              
-                <div class='col-xs-12 col-md-6 col-lg-3'><br>
-                    <input type='button' value='Ajouter de la longueur?'
-                      style=" border:3px solid black"
-                      onclick='ajout_longueur()'>
                 </div>
-                <div class='col-xs-12 col-md-6 col-lg-3'><br>
-                  <input type='button' value='Ajouter de la largeur?'
-                    style=" border:3px solid black"
-                    onclick='ajout_largeur()'>
-                </div>
-                <div class='col-xs-12 col-md-6 col-lg-3'><br>
-                  <input type='button' value='Enlever de la longueur?'
-                    style=" border:3px solid black;"
-                    onclick='enlever_longueur()'>
-                </div>
-                <div class='col-xs-12 col-md-6 col-lg-3'><br>
-                  <input type='button' value='Enlever de la largeur?'
-                    style=" border:3px solid black;"
-                    onclick='enlever_largeur()'>&nbsp&nbsp
-                </div>
-                
-            </div><br><br>
-          </div>
-          <br><br>
 
 
 
-                 
-          <div class='container' id='habit_bas_blanc'>
-            <div class='row'>
-
-                <div id='1' onclick='nom_image("bb1")'>
-                <img src='/static/img/portfolio/vetement/femme/bas_blanc/1.png' width='200' height ='250' id='bb1'
-                  style='display:none;'>
-                </div>
-                <div id='2' onclick='nom_image("bb2")'>
-                <img src='/static/img/portfolio/vetement/femme/bas_blanc/2.2.png' width='200' height ='300' id='bb2'
-                  style='display:none;'>
-                </div>
-                <div id='3' onclick='nom_image("bb3")'>
-                <img src='/static/img/portfolio/vetement/femme/bas_blanc/3.png'  width='250' height ='300' id='bb3'
-                  style='display:none;'>
-                </div>
-                <div id='4' onclick='nom_image("bb4")'>
-                <img src='/static/img/portfolio/vetement/femme/bas_blanc/4.png'  width='240' height ='300' id='bb4'
-                  style='display:none;'>
-                </div>
-                <div id='5' onclick='nom_image("bb5")'>
-                <img src='/static/img/portfolio/vetement/femme/bas_blanc/5.png'  width='250' height ='300' id='bb5'
-                  style='display:none;'>
-                </div>
-                <div id='6' onclick='nom_image("bb6")'>
-                <img src='/static/img/portfolio/vetement/femme/bas_blanc/6.png'  width='250' height ='250' id='bb6'
-                  style='display:none;'>
-                </div>
-                <div id='7' onclick='nom_image("bb7")'>
-                <img src='/static/img/portfolio/vetement/femme/bas_blanc/7.png'  width='200' height ='300' id='bb7'
-                  style='display:none;'>
-                </div>
-                <div id='8' onclick='nom_image("bb8")'>
-                <img src='/static/img/portfolio/vetement/femme/bas_blanc/8.png'  width='300' height ='250' id='bb8'
-                  style='display:none;'>
-                </div>
-                <div id='9' onclick='nom_image("bb9")'>
-                <img src='/static/img/portfolio/vetement/femme/bas_blanc/9.png'  width='200' height ='250' id='bb9'
-                  style='display:none;'>
-                </div>
-                <div id='10' onclick='nom_image("bb10")'>
-                <img src='/static/img/portfolio/vetement/femme/bas_blanc/10.png'  width='300' height ='250' id='bb10'
-                  style='display:none;'>
-                </div>
-
-            </div>
-          </div>
+                <!-- Informations clothes Section -->
+                <center>
+                  <div id="info_cloths_like_price">
+                      <br>
+                      <strong><center><p id="nos_info_habits">Nos info habits</p></center></strong>
+                      <div id='infofo'>
+                        <p id='mage'></p>
+                        <p id='name'></p>
+                        <p id='store'></p>
+                        <p id='online'></p>
+                        <p id='price'></p>
+                        <p id='stock'></p>
+                      </div>
+                  </div><br>
+                  <p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une catégorie d'habit</i></strong></p>
+                </center>
 
 
-          <div class='container' id='habit_bas_bleu'>
-            <div class='row'>
-
-                <div id='11' onclick='nom_image("bbl1")'>
-                  <img src='/static/img/portfolio/vetement/femme/bas_bleu/1.png' width='150' height='250' id='bbl1'
-                    style='display:none;'>
+                <!-- Tshirt Section -->
+                <div id='shirt_tshirt'>
+                  <div id='tshirt'>
+                     <br>
+                      <input type='button' value='t-shirt' onclick='voir_shirt()'><br><br>
+                 </div>
                 </div>
-                <div id='22' onclick='nom_image("bbl2")'>
-                  <img src='/static/img/portfolio/vetement/femme/bas_bleu/2.png' width='150' height='250' id='bbl2'
-                    style='display:none;'>
-                </div>
-                <div id='33' onclick='nom_image("bbl3")'>
-                  <img src='/static/img/portfolio/vetement/femme/bas_bleu/3.png' width='190' height='250' id='bbl3'
-                    style='display:none;'>
-                </div>
-                <div id='44' onclick='nom_image("bbl4")'>
-                  <img src='/static/img/portfolio/vetement/femme/bas_bleu/4.png' width='190' height='250' id='bbl4'
-                    style='display:none;'>
-                </div>
-                <div id='55'onclick='nom_image("bbl5")'>
-                  <img src='/static/img/portfolio/vetement/femme/bas_bleu/5.png' width='150' height='250' id='bbl5'
-                    style='display:none;'>
-                </div>
-                <div id='66' onclick='nom_image("bbl6")'>
-                  <img src='/static/img/portfolio/vetement/femme/bas_bleu/6.png' width='150' height='250' id='bbl6'
-                    style='display:none;'>
-                </div>
-
-                <div id='77' onclick='nom_image("bbl17")'>
-                  <img src='/static/img/portfolio/vetement/femme/bas_bleu/7.png' width='150' height='250' id='bbl17'
-                    style='display:none;'>
-                </div>
-                <div id='88' onclick='nom_image("bbl8")'>
-                  <img src='/static/img/portfolio/vetement/femme/bas_bleu/8.png' width='150' height='250' id='bbl8'
-                    style='display:none;'>
-                </div>
-                <div id='1010' onclick='nom_image("bbl10")'>
-                  <img src='/static/img/portfolio/vetement/femme/bas_bleu/10.png' width='150' height='250' id='bbl10'
-                  style='display:none;'>
-                </div>
-                <div id='1111' onclick='nom_image("bbl11")'>
-                  <img src='/static/img/portfolio/vetement/femme/bas_bleu/11.png' width='150' height='250' id='bbl11'
-                    style='display:none;'>
-                </div>
-                <div id='1212' onclick='nom_image("bbl12")'>
-                  <img src='/static/img/portfolio/vetement/femme/bas_bleu/12.png' width='150' height='250' id='bbl12'
-                    style='display:none;'>
-                </div>
-
-            </div>
-          </div>
-
-          
-          <div class='container' id='habit_haut_blanc'>
-              <div class='row'>
-          
-              <div id='111' onclick='nom_image("hb1")'>
-              <img src='/static/img/portfolio/vetement/femme/haut_blanc/1.png' width='150' height='200' id='hb1'
-                style='display:none;'>
-              </div>
-              <div id='222' onclick='nom_image("hb2")'> 
-              <img src='/static/img/portfolio/vetement/femme/haut_blanc/2.png' width='150' height='200' id='hb2'
-                style='display:none;'>
-              </div>
-              <div id='333' onclick='nom_image("hb3")'>
-              <img src='/static/img/portfolio/vetement/femme/haut_blanc/3.png' width='150' height='200' id='hb3'
-                style='display:none;'>
-              </div>
-              <div id='444' onclick='nom_image("hb4")'>
-              <img src='/static/img/portfolio/vetement/femme/haut_blanc/4.png' width='150' height='200' id='hb4'
-                style='display:none;'>
-              </div>
-              <div id='555' onclick='nom_image("hb5")'>
-              <img src='/static/img/portfolio/vetement/femme/haut_blanc/5.png' width='150' height='200' id='hb5'
-                style='display:none;'>
-              </div>
-              <div id='666' onclick='nom_image("hb7")'>
-              <img src='/static/img/portfolio/vetement/femme/haut_blanc/6.png' width='150' height='200' id='hb7'
-                style='display:none;'>
-              </div>
-              <div id='777' onclick='nom_image("hb8")'>
-              <img src='/static/img/portfolio/vetement/femme/haut_blanc/7.png' width='150' height='200' id='hb8'
-                style='display:none;'>
-              </div>
-              <div id='999' onclick='nom_image("hb9")'>
-              <img src='/static/img/portfolio/vetement/femme/haut_blanc/9.png' width='150' height='200' id='hb9'
-                style='display:none;'>
-              </div>
-              <div id='101010' onclick='nom_image("hb10")'>
-              <img src='/static/img/portfolio/vetement/femme/haut_blanc/10.png' width='150' height='200' id='hb10'
-                style='display:none;'>
               </div>
 
-            </div>
-          </div>
 
-
-          <div class='container' id='habit_haut_gris'>
-              <div class='row'>
-                
-                <div id='1111' onclick='nom_image("hg1")'>
-                  <img src='/static/img/portfolio/vetement/femme/haut_gris/1.png' width='150' height='200' id='hg1'
-                    style='display:none;'>
-                </div>
-                <div id='2222' onclick='nom_image("hg2")'>
-                  <img src='/static/img/portfolio/vetement/femme/haut_gris/2.png' width='150' height='200' id='hg2'
-                    style='display:none;'>
-                </div>
-                <div id='3333' onclick='nom_image("hg3")'>
-                  <img src='/static/img/portfolio/vetement/femme/haut_gris/3.png' width='150' height='200' id='hg3'
-                    style='display:none;'>
-                </div>
-                <div id='4444' onclick='nom_image("hg4")'>
-                  <img src='/static/img/portfolio/vetement/femme/haut_gris/4.png' width='150' height='200' id='hg4'
-                  style='display:none;'>
-                </div>
-                <div id='5555' onclick='nom_image("hg5")'>
-                  <img src='/static/img/portfolio/vetement/femme/haut_gris/5.png' width='150' height='200' id='hg5'
-                  style='display:none;'>
-                </div>
-                <div id='6666' onclick='nom_image("hg6")'>
-                  <img src='/static/img/portfolio/vetement/femme/haut_gris/6.png' width='150' height='200' id='hg6'
-                    style='display:none;'>
-                </div>
-                <div id='7777' onclick='nom_image("hg7")'>
-                  <img src='/static/img/portfolio/vetement/femme/haut_gris/7.png' width='150' height='200' id='hg7'
-                  style='display:none;'>
-                </div>
-                <div id='8888' onclick='nom_image("hg8")'>
-                  <img src='/static/img/portfolio/vetement/femme/haut_gris/8.png' width='150' height='200' id='hg8'
-                    style='display:none;'>
-                </div>
-                <div id='9999' onclick='nom_image("hg9")'>
-                  <img src='/static/img/portfolio/vetement/femme/haut_gris/9.png' width='150' height='200' id='hg9'
-                    style='display:none;'>
-                </div>
-                <div id='10101010' onclick='nom_image("hg10")'>
-                  <img src='/static/img/portfolio/vetement/femme/haut_gris/10.png' width='150' height='200' id='hg10'
-                    style='display:none;'>
-                </div>
-
-            </div>
-          </div>
-              
+              <!-- Input size clothes Section -->
+              <div class='container' id="info_div_container"><br>
+                  <div class = "row">
                   
-          <div id='image'></div>
-                  
-          <style>#draggable{width:0px; height:0px;}</style>
-          <div id="1"><div>
-          <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-                  
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-  <div style='background:url("/static/img/parquet1.jpg")'>
-      <br><br><br><br><br><br><br><br>
-  </div>
-
-
-
-
-
-  <!-- Call to Action Section -->
-  <section class="page-section bg-dark text-white">
-    <div class="container text-center">
-      <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
-
-
-                 
-      <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
-      <a href='https//:www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
-                     
-      <style>#im11{width:100px; height:100px;margin-left:100px;}</style>
-      <a href='https//:www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
-      
-      <style>#im12{width:200px; height:200px;margin-left:100px;}</style>
-      <a href='https//:www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>
+                    <div class='col-xs-12 col-md-6 col-lg-3'><br>
+                        <input type='button' value='Ajouter de la longueur?' id="add1"
+                          onclick='ajout_longueur()'>
+                    </div>
+                    <div class='col-xs-12 col-md-6 col-lg-3'><br>
+                      <input type='button' value='Ajouter de la largeur?' id="add2"
+                        onclick='ajout_largeur()'>
+                    </div>
+                    <div class='col-xs-12 col-md-6 col-lg-3'><br> 
+                      <input type='button' value='Enlever de la longueur?' id="no_add1""
+                        onclick='enlever_longueur()'>
+                    </div>
+                    <div class='col-xs-12 col-md-6 col-lg-3'><br>
+                      <input type='button' value='Enlever de la largeur?' id="no_add2""
+                        onclick='enlever_largeur()'>&nbsp&nbsp
+                    </div>
                     
-    </div>
-  </section>
+                </div><br><br>
+              </div>
+              <br><br>
 
 
+              <!-- Clothes Jean White Section -->
+              <div class='container' id='habit_bas_blanc'>
+                <div class='row'>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="/static/vendor/jquery/jquery.min.js"></script>
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <div id='1' onclick='nom_image("bb1")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/1.png' width='200' height ='250' id='bb1'
+                      style='display:none;'>
+                    </div>
+                    <div id='2' onclick='nom_image("bb2")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/2.2.png' width='200' height ='300' id='bb2'
+                      style='display:none;'>
+                    </div>
+                    <div id='3' onclick='nom_image("bb3")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/3.png'  width='250' height ='300' id='bb3'
+                      style='display:none;'>
+                    </div>
+                    <div id='4' onclick='nom_image("bb4")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/4.png'  width='240' height ='300' id='bb4'
+                      style='display:none;'>
+                    </div>
+                    <div id='5' onclick='nom_image("bb5")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/5.png'  width='250' height ='300' id='bb5'
+                      style='display:none;'>
+                    </div>
+                    <div id='6' onclick='nom_image("bb6")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/6.png'  width='250' height ='250' id='bb6'
+                      style='display:none;'>
+                    </div>
+                    <div id='7' onclick='nom_image("bb7")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/7.png'  width='200' height ='300' id='bb7'
+                      style='display:none;'>
+                    </div>
+                    <div id='8' onclick='nom_image("bb8")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/8.png'  width='300' height ='250' id='bb8'
+                      style='display:none;'>
+                    </div>
+                    <div id='9' onclick='nom_image("bb9")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/9.png'  width='200' height ='250' id='bb9'
+                      style='display:none;'>
+                    </div>
+                    <div id='10' onclick='nom_image("bb10")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/10.png'  width='300' height ='250' id='bb10'
+                      style='display:none;'>
+                    </div>
 
-  <!-- Plugin JavaScript -->
-  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="/static/js/creative.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+                </div>
+              </div>
 
 
+              <!-- Clothes Jean Blue Section -->
+              <div class='container' id='habit_bas_bleu'>
+                <div class='row'>
+
+                    <div id='11' onclick='nom_image("bbl1")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/1.png' width='150' height='250' id='bbl1'
+                        style='display:none;'>
+                    </div>
+                    <div id='22' onclick='nom_image("bbl2")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/2.png' width='150' height='250' id='bbl2'
+                        style='display:none;'>
+                    </div>
+                    <div id='33' onclick='nom_image("bbl3")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/3.png' width='190' height='250' id='bbl3'
+                        style='display:none;'>
+                    </div>
+                    <div id='44' onclick='nom_image("bbl4")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/4.png' width='190' height='250' id='bbl4'
+                        style='display:none;'>
+                    </div>
+                    <div id='55'onclick='nom_image("bbl5")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/5.png' width='150' height='250' id='bbl5'
+                        style='display:none;'>
+                    </div>
+                    <div id='66' onclick='nom_image("bbl6")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/6.png' width='150' height='250' id='bbl6'
+                        style='display:none;'>
+                    </div>
+
+                    <div id='77' onclick='nom_image("bbl17")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/7.png' width='150' height='250' id='bbl17'
+                        style='display:none;'>
+                    </div>
+                    <div id='88' onclick='nom_image("bbl8")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/8.png' width='150' height='250' id='bbl8'
+                        style='display:none;'>
+                    </div>
+                    <div id='1010' onclick='nom_image("bbl10")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/10.png' width='150' height='250' id='bbl10'
+                      style='display:none;'>
+                    </div>
+                    <div id='1111' onclick='nom_image("bbl11")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/11.png' width='150' height='250' id='bbl11'
+                        style='display:none;'>
+                    </div>
+                    <div id='1212' onclick='nom_image("bbl12")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/12.png' width='150' height='250' id='bbl12'
+                        style='display:none;'>
+                    </div>
+
+                </div>
+              </div>
+
+              <!-- Clothes Tshirt White Section -->
+              <div class='container' id='habit_haut_blanc'>
+                  <div class='row'>
+              
+                  <div id='111' onclick='nom_image("hb1")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/1.png' width='150' height='200' id='hb1'
+                    style='display:none;'>
+                  </div>
+                  <div id='222' onclick='nom_image("hb2")'> 
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/2.png' width='150' height='200' id='hb2'
+                    style='display:none;'>
+                  </div>
+                  <div id='333' onclick='nom_image("hb3")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/3.png' width='150' height='200' id='hb3'
+                    style='display:none;'>
+                  </div>
+                  <div id='444' onclick='nom_image("hb4")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/4.png' width='150' height='200' id='hb4'
+                    style='display:none;'>
+                  </div>
+                  <div id='555' onclick='nom_image("hb5")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/5.png' width='150' height='200' id='hb5'
+                    style='display:none;'>
+                  </div>
+                  <div id='666' onclick='nom_image("hb7")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/6.png' width='150' height='200' id='hb7'
+                    style='display:none;'>
+                  </div>
+                  <div id='777' onclick='nom_image("hb8")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/7.png' width='150' height='200' id='hb8'
+                    style='display:none;'>
+                  </div>
+                  <div id='999' onclick='nom_image("hb9")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/9.png' width='150' height='200' id='hb9'
+                    style='display:none;'>
+                  </div>
+                  <div id='101010' onclick='nom_image("hb10")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/10.png' width='150' height='200' id='hb10'
+                    style='display:none;'>
+                  </div>
+
+                </div>
+              </div>
 
 
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="mt-0">Let's Get In Touch!</h2>
-          <hr class="divider my-4">
-          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+              <!-- Clothes Tshirt Blue Section -->
+              <div class='container' id='habit_haut_gris'>
+                  <div class='row'>
+                    
+                    <div id='1111' onclick='nom_image("hg1")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/1.png' width='150' height='200' id='hg1'
+                        style='display:none;'>
+                    </div>
+                    <div id='2222' onclick='nom_image("hg2")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/2.png' width='150' height='200' id='hg2'
+                        style='display:none;'>
+                    </div>
+                    <div id='3333' onclick='nom_image("hg3")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/3.png' width='150' height='200' id='hg3'
+                        style='display:none;'>
+                    </div>
+                    <div id='4444' onclick='nom_image("hg4")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/4.png' width='150' height='200' id='hg4'
+                      style='display:none;'>
+                    </div>
+                    <div id='5555' onclick='nom_image("hg5")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/5.png' width='150' height='200' id='hg5'
+                      style='display:none;'>
+                    </div>
+                    <div id='6666' onclick='nom_image("hg6")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/6.png' width='150' height='200' id='hg6'
+                        style='display:none;'>
+                    </div>
+                    <div id='7777' onclick='nom_image("hg7")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/7.png' width='150' height='200' id='hg7'
+                      style='display:none;'>
+                    </div>
+                    <div id='8888' onclick='nom_image("hg8")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/8.png' width='150' height='200' id='hg8'
+                        style='display:none;'>
+                    </div>
+                    <div id='9999' onclick='nom_image("hg9")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/9.png' width='150' height='200' id='hg9'
+                        style='display:none;'>
+                    </div>
+                    <div id='10101010' onclick='nom_image("hg10")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/10.png' width='150' height='200' id='hg10'
+                        style='display:none;'>
+                    </div>
+
+                </div>
+              </div>
+                  
+                      
+              <div id='image'></div>
+                      
+              <style>#draggable{width:0px; height:0px;}</style>
+              <div id="1"><div>
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                      
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-4 ml-auto text-center">
-          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div>+1 (202) 555-0149</div>
-        </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-          <!-- Make sure to change the email address in anchor text AND the link below! -->
-          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
-        </div>
+    </section>
+
+
+
+      <!-- Separate Section for visual aspect-->
+      <div style='background:url("/static/img/parquet1.jpg")'>
+          <br><br><br><br><br><br><br><br>
       </div>
-    </div>
-  </section>
+
+
+
+
+      <!-- Call to Action Section -->
+      <section class="page-section bg-dark text-white">
+        <div class="container text-center">
+          <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
+
+
+                     
+          <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
+          <a href='https//:www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
+                         
+          <style>#im11{width:100px; height:100px;margin-left:100px;}</style>
+          <a href='https//:www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
+          
+          <style>#im12{width:200px; height:200px;margin-left:100px;}</style>
+          <a href='https//:www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>
+                        
+        </div>
+      </section>
+
+
+
+      <!-- Bootstrap core JavaScript -->
+      <script src="/static/vendor/jquery/jquery.min.js"></script>
+      <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+      <!-- Plugin JavaScript -->
+      <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+      <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+      <!-- Custom scripts for this template -->
+      <script src="/static/js/creative.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+
+      <!-- Contact Section -->
+      <section class="page-section" id="contact">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <h2 class="mt-0">Let's Get In Touch!</h2>
+              <hr class="divider my-4">
+              <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 ml-auto text-center">
+              <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+              <div>+1 (202) 555-0149</div>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+              <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+              <!-- Make sure to change the email address in anchor text AND the link below! -->
+              <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script>
@@ -1265,10 +1224,128 @@ liste_info_prix = [['bb1' ,'xxx', '<a href="" style="color:white;">www.xxx.fr</a
 </html>
 
 
+<style>
+    #1, #2,#3,#4,#5,#6,#7,#8,#9,
+    #10, #11,#22,#33,#44,#55,
+    #66, #77, #88 { width: 0px; height: 0px;}
+    input{
+      border:1px solid black;
+    }
+
+
+
+@media screen and (min-width: 768px) and (max-width:991px) {
+  #shirt_tshirt {
+    margin-left:10%;
+  }
+  #pantaloune {
+    margin-left:-7.5%;
+  }
+}
+
+
+@media screen and (min-width: 0px) and (max-width:767px) {
+
+  #tshirt {
+    
+    margin-right:9%;
+    margin-top:450%;
+  }
+  #pantaloune {
+
+    margin-left:-16%;
+    margin-top:127%;
+  }
+}
 
 
 
 
+</style>
 
+
+
+
+            <style>
+                #clothes_section{
+                    width:101%;
+                    text-align:center;
+                }
+                #pantaloune{
+                    position:absolute;
+                    height:100px;
+                    width:100px;
+                }
+                #pantalon_div{
+                    background:url("/static/img/parquet1.jpg");
+                    border:3px solid black;
+                    border-radius:50px;
+                    width:150px;
+                    margin-left:20%;
+                }
+                #Pantalon{
+                    border:3px solid black;
+                    font-family:segoe print;
+                }
+                #info_cloths_like_price{
+                    background:url("/static/img/parquet1.jpg");
+                    border:3px solid black;
+                    border-radius:50px;
+                    width:500px;
+                    height:280px;'
+                }
+                #nos_info_habits{
+                    font-family:segoe print;
+                }
+
+                #mage{
+                    float:right;
+                    width:200px;
+                }
+                #name{
+                    width:200px;
+                }
+                #store{
+                    width:200px;
+                }
+                #price,
+                #stock,
+                #online{
+                    width:200px;
+                }
+                #infofo{
+                    text-align:left;
+                    padding-left:50px;
+                }
+                
+            </style>
+
+                <style>
+                    #shirt_tshirt{
+                        margin-left:82%;
+                        margin-top:-350px;
+                        width:150px;
+                        position:absolute;
+                    }
+                    #tshirt{
+                        background:url("/static/img/parquet1.jpg");
+                        border:3px solid black;
+                        border-radius:50px;
+                        font-family:segoe print;
+                    }
+
+                    #info_div_container{
+                        background:url("/static/img/parquet1.jpg");
+                        border:2px solid black;
+                        border-radius:50px;
+                    }
+                    
+                    #add1,
+                    #add2,
+                    #no_add1,
+                    #no_add2{
+                        border:3px solid black;
+                    }
+                </style>
 
  
