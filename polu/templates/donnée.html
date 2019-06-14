@@ -3,22 +3,17 @@
 {% endblock %}
 
 
-
-  <!-- Masthead -->
+  <!-- Title Section -->
   <header class="masthead">
     <div class="container h-100">
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
-          <center><h1 style='color:black;font-family:"Comic Sans MS, Comic Sans, cursive";'>Nos données sur la pollution !</h1></center><br>
+          <center><h1>Nos données sur la pollution !</h1></center><br>
           <br>
-          <center><h2 style='color:black; font-style=justufy'>Suis la pollution en temps réel</h2></center>
-          
+          <center><h2>Suis la pollution en temps réel</h2></center>
         </div>
         <div class="col-lg-8 align-self-baseline">
           <p class="text-white-75 font-weight-light mb-5"></p>
-          
-  
-          
         </div>
       </div>
     </div>
@@ -26,152 +21,141 @@
 
 
 
-  <style>
-    input{border:2px solid black;}
-  </style>
-
-
-
-  <!-- About Section -->
+  <!-- Data Section -->
   <section class="page-section bg-dark text-white">
 
-    <p style='margin-left:50px;color:black;'>
+    <p id="info_aqi">
       <i>*AQI signifie indice de qualité de l'air<br> par la mesure de l'O3, le SO2, le NO2 et PM10.</i>
     </p><br>
-    
-    <p style='margin-left:50px;color:black;'><i>*le cours du dollard et le taux de vente du diesel<br>
+    <p id="info_dollard"><i>*le cours du dollard et le taux de vente du diesel<br>
       représentent le taux de présence des voitures diesel en circulation</i>
     </p><br>
-
-    <p style='margin-left:50px;color:black;'><i>*Population active de 16-59 ans</i>
+    <p id="info_pop"><i>*Population active de 16-59 ans</i>
     </p><br>
 
-    
-  
-    <div class="container">
 
+    <!-- Data Section City-->
+    <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
-          
-        
         <div class="row">
-          
-          <div class="col-lg-3 col-sm-5 col-md-5" style='background:url("/static/img/parquet1.jpg");
-              margin:auto; height:350px; border:2px solid black;border-radius:80px;'><br>
-            
+
+          <!-- Input Section Lyon-->
+          <div class="col-lg-3 col-sm-5 col-md-5" id="Lyon"><br>
             <h5>Taux de pollution de particules fines à<br>Lyon</h5><br><br>
             <center><strong><h5 id='lyon_pol'>{{lyon}}</h5>AQI</strong></center><br><br>
             <center><input type='button' value='Voir les données' onclick='donnée_lyon()'></center><br>
           </div>
 
-          <div class="col-lg-3 col-sm-5 col-md-5" style='background:url("/static/img/parquet1.jpg");
-              margin:auto; height:350px;border:2px solid black;border-radius:80px;'><br>
-                                      
+          <!-- Input Section Paris-->
+          <div class="col-lg-3 col-sm-5 col-md-5" id="Paris"><br>                   
               <h5>Taux de pollution de particules fines à<br>Paris</h5><br><br>
               <center><strong><h5 id='paris_pol'>{{paris}}</h5>AQI</strong></center><br><br>
               <center><input type='button' value='Voir les données' onclick='donnée_paris()'></center><br>
           </div>
 
-          <div class="col-lg-3 col-sm-5 col-md-5" style='background:url("/static/img/parquet1.jpg");
-              margin:auto; height:350px;border:2px solid black;border-radius:80px;'><br>
+
+          <!-- Input Section Marseille-->
+          <div class="col-lg-3 col-sm-5 col-md-5" id="Marseille"><br>
               
               <h5>Taux de pollution de particules fines à Marseille</h5><br><br>
               <center><strong><h5 id='marseille_pol'>{{marseille}}</h5>AQI</strong></center><br><br>
               <center><input type='button' value='Voir les données' onclick='donnée_marseille()'></center> 
           </div>
 
-      </div><br><br>
+       </div><br><br>
 
 
-
-
+      <!-- Input Section Lyon Number 1 -->
        <div id='info1' style='display:none;'>
-       
         <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
           <div class="row">
-          
             <div class="col-sm">
               <span style='color:black;'>Météo</span><br>{{météo_lyon}}<br>
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Vent</span><br>{{vent_lyon}} m/s<br>
+              <span>Vent</span><br>{{vent_lyon}} m/s<br>
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Température</span><br>{{température_lyon}} degrès<br>
+              <span>Température</span><br>{{température_lyon}} degrès<br>
             </div>
             <div class="col-sm">
-             <span style='color:black;'>Pression</span><br>{{pression_lyon}} hpa<br>
+             <span>Pression</span><br>{{pression_lyon}} hpa<br>
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Saison</span><br>{{saison_actuelle}}<br>
+              <span>Saison</span><br>{{saison_actuelle}}<br>
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Départ routier</span><br>{{départ_routier_lyon}}<br>
+              <span>Départ routier</span><br>{{départ_routier_lyon}}<br>
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Non départ</span><br>{{regulier_jour_lyon}}<br>
+              <span>Non départ</span><br>{{regulier_jour_lyon}}<br>
             </div>
-            
           </div>
         </div><br><br>
 
-         <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+
+        <!-- Input Section Lyon Number 2 -->
+        <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
           <div class="row">
           
             <div class="col-sm">
-              <span style='color:black;'>Heure pointe</span><br>{{non_pointe_lyon}}
+              <span>Heure pointe</span><br>{{non_pointe_lyon}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Jour Weekend</span><br>{{weekend}}
+              <span>Jour Weekend</span><br>{{weekend}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Jour de semaine</span><br>{{jour_semaine}}
+              <span>Jour de semaine</span><br>{{jour_semaine}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Bouchons Lyon</span><br>{{bouchons_lyon}}
+              <span >Bouchons Lyon</span><br>{{bouchons_lyon}}
             </div>
             <div class="col-sm">
-             <span style='color:black;'>Rang pollution</span><br>{{classement_lyon}} / 20
+             <span>Rang pollution</span><br>{{classement_lyon}} / 20
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Site industrielle</span><br>{{pole_lyon}}
+              <span>Site industrielle</span><br>{{pole_lyon}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Pop. active</span><br>{{socio_lyon}} pers.
+              <span>Pop. active</span><br>{{socio_lyon}} pers.
             </div>
-
           </div>
         </div><br><br>
 
+
+      <!-- Input Section Lyon Number 3 -->
        <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
           <div class="row">
           
             <div class="col-sm">
-              <span style='color:black;'>Erruption volicanique</span><br>{{eruption}}<br> 
+              <span>Erruption volicanique</span><br>{{eruption}}<br> 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Vente du diesel Lyon</span><br>{{diesel}}<br>
+              <span>Vente du diesel Lyon</span><br>{{diesel}}<br>
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Incendie à Lyon</span><br>{{incendie_lyon}}<br>
+              <span>Incendie à Lyon</span><br>{{incendie_lyon}}<br>
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Période d'angrais</span><br>{{angrais}}<br> 
+              <span>Période d'angrais</span><br>{{angrais}}<br> 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Moment journée</span><br>{{periode}}<br> 
+              <span>Moment journée</span><br>{{periode}}<br> 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Taux de polenne</span><br>{{po_lyon}}<br> 
+              <span>Taux de polenne</span><br>{{po_lyon}}<br> 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Le cours dollard</span><br>{{dollard}}<br>
+              <span>Le cours dollard</span><br>{{dollard}}<br>
             </div>
           </div>
         </div><br><br>
-        
-          <br><br>
-          <input type='button' value='fermer' onclick='fermer()'>
+
+
+        <!-- Input Section Lyon Number 4 -->
+         <br><br>
+         <input type='button' value='fermer' onclick='fermer()'>
 
         
           <br><br><br><br>
@@ -198,95 +182,97 @@
 
       </div>
 
-         <div id='info2' style='display:none;'>
-       
+        <!-- Input Section Paris Number 1 -->
+        <div id='info2' style='display:none;'>
         <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
           <div class="row">
-          
             <div class="col-sm">
-              <span style='color:black;'>Météo</span><br>{{météo_paris}}<br>
+              <span>Météo</span><br>{{météo_paris}}<br>
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Vent</span><br>{{vent_paris}} m/s<br>
+              <span>Vent</span><br>{{vent_paris}} m/s<br>
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Température</span><br>{{température_paris}} degrès
+              <span>Température</span><br>{{température_paris}} degrès
             </div>
             <div class="col-sm">
-             <span style='color:black;'>Pression</span><br>{{pression_paris}} hpa
+             <span>Pression</span><br>{{pression_paris}} hpa
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Saison</span><br>{{saison_actuelle}}
+              <span>Saison</span><br>{{saison_actuelle}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Départ routier</span><br>{{départ_routier_paris}}
+              <span>Départ routier</span><br>{{départ_routier_paris}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Non départ</span><br>{{regulier_jour_paris}}
+              <span>Non départ</span><br>{{regulier_jour_paris}}
             </div>
-            
           </div>
         </div><br><br>
 
+
+
+         <!-- Input Section Paris Number 2 -->
          <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
           <div class="row">
-          
             <div class="col-sm">
-              <span style='color:black;'>Heure pointe</span><br>{{non_pointe_paris}}
+              <span>Heure pointe</span><br>{{non_pointe_paris}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Jour Weekend</span><br>{{weekend}}
+              <span>Jour Weekend</span><br>{{weekend}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Jour de Semaine</span><br>{{jour_semaine}}
+              <span>Jour de Semaine</span><br>{{jour_semaine}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Bouchons Paris</span><br>{{bouchons_paris}}
+              <span>Bouchons Paris</span><br>{{bouchons_paris}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Site industrielle</span><br>{{pole_paris}}
+              <span>Site industrielle</span><br>{{pole_paris}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Pop. active</span><br>{{socio_paris}} personnes
+              <span>Pop. active</span><br>{{socio_paris}} personnes
             </div>
             <div class="col-sm">
-             <span style='color:black;'>Rang pollution</span><br>{{classement_paris}} / 20
+             <span>Rang pollution</span><br>{{classement_paris}} / 20
             </div>
           </div>
         </div><br><br>
 
+
+
+      <!-- Input Section Paris Number 3 -->
        <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
           <div class="row">
-
-
             <div class="col-sm">
-              <span style='color:black;'>Erruption volicanique</span><br>{{eruption}} 
+              <span>Erruption volicanique</span><br>{{eruption}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Vente du diesel Paris</span><br>{{diesel}} 
+              <span>Vente du diesel Paris</span><br>{{diesel}} 
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Incendie à Paris</span><br>{{incendie_paris}}
+              <span>Incendie à Paris</span><br>{{incendie_paris}}
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Période d'angrais</span><br>{{angrais}} 
+              <span>Période d'angrais</span><br>{{angrais}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Le jour ou la nuit</span><br>{{periode}} 
+              <span>Le jour ou la nuit</span><br>{{periode}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Taux de polenne</span><br>{{po_paris}} 
+              <span>Taux de polenne</span><br>{{po_paris}} 
             </div>
              <div class="col-sm">
-              <span style='color:black;'>Le cours dollard</span><br>{{dollard}} 
+              <span>Le cours dollard</span><br>{{dollard}} 
             </div>
           </div>
         </div><br><br>
 
-          <br><br>
-          <input type='button' value='fermer' onclick='fermer()'>
 
         
+        <!-- Input Section Paris Number 4 -->
+        <br><br>
+        <input type='button' value='fermer' onclick='fermer()'>
           <br><br><br><br>
           <div style='float:left;'><i>Donnée fournis par openweathermap :
           <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
@@ -308,102 +294,102 @@
           <div style='float:left;'><i>Bouchons à Paris : </i>
           <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
             style='color:black;'><i>moncoyote</a></i></div><br>
-
       </div>
 
 
 
-
-
-      
+      <!-- Input Section Marseille Number 1 -->
       <div id='info3' style='display:none;'>
-       
         <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
           <div class="row">
-          
             <div class="col-sm">
-              <span style='color:black;'>Météo</span><br>{{météo_marseille}}
+              <span>Météo</span><br>{{météo_marseille}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Vent</span><br>{{vent_marseille}} m/s
+              <span>Vent</span><br>{{vent_marseille}} m/s
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Température</span><br>{{température_marseille}} degrès
+              <span>Température</span><br>{{température_marseille}} degrès
             </div>
             <div class="col-sm">
-             <span style='color:black;'>Pression</span><br>{{pression_marseille}} hpa
+             <span>Pression</span><br>{{pression_marseille}} hpa
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Saison</span><br>{{saison_actuelle}}
+              <span>Saison</span><br>{{saison_actuelle}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Départ routier </span><br>{{départ_routier_lyon}}
+              <span>Départ routier </span><br>{{départ_routier_lyon}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Non départ</span><br>{{regulier_jour_marseille}}
+              <span>Non départ</span><br>{{regulier_jour_marseille}}
             </div>
-            
           </div>
         </div><br><br>
 
+
+
+        <!-- Input Section Marseille Number 2 -->
          <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
           <div class="row">
-          
             <div class="col-sm">
-              <span style='color:black;'>Heure pointe</span><br>{{non_pointe_marseille}}
+              <span>Heure pointe</span><br>{{non_pointe_marseille}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Jour Weekend</span><br>{{weekend}}
+              <span>Jour Weekend</span><br>{{weekend}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Jour de semaine</span><br>{{jour_semaine}}
+              <span>Jour de semaine</span><br>{{jour_semaine}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Bouchons Marseille</span><br>moyen
+              <span>Bouchons Marseille</span><br>moyen
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Site industrielle</span><br>{{pole_marseille}}
+              <span>Site industrielle</span><br>{{pole_marseille}}
             </div>
             <div class="col-sm">
-              <span style='color:black;'>Pop. active</span><br>{{socio_marseille}} personnes
+              <span>Pop. active</span><br>{{socio_marseille}} personnes
             </div>
             <div class="col-sm">
-             <span style='color:black;'>Rang pollution</span><br>{{classement_marseille}} / 20
+             <span>Rang pollution</span><br>{{classement_marseille}} / 20
             </div>
           </div>
         </div><br><br>
 
-       <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
-          <div class="row">
-    
-            <div class="col-sm">
-              <span style='color:black;'>Erruption volicanique</span><br>{{eruption}} 
+
+
+        <!-- Input Section Marseille Number 3 -->
+        <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+            <div class="row">
+              <div class="col-sm">
+                <span>Erruption volicanique</span><br>{{eruption}} 
+              </div>
+               <div class="col-sm">
+                <span>Vente diesel Marseille</span><br>{{diesel}} 
+              </div>
+              <div class="col-sm">
+                <span>Incendie à Marseille</span><br>{{incendie_marseille}} 
+              </div>
+               <div class="col-sm">
+                <span>Période d'angrais</span><br>{{angrais}} 
+              </div>
+               <div class="col-sm">
+                <span>Moment journée</span><br>{{periode}} 
+              </div>
+               <div class="col-sm">
+                <span>Taux de polenne</span><br>{{po_marseille}} 
+              </div>
+               <div class="col-sm">
+                <span>Le cours dollard</span><br>{{dollard}} 
+              </div>
             </div>
-             <div class="col-sm">
-              <span style='color:black;'>Vente diesel Marseille</span><br>{{diesel}} 
-            </div>
-            <div class="col-sm">
-              <span style='color:black;'>Incendie à Marseille</span><br>{{incendie_marseille}} 
-            </div>
-             <div class="col-sm">
-              <span style='color:black;'>Période d'angrais</span><br>{{angrais}} 
-            </div>
-             <div class="col-sm">
-              <span style='color:black;'>Moment journée</span><br>{{periode}} 
-            </div>
-             <div class="col-sm">
-              <span style='color:black;'>Taux de polenne</span><br>{{po_marseille}} 
-            </div>
-             <div class="col-sm">
-              <span style='color:black;'>Le cours dollard</span><br>{{dollard}} 
-            </div>
-          </div>
-        </div><br><br>
-        
+          </div><br><br>
+
+
+
+          <!-- Input Section Marseille Number 4 -->
           <br><br>
           <input type='button' value='fermer' onclick='fermer()'>
 
-        
           <br><br><br><br>
           <div style='float:left;'><i>Donnée fournis par openweathermap :
           <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
@@ -430,120 +416,30 @@
       
 
 
-
+      <!-- Airplum Section -->
       <br><br><br><br><br><br>
       <div style='float:left;'><i>Données issuent de <a href='http://www.airlab.solutions/fr'
           style='color:black;'>plumairlab
           </a></i> 
       </div>
 
-        
     </div>
   </section>
 
 
+  <!-- Separate Section for visual aspect -->
+  <div id="separate"><br><br>
 
 
-
-  <script>
-    var a = document.getElementById('lyon_pol').innerHTML;
-    var b = document.getElementById('marseille_pol').innerHTML;
-    var c = document.getElementById('paris_pol').innerHTML;
-
-    function coul_pol(variable, id){
-      if(variable <= 20){
-        document.getElementById(id).style.color='green';
-      }
-      else if (variable > 20 && variable <= 50){
-        document.getElementById(id).style.color='orange';
-      }
-      else if (variable > 50){
-        document.getElementById(id).style.color='red';
-      }
-
-    }
-
-    coul_pol(a, 'lyon_pol');
-    coul_pol(b, 'marseille_pol');
-    coul_pol(c, 'paris_pol');
-
-
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script>
-
-    function fermer(){
-      document.getElementById('info2').style.display = 'none';
-      document.getElementById('info3').style.display = 'none';
-      document.getElementById('info1').style.display = 'none';
-      };
-  
-    function donnée_lyon(){
-      document.getElementById('info2').style.display = 'none';
-      document.getElementById('info3').style.display = 'none';
-      document.getElementById('info1').style.display = 'block';
-      };     
-
-    function donnée_paris(){
-      document.getElementById('info1').style.display = 'none';
-      document.getElementById('info3').style.display = 'none';
-      document.getElementById('info2').style.display = 'block';
-     };
-
-    function donnée_marseille(){
-      document.getElementById('info1').style.display = 'none';
-      document.getElementById('info2').style.display = 'none';
-      document.getElementById('info3').style.display = 'block';
-    };
-      
-  </script>
-
-
-
-      </div>
-    </div>
-  </section>
-
-
-  <div style='background:url("/static/img/parquet1.jpg");'><br><br>
-
-    <center><a href='/direction/map'><img src='/static/img/portfolio2/icone/map.png' width='200' height='200'></a></center>
-      <br>
-      <center><a href='/direction/map'
-        style='color:black;'><h4>Voir notre carte interractive sur le vent</h4>
-      </a></center>
-      <center><h6>Rentre une ville et regarde le vent se déplacer</h6></center>
-      
+   <!-- Map Section redirect to Map -->
+  <center><a href='/direction/map'><img src='/static/img/portfolio2/icone/map.png' width='200' height='200'></a></center>
+  <br>
+  <center><a href='/direction/map' style='color:black;'>
+    <h4>Voir notre carte interractive sur le vent</h4>
+  </a></center>
+  <center><h6>Rentre une ville et regarde le vent se déplacer</h6></center> 
   <br><br>
   </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -553,24 +449,11 @@
   <section class="page-section bg-dark text-white">
     <div class="container text-center">
       <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
-
-
-                 
-           <style>#im10{width:100px; height:100px;margin-left:50px;}</style>
-           <img src = "/static/img/portfolio/icone/facebook.png"/ id="im10">
-
-                                
-            <style>#im11{width:100px; height:100px;margin-left:100px;}</style>
-           <img src = "/static/img/portfolio/icone/twitter.png"/ id="im11">
-
-                  
-           <style>#im12{width:200px; height:200px;margin-left:100px;}</style>
-           <img src = "/static/img/portfolio/icone/snap.png"/ id="im12">
-                    
+      <img src = "/static/img/portfolio/icone/facebook.png"/ id="im10">
+      <img src = "/static/img/portfolio/icone/twitter.png"/ id="im11">
+      <img src = "/static/img/portfolio/icone/snap.png"/ id="im12">          
     </div>
   </section>
-
-
 
 
 
@@ -631,3 +514,183 @@
 
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>#im12{width:200px; height:200px;margin-left:100px;}</style>
+<style>#im10{width:100px; height:100px;margin-left:50px;}</style>
+<style>#im11{width:100px; height:100px;margin-left:100px;}</style>
+
+
+
+  <script>
+    var a = document.getElementById('lyon_pol').innerHTML;
+    var b = document.getElementById('marseille_pol').innerHTML;
+    var c = document.getElementById('paris_pol').innerHTML;
+
+    function coul_pol(variable, id){
+      if(variable <= 20){
+        document.getElementById(id).style.color='green';
+      }
+      else if (variable > 20 && variable <= 50){
+        document.getElementById(id).style.color='orange';
+      }
+      else if (variable > 50){
+        document.getElementById(id).style.color='red';
+      }
+
+    }
+
+    coul_pol(a, 'lyon_pol');
+    coul_pol(b, 'marseille_pol');
+    coul_pol(c, 'paris_pol');
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <style>
+        #separate{
+          background:url("/static/img/parquet1.jpg");
+        }
+        span{
+          color:black
+        }
+      </style>
+
+  
+  <script>
+
+    function fermer(){
+      document.getElementById('info2').style.display = 'none';
+      document.getElementById('info3').style.display = 'none';
+      document.getElementById('info1').style.display = 'none';
+      };
+  
+    function donnée_lyon(){
+      document.getElementById('info2').style.display = 'none';
+      document.getElementById('info3').style.display = 'none';
+      document.getElementById('info1').style.display = 'block';
+      };     
+
+    function donnée_paris(){
+      document.getElementById('info1').style.display = 'none';
+      document.getElementById('info3').style.display = 'none';
+      document.getElementById('info2').style.display = 'block';
+     };
+
+    function donnée_marseille(){
+      document.getElementById('info1').style.display = 'none';
+      document.getElementById('info2').style.display = 'none';
+      document.getElementById('info3').style.display = 'block';
+    };
+      
+  </script>
+
+
+
+
+
+
+<style>
+    input{border:2px solid black;}
+</style>
+<style>
+  h1{
+    color:black;
+    font-family:"Comic Sans MS, Comic Sans, cursive";
+  }
+  h2{
+    color:black;
+    font-style=justify;
+  }
+  #info_aqi{
+    margin-left:50px;
+    color:black;
+  }
+  #info_dollard{
+    margin-left:50px;
+    color:black;
+  }
+  #info_pop{
+    margin-left:50px;
+    color:black;
+  }
+  #Lyon{
+    background:url("/static/img/parquet1.jpg");
+    margin:auto;
+    height:350px;
+    border:2px solid black;
+    border-radius:80px;
+  }
+  #Paris{
+    background:url("/static/img/parquet1.jpg");
+    margin:auto;
+    height:350px;
+    border:2px solid black;
+    border-radius:80px;
+  }
+  #Marseille{
+    background:url("/static/img/parquet1.jpg");
+    margin:auto;
+    height:350px;
+    border:2px solid black;
+    border-radius:80px;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
