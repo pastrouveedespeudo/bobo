@@ -65,14 +65,47 @@
           <!-- Main section we present the first section summary on pollution-->      
           <div class="container">
               <div class="row">
+
+              
+                  <!-- Main section we present the first section summary on pollution-->   
+                  <div class="col-sm-12 col-md-6 col-lg-6">
+                    <a href="/photo/home_bobo"><img src="/static/img/portfolio/icone/my.png" id='my'><br></a>
+                    <a href="/photo/home_bobo"><center><h4>My_profil</h4></center><br><br></a>
+                    <center><div id='som_my'>
+                      <br><br>
+                      Dexuième rubrique
+                      <br><br>
+                      <a href="/photo/home_bobo">
+                        <u id='title_mode'><h2>LA MODE</h2></u>
+                      </a>
+                      <br><br>
+                      <a href="/administrateur/tendance"><p>Notre tendance</p></a>
+                      <br><br>
+                      <a href="/photo/coupe"><p>J'essaie des coiffures</p></a>
+                      <br><br>
+                      <a href="/photo/coupe"><p>Mes coiffeurs les plus proches de chez moi</p></a>
+                      <br><br>
+                      <a href="/photo/coupe"><p>Mes salles de gym les plus proches de chez moi</p></a>
+                      <br><br>
+                      <a href="/photo/habits"><p>J'essaie des vetements</p></a>
+                      <br><br><br><br><br>
+                    </div></center>
+                  </div>
+                  <br><br>
+
+                  <!-- Main section we present the second section summary on pollution-->  
                   <div class="col-sm-12 col-md-6 col-lg-6">
                       <a href="/polution/polution"><img src="/static/img/portfolio2/icone/indian.png" id="pol"
                           alt="Face of an indian picture as cartoon"></a><br>
                       <a href="/polution/polution"><center><h4>My_pollution</h4></center></a><br><br>
                       
                       <center><div id='som_po'>
-                        <br><br><br><br>
-                        <u id='polution_tilte'><h2>LA POLLUTION</h2></u>
+                        <br><br>
+                        Première rubrique :
+                        <br><br>
+                        <a href="/polution/polution">
+                          <u id='polution_tilte'><h2>LA POLLUTION</h2></u>
+                        </a>
                         <br><br>
                         <a href="/polution/graphe"><p>Les graphiques sur nos données pollutions</p></a>
                         <br><br>
@@ -88,28 +121,6 @@
                         <br><br><br>
 
                       </div></center>
-                  </div>
-                  <br><br>
-
-                  <!-- Main section we present the second section summary on pollution-->   
-                  <div class="col-sm-12 col-md-6 col-lg-6">
-                    <a href="/photo/home_bobo"><img src="/static/img/portfolio/icone/my.png" id='my'><br></a>
-                    <a href="/photo/home_bobo"><center><h4>My_profil</h4></center><br><br></a>
-                    <center><div id='som_my'>
-                      <br><br><br><br>
-                      <u id='title_mode'><h2>LA MODE</h2></u>
-                      <br><br>
-                      <a href="/administrateur/tendance"><p>Notre tendance</p></a>
-                      <br><br>
-                      <a href="/photo/coupe"><p>J'essaie des coiffures</p></a>
-                      <br><br>
-                      <a href="/photo/coupe"><p>Mes coiffeurs les plus proches de chez moi</p></a>
-                      <br><br>
-                      <a href="/photo/coupe"><p>Mes salles de gym les plus proches de chez moi</p></a>
-                      <br><br>
-                      <a href="/photo/habits"><p>J'essaie des vetements</p></a>
-                      <br><br><br><br><br>
-                    </div></center>
                   </div>
               </div> 
           </div>
@@ -333,7 +344,6 @@
 
 
 <style>
-
   #description{
     text-align:auto;
   }
@@ -353,19 +363,9 @@
   #separate{
     background:url("/static/img/parquet1.jpg");
   }
-
-</style>
-
-
-
-
-
-
-
-
-<style>
-    li{
-      color:black;
+  
+  li{
+    color:black;
     }
     h1{
       font-family:"recursive";
@@ -705,133 +705,152 @@
 
 
 <script>
-          function stop(im){
-            document.getElementById('marc').stop();
-            
-            if(im == 'im1'){
-              document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
-              document.getElementById('description').innerHTML = '<center>' +
-                                                                  'Saisissez le nom d\'une ville ! ' +
-                                                                  'Nous récupérons ses coordonnées, le sens du vent, ' +
-                                                                  'calculons sa nouvelle trajectoire et ' +
-                                                                  'nous l\'affichons sur une carte google map.'
-                                                                  '</center>';
-              document.getElementById('description').style.textAlign = 'justify';
-            }
-            
-            else if(im == 'im2'){
-              
-              document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
-              document.getElementById('description').innerHTML = '<center>' +
-                                                                  'Saisissez une phrase ! ' +
-                                                                  'Nous la récupérons et la traitons, ' +
-                                                                  'Au choix une table de multiplication, ' +
-                                                                  'un affichage et une recherche de définition.' +
-                                                                  "Banal, oui sauf que nous n'avons pas coder de fonction</center>";
-
-              document.getElementById('description').style.textAlign = 'justify';
-              
-            }
-
-            
-            else if(im == 'im3'){
-              
-              document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
-              document.getElementById('description').innerHTML = '<center>' +
-                                                                  "Un jeux d'arcarde ! " +
-                                                                  'basé sur speech recognition de google, ' +
-                                                                  "J'ai besoin d'un bouclier et vite. " +
-                                                                  "SHIELDDD !!</center>";
-              
-              document.getElementById('description').style.textAlign = 'justify';
-              
-            }
-            else if(im == 'im4'){
-              
-              document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
-              document.getElementById('description').innerHTML = '<center>' +
-                                                                  'Saisissez une phrase ! ' +
-                                                                  'Nous la récupérons et la traitons, ' +
-                                                                  'nous vous donnons ensuite la fonction de chaque mot, ' +
-                                                                  'pronom, verbe, nominal...' +
-                                                                  "</center>";
-              
-              document.getElementById('description').style.textAlign = 'justify';
-            }
-            
-            else if(im == 'im5'){
-              
-              document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
-              
-              document.getElementById('description').innerHTML = '<center>' +
-                                                                  'Un script qui permet ' +
-                                                                  'de dire les mots récurrents, ' +
-                                                                  "d'un texte triste " +
-                                                                  "</center>";
-              
-              document.getElementById('description').style.textAlign = 'justify';
-            }
-            
-            else if(im == 'im6'){
-              
-              document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
-              document.getElementById('description').innerHTML = '<center>' +
-                                                                  'Un script qui permet de déssiner ! ' +
-                                                                  'sommairement une voiture ' +
-                                                                  'par sa description, ' +
-                                                                  '(4 routes, une caisse ect...' +
-                                                                  "</center>";
-              
-              document.getElementById('description').style.textAlign = 'justify';
-            }
-            
-            else if(im == 'im7'){
-              document.getElementById('status').innerHTML = '<center>Status : En cours de finition</center>';
-              
-              document.getElementById('description').innerHTML = "<center>Un magazine virtuel " +
-                                                                "avec une rubrique mode et une rubrique de pollution. " +
-                                                                "Avez vous déja lu un magazine de spycho ? Et... en ligne ?" +
-                                                                "</center>";
-              
-              document.getElementById('description').style.textAlign = 'justify';
-            }
-
-            else if(im == 'im10'){
-              document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
-              
-              document.getElementById('description').innerHTML = "<center>Dk labyrinth " +
-                                                                "Dk apprend à se déplacer tout seul " +
-                                                                "via un algorithme génétique (par Brute force) " +
-                                                                "qui n'est pas la meilleur solution</center>";
-              
-              document.getElementById('description').style.textAlign = 'justify';
-            }
 
 
-            else if(im == 'im11'){
-              document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
-              
-              document.getElementById('description').innerHTML = "<center>Openfoodfact " +
-                                                                "Un jeu ou il faut choisir la meilleure bouffe. " +
-                                                                "Ce projet contient un détecteur d'objet !" +
-                                                                "</center>";
-              
-              document.getElementById('description').style.textAlign = 'justify';
-            }
+//Here we stop the slider and display
+//text of pictures.
+
+// ---> VISUAL FUNCTION <--- si image un alors j'affiche ca sinon non
+
+function stop(im){
+  document.getElementById('marc').stop(); //stop the slider when the mouse is on the picture
+
+
+  //for PICTURE NUMBER ONE we put the status, and give description of the project.
+  if(im == 'im1'){
+    document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
+    document.getElementById('description').innerHTML = '<center>' +
+                                                        'Saisissez le nom d\'une ville ! ' +
+                                                        'Nous récupérons ses coordonnées, le sens du vent, ' +
+                                                        'calculons sa nouvelle trajectoire et ' +
+                                                        'nous l\'affichons sur une carte google map.'
+                                                        '</center>';
+    document.getElementById('description').style.textAlign = 'justify';
+  }
+
+  //PICTURE NUMBER TWO
+  else if(im == 'im2'){
+    
+    document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
+    document.getElementById('description').innerHTML = '<center>' +
+                                                        'Saisissez une phrase ! ' +
+                                                        'Nous la récupérons et la traitons, ' +
+                                                        'Au choix une table de multiplication, ' +
+                                                        'un affichage et une recherche de définition.' +
+                                                        "Banal, oui sauf que nous n'avons pas coder de fonction</center>";
+
+    document.getElementById('description').style.textAlign = 'justify';
+    
+  }
+
+  //PICTURE NUMBER THREE
+  else if(im == 'im3'){
+    
+    document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
+    document.getElementById('description').innerHTML = '<center>' +
+                                                        "Un jeux d'arcarde ! " +
+                                                        'basé sur speech recognition de google, ' +
+                                                        "J'ai besoin d'un bouclier et vite. " +
+                                                        "SHIELDDD !!</center>";
+    
+    document.getElementById('description').style.textAlign = 'justify';
+    
+  }
+
+  //PICTURE NUMBER FOUR
+  else if(im == 'im4'){
+    
+    document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
+    document.getElementById('description').innerHTML = '<center>' +
+                                                        'Saisissez une phrase ! ' +
+                                                        'Nous la récupérons et la traitons, ' +
+                                                        'nous vous donnons ensuite la fonction de chaque mot, ' +
+                                                        'pronom, verbe, nominal...' +
+                                                        "</center>";
+    
+    document.getElementById('description').style.textAlign = 'justify';
+  }
+
+  //PICTURE NUMBER FIVE
+  else if(im == 'im5'){
+    
+    document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
+    
+    document.getElementById('description').innerHTML = '<center>' +
+                                                        'Un script qui permet ' +
+                                                        'de dire les mots récurrents, ' +
+                                                        "d'un texte triste " +
+                                                        "</center>";
+    
+    document.getElementById('description').style.textAlign = 'justify';
+  }
+
+  //PICTURE NUMBER SIX
+  else if(im == 'im6'){
+    
+    document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
+    document.getElementById('description').innerHTML = '<center>' +
+                                                        'Un script qui permet de déssiner ! ' +
+                                                        'sommairement une voiture ' +
+                                                        'par sa description, ' +
+                                                        '(4 routes, une caisse ect...' +
+                                                        "</center>";
+    
+    document.getElementById('description').style.textAlign = 'justify';
+  }
+
+  //PICTURE NUMBER SEVEN
+  else if(im == 'im7'){
+    document.getElementById('status').innerHTML = '<center>Status : En cours de finition</center>';
+    
+    document.getElementById('description').innerHTML = "<center>Un magazine virtuel " +
+                                                      "avec une rubrique mode et une rubrique de pollution. " +
+                                                      "Avez vous déja lu un magazine de spycho ? Et... en ligne ?" +
+                                                      "</center>";
+    
+    document.getElementById('description').style.textAlign = 'justify';
+  }
+
+  //PICTURE NUMBER TEN
+  else if(im == 'im10'){
+    document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
+    
+    document.getElementById('description').innerHTML = "<center>Dk labyrinth " +
+                                                      "Dk apprend à se déplacer tout seul " +
+                                                      "via un algorithme génétique (par Brute force) " +
+                                                      "qui n'est pas la meilleur solution</center>";
+    
+    document.getElementById('description').style.textAlign = 'justify';
+  }
+
+  //PICTURE NUMBER ELEVEN
+  else if(im == 'im11'){
+    document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
+    
+    document.getElementById('description').innerHTML = "<center>Openfoodfact " +
+                                                      "Un jeu ou il faut choisir la meilleure bouffe. " +
+                                                      "Ce projet contient un détecteur d'objet !" +
+                                                      "</center>";
+    
+    document.getElementById('description').style.textAlign = 'justify';
+  }
 
 
 
 
-            
-          };
-          
-          function start(){
-            document.getElementById('marc').start();
-              document.getElementById('description').innerHTML = "";
-            document.getElementById('status').innerHTML = "";
-          };
-          
-          </script>
+  
+};
+
+
+//When mouse is out the picture we reinitialise the description and status div to nothing
+// ---> VISUAL FUNCTION <--- des que souris quitte alors jefface tout
+function start(){
+  document.getElementById('marc').start();
+    document.getElementById('description').innerHTML = "";
+  document.getElementById('status').innerHTML = "";
+};
+
+</script>
 
 
 
