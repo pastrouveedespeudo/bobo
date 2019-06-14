@@ -28,145 +28,133 @@
 
 
 
-    <!-- Body section - Main section -->
+    <!-- Body Section - Main Section -->
     <body id="page-top">
 
-
-      <!-- Navigation -->
+    
+      <!-- Navebarre -->
       <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-
-
-
         <div class="container">
 
 
+          <!-- Left section - Fisrt logo -->
           <img src="/static/img/portfolio/icone/my.png" id="my_prof"
+            alt="Smylet white with blacks bordures. It has two eyes (points) et one
+            smyle an arc-shaped line"
             onMouseOver='mode_div3("myprofile_p", "my_prof")'
             onMouseOut='mode_div4("myprofile_p", "black", "my_prof", "49px", "49px")'>
-            
           <a class="navbar-brand js-scroll-trigger" href="/">
-          
-              <p id='myprofile_p'
+            <p id='myprofile_p'
                 onMouseOver='mode_div3("myprofile_p", "my_prof")'
                 onMouseOut='mode_div4("myprofile_p", "black", "my_prof","49px", "49px")'>
-                My_Profil
-              </p>
-            
-          </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              My_Profil
+            </p>
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           
 
-
+          <!-- Left Section - Second logo -->
           <img src="/static/img/portfolio2/icone/indian.png" id="my"
+            alt="Indian face picture, like cartoon image"
             onMouseOver='mode_div3("pol_logo", "my", 50,60)'
             onMouseOut='mode_div4("pol_logo", "black", "my", "49px", "49px")'>
-            
           <a class="navbar-brand js-scroll-trigger" href="/polution/polution">
-          
             <p id='pol_logo'
               onMouseOver='mode_div3("pol_logo", "my", 50,60)'
               onMouseOut='mode_div4("pol_logo", "black", "my", "49px", "49px")'>
                 My_pollution
-              </p>
-            
+            </p>
           </a>
-
-
           <button class="navbar-toggler navbar-toggler-right" type="button"
             data-toggle="collapse" data-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false"
             aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
-
-
-          
           <div class="collapse navbar-collapse" id="navbarResponsive">
 
-              <ul class="navbar-nav ml-auto my-2 my-lg-0">
 
-                  
-                  
-      
-                <center>
-                  <li class="nav-item">
-                  
-                      <img src="/static/img/portfolio/icone/momode.png" id="momode"
-                        onMouseOver='change_image_tendance1("p_mode", "momode")'
-                        onMouseOut='change_image_tendance2("p_mode", "momode")'>
-                        
-                      <a class="nav-link js-scroll-trigger" href="/administrateur/tendance">
-                      
-                        <p id='p_mode'
-                          onMouseOver='change_image_tendance1("p_mode", "momode")'
-                          onMouseOut='change_image_tendance2("p_mode", "momode")'
-                           style='color:black;'>La tendance du moment ?
-                        </p>
-                      
-                      </a>
-                  </li>
-                  
-                </center>
+            <!-- Right Section -->
+            <ul class="navbar-nav ml-auto my-2 my-lg-0">
+            
 
-                  <center>
-                  <li class="nav-item">
-                      <img src="/static/img/portfolio/icone/coiffure.png" id="coif_nav"
-                        onMouseOver='change_image_coiff1("coif_p")'
-                        onMouseOut='change_image_coiff2("coif_p", "black")'>
-                      <a class="nav-link js-scroll-trigger" href="/photo/coupe">
-                        <p id='coif_p'
-                        onMouseOver='change_image_coiff1("coif_p")'
-                        onMouseOut='change_image_coiff2("coif_p", "black")'
-                        style='color:black;'>Mes coiffures</p>
-                      </a>
-                  </li>
-                  </center>
-
-                  <center>
-                  <li class="nav-item">
-                      <img src="/static/img/portfolio/icone/vetements.png" id="im3"
-                        onMouseOver='change_image_vetements1("p_vet")'
-                        onMouseOut='change_image_vetements2("p_vet", "black")'>
-                      <a class="nav-link js-scroll-trigger" href="/photo/habits">
-                        <center><p id='p_vet'
-                        onMouseOver='change_image_vetements1("p_vet")'
-                        onMouseOut='change_image_vetements2("p_vet", "black")'
-                         style='color:black;'>
-                         Mes vetements</p></center>
-                      </a>
-                  </li>
-                  </center>
+              <!-- Right Section - Fisrt logo -->
+              <center><li class="nav-item">
+                <img src="/static/img/portfolio/icone/momode.png" id="momode"
+                    alt="Image of a black evening dress"
+                    onMouseOver='change_image_tendance1("p_mode", "momode")'
+                    onMouseOut='change_image_tendance2("p_mode", "momode")'>
+                <a class="nav-link js-scroll-trigger" href="/administrateur/tendance">
+                  <p id='p_mode'
+                      onMouseOver='change_image_tendance1("p_mode", "momode")'
+                      onMouseOut='change_image_tendance2("p_mode", "momode")'
+                      style='color:black;'>
+                    La tendance du moment ?
+                  </p>
+                </a>
+              </li></center>
 
 
-                  <center>
-                  <li class="nav-item">
-                      <img src="/static/img/portfolio/icone/deco.png" id="deco_nav"
-                        onMouseOver='change_image_logout1("p_deco")'
-                        onMouseOut='change_image_logout2("p_deco", "black")'>
-                        
-                      <a class="nav-link js-scroll-trigger" href="/accounts/logout_view">
-                      
-                        <center><p id='p_deco'
-                        onMouseOver='change_image_logout1("p_deco")'
-                        onMouseOut='change_image_logout2("p_deco", "black")'
-                         style='color:black;'>Se déconnecter</p></center>
-                      </a>
-                      
-                  </li>
-                  
-                  </center>
+              <!-- Right Section - Second logo -->
+              <center><li class="nav-item">
+                <img src="/static/img/portfolio/icone/coiffure.png" id="coif_nav"
+                  alt="Image of a child with a bad hair style"
+                  onMouseOver='change_image_coiff1("coif_p")'
+                  onMouseOut='change_image_coiff2("coif_p", "black")'>
+                <a class="nav-link js-scroll-trigger" href="/photo/coupe">
+                  <p id='coif_p'
+                      onMouseOver='change_image_coiff1("coif_p")'
+                      onMouseOut='change_image_coiff2("coif_p", "black")'
+                      style='color:black;'>
+                     Mes coiffures
+                  </p>
+                </a>
+              </li></center>
+
+
+              <!-- Right Section - Third logo -->
+              <center><li class="nav-item">
+                <img src="/static/img/portfolio/icone/vetements.png" id="im3"
+                  alt="Image of a tshirt in the middle
+                  is a heart outline black white background"
+                  onMouseOver='change_image_vetements1("p_vet")'
+                  onMouseOut='change_image_vetements2("p_vet", "black")'>
+                <a class="nav-link js-scroll-trigger" href="/photo/habits">
+                  <center><p id='p_vet'
+                      onMouseOver='change_image_vetements1("p_vet")'
+                      onMouseOut='change_image_vetements2("p_vet", "black")'
+                      style='color:black;'>
+                    Mes vetements
+                  </p></center>
+                </a>
+               </li></center>
+
+
+
+              <!-- Right Section - Fourth logo -->
+              <center><li class="nav-item">
+                <img src="/static/img/portfolio/icone/deco.png" id="deco_nav"
+                  alt="A round logo with inside a rectangle
+                  with an arrow representing the exit of a door"
+                  onMouseOver='change_image_logout1("p_deco")'
+                  onMouseOut='change_image_logout2("p_deco", "black")'>       
+                <a class="nav-link js-scroll-trigger" href="/accounts/logout_view">  
+                  <center><p id='p_deco'
+                      onMouseOver='change_image_logout1("p_deco")'
+                      onMouseOut='change_image_logout2("p_deco", "black")'
+                      style='color:black;'>
+                    Se déconnecter
+                  </p></center>
+                </a>     
+              </li></center>
                  
-          
-              </ul>
-
-                
-
-
-
-          </div>
+            
+            </ul>
         </div>
-      </nav>
-    </html>
+      </div>
+    </nav>
+  </html>
 
 
 
@@ -176,120 +164,130 @@
 
 
 
+<script>
+
+  //Functions for all pictures of the navabarre.
+  //We increase the size of the logo (my_profil and My_pollution)
+  //We change text color.
+  //And we change picture to an other picture (right section)
+  //All of this when mouse pass on (pass out we put basics logo)
+  //This for all pictures, not really smart...
+  
+
+  // ---> Visual functions <---
+
+
+  function mode_div3(div, image){
+    document.getElementById(image).style.width = '70px';
+    document.getElementById(image).style.height = '70px';
+    document.getElementById(div).style.color = '#330000';
+  };
+  
+  function mode_div4(div, color, image, largeur, hauteur){
+    document.getElementById(image).style.width = largeur;
+    document.getElementById(image).style.height = hauteur;
+    document.getElementById(div).style.color = 'black';
+  };
+    
+  function mode_div(div, image, largeur, hauteur){
+    a = document.getElementById(image).width;
+    b = document.getElementById(image).height;
+    document.getElementById(image).width = a + largeur;
+    document.getElementById(image).height = b + hauteur;
+    document.getElementById(div).style.color = 'red';
+  };
+  
+  function mode_div2(div, color, image, largeur, hauteur){
+    document.getElementById(div).style.color = color;
+    document.getElementById(image).width = largeur;
+    document.getElementById(image).height = hauteur;
+  };
+  
+  function change_image_tendance1(div, image){   
+    document.getElementById('p_mode').style.color = '#330000';
+    document.getElementById('momode').src = "/static/img/portfolio/icone/momode2.png";
+  };
+  
+  function change_image_tendance2(div, image){
+    document.getElementById('p_mode').style.color = 'black';
+    document.getElementById('momode').src = "/static/img/portfolio/icone/momode.png";
+  };
+  
+  function change_image_coiff1(div, image){   
+    document.getElementById('coif_p').style.color = '#330000';
+    document.getElementById('coif_nav').src = "/static/img/portfolio/icone/coiffure2.png";
+  };
+  
+  function change_image_coiff2(div, image){
+    document.getElementById('coif_p').style.color = 'black';
+    document.getElementById('coif_nav').src = "/static/img/portfolio/icone/coiffure.png";
+  };
+  
+  function change_image_vetements1(div, image){  
+    document.getElementById('p_vet').style.color = '#330000';
+    document.getElementById('im3').src = "/static/img/portfolio/icone/vetements2.png";
+  };
+  
+  function change_image_vetements2(div, image){
+    document.getElementById('p_vet').style.color = 'black';
+    document.getElementById('im3').src = "/static/img/portfolio/icone/vetements.png";
+  };
+  
+  function change_image_logout1(div, image){ 
+    document.getElementById('p_deco').style.color = '#330000';
+    document.getElementById('deco_nav').src = "/static/img/portfolio/icone/logout2.png";
+  };
+  
+  function change_image_logout2(div, image){
+    document.getElementById('p_deco').style.color = 'black';
+    document.getElementById('deco_nav').src = "/static/img/portfolio/icone/deco.png";
+  };
+  
+  function change_image_inscription1(div, image){ 
+    document.getElementById('p_inscri').style.color = '#330000';
+    document.getElementById('ima1').src = "/static/img/portfolio/icone/yoyo.png";
+  };
+  
+  function change_image_inscription2(div, image){
+    document.getElementById('p_inscri').style.color = 'black';
+    document.getElementById('ima1').src = "/static/img/portfolio/icone/inscription.png";
+  };
+  
+  function change_image_co1(div, image){   
+    document.getElementById('p_con').style.color = '#330000';
+    document.getElementById('im2').src = "/static/img/portfolio/icone/inscri.png";
+  };
+  
+  function change_image_co2(div, image){
+    document.getElementById('p_con').style.color = 'black';
+    document.getElementById('im2').src = "/static/img/portfolio/icone/login.png";
+  };
+  
+  function change_image_foiiiif1(div, image){   
+    document.getElementById('p_coicoif').style.color = '#330000';
+    document.getElementById('im1').src = "/static/img/portfolio/icone/hairhair.png";
+  };
+  
+  function change_image_foiiiif2(div, image){
+    document.getElementById('p_coicoif').style.color = 'black';
+    document.getElementById('im1').src = "/static/img/portfolio/icone/coiffure.png";
+  };
+  
+  function change_image_drees1(div, image){ 
+    document.getElementById('p_vetvet').style.color = '#330000';
+    document.getElementById('im3').src = "/static/img/portfolio/icone/dressme.png";
+  };
+  
+  function change_image_drees2(div, image){
+    document.getElementById('p_vetvet').style.color = 'black';
+    document.getElementById('im3').src = "/static/img/portfolio/icone/vetements.png";
+  };
+  
+</script>
 
 
 
 
-
-
-
-
-
-
-
-    <script>
-      function mode_div3(div, image){
-        document.getElementById(image).style.width = '70px';
-        document.getElementById(image).style.height = '70px';
-        document.getElementById(div).style.color = '#330000';
-     
-      };
-      function mode_div4(div, color, image, largeur, hauteur){
-        document.getElementById(image).style.width = largeur;
-        document.getElementById(image).style.height = hauteur;
-        document.getElementById(div).style.color = 'black';
-      };
-        
-      function mode_div(div, image, largeur, hauteur){
-        
-        a = document.getElementById(image).width;
-        b = document.getElementById(image).height;
-        document.getElementById(image).width = a + largeur;
-        document.getElementById(image).height = b + hauteur;
-        
-        document.getElementById(div).style.color = 'red';
-        
-        
-      };
-      function mode_div2(div, color, image, largeur, hauteur){
-        document.getElementById(div).style.color = color;
-        document.getElementById(image).width = largeur;
-        document.getElementById(image).height = hauteur;
-      };
-      function change_image_tendance1(div, image){
-            
-        document.getElementById('p_mode').style.color = '#330000';
-        document.getElementById('momode').src = "/static/img/portfolio/icone/momode2.png";
-      };
-      function change_image_tendance2(div, image){
-        document.getElementById('p_mode').style.color = 'black';
-        document.getElementById('momode').src = "/static/img/portfolio/icone/momode.png";
-      };
-      function change_image_coiff1(div, image){
-            
-        document.getElementById('coif_p').style.color = '#330000';
-        document.getElementById('coif_nav').src = "/static/img/portfolio/icone/coiffure2.png";
-      };
-      function change_image_coiff2(div, image){
-        document.getElementById('coif_p').style.color = 'black';
-        document.getElementById('coif_nav').src = "/static/img/portfolio/icone/coiffure.png";
-      };
-      function change_image_vetements1(div, image){
-            
-        document.getElementById('p_vet').style.color = '#330000';
-        document.getElementById('im3').src = "/static/img/portfolio/icone/vetements2.png";
-      };
-      function change_image_vetements2(div, image){
-        document.getElementById('p_vet').style.color = 'black';
-        document.getElementById('im3').src = "/static/img/portfolio/icone/vetements.png";
-      };
-      function change_image_logout1(div, image){
-            
-        document.getElementById('p_deco').style.color = '#330000';
-        document.getElementById('deco_nav').src = "/static/img/portfolio/icone/logout2.png";
-      };
-      function change_image_logout2(div, image){
-        document.getElementById('p_deco').style.color = 'black';
-        document.getElementById('deco_nav').src = "/static/img/portfolio/icone/deco.png";
-      };
-      function change_image_inscription1(div, image){
-            
-        document.getElementById('p_inscri').style.color = '#330000';
-        document.getElementById('ima1').src = "/static/img/portfolio/icone/yoyo.png";
-      };
-      function change_image_inscription2(div, image){
-        document.getElementById('p_inscri').style.color = 'black';
-        document.getElementById('ima1').src = "/static/img/portfolio/icone/inscription.png";
-      };
-      function change_image_co1(div, image){
-            
-        document.getElementById('p_con').style.color = '#330000';
-        document.getElementById('im2').src = "/static/img/portfolio/icone/inscri.png";
-      };
-      function change_image_co2(div, image){
-        document.getElementById('p_con').style.color = 'black';
-        document.getElementById('im2').src = "/static/img/portfolio/icone/login.png";
-      };
-      function change_image_foiiiif1(div, image){
-            
-        document.getElementById('p_coicoif').style.color = '#330000';
-        document.getElementById('im1').src = "/static/img/portfolio/icone/hairhair.png";
-      };
-      function change_image_foiiiif2(div, image){
-        document.getElementById('p_coicoif').style.color = 'black';
-        document.getElementById('im1').src = "/static/img/portfolio/icone/coiffure.png";
-      };
-      function change_image_drees1(div, image){
-            
-        document.getElementById('p_vetvet').style.color = '#330000';
-        document.getElementById('im3').src = "/static/img/portfolio/icone/dressme.png";
-      };
-      function change_image_drees2(div, image){
-        document.getElementById('p_vetvet').style.color = 'black';
-        document.getElementById('im3').src = "/static/img/portfolio/icone/vetements.png";
-      };
-      
-    </script>
 
 
 <style>
