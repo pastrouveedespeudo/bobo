@@ -5,6 +5,7 @@ jQuery("#lyon").on("click", function(e){
 
     //we "raise" the pred div, display you choose lyon city
     //and display the loading logo
+
     document.getElementById('pred').innerHTML = ""
     document.getElementById('choix').innerHTML = 'Vous avez choisis Lyon';
     document.getElementById('chargement').style.display = "block";
@@ -27,8 +28,8 @@ jQuery("#lyon").on("click", function(e){
 
             document.getElementById('chargement').style.display = "none";      
             
-            if (data == "pas de donnée"){
-                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donnée</strong>";
+            if (data == "pas de donnÃ©e"){
+                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
             }
             else{
               
@@ -74,8 +75,8 @@ jQuery("#paris").on("click", function(e){
 
             document.getElementById('chargement').style.display = "none";
             
-          if (data == "pas de donnée"){
-                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donnée</strong>";
+          if (data == "pas de donnÃ©e"){
+                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
             }
             else{
             document.getElementById('pred').innerHTML = '<br><br>' +
@@ -120,8 +121,8 @@ jQuery("#marseille").on("click", function(e){
             
             document.getElementById('chargement').style.display = "none";
             
-          if (data == "pas de donnée"){
-                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donnée</strong>";
+          if (data == "pas de donnÃ©e"){
+                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
             }
 
             else{
