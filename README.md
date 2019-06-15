@@ -1,6 +1,6 @@
 corriger toutes les fautes
 
-t'as oublié map et database
+t'as oublié map et database et botoom p1 p2
 
 faire les tests ca ok c cool
 
