@@ -1,10 +1,10 @@
 <!DOCTYPE html>
   <html lang="en">
 
-
+    
     <!-- Head section - Loading CDN -->
     <head>
-      <meta charset="utf-8">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -38,14 +38,19 @@
         <div class="row h-100 align-items-center justify-content-center text-center">
           <div class="col-lg-10 align-self-end">
             <h1>Le magasine virtuel !</h1><br>
-            <h2>Le magazine virtuel est un site web sous forme de revue. Ce magazine propose deux rubriques.
-              Une accès sur le divertissement et le bien etre. En effet vous pourrez vous amusez à vous
-              prendre en photo et à essayer des coupes de cheveux. Mais aussi à chercher des coiffeurs ou bien des salles de gym
-              de votre ville.
-              <br><br>L'autre accès sur la pollution, la prévention et l'accès à l'information. Par des données en temps réel,
-              par des graphiques de donnée et vous découvrirez peut etre une solution qui pourrait abaisser le taux de pollution.
-              <br><br>Amusez vous, cultivez vous, c'est le principal !
-            </h2>
+            <h4>Le magazine virtuel est un site web sous forme de revue. Nous tentons d'innover
+              par un concept réel converti en virtuel.<br><br>
+              Vous vous trouvez sur le sommaire.
+              <br><br>
+              Ce site possède deux rubriques sur le divertissement, le bien-être et sur l'information.
+              En effet vous pouvez vous amuser à vous
+              prendre en photo et à essayer des coupes de cheveux. Mais aussi à chercher des coiffeurs ou bien
+              des salles de gym de votre ville.
+              <br><br>Vous pouvez aussi vous informer sur la pollution
+              par des données en temps réel et par des graphiques de données. Vous pouvez aussi
+              trouver une solution qui abaisse le taux de pollution.
+              <br><br>Amusez-vous, Cultivez-vous, c'est le principal !
+            </h4>
           </div>
         </div>
       </div>
@@ -53,13 +58,13 @@
 
 
     <!-- Separate section for visual -->
-    <div style='background:url("/static/img/parquet1.jpg");'><br><br><br><br><br></div>
+    <div id="separate"><br><br><br><br><br></div>
 
 
     <!-- Main section we present the summary-->
     <section class="page-section bg-dark text-white">
       <div class="container text-center">
-          <center><h1 style='color:black;'>Notre sommaire</h1></center><br><br><br>
+          <center><h1>Notre sommaire</h1></center><br><br><br>
 
 
           <!-- Main section we present the first section summary on pollution-->      
@@ -69,11 +74,12 @@
               
                   <!-- Main section we present the first section summary on pollution-->   
                   <div class="col-sm-12 col-md-6 col-lg-6">
-                    <a href="/photo/home_bobo"><img src="/static/img/portfolio/icone/my.png" id='my'><br></a>
+                    <a href="/photo/home_bobo"><img src="/static/img/portfolio/icone/my.png"
+                      alt="Emorticon who smyling. 2 eyes one arc. Black border." id='my'><br></a>
                     <a href="/photo/home_bobo"><center><h4>My_profil</h4></center><br><br></a>
                     <center><div id='som_my'>
                       <br><br>
-                      Dexuième rubrique
+                      Première rubrique
                       <br><br>
                       <a href="/photo/home_bobo">
                         <u id='title_mode'><h2>LA MODE</h2></u>
@@ -101,7 +107,7 @@
                       
                       <center><div id='som_po'>
                         <br><br>
-                        Première rubrique :
+                        Deuxième rubrique :
                         <br><br>
                         <a href="/polution/polution">
                           <u id='polution_tilte'><h2>LA POLLUTION</h2></u>
@@ -198,13 +204,13 @@
             <br>
             <ul>
               <a href ="https://www.femmeactuelle.fr/beaute/news-beaute/video-camille-cerf-miss-france-2015-son-tuto-pour-se-maquiller-dans-un-train-2077617">
-                <li>Les conseils beauté d'un Miss France</li>
+                <li>Les conseils beautés d'une Miss France</li>
               </a>
               <a href="https://www.youtube.com/watch?v=UfuGIZFJ01U">
                 <li>Tuto pour la vraie vie</li>
               </a>
               <a href="https://www.grazia.fr/beaute/maquillage/tutoriels-maquillage-nos-conseils-avant-de-s-y-mettre-813991">
-                <li>Maquillage et video</li>
+                <li>Maquillage et vidéo</li>
               </a>
               <a href="https://www.fr.clinique.com/thewink/how-tos">
                 <li>Le maquillage et des astuces cliniques</li>
@@ -323,7 +329,7 @@
 
   <!-- Custom scripts for this template -->
   <script src="/static/js/creative.min.js"></script>
-
+  <script type="text/javascript" src="/static/js/home.js"></script>
 
 
 
@@ -351,7 +357,8 @@
   #oc_alert{
     width:50%;
   }
-  h1{font-family:recursive;}
+  h1{font-family:recursive;
+     color:black;}
   h2{font-family:"Comic Sans MS, Comic Sans, cursive";
   }
   #page-top{
@@ -703,154 +710,6 @@
 
 
 
-
-<script>
-
-
-//Here we stop the slider and display
-//text of pictures.
-
-// ---> VISUAL FUNCTION <--- si image un alors j'affiche ca sinon non
-
-function stop(im){
-  document.getElementById('marc').stop(); //stop the slider when the mouse is on the picture
-
-
-  //for PICTURE NUMBER ONE we put the status, and give description of the project.
-  if(im == 'im1'){
-    document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
-    document.getElementById('description').innerHTML = '<center>' +
-                                                        'Saisissez le nom d\'une ville ! ' +
-                                                        'Nous récupérons ses coordonnées, le sens du vent, ' +
-                                                        'calculons sa nouvelle trajectoire et ' +
-                                                        'nous l\'affichons sur une carte google map.'
-                                                        '</center>';
-    document.getElementById('description').style.textAlign = 'justify';
-  }
-
-  //PICTURE NUMBER TWO
-  else if(im == 'im2'){
-    
-    document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
-    document.getElementById('description').innerHTML = '<center>' +
-                                                        'Saisissez une phrase ! ' +
-                                                        'Nous la récupérons et la traitons, ' +
-                                                        'Au choix une table de multiplication, ' +
-                                                        'un affichage et une recherche de définition.' +
-                                                        "Banal, oui sauf que nous n'avons pas coder de fonction</center>";
-
-    document.getElementById('description').style.textAlign = 'justify';
-    
-  }
-
-  //PICTURE NUMBER THREE
-  else if(im == 'im3'){
-    
-    document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
-    document.getElementById('description').innerHTML = '<center>' +
-                                                        "Un jeux d'arcarde ! " +
-                                                        'basé sur speech recognition de google, ' +
-                                                        "J'ai besoin d'un bouclier et vite. " +
-                                                        "SHIELDDD !!</center>";
-    
-    document.getElementById('description').style.textAlign = 'justify';
-    
-  }
-
-  //PICTURE NUMBER FOUR
-  else if(im == 'im4'){
-    
-    document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
-    document.getElementById('description').innerHTML = '<center>' +
-                                                        'Saisissez une phrase ! ' +
-                                                        'Nous la récupérons et la traitons, ' +
-                                                        'nous vous donnons ensuite la fonction de chaque mot, ' +
-                                                        'pronom, verbe, nominal...' +
-                                                        "</center>";
-    
-    document.getElementById('description').style.textAlign = 'justify';
-  }
-
-  //PICTURE NUMBER FIVE
-  else if(im == 'im5'){
-    
-    document.getElementById('status').innerHTML = '<center>Status : En cours</center>';
-    
-    document.getElementById('description').innerHTML = '<center>' +
-                                                        'Un script qui permet ' +
-                                                        'de dire les mots récurrents, ' +
-                                                        "d'un texte triste " +
-                                                        "</center>";
-    
-    document.getElementById('description').style.textAlign = 'justify';
-  }
-
-  //PICTURE NUMBER SIX
-  else if(im == 'im6'){
-    
-    document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
-    document.getElementById('description').innerHTML = '<center>' +
-                                                        'Un script qui permet de déssiner ! ' +
-                                                        'sommairement une voiture ' +
-                                                        'par sa description, ' +
-                                                        '(4 routes, une caisse ect...' +
-                                                        "</center>";
-    
-    document.getElementById('description').style.textAlign = 'justify';
-  }
-
-  //PICTURE NUMBER SEVEN
-  else if(im == 'im7'){
-    document.getElementById('status').innerHTML = '<center>Status : En cours de finition</center>';
-    
-    document.getElementById('description').innerHTML = "<center>Un magazine virtuel " +
-                                                      "avec une rubrique mode et une rubrique de pollution. " +
-                                                      "Avez vous déja lu un magazine de spycho ? Et... en ligne ?" +
-                                                      "</center>";
-    
-    document.getElementById('description').style.textAlign = 'justify';
-  }
-
-  //PICTURE NUMBER TEN
-  else if(im == 'im10'){
-    document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
-    
-    document.getElementById('description').innerHTML = "<center>Dk labyrinth " +
-                                                      "Dk apprend à se déplacer tout seul " +
-                                                      "via un algorithme génétique (par Brute force) " +
-                                                      "qui n'est pas la meilleur solution</center>";
-    
-    document.getElementById('description').style.textAlign = 'justify';
-  }
-
-  //PICTURE NUMBER ELEVEN
-  else if(im == 'im11'){
-    document.getElementById('status').innerHTML = '<center>Status : Fini</center>';
-    
-    document.getElementById('description').innerHTML = "<center>Openfoodfact " +
-                                                      "Un jeu ou il faut choisir la meilleure bouffe. " +
-                                                      "Ce projet contient un détecteur d'objet !" +
-                                                      "</center>";
-    
-    document.getElementById('description').style.textAlign = 'justify';
-  }
-
-
-
-
-  
-};
-
-
-//When mouse is out the picture we reinitialise the description and status div to nothing
-// ---> VISUAL FUNCTION <--- des que souris quitte alors jefface tout
-function start(){
-  document.getElementById('marc').start();
-    document.getElementById('description').innerHTML = "";
-  document.getElementById('status').innerHTML = "";
-};
-
-</script>
 
 
 
