@@ -5,13 +5,13 @@ def nuit_jour():
 
 
     date = datetime.datetime.now()
-    heure = date.hour + 2
+    heure = date.hour
     if heure == 23:
         heure = 1
     elif heure == 24:
         heure = 2
     else:
-         heure == heure + 2
+         heure = heure + 2
     #heure + 2
 
     la_nuit = ''
@@ -28,4 +28,4 @@ def nuit_jour():
     return non_nuit
 
     
-
+nuit_jour()
