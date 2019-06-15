@@ -36,19 +36,19 @@ function fermer(){
 
 
 //Input for call data from cities
-function donnée_lyon(){
+function donnee_lyon(){
   document.getElementById('info2').style.display = 'none';
   document.getElementById('info3').style.display = 'none';
   document.getElementById('info1').style.display = 'block';
   };     
 
-function donnée_paris(){
+function donnee_paris(){
   document.getElementById('info1').style.display = 'none';
   document.getElementById('info3').style.display = 'none';
   document.getElementById('info2').style.display = 'block';
  };
 
-function donnée_marseille(){
+function donnee_marseille(){
   document.getElementById('info1').style.display = 'none';
   document.getElementById('info2').style.display = 'none';
   document.getElementById('info3').style.display = 'block';
