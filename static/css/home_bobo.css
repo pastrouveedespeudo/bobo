@@ -1,0 +1,53 @@
+#im11{
+  width:100px;
+  height:100px;
+  margin-left:100px;
+}
+#im12{
+  width:200px;
+  height:200px;
+  margin-left:100px;
+}
+#im10{
+  width:100px;
+  height:100px;
+  margin-left:50px;
+}
+#im5{
+  width:100px;
+  height:100px;
+}
+#im4{
+  width:100px;
+  height:100px;
+  margin-left:15px;
+}
+#im6{
+  width:100px;
+  height:100px;
+}
+#im7{
+  width:100px;
+  height:100px;
+}
+
+
+
+#separate{
+  background:url("/static/img/parquet1.jpg");
+}
+#bienvenue{
+  font-family:"cursive";
+  color:black;
+}
+#h{
+  font-family:"Comic Sans MS, Comic Sans, cursive";
+  color:black;
+}
+
+#href_home{
+  color:black;
+}
+
+
+
