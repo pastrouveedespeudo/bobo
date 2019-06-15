@@ -2,6 +2,8 @@
 {% block content %}
 {% endblock %}
 
+  <link rel="stylesheet" type="text/css" href="/static/css/donnée.css" media="all" />
+
 
   <!-- Title Section -->
   <header class="masthead">
@@ -500,18 +502,8 @@
 
   <!-- Custom scripts for this template -->
   <script src="/static/js/creative.min.js"></script>
-
+  <script type="text/javascript" src="/static/js/donnée.js"></script>
 </body>
-
-
-
-
-
-
-
-
-
-
 
 </html>
 
@@ -535,36 +527,6 @@
 
 
 
-<style>#im12{width:200px; height:200px;margin-left:100px;}</style>
-<style>#im10{width:100px; height:100px;margin-left:50px;}</style>
-<style>#im11{width:100px; height:100px;margin-left:100px;}</style>
-
-
-
-  <script>
-    var a = document.getElementById('lyon_pol').innerHTML;
-    var b = document.getElementById('marseille_pol').innerHTML;
-    var c = document.getElementById('paris_pol').innerHTML;
-
-    function coul_pol(variable, id){
-      if(variable <= 20){
-        document.getElementById(id).style.color='green';
-      }
-      else if (variable > 20 && variable <= 50){
-        document.getElementById(id).style.color='orange';
-      }
-      else if (variable > 50){
-        document.getElementById(id).style.color='red';
-      }
-
-    }
-
-    coul_pol(a, 'lyon_pol');
-    coul_pol(b, 'marseille_pol');
-    coul_pol(c, 'paris_pol');
-
-
-  </script>
 
 
 
@@ -588,95 +550,31 @@
 
 
 
-      <style>
-        #separate{
-          background:url("/static/img/parquet1.jpg");
-        }
-        span{
-          color:black
-        }
-      </style>
+
+
+
+
+
+
+
 
   
-  <script>
 
-    function fermer(){
-      document.getElementById('info2').style.display = 'none';
-      document.getElementById('info3').style.display = 'none';
-      document.getElementById('info1').style.display = 'none';
-      };
+    
+
   
-    function donnée_lyon(){
-      document.getElementById('info2').style.display = 'none';
-      document.getElementById('info3').style.display = 'none';
-      document.getElementById('info1').style.display = 'block';
-      };     
-
-    function donnée_paris(){
-      document.getElementById('info1').style.display = 'none';
-      document.getElementById('info3').style.display = 'none';
-      document.getElementById('info2').style.display = 'block';
-     };
-
-    function donnée_marseille(){
-      document.getElementById('info1').style.display = 'none';
-      document.getElementById('info2').style.display = 'none';
-      document.getElementById('info3').style.display = 'block';
-    };
-      
-  </script>
 
 
 
 
 
 
-<style>
-    input{border:2px solid black;}
-</style>
-<style>
-  h1{
-    color:black;
-    font-family:"Comic Sans MS, Comic Sans, cursive";
-  }
-  h2{
-    color:black;
-    font-style=justify;
-  }
-  #info_aqi{
-    margin-left:50px;
-    color:black;
-  }
-  #info_dollard{
-    margin-left:50px;
-    color:black;
-  }
-  #info_pop{
-    margin-left:50px;
-    color:black;
-  }
-  #Lyon{
-    background:url("/static/img/parquet1.jpg");
-    margin:auto;
-    height:350px;
-    border:2px solid black;
-    border-radius:80px;
-  }
-  #Paris{
-    background:url("/static/img/parquet1.jpg");
-    margin:auto;
-    height:350px;
-    border:2px solid black;
-    border-radius:80px;
-  }
-  #Marseille{
-    background:url("/static/img/parquet1.jpg");
-    margin:auto;
-    height:350px;
-    border:2px solid black;
-    border-radius:80px;
-  }
-</style>
+
+
+
+
+
+
 
 
 
