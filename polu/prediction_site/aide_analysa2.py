@@ -19,7 +19,7 @@ def vision(ville):
     cursor.execute("""select angrais, saison, diesel, eruption, jour_nuit,
                    TRAFIQUE, HEURE, WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE,
                    POPULATION_ACTIVE_HABITANT, REGION_INDUSTRIEL_POLLUEE,
-                   polenne, pos, météo, vent, pression, climat, incendie,
+                   polenne, pos, météo, vent, pression, climat,
                    nombre_particule
                    from conditions2 where nom_ville=%s""", (ville,))
 
