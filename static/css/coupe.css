@@ -1,0 +1,100 @@
+video, #cssfilters-video, #screenshot-img {
+  width: 400px;
+  height: 300px;
+}
+ video, #cssfilters-stream {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid #ccc;
+}
+
+.grayscale {
+-webkit-filter: grayscale(20000);
+-moz-filter: grayscale(20000);
+-o-filter: grayscale(20000);
+-ms-filter: grayscale(20000);
+filter: grayscale(20000);
+}
+
+
+
+
+@media screen and (min-width: 0px) and (max-width:766px) {
+    #p_coif {
+      margin-left:100px;
+      
+    }
+   #p_gym{
+    margin-left:80px;
+      
+    }
+   #p_habit{
+    margin-left:90px;
+    margin-right:130px;
+
+    }
+   #p_tendance{
+    margin-left:80px;
+
+   }
+}
+
+
+#image1{margin-top:500px; width: 150px; height: 200px}
+
+#carre1{height:400px; width :200px; background: red; overflow: scroll;}
+
+#draggable2, #draggable3,#draggable4,#draggable5, #draggable6,#draggable7,
+#draggable8, #draggable9, #draggable10,#draggable11,#draggable12,
+#draggable14,#draggable15,#draggable16,#draggable18,
+#draggable19,#draggable{ width: 0px; height: 0px;}
+
+#favdraggable2, #favdraggable3,#favdraggable4,
+#favdraggable5,#favdraggable6,#favdraggable7,
+#favdraggable8,#favdraggable9,#favdraggable10,
+#favdraggable11,#favdraggable12,#favdraggable14,
+#favdraggable15, #favdraggable16,#favdraggable17,
+#favdraggable18, #favdraggable19,#favdraggable { width: 0px; height: 0px;}
+
+#image{
+    margin-top:-450px;   
+}
+#coupe_gauche{
+     margin-top:-280px;
+      margin-left:10px;      
+    
+}
+
+#coupe_droite{
+     margin-top:10px;
+     margin-left:1100px;
+}
+
+
+          
+
+#im10{
+width:100px;
+height:100px;
+margin-left:50px;
+}
+#im11{
+width:100px;
+height:100px;
+margin-left:100px;
+}
+#im12{
+width:200px;
+height:200px;
+margin-left:100px;
+}
+
+#map{
+    margin-top:50px;
+    height:400px;
+    width:80%;
+    border: 5px solid black;
+                  
+}
+
+
+
