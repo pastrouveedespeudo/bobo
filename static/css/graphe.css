@@ -1,0 +1,18 @@
+h1{
+  font-family:recursive;
+  color:black;
+}
+h2{
+  font-family:"Comic Sans MS, Comic Sans, cursive";
+  color:black;
+}
+input{
+  border:2px solid black;
+}
+#section_graphe{
+  margin-top:-100px;
+}
+#information_click{
+  margin-left:100px;
+  color:black;
+}
