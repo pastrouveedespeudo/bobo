@@ -20,12 +20,11 @@
 
       <!-- Plugin CSS -->
       <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="/static/css/home.css">
 
       <!-- Theme CSS - Includes Bootstrap -->
       <link href="/static/css/creative.min.css" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-      <script type="text/javascript" src="/static/js/navebarre.js"></script>
+      <link rel="stylesheet" type="text/css" href="/static/css/navebarre.css" media="all" />
     </head> 
 
 
@@ -79,7 +78,10 @@
             <!-- Right Section -->
             <ul class="navbar-nav ml-auto my-2 my-lg-0">
             
+              <!-- If user is connected we displaying this-->
+              {% if user.is_authenticated %}
 
+              
               <!-- Right Section - Fisrt logo -->
               <center><li class="nav-item">
                 <img src="/static/img/portfolio/icone/momode.png" id="momode"
@@ -145,14 +147,46 @@
                 </a>     
               </li></center>
                  
+              <!-- End of the part one. Now we post the navebarre if user isn't connected-->
+              {% else %}
+
+
+                  <!-- First li - User no connected -->
+                  <center><li class="nav-item">
+                    <img src="/static/img/portfolio/icone/inscription.png" id="ima1"
+                      alt="form with a pen."
+                      onMouseOver='change_image_inscription1("p_inscri")'
+                      onMouseOut='change_image_inscription2("p_inscri", "black")'>
+                    <a class="nav-link js-scroll-trigger" href="/accounts/register_view">
+                      <p id='p_inscri' onMouseOver='change_image_inscription1("p_inscri")'
+                          onMouseOut='change_image_inscription2("p_inscri", "black")'>
+                        S'inscrire
+                      </p>
+                    </a>
+                  </li></center>
+
+
+                  <!-- Second li - User no connected -->
+                  <center><li class="nav-item">
+                    <img src="/static/img/portfolio/icone/login.png" id="im2"
+                      onMouseOver='change_image_co1("p_con")'
+                      onMouseOut='change_image_co2("p_con", "black")'>
+                    <a class="nav-link js-scroll-trigger" href="/accounts/login">
+                      <p id='p_con'
+                          onMouseOver='change_image_co1("p_con")'
+                          onMouseOut='change_image_co2("p_con", "black")'>
+                        Se connecter
+                      </p>
+                    </a>
+                  </li></center>
+              </ul>
+            {% endif %}
             
-            </ul>
         </div>
       </div>
     </nav>
+    <script type="text/javascript" src="/static/js/navebarre.js"></script>
   </html>
-
-
 
 
 
