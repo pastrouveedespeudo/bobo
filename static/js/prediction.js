@@ -28,7 +28,7 @@ jQuery("#lyon").on("click", function(e){
 
             document.getElementById('chargement').style.display = "none";      
             
-            if (data == "pas de donnée"){
+            if (data == "pas de donn\u00e9e"){
                 document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
             }
             else{
@@ -75,7 +75,7 @@ jQuery("#paris").on("click", function(e){
 
             document.getElementById('chargement').style.display = "none";
             
-          if (data == "pas de donnée"){
+          if (data == "pas de donn\u00e9e"){
                 document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
             }
             else{
@@ -121,7 +121,7 @@ jQuery("#marseille").on("click", function(e){
             
             document.getElementById('chargement').style.display = "none";
             
-          if (data == "pas de donnée"){
+          if (data == "pas de donn\u00e9e"){
                 document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
             }
 
