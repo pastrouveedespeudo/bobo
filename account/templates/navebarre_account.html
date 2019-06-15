@@ -1,78 +1,194 @@
-{% include "navebarre_account.html" %}
-{% block content %}
-{% endblock %}
-
-<link rel="stylesheet" type="text/css" href="/static/css/login.css" media="all" />
-<!-- Title section -->
-<header class="masthead">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center justify-content-center text-center">
-      <div class="col-lg-10 align-self-end"><br><br>
-          <h1>Connecte toi !</h1>
-          <br>
-          <h2 id="h" style='color:black;'>
-            Va essayer des coiffures en noir et blanc,
-            en couleur, longue, courte il y
-            a tous ce que tu veux !</2>
-      </div>
-      <div class="col-lg-8 align-self-baseline">
-      <p class="text-white-75 font-weight-light mb-5"></p>  
-    </div>
-  </div>  
-</header>
+<!DOCTYPE html>
+  <html lang="en">
 
 
-<!-- Form section -->
-<section id="about"><br><br>
-    <center>
-        <h3 id='se_connecter'>
-          Se connecter
-        </h3>
-        <br><br><br>
-    </center>
+<head>
+
+      <!-- Head section we load CDN -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <title>Magazine virtuel</title>
+
+      <!-- Font Awesome Icons -->
+      <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+      <!-- Plugin CSS -->
+      <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+      <!-- Theme CSS - Includes Bootstrap -->
+      <link href="/static/css/creative.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+      <link rel="stylesheet" type="text/css" href="/static/css/navebarre_account.css" media="all" />
+    </head> 
 
 
-    <!-- Form section -->
-    <div id='div_form'>
-        <center><form method="POST" id="formm">{% csrf_token%}<br><br><center>
 
-        
-            <!-- Fisrt Input - Username -->
-            <p id='p_user_name'>
-                <strong>nom utilisateur :</strong>
+    <!-- Body section -->
+    <body id="page-top">
+
+
+      <!-- Navebarre -->
+      <!-- On each picture there is a function that changes the image-->
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container">
+          <img src="/static/img/portfolio/icone/my.png" id="my_prof"
+            alt="Emoticon who smiyling, circle head with eyes and mouse (mouth in the shape of an arc)"
+            onMouseOver='mode_div3("myprofile_p", "my_prof")'
+            onMouseOut='mode_div4("myprofile_p", "black", "my_prof", "49px", "49px")'>
+          <a class="navbar-brand js-scroll-trigger" href="/">
+            <p id='myprofile_p'
+                onMouseOver='mode_div3("myprofile_p", "my_prof")'
+                onMouseOut='mode_div4("myprofile_p", "black", "my_prof","49px", "49px")'>
+              My_Profil
+            </p>   
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="/static/img/portfolio2/icone/indian.png" id="my"
+            alt="Picture of an indian figure. Like cartoon."
+            onMouseOver='mode_div3("pol_logo", "my", 50,60)'
+            onMouseOut='mode_div4("pol_logo", "black", "my", "49px", "49px")'>
+          <a class="navbar-brand js-scroll-trigger" href="/polution/polution">
+            <p id='pol_logo'
+                onMouseOver='mode_div3("pol_logo", "my", 50,60)'
+                onMouseOut='mode_div4("pol_logo", "black", "my", "49px", "49px")'>
+              My_pollution
             </p>
-            <input type='text' id ="input_username"
-              {{form.username}}
-            <br><br>
+          </a>
+          <button class="navbar-toggler navbar-toggler-right" type="button"
+            data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
 
 
-            <!-- Second Input - Password -->
-            <center><p id='p_input_password'>
-              <strong> mot de passe :</strong></p>
-              <input type='text' id="input_password"
-              {{form.password}}
-            </center><br><br><br>
+          <!-- This is section where we put icon and their links. -->
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto my-2 my-lg-0">
+
+              <!-- If user is connected we displaying this-->
+              {% if user.is_authenticated %}
 
 
-            <!-- Third Input - Submit -->
-            <center><input type="submit" id="input_submit"></center>
-            <br><br>
-        </form>
-    </div>
-</section>
-
-          
-<!-- Separate section for visual aspect-->
-<div id='separate'>
-    <br><br><br>
-</div>
-
-{% include "bottom_page2.html" %}
-{% block content2 %}
-{% endblock content2%}
+                <!-- Fisrt li - Tendance mode section-->
+                <center><li class="nav-item">
+                  <img src="/static/img/portfolio/icone/momode.png" id="momode"
+                    alt="This is picture of an evening dress of the kind wide on the sides"
+                    onMouseOver='change_image_tendance1("p_mode", "momode")'
+                    onMouseOut='change_image_tendance2("p_mode", "momode")'>
+                  <a class="nav-link js-scroll-trigger" href="/administrateur/tendance">
+                    <p id='p_mode'
+                        onMouseOver='change_image_tendance1("p_mode", "momode")'
+                        onMouseOut='change_image_tendance2("p_mode", "momode")'>
+                        La tendance du moment ?
+                    </p>  
+                  </a>
+                </li></center>
 
 
+                <!-- Second li - Tendance mode section-->
+                <center><li class="nav-item">
+                  <img src="/static/img/portfolio/icone/coiffure.png" id="coif_nav"
+                    alt="Picture of a children, with a bad hair style white background black contour."
+                    onMouseOver='change_image_coiff1("coif_p")'
+                    onMouseOut='change_image_coiff2("coif_p", "black")'>
+                  <a class="nav-link js-scroll-trigger" href="/photo/coupe">
+                    <p id='coif_p'
+                        onMouseOver='change_image_coiff1("coif_p")'
+                        onMouseOut='change_image_coiff2("coif_p", "black")'>
+                      Mes coiffures
+                    </p>
+                  </a>
+                </li></center>
 
+
+                <!-- Third li - Tendance mode section-->
+                <center><li class="nav-item">
+                  <img src="/static/img/portfolio/icone/vetements.png" id="im3"
+                    alt="Picture of a t-shirt with a heart in the middle white background black contour"
+                    onMouseOver='change_image_vetements1("p_vet")'
+                    onMouseOut='change_image_vetements2("p_vet", "black")'>
+                  <a class="nav-link js-scroll-trigger" href="/photo/habits">
+                    <center><p id='p_vet'
+                        onMouseOver='change_image_vetements1("p_vet")'
+                        onMouseOut='change_image_vetements2("p_vet", "black")'>
+                      Mes vetements
+                    </p></center>
+                  </a>
+                </li>
+                </center>
+
+
+                <!-- Fourth li - Tendance mode section-->
+                <center><li class="nav-item">
+                  <img src="/static/img/portfolio/icone/deco.png" id="deco_nav"
+                    alt="button out, a circle, a rectangle in the middle and an
+                    arrow to say that one goes out of a door"
+                    onMouseOver='change_image_logout1("p_deco")'
+                    onMouseOut='change_image_logout2("p_deco", "black")'>
+                  <a class="nav-link js-scroll-trigger" href="/accounts/logout_view">
+                    <center><p id='p_deco'
+                        onMouseOver='change_image_logout1("p_deco")'
+                        onMouseOut='change_image_logout2("p_deco", "black")'>
+                      Se déconnecter
+                    </p></center>
+                  </a>   
+                </li></center>
+
+
+              </ul>
+
+
+              <!-- End of the part one. Now we post the navebarre if user isn't connected-->
+              {% else %}
+
+
+                  <!-- First li - User no connected -->
+                  <center><li class="nav-item">
+                    <img src="/static/img/portfolio/icone/inscription.png" id="ima1"
+                      alt="form with a pen."
+                      onMouseOver='change_image_inscription1("p_inscri")'
+                      onMouseOut='change_image_inscription2("p_inscri", "black")'>
+                    <a class="nav-link js-scroll-trigger" href="/accounts/register_view">
+                      <p id='p_inscri' onMouseOver='change_image_inscription1("p_inscri")'
+                          onMouseOut='change_image_inscription2("p_inscri", "black")'>
+                        S'inscrire
+                      </p>
+                    </a>
+                  </li></center>
+
+
+                  <!-- Second li - User no connected -->
+                  <center><li class="nav-item">
+                    <img src="/static/img/portfolio/icone/login.png" id="im2"
+                      onMouseOver='change_image_co1("p_con")'
+                      onMouseOut='change_image_co2("p_con", "black")'>
+                    <a class="nav-link js-scroll-trigger" href="/accounts/login">
+                      <p id='p_con'
+                          onMouseOver='change_image_co1("p_con")'
+                          onMouseOut='change_image_co2("p_con", "black")'>
+                        Se connecter
+                      </p>
+                    </a>
+                  </li></center>
+
+
+              </ul>
+              {% endif %}
+          </div>
+        </div>
+      </nav>
+      <script type="text/javascript" src="/static/js/navebarre_account.js"></script>
+  </body>
+</html>
 
 
 
