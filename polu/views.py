@@ -36,6 +36,8 @@ from .donnée_site.polenne import *
 
 from .prediction_site.analysa2 import *
 
+
+
 def home(request):
     return render(request, 'home.html')
 
@@ -51,46 +53,49 @@ def charger(request):
 
 @csrf_exempt
 def donnée(request):
-
+    """Here we call API recup data, and display it on HTML page
+    We need exception in case there are error from ur script (for call API)"""
+    
+    
     try:
-        
-
         data_lyon = taux_particule('lyon')
         data_paris = taux_particule('paris')
         data_marseille = taux_particule('marseille')
     except:
         data_lyon = "No data"
         data_paris = "No data"
-        data_marseille = "No data"
+        data_marseille = "No data"  #First block particle data
+
+
+        
     try:
         weather_lyon = temps_ville('lyon', 'météo')
         wind_lyon = temps_ville('lyon', 'vent')
-
         weather_paris = temps_ville('paris', 'météo')
         wind_paris = temps_ville('paris', 'vent')
-
         weather_marseille = temps_ville('marseille', 'météo')
         wind_marseille = temps_ville('marseille', 'vent')
+        
     except:
         weather_lyon = "No data"
         wind_lyon = "No data"
         weather_paris = "No data"
         wind_paris = "No data"
         weather_marseille = "No data"
-        wind_marseille = "No data"
+        wind_marseille = "No data"  #Second block Weather, Wind data
 
 
     try:
         temperature_lyon = climat_ville('lyon')
         temperature_paris = climat_ville('paris')
-        temperature_marseille = climat_ville('marseille')#Celsius city
-
-        current_season =  saison()#season
+        temperature_marseille = climat_ville('marseille')
+        current_season =  saison()
     except:
         temperature_lyon = "No data"
         temperature_paris = "No data"
         temperature_marseille = "No data"
-        current_season = "No data"
+        current_season = "No data"  #Third block Temperature,
+                                    #Current season data
 
 
     try:
@@ -99,7 +104,7 @@ def donnée(request):
         hour_point_lyon = traffic_lyon[1]
         hour_point_paris = hour_point_lyon
         regular_day_lyon = traffic_lyon[2] 
-        hour_point_marseille = hour_point_lyon#Section about traffic
+        hour_point_marseille = hour_point_lyon
 
         if hour_point_marseille == 'oui':
             no_point_lyon = 'non'
@@ -110,25 +115,23 @@ def donnée(request):
             no_point_paris = 'oui'
             no_point_marseille = 'oui'
 
-
     except:
         traffic_lyon = "No data"
         departure_lyon = "No data"
         hour_point_lyon = "No data"
         hour_point_paris = "No data"
         regular_day_lyon = "No data"
-        hour_point_marseille = "No data"
+        hour_point_marseille = "No data"    #Fourth block traffic
+                                            #and Regular day data
 
     try:
         regular_day_paris = regular_day_lyon
         regular_day_marseille = regular_day_lyon
-
         departure_paris = departure_lyon
         departure_marseille = departure_lyon
-        
         traffic_paris = traffique('paris')
-
         traffic_marseille = traffique('marseille')
+        
     except:
         regular_day_paris = "No data"
         regular_day_marseille = "No data"
@@ -136,7 +139,8 @@ def donnée(request):
         traffic_paris = "No data"
         departure_marseille = "No data"
         traffic_paris = "No data"
-        traffic_marseille = "No data"
+        traffic_marseille = "No data"   #Fifty block regular day
+                                        #Traffic and deaparture data
 
 
     try:
@@ -149,21 +153,19 @@ def donnée(request):
             day = 'week end'
             weekend = 'oui'
     except:
-        day = "No data"
+        day = "No data"     #Sixty bloc Day or Weekend data
+
 
     try:
         ranking_lyon = ville_pollué_classement('lyon')
         ranking_paris = ville_pollué_classement('paris')
         ranking_marseille = ville_pollué_classement('marseille')
-
         pole_lyon = region_industrielle('lyon')
         pole_paris = region_industrielle('paris')
         pole_marseille = region_industrielle('marseille')
-
         pressure_lyon = pression_ville('lyon')
         pression_paris = pression_ville('paris')
         pression_marseille = pression_ville('marseille')
-
         demonstration_lyon = activité_execptionnelle('lyon')
         demonstration_paris = activité_execptionnelle('paris')
         demonstration_marseille = activité_execptionnelle('marseille')
@@ -181,12 +183,12 @@ def donnée(request):
         demonstration_lyon = "No data"
         demonstration_paris = "No data"
         demonstration_marseille = "No data"
-
+                                #Seve,ty bloc Ranking data, Pole and
+                                #Demonstration data
     try:
         socio_lyon = socio('lyon')
         socio_paris = socio('paris')
         socio_marseille = socio('marseille')
-
         plugs_lyon = bouchons('lyon')
         plugs_paris = bouchons('paris')
 
@@ -208,7 +210,8 @@ def donnée(request):
         plugs_paris = "No data"
         errup = "No data"
         diesel = "No data"
-        dollars = "No data"
+        dollars = "No data" #Heighty block Socio, Plugs, Diesel
+                            #Dollars and Eruption data
 
     try:
         fire_lyon = incendie('lyon')
@@ -233,10 +236,7 @@ def donnée(request):
 
 
         fertilizer = periode_angrais()
-
         periode = nuit_jour()
-
-
         po_lyon = polenne('lyon')
         po_marseille = polenne('marseille')
         po_paris = polenne('paris')
@@ -250,7 +250,7 @@ def donnée(request):
         po_lyon = "No data"
         po_marseille = "No data"
         po_paris = "No data"
-
+                    #Ninety bloc Fire, Periode, And Po data
 
 
     return render(request, 'donnée.html', {'lyon':data_lyon,
@@ -309,22 +309,27 @@ def donnée(request):
                                            'po_paris':po_paris,
                                            'po_marseille':po_marseille})
 
+                        #Return it !
 
-    return render(request, 'donnée.html')
+
 
 
 
 def info_pollu(request):
+    """Information page about pollution"""
     return render(request, 'info_pollu.html')
 
 
 
 
 def machine_a_o(request):
+    """Information page about Water machin"""
+    
     return render(request, 'machine a o.html')
 
 @csrf_exempt
 def prediction(request):
+    """Our predict page"""
     if request.method == "POST":
 
             ville1 = request.POST.get('lyon')
@@ -393,7 +398,7 @@ def supp():
 
 @csrf_exempt
 def graphe(request):
-    
+    """Graphic page"""
     if request.method == "POST":
         
         ville = request.POST.get('ville')
@@ -587,22 +592,3 @@ def particule(lieu):
 
     return polution
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
