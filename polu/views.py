@@ -287,8 +287,8 @@ def donnée(request):
                                            'pole_paris':pole_paris,
                                            'pole_marseille':pole_marseille,
                                            'pressure_lyon':pressure_lyon,
-                                           'pression_paris':pression_paris,
-                                           'pression_marseille':pression_marseille,
+                                           'pressure_paris':pression_paris,
+                                           'pressure_marseille':pression_marseille,
                                            'demonstration_lyon':demonstration_lyon,
                                            'demonstration_paris':demonstration_paris,
                                            'demonstration_marseille':demonstration_marseille,
@@ -592,3 +592,22 @@ def particule(lieu):
 
     return polution
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
