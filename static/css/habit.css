@@ -1,0 +1,138 @@
+#1, #2,#3,#4,#5,#6,#7,#8,#9,
+#10, #11,#22,#33,#44,#55,
+#66, #77, #88 { width: 0px; height: 0px;}
+input{
+  border:1px solid black;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width:991px) {
+  #shirt_tshirt {
+    margin-left:10%;
+  }
+  #pantaloune {
+    margin-left:-7.5%;
+  }
+}
+
+
+@media screen and (min-width: 0px) and (max-width:767px) {
+
+  #tshirt {
+    
+    margin-right:9%;
+    margin-top:450%;
+  }
+  #pantaloune {
+
+    margin-left:-16%;
+    margin-top:127%;
+  }
+}
+
+
+
+#clothes_section{
+    width:101%;
+    text-align:center;
+}
+#pantaloune{
+    position:absolute;
+    height:100px;
+    width:100px;
+}
+#pantalon_div{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+    width:150px;
+    margin-left:20%;
+}
+#Pantalon{
+    border:3px solid black;
+    font-family:segoe print;
+}
+#info_cloths_like_price{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+    width:500px;
+    height:280px;'
+}
+#nos_info_habits{
+    font-family:segoe print;
+}
+
+#mage{
+    float:right;
+    width:200px;
+}
+#name{
+    width:200px;
+}
+#store{
+    width:200px;
+}
+#price,
+#stock,
+#online{
+    width:200px;
+}
+#infofo{
+    text-align:left;
+    padding-left:50px;
+}
+
+
+#shirt_tshirt{
+    margin-left:82%;
+    margin-top:-350px;
+    width:150px;
+    position:absolute;
+}
+#tshirt{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+    font-family:segoe print;
+}
+
+#info_div_container{
+    background:url("/static/img/parquet1.jpg");
+    border:2px solid black;
+    border-radius:50px;
+}
+
+#add1,
+#add2,
+#no_add1,
+#no_add2{
+    border:3px solid black;
+}
+
+#draggable{
+   width:0px; 
+   height:0px;
+}
+
+
+h1{
+    color:black;
+    font-family:"Comic Sans MS, Comic Sans, cursive";
+}
+h2{
+    color:black;
+    font-style:justify;
+}
+h3{
+    color:black;
+}
+#Color_hair{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+}
+
+
+
