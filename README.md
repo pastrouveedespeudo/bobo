@@ -1,5 +1,7 @@
 corriger toutes les fautes
 
+t'as oublié map et database
+
 faire les tests ca ok c cool
 
 tout mettre en anglais ca c chiant MAIS REFACTORé en mm temps
@@ -14,7 +16,7 @@ documenter le github et finir les truk mais avant faire popo et remplir la datab
 
 mettre des pages 404 et 505
 
-
+me faut encore une grosse semaine MAIS j'ai quand meme reussi y'a plus de bug et tout est linké c parti pour les fautes !
 
 
 
