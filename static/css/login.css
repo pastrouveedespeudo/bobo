@@ -1,0 +1,68 @@
+  h1{
+    color:black;
+    font-family:"cursive";
+  }
+  #h{
+    color:black;
+    font-family:"cursive";
+  }
+  #about{
+     background:#212529;
+  }
+  #se_connecter{
+    color:white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+  }
+  #div_form{
+    text-align:center;
+  }
+  #formm{
+    border:1px solid black;
+    width:50%;
+    background:url('/static/img/parquet1.jpg');
+  }
+  #p_user_name{
+    color:white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+  }
+  #input_username{
+    text-align:center;
+    width:250px;
+    border:1px solid black;
+    border:1px solid black;
+  }
+  #p_input_password{
+    color:white;
+    text-shadow: black 0.1em 0.1em 0.2em;
+  }
+  #input_password{
+     text-align:center;
+     width:250px;
+     border:1px solid black;
+     border:1px solid black;'
+  }
+  #input_submit{
+    border:2px solid black;
+  }
+  #separate{
+    background:#212529;
+  }
+
+#autre{
+    margin-left:-965px
+    ;margin-top:-100px;
+}
+#h{
+    font:Serif;
+    color:white;
+}
+
+
+
+
+
+
+
+
+
+
