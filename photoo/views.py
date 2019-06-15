@@ -30,13 +30,15 @@ from .magasins.adresse import *
 from .magasins.gym import *
 
 
+def home_bobo(request):
+    """Here we return a home html respons"""
+    return render(request, 'home_bobo.html')
+
 def home(request):
     """Here we return a home html respons"""
     return render(request, 'home.html')
 
-
-
-@csrf_protect
+@csrf_exempt
 def coupe(request):
     """this is the interraction between
     the view and the template hair"""
@@ -65,9 +67,9 @@ def coupe(request):
         map_coiffure = request.POST.get('buttony')#city for hairdresser
         numero_coiffeur = request.POST.get('numero_coiffeur')#number phone for hairdresser
         vivile = request.POST.get('country')#city for hairdresser map
-        coiffure = request.POST.get('coiffeur')#this is request for a hairdress ?
+        coiffure = request.POST.get('coiffeur')#this is request for a hairdress
 
-        gymm = request.POST.get('gymnastique')#this is request for a gym ?
+        gymm = request.POST.get('gymnastique')#this is request for a gym
         gymm_map = request.POST.get('buttony_gym')#this is country for map gym
         gym_pays = request.POST.get('country_gym')#this is country for search gym
 
@@ -82,7 +84,8 @@ def coupe(request):
             except:
                 return HttpResponse("Oups nous n'avons rien trouvé")#if nothing is found we return it
 
-            data = str(lat_long[0]) + ' ' + str(lat_long[1])#if no exception, we traiting data
+            data = str(lat_long[0]) + ' ' + str(lat_long[1])#if no exception, we traiting data for js code
+            #we add a space 
      
             if data == ' ' or data == '':
                 return HttpResponse("Oups nous n'avons rien trouvé")#for sure we return again an exception
