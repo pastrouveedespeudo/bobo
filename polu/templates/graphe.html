@@ -2,7 +2,9 @@
 {% block content %}
 {% endblock %}
 
+    <link rel="stylesheet" type="text/css" href="/static/css/graphe.css" media="all" />
 
+    
     <!-- Title Section -->
     <header class="masthead">
       <div class="container h-100">
@@ -98,121 +100,8 @@
 
     <!-- Custom scripts for this template -->
     <script src="/static/js/creative.min.js"></script>
-
+    <script type="text/javascript" src="/static/js/graphe.js"></script>
   </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <style>
-      h1{
-        font-family:recursive;
-        color:black;
-      }
-      h2{
-        font-family:"Comic Sans MS, Comic Sans, cursive";
-        color:black;
-      }
-      input{
-        border:2px solid black;
-      }
-      #section_graphe{
-        margin-top:-100px;
-      }
-      #information_click{
-        margin-left:100px;
-        color:black;
-      }
-      
-    </style>
-
-
-
-
-
-
-
-    <script>
-      LISTE_AJAX = []
-      LISTE_AJAX_TYPE_GRAPHE = []
-
-      function lyon(){
-        document.getElementById('section_graphe').style.display = 'block';
-        LISTE_AJAX.push('lyon')
-        };
-      
-      function paris(){
-        document.getElementById('section_graphe').style.display = 'block';
-        LISTE_AJAX.push('paris')
-        };
-  
-      function marseille(){
-        document.getElementById('section_graphe').style.display = 'block';
-        LISTE_AJAX.push('marseille')
-        };
-    </script>
-
-    <script>
-      function graphe(legraphe){
-        LISTE_AJAX_TYPE_GRAPHE.push(legraphe)
-           document.getElementById('graphique1').innerHTML = '';
-           jQuery.ajax({
-             data:{
-                 'csrfmiddlewaretoken': '{{csrf_token}}' , 
-                 'ville':LISTE_AJAX[LISTE_AJAX.length - 1],
-                 'graphe':LISTE_AJAX_TYPE_GRAPHE[LISTE_AJAX_TYPE_GRAPHE.length - 1]},
-
-             
-                    type:"POST",
-                    url:"/polution/graphe"
-                })
-                .done(function(data){
-                    if (data.error){
-                        jQuery("#monCadreAlert").text(data.error);
-                        jQuery("#is_save");
-                        
-                        
-                    }
-                    else{
-                        jQuery("#is_save").html(data.data);
-                        jQuery("#monCadreAlert");
-                   
-                        document.getElementById('graphique1').innerHTML = "<img src = '/static/popo/" +
-                                                                          data +
-                                                                          "'>"
-
-                    };
-                    
-                });
-            };
-     
-
-    </script>
-
-
 
 
 </html>
