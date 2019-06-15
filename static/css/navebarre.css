@@ -1,3 +1,4 @@
+
 #mainNav {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -63,21 +64,12 @@
     color: #f4623a;
   }
 }
-
-
-
-
 #p_mode,
 #coif_p,
 #p_vet,
 #p_deco{
     color:black;
 }
-
-  
-
-
-
 #autre{
   margin-left:-965px;
   margin-top:-100px;
@@ -86,8 +78,6 @@
   font:Serif;
   color:white;
 }
-    
-
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 72px);
@@ -98,28 +88,79 @@ header.masthead {
   background-attachment: scroll;
   background-size: cover;
 }
-
-
-
-#my_prof{height:50px; height:50px;margin-left:-10px;}
-#my{width:50px;height:50px; position: absolute;margin-left:185px;}
-
-#im1{width:50px;height:50px;margin-left:55px;}
-#coif_nav{width:50px; height:50px; margin-left:25px;}
-#im2{width:50px;height:50px;margin-left:40px;}
-#im3{width:50px; height:50px; margin-left:20px;}
-#im4{width:50px;height:50px;margin-left:40px;}
-#h{font:Serif; color:white;}
-#im6{width:100px; height:100px;}
-#deco_nav{width:50px; height:50px; margin-left:25px;}
-#autre{margin-left:-965px;margin-top:-100px;}
-#h{font:Serif; color:white;}
-
-
-#momode{width:65px; height:50px; margin-left:20px;}
-#my_prof{color:black; position: absolute;}
-#myprofile_p{color:black;margin-left:55px;}
-#pol_logo{color:black;}
+#my_prof{
+  height:50px;
+  height:50px;
+  margin-left:-10px;
+}
+#my{
+  width:50px;
+  height:50px; 
+  position: absolute;
+  margin-left:185px;
+}
+#im1{
+   width:50px;
+   height:50px;
+   margin-left:55px;
+}
+#coif_nav{
+   width:50px;
+   height:50px;
+   margin-left:25px;
+}
+#im2{
+  width:50px;
+  height:50px;
+  margin-left:40px;
+}
+#im3{
+   width:50px;
+   height:50px;
+   margin-left:20px;
+}
+#im4{
+  width:50px;
+  height:50px;
+  margin-left:40px;
+}
+#h{
+  font:Serif;
+  color:white;
+}
+#im6{
+  width:100px; 
+  height:100px;
+}
+#deco_nav{
+  width:50px;
+  height:50px;
+  margin-left:25px;
+}
+#autre{
+  margin-left:-965px;
+  margin-top:-100px;
+}
+#h{
+  font:Serif; 
+  color:white;
+}
+#momode{
+  width:65px;
+  height:50px; 
+  margin-left:20px;
+}
+#my_prof{
+   color:black; 
+  position: absolute;
+}
+#myprofile_p{
+  color:black;
+  margin-left:55px;
+}
+#pol_logo{ 
+   color:black;
+}
 
 @media screen and (min-width: 990px) and (max-width:991px) {
   #my {
@@ -196,7 +237,6 @@ header.masthead {
     margin-top: -230px;
   }
 }
-
 @media screen and (min-width: 770px) and (max-width:780px) {
   #my {
     margin-left:360px;
@@ -332,7 +372,6 @@ header.masthead {
     margin-top: -230px;
   }
 }
-
 @media screen and (min-width: 650px) and (max-width:749px) {
   #my {
     margin-left:240px;
@@ -342,8 +381,6 @@ header.masthead {
     margin-top: -230px;
   }
 }
-
-
 @media screen and (min-width: 730px) and (max-width:749px) {
   #my {
     margin-left:250px;
@@ -353,9 +390,6 @@ header.masthead {
     margin-top: -230px;
   }
 }
-
-
-
 @media screen and (min-width: 650px) and (max-width:730px) {
   #my {
     margin-left:250px;
@@ -365,9 +399,6 @@ header.masthead {
     margin-top: -230px;
   }
 }
-
-
-
 @media screen and (min-width: 620px) and (max-width:650px) {
   #my {
     margin-left:250px;
@@ -377,13 +408,6 @@ header.masthead {
     margin-top: -230px;
   }
 }
-
-
-
-
-
-
-
 @media screen and (min-width: 600px) and (max-width:620px) {
   #my {
     margin-left:250px;
@@ -393,7 +417,6 @@ header.masthead {
     margin-top: -230px;
   }
 }
-
 @media screen and (min-width: 590px) and (max-width:600px) {
   #my {
     margin-left:250px;
@@ -403,9 +426,6 @@ header.masthead {
     margin-top: -230px;
   }
 }
-
-
-
 @media screen and (min-width: 580px) and (max-width:590px) {
   #my {
     margin-left:240px;
@@ -415,8 +435,6 @@ header.masthead {
     margin-top: -230px;
   }
 }
-
-
 @media screen and (min-width: 560px) and (max-width:580px) {
   #my {
     margin-left:220px;
@@ -426,9 +444,6 @@ header.masthead {
     margin-top: -230px;
   }
 }
-
-
-
 @media screen and (min-width: 540px) and (max-width:560px) {
   #my {
     margin-left:210px;
@@ -439,8 +454,6 @@ header.masthead {
     margin-top: -230px;
   }
 }
-
-
 @media screen and (min-width: 520px) and (max-width:540px) {
   #my {
     margin-left:200px;
@@ -451,8 +464,6 @@ header.masthead {
     margin-top: -230px;
   }
 }  
-
-
 @media screen and (min-width: 515px) and (max-width:520px) {
   #my {
     margin-left:200px;
@@ -464,8 +475,6 @@ header.masthead {
     margin-top: -230px;
   }
 }  
-
-
 @media screen and (min-width: 510px) and (max-width:515px) {
   #my {
     margin-left:200px;
@@ -477,8 +486,6 @@ header.masthead {
     margin-top: -230px;
   }
 }  
-
-
 @media screen and (min-width: 515px) and (max-width:509px) {
   #my {
     margin-left:190px;
@@ -489,8 +496,6 @@ header.masthead {
     margin-top: -230px;
   }
 }  
-
-
 @media screen and (min-width: 508px) and (max-width:509px) {
   #my {
     margin-left:190px;
@@ -501,12 +506,6 @@ header.masthead {
     margin-top: -240px;
   }
 }  
-
-
-
-
-
-
 @media screen and (min-width: 505px) and (max-width:507px) {
   #my {
     margin-left:200px;
@@ -517,8 +516,6 @@ header.masthead {
     margin-top: -240px;
   }
 }  
-
-
 @media screen and (min-width: 0px) and (max-width:505px) {
   #my {
     margin-left:220px;
