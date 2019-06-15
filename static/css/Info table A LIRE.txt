@@ -1,0 +1,8 @@
+1 - lancer mysql creation_table
+
+2 - lancer mysql insertion_produit
+
+3 - lancer ajout clé primaire
+
+rien ne se lancer dans le workbench j'ai au cas ou
+mis ca dans les idle
