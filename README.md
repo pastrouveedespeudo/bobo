@@ -18,7 +18,7 @@ mettre des pages 404 et 505
 
 me faut encore une grosse semaine MAIS j'ai quand meme reussi y'a plus de bug et tout est linké c parti pour les fautes !
 
-
+rajouter le nombre de donnée la variance et une expli fonctionnement et amélioration et limite aux graphes
 
 #https://myprofilmypollution.herokuapp.com/
 
