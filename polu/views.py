@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 import requests
 import urllib.request
@@ -48,6 +49,7 @@ def polution(request):
 def charger(request):
     return render(request, 'charger.html')
 
+@csrf_exempt
 def donnée(request):
 
     try:
@@ -247,6 +249,7 @@ def info_pollu(request):
 def machine_a_o(request):
     return render(request, 'machine a o.html')
 
+@csrf_exempt
 def prediction(request):
     if request.method == "POST":
 
@@ -267,10 +270,7 @@ def prediction(request):
                 return HttpResponse(predi)
                 
 
-            
-            
-            
-    
+
     return render(request, 'prediction.html')
 
 
