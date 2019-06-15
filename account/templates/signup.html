@@ -2,6 +2,7 @@
 {% block content %}
 {% endblock %}
 
+<link rel="stylesheet" type="text/css" href="/static/css/signup.css" media="all" />
 
 <!-- Title section -->
 <header class="masthead"> 
@@ -108,6 +109,7 @@ change title input to green-->
 {% include "bottom_page2.html" %}
 {% block content2 %}
 {% endblock content2%}
+<script type="text/javascript" src="/static/js/signup.js"></script>
 
 
 
@@ -115,131 +117,7 @@ change title input to green-->
 
 
 
-<script>
 
-//Here we displaying exemple when user get click on an input.
-// ---> Visual function <--- en gros on met une exemple quand le mec appuie
-
-
-function stop(titre, div){
-    
-    document.getElementById(titre)
-    if(div == '11'){
-      document.getElementById(div).innerHTML = '<i>Par exemple Emma</i>'
-    }
-    else if(div == '22'){
-      document.getElementById(div).innerHTML = '<i>Par exemple Emma@hotmail.fr</i>'
-    }
-    else if(div == '33'){
-      document.getElementById(div).innerHTML = '<i>Confirme le pour etre sur !</i>'
-    }
-    else if(div == '44'){
-      document.getElementById(div).innerHTML = '<i>Nous te conseillons de mettre des chiffres et des majuscules</i>'
-    };
-};
-
-
-//Here we put an espace when user have finish to enter his info.
-// ---> Visual function <--- on detruit l'exemple
-
-function start(titre, div){
-    document.getElementById(div).innerHTML = '&nbsp;';
-};
-
-
-//Here we change title color when user get his informations.
-// ---> Visual function <--- en gros on change le titre de couleur selon
-//l'input
-
-function myFunction(titre){
-    
-    if(titre == '1'){
-      document.getElementById(titre).style.color = 'green';
-      }
-    else if(titre == '2'){
-      document.getElementById(titre).style.color = 'green';
-    }
-    else if(titre == '3'){
-      document.getElementById(titre).style.color = 'green';
-    };
-};
-
-
-//Function for a bug who is done.
-//We let it in case
-
-var c = 0
-function myFunction2(titre){
-    if (c == 0){
-      c += 1
-    }
-    else{
-      document.getElementById(titre).style.color = 'green';
-    };
-};
-
-
-</script>
-
-<style>#autre{margin-left:-965px;;margin-top:-100px;}</style>
-<style>#h{font:Serif; color:white;}</style>
-
-<style>
-    #sins{
-        color:black;
-        font-family:"cursive";
-        color:black;
-    }
-    #h{
-        color:black;
-        font-family:"Comic Sans MS, Comic Sans, cursive";
-    }
-    p{
-        color:white;
-    }
-    #data{
-        text-align:center;
-    }
-    #formm{
-        border:5px solid black;
-        width:50%;
-        background:url("/static/img/parquet1.jpg");
-    }
-    #about{
-        background:#212529;
-    }
-    h3{
-        color:white;
-        text-shadow: black 0.2em 0.1em 0.2em;
-    }
-    #div_form{
-        text-align:center;
-    }
-    input{
-      text-align:center;
-      width:250px;
-      border:1px solid black;
-    }
-    #input_mail{
-        text-align:center;
-        width:250px;
-        border:1px solid black;
-    }
-    #input_mail2{
-        text-align:center;
-        width:250px;
-        border:1px solid black;
-    }
-    #input_password{
-        text-align:center;
-        width:250px;
-        border:1px solid black;
-    }
-    #submit_input{
-        color:black;
-        border:2px solid black;
-    }
-</style>
 
 
 
