@@ -6,6 +6,12 @@ def nuit_jour():
 
     date = datetime.datetime.now()
     heure = date.hour + 2
+    if heure == 23:
+        heure = 1
+    elif heure == 24:
+        heure = 2
+    else:
+         heure == heure + 2
     #heure + 2
 
     la_nuit = ''
