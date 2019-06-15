@@ -1,0 +1,41 @@
+#im12{
+   width:200px;
+   height:200px;
+   margin-left:100px;
+}
+#im10{
+   width:100px;
+   height:100px;
+   margin-left:50px;
+}       
+#im11{
+   width:100px;
+   height:100px;
+   margin-left:100px;
+}
+
+
+
+
+
+#resumText{
+  margin:auto;
+  color:black;
+}
+#separate{
+  background:url("/static/img/parquet1.jpg");
+}
+#resum{
+  color:#808080;
+}
+
+
+h1{
+   color:black;
+   font-family:"cursive";
+}
+ h2{
+   color:black;
+   font-family:"cursive";
+}
+  
