@@ -1,0 +1,67 @@
+input{
+  border:2px solid black;
+}
+
+h1{
+  color:black;
+  font-family:"Comic Sans MS, Comic Sans, cursive";
+}
+h2{
+  color:black;
+  font-style=justify;
+}
+#info_aqi{
+  margin-left:50px;
+  color:black;
+}
+#info_dollard{
+  margin-left:50px;
+  color:black;
+}
+#info_pop{
+  margin-left:50px;
+  color:black;
+}
+#Lyon{
+  background:url("/static/img/parquet1.jpg");
+  margin:auto;
+  height:350px;
+  border:2px solid black;
+  border-radius:80px;
+}
+#Paris{
+  background:url("/static/img/parquet1.jpg");
+  margin:auto;
+  height:350px;
+  border:2px solid black;
+  border-radius:80px;
+}
+#Marseille{
+  background:url("/static/img/parquet1.jpg");
+  margin:auto;
+  height:350px;
+  border:2px solid black;
+  border-radius:80px;
+}
+#separate{
+   background:url("/static/img/parquet1.jpg");
+}
+span{
+   color:black
+}
+
+#im12{
+   width:200px;
+   height:200px;
+   margin-left:100px;
+}
+#im10{
+   width:100px;
+   height:100px;
+   margin-left:50px;
+}
+#im11{
+   width:100px;
+   height:100px;
+   margin-left:100px;
+}
