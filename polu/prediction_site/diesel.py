@@ -38,24 +38,24 @@ def recup_balise():
 
     
 
-    if gas == True and gasplus == True and dol  == 'dollard baisse':
+    if gas == True and gasplus == True and dol  == 'dollars baisse':
         return 'tres fort'
 
-    elif gas == True and gasplus == False and dol == 'dollard augmente':
+    elif gas == True and gasplus == False and dol == 'dollars augmente':
         return 'moyen'
 
-    elif gas == False and gasplus == True and dol == 'dollard augmente':
+    elif gas == False and gasplus == True and dol == 'dollars augmente':
         return 'moyen'
 
 
-    elif gas == False and gasplus == False and dol == 'dollard augmente':
+    elif gas == False and gasplus == False and dol == 'dollars augmente':
         return 'bas'
 
 
-    elif gas == True and gasplus == False and dol == 'dollard baisse':
+    elif gas == True and gasplus == False and dol == 'dollars baisse':
         return 'fort'
 
-    elif gas == False and gasplus == True and dol == 'dollard baisse':
+    elif gas == False and gasplus == True and dol == 'dollars baisse':
         return 'fort'
 
 
@@ -79,9 +79,9 @@ def cours_dollar():
     dollar = liste[0][520:525]
     
     if dollar[0] == '+':
-        return 'dollard augmente'
+        return 'dollars augmente'
     else:
-       return 'dollard baisse'
+       return 'dollars baisse'
 
 
 
