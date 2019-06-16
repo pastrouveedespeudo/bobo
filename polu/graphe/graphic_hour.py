@@ -12,7 +12,7 @@ import shutil
 from .fonction_graphe import new
 
 
-def visu_horraire(ville):
+def visu_hour(city):
     
     conn = psycopg2.connect(database='datu8fkornnndh',
                              user='pwtfmpvfpsujtw',
@@ -24,9 +24,9 @@ def visu_horraire(ville):
     sql = ("""SELECT HEURE, nombre_particule FROM heure
             WHERE nom_ville = %s;""")
     
-    values = (ville)
+    values = (city)
 
-    cursor.execute(sql, (ville,))
+    cursor.execute(sql, (city,))
 
     
     rows = cursor.fetchall()
@@ -36,62 +36,62 @@ def visu_horraire(ville):
     return liste
 
 
-def traitement_heure(ville):
+def treatment_hour(city):
 
-    horraire_pointe = []
-    horraire_non_pointe = []
+    schedule_point = []
+    schedule_no_point = []
 
-    donnée = visu_horraire(ville)
+    data_hour = visu_hour(city)
     
   
-    for i in donnée:
+    for i in data_hour:
         
         if i[0] == 'None' or i[0] == None or\
            i[1] == None or i[1] == 'None':
             pass
 
         elif i[0] == 'non_heure_pointe':
-            horraire_non_pointe.append(int(i[1]))
+            schedule_no_point.append(int(i[1]))
         
         elif i[0] == 'heure_pointe':
-            horraire_pointe.append(int(i[1]))
+            schedule_point.append(int(i[1]))
 
         print(i)
     
-    data = len(horraire_pointe) + len(horraire_non_pointe)
+    data = len(schedule_point) + len(schedule_no_point)
     print(data)
 
     
     try:
-        moy = sum(horraire_pointe) / len(horraire_pointe)
+        moy = sum(schedule_point) / len(schedule_point)
     except:
         moy=0
         
-    variance_pointe = np.var(horraire_pointe)
+    variance_point = np.var(schedule_point)
     
     try:
-        moy_non = sum(horraire_non_pointe) / len(horraire_non_pointe)
+        moy_non = sum(schedule_no_point) / len(schedule_no_point)
     except:
         moy_non=0
         
-    variance_non_pointe = np.var(horraire_non_pointe)
+    variance_no_point = np.var(schedule_no_point)
 
-    erreur_pointe = (variance_pointe/len(horraire_pointe))**(1/2)
+    error_point = (variance_point/len(schedule_point))**(1/2)
     
-    erreur_non_pointe = (variance_non_pointe/len(horraire_non_pointe))**(1/2)
+    error_no_point = (variance_no_point/len(schedule_no_point))**(1/2)
 
     print(moy,moy_non)
-    return moy, moy_non, erreur_pointe, erreur_non_pointe, data
+    return moy, moy_non, error_point, error_no_point, data
 
 
 
-def diagramme_heure(pointe, non_pointe,
-                    erreur_pointe, erreur_non_pointe, save):
+def diagram_hour(point, no_point,
+                    error_point, error_no_point, save):
     
 
     
-    plt.bar(range(2), [pointe, non_pointe], width = 0.1, color = 'red',
-           yerr = [erreur_pointe, erreur_non_pointe],
+    plt.bar(range(2), [point, no_point], width = 0.1, color = 'red',
+           yerr = [error_point, error_no_point],
             ecolor = 'black', capsize = 10)
     
     plt.xticks(range(2), ['Heure de non pointe', 'Heure de pointe'])
