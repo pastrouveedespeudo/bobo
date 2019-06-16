@@ -67,10 +67,8 @@ def coupe(request):
             fav = True
     except:
         pass
+
  
-
-
-    
     if request.method == "POST":
 
         image = request.POST.get('posting')
@@ -178,9 +176,9 @@ def coupe(request):
 
         
         if map_hairdresser:
-            the_address = address_geo(map_coiffure, vivile)
+            the_address = address_geo(map_hairdresser, vivile)
             try:
-                lat_long = city_geo(la_adresse)
+                lat_long = city_geo(the_address)
             except:
                 return HttpResponse('Oups nous n\'avons rien trouvé')
 
