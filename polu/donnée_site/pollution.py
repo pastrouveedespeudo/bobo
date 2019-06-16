@@ -278,23 +278,23 @@ def traffic_lyon_request(path):
     """we search demonstration Lyon"""
     
     liste = []
+    #We searching a tag from html page
     r = requests.get(path)
-
-
     page = r.content
     soup = BeautifulSoup(page, "html.parser")
-
     Property = soup.find('div',attrs={"class":u"news"})
+
+    #We trying to find this words for the circulation
     trafic = str(Property).find(str("circulation"))
     trafic1 = str(Property).find(str("dense"))
     trafic2 = str(Property).find(str("très dense"))
 
 
-
+    #We trying to find this words for demonstration
     manif = str(Property).find(str("Manifestation"))
     manif1 = str(Property).find(str("manifestation"))
 
-
+    #and return if manif there are or not
     if manif >= 0 or manif1 >=0 :
         return 'il y a une manifestation'
     else:
@@ -321,11 +321,11 @@ def traffic_paris_request(path):
                'dimanche':6}
 
     liste = [[],[]]
-    
+
+    #We using bs4
     date = datetime.datetime.now()
     day = date.day
     day_week = date.weekday()
-
 
     liste = []
     r = requests.get(path)
@@ -344,7 +344,7 @@ def traffic_paris_request(path):
 
     date = str(date)
 
-
+    #from this site we searching demonstration during the week
     monday = str(date).find("lundi")
     tuesday = str(date).find("mardi")
     wednesday = str(date).find("mercredi")
@@ -352,7 +352,8 @@ def traffic_paris_request(path):
     friday = str(date).find("vendredi")
     saturday = str(date).find("samedi")
     sunday = str(date).find("dimanche")
-    
+
+    #we recup into variable demonstrations
     if monday > 0 :
         a = 0
     if tuesday > 0 :
@@ -369,7 +370,6 @@ def traffic_paris_request(path):
         a = 6
 
     numero_mois = [date]
-    
     numero_mois = numero_mois[0][23:42]
 
 
@@ -383,8 +383,9 @@ def traffic_paris_request(path):
         except:
             pass
 
-
-
+    
+    #We matching current day and demonstration on agenda and
+    #return it
     if a == day_week and num[0] == day:
         return 'il y a une manifestation'
     else:
@@ -396,7 +397,7 @@ def traffic_paris_request(path):
 def traffic_marseille_request(path):
     """we search demonstration Marseille"""
 
-    
+    #Same techic cf  traffic_paris_request
     r = requests.get(path)
 
     date = datetime.datetime.now()
@@ -459,6 +460,7 @@ def traffic_marseille_request(path):
     else:
         return 'non pas manifestation'
 
+
 def exceptional_activity(city):
     """we call the last 3 functions"""
     
@@ -468,15 +470,12 @@ def exceptional_activity(city):
 
         return a
 
-        
-
     elif city == "paris":
         path = "https://paris.demosphere.net/manifestations-paris"
         a = traffic_paris_request(path)
 
         return a
 
-    
     elif city == "marseille":
         path = "https://mars-infos.org/spip.php?page=agenda"
         a = traffic_marseille_request(path)
@@ -486,7 +485,9 @@ def exceptional_activity(city):
 
 
 def socio(city):
-
+    """Here we pre-define
+    active pop from this cities"""
+    
     lyon = 328469
     paris = 1350800 
     marseille = 762480 
@@ -499,25 +500,29 @@ def socio(city):
 
     if city == 'marseille':
         return marseille
-    #population active de 15 a 59 ans
+    
 
 
 
 def plugs(city):
-
+    """From this site web we get plugs into this city"""
+    
     if city == "lyon":
         path = "https://www.moncoyote.com/fr/info-trafic-{}.html".format(city)
       
         r = requests.get(path)
 
         km = ''
-        
+
+        #BS4 Stuff
         page = r.content
         soup = BeautifulSoup(page, "html.parser")
         Property = soup.find("span", {'class':'font38 green'})
         liste = []
         print(Property)
-        
+
+        #Into this tag we searching
+        #str who K is present for Km
         for i in Property:
             for j in i:
                 if j == 'K' or j == 'k':
@@ -535,6 +540,10 @@ def plugs(city):
                             liste.append(str(j))
                     except:
                         pass
+
+            #If we have found this Km
+            #We trying to translate str to float for
+            #plugs
             liste = "".join(liste)
             print(liste,'000000000000000')
             try:
@@ -554,7 +563,7 @@ def plugs(city):
 
 
 
-
+    #Same technic cf Lyon
     elif city == "paris":
     
         path = "http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html#"
