@@ -25,12 +25,12 @@ from.polu_ana.polution.traitement_de_donnée import condition
 from .polu_ana.polution.database2 import *
 from .data_site.pollution import *
 
-from .data_site.angrais import *
-from .data_site.diesel import *
-from .data_site.eruption import *
-from .data_site.incendie import *
-from .data_site.jour_nuit import *
-from .data_site.polenne import *
+from .data_site.fertilizer import period_fertilizer
+from .data_site.diesel import recup_tag, course_dollars
+from .data_site.eruption import eruption
+from .data_site.fire import fire_city
+from .data_site.day_night import night_day
+from .data_site.polenne import polenne
 
 from .prediction_site.analysa2 import *
 
@@ -46,14 +46,12 @@ def polution(request):
     return render(request, 'polution.html')
 
 
-
-
 @csrf_exempt
 def donnée(request):
     """Here we call all API recup data, and display it on HTML page
     We need exception in case there are error from ur script (for call API)"""
     
-    
+    #First block particle data
     try:
         data_lyon = taux_particule('lyon')
         data_paris = taux_particule('paris')
@@ -61,10 +59,10 @@ def donnée(request):
     except:
         data_lyon = "No data"
         data_paris = "No data"
-        data_marseille = "No data"  #First block particle data
+        data_marseille = "No data"  
 
 
-        
+    #Second block Weather, Wind data
     try:
         weather_lyon = temps_ville('lyon', 'météo')
         wind_lyon = temps_ville('lyon', 'vent')
@@ -79,9 +77,11 @@ def donnée(request):
         weather_paris = "No data"
         wind_paris = "No data"
         weather_marseille = "No data"
-        wind_marseille = "No data"  #Second block Weather, Wind data
+        wind_marseille = "No data"  
 
 
+    #Third block Temperature,
+    #Current season data
     try:
         temperature_lyon = climat_ville('lyon')
         temperature_paris = climat_ville('paris')
@@ -91,10 +91,11 @@ def donnée(request):
         temperature_lyon = "No data"
         temperature_paris = "No data"
         temperature_marseille = "No data"
-        current_season = "No data"  #Third block Temperature,
-                                    #Current season data
+        current_season = "No data"  
 
-
+                                    
+    #Fourth block traffic
+    #and Regular day data
     try:
         traffic_lyon = traffique('lyon')
         departure_lyon = traffic_lyon[0] 
@@ -118,9 +119,11 @@ def donnée(request):
         hour_point_lyon = "No data"
         hour_point_paris = "No data"
         regular_day_lyon = "No data"
-        hour_point_marseille = "No data"    #Fourth block traffic
-                                            #and Regular day data
+        hour_point_marseille = "No data"    
+                                            
 
+    #Fifty block regular day
+    #Traffic and deaparture data
     try:
         regular_day_paris = regular_day_lyon
         regular_day_marseille = regular_day_lyon
@@ -136,10 +139,10 @@ def donnée(request):
         traffic_paris = "No data"
         departure_marseille = "No data"
         traffic_paris = "No data"
-        traffic_marseille = "No data"   #Fifty block regular day
-                                        #Traffic and deaparture data
+        traffic_marseille = "No data"   
+                                        
 
-
+    #Sixty bloc Day or Weekend data
     try:
         day = habitude()
         weekend = ''
@@ -150,9 +153,11 @@ def donnée(request):
             day = 'week end'
             weekend = 'oui'
     except:
-        day = "No data"     #Sixty bloc Day or Weekend data
+        day = "No data"     
 
 
+    #Seventy bloc Ranking data, Pole and
+    #Demonstration data
     try:
         ranking_lyon = ville_pollué_classement('lyon')
         ranking_paris = ville_pollué_classement('paris')
@@ -180,8 +185,10 @@ def donnée(request):
         demonstration_lyon = "No data"
         demonstration_paris = "No data"
         demonstration_marseille = "No data"
-                                #Seve,ty bloc Ranking data, Pole and
-                                #Demonstration data
+
+                                
+    #Heighty block Socio, Plugs, Diesel
+    #Dollars and Eruption data                        
     try:
         socio_lyon = socio('lyon')
         socio_paris = socio('paris')
@@ -196,8 +203,8 @@ def donnée(request):
         else:
             errup = 'non'
         
-        diesel = recup_balise()
-        dollars = cours_dollar()
+        diesel = recup_tag()
+        dollars = course_dollars()
 
     except:
         socio_lyon = "No data"
@@ -207,33 +214,33 @@ def donnée(request):
         plugs_paris = "No data"
         errup = "No data"
         diesel = "No data"
-        dollars = "No data" #Heighty block Socio, Plugs, Diesel
-                            #Dollars and Eruption data
+        dollars = "No data" 
 
+
+    #Ninth bloc Fire, Periode, And Po data
     try:
-        fire_lyon = incendie('lyon')
+        fire_lyon = fire_city('lyon')
         
         if fire_lyon == 'oui':
             fire_lyon = 'oui'
         else:
             fire_lyon = 'non'
         
-        fire_marseille = incendie('marseille')
+        fire_marseille = fire_city('marseille')
         
         if fire_marseille == 'oui':
             fire_marseille = 'oui'
         else:
             fire_marseille = 'non'
             
-        fire_paris = incendie('paris')
+        fire_paris = fire_city('paris')
         if fire_paris == 'oui':
             fire_paris = 'oui'
         else:
             fire_paris = 'non'
 
-
-        fertilizer = periode_angrais()
-        periode = nuit_jour()
+        fertilizer = period_fertilizer()
+        periode = night_day()
         po_lyon = polenne('lyon')
         po_marseille = polenne('marseille')
         po_paris = polenne('paris')
@@ -247,9 +254,9 @@ def donnée(request):
         po_lyon = "No data"
         po_marseille = "No data"
         po_paris = "No data"
-                    #Ninth bloc Fire, Periode, And Po data
+                    
 
-
+    #Return it !
     return render(request, 'donnée.html', {'lyon':data_lyon,
                                            'paris':data_paris,
                                            'marseille':data_marseille,
@@ -306,17 +313,13 @@ def donnée(request):
                                            'po_paris':po_paris,
                                            'po_marseille':po_marseille})
 
-                        #Return it !
-
-
+                        
 
 
 
 def info_pollu(request):
     """Information page about pollution"""
     return render(request, 'info_pollu.html')
-
-
 
 
 def machine_a_o(request):
@@ -339,7 +342,8 @@ def prediction(request):
             city3 = request.POST.get('marseille')
 
             if city1:
-                predi = predi_analysa2('lyon')#from predi_site.analysa2.py
+                #from predi_site.analysa2.py
+                predi = predi_analysa2('lyon')
                 return HttpResponse(predi)
 
             if city2:
@@ -363,25 +367,29 @@ def graphe(request):
     we make an average and a variance by fonction_graphe from graphe file
     and display it by graphe function with matplotlib"""
 
-    
-    if request.method == "POST": #Ajax call
-            
-        city = request.POST.get('city')    #We recup city
-        graph = request.POST.get('graph')  #And the condition
-                                            #For example Lyon condition plugs
+    #Ajax call
+    if request.method == "POST":
         
-
+        #We recup city
+        #And the condition
+        #For example Lyon condition plugs
+        city = request.POST.get('city')    
+        graph = request.POST.get('graph')  
+                                            
         print(city, graph)
 
+        #We ask database
+        #We trait it
         if graph == 'plugs':
-            a = visu_plugs(city)       #We ask database
-            data = treatment_plugs(a)  #We trait it
+            a = visu_plugs(city)       
+            data = treatment_plugs(a)
+            #and make a visual by matplolib
             b = diagram_plugs(data[0], data[1], data[2], data[3], data[4],
                       data[5], data[6], data[7], data[8], data[9],
-                      data[10], data[11], 'diagramme.png')  #and make a visual by matplolib
+                      data[10], data[11], 'diagramme.png')  
         
-           
-            return HttpResponse(b)#and return a HttpResponse, here the graph
+            #and return a HttpResponse, here the graph
+            return HttpResponse(b)
 
 
 
@@ -501,7 +509,8 @@ def hour():
 
 
 def temps(lieu):
-
+    """We recup weather from api openweathermap"""
+    
     clé = '5a72ceae1feda40543d5844b2e04a205'
         
     localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,clé)
@@ -521,7 +530,7 @@ def temps(lieu):
 
 
 def particle(lieu):
-
+    """particle stuff we recup particle from airplumair"""
 
     path = "https://air.plumelabs.com/fr/live/{}".format(lieu)
 
