@@ -1,4 +1,8 @@
-corriger toutes les fautes
+mettre en vert et gris pollution,
+
+effacer les superflu dans la database (8000 / 10000 rows)
+
+corriger toutes les fautes parait qu'il y e na encore
 
 t'as oublié map et database et botoom p1 p2
 
