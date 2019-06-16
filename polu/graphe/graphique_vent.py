@@ -5,10 +5,10 @@ import psycopg2
 import numpy as np
 import os
 import shutil
-from .fonction_graphe import moyenne
-from .fonction_graphe import new
+from .function_graph import moyenne
+from .function_graph import new
 
-def visu_vent(ville):
+def visu_wind(city):
     
     conn = psycopg2.connect(database='datu8fkornnndh',
                             user='pwtfmpvfpsujtw',
@@ -20,9 +20,9 @@ def visu_vent(ville):
     sql = ("""SELECT vent, nombre_particule FROM vent
             WHERE nom_ville = %s;""")
     
-    values = (ville)
+    values = (city)
 
-    cursor.execute(sql, (ville,))
+    cursor.execute(sql, (city,))
 
     rows = cursor.fetchall()
     liste = [i for i in rows]
@@ -30,55 +30,56 @@ def visu_vent(ville):
     return liste
 
 
-def traitement_vent(donnée):
+def treatment_wind(data_wind):
 
-    tres_fort = []
-    fort = []
-    moyen = []
-    faible = []
+    very_strong = []
+    strong = []
+    means = []
+    low = []
 
  
-    for i in donnée:
+    for i in data_wind:
         print(i)
         if i[1] == 'None' or i[1] == None\
             or i[0] == 'None' or i[0] == None:
                 pass
         elif i[0] == 'tres fort':
-            tres_fort.append(int(i[1]))
+            very_strong.append(int(i[1]))
         
         elif i[0] == 'fort':
-            fort.append(int(i[1]))
+            strong.append(int(i[1]))
 
         elif i[0] == 'moyen fort':
-            moyen.append(int(i[1]))
+            low.append(int(i[1]))
 
         elif i[0] == 'faible':
             faible.append(int(i[1]))
  
-    data = len(tres_fort) + len(fort) + len(moyen) + len(faible)
+    data = len(very_strong) + len(strong) + len(means) + len(low)
     print(data)
     
-    donnée_tres_fort = moyenne(tres_fort)
-    donnée_fort = moyenne(fort)
-    donnée_moyen = moyenne(moyen)
-    donnée_faible = moyenne(faible)
+    data_very_strong = moyenne(very_strong)
+    data_strong = moyenne(strong)
+    data_means = moyenne(means)
+    data_low = moyenne(low)
 
     
-    return donnée_tres_fort[0], donnée_fort[0],\
-           donnée_moyen[0], donnée_faible[0],\
-           donnée_tres_fort[1], donnée_fort[1],\
-           donnée_moyen[1], donnée_faible[1], data
+    return data_very_strong[0], data_strong[0],\
+           data_means[0], data_low[0],\
+           data_very_strong[1], data_strong[1],\
+           data_means[1], data_low[1], data
 
 
-def diagramme_vent(donnée_tres_fort, donnée_fort,donnée_moyen, donnée_faible,
-              er_donnée_tres_fort, er_fort, er_moyen, er_faible, save):
+def diagram_wind(data_very_strong, data_strong, data_means, data_low,
+              er_data_very_strong, er_data_strong,
+                 er_data_means, er_data_low, save):
 
 
-    plt.bar(range(4), [donnée_tres_fort, donnée_fort,
-                       donnée_moyen, donnée_faible],
+    plt.bar(range(4), [data_very_strong, data_strong,
+                       data_means, data_low],
                         width = 0.1, color = 'red',
-                       yerr = [er_donnée_tres_fort, er_fort,
-                               er_moyen,er_faible],
+                       yerr = [er_data_very_strong, er_data_strong,
+                               er_data_means, er_data_low],
                         ecolor = 'black', capsize = 10)
                 
 
