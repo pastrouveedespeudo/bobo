@@ -50,10 +50,10 @@ def treatment_wind(data_wind):
             strong.append(int(i[1]))
 
         elif i[0] == 'moyen fort':
-            low.append(int(i[1]))
+            means.append(int(i[1]))
 
         elif i[0] == 'faible':
-            faible.append(int(i[1]))
+            low.append(int(i[1]))
  
     data = len(very_strong) + len(strong) + len(means) + len(low)
     print(data)
