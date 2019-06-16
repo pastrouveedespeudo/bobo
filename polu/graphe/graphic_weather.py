@@ -6,10 +6,10 @@ import numpy as np
 import os
 import shutil
 
-from .fonction_graphe import new
-from .fonction_graphe import *
+from .function_graph import new
+from .function_graph import *
 
-def visu_climat(ville):
+def visu_weater(city):
     
     conn = psycopg2.connect(database='datu8fkornnndh',
                              user='pwtfmpvfpsujtw',
@@ -21,59 +21,61 @@ def visu_climat(ville):
     sql = ("""SELECT météo, nombre_particule FROM météo
             WHERE nom_ville = %s;""")
     
-    values = (ville)
+    values = (city)
 
-    cursor.execute(sql, (ville,))
+    cursor.execute(sql, (city,))
 
     rows = cursor.fetchall()
     liste = [i for i in rows]
 
     return liste
 
-def traitement_climat(donnée):
-    beau = []
-    nuageux = []
-    pluie = []
+
+
+def treatement_weather(data_weather):
+    good_weather = []
+    cloud = []
+    rain = []
 
  
-    for i in donnée:
+    for i in data_weather:
         if i[0] == 'None' or i[0] == None or\
            i[1] == None or i[1] == 'None':
             pass
         elif i[0] == 'beau_temps':
-            beau.append(int(i[1]))
+            good_weather.append(int(i[1]))
 
         elif i[0] == 'nuageux':
-            nuageux.append(int(i[1]))
+            cloud.append(int(i[1]))
 
         elif i[0] == 'pluie':
-            pluie.append(int(i[1]))
+            rain.append(int(i[1]))
 
         print(i)
 
    
-    data = len(beau) + len(nuageux) + len(pluie)
+    data = len(good_weather) + len(cloud) + len(rain)
     print(data)
 
-    donnée_beau = moyenne(beau)
-    donnée_nuageux = moyenne(nuageux)
-    donnée_pluie = moyenne(pluie)
+    data_good_weather = moyenne(good_weather)
+    data_cloud = moyenne(cloud)
+    data_rain = moyenne(rain)
 
 
 
-    return donnée_beau[0], donnée_nuageux[0], donnée_pluie[0],\
-           donnée_beau[1], donnée_nuageux[1], donnée_pluie[1], data
+    return data_good_weather[0], data_cloud[0], data_rain[0],\
+           data_good_weather[1], data_cloud[1], data_rain[1], data
 
 
 
-def diagramme_climat(donnée_beau, donnée_nuageux, donnée_pluie,
-              er_beau, er_nuageux, er_pluie, save):
+def diagram_weather(data_good_weather, data_cloud, data_rain,
+              er_good_weather, er_cloud, er_rain, save):
 
 
     
-    plt.bar(range(3), [donnée_beau, donnée_nuageux, donnée_pluie],
+    plt.bar(range(3), [data_good_weather, data_cloud, data_rain],
                         width = 0.1, color = 'red',
-                       yerr = [er_beau, er_nuageux, er_pluie],
+                       yerr = [er_good_weather, er_cloud, er_rain],
                         ecolor = 'black', capsize = 10)
                 
 
