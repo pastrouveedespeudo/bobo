@@ -53,9 +53,9 @@ def donnée(request):
     
     #First block particle data
     try:
-        data_lyon = taux_particule('lyon')
-        data_paris = taux_particule('paris')
-        data_marseille = taux_particule('marseille')
+        data_lyon = particle_rate('lyon')
+        data_paris = particle_rate('paris')
+        data_marseille = particle_rate('marseille')
     except:
         data_lyon = "No data"
         data_paris = "No data"
@@ -64,12 +64,12 @@ def donnée(request):
 
     #Second block Weather, Wind data
     try:
-        weather_lyon = temps_ville('lyon', 'météo')
-        wind_lyon = temps_ville('lyon', 'vent')
-        weather_paris = temps_ville('paris', 'météo')
-        wind_paris = temps_ville('paris', 'vent')
-        weather_marseille = temps_ville('marseille', 'météo')
-        wind_marseille = temps_ville('marseille', 'vent')
+        weather_lyon = weather_city('lyon', 'météo')
+        wind_lyon = weather_city('lyon', 'vent')
+        weather_paris = weather_city('paris', 'météo')
+        wind_paris = weather_city('paris', 'vent')
+        weather_marseille = weather_city('marseille', 'météo')
+        wind_marseille = weather_city('marseille', 'vent')
         
     except:
         weather_lyon = "No data"
@@ -83,10 +83,10 @@ def donnée(request):
     #Third block Temperature,
     #Current season data
     try:
-        temperature_lyon = climat_ville('lyon')
-        temperature_paris = climat_ville('paris')
-        temperature_marseille = climat_ville('marseille')
-        current_season =  saison()
+        temperature_lyon = climate_city('lyon')
+        temperature_paris = climate_city('paris')
+        temperature_marseille = climate_city('marseille')
+        current_season =  season()
     except:
         temperature_lyon = "No data"
         temperature_paris = "No data"
@@ -97,7 +97,7 @@ def donnée(request):
     #Fourth block traffic
     #and Regular day data
     try:
-        traffic_lyon = traffique('lyon')
+        traffic_lyon = traffic('lyon')
         departure_lyon = traffic_lyon[0] 
         hour_point_lyon = traffic_lyon[1]
         hour_point_paris = hour_point_lyon
@@ -129,8 +129,8 @@ def donnée(request):
         regular_day_marseille = regular_day_lyon
         departure_paris = departure_lyon
         departure_marseille = departure_lyon
-        traffic_paris = traffique('paris')
-        traffic_marseille = traffique('marseille')
+        traffic_paris = traffic('paris')
+        traffic_marseille = traffic('marseille')
         
     except:
         regular_day_paris = "No data"
@@ -144,7 +144,7 @@ def donnée(request):
 
     #Sixty bloc Day or Weekend data
     try:
-        day = habitude()
+        day = habit()
         weekend = ''
         if day == 'jour_semaine':
             day = 'semaine'
@@ -159,18 +159,18 @@ def donnée(request):
     #Seventy bloc Ranking data, Pole and
     #Demonstration data
     try:
-        ranking_lyon = ville_pollué_classement('lyon')
-        ranking_paris = ville_pollué_classement('paris')
-        ranking_marseille = ville_pollué_classement('marseille')
-        pole_lyon = region_industrielle('lyon')
-        pole_paris = region_industrielle('paris')
-        pole_marseille = region_industrielle('marseille')
-        pressure_lyon = pression_ville('lyon')
-        pression_paris = pression_ville('paris')
-        pression_marseille = pression_ville('marseille')
-        demonstration_lyon = activité_execptionnelle('lyon')
-        demonstration_paris = activité_execptionnelle('paris')
-        demonstration_marseille = activité_execptionnelle('marseille')
+        ranking_lyon = city_ranking_pollute('lyon')
+        ranking_paris = city_ranking_pollute('paris')
+        ranking_marseille = city_ranking_pollute('marseille')
+        pole_lyon = industrial_area('lyon')
+        pole_paris = industrial_area('paris')
+        pole_marseille = industrial_area('marseille')
+        pressure_lyon = pressure_city('lyon')
+        pressure_paris = pressure_city('paris')
+        pressure_marseille = pressure_city('marseille')
+        demonstration_lyon = exceptional_activity('lyon')
+        demonstration_paris = exceptional_activity('paris')
+        demonstration_marseille = exceptional_activity('marseille')
         
     except:
         ranking_lyon = "No data"
@@ -180,8 +180,8 @@ def donnée(request):
         pole_paris = "No data"
         pole_marseille = "No data"
         pressure_lyon = "No data"
-        pression_paris = "No data"
-        pression_marseille = "No data"
+        pressure_paris = "No data"
+        pressure_marseille = "No data"
         demonstration_lyon = "No data"
         demonstration_paris = "No data"
         demonstration_marseille = "No data"
@@ -193,8 +193,8 @@ def donnée(request):
         socio_lyon = socio('lyon')
         socio_paris = socio('paris')
         socio_marseille = socio('marseille')
-        plugs_lyon = bouchons('lyon')
-        plugs_paris = bouchons('paris')
+        plugs_lyon = plugs('lyon')
+        plugs_paris = plugs('paris')
 
 
         errup = eruption()
@@ -291,8 +291,8 @@ def donnée(request):
                                            'pole_paris':pole_paris,
                                            'pole_marseille':pole_marseille,
                                            'pressure_lyon':pressure_lyon,
-                                           'pressure_paris':pression_paris,
-                                           'pressure_marseille':pression_marseille,
+                                           'pressure_paris':pressure_paris,
+                                           'pressure_marseille':pressure_marseille,
                                            'demonstration_lyon':demonstration_lyon,
                                            'demonstration_paris':demonstration_paris,
                                            'demonstration_marseille':demonstration_marseille,
