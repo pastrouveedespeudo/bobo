@@ -5,8 +5,8 @@ import psycopg2
 import numpy as np
 import os
 import shutil
-from .fonction_graphe import moyenne
-from .fonction_graphe import new
+from .function_graph import moyenne
+from .function_graph import new
 
 def visu_population():
     
@@ -27,14 +27,14 @@ def visu_population():
     return liste
 
 
-def traitement_population(donnée):
+def treatement_population(data_population):
 
     lyon = []
     paris = []
     marseille = []
 
   
-    for i in donnée:
+    for i in data_population:
         
         if i[0] == 'None' or i[0] == None or\
            i[1] == None or i[1] == 'None'\
@@ -51,21 +51,21 @@ def traitement_population(donnée):
         print(i)
 
     data = len(lyon) + len(paris) + len(marseille)
-    donnée_lyon = moyenne(lyon)
-    donnée_paris = moyenne(paris)
-    donnée_marseille = moyenne(marseille)
+    data_lyon = moyenne(lyon)
+    data_paris = moyenne(paris)
+    data_marseille = moyenne(marseille)
 
 
 
-    return donnée_lyon[0], donnée_paris[0], donnée_marseille[0],\
-            donnée_lyon[1], donnée_paris[1], donnée_marseille[1]
+    return data_lyon[0], data_paris[0], data_marseille[0],\
+            data_lyon[1], data_paris[1], data_marseille[1]
    
 
 
-def diagramme_population(donnée_lyon, donnée_paris, donnée_marseille,
+def diagram_population(data_lyon, data_paris, data_marseille,
               er_lyon, er_paris, er_marseille, save):
 
-    plt.bar(range(3), [donnée_lyon, donnée_paris, donnée_marseille],
+    plt.bar(range(3), [data_lyon, data_paris, data_marseille],
                         width = 0.1, color = 'red',
                        yerr = [er_lyon, er_paris, er_marseille],
                         ecolor = 'black', capsize = 10)
