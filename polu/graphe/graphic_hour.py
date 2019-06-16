@@ -9,7 +9,7 @@ import numpy as np
 import os
 import shutil
 
-from .fonction_graphe import new
+from .function_graph import new
 
 
 def visu_hour(city):
