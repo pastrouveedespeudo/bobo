@@ -9,8 +9,8 @@ import numpy as np
 import os
 import shutil
 
-from .fonction_graphe import moyenne
-from .fonction_graphe import new
+from .function_graph import moyenne
+from .function_graph import new
 
 
 
@@ -76,7 +76,7 @@ def treatment_plugs(data_plugs):
     
     data_no = moyenne(no)
 
-    data_little = moyenne(litlle)
+    data_little = moyenne(little)
 
     data_means = moyenne(means)
 
