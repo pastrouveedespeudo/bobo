@@ -112,7 +112,7 @@ jQuery("#sauve").on("click", function(e){
  e.preventDefault();
   jQuery.ajax({
       data:{
-          'produit':String(LISTE1[LISTE1.length -1]),
+          'product':String(LISTE1[LISTE1.length -1]),
       },
       type:"POST",
       url:"/photo/coupe"
@@ -436,7 +436,7 @@ LISTE = []
  e.preventDefault();
   jQuery.ajax({
       data:{
-          'coiffeur':a,
+          'hairdresser':a,
       },
       type:"POST",
       url:"/photo/coupe"
@@ -852,7 +852,7 @@ jQuery("#gym2").on("click", function(e){
 
         
         if(a.style.display == 'none' && b.style.display == 'none' && c.style.display == 'none' && d.style.display == 'none'){
-            alert('oui')
+           
             document.getElementById('aucas_ou').innerHTML = "<center><h3>Veuillez nous excusez nous n'avons rien trouv\u00e9</h3></center>";
             document.getElementById('p_am_pm').style.display = 'none';
             document.getElementById('info').style.display = 'none';
@@ -908,11 +908,11 @@ jQuery("#gym2").on("click", function(e){
               console.log(data)
 
 
-              if (data == "Oups nous n'avons rien trouvé"){
+              if (data == "Oups nous n'avons rien trouvÃ©"){
              
       
                 document.getElementById('the_map').style.display = 'block';
-                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvé désolé";
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvÃ© dÃ©solÃ©";
                 
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('lapmap').style.display = 'none';
@@ -981,10 +981,10 @@ jQuery("#gym2").on("click", function(e){
               liste_lat = []
               console.log(data)
 
-              if (data == "Oups nous n'avons rien trouvé"){
+              if (data == "Oups nous n'avons rien trouvÃ©"){
      
                 document.getElementById('the_map').style.display = 'block';
-                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvé désolé";
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouvÃ© dÃ©solÃ©";
                 
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('lapmap').style.display = 'none';
@@ -1054,7 +1054,7 @@ jQuery("#gym2").on("click", function(e){
               liste_lat = []
               console.log(data)
 
-              if (data == "Oups nous n'avons rien trouvé"){
+              if (data == "Oups nous n'avons rien trouvÃ©"){
            
                 document.getElementById('the_map').style.display = 'block';
                 document.getElementById('oups').innerHTML = "Nous n'avons rien trouv\u00e9 d\u00e9sol\u00e9";
@@ -1130,7 +1130,7 @@ jQuery("#gym2").on("click", function(e){
               liste_lat = []
               console.log(data)
 
-              if (data == "Oups nous n'avons rien trouvé"){
+              if (data == "Oups nous n'avons rien trouvÃ©"){
               
                 document.getElementById('the_map').style.display = 'block';
                 document.getElementById('oups').innerHTML = "Nous n'avons rien trouv\u00e9 d\u00e9sol\u00e9";
@@ -1212,12 +1212,12 @@ jQuery("#gym2").on("click", function(e){
               liste_lat = []
               console.log(data)
               
-              if (data == "Oups nous n'avons rien trouvé"){
+              if (data == "Oups nous n'avons rien trouvÃ©"){
 
                 document.getElementById('button_lamap_gym').style.display = 'block';
               
                 document.getElementById('the_map').style.display = 'block';
-                document.getElementById('oups').innerHTML = "Nous n'avons rien trouv\u00e9 désol\u00e9";
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouv\u00e9 dÃ©sol\u00e9";
                 
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('lapmap').style.display = 'none';
@@ -1284,13 +1284,13 @@ jQuery("#gym2").on("click", function(e){
               jQuery("#is_save").html(data.data);
               jQuery("#monCadreAlert");
               console.log(data)
-               if (data == "Oups nous n'avons rien trouvé"){
+               if (data == "Oups nous n'avons rien trouvÃ©"){
 
 
                 document.getElementById('button_lamap_gym').style.display = 'block';
              
                 document.getElementById('the_map').style.display = 'block';
-                document.getElementById('oups').innerHTML = "Nous n'avons rien trouv\u00e9 désol\u00e9";
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouv\u00e9 dÃ©sol\u00e9";
                 
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('lapmap').style.display = 'none';
@@ -1354,13 +1354,13 @@ jQuery("#gym2").on("click", function(e){
               jQuery("#is_save").html(data.data);
               jQuery("#monCadreAlert");
               
-                if (data == "Oups nous n'avons rien trouvé"){
+                if (data == "Oups nous n'avons rien trouvÃ©"){
 
 
                 document.getElementById('button_lamap_gym').style.display = 'block';
           
                 document.getElementById('the_map').style.display = 'block';
-                document.getElementById('oups').innerHTML = "Nous n'avons rien trouv\u00e9 désol\u00e9";
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouv\u00e9 dÃ©sol\u00e9";
                 
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('lapmap').style.display = 'none';
@@ -1427,12 +1427,12 @@ jQuery("#gym2").on("click", function(e){
               jQuery("#is_save").html(data.data);
               jQuery("#monCadreAlert");
               
-              if (data == "Oups nous n'avons rien trouvé"){
+              if (data == "Oups nous n'avons rien trouvÃ©"){
 
                 document.getElementById('button_lamap_gym').style.display = 'block';
                 
                 document.getElementById('the_map').style.display = 'block';
-                document.getElementById('oups').innerHTML = "Nous n'avons rien trouv\u00e9 désol\u00e9";
+                document.getElementById('oups').innerHTML = "Nous n'avons rien trouv\u00e9 dÃ©sol\u00e9";
                 
                 document.getElementById('map').style.display = 'none';  
                 document.getElementById('lapmap').style.display = 'none';
