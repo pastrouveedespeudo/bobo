@@ -5,10 +5,10 @@ import psycopg2
 import numpy as np
 import os
 import shutil
-from .fonction_graphe import moyenne
-from .fonction_graphe import new
+from .function_graph import moyenne
+from .function_graph import new
 
-def visu_weekend(ville):
+def visu_weekend(city):
     conn = psycopg2.connect(database='datu8fkornnndh',
                             user='pwtfmpvfpsujtw',
                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
@@ -19,9 +19,9 @@ def visu_weekend(ville):
     sql = ("""SELECT WEEKEND, nombre_particule FROM weekend
             WHERE nom_ville = %s;""")
     
-    values = (ville)
+    values = (city)
 
-    cursor.execute(sql, (ville,))
+    cursor.execute(sql, (city,))
 
     rows = cursor.fetchall()
     liste = [i for i in rows]
@@ -29,13 +29,13 @@ def visu_weekend(ville):
     return liste
 
 
-def traitement_weekend(donnée):
+def treatment_weekend(data_weekend):
 
     weekend = []
-    non_weekend = []
+    no_weekend = []
 
     
-    for i in donnée:
+    for i in data_weekend:
         print(i)
         if i[1] == 'None' or i[1] == None\
             or i[0] == 'None' or i[0] == None:
@@ -45,29 +45,29 @@ def traitement_weekend(donnée):
             weekend.append(int(i[1]))
             
         elif i[0] == 'jour_semaine':
-            non_weekend.append(int(i[1]))
+            no_weekend.append(int(i[1]))
 
 
-    data = len(weekend) + len(non_weekend)
+    data = len(weekend) + len(no_weekend)
     print(data)
-    donnée_weekend = moyenne(weekend)
-    donnée_non_weekend = moyenne(non_weekend)
+    data_weekend = moyenne(weekend)
+    data_no_weekend = moyenne(no_weekend)
 
 
 
 
-    return donnée_weekend[0], donnée_non_weekend[0],\
-            donnée_weekend[1], donnée_non_weekend[1], data
+    return data_weekend[0], data_no_weekend[0],\
+            data_weekend[1], data_no_weekend[1], data
    
 
 
-def diagramme_weekend(donnée_weekend, donnée_non_weekend,
-              er_weekend, er_non_weekend, save):
+def diagram_weekend(data_weekend, data_no_weekend,
+              er_weekend, er_no_weekend, save):
 
 
-    plt.bar(range(2), [donnée_weekend, donnée_non_weekend],
+    plt.bar(range(2), [data_weekend, data_no_weekend],
                         width = 0.1, color = 'red',
-                       yerr = [er_weekend, er_non_weekend],
+                       yerr = [er_weekend, er_no_weekend],
                         ecolor = 'black', capsize = 10)
                 
 
