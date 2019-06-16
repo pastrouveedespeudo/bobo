@@ -1,32 +1,44 @@
+
+#Django Stuff
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_protect
-
 from django.http import HttpResponse
-from .photo import *
-from .coupenom import *
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.gzip import gzip_page
+from django.http import StreamingHttpResponse
+from django.middleware.gzip import GZipMiddleware
+
+
 import os
+import cv2
+
+
 from accounts.models import Accounts
+
+
+
+from .photo import *
+from .photo import displaying_favorite_haircut
+from .coupenom import *
+
 
 from .coupe_dico import DICO_COIF
 
 from .analysis.database import *
-from django.middleware.gzip import GZipMiddleware
+
 try:
     from static.bobo.tendance import *
 except:
     pass
 
-from django.contrib.auth.decorators import login_required
-from django.views.decorators.csrf import csrf_exempt
 
-from django.views.decorators.gzip import gzip_page
-from django.http import StreamingHttpResponse
 
-import cv2
 
+
+#Section searching hairdresser, gym
 from .magasins.coiffeur import *
 from .magasins.adresse import *
-
 from .magasins.gym import *
 
 
@@ -45,39 +57,44 @@ def coupe(request):
     
     no_choice = 'no_choice'
     
-    try:
-        """here we look if the user has favorites,
-        if yes we return true with fav variable"""
+   
+    #here we look if the user has favorites,
+    #if yes we return true with fav variable
 
+    try:
         fav = '' 
         current_user = request.user
-        favoris_coupe = affichage_coupe_fav(current_user)
-        if favoris_coupe:
+        #from photo.py
+        favorites_haircut = displaying_favorite_haircut(current_user)
+        if favorites_haircut:
             fav = True
     except:
         pass
+ 
+
+
     
     if request.method == "POST":
 
         image = request.POST.get('posting')
-        coupe = request.POST.get('coupe')
-        recherche = request.POST.get('coupedecheveux')
-        enregistement = request.POST.get('produit')
+        haircut = request.POST.get('coupe')
+        search = request.POST.get('coupedecheveux')
+        saving = request.POST.get('product')
 
-        map_coiffure = request.POST.get('buttony')#city for hairdresser
-        numero_coiffeur = request.POST.get('numero_coiffeur')#number phone for hairdresser
+        map_hairdresser = request.POST.get('buttony')#city for hairdresser
+        number_hairdresser = request.POST.get('numero_coiffeur')#number phone for hairdresser
         vivile = request.POST.get('country')#city for hairdresser map
-        coiffure = request.POST.get('coiffeur')#this is request for a hairdress
+        haircut_style = request.POST.get('hairdresser')#this is request for a hairdress
 
-        gymm = request.POST.get('gymnastique')#this is request for a gym
+        gymm = request.POST.get('gymnastic')#this is request for a gym
         gymm_map = request.POST.get('buttony_gym')#this is country for map gym
         gym_pays = request.POST.get('country_gym')#this is country for search gym
 
 
-        MON_COIFFEUR = []
+        MY_HAIRDRESSER = []
         
         if gymm_map:#if user call the gym card
-            la_adresse = addresse_geo(gymm_map, gym_pays)#we search the address by scrapping
+            the_address = addresse_geo(gymm_map, gym_pays)#we search the address by scrapping
             
             try:
                 lat_long = ville_geo(la_adresse)#and recup it with nominatim (with lat et long)
@@ -96,9 +113,9 @@ def coupe(request):
         if gymm:#if user call the gym location
             gym_liste = []
 
-            les_villes = grande_ville_gym(gymm)
+            the_cities = grande_ville_gym(gymm)
             
-            for i in les_villes:
+            for i in the_cities:
                 
                 if len(gym_liste) == 4:
                     return HttpResponse(gym_liste)
@@ -113,37 +130,37 @@ def coupe(request):
 
 
         c = 0
-        if coiffure:
+        if haircut_style:
 
             coif = []
           
-            les_coiffeurs = ville(coiffure)
+            the_hairdressers = ville(haircut_style)
 
-            MON_COIFFEUR.extend(les_coiffeurs)
+            MY_HAIRDRESSER.extend(the_hairdressers)
 
-            for i in MON_COIFFEUR:
+            for i in MY_HAIRDRESSER:
                 
-                horraire1 = horraire(i, coiffure)
+                schedule1 = horraire(i, haircut_style)
  
              
-                if [horraire1] == [] or horraire1 == []\
-                   or horraire1 == "" or horraire1 == " "\
-                   or horraire1 == None:
-                    MON_COIFFEUR.remove(i)
+                if [schedule1] == [] or schedule1 == []\
+                   or schedule1 == "" or schedule1 == " "\
+                   or schedule1 == None:
+                    MY_HAIRDRESSER.remove(i)
                     
                 else:
-                    coif.append([i, horraire1, ""])
-                    MON_COIFFEUR.remove(i)
+                    coif.append([i, schedule1, ""])
+                    MY_HAIRDRESSER.remove(i)
 
 
             return HttpResponse(coif)
  
 
-        if numero_coiffeur and vivile:
+        if number_hairdresser and vivile:
             liste = []
 
             coif = ''
-            for i in numero_coiffeur:
+            for i in number_hairdresser:
                 if i == ',':
                     liste.append(coif)
                     coif = ''
@@ -163,8 +180,8 @@ def coupe(request):
 
 
         
-        if map_coiffure:
-            la_adresse = addresse_geo(map_coiffure, vivile)
+        if map_hairdresser:
+            the_address = addresse_geo(map_coiffure, vivile)
             try:
                 lat_long = ville_geo(la_adresse)
             except:
@@ -181,8 +198,8 @@ def coupe(request):
 
         liste_enre = [[],[],[]]
         c = 0
-        if enregistement:
-            for i in enregistement:
+        if saving:
+            for i in saving:
                 if i == ',':
                     c+=1
                 else:
@@ -194,8 +211,8 @@ def coupe(request):
                       "".join(liste_enre[2]))
             
 
-        if recherche:
-            for cle, value in DICO_COIF.items():
+        if search:
+            for key, value in DICO_COIF.items():
                 pass
             
             return render(request, 'habits.html', {'recherche':recherche})
@@ -210,7 +227,7 @@ def coupe(request):
             try:
                 if fav == True:
                     return render(request, 'coupe.html', {'image':image, 'user':current_user,
-                                                          'coif':favoris_coupe})
+                                                          'coif':favorites_haircut})
                 else:
                     return render(request, 'coupe.html', {'image':image, 'user':current_user,
                                                           'fav':fav})
@@ -222,7 +239,7 @@ def coupe(request):
     try:
         if fav == True:
             return render(request, 'coupe.html', {'no_choice':no_choice,
-                                                  'coif':favoris_coupe})
+                                                  'coif':favorites_haircut})
 
         else:
             return render(request, 'coupe.html', {'image':image, 'user':current_user,
@@ -238,10 +255,9 @@ def coupe(request):
 @csrf_exempt
 def habits(request):
 
-    
     if request.method == "POST":
         
-        couleur = request.POST.get('a')
+        color = request.POST.get('a')
         draggable = request.POST.get('b')
         image_to_vet = request.POST.get('posting2')
 
@@ -257,10 +273,10 @@ def habits(request):
         if draggable:
             pass
 
-        if couleur:
+        if color:
 
-            couleur = couleur.split()
-            couleur = couleur[-1]
+            color = color.split()
+            color = color[-1]
 
             liste = dataaa()
             liste1 = i_into_i(liste)
@@ -273,15 +289,15 @@ def habits(request):
             liste10 = analyse_tendance(liste9)
 
     
-            if couleur == 'blonde':
+            if color == 'blonde':
                 coul_analyse_haut = liste10[1][0]
                 coul_analyse_bas = liste10[1][1]
                  
-            elif couleur == 'brune' or couleur == 'noire':
+            elif color == 'brune' or couleur == 'noire':
                 coul_analyse_haut = liste10[0][0]
                 coul_analyse_bas = liste10[0][1]
 
-            elif couleur == 'chatain' or couleur == 'rousse':
+            elif color == 'chatain' or couleur == 'rousse':
                 
                 coul_analyse_haut = liste10[2][0]
                 coul_analyse_bas = liste10[2][1]
