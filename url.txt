@@ -1,0 +1,22 @@
+https://prixdubaril.com/
+
+https://www.volcanodiscovery.com/fr/volcanoes/today.html
+
+https://www.lyoncapitale.fr/?s=incendie
+https://www.20minutes.fr/search?q=incendie+marseille
+https://www.20minutes.fr/search?q=incendie+paris
+
+
+https://weather.com/fr-FR/forecast/allergy/l/1975528fb7e3553b7eacfe7ac89b421986bb9949c2506b144b4e228d57da124b
+https://weather.com/fr-FR/forecast/allergy/l/7615c204059d6d10382d733bf8dc1718bcac1e82e2f2cf66e6842581ca9360c2
+https://weather.com/fr-FR/forecast/allergy/l/97adc36f89aa35486ece34380b006f2c946ef82fad53a58954c33e39e23948fe
+
+https://air.plumelabs.com/fr/live/
+
+http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}
+https://fr.wikipedia.org/wiki/
+https://paris.demosphere.net/manifestations-paris"
+https://mars-infos.org/spip.php?page=agenda"
+https://www.onlymoov.com/trafic
+
+bison futé
