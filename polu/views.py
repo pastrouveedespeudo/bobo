@@ -7,19 +7,17 @@ import urllib.request
 import datetime
 from bs4 import *
 
-from .graphe.graphique_bouchon import *
-from .graphe.graphique_climat import *
-from .graphe.graphique_heure import *
-from .graphe.graphique_manif import *
-from .graphe.graphique_météo import *
-from .graphe.graphique_polution_condition import *
-from .graphe.graphique_pression import *
-from .graphe.graphique_saison import *
-from .graphe.graphique_traffique import *
-from .graphe.graphique_vent import *
-from .graphe.graphique_ville import *
-from .graphe.graphique_weekend import *
-from .graphe.graphique_population import *
+from .graph.graphic_plugs import *
+from .graph.graphic_climate import *
+from .graph.graphic_hour import *
+from .graph.graphic_demonstration import *
+from .graph.graphic_weather import *
+from .graph.graphic_pressure import *
+from .graph.graphic_season import *
+from .graph.graphic_traffic import *
+from .graph.graphic_wind import *
+from .graph.graphic_weekend import *
+from .graph.graphic_population import *
 
 from.polu_ana.polution.traitement_de_donnée import recuperation_data
 from.polu_ana.polution.traitement_de_donnée import condition
@@ -27,12 +25,12 @@ from.polu_ana.polution.traitement_de_donnée import condition
 from .polu_ana.polution.database2 import *
 from .donnée_site.pollution import *
 
-from .donnée_site.angrais import *
-from .donnée_site.diesel import *
-from .donnée_site.eruption import *
-from .donnée_site.incendie import *
-from .donnée_site.jour_nuit import *
-from .donnée_site.polenne import *
+from .data_site.angrais import *
+from .data_site.diesel import *
+from .data_site.eruption import *
+from .data_site.incendie import *
+from .data_site.jour_nuit import *
+from .data_site.polenne import *
 
 from .prediction_site.analysa2 import *
 
@@ -376,44 +374,31 @@ def graphe(request):
         print(city, graph)
 
         if graph == 'plugs':
-            a = visu_bouchon(city)          #We ask database
-            donnée = traitement_bouchon(a)  #We trait it
-            b = diagramme_bouchon(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-                      donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
-                      donnée[10], donnée[11], 'diagramme.png')  #and make a visual by matplolib
+            a = visu_plugs(city)       #We ask database
+            data = treatment_plugs(a)  #We trait it
+            b = diagram_plugs(data[0], data[1], data[2], data[3], data[4],
+                      data[5], data[6], data[7], data[8], data[9],
+                      data[10], data[11], 'diagramme.png')  #and make a visual by matplolib
         
            
             return HttpResponse(b)#and return a HttpResponse, here the graph
 
 
-        elif graph == 'climate':
-
-            c = visuuu_climat(city)
-            donnée = traitementtt_climat(c)
-            d = diagramme_climattt(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-                      donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
-                      donnée[10], donnée[11], 'diagramme.png')
-            
-            return HttpResponse(d)
-
-
 
         elif graph == 'hour':
-            horraire = traitement_heure(city)
-            e = diagramme_heure(horraire[0], horraire[1], horraire[2], horraire[3],
+            schedule = treatment_hour(city)
+            e = diagram_hour(schedule[0], schedule[1], schedule[2], schedule[3],
                             'diagramme.png')
        
             return HttpResponse(e)
 
 
 
-
-        
         elif graph == 'demonstration':
-            f = visu_manif(city)
-            donnée = traitement_manif(f)
-            g = diagramme_manif(donnée[0], donnée[1],
-                    donnée[2], donnée[3], 'diagramme.png')
+            f = visu_demonstration(city)
+            data = treatement_demonstration(f)
+            g = diagram_demonstration(data[0], data[1],
+                    data[2], data[3], 'diagramme.png')
 
             
             return HttpResponse(g)
@@ -422,10 +407,10 @@ def graphe(request):
 
 
         elif graph == 'weather':
-            h = visu_climat(city)
-            donnée = traitement_climat(h)
-            i = diagramme_climat(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-                      donnée[5], 'diagramme.png')
+            h = visu_weater(city)
+            data = treatement_weather(h)
+            i = diagram_weather(data[0], data[1], data[2], data[3], data[4],
+                      data[5], 'diagramme.png')
             
            
             return HttpResponse(i)
@@ -435,18 +420,18 @@ def graphe(request):
                         
         elif graph == 'population':
             j = visu_population()
-            donnée = traitement_population(j)
-            k = diagramme_population(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-                      donnée[5], 'diagramme.png')
+            data = treatement_population(j)
+            k = diagram_population(data[0], data[1], data[2], data[3], data[4],
+                      data[5], 'diagramme.png')
            
             return HttpResponse(k)
 
         
         elif graph == 'pressure':
-            l = visu_pression(city)
-            donnée = traitement_pression(l)
-            m = diagramme_pression(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-                      donnée[5], 'diagramme.png')
+            l = visu_pressure(city)
+            data = treatment_pressure(l)
+            m = diagram_pressure(data[0], data[1], data[2], data[3], data[4],
+                      data[5], 'diagramme.png')
 
          
             return HttpResponse(m)
@@ -456,11 +441,11 @@ def graphe(request):
 
     
         elif graph == 'season':
-            n = visu_saison(city)
-            donnée = traitement_saison(n)
+            n = visu_season(city)
+            data = treatment_season(n)
 
-            o = diagramme_saison(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-                      donnée[5], donnée[6], donnée[7],
+            o = diagram_season(data[0], data[1], data[2], data[3], data[4],
+                      data[5], data[6], data[7],
                              'diagramme.png')
         
             return HttpResponse(o)
@@ -468,10 +453,10 @@ def graphe(request):
 
             
         elif graph == 'wind':
-            p = visu_vent(city)
-            donnée = traitement_vent(p)
-            q = diagramme_vent(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
-                      donnée[5], donnée[6], donnée[7],'diagramme.png')
+            p = visu_wind(city)
+            data = treatment_wind(p)
+            q = diagram_wind(data[0], data[1], data[2], data[3], data[4],
+                      data[5], data[6], data[7],'diagramme.png')
 
             
             return HttpResponse(q)
@@ -480,17 +465,17 @@ def graphe(request):
         elif graph == 'weekend':
 
             r = visu_weekend(city)
-            donnée = traitement_weekend(r)
-            s = diagramme_weekend(donnée[0], donnée[1], donnée[2], donnée[3],
+            data = treatment_weekend(r)
+            s = diagram_weekend(data[0], data[1], data[2], data[3],
                               'diagramme.png')
          
             return HttpResponse(s)
 
         
         elif graph == 'traffic':
-            t = visu_traffique(city)
-            donnée = traitement_traffique(t)
-            u = diagramme_traffique(donnée[0], donnée[1], donnée[2], donnée[3],
+            t = visu_traffic(city)
+            data = treatment_traffic(t)
+            u = diagram_traffic(data[0], data[1], data[2], data[3],
                                 'diagramme.png')
    
             return HttpResponse(u)
@@ -502,14 +487,14 @@ def graphe(request):
 
 
 
-def heure():
+def hour():
 
     date = datetime.datetime.now()
 
-    heure = date.hour
+    hours = date.hour
     minute = date.minute
 
-    return heure, minute
+    return hours, minute
 
 
 
@@ -525,17 +510,17 @@ def temps(lieu):
 
     data=r.json()
     
-    méteo = data['weather'][0]['main']
+    weather = data['weather'][0]['main']
 
-    if méteo == "Clear":
-        méteo = "Beau"
+    if weather == "Clear":
+        weather = "Beau"
 
-    elif méteo == "Clouds":
-        méteo = "Nuageux"
-    return méteo
+    elif weather == "Clouds":
+        weather = "Nuageux"
+    return weather
 
 
-def particule(lieu):
+def particle(lieu):
 
 
     path = "https://air.plumelabs.com/fr/live/{}".format(lieu)
@@ -551,13 +536,13 @@ def particule(lieu):
     for i in propriete:
         liste.append(i.get_text())
 
-    phrase_clé = "a atteint un niveau élevé de pollution. Supérieur à la limite maximum pour 24h établie par l'OMS"
+    sentence = "a atteint un niveau élevé de pollution. Supérieur à la limite maximum pour 24h établie par l'OMS"
     
-    recherche_taux = str(liste).find(str(phrase_clé))
-    liste_epluché = liste[20:21]
-    polution = liste_epluché[0][31:34]
+    search = str(liste).find(str(sentence))
+    liste_e = liste[20:21]
+    pollute = liste_e[0][31:34]
 
-    return polution
+    return pollute
     
 
 
