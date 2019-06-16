@@ -45,7 +45,7 @@ def city_geo(parameter):
     geocoder = Nominatim(user_agent="app.py")
     #parametre is data recup from data()
     
-    location = geocoder.geocode(parametre, True, 30)
+    location = geocoder.geocode(parameter, True, 30)
     localisation = location.address
     localisation = str(localisation)
 
@@ -62,8 +62,8 @@ def city_geo(parameter):
 
 
 
-#addresse_geo('Hair salon · Avenue Félix Rozier', 'crest')
-#ville_geo('106 Rue Professeur Beauvisage')
+#address_geo('Hair salon · Avenue Félix Rozier', 'crest')
+city_geo('Avenue Félix Rozier, 26400 Crest')
 
 
 
