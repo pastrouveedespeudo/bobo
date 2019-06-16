@@ -7,19 +7,19 @@ import urllib.request
 from bs4 import *
 import datetime
 
-def periode_angrais():
+def period_fertilizer():
 
-    mois_angrais = [5,6]
+    month_fertilizer = [5,6]
 
 
     date = datetime.datetime.now()
     
-    jour = date.day
-    mois = date.month
-    année = date.year
+    day = date.day
+    month = date.month
+    year = date.year
 
-    for i in mois_angrais:
-        if mois == i:
+    for i in month_fertilizer:
+        if month == i:
             return 'oui'
             break
 
