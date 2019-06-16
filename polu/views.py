@@ -39,21 +39,20 @@ from .prediction_site.analysa2 import *
 
 
 def home(request):
+    """Here we return html home response"""
     return render(request, 'home.html')
 
 
 def polution(request):
-
+    """we return html pollution response"""
     return render(request, 'polution.html')
 
 
 
-def charger(request):
-    return render(request, 'charger.html')
 
 @csrf_exempt
 def donnée(request):
-    """Here we call API recup data, and display it on HTML page
+    """Here we call all API recup data, and display it on HTML page
     We need exception in case there are error from ur script (for call API)"""
     
     
@@ -250,7 +249,7 @@ def donnée(request):
         po_lyon = "No data"
         po_marseille = "No data"
         po_paris = "No data"
-                    #Ninety bloc Fire, Periode, And Po data
+                    #Ninth bloc Fire, Periode, And Po data
 
 
     return render(request, 'donnée.html', {'lyon':data_lyon,
@@ -329,110 +328,78 @@ def machine_a_o(request):
 
 @csrf_exempt
 def prediction(request):
-    """Our predict page"""
+    """Our predict page. By Ajax call
+    We recup this cities and ask database by aide_analysa.py
+    from prediction_site and try to match by condition
+    with analysa2.py and return it in html page"""
+
+    
     if request.method == "POST":
+                                
+            city1 = request.POST.get('lyon')    
+            city2 = request.POST.get('paris')
+            city3 = request.POST.get('marseille')
 
-            ville1 = request.POST.get('lyon')
-            ville2 = request.POST.get('paris')
-            ville3 = request.POST.get('marseille')
-
-            if ville1:
-                predi = predi_analysa2('lyon')
+            if city1:
+                predi = predi_analysa2('lyon')#from predi_site.analysa2.py
                 return HttpResponse(predi)
 
-            if ville2:
+            if city2:
                 predi = predi_analysa2('paris')
                 return HttpResponse(predi)
 
-            if ville3:
+            if city3:
                 predi = predi_analysa2('marseille')
                 return HttpResponse(predi)
                 
-
-
     return render(request, 'prediction.html')
 
-
-
-def polution_lyon(request):
-
-
-    a = heure()
-    b = temps("lyon")
-    c = particule("lyon")
-    
-
-    return render(request, 'polution_lyon.html', {'heure':a[0],'minute':a[1], 'temps':b, 'pollution':c})
-
-
-
-def polution_marseille(request):
-
-    a = heure()
-    b = temps("marseille")
-    c = particule("marseille")
-
-    
-    return render(request, 'polution_marseille.html', {'heure':a[0],'minute':a[1], 'temps':b, 'pollution':c})
-
-def polution_paris(request):
-
-    a = heure()
-    b = temps("paris")
-    c = particule("paris")
-    
-    return render(request, 'polution_paris.html', {'heure':a[0],'minute':a[1], 'temps':b, 'pollution':c})
-
-
-def supp():
-    
-    pass
-
-##    os.chdir('/app/static/popo')
-##    liste = os.listdir()
-##    for i in liste[1:-4]:
-##        os.remove(i)
-##    os.chdir('/app/polution')
 
 
 
 @csrf_exempt
 def graphe(request):
-    """Graphic page"""
-    if request.method == "POST":
-        
-        ville = request.POST.get('ville')
-        graphe = request.POST.get('graphe')
+    """Graphic page. Here we ask database by Ajax call
+    for each conditions by function who begin
+    by visu, traiting this data with function who begin by traitement,
+    we make an average and a variance by fonction_graphe from graphe file
+    and display it by graphe function with matplotlib"""
+
+    
+    if request.method == "POST": #Ajax call
+            
+        city = request.POST.get('city')    #We recup city
+        graph = request.POST.get('graph')  #And the condition
+                                            #For example Lyon condition plugs
         
 
-        print(ville, graphe)
+        print(city, graph)
 
-        if graphe == 'bouchon':
-            a = visu_bouchon(ville)
-            donnée = traitement_bouchon(a)
+        if graph == 'plugs':
+            a = visu_bouchon(city)          #We ask database
+            donnée = traitement_bouchon(a)  #We trait it
             b = diagramme_bouchon(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
                       donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
-                      donnée[10], donnée[11], 'diagramme.png')
-            
+                      donnée[10], donnée[11], 'diagramme.png')  #and make a visual by matplolib
+        
+           
+            return HttpResponse(b)#and return a HttpResponse, here the graph
 
-            supp()
-            return HttpResponse(b)
 
+        elif graph == 'climate':
 
-        elif graphe == 'climat':
-
-            c = visuuu_climat(ville)
+            c = visuuu_climat(city)
             donnée = traitementtt_climat(c)
             d = diagramme_climattt(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
                       donnée[5], donnée[6], donnée[7], donnée[8], donnée[9],
                       donnée[10], donnée[11], 'diagramme.png')
-            supp()
+            
             return HttpResponse(d)
 
 
 
-        elif graphe == 'heure':
-            horraire = traitement_heure(ville)
+        elif graph == 'hour':
+            horraire = traitement_heure(city)
             e = diagramme_heure(horraire[0], horraire[1], horraire[2], horraire[3],
                             'diagramme.png')
             supp()
@@ -442,90 +409,90 @@ def graphe(request):
 
 
         
-        elif graphe == 'manif':
-            f = visu_manif(ville)
+        elif graph == 'demonstration':
+            f = visu_manif(city)
             donnée = traitement_manif(f)
             g = diagramme_manif(donnée[0], donnée[1],
                     donnée[2], donnée[3], 'diagramme.png')
 
-            supp()
+            
             return HttpResponse(g)
 
 
 
 
-        elif graphe == 'météo':
-            h = visu_climat(ville)
+        elif graph == 'weather':
+            h = visu_climat(city)
             donnée = traitement_climat(h)
             i = diagramme_climat(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
                       donnée[5], 'diagramme.png')
             
-            supp()
+           
             return HttpResponse(i)
 
 
 
                         
-        elif graphe == 'population':
+        elif graph == 'population':
             j = visu_population()
             donnée = traitement_population(j)
             k = diagramme_population(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
                       donnée[5], 'diagramme.png')
-            supp()
+           
             return HttpResponse(k)
 
         
-        elif graphe == 'pression':
-            l = visu_pression(ville)
+        elif graph == 'pressure':
+            l = visu_pression(city)
             donnée = traitement_pression(l)
             m = diagramme_pression(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
                       donnée[5], 'diagramme.png')
 
-            supp()
+         
             return HttpResponse(m)
 
 
 
 
     
-        elif graphe == 'saison':
-            n = visu_saison(ville)
+        elif graph == 'season':
+            n = visu_saison(city)
             donnée = traitement_saison(n)
 
             o = diagramme_saison(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
                       donnée[5], donnée[6], donnée[7],
                              'diagramme.png')
-            supp()
+        
             return HttpResponse(o)
 
 
             
-        elif graphe == 'vent':
-            p = visu_vent(ville)
+        elif graph == 'wind':
+            p = visu_vent(city)
             donnée = traitement_vent(p)
             q = diagramme_vent(donnée[0], donnée[1], donnée[2], donnée[3], donnée[4],
                       donnée[5], donnée[6], donnée[7],'diagramme.png')
 
-            supp()
+            
             return HttpResponse(q)
 
         
-        elif graphe == 'weekend':
+        elif graph == 'weekend':
 
-            r = visu_weekend(ville)
+            r = visu_weekend(city)
             donnée = traitement_weekend(r)
             s = diagramme_weekend(donnée[0], donnée[1], donnée[2], donnée[3],
                               'diagramme.png')
-            supp()
+         
             return HttpResponse(s)
 
         
-        elif graphe == 'traffique':
-            t = visu_traffique(ville)
+        elif graph == 'traffic':
+            t = visu_traffique(city)
             donnée = traitement_traffique(t)
             u = diagramme_traffique(donnée[0], donnée[1], donnée[2], donnée[3],
                                 'diagramme.png')
-            supp()
+   
             return HttpResponse(u)
   
 
