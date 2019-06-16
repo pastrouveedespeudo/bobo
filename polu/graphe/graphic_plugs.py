@@ -14,7 +14,8 @@ from .fonction_graphe import new
 
 
 
-def visu_bouchon(ville):
+def visu_plugs(city):
+    """We ask database about plugs"""
     
     conn = psycopg2.connect(database='datu8fkornnndh',
                              user='pwtfmpvfpsujtw',
@@ -28,14 +29,18 @@ def visu_bouchon(ville):
     
     values = (ville)
 
-    cursor.execute(sql, (ville,))
+    cursor.execute(sql, (city,))
 
     rows = cursor.fetchall()
     liste = [i for i in rows]
 
     return liste
 
-def traitement_bouchon(donnée):
+
+def treatment_plugs(donnée):
+    """We tidy conditions into list and make an average"""
+
+    
     liste = ['non', 'petit', 'moyen', 'grand', 'assez grand',
              'tres grand']
     non = []
@@ -67,8 +72,6 @@ def traitement_bouchon(donnée):
         elif i[0] == 'tres grand':
             tres_grand.append(int(i[1]))
             
- 
-    #print(non, petit, moyen, grand, assez_grand, tres_grand)
 
     data = len(non) + len(petit) + len(moyen) + len(grand)+ len(assez_grand)+ len(tres_grand)
     print(data)
@@ -83,7 +86,7 @@ def traitement_bouchon(donnée):
 
     donnée_assez_grand = moyenne(assez_grand)
 
-    donnée_tres_grand = moyenne(tres_grand)
+    donnée_tres_grand = moyenne(tres_grand) #We make an average by function_graph
 
     return donnée_non[0], donnée_petit[0], donnée_moyen[0],\
             donnée_grand[0], donnée_assez_grand[0],\
@@ -95,13 +98,14 @@ def traitement_bouchon(donnée):
 
 
 
-def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
+def diagram_plugs(donnée_non, donnée_petit, donnée_moyen,
               donnée_grand, donnée_assez_grand,
               donnée_tres_grand,
               er_non, er_petit, er_moyen,
               er_grand, er_assez_grand,
               er_tres_grand, save):
 
+    """We siplay it into a matplotlab graph"""
     
     
     plt.bar(range(6), [donnée_non, donnée_petit, donnée_moyen,
@@ -126,10 +130,10 @@ def diagramme_bouchon(donnée_non, donnée_petit, donnée_moyen,
     nouveau = new()
     print(nouveau)
     plt.savefig(nouveau)
-    plt.clf()
+    plt.clf()               #we empty the cache
     plt.close()
     
-    shutil.move(nouveau, '/app/static/popo')
+    shutil.move(nouveau, '/app/static/popo')    #Move graph to popo file
     return nouveau
 
 
