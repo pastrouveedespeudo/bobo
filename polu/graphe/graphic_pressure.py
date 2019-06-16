@@ -5,11 +5,11 @@ import psycopg2
 import numpy as np
 import os
 import shutil
-from .fonction_graphe import moyenne
-from .fonction_graphe import new
+from .function_graph import moyenne
+from .function_graph import new
 
 
-def visu_pression(ville):
+def visu_pressure(city):
     
     conn = psycopg2.connect(database='datu8fkornnndh',
                             user='pwtfmpvfpsujtw',
@@ -20,56 +20,56 @@ def visu_pression(ville):
     sql = ("""SELECT pression, nombre_particule FROM pression
             WHERE nom_ville = %s;""")
     
-    values = (ville)
+    values = (city)
 
-    cursor.execute(sql, (ville,))
+    cursor.execute(sql, (city,))
 
     rows = cursor.fetchall()
     liste = [i for i in rows]
 
     return liste
 
-def traitement_pression(donnée):
+def treatment_pressure(data_pressure):
 
-    forte = [1]
-    normale = []
-    faible = []
+    strong = [1]
+    normal = []
+    low = []
 
-    for i in donnée:
+    for i in data_pressure:
         
         if i[0] == None or i[0] == 'None' or\
            i[1] == None or i[1] == 'None':
             pass
         elif i[0] == 'forte':
-            forte.append(int(i[1]))
+            strong.append(int(i[1]))
 
         elif i[0] == 'normale':
-            normale.append(int(i[1]))
+            normal.append(int(i[1]))
 
         elif i[0] == 'faible':
-            faible.append(int(i[1]))
+            low.append(int(i[1]))
         print(i)
 
-    data = len(forte) + len(normale) + len(faible)
+    data = len(strong) + len(normal) + len(low)
     print(data)
 
-    donnée_forte = moyenne(forte)
-    donnée_faible = moyenne(faible)
-    donnée_normale = moyenne(normale)
+    data_strong = moyenne(strong)
+    data_low = moyenne(low)
+    data_normal = moyenne(normal)
 
 
-    return donnée_forte[0], donnée_faible[0], donnée_normale[0],\
-           donnée_forte[1], donnée_faible[1], donnée_normale[1], data
+    return data_strong[0], data_low[0], data_normal[0],\
+           data_strong[1], data_low[1], data_normal[1], data
 
 
 
-def diagramme_pression(donnée_forte, donnée_faible, donnée_normale,
-              er_forte, er_faible, er_normale, save):
+def diagram_pressure(data_strong, data_low, data_normal,
+              er_strong, er_low, er_normal, save):
 
     
-    plt.bar(range(3), [donnée_forte, donnée_faible, donnée_normale],
+    plt.bar(range(3), [data_strong, data_low, data_normal],
                         width = 0.1, color = 'red',
-                       yerr = [er_forte, er_faible, er_normale],
+                       yerr = [er_strong, er_low, er_normal],
                         ecolor = 'black', capsize = 10)
 
 
