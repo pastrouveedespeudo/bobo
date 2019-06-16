@@ -16,12 +16,9 @@ import cv2
 
 from accounts.models import Accounts
 
-
-
 from .photo import *
 from .photo import displaying_favorite_haircut
 from .coupenom import *
-
 
 from .coupe_dico import DICO_COIF
 
@@ -37,8 +34,8 @@ except:
 
 
 #Section searching hairdresser, gym
-from .magasins.coiffeur import *
-from .magasins.adresse import *
+from .magasins.hairdresser import *
+from .magasins.address import *
 from .magasins.gym import *
 
 
@@ -94,10 +91,10 @@ def coupe(request):
         MY_HAIRDRESSER = []
         
         if gymm_map:#if user call the gym card
-            the_address = addresse_geo(gymm_map, gym_pays)#we search the address by scrapping
+            the_address = address_geo(gymm_map, gym_pays)#we search the address by scrapping
             
             try:
-                lat_long = ville_geo(la_adresse)#and recup it with nominatim (with lat et long)
+                lat_long = city_geo(la_adresse)#and recup it with nominatim (with lat et long)
             except:
                 return HttpResponse("Oups nous n'avons rien trouvé")#if nothing is found we return it
 
@@ -111,22 +108,22 @@ def coupe(request):
 
 
         if gymm:#if user call the gym location
-            gym_liste = []
+            gym_list = []
 
-            the_cities = grande_ville_gym(gymm)
+            the_cities = big_city_gym(gymm)
             
             for i in the_cities:
                 
                 if len(gym_liste) == 4:
                     return HttpResponse(gym_liste)
                     
-                a = horraire_gym(i, gymm)
+                a = schedule_gym(i, gymm)
 
                 if a != []:
-                    gym_liste.append([i, a, ""])
+                    gym_list.append([i, a, ""])
             
 
-            return HttpResponse(gym_liste)
+            return HttpResponse(gym_list)
 
 
         c = 0
@@ -134,13 +131,13 @@ def coupe(request):
 
             coif = []
           
-            the_hairdressers = ville(haircut_style)
+            the_hairdressers = cities(haircut_style)
 
             MY_HAIRDRESSER.extend(the_hairdressers)
 
             for i in MY_HAIRDRESSER:
                 
-                schedule1 = horraire(i, haircut_style)
+                schedule1 = schedule_hair(i, haircut_style)
  
              
                 if [schedule1] == [] or schedule1 == []\
@@ -181,9 +178,9 @@ def coupe(request):
 
         
         if map_hairdresser:
-            the_address = addresse_geo(map_coiffure, vivile)
+            the_address = address_geo(map_coiffure, vivile)
             try:
-                lat_long = ville_geo(la_adresse)
+                lat_long = city_geo(la_adresse)
             except:
                 return HttpResponse('Oups nous n\'avons rien trouvé')
 
