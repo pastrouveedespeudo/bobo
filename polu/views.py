@@ -402,7 +402,7 @@ def graphe(request):
             horraire = traitement_heure(city)
             e = diagramme_heure(horraire[0], horraire[1], horraire[2], horraire[3],
                             'diagramme.png')
-            supp()
+       
             return HttpResponse(e)
 
 
