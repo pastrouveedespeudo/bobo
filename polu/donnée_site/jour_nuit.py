@@ -1,25 +1,36 @@
+"""Datetime 16/04/2019"""
+
 import datetime
 
-def nuit_jour():
-    nuit = [22, 23, 24, 1, 2, 3, 4, 5, 6, 7, 8]
-
+def night_day():
+    """Here we just recup information about the moment of
+    the day"""
+    
+    night = [22, 23, 24, 1, 2, 3, 4, 5, 6, 7, 8]
 
     date = datetime.datetime.now()
-    heure = date.hour + 2
-    #heure + 2
+    hour = date.hour
+    
+    if hour == 23:  #If hour is 11pm we redefine hour to 1 am
+        hour = 1
+    elif hour == 24: #Same thing
+        hour = 2
+    else:
+        hour + 2 #We add +2h because Heroku server has -2 hour
 
-    la_nuit = ''
-    non_nuit = ''
+    the_night = ''
+    no_night = ''
 
     
-    for i in nuit:
-        if i == heure:
-            la_nuit = 'nuit'
-            return la_nuit
+    for i in night:#If the current hour == nigth list
+        if i == hour:
+            the_night = 'nuit'
+            return the_night  #We return night
         else:
-            non_nuit = 'jour'
+            no_night = 'jour'
 
-    return non_nuit
+    return no_night#Else we return day
 
     
+
 
