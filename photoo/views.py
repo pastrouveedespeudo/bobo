@@ -112,8 +112,8 @@ def coupe(request):
             
             for i in the_cities:
                 
-                if len(gym_liste) == 4:
-                    return HttpResponse(gym_liste)
+                if len(gym_list) == 4:
+                    return HttpResponse(gym_list)
                     
                 a = schedule_gym(i, gymm)
 
