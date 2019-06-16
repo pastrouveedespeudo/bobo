@@ -6,10 +6,10 @@ import numpy as np
 import os
 import shutil
 
-from .fonction_graphe import moyenne
-from .fonction_graphe import new
+from .function_graph import moyenne
+from .function_graph import new
 
-def visu_saison(ville):
+def visu_season(city):
     
     conn = psycopg2.connect(database='datu8fkornnndh',
                             user='pwtfmpvfpsujtw',
@@ -21,9 +21,9 @@ def visu_saison(ville):
     sql = ("""SELECT saison, nombre_particule FROM saison
             WHERE nom_ville = %s;""")
     
-    values = (ville)
+    values = (city)
 
-    cursor.execute(sql, (ville,))
+    cursor.execute(sql, (city,))
 
     rows = cursor.fetchall()
     liste = [i for i in rows]
@@ -31,55 +31,53 @@ def visu_saison(ville):
     return liste
 
 
-def traitement_saison(donnée):
+def treatment_season(data_season):
 
-    primtemps = []
-    été = []
-    hiver = [1]
-    automne = [1]
+    spring = []
+    summer = []
+    winter = [1]
+    autumn = [1]
 
 
-    for i in donnée:
+    for i in data_season:
         print(i)
         if i[1] == 'None' or i[1] == None\
             or i[0] == 'None' or i[0] == None:
                 pass
         elif i[0] == 'primtemps':
-            primtemps.append(int(i[1]))
+            spring.append(int(i[1]))
         elif i[0] == 'été':
-            été.append(int(i[1]))
+            summer.append(int(i[1]))
         elif i[0] == 'hiver':
-            hiver.append(int(i[1]))  
+            winter.append(int(i[1]))  
         elif i[0] == 'automne':
-            automne.append(int(i[1])) 
+            autumn.append(int(i[1])) 
 
 
-    data = len(primtemps) + len(été) + len(hiver) + len(automne)
+    data = len(spring) + len(summer) + len(winter) + len(autumn)
     print(data)
-    donnée_primtemps = moyenne(primtemps)
-    donnée_été = moyenne(été)
-    donnée_hiver = moyenne(hiver)
-    donnée_automne = moyenne(automne)
+    
+    data_spring = moyenne(spring)
+    data_summer = moyenne(summer)
+    data_winter = moyenne(winter)
+    data_autumn = moyenne(autumn)
 
 
 
-    return donnée_primtemps[0], donnée_été[0], donnée_hiver[0],\
-            donnée_automne[0], donnée_primtemps[1], donnée_été[1],\
-            donnée_hiver[1], donnée_automne[1], data
+    return data_spring[0], data_summer[0], data_winter[0],\
+            data_autumn[0], data_spring[1], data_summer[1],\
+            data_winter[1], data_autumn[1], data
 
 
-def diagramme_saison(donnée_primtemps, donnée_été, donnée_hiver, donnée_automne,
-              er_primtemps, er_été, er_hiver, er_automne, save):
+def diagram_season(data_spring, data_summer, data_winter, data_autumn,
+              er_sping, er_summer, er_winter, er_autumn, save):
 
-    try:
-        os.remove(r'C:\Users\jeanbaptiste\bobo\bobo\static\popo\saison.png')
-    except:
-        pass
-    plt.bar(range(4), [donnée_primtemps, donnée_été, donnée_hiver,
-                       donnée_automne],
+
+    plt.bar(range(4), [data_spring, data_summer, data_winter,
+                       data_autumn],
                         width = 0.1, color = 'red',
-                       yerr = [er_primtemps, er_primtemps, er_été,
-                              er_automne],
+                       yerr = [er_sping, er_summer, er_winter,
+                              er_autumn],
                         ecolor = 'black', capsize = 10)
                 
 
