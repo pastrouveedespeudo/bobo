@@ -36,8 +36,8 @@ function graphe(legraphe){
      jQuery.ajax({
        data:{
            'csrfmiddlewaretoken': '{{csrf_token}}' , 
-           'ville':LISTE_AJAX[LISTE_AJAX.length - 1],
-           'graphe':LISTE_AJAX_TYPE_GRAPHE[LISTE_AJAX_TYPE_GRAPHE.length - 1]},
+           'city':LISTE_AJAX[LISTE_AJAX.length - 1],
+           'graph':LISTE_AJAX_TYPE_GRAPHE[LISTE_AJAX_TYPE_GRAPHE.length - 1]},
 
        
               type:"POST",
