@@ -1,13 +1,16 @@
 import requests
 from bs4 import *
 
-#HEROKU MODE
 
 GYM = ['fitness', 'gym', 'body','Body', 'musculation', 'Fitness', 'Club', 'Gym',
        'sport', 'Sport', 'Salle', 'salle', 'Salle de sport', 'salle de sport', 'wellness',
        'Wellness', 'Keep cool', 'KEEP COOL', 'keep cool', ]
 
 def rayon(ville):
+    """Here it's an optionnal service for more hairdressers
+    but we have timeout 30 sec so we let it but
+    it doesen't call"""
+    
     path = "https://www.villorama.com/ville/{}/villes-proches.html"
     
     path = path.format(ville)
@@ -52,20 +55,25 @@ def rayon(ville):
     return liste #villes aux alentours
 
 
-def grande_ville_gym(ville):
+def big_city_gym(city):
+    """Here we search gym into the cities"""
     
     path = "https://www.google.com/search?ei=w2n6XJ3hMMeOatXLjOgB&q=sale+de+gym+{0}+france&oq=sale+de+gym+{0}+france"
-    
-    path = path.format(ville)
+
+
+    #We call BS4
+    path = path.format(city)
     r = requests.get(path)
     page = r.content
     
     soup = BeautifulSoup(page, "html.parser")
-    
+
+    #We search all span
     propriete = soup.find_all("span")
     liste1 = []
-    for i in propriete:
 
+    #We searching all elements by GLOBAL list gym
+    for i in propriete:
         for j in GYM:
             a = str(i.string).find(str(j))
             if a >= 0:
@@ -76,15 +84,17 @@ def grande_ville_gym(ville):
     
     
 
-def horraire_gym(nom, ville):
+def schedule_gym(name, city):
+    """We search all schedule from gym found"""
+
+    #BS4 Stuff
     path = 'https://www.google.com/search?ei=Gnn5XJP5KIu5gweW1qaQBQ&q={0}+{1}+horraires&oq={0}+{1}+horraires'
 
-    path = path.format(nom, ville)
+    path = path.format(name, city)
     r = requests.get(path, headers={
          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
      })
     page = r.content
-    
     soup = BeautifulSoup(page, "html.parser", from_encoding="utf-8")
     
     #propriete = soup.find_all("span")
@@ -93,8 +103,9 @@ def horraire_gym(nom, ville):
     liste = []
     for i in propriete:
         liste.append(i.string)
-    
-##    semaine = ['lundi',
+
+    #This is for local version
+##    week = ['lundi',          
 ##              'mardi',
 ##              'mercredi',
 ##              'jeudi',
@@ -104,7 +115,9 @@ def horraire_gym(nom, ville):
 ##             ]
 
 
-    semaine = ['Monday',
+
+    #This is for linux version
+    week = ['Monday',
               'Tuesday',
               'Wednesday',
               'Thursday',
@@ -114,14 +127,16 @@ def horraire_gym(nom, ville):
              ]
 
 
-    jour = ''
+    day = ''
 
+    #We search all tag who comports
+    #elements by week list
     liste1 = []
     c = 0
     for i in liste:
-        heure = ''
+        hour = ''
 
-        for j in semaine:
+        for j in week:
             a = str(i).find(str(j))
             if a >= 0:
                 liste1.append([i, liste[c+1]])
@@ -135,10 +150,12 @@ def horraire_gym(nom, ville):
     
 
 
-def numero_gym(nom, ville):
+def number_gym(name, city):
+    """Here again it's an optional function
+    we dont call it"""
     
     path = "https://annuaire.118712.fr/?s={}+{}"
-    path = path.format(nom, ville)
+    path = path.format(name, city)
 
     r = requests.get(path, headers={
          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
@@ -215,7 +232,7 @@ def numero_gym(nom, ville):
 #a = rayon('crest')
 #print(a)
 #grande_ville_gym('crest')
-horraire_gym("Body's Studio", "crest")
+#horraire_gym("Body's Studio", "crest")
 #numero("Body's Studio", "crest")
 
 
