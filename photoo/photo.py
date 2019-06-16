@@ -374,7 +374,7 @@ def coupe_fav(user_current, coupe, largeur_im, hauteur_im):
     
 
 
-def affichage_coupe_fav(username):
+def displaying_favorite_haircut(username):
     
     acc = favoris.objects.filter(user=username).all()
 
