@@ -7,20 +7,24 @@ import datetime
 CLE = '5a72ceae1feda40543d5844b2e04a205'
 
 
-def taux_particule(lieu):
+def particle_rate(city):
+    """we search particule rate"""
     
     liste = []
     nb = []
-    
-    path = "https://air.plumelabs.com/fr/live/{}".format(lieu)
-    r = requests.get(path)
 
+    #Using BS4
+    path = "https://air.plumelabs.com/fr/live/{}".format(city)
+    r = requests.get(path)
     page = r.content
     soup = BeautifulSoup(page, "html.parser")
-
     propriete = soup.find_all("div", {'class':'report__pi-number'})
+
+    #Get text from html page
     for i in propriete:
         liste.append(i.get_text())
+
+    #Get the number of pollute
     for i in liste:
         for j in i:
             try:
@@ -29,103 +33,119 @@ def taux_particule(lieu):
                     nb.append(str(j))
             except:
                 pass
+
             
     nb = ''.join(nb)
     nb = int(nb)
     polution = nb
 
- 
     return polution
 
-def pression_ville(lieu):
-    
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,CLE)
-    r = requests.get(localisation)
-    data=r.json()
-    
-    pression = data['main']['pressure']
-    return pression
 
-def temps_ville(lieu, donnée):
-    
-    
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,CLE)
+def pressure_city(city):
+    """we search pressure"""
+
+    #Call API openweathermap
+    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(city,CLE)
     r = requests.get(localisation)
     data=r.json()
 
-    if donnée == 'vent':
-        vent = data['wind']['speed']
-        return vent
+    #get from json content
+    pressure = data['main']['pressure']
+    return pressure
+
+
+def weather_city(city, data_ask):
+    """we search weather"""
+
+    #Call API openweathermap
+    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(city,CLE)
+    r = requests.get(localisation)
+    data=r.json()
+
+    #get from json content
+    if data_ask == 'vent':
+        wind = data['wind']['speed']
+        return wind
     
-    elif donnée == 'météo':
-        méteo = data['weather'][0]['main']
+    elif data_ask == 'météo':
+        weather = data['weather'][0]['main']
 
         data = ''
-        
-        if méteo == 'Clouds' or méteo == 'Mist':
+
+        #Translate it to fr
+        if weather == 'Clouds' or weather == 'Mist':
             data = 'Nuageux'
-        elif méteo == 'Rain' or méteo == 'Thunderstorm'\
-             or méteo == 'Haze':
+        elif weather == 'Rain' or weather == 'Thunderstorm'\
+             or weather == 'Haze':
             data = 'Pluie'
-        elif méteo == 'Clear':
+        elif weather == 'Clear':
             data = 'Beau temps'
 
         
-        return  data
+        return data
 
-def climat_ville(lieu):
-    
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,CLE)
+def climate_city(city):
+    """we search climate"""
+
+    #Call API openweathermap
+    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(city,CLE)
     r = requests.get(localisation)
     data=r.json()
 
-    température = data['main']['temp']
-    température = température - 273.15
+    #get json stuff
+    temperature = data['main']['temp']
+    temperature = temperature - 273.15
 
-    return température
+    return temperature
 
         
-def saison():
+def season():
+    """we search season"""
 
+    #Get the current time
     date = datetime.datetime.now()
-    mois = date.month
-    jour = date.day
+    month = date.month
+    day = date.day
 
-   
-    
-    if mois == 12 or mois == 1\
-       or mois == 2:
+    #translate it
+    if month == 12 or month == 1\
+       or month == 2:
         return 'hiver'
 
-    elif mois == 3 or mois == 4\
-         or mois == 5:
+    elif month == 3 or month == 4\
+         or month == 5:
         return 'primtemps'
 
-    elif mois == 6 or mois == 7\
-         or mois == 8\
-         or mois == 9:
+    elif month == 6 or month == 7\
+         or month == 8\
+         or month == 9:
         return 'été'
 
-    elif mois == 10 or mois == 11\
-         or mois == 12:
+    elif month == 10 or month == 11\
+         or month == 12:
         return 'automne'
 
-def traffique(lieu):
-    
+
+def traffic(city):
+    """we search traffic"""
+
+    #Get the departure thank for bison futé
+    #and get hours points.
     date = datetime.datetime.now()
     
-    jour = date.day
-    mois = date.month
-    année = date.year
+    day = date.day
+    month = date.month
+    year = date.year
 
-    heure = date.hour
+    hour = date.hour
     minute = date.minute
 
-    heure = heure + 2
+    hour = hour + 2
 
-    heure_pointe_semaine = [7,8,9,16,17,18,19]
+    hour_point_week = [7,8,9,16,17,18,19]
 
-    départ_routier = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
+    deaparture = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
                       (1,3),(2,3),(8,3),(9,3),
                       (19,4),(22,4),(26,4),(27,4),(28,4),
                       (4,5),(5,5),(29,5),(30,5),
@@ -140,88 +160,89 @@ def traffique(lieu):
 
 
     dep = ""
-    pointe = ""
-    normale = ""
-    non_pointe = ""
+    point = ""
+    normal = ""
+    no_point = ""
 
-    
-    for i in départ_routier:
-        if (jour, mois) == i :
+    #if matching departure == yes
+    for i in deaparture:
+        if (day, month) == i :
             dep = 'Oui'
 
-        elif (jour, mois) != i :
-            normale = 'Oui'
+        elif (day, month) != i :
+            normal = 'Oui'
             dep = 'Non'
             
 
-    for i in heure_pointe_semaine:
+    for i in hour_point_week:
 
-        if i == heure:
-            pointe = 'Oui'
-            non_pointe = 'Non'
+        if i == hour:
+            point = 'Oui'
+            no_point = 'Non'
             break
-        
 
-    if pointe == '':
-        pointe = 'Non'
-        non_pointe = 'Oui'
-
-
+    #if matching point == yes
+    if point == '':
+        point = 'Non'
+        no_point = 'Oui'
 
 
 
-    return dep, pointe, normale, non_pointe
+    return dep, point, normal, no_point
 
 
 
-def habitude():
-
-    weekend = ''
-    jour_de_semaine = ''
+def habit():
+    """we search habit"""
     
-    pointe = [8,9,16,17,18,19]#reverifie les pointes
-    jour = ['samedi', 'dimanche']
+    weekend = ''
+    day_of_week = ''
+
+    #Weekend or day week
+    point = [8,9,16,17,18,19]
+    day = ['samedi', 'dimanche']
 
     
     date = datetime.datetime.now()
 
-    heure = date.hour
-    jour = date.weekday()
+    hour = date.hour
+    day = date.weekday()
    
-    #print(heure, jour)
+   
 
-    if jour == 5 or jour == 6:
+    if day == 5 or day == 6:
         weekend = 'Weekend'
-        jour_de_semaine = 'Non'
+        day_of_week = 'Non'
         
     else:
         weekend = 'Non'
-        jour_de_semaine = 'Oui'
+        day_of_week = 'Oui'
+
+    return weekend, day_of_week
 
 
-    return weekend, jour_de_semaine
 
-
-def ville_pollué_classement(lieu):
-
+def city_ranking_pollute(lieu):
+    """we search ranking pollute Fr"""
+    
     liste = ["paris", "marseille", "grenoble", "mulhouse",
              "marignane","strasbourg","lyon"]
 
     for i in liste:
         if lieu == i:
-            indexe = liste.index(i)
+            indexing = liste.index(i)
     
     
-    return indexe + 1
+    return indexing + 1
 
 
 
-def region_industrielle(lieu):
-
+def industrial_area(city):
+    """we search industrial area Fr"""
 
     site = ''
     
-    pole_poluant = ['Nord',
+    polluting_pole = ['Nord',
                     'Bouches-du-Rhône',
                     'Moselle',
                     'Seine-Maritime',
@@ -232,21 +253,17 @@ def region_industrielle(lieu):
                     'Rhône'
                     ]
 
-
-
-
-    path = "https://fr.wikipedia.org/wiki/{}".format(lieu) 
-
+    #BS4 stuff
+    path = "https://fr.wikipedia.org/wiki/{}".format(city) 
     r = requests.get(path)
-
     page = r.content
     soup = BeautifulSoup(page, "html.parser")
-    propriete = soup.find('table',attrs={"class":u"infobox_v2"})
-    propriete = str(propriete)
+    Property = soup.find('table',attrs={"class":u"infobox_v2"})
+    Property = str(Property)
    
-  
-    for i in pole_poluant:
-        a = str(propriete).find(str(i))
+    #If city matching with polluting_pole we return yes
+    for i in polluting_pole:
+        a = str(Property).find(str(i))
         if a > 0:
             site = 'oui'
             return site
@@ -255,8 +272,11 @@ def region_industrielle(lieu):
     return site
 
 
-def requete_lyon_traffique(path):
 
+
+def traffic_lyon_request(path):
+    """we search demonstration Lyon"""
+    
     liste = []
     r = requests.get(path)
 
@@ -264,26 +284,15 @@ def requete_lyon_traffique(path):
     page = r.content
     soup = BeautifulSoup(page, "html.parser")
 
-    propriete = soup.find('div',attrs={"class":u"news"})
-    
-    
-    #agissement = str(propriete).find(str("pollution"))
-    #agissement2 = str(propriete).find(str("circulation différenciée"))
-
-    #if agissement >= 0 and agissement2 >= 0:
-    #    ACTIVITE_EXEPTIONNELLE['aggissement'] += 1
+    Property = soup.find('div',attrs={"class":u"news"})
+    trafic = str(Property).find(str("circulation"))
+    trafic1 = str(Property).find(str("dense"))
+    trafic2 = str(Property).find(str("très dense"))
 
 
 
-    trafic = str(propriete).find(str("circulation"))
-    trafic1 = str(propriete).find(str("dense"))
-    trafic2 = str(propriete).find(str("très dense"))
-
-    #if trafic >= 0 and trafic1 >= 0 or trafic2 >= 0:
-    #    ACTIVITE_EXEPTIONNELLE['circulation dense'] += 1
-
-    manif = str(propriete).find(str("Manifestation"))
-    manif1 = str(propriete).find(str("manifestation"))
+    manif = str(Property).find(str("Manifestation"))
+    manif1 = str(Property).find(str("manifestation"))
 
 
     if manif >= 0 or manif1 >=0 :
@@ -291,36 +300,31 @@ def requete_lyon_traffique(path):
     else:
         return 'non pas manifestation'
 
-    news = [str(propriete)]
-    nombre = news[0][160:165]
-    nombre2 = []
-    for i in nombre:
+    news = [str(Property)]
+    number = news[0][160:165]
+    number2 = []
+    for i in number:
         
         try:
             i = int(i)
-            nombre2.append(i)
+            number2.append(i)
 
         except:
             pass
 
     
-    #if nombre2[0] > 0:
-    #    ACTIVITE_EXEPTIONNELLE['condition a polution'] += 1
-
-
-
+def traffic_paris_request(path):
+    """we search demonstration Paris"""
 
     
-def requete_paris_traffique(path):
-
     semaine = {'lundi':0, 'mardi':1, 'mercredi':2, 'jeudi':3, 'vendredi':4, 'samedi':5,
                'dimanche':6}
 
     liste = [[],[]]
     
     date = datetime.datetime.now()
-    jour = date.day
-    jour_semaine = date.weekday()
+    day = date.day
+    day_week = date.weekday()
 
 
     liste = []
@@ -330,10 +334,10 @@ def requete_paris_traffique(path):
     page = r.content
     soup = BeautifulSoup(page, "html.parser")
 
-    propriete = soup.find_all("table")
+    Property = soup.find_all("table")
    
 
-    for i in propriete:
+    for i in Property:
         date = soup.find('span',attrs={"class":u"wday"})
     
 
@@ -341,27 +345,27 @@ def requete_paris_traffique(path):
     date = str(date)
 
 
-    lundi = str(date).find("lundi")
-    mardi = str(date).find("mardi")
-    mercredi = str(date).find("mercredi")
-    jeudi = str(date).find("jeudi")
-    vendredi = str(date).find("vendredi")
-    samedi = str(date).find("samedi")
-    dimanche = str(date).find("dimanche")
+    monday = str(date).find("lundi")
+    tuesday = str(date).find("mardi")
+    wednesday = str(date).find("mercredi")
+    thursday = str(date).find("jeudi")
+    friday = str(date).find("vendredi")
+    saturday = str(date).find("samedi")
+    sunday = str(date).find("dimanche")
     
-    if lundi > 0 :
+    if monday > 0 :
         a = 0
-    if mardi > 0 :
+    if tuesday > 0 :
         a = 1
-    if mercredi > 0 :
+    if wednesday > 0 :
         a = 2
-    if jeudi > 0 :
+    if thursday > 0 :
         a = 3
-    if vendredi > 0 :
+    if friday > 0 :
         a = 4
-    if samedi > 0 :
+    if saturday > 0 :
         a = 5
-    if dimanche > 0 :
+    if sunday > 0 :
         a = 6
 
     numero_mois = [date]
@@ -379,20 +383,20 @@ def requete_paris_traffique(path):
         except:
             pass
 
-    #print(type(num[0]))
-    #print(num)
-    #print(a)
 
 
-    if a == jour_semaine and num[0] == jour:
+    if a == day_week and num[0] == day:
         return 'il y a une manifestation'
     else:
         return 'non pas manifestation'
        
-    #a dans 9 jours hihi faut faire pour le 10 par ex
 
 
-def requete_marseille_traffique(path):
+
+def traffic_marseille_request(path):
+    """we search demonstration Marseille"""
+
+    
     r = requests.get(path)
 
     date = datetime.datetime.now()
@@ -408,106 +412,101 @@ def requete_marseille_traffique(path):
     date = str(date)
     
     a = 0
-    lundi = str(date).find("lundi")
-    mardi = str(date).find("mardi")
-    mercredi = str(date).find("mercredi")
-    jeudi = str(date).find("jeudi")
-    vendredi = str(date).find("vendredi")
-    samedi = str(date).find("samedi")
-    dimanche = str(date).find("dimanche")
+    monday = str(date).find("lundi")
+    tuesday = str(date).find("mardi")
+    wednesday = str(date).find("mercredi")
+    thursday = str(date).find("jeudi")
+    friday = str(date).find("vendredi")
+    saturday = str(date).find("samedi")
+    sunday = str(date).find("dimanche")
     
-    if lundi > 0 :
+    if monday > 0 :
         a = 0
-    if mardi > 0 :
+    if tuesday > 0 :
         a = 1
-    if mercredi > 0 :
+    if wednesday > 0 :
         a = 2
-    if jeudi > 0 :
+    if thursday > 0 :
         a = 3
-    if vendredi > 0 :
+    if friday > 0 :
         a = 4
-    if samedi > 0 :
+    if saturday > 0 :
         a = 5
-    if dimanche > 0 :
+    if sunday > 0 :
         a = 6
 
 
-    numero = soup.find('div',attrs={"class":u"ml-agenda-date-page"})
+    number = soup.find('div',attrs={"class":u"ml-agenda-date-page"})
     #print(numero)
-    numero = str(numero)
-    numero = numero[20:]
+    number = str(number)
+    number = number[20:]
     
     try:
-        numero = int(numero)
+        number = int(number)
     except:
         liste = []
-        numero = str(numero)
+        number = str(number)
 
-        for i in numero:
+        for i in number:
             try:
                 i = int(i)
                 liste.append(i)
             except:
                 pass
     #print(a)
-    if a == jour_semaine and liste[0] == jour:
+    if a == day_week and liste[0] == day:
         return 'il y a une manifestation'
     else:
         return 'non pas manifestation'
 
-def activité_execptionnelle(lieu):
+def exceptional_activity(city):
+    """we call the last 3 functions"""
     
-    if lieu == "lyon":
+    if city == "lyon":
         path = "https://www.onlymoov.com/trafic/"
-        a = requete_lyon_traffique(path)
+        a = traffic_lyon_request(path)
 
         return a
 
         
 
-    elif lieu == "paris":
+    elif city == "paris":
         path = "https://paris.demosphere.net/manifestations-paris"
-        a = requete_paris_traffique(path)
+        a = traffic_paris_request(path)
 
         return a
 
     
-    elif lieu == "marseille":
+    elif city == "marseille":
         path = "https://mars-infos.org/spip.php?page=agenda"
-        a = requete_marseille_traffique(path)
+        a = traffic_marseille_request(path)
 
         return a
 
 
 
-def socio(lieu):
+def socio(city):
 
     lyon = 328469
     paris = 1350800 
     marseille = 762480 
 
-    if lieu == 'lyon':
+    if city == 'lyon':
         return lyon
 
-    if lieu == 'paris':
+    if city == 'paris':
         return paris
 
-    if lieu == 'marseille':
+    if city == 'marseille':
         return marseille
     #population active de 15 a 59 ans
 
 
 
+def plugs(city):
 
-
-
-
-
-
-def bouchons(lieu):
-
-    if lieu == "lyon":
-        path = "https://www.moncoyote.com/fr/info-trafic-{}.html".format(lieu)
+    if city == "lyon":
+        path = "https://www.moncoyote.com/fr/info-trafic-{}.html".format(city)
       
         r = requests.get(path)
 
@@ -515,18 +514,18 @@ def bouchons(lieu):
         
         page = r.content
         soup = BeautifulSoup(page, "html.parser")
-        propriete = soup.find("span", {'class':'font38 green'})
+        Property = soup.find("span", {'class':'font38 green'})
         liste = []
-        print(propriete)
+        print(Property)
         
-        for i in propriete:
+        for i in Property:
             for j in i:
                 if j == 'K' or j == 'k':
                     km = True
         
         
         try:
-            for i in propriete:
+            for i in Property:
                 for j in i:
                     if j == ',':
                         liste.append(str('.'))
@@ -556,7 +555,7 @@ def bouchons(lieu):
 
 
 
-    elif lieu == "paris":
+    elif city == "paris":
     
         path = "http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html#"
 
@@ -568,99 +567,27 @@ def bouchons(lieu):
         soup = BeautifulSoup(page, "html.parser")
 
         liste.append(str(soup))
-        bouchon = liste[0][1870:1890]
-        bouchon = str(bouchon)
+        plug = liste[0][1870:1890]
+        plug = str(plug)
 
-        kmbouchon = []
+        kmplug = []
         liste = []
-        for i in bouchon:
+        for i in plug:
             try:
                 i = int(i)
-                kmbouchon.append(str(i))
+                kmplug.append(str(i))
             except:
                 pass
 
-        kmbouchon = "".join(kmbouchon)
+        kmplug = "".join(kmplug)
         
         try:
-            kmbouchon = int(kmbouchon)
+            kmplug = int(kmplug)
         except:
             pass
-        b = kmbouchon
+        b = kmplug
            
         return b
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
