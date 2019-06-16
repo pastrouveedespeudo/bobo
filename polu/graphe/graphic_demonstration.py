@@ -6,10 +6,10 @@ import numpy as np
 import os
 import shutil
 
-from .fonction_graphe import moyenne
-from .fonction_graphe import new
+from .function_graph import moyenne
+from .function_graph import new
 
-def visu_manif(ville):
+def visu_demonstration(city):
     
     conn = psycopg2.connect(database='datu8fkornnndh',
                              user='pwtfmpvfpsujtw',
@@ -21,9 +21,9 @@ def visu_manif(ville):
     sql = ("""SELECT ACTIVITE_EXEPTIONNELLE, nombre_particule FROM activité
             WHERE nom_ville = %s;""")
     
-    values = (ville)
+    values = (city)
 
-    cursor.execute(sql, (ville,))
+    cursor.execute(sql, (city,))
 
     rows = cursor.fetchall()
     liste = [i for i in rows]
@@ -31,42 +31,42 @@ def visu_manif(ville):
     return liste
 
 
-def traitement_manif(donnée):
-    manif = []
-    non_manif = []
+def treatement_demonstration(data_demonstration):
+    demonstration = []
+    no_demonstration = []
     
-    for i in donnée:
+    for i in data_demonstration:
         print(i)
         if i[1] == 'None' or i[1] == None\
            or i[0] == 'None' or i[0] == None:
             pass
         elif i[0] == 'manifestation':
-            manif.append(int(i[1]))
+            demonstration.append(int(i[1]))
         elif i[0] == 'non_manifestation':
-            non_manif.append(int(i[1]))
+            no_demonstration.append(int(i[1]))
 
 
 
-    data = len(manif) + len(non_manif)
+    data = len(demonstration) + len(no_demonstration)
     print(data)
 
 
-    donnée_manif = moyenne(manif)
-    donnée_non_manif = moyenne(non_manif)
+    data_demon = moyenne(demonstration)
+    data_no_demon = moyenne(no_demonstration)
 
 
-    return donnée_manif[0], donnée_non_manif[0],\
-            donnée_manif[1], donnée_non_manif[1], data
+    return data_demon[0], data_no_demon[0],\
+            data_demon[1], data_no_demon[1], data
 
 
-def diagramme_manif(donnée_manif, donnée_non_manif,
-              er_manif, er_non_manif, save):
+def diagram_demonstration(data_demons, data_no_demons,
+              error_demons, error_no_demons, save):
 
 
     
-    plt.bar(range(2), [donnée_manif, donnée_non_manif],
+    plt.bar(range(2), [data_demons, data_no_demons],
                         width = 0.1, color = 'red',
-                       yerr = [er_manif, er_non_manif],
+                       yerr = [error_demons, error_no_demons],
                         ecolor = 'black', capsize = 10)
                 
 
