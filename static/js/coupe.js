@@ -662,7 +662,7 @@ jQuery("#gym2").on("click", function(e){
  e.preventDefault();
   jQuery.ajax({
       data:{
-          'gymnastique':a,
+          'gymnastic':a,
       },
       type:"POST",
       url:"/photo/coupe"
@@ -852,7 +852,7 @@ jQuery("#gym2").on("click", function(e){
 
         
         if(a.style.display == 'none' && b.style.display == 'none' && c.style.display == 'none' && d.style.display == 'none'){
-           
+            
             document.getElementById('aucas_ou').innerHTML = "<center><h3>Veuillez nous excusez nous n'avons rien trouv\u00e9</h3></center>";
             document.getElementById('p_am_pm').style.display = 'none';
             document.getElementById('info').style.display = 'none';
