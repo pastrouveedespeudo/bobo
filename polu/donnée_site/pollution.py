@@ -401,8 +401,8 @@ def traffic_marseille_request(path):
     r = requests.get(path)
 
     date = datetime.datetime.now()
-    jour = date.day
-    jour_semaine = date.weekday()
+    day = date.day
+    day_week = date.weekday()
     
     
     page = r.content
@@ -545,7 +545,7 @@ def plugs(city):
             #We trying to translate str to float for
             #plugs
             liste = "".join(liste)
-            print(liste,'000000000000000')
+
             try:
                 b = float(liste)
                 print(b)
