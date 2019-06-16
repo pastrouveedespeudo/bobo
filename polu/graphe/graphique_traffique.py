@@ -5,11 +5,11 @@ import psycopg2
 import numpy as np
 import os
 import shutil
-from .fonction_graphe import moyenne
+from .function_graph import moyenne
 from .fonction_graphe import new
 
 
-def visu_traffique(ville):
+def visu_traffic(city):
     
     conn = psycopg2.connect(database='datu8fkornnndh',
                             user='pwtfmpvfpsujtw',
@@ -21,9 +21,9 @@ def visu_traffique(ville):
     sql = ("""SELECT TRAFIQUE, nombre_particule FROM traffique
             WHERE nom_ville = %s;""")
     
-    values = (ville)
+    values = (city)
 
-    cursor.execute(sql, (ville,))
+    cursor.execute(sql, (city,))
 
     rows = cursor.fetchall()
     liste = [i for i in rows]
@@ -31,40 +31,41 @@ def visu_traffique(ville):
     return liste
 
 
-def traitement_traffique(donnée):
-    depart_routier = []
-    regulier_jour = []
+def treatment_traffic(data_traffic):
+    
+    deaparture = []
+    regular_day = []
 
  
-    for i in donnée:
+    for i in data_traffic:
     
         if i[0] == None or i[0] == 'None' or\
            i[1] == None or i[1] == 'None':
             pass
         elif i[0] == 'regulier jour':
-            regulier_jour.append(int(i[1]))
+            regular_day.append(int(i[1]))
         elif i[0] == 'depart_routier':
-            depart_routier.append(int(i[1]))
+            deaparture.append(int(i[1]))
 
         print(i)
         
-    data = len(depart_routier) + len(regulier_jour)
+    data = len(deaparture) + len(regular_day)
     print(data)
 
-    donnée_regulier_jour = moyenne(regulier_jour)
-    donnée_depart_routier = moyenne(depart_routier)
+    data_regular_day = moyenne(regular_day)
+    data_deaparture = moyenne(deaparture)
 
-    return donnée_regulier_jour[0], donnée_depart_routier[0],\
-            donnée_regulier_jour[1], donnée_depart_routier[1], data
+    return data_regular_day[0], data_deaparture[0],\
+            data_regular_day[1], data_deaparture[1], data
 
-def diagramme_traffique(donnée_regulier_jour, donnée_depart_routier,
-              er_regulier_jour, er_depart_routier, save):
+def diagram_traffic(data_regular_day, data_deaparture,
+              er_regular_day, er_deaparture, save):
 
 
     
-    plt.bar(range(2), [donnée_regulier_jour, donnée_depart_routier],
+    plt.bar(range(2), [data_regular_day, data_deaparture],
                         width = 0.1, color = 'red',
-                       yerr = [er_regulier_jour, er_depart_routier],
+                       yerr = [er_regular_day, er_deaparture],
                         ecolor = 'black', capsize = 10)
                 
 
