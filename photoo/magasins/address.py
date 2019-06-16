@@ -4,9 +4,9 @@ from geopy.geocoders import Nominatim
 
 scrap = ['Rue', 'Avenue', 'Allée', 'allée', 'Impasse', 'Adresse']
 
-def addresse_geo(nom, ville):
+def address_geo(name, city):
     path = "https://www.google.com/search?q=adresse+{}+{}+&oq=adresse+{}+{}"
-    path = path.format(nom, ville, nom, ville)
+    path = path.format(name, city, name, city)
 
     r = requests.get(path, headers={
          "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
@@ -19,7 +19,7 @@ def addresse_geo(nom, ville):
     propriete = soup.find_all("span")
 
     stop = ''
-    addresse = []
+    address = []
 
     for i in propriete:
         if stop == True:
@@ -30,18 +30,18 @@ def addresse_geo(nom, ville):
             for j in scrap:
                 a = str(i.string).find(str(j))
                 if a >= 0:
-                    addresse.append(i.string)
+                    address.append(i.string)
                     stop = True
                     
-    print(addresse)
-    return addresse
+    print(address)
+    return address
 
 
-def ville_geo(parametre):
+def city_geo(parameter):
     """Here we searching from Python modul(geopy.geocoders)"""
     """address from the input from html page"""
 
-    print(parametre)
+    print(parameter)
     geocoder = Nominatim(user_agent="app.py")
     #parametre is data recup from data()
     
