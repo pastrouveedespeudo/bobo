@@ -27,7 +27,7 @@ def visu_plugs(city):
     sql = ("""SELECT BOUCHON, nombre_particule FROM bouchon
             WHERE nom_ville = %s;""")
     
-    values = (ville)
+    values = (city)
 
     cursor.execute(sql, (city,))
 
@@ -37,84 +37,82 @@ def visu_plugs(city):
     return liste
 
 
-def treatment_plugs(donnée):
+def treatment_plugs(data_plugs):
     """We tidy conditions into list and make an average"""
 
     
     liste = ['non', 'petit', 'moyen', 'grand', 'assez grand',
              'tres grand']
-    non = []
-    petit = []
-    moyen = []
-    grand = []
-    assez_grand = []
-    tres_grand = []
+    no = []
+    little = []
+    means = []
+    great = []
+    large_enough = []
+    super_large = []
     
 
-    for i in donnée:
+    for i in data_plugs:
         print(i[0])
 
-
-        
         if i[1] == 'None' or i[1] == None\
             or i[0] == 'None' or i[0] == None:
                 pass
         elif i[0] == 'non':
-            non.append(int(i[1]))
+            no.append(int(i[1]))
         elif i[0] == 'petit':
-            petit.append(int(i[1]))
+            little.append(int(i[1]))
         elif i[0] == 'moyen':
-            moyen.append(int(i[1]))  
+            means.append(int(i[1]))  
         elif i[0] == 'grand':
-            grand.append(int(i[1]))
+            great.append(int(i[1]))
         elif i[0] == 'assez grand':
-            assez_grand.append(int(i[1]))
+            large_enough.append(int(i[1]))
         elif i[0] == 'tres grand':
-            tres_grand.append(int(i[1]))
+            super_large.append(int(i[1]))
             
 
-    data = len(non) + len(petit) + len(moyen) + len(grand)+ len(assez_grand)+ len(tres_grand)
+    data = len(no) + len(little) + len(means) + len(great)+ len(large_enough)+ len(super_large)
     print(data)
     
-    donnée_non = moyenne(non)
+    data_no = moyenne(no)
 
-    donnée_petit = moyenne(petit)
+    data_little = moyenne(litlle)
 
-    donnée_moyen = moyenne(moyen)
+    data_means = moyenne(means)
 
-    donnée_grand = moyenne(grand)
+    data_great = moyenne(great)
 
-    donnée_assez_grand = moyenne(assez_grand)
+    data_large_enough = moyenne(large_enough)
 
-    donnée_tres_grand = moyenne(tres_grand) #We make an average by function_graph
+    data_super_large = moyenne(super_large) #We make an average by function_graph
 
-    return donnée_non[0], donnée_petit[0], donnée_moyen[0],\
-            donnée_grand[0], donnée_assez_grand[0],\
-            donnée_tres_grand[0],\
-            donnée_non[1], donnée_petit[1], donnée_moyen[1],\
-            donnée_grand[1], donnée_assez_grand[1],\
-            donnée_tres_grand[1], data
-
-
+    return data_no[0], data_little[0], data_means[0],\
+            data_great[0], data_large_enough[0],\
+            data_super_large[0],\
+            data_no[1], data_little[1], data_means[1],\
+            data_great[1], data_large_enough[1],\
+            data_super_large[1], data
 
 
-def diagram_plugs(donnée_non, donnée_petit, donnée_moyen,
-              donnée_grand, donnée_assez_grand,
-              donnée_tres_grand,
-              er_non, er_petit, er_moyen,
-              er_grand, er_assez_grand,
-              er_tres_grand, save):
+
+
+def diagram_plugs(data_no, data_little, data_means,
+              data_great, data_large_enough,
+              data_super_large,
+              er_no, er_little, er_means,
+              er_great, er_large_enough,
+              er_super_large, save):
 
     """We siplay it into a matplotlab graph"""
     
     
-    plt.bar(range(6), [donnée_non, donnée_petit, donnée_moyen,
-                       donnée_grand, donnée_assez_grand,
-                        donnée_tres_grand],
+    plt.bar(range(6), [data_no, data_little, data_means,
+                       data_great, data_large_enough,
+                        data_super_large],
                         width = 0.1, color = 'red',
-                       yerr = [er_non, er_petit, er_moyen,
-                              er_grand, er_assez_grand,
-                              er_tres_grand],
+                       yerr = [er_no, er_little, er_means,
+                              er_great, er_large_enough,
+                              er_super_large],
                         ecolor = 'black', capsize = 10)
                 
 
