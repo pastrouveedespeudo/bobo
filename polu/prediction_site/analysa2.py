@@ -82,8 +82,8 @@ def predi_analysa2(ville):
         b = recuperation_donnée_température(i)
         condition.append(b)
      
-        #f = incendie(i)
-        #condition.append(f)
+        f = incendie(i)
+        condition.append(f)
 
         
     print(condition)
