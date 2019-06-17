@@ -1,166 +1,24 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Creative - Start Bootstrap Theme</title>
-
-  <!-- Font Awesome Icons -->
-  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
-  <!-- Plugin CSS -->
-  <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-  <!-- Theme CSS - Includes Bootstrap -->
-  <link href="/static/css/creative.min.css" rel="stylesheet">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-
-  
-</head>
+{% include "navebarre_pollu.html" %}
+{% block content %}
+{% endblock %}
 
 
-
-
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-
-    
-    
-    <div class="container">
-    
-      <style> #my{width:50px; height:50px;margin-left:-70px;}</style>
-      <img src="/static/img/portfolio2/icone/indian.png" id="my">
-      <a class="navbar-brand js-scroll-trigger" href="/polution/polution">My_Polution</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-      <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
-      <img src="/static/img/portfolio/icone/my.png" id="my_prof">
-      <a class="navbar-brand js-scroll-trigger" href="/">My_Profil</a>
-     
-      
-      <button class="navbar-toggler navbar-toggler-right" type="button"
-        data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-
-
-
-
-
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-
-
-
-
-          <style>
-              #im1{width:50px; height:50px; margin-left:110px;}
-              #graph{margin-left:35px; width:200px;}
-          </style>
-          
-          <li class="nav-item">
-            <a href = "/photo/photo">
-              <img src="/static/img/portfolio2/icone/graphe.png" id="im1">
-              <center><a class="nav-link js-scroll-trigger" href="/photo/photo" id='graph'>Nos graphiques</a></center>
-            </a>
-          </li>
-
-
-          <style>
-            #im2{width:50px;height:50px;margin-left:45px;}
-            #donnée{width:200px;height:50px;margin-left:-25px;}
-          </style>
-          
-          <li class="nav-item">
-           <a href = "/polution/donnée">
-            <img src="/static/img/portfolio2/icone/pol.png" id="im2">
-            <center><a class="nav-link js-scroll-trigger" href="/polution/donnée" id='donnée'>Nos données pollution</a></center>
-            </a>
-          </li>
-
-
-          <style>
-              #impredi{width:50px;height:50px; margin-left:55px;}
-              #prédiction{width:200px;height:50px; margin-left:-20px;}
-
-          </style>
-
-          <li class="nav-item">
-            <a href = "/photo/coupe">
-              <img src="/static/img/portfolio/icone/coiffure.png" id="impredi">
-              <center><a class="nav-link js-scroll-trigger" href="/photo/coupe" id='prédiction'>Nos predictions</a></center>
-            </a>
-          </li>
-
-
-          
-
-          <style>
-            #im3{width:50px;height:50px;margin-left:0px;}
-            #imim{width:50px;height:50px;margin-left:68px;}
-            #toususr{width:200px;height:50px;margin-left:0px;}
-          </style>
-          
-          <li class="nav-item">
-           <a href = "/photo/habits">
-            <img src="/static/img/portfolio2/icone/pollution.png" id="imim">
-            <center><a class="nav-link js-scroll-trigger" href="/photo/habits" id='toususr'>Tous sur la pollution</a></center>
-            </a>
-          </li>
-
-          <style>
-            #im3{width:50px;height:50px;margin-left:25px;}
-          </style>
-          
-          <li class="nav-item">
-           <a href = "/photo/habits">
-            <img src="/static/img/portfolio2/icone/fight.png" id="im3">
-            <a class="nav-link js-scroll-trigger" href="/photo/habits">Comment lutter ?</a>
-            </a>
-          </li>
-
-
-          
-        </ul>
-
-        
-      </div>
-    </div>
-  </nav>
-
-
-
-
+  <link rel="stylesheet" type="text/css" href="/static/css/pollution.css" media="all" />
 
   <!-- Masthead -->
   <header class="masthead">
     <div class="container h-100">
       <div class="row h-100 align-items-center justify-content-center text-center">
         <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">Pollution</h1>
+          <h1>Pollution</h1>
           <br>
-          <style>#h{font:Serif; color:white;}</style>
-          <hr class="divider my-4">
+          <h2>Voici la section information. Ici nous vous proposons
+          des connaissances sur la pollution à travers différentes sections.
+          La météo ? le vent ? le traffic routier et la pollution?
+          Tout y est.</h2>
         </div>
         <div class="col-lg-8 align-self-baseline">
           <p class="text-white-75 font-weight-light mb-5"></p>
-          
-
-          
         </div>
       </div>
     </div>
@@ -169,334 +27,87 @@
 
 
   <!-- About Section -->
-  <section class="page-section bg-primary" id="about">
-  
+  <section class="page-section bg-dark text-white">
   <div class="container">
-
-
-
+     <p>*Clique sur une des images pour voir le texte associé.</p>
+     <br>
      <center><h1>La météo et Pollution</h1></center>
-      <br><br><br><br><br>
-      
+      <br><br><br><br>
       <div class="row">
-
          <div class='col-lg-6' id="soleil">
           <input type="image" src ="/static/img/soleil.png" style='width:250px; height:190px;' onclick="meteo()">
          </div>
-         
         <div class='col-lg-6' id='soleil_texte'>
           <br><br><br><br>
           <h2>La température ?</h2>
         </div>
-        
-
      </div><br><br><br><br>
 
 
-    <script>
-
-      function meteo(){
-        
-        var div = document.getElementById("soleil_texte");
-        
-        div.innerHTML = '<p>Quoi de mieux qu\'un temps d\'été ? On peut sortir, etre avec ces amis, on adore ca ! '
-                        + 'Cela est inscris dans nos gènes, notre mémoire biologique. '
-                        + 'Nos ancètres ben oui, avant toi y\'avait un singe nu qui se baladait dans la foret un gaulois, '
-                        + 'un chevalier, un napoléonien... et un d\'eux a peut etre developpé une maladie sous la pluie et sous le froid du coup '
-                        + 'il a donnée a son fils, ton ancetre le pouvoir de se méfier de la pluie et du froid.<br> '
-                        + 'Mais l\'absence de soleil permet aussi la mélatonine ! hohoho c\'est quoi ? en gros très gros c\'est une hormone qui te dis quand tu dois dormir. '
-                        + 'Et ca peut nous rendre triste a trop forte présence.<br> '
-                        + 'Ah oui, savez tu aussi que le soleil rend aggressif ? (En californie y fait grave chaud et le taux d\'aggression et le plus élevé) '
-                        + 'et que la baisse de la température suite a un long épisode de chaleur provoqué un petit cafard ? Donc l\'absence de lumière '
-                        + '(aussi source de vitamine D) peut nous rendre morose.<br> '
-                        + 'Donc enfete le mauvais temps c\'est nul ca devrait pas exister vive le beau temps alors! Ben oui. '
-                        + 'Mais la pollution aussi adore le beau temps. Ah oui c\'est vrai c\'est un site de polution. Mais alors pourquoi '
-                        + 'le beau temps et la pollution? Est-ce que tu connais les anticyclones ?<br> '                                
-                        + 'Mince j\'étais la pour la pollution moi... '
-                        + 'Bon allé je continue et je ferme si ca parle pas de pollution. Un anticyclone, c\'est un truk qui permet a '
-                        + 'Pollution de resté dans notre zone d\'air respirable attend je m\'explique avec une métaphore. '
-                        + 'On a notre zone haute de 4 immeuble de 10 étages ok ? et plus haut que ces 40 étages il y a la '
-                        + 'haute atmosphère. Cette altitude c\'est une zone plus froide que la notre. Enfete par a + b l\'air froid '
-                        + 'de la haute atmosphère permet d\'évacuer l\'air chaud de notre zone (les 4 étages). Un anticyclone c\'est '
-                        + 'un phénomène qui applique une pression de plus de 1030 hpa et qui va réchauffer l\'air de la haute atmosphère '
-                        + 'et qui va empécher d\'évacuer l\'air chaud et pollué de notre zone ! '
-                        + 'Le beau temps la pollution à case des rayons UV ! Ces rayons la qui nous font bronzer vont pouvoir faire réagir '
-                        + 'et former des polluants. Et dans tous ca les nuages ca sert à quoi ? faut mettre des mots clées</p>'
-        
-                        + '<input type="button" value="Fermer" onclick="fermer()">'
-
-      };
-
-    
-    function fermer(){
-      document.getElementById("soleil_texte").innerHTML = "<h2>La température ?</h2>";
-      }
-
-
-
-    </script>
-
-
-
-
-
      <div class="row">
-
       <div class='col-lg-6' id="vent" >
         <input type="image" src ="/static/img/vent.jpg" onclick="vent()"> 
       </div>
-
-      
       <div class='col-lg-6' id='vent_text'>
         <br><br><br><br>
         <h2>Le vent ?</h2>
       </div>
       
     </div>
-   
-   
-
     <br><br><br><br>
 
 
-    <script>
-
-        function vent(){
-          
-            var div = document.getElementById("vent_text");
-            div.innerHTML = '<p>Nous nous sommes adaptés au vent par différentes facons. Par exemple nous avons fait des bateaux<br>'
-                        + 'des moulins afin de pouvoir nous nourrir' 
-                        + 'nous avons fais des éoliennes afin de pouvoir nous éclairer ect...'
-
-                        + 'Savez tu que le vent est liée à la rotation de la Terre mais aussi a une différence de température ! '
-                        + 'Le vent va forcément faire disparaitre la pollution ! il la disperse et c\'est bon non ? hé ben oui mais pas que. '
-                        + 'La pollution de chez toi va alors se retrouver chez ton voisin et cela sur des centaines et des centaines de kilomètres ! '
-                        + 'ou pire encore, la pollution de ton voisin viendra chez nous ! Cependant, le vent permet nettoyer l\'air bien entendu.'
-                        + 'ca c\'était pour le vent de gauche à droite mais il existe aussi un vent verticale (de bas en haut) '
-                      
-            
-                        + 'Le vent c\'est une différence de témpérature ! Et bien oui, et cela peut introduire la témpérature et la couche d\'ozone '
-                        + 'que nous verrons plus tard. '
-                        + 'Le vent par différentes typographies (ou différentes formes géographiques)'
-                        + 'peut avoir différentes propriétés. Et donc la pollution est mouvementé differement. Par exemple les villes prés de la mer'
-                        + ''
-                        + 'Les villes dans une valléee'
-                        + ''
-                        + 'Et très haut ? au sommet des montagnes ?</p>'
-
-                
-                        + '<input type="button" value="Fermer" onclick="fermer_vent()">';
-        };
-
-
-    function fermer_vent(){
-      var div = document.getElementById("vent_text").innerHTML = '<h2>Le vent ?</h2>';
-      }
-        
-  </script>
-
-
-
-
      <div class="row">
-
       <div class='col-lg-6' id="saison">
         <input type="image" src ="/static/img/saison.jpg"  style='width:250px' onclick="saison()"> 
       </div>
-
-      
       <div class='col-lg-6' id='saison_text'>
         <br><br><br><br>
         <h2>Les saisons ?</h2>
       </div>
-      
     </div>
-  
-     
     </div>
   </section>
 
 
 
 
-  <script>
-
-    function saison(){
-      
-        var div = document.getElementById("saison_text");
-        div.innerHTML = '<p>La vie est courte. Et encore plus courte avec la pollution. Mais elle l\'était encore plus pour nos ainées.'
-                        + 'Imaginez ! parcourir des centaines de kilomètres à cheval pendant plusieurs semaines.'
-                        + 'allez voir son cousin Robert à 50 kilomètres leur prenez 6 heures en moyenne comme pour faire un v =d/t'
-                        + 'alors imaginez 6h pour une vie de 25 ans en moyenne, c\'était beaucoup.'
-                        + 'Nous avons donc inventé la voiture ! Grace a cet engin, nos déplacements ont quadruplé voir quintuplé'
-                        + 'en terme de vitesse ! Nous avons donc gagné en temps en espérance de vie mais aussi en pollution.'
-                        + 'En effet, La cause principale de Pollution est le traffic routier direct et indirect. '
-                        + 'Selon BMW magazine, (une entreprise de voiture électrique) la construction d\'une voiture'
-                        + 'serait l\équivalent d\au moins 18 0000 km (soit 2200 heure à dos de cheval) parcourus'
-
-
-
-                        + 'bouchon'
-                        + 'vitesse'
-
-
-
-
-
-
-
-
-
-
-        
-                        + 'Comment reconnaitre la pollution à travers nos corps ? un troisième oeil ? non non mais qui sait pour dans 100 ans ?'
-                        + 'par contre ton enfant de 2 ans le saura. Les conséquences sont les yeux qui piques, l\hypertension,'
-
-
-
-
-
-
-
-
-
-
-
-
-
-                         + '</p>' 
-        
-                         + '<input type="button" value="Fermer" onclick="fermer_saison()">';
-
-    };
-
-
-
-  function fermer_saison(){
-    var div = document.getElementById("saison_text").innerHTML = '<h2>Les saisons ?</h2>';
-
-    }
-
-</script>
-
-
-
-
-
-
 
   <!-- About Section -->
-  <section class="page-section bg-primary" id="about2">
-
-
+  <section class="page-section bg-dark text-white">
     <center><h1>Les activités Humaines et Pollution</h1></center>
-    
-
     <div class="container">
-
-
       <br><br><br><br><br>
-      
+  
       <div class="row">
-
          <div class='col-lg-6' id="soleil">
           <input type="image" src ="/static/img/trafic.jpg" onclick="trafic()"> 
          </div>
-         
         <div class='col-lg-6' id='trafic_text'>
           <br><br><br><br>
           <h2>Le traffique routier ?</h2>
         </div>
-
       </div><br><br><br>
 
 
-    <script>
-      function trafic(){
-        
-          var div = document.getElementById("trafic_text");
-          div.innerHTML =  "Le traffic routier nous a permis de pouvoir accélérer le temps, de réduire la distance entre nous"
-                          + " mais il est l'un des plus facteurs de la pollution. En effet, les voitures "
-                          + "influent gravement au réchaffement climatique par l\'effet de serre. "
-                          + "L'effet de serre c'est quoi ? c'est l'élévation de la température à la surface de la planète. "
-                          + "Par exemple le vent a besoin d'air chaud et d'air froid pour pouvoir circuler. Par ce rechauffement "
-                          + "le vent est ralenti et augmente la témpérature de la planète *1. De plus les tempetes seront beaucoup plus intense "
-                          + "Mais cela change aussi sa direction*1. Et peut etre nous atteindre. Imaginez des tempetes a répétition chez vous ! "                                                                                                     
-                          + "Imaginez une canicule. Imaginez une petite brise et l'émotion de bien etre. Imaginez maintenant un monde sans "
-                          + "petites brises... Souvenez vous des fois ou à cause de votre parapluie low cost le mauvais temps vous à décoiffé "
-                          + "dans 5 ans ca sera votre quotidien... "
-                          + "Les voitures produisent 2000 briques de lait de CO2 toutes les 4secondes*2 "
-                          + "c'est comme si léa 1 mois fumait une cigarette dans une chambre mal aéré qui en plus ne s'aérera pas. Il n'y a plus de vent "
-                          + "Mais en vrai on s'en fou un bébé ca ne fume pas, et il faut bien se déplacer "
-                          + "<br>" 
-                          + "<a href ='https://www.planetoscope.com/automobile/311-emissions-de-co2-par-les-voitures-en-europe.html' style='color:black;'>*1</a><br>"
-                          + "<a href='http://www.wikistrike.com/article-les-gaz-a-effet-de-serre-changent-bien-la-circulation-atmospherique-118770875.html' style='color:black;'>*2</a><br>"
-                          + '<input type="button" value="Fermer" onclick="fermer_traffic()">'
-      }
-
-    function fermer_traffic(){
-      var div = document.getElementById("trafic_text").innerHTML = '<h2>Le traffique routier ?</h2>';
-
-      }
-
-
-    </script>
+ 
 
 
 
 
 
       <div class="row">
-
          <div class='col-lg-6' id="indu">
           &nbsp;&nbsp;
           <input type="image" src ="/static/img/indus.jpg" onclick="indus()">  
          </div>
-         
         <div class='col-lg-6' id='indus_text'>
           <br><br><br><br>
           <h2>Les poles industrielles ?</h2>
         </div>
-
       </div><br><br><br>
 
-
-
-    <script>
-      function indus(){
-        
-          var div = document.getElementById("indus_text");
-          div.innerHTML = "Les industries nous ont permi de pouvoir produire en masse et donc de mettre des ressources a forte disposition."
-                        + "Permettant ainsi de baisser le prix et d'augmenter l'accésibilité. Ainsi jo paysant à pu avoir accès au papier."
-                        + "Remi aggriculteur à pu avoir l'électricité. Grace aux deux révolutions industrielles"
-                        + "nous avons pu faire un bond en avant."
-                        + "Mais elles sont propices à la polution de l'air et donc à trois ou quattres bonds en arrière."
-                        + "En effet, afin de faire nos médicaments, du ciment, des engrais..."
-                        + "Les industries rejettent du gaz et de la poussière dans l'air."
-                        + "Par exemple, les mintes de charbon et l'élevage produisent du méthane. Les raffineries, les usines à papier rejettent"
-                        + "du dioxyde de soufre et vont participer au réchauffement climatique"
-    
-                          + '<br><input type="button" value="Fermer" onclick="fermer_indus()">';
-
-      }
-
-    function fermer_indus(){
-      var div = document.getElementById("indus_text").innerHTML = '<h2>Les poles industrielles ?</h2>';
-
-      }
-
-
-    </script>
-
-
-
-
-
-
       <div id="div2"></div>
-
-
-
 
     </div>
   </section>
@@ -509,83 +120,110 @@
 
   
  
-  <!-- Services Section -->
-  <section class="page-section" id="services">
-  
-    <div class="container">
-    
-      <h2 class="text-center mt-0">Mes services</h2>
-      <hr class="divider my-4">
+  <!-- Resum Function Section -->
+  <section class="page-section bg-dark text-white">
+    <div class="container text-center">
+      <div class="container">
+        <h2 class="text-center mt-0">Mes services</h2>
 
 
-      
-      <div class="row">
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im6{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/graphe.png"/ id="im6">
-            <h3 class="h4 mb-2">Un recit sans preuve ca sert a rien...</h3>
-            <p class="text-muted mb-0">Nos graphiques</p>
+        <!-- Services -->
+        <div class="row">
+
+
+          <!-- Fisrt Services Graph-->
+          <div class="col-lg-4 col-md-6 text-center">
+            <div class="mt-5">              
+              <a href='/polution/graphe'>
+                <img src = "/static/img/portfolio2/icone/graphe.png"/
+                alt="Picture with a graph and an arrow who share up" id="im6">
+              </a>
+              <h3 class="h4 mb-2">Un récit sans preuve ca sert a rien...</h3>
+              <p class="text-muted mb-0">Nos graphiques sur la pollution et ces conditions</p>
+            </div>
           </div>
-        </div>
 
-
-
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im4{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/pol.png"/ id="im4">
-            <h3 class="h4 mb-2">Nos données</h3>
-            <br>
-            <p class="text-muted mb-0">Nos données pollution</p>
+          
+          <!-- Second Services Data-->
+          <div class="col-lg-4 col-md-6 text-center">
+            <div class="mt-5">
+              <a href='/polution/donnée'>
+                <img src = "/static/img/portfolio2/icone/pol.png"/
+                alt="Picture where there are hands holding smoke" id="im4">
+              </a>
+              <h3 class="h4 mb-2">Nos données</h3>
+              <br>
+              <p class="text-muted mb-0">
+                Nos données sur la pollution en temps réel à Paris, Marseille et Lyon
+              </p>
+            </div>
           </div>
-        </div>
 
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im5{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio/icone/coiffure.png"/ id="im5">
-            <h3 class="h4 mb-2">qui... ne marche pas super..</h3>
-            <p class="text-muted mb-0">Nos prédictions</p>
+
+          <!-- Third Services Predict-->
+          <div class="col-lg-4 col-md-6 text-center">
+            <div class="mt-5">
+              <a href='/polution/prediction'>
+               <img src = "/static/img/portfolio/icone/coiffure.png"/
+                 alt="Picture of a child who smiling, his haircut hasn't changes" id="im5">
+              </a>
+              <h3 class="h4 mb-2">Nos prédictions</h3>
+              <p class="text-muted mb-0">Notre prédiction est un outils qui, par différentes conditions donne une approximation
+              par moyenne du taux de pollution dans la ville.</p>
+            </div>
           </div>
-        </div>
 
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/pollution.png"/ id="im7">
-            <h3 class="h4 mb-2">La pollution ! ah enfete c'est quoi ? </h3>
-            <br>
-            <p class="text-muted mb-0">Tous absolument tous sur la polltuion </p>
+
+          <!-- Fourth Services Info-->
+          <div class="col-lg-4 col-md-6 text-center">
+            <div class="mt-5">
+              <a href='/polution/info_pollu'>
+                <img src = "/static/img/portfolio2/icone/pollution.png"/
+                  alt="Picture of a candle it symbolizing knowledge" id="im7">
+              </a>
+              <h3 class="h4 mb-2">La pollution ! ah enfete c'est quoi ? </h3>
+              <br>
+              <p class="text-muted mb-0">Cette sous rubrique a pour but de vous informer et de vous alarmer sur la pollution.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im7{width:100px; height:100px;}</style>
-           <img src = "/static/img/portfolio2/icone/fight.png"/ id="im7">
-            <h3 class="h4 mb-2">Notre solution</h3>
-            <br>
-            <p class="text-muted mb-0">Luttons</p>
+
+          <!-- fifth Services Our method -->
+          <div class="col-lg-4 col-md-6 text-center">
+            <div class="mt-5">
+             <a href='/polution/machine_a_o'>
+               <img src = "/static/img/portfolio2/icone/fight.png"/
+                 alt="Picture of an idian with a spear." id="im7">
+             </a>
+             <h3 class="h4 mb-2">Notre solution</h3>
+             <br>
+              <p class="text-muted mb-0">Notre solution est de faire baisser drastiquement la pollution.
+              En effet la pluie fait baisser la pollution. Et pourquoi ne pas faire pleuvoir ?</p>
+            </div>
           </div>
-        </div>
 
 
-        
 
-        
+          <!-- sixth Services Our method -->
+          <div class="col-lg-4 col-md-6 text-center">
+            <div class="mt-5">
+             <a href='/polution/donnée'>
+               <img src = "/static/img/portfolio2/icone/vent.png"/
+                 alt="Picture of a tool to know where the wind is going" id="im7">
+              </a>
+              <h3 class="h4 mb-2">Notre carte des vents</h3>
+              <br>
+              <p class="text-muted mb-0">La pollution se déplace par le vent. Et si nous la suivions.</p>
+            </div>
+          </div>
+
       </div>
-    </div>
-  </section>
+    </section>
 
 
 
 
-
-
+  <div id="separate"><br><br><br></div>
 
 
 
@@ -666,6 +304,7 @@
 
   <!-- Custom scripts for this template -->
   <script src="/static/js/creative.min.js"></script>
+  <script type="text/javascript" src="/static/js/info_pollu.js"></script>
 
 </body>
 
