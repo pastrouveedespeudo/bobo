@@ -198,10 +198,10 @@ def bouchons(lieu):
         soup = BeautifulSoup(page, "html.parser")
 
         liste.append(str(soup))
-        bouchon = liste[0][1872:1876]
+        bouchon = liste[0][1872:1878]
         
         bouchon = str(bouchon)
-        #print(bouchon)
+        print(bouchon)
         kmbouchon = []
         liste = []
         for i in bouchon:
@@ -448,7 +448,7 @@ def activité_execptionnelle(lieu):
 
 
 
-
+bouchons("paris")
 
 
 
