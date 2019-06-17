@@ -1,4 +1,4 @@
-mettre en vert et gris pollution,
+okkkkkkkkkk jai comrpis et la responsivitgé aussi m'a fallu du temps puré
 
 corriger toutes les fautes parait qu'il y e na encore
 
