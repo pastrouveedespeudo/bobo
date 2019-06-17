@@ -2,6 +2,7 @@ finir le responsive + la taille des caracteres + la taille des images
 
 faire ca pour toutes les pages
 
+enelver programme informatique tu parles de soumis puis de poupou et insc le mec est refais puis nan enfete c un mec a lunette
 
 corriger toutes les fautes parait qu'il y e na encore
 
