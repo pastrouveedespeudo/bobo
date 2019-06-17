@@ -1,4 +1,7 @@
-okkkkkkkkkk jai comrpis et la responsivitgé aussi m'a fallu du temps puré
+finir le responsive + la taille des caracteres + la taille des images
+
+faire ca pour toutes les pages
+
 
 corriger toutes les fautes parait qu'il y e na encore
 
