@@ -24,6 +24,13 @@ me faut encore une grosse semaine MAIS j'ai quand meme reussi y'a plus de bug et
 
 rajouter le nombre de donnée la variance et une expli fonctionnement et amélioration et limite aux graphes
 
+
+#enfete faut pas saxer sur les coupes, mais sur lapprentissage de l'habit, plus jeune saviez vous deja vous habiller ? c la le truk !
+
+#et pollution ca ok
+
+#t'as confondu transmission culturelle gene et adn jcrois gros
+
 #https://myprofilmypollution.herokuapp.com/
 
 #https://www.html5rocks.com/en/tutorials/getusermedia/intro/
