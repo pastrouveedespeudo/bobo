@@ -1,14 +1,12 @@
 mettre en vert et gris pollution,
 
-effacer les superflu dans la database (8000 / 10000 rows)
-
 corriger toutes les fautes parait qu'il y e na encore
 
 t'as oublié map et database et botoom p1 p2
 
 faire les tests ca ok c cool
 
-tout mettre en anglais ca c chiant MAIS REFACTORé en mm temps
+tout mettre en anglais le js mtn et fin python ca c chiant MAIS REFACTORé en mm temps
 
 mettre toutes les sites que t'as utiliser en bas de page et dans mentions legales
 
@@ -20,16 +18,9 @@ documenter le github et finir les truk mais avant faire popo et remplir la datab
 
 mettre des pages 404 et 505
 
-me faut encore une grosse semaine MAIS j'ai quand meme reussi y'a plus de bug et tout est linké c parti pour les fautes !
-
-rajouter le nombre de donnée la variance et une expli fonctionnement et amélioration et limite aux graphes
 
 
-#enfete faut pas saxer sur les coupes, mais sur lapprentissage de l'habit, plus jeune saviez vous deja vous habiller ? c la le truk !
 
-#et pollution ca ok
-
-#t'as confondu transmission culturelle gene et adn jcrois gros
 
 #https://myprofilmypollution.herokuapp.com/
 
