@@ -20,7 +20,7 @@
 
       <!-- Plugin CSS -->
       <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+      <link rel="stylesheet" type="text/css" href="/static/css/home2.css">
 
       <!-- Theme CSS - Includes Bootstrap -->
       <link href="/static/css/creative.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
     <header class="masthead" id='header11'>
       <div class="container h-20" id="into">
 
-          <img src="/static/2.0/logo2.png" id="logo">
+          <img src="/static/v2/logo2.png" id="logo">
           <h1 id="titre">Le magasine virtuel</h1><i>
           <span>Create by Jean Baptiste Servais</span></i><br><br><br>
             
@@ -56,16 +56,11 @@
             Amusez-vous, Cultivez-vous, c'est le principal !
           </p>
 
-
     </div>
   </header>
-  <div style="background:#b3d9ff;">
+  <div id="separate10">
     <br><br><br><br>
   </div>
-
-
-
-
 
 
 
@@ -98,14 +93,14 @@
             <div id="div_coiffure">
 
               <h4>Les coiffures</h4>
-              <center><img src="/static/2.0/coiffure.jpg" 
+              <center><img src="/static/v2/coiffure.jpg" 
                 alt="Picture of a male person. His balck hair flies. 
                 he wears red and orange fashion glasses. He smiles"
                 height="300" width="98%" id="haircut_picture"
                 onMouseOver="image1('haircut_picture', 'haircut_picture',
-                                    '/static/2.0/coiffure2.jpg')";
+                                    '/static/v2/coiffure2.jpg')";
                 onMouseOut="image2('haircut_picture', 'haircut_picture',
-                                    '/static/2.0/coiffure.jpg')";/><center><br>
+                                    '/static/v2/coiffure.jpg')";/><center><br>
               <div id="paragraphe">
                 Notre première fonctionnalité a pour but de vous aider à choisir des coupes
                 de cheveux. De vous aider: à imaginer, à vous projeter et, surtout de
@@ -122,11 +117,11 @@
 
             <div id="les_coiffeurs_div">
               <h4>Les coiffeurs</h4>
-              <center><img src="/static/2.0/salon.jpg" alt="it's a classy hairdressing
+              <center><img src="/static/v2/salon.jpg" alt="it's a classy hairdressing
               salon, you can see a row of chairs. The mood is hot. The main color
               is maroon." height="300" width="98%" id="hairdresser_image"
-                onMouseOver="image1('hairdresser_image', 'hairdresser_image', '/static/2.0/salon2.png')";
-                onMouseOut="image2('hairdresser_image', 'hairdresser_image', '/static/2.0/salon.jpg')";></center><br><br>
+                onMouseOver="image1('hairdresser_image', 'hairdresser_image', '/static/v2/salon2.png')";
+                onMouseOut="image2('hairdresser_image', 'hairdresser_image', '/static/v2/salon.jpg')";></center><br><br>
               <div id="paragraphe">
                 La fonctionnalité "mon coiffeur" t'aide à trouver un
                 coiffeur près de chez toi. Mais aussi de consulter ces horaires
@@ -138,14 +133,6 @@
                 <br><br>
              </div>
             </div><br><br><br>
-
-            <style>
-              #article_journal{
-                font-size:80%;
-                margin-top:-60px;
-                text-align:justify;
-              }
-            </style>
 
             <div id="article_journal">
               Être beau a bien des avantages de nos jours. Un
@@ -167,19 +154,22 @@
           <div class="col-sm" id="invi1">                                                           
           </div>
 
-
             <div class="col-xs-12 col-md-12 col-lg-5" id="div_mode">
-
               <div id="la_mode">
-                <h3 id="mode_h2">La mode</h3>
-                <center><img src="/static/2.0/mode.jpg" alt="
-                  we are in a London street. There are many people. the sun is reflected
-                  on the facade. It should be around 4 to 6pm. Because there are so many people
-                  so we can't situate it the morning. Some peoples have bag (like shopping bag)
-                  so it's the end of journey."
-                  height="250" width="98%" id="mode_image"
-                  onMouseOver="image1('mode_image', 'mode_image', '/static/2.0/mode22.jpg')";
-                  onMouseOut="image2('mode_image', 'mode_image', '/static/2.0/mode.jpg')";/></center><br>
+                <a href="/administrateur/tendance" id="tendance_href" title="Rubrique Tendance !">
+                  <h3 id="mode_h2">La mode</h3>
+                </a>
+                <center><a href="/administrateur/tendance" id="image_tendance" title="Rubrique Tendance !">
+                  <img src="/static/v2/mode.jpg" alt="
+                    we are in a London street. There are many people. the sun is reflected
+                    on the facade. It should be around 4 to 6pm. Because there are so many people
+                    so we can't situate it the morning. Some peoples have bag (like shopping bag)
+                    so it's the end of journey."
+                    height="250" width="98%" id="mode_image"
+                    onMouseOver="image1('mode_image', 'mode_image', '/static/v2/mode22.jpg')";
+                    onMouseOut="image2('mode_image', 'mode_image', '/static/v2/mode.jpg')";/>
+                </center></a><br>
+                    
                 <div id="paragraphe2">
                   La tendance du moment est régi par les personnes travaillant dans le milieu
                   de la mode et par les personnalités public qui les portes. Nous en sommes
@@ -188,19 +178,22 @@
                   derniers vêtement à la mode et de les analyser en fonction de la couleur de vos
                   cheveux et de vous fournir des habits adéquats.<br>
                   Vous pouvez consulter notre rubrique "La tendance" afin de vous faire votre propre
-                  avis ! Sinon allez essayer des vêtements dans la fonctionnalité "Mes habits".
+                  avis ! Sinon allez essayer des vêtements dans la fonctionnalité "Mes habits".<br><br>
+                  
+                  <center><a href="/administrateur/tendance" class="bouton1"
+                  title="Voir la tendance">Voir la tendance !</a></center>
                 </div>
                 <br>
-              </div><br><br><br><br>
+              </div><br><br><br>
 
 
 
             <div id="salle_de_gym">
               <h4>Les salles de Gym</h4>
-              <center><img src="/static/2.0/sport.jpg" alt=""
+              <center><img src="/static/v2/sport.jpg" alt=""
                 height="260" width="98%" id="gym_image"
-                onMouseOver="image1('gym_image', 'gym_image', '/static/2.0/horraire_sport.png')";
-                onMouseOut="image2('gym_image', 'gym_image', '/static/2.0/sport.jpg')";/></center><br>
+                onMouseOver="image1('gym_image', 'gym_image', '/static/v2/horraire_sport.png')";
+                onMouseOut="image2('gym_image', 'gym_image', '/static/v2/sport.jpg')";/></center><br>
               <br>
               <div id="paragraphe2">
                 Le sport est bénéfique et pour le corps et pour l'état émotionnel.
@@ -235,10 +228,10 @@
             
                 <div class="col-xs-12 col-md-12 col-lg-6">
                   <h4>Les Vêtements</h4>
-                  <img src="/static/2.0/vetement.jpg" alt="" id="vetement_image"
+                  <img src="/static/v2/vetementvetement.jpg" alt="" id="vetement_image"
                     height="250" width="100%" id="vetement_image"
-                    onMouseOver="image1('vetement_image', 'vetement_image', '/static/2.0/vetementvetement2.jpg')";
-                    onMouseOut="image2('vetement_image','vetement_image', '/static/2.0/vetementvetement.jpg')";
+                    onMouseOver="image1('vetement_image', 'vetement_image', '/static/v2/vetementvetement2.jpg')";
+                    onMouseOut="image2('vetement_image','vetement_image', '/static/v2/vetementvetement.jpg')";
                   /><br><br>
                 </div>
                 
@@ -322,7 +315,7 @@
                 <h2>Deuxième rubrique</h2>
                 <br><br>
                 <h4>Nos informations sur la pollution</h4>
-                <img src="/static/2.0/info.jpg" alt="" height="250" width="450"/><br><br>
+                <img src="/static/v2/info.jpg" alt="" height="250" width="450"/><br><br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -342,7 +335,7 @@
               <div class="col-xs-12 col-md-12 col-lg-5">
               <br>
               <h4>Nos Graphiques</h4>
-              <img src="/static/2.0/graphique.jpg" alt="" height="250" width="450"/><br><br>
+              <img src="/static/v2/graphique.jpg" alt="" height="250" width="450"/><br><br>
                 
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -362,7 +355,7 @@
             <div class="col-xs-0 col-md-0 col-lg-4" >
               <br>
               <h4>Nos données sur la pollution</h4>
-              <img src="/static/2.0/données.jpg" alt="" height="250" width="450"/><br><br>
+              <img src="/static/v2/données.jpg" alt="" height="250" width="450"/><br><br>
                               
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -380,7 +373,7 @@
 
 
               <h4>Notre carte des Vents</h4>
-              <img src="/static/2.0/vent.jpg" alt="" height="250" width="450"/><br><br>
+              <img src="/static/v2/vent.jpg" alt="" height="250" width="450"/><br><br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -402,7 +395,7 @@
             
             <div class="col-xs-0 col-md-0 col-lg-5">
               <h4>Nos Pré-voyances</h4>
-              <img src="/static/2.0/prédiction.jpg" alt="" height="250" width="450"/><br><br>
+              <img src="/static/v2/prédiction.jpg" alt="" height="250" width="450"/><br><br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -492,7 +485,7 @@
               <div class="col-xs-12 col-md-12 col-lg-6">
                 <br>
                 <h4>Notre Solution</h4><br>
-                <img src="/static/2.0/pluie.jpg" alt="" height="250" width="400"/>
+                <img src="/static/v2/pluie.jpg" alt="" height="250" width="400"/>
               </div>
               
               <div class="col-xs-12 col-md-12 col-lg-6">
@@ -585,7 +578,19 @@
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
         
 
-        
+  <script>
+  function preloadImage(url)
+  {
+      var img=new Image();
+      img.src=url;
+  }
+  preloadImage("/static/v2/coiffure2.jpg")
+  preloadImage("/static/v2/horraire_sport.png")
+  preloadImage("/static/v2/salon2.png")
+  preloadImage("/static/v2/vetementvetement2.png")
+  preloadImage("/static/v2/mode22.png")   
+  </script>
+
 
  
 
@@ -631,6 +636,62 @@ My_profil      My_pollution
 
 
 <style>
+
+
+
+
+
+#separa10{
+  background:#ccccff;
+}
+#article_journal{
+  font-size:80%;
+  margin-top:-60px;
+  text-align:justify;
+}
+
+
+#tendance_href{
+  color:black;
+}
+#tendance_href:hover{
+  color:red;
+}
+a.bouton1 {
+padding: 10px 30px; 
+background: #809fff; 
+color: white; 
+}
+a.bouton1:hover {
+background: #ff8080; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   #div_mode{
     height:1150px;
 
@@ -802,7 +863,7 @@ function switch_picture2(image, src){
     <!-- Second separate div for visual aspect -->  
     <div>
       <br><br><br>
-      <div id='separate1' style="background:white;">
+      <div id='separate1' style="background:b3d9ff;">
         <br><br>
       </div>
     </div>
@@ -885,7 +946,7 @@ function switch_picture2(image, src){
 
   <!-- Custom scripts for this template -->
   <script src="/static/js/creative.min.js"></script>
-  <script type="text/javascript" src="/static/js/home.js"></script>
+  <script type="text/javascript" src="/static/js/home1.js"></script>
 
 
 
@@ -901,6 +962,34 @@ function switch_picture2(image, src){
 
 
  <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   #article4,
   #article2{
@@ -990,10 +1079,7 @@ function switch_picture2(image, src){
     }
 
     
-    #header11{
-       background:#b3d9ff;
 
-    }
     #sec{
       background:#white;
     }
