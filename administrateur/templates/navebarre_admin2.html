@@ -43,7 +43,7 @@
             float:left;
             margin-left:10px;
             margin-top:-90px;
-       
+            
         }
         
         #shut{
@@ -59,9 +59,9 @@
         <img id="logo" src="/static/v2/logo2.png">
 
         
-        <div style="float:left; margin-left:50px; position:fixed;" id="MENU">
-             <br><br><br><br><br><br>
-            <i class="fas fa-angle-right" id="notshut" onclick="notshutdown()"></i>
+        <div style="float:left; margin-left:50px;z-index: 2; margin-top:-100px; position:fixed;" id="MENU">
+             <br><br><br><br><br><br><br>
+            <i class="fas fa-angle-right" id="notshut" onclick="notshutdown()" style="z-index: 1;position:static;"></i>
             <i class="fas fa-angle-left" id="shut" onclick="shutdown()"></i><br><br>
 
             
@@ -72,7 +72,7 @@
                     <a href="" id="hrefmenu"><strong>Le Menu</strong></a>
                 </p>
                 
-            </div><br><br><br>
+            </div><br><br>
 
 
             <div id='contain1' style='position:absolute'>
@@ -82,7 +82,7 @@
                     <a href="" id="hrefsommaire"><strong>Le Sommaire</strong></a>
                 </p>
                 
-            </div><br><br><br>
+            </div><br><br>
 
 
 
@@ -93,7 +93,7 @@
                     <a href="" id="tendancee"><strong>La tendances</strong></a>
                 </p>
                 
-            </div><br><br><br>
+            </div><br><br>
               
 
             <div id='contain3' style='position:absolute'>
@@ -104,7 +104,7 @@
                     <a href="" id="book"><strong>Notre book</strong></a>
                 </p>
                     
-            </div><br><br><br>
+            </div><br><br>
        
 
             <div id='contain4' style='position:absolute'>
@@ -114,7 +114,7 @@
                     <a href="" id="reseaux"><strong>Nos Réseaux</strong></a>
                 </p>
                 
-            </div><br><br><br>
+            </div><br><br>
 
 
             <div id='contain5'>
@@ -172,9 +172,6 @@
         };
 
 
-
-
-        
     </script>
 
 
@@ -218,29 +215,29 @@
     font-size:2em;
 }
 #menu1{
-    font-size:1.6em;
+    font-size:1.2em;
 }
 
 #menu2{
-    font-size:1.6em;
+    font-size:1.2em;
 }
 
 #menu3{
-    font-size:1.6em;
+    font-size:1.2em;
 }
 
 #menu4{
-    font-size:1.6em;
+    font-size:1.2em;
 }
 
 
 
 #menu{
-    font-size:1.6em;
+    font-size:1.2em;
 }
 
 #sommaire{
-    font-size:1.6em;
+    font-size:1.2em;
 }
 
 
