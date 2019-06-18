@@ -26,11 +26,25 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
     </head>
 
-
     <body>
 
     
-        <div class="container" id="container" style="text-align:center;height:300px;">
+    <style>
+      body {
+          background:url('/static/v2/tendance1.jpg') no-repeat fixed center;;
+          -webkit-background-size: cover;
+          background-size: cover;
+        }
+
+    </style>
+
+
+
+
+
+
+
+        <div class="container" id="container" style="text-align:center;height:230px;">
             <div class="row">
 
             
@@ -92,13 +106,13 @@
                 <div id="container_espace"></div>
 
                 <div id="Les_habits"
-                onMouseOver="divfunction2('Les_habits', 'hrefhabit')"
-                onMouseOut="divfunction1('Les_habits', 'hrefhabit')">
+                    onMouseOver="divfunction2('Les_habits', 'hrefhabit')"
+                    onMouseOut="divfunction1('Les_habits', 'hrefhabit')">
                     <p id="p_Les_habits">
                         <a href="#" id="hrefhabit"><strong>Les Vetements</strong></a>
                     </p>
-
                 </div>
+
 
             </div>
         </div>
@@ -119,48 +133,13 @@
 
 
 
-
-
-
         </script>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        <br><br><br>
+ 
         <div style="float: left; margin-left:50px;">
 
             <p id="titre_menu"><strong>La Page</strong></p><br><br>
@@ -219,7 +198,7 @@
         };
         function sous_menu2(div, text){
             document.getElementById(div).style.width = "220px";
-            document.getElementById(div).style.background = "white";
+            document.getElementById(div).style.background = "transparent";
             document.getElementById(div).style.border = "";
             document.getElementById(text).style.color = "black";
         };
@@ -351,7 +330,7 @@ a:hover{
 }
 #sommaire{
     text-align:center;
-    background:#8DA1B9;
+    background:#C4D7F2;
     width:180px;
     height:190px;
     border:1px solid black;
@@ -365,7 +344,7 @@ a:hover{
 
 #la_tendance{
     text-align:center;
-    background:#AC8887;
+    background:#546A7B;
     width:180px;
     height:190px;
     border:1px solid black;
@@ -379,7 +358,7 @@ a:hover{
 
 #Les_coiffures{
     text-align:center;
-    background:#CBB3BF;
+    background:#FAE1DF;
     width:180px;
     height:190px;
     border:1px solid black;
@@ -392,7 +371,7 @@ a:hover{
 
 #Les_coiffeurs{
     text-align:center;
-    background:#9F4A54;
+    background:#AC8887;
     width:180px;
     height:190px;
     border:1px solid black;
@@ -405,7 +384,7 @@ a:hover{
 
 #Les_gym{
     text-align:center;
-    background:#F0BCD4;
+    background:#E4C3AD;
     width:180px;
     height:190px;
     border:1px solid black;
@@ -418,7 +397,7 @@ a:hover{
 
 #Les_habits{
     text-align:center;
-    background:#82735C;
+    background:#91A8A4;
     width:180px;
     height:190px;
     border:1px solid black;
@@ -427,7 +406,6 @@ a:hover{
     margin-top:50px;
     font-size:1.3em;
 }
-
 
 
 
@@ -449,7 +427,6 @@ a:hover{
 
 
 
-</body>
 
 
 
