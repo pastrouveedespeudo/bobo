@@ -30,22 +30,26 @@
     <body>
 
     
-        <div class="container" id="container" style="text-align:center;">
+        <div class="container" id="container" style="text-align:center;height:300px;">
             <div class="row">
 
             
-                <div id="sommaire">
+                <div id="sommaire"
+                onMouseOver="divfunction2('sommaire', 'hrefsommaire')"
+                onMouseOut="divfunction1('sommaire', 'hrefsommaire')">
                     <p id="p_sommaire">
-                        <strong>Sommaire</strong>
+                        <a href="#" id="hrefsommaire"><strong>Sommaire</strong></a>
                     </p>
 
                 </div>
 
                 <div id="container_espace"></div>
 
-                <div id="la_tendance">
+                <div id="la_tendance"
+                onMouseOver="divfunction2('la_tendance', 'hreftendance')"
+                onMouseOut="divfunction1('la_tendance', 'hreftendance')">
                     <p id="p_tendance">
-                        <strong>Tendance</strong>
+                        <a href="#" id="hreftendance"><strong>Tendance</strong></a>
                     </p>
 
                 </div>
@@ -53,9 +57,11 @@
                 <div id="container_espace"></div>
 
 
-                <div id="Les_coiffures">
+                <div id="Les_coiffures"
+                onMouseOver="divfunction2('Les_coiffures', 'hrefcoiffure')"
+                onMouseOut="divfunction1('Les_coiffures', 'hrefcoiffure')">
                     <p id="p_Les_coiffures">
-                        <strong>Les coiffures</strong>
+                        <a href="#" id="hrefcoiffure"><strong>Les coiffures</strong></a>
                     </p>
 
                 </div>
@@ -63,64 +69,139 @@
 
                 <div id="container_espace"></div>
 
-                <div id="Les_coiffeurs">
+                <div id="Les_coiffeurs"
+                onMouseOver="divfunction2('Les_coiffeurs', 'hrefcoiffeur')"
+                onMouseOut="divfunction1('Les_coiffeurs', 'hrefcoiffeur')">
                     <p id="p_Les_coiffeurs">
-                        <strong>Les coiffeurs</strong>
+                        <a href="#" id="hrefcoiffeur"><strong>Les coiffeurs</strong></a>
                     </p>
 
                 </div>
 
                 <div id="container_espace"></div>
 
-                <div id="Les_gym">
+                <div id="Les_gym"
+                onMouseOver="divfunction2('Les_gym', 'hrefgym')"
+                onMouseOut="divfunction1('Les_gym', 'hrefgym')">
                     <p id="p_Les_gym">
-                        <strong>Les salles de Gym</strong>
+                        <a href="#" id="hrefgym"><strong>Les salles de Gym</strong></a>
                     </p>
 
                 </div>
 
                 <div id="container_espace"></div>
 
-                <div id="Les_habits">
+                <div id="Les_habits"
+                onMouseOver="divfunction2('Les_habits', 'hrefhabit')"
+                onMouseOut="divfunction1('Les_habits', 'hrefhabit')">
                     <p id="p_Les_habits">
-                        <strong>Les Vetements</strong>
+                        <a href="#" id="hrefhabit"><strong>Les Vetements</strong></a>
                     </p>
 
                 </div>
 
             </div>
         </div>
+
+
+
+        <script>
+
+            function divfunction1(div, text){
+                document.getElementById(div).style.height = "190px";
+                document.getElementById(text).style.color = 'black';
+            };
+
+            function divfunction2(div, text){
+                document.getElementById(div).style.height = "230px";
+                document.getElementById(text).style.color = 'white';
+            };
+
+
+
+
+
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
         <br><br><br>
         <div style="float: left; margin-left:50px;">
 
             <p id="titre_menu"><strong>La Page</strong></p><br><br>
-            
-   
+
+
             <div>
-                <p id="menu1">
-                    La tendances
+                <p id="menu1"
+                    onMouseOver = "sous_menu1('menu1', 'tendancee', 'green')"         
+                    onMouseOut = "sous_menu2('menu1', 'tendancee')">
+                    <a href="" id="tendancee">La tendances</a>
                 </p>
+                
             </div><br>
               
 
-            <div id="menu2">
-                <p>
-                    Notre book 
+            <div>
+            
+                <p id="menu2"
+                    onMouseOver = "sous_menu1('menu2', 'book', '#8DA1B9')"         
+                    onMouseOut = "sous_menu2('menu2', 'book')">
+                    <a href="" id="book">Notre book</a>
                 </p>
+                    
             </div><br>
        
 
-            <div id="menu3">
-                <p>
-                    Nos Réseaux sociaux
+            <div>
+                <p id="menu3"
+                    onMouseOver = "sous_menu1('menu3', 'reseaux', 'lightblue')"         
+                    onMouseOut = "sous_menu2('menu3', 'reseaux')">
+                    <a href="" id="reseaux">Nos Réseaux</a>
                 </p>
+                
             </div><br>
 
 
-            <div id="menu4">
-                <p>
-                    Nous contacter
+            <div>
+                <p id="menu4"
+                    onMouseOver = "sous_menu1('menu4', 'contacter', 'pink')"         
+                    onMouseOut = "sous_menu2('menu4', 'contacter')">
+                    <a href="" id="contacter">Nous contacter</a>
                 </p>
             </div><br>
 
@@ -128,6 +209,21 @@
         
 
 
+    <script>
+        function sous_menu1(div, text, couleur1){
+            document.getElementById(div).style.width = '250px';
+            document.getElementById(div).style.background = couleur1;
+            document.getElementById(div).style.border = "1px solid";
+            document.getElementById(text).style.color = "white";
+
+        };
+        function sous_menu2(div, text){
+            document.getElementById(div).style.width = "220px";
+            document.getElementById(div).style.background = "white";
+            document.getElementById(div).style.border = "";
+            document.getElementById(text).style.color = "black";
+        };
+    </script>
 
 
 
@@ -135,6 +231,37 @@
 
 
 <style>
+
+
+#tendancee{
+    color:black;
+}
+
+#book{
+    color:black;
+}
+
+#reseaux{
+    color:black;
+}
+
+#contacter{
+    color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #titre_menu{
     font-size:2em;
 }
@@ -154,13 +281,62 @@
     font-size:1.6em;
 }
 
+a:hover{
+    text-decoration: none;
+    color:white;
+}
+
+
+
+#hrefsommaire{
+    color:black;
+}
+#hreftendance{
+    color:black;
+}
+
+#hrefcoiffure{
+    color:black;
+}
+
+#hrefcoiffeur{
+    color:black;
+}
+
+#hrefgym{
+    color:black;
+}
+
+#hrefhabit{
+    color:black;
+}
 
 
 
 
 
+#hrefsommaire:hover{
+    color:white;
+}
+#hreftendance:hover{
+    color:white;
+}
 
+#hrefcoiffure:hover{
+    color:white;
+}
 
+#hrefcoiffeur:hover{
+    color:white;
+}
+
+#hrefgym:hover{
+    color:white;
+}
+
+#hrefhabit:hover{
+    color:white;
+}
 
 
 
@@ -177,30 +353,40 @@
     text-align:center;
     background:#8DA1B9;
     width:180px;
-    height:160px;
+    height:190px;
+    border:1px solid black;
+    
 }
 #p_sommaire{
     margin-top:50px;
+    font-size:1.3em;
+    
 }
 
 #la_tendance{
     text-align:center;
     background:#AC8887;
     width:180px;
-    height:160px;
+    height:190px;
+    border:1px solid black;
+    
+    
 }
 #p_tendance{
     margin-top:50px;
+    font-size:1.3em;
 }
 
 #Les_coiffures{
     text-align:center;
     background:#CBB3BF;
     width:180px;
-    height:160px;
+    height:190px;
+    border:1px solid black;
 }
 #p_Les_coiffures{
     margin-top:50px;
+    font-size:1.3em;
 }
 
 
@@ -208,10 +394,12 @@
     text-align:center;
     background:#9F4A54;
     width:180px;
-    height:160px;
+    height:190px;
+    border:1px solid black;
 }
 #p_Les_coiffeurs{
     margin-top:50px;
+    font-size:1.3em;
 }
 
 
@@ -219,10 +407,12 @@
     text-align:center;
     background:#F0BCD4;
     width:180px;
-    height:160px;
+    height:190px;
+    border:1px solid black;
 }
 #p_Les_gym{
     margin-top:50px;
+    font-size:1.3em;
 }
 
 
@@ -230,10 +420,12 @@
     text-align:center;
     background:#82735C;
     width:180px;
-    height:160px;
+    height:190px;
+    border:1px solid black;
 }
 #p_Les_habits{
     margin-top:50px;
+    font-size:1.3em;
 }
 
 
