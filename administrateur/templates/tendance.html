@@ -2,9 +2,6 @@
 {% block content %}
 {% endblock %}
 
-
-
-
 <style>
   #navebarre_pollu{
     display:none;
@@ -35,7 +32,8 @@ header.masthead {
 
 #h1_tendance{
   color:black;
-  margin-left:770px;
+  margin-left:820px;
+  font-size:2em;
 
 
   }
@@ -49,7 +47,7 @@ header.masthead {
 
 }
 #texte_tend{
-  margin-left:770px;
+  margin-left:850px;
   text-align:justify;
 }
         
@@ -77,34 +75,24 @@ header.masthead {
 
 </script>
 
-<!-- Title Section -->
-<div id="fond_tendance" style='position:fixed'>
+
+<div id="fond_tendance" style='position:fixed; z-index: 1;' >
     <div class="row h-100 align-items-center justify-content-center text-center">
 
 
 
       <div class="col-lg-12">
           
-          <h3 id="h1_tendance">La tendance du moment
-            &nbsp;&nbsp;&nbsp;
+          <h1 id="h1_tendance">La tendance du moment&nbsp;&nbsp;
             <i class="fas fa-angle-up" id="text_icone_texte"
               onclick="text_shut()"></i>
             <i class="fas fa-angle-down" id="text_icone_ouvrir" onclick="open_it_bro()"></i>
-          </h3>
+          </h1>
           
-
-
-         
-
-
           <br>
       </div>
 
 
-        
-
-   
-          
           <div class="col-lg-4" id="texte_tend">
             <p id="texte_in_texte">
               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -356,6 +344,7 @@ header.masthead {
     background:url('/static/img/parquet1.jpg');
     width:45%;
     border:2px solid black;
+    margin-left:-100px;
   }
   #brun,
   #blond,
