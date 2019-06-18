@@ -1,33 +1,144 @@
-{% include "navebarre_admin.html" %}
+{% include "navebarre_admin2.html" %}
 {% block content %}
 {% endblock %}
 
 
+
+
+<style>
+  #navebarre_pollu{
+    display:none;
+  }
+
+  #fond_tendance{
+    background:url('/static/v2/.jpg') no-repeat;
+    -webkit-background-size: cover; 
+    background-size: cover;
+  }
+  #text{
+    color:black;
+    float:right;
+    text-align:justify;
+  }
+  
+
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 72px);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8))), url("/static/img/fond2.jpg");
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("/static/img/fond2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+#h1_tendance{
+  color:black;
+  margin-left:770px;
+
+
+  }
+#text_icone_texte{
+  font-size:100%;
+
+}
+#text_icone_ouvrir{
+  font-size:100%;
+  display:none;
+
+}
+#texte_tend{
+  margin-left:770px;
+  text-align:justify;
+}
+        
+
+</style>
+
+
+
+<script>
+  function text_shut(){
+    document.getElementById('texte_in_texte').style.display = "none";
+    document.getElementById('text_icone_texte').style.display = "none";
+    document.getElementById('text_icone_ouvrir').style.display = "inline-block";
+    
+  };
+
+
+  function open_it_bro(){
+    document.getElementById('texte_in_texte').style.display = "block";
+    document.getElementById('text_icone_texte').style.display = "inline-block";
+    document.getElementById('text_icone_ouvrir').style.display = "none";
+
+  };
+
+
+</script>
+
 <!-- Title Section -->
-<header class="masthead">
-  <div class="container h-100">
+<div id="fond_tendance" style='position:fixed'>
     <div class="row h-100 align-items-center justify-content-center text-center">
-      <div class="col-lg-10 align-self-end">
-          <h1>La tendance du moment</h1>
+
+
+
+      <div class="col-lg-12">
+          
+          <h3 id="h1_tendance">La tendance du moment
+            &nbsp;&nbsp;&nbsp;
+            <i class="fas fa-angle-up" id="text_icone_texte"
+              onclick="text_shut()"></i>
+            <i class="fas fa-angle-down" id="text_icone_ouvrir" onclick="open_it_bro()"></i>
+          </h3>
+          
+
+
+         
+
+
           <br>
       </div>
-      <div class="col-lg-8 align-self-baseline">
-        <h2>Nous vous proposons des habits selon un critère, la tendance du moment.</h2>
-        <div id='latendance'></div>    
-      </div>
+
+
+        
+
+   
+          
+          <div class="col-lg-4" id="texte_tend">
+            <p id="texte_in_texte">
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              
+            </p>
+          </div>
+
+        
+    
+
+      <div id='latendance'></div>
+        
+
     </div>
   </div>
 </header>
 
 
 <!-- First Separate Blue Section for visual aspect -->
-<div id='separate'>
-    <br><br><br><br><br>
+<div>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
 </div>
 
 
 <!-- Main Section - Tendance of moment -->
-<section class="page-section bg-dark text-white" id='section'>
+<section id='section'>
   <div class="container text-center">
     <center>
       <div id="cart_color">
@@ -46,13 +157,13 @@
 
 
 <!-- Second Separate Blue Section for visual aspect -->
-<div id='separate'>
+<div id=''>
   <br><br><br><br><br>
 </div>
 
 
 <!-- Iframe from an other page. Give feeling to consult a book -->
-<div id="div_iframe">
+<div id="">
   <center>
     <iframe id="inlineFrameExample"
         title="Inline Frame Example"
@@ -63,11 +174,14 @@
 
 
 <!-- Third Separate Blue Section for visual aspect -->
-<div id='separate'>
+<div id=''>
   <br><br><br><br><br>
 </div>
 
 
+
+
+</body>
 <!-- Bottom Section number 2 -->
 <div id='botttom'> 
   {% include "bottom_page2.html" %}
@@ -147,6 +261,32 @@
                                                   
   document.getElementById('chatain').innerHTML = "<center><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chatain :" +
                                                   "</strong>&nbsp;&nbsp;&nbsp;<p style='font-family:amaze, segoe print, segoe script;font-size:2em;'>" + c + "</p></center>";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </script>
 
