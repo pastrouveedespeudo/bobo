@@ -1,8 +1,18 @@
-finir le responsive + la taille des caracteres + la taille des images
+mettre les href
 
-faire ca pour toutes les pages
+refaire une navebarre
 
-enelver programme informatique tu parles de soumis puis de poupou et insc le mec est refais puis nan enfete c un mec a lunette
+commencer les autres pages sous formes cyllibiques comme hier
+
+finir les textes la nuit j'ai pluss d'inspi
+
+réduire la police et les images poru le respsonsive 
+
+réfléchir a chaque mot
+
+faire tous les trucks du bas et ptetre qu'ils me la donneront... 
+
+enelr programme informatique tu parles de soumis puis de poupou et insc le mec est refais puis nan enfete c un mec a lunette
 
 corriger toutes les fautes parait qu'il y e na encore
 
