@@ -110,7 +110,7 @@ def database_mode(request):
                                                   'data_coupe':data_coupe,
                                                   'image_hab':liste1,
                                                   'final':liste_finale,
-                                                  'laliste1':laliste1,
+                                                  'laliste1':theliste1,
                                                   'blond':blond, 'brun':brun, 'chatain':chatain})
 
 
