@@ -59,8 +59,9 @@
 
     </div>
   </header>
-  <br><br><br><br>
-
+  <div style="background:#b3d9ff;">
+    <br><br><br><br>
+  </div>
 
 
 
@@ -69,7 +70,7 @@
 
 
     <!-- Main section we present the summary-->
-    <section class="page-section" id="sec">
+    <section class="page-section" id="sec" style="background:#ccccff;">
       <div class="container h-20" id="into">
 
         <div class="row">
@@ -97,10 +98,14 @@
             <div id="div_coiffure">
 
               <h4>Les coiffures</h4>
-              <center><img src="/static/2.0/coiffure.jpg" id="haircut_picture"
+              <center><img src="/static/2.0/coiffure.jpg" 
                 alt="Picture of a male person. His balck hair flies. 
                 he wears red and orange fashion glasses. He smiles"
-                height="300" width="98%"/><center><br>
+                height="300" width="98%" id="haircut_picture"
+                onMouseOver="image1('haircut_picture', 'haircut_picture',
+                                    '/static/2.0/coiffure2.jpg')";
+                onMouseOut="image2('haircut_picture', 'haircut_picture',
+                                    '/static/2.0/coiffure.jpg')";/><center><br>
               <div id="paragraphe">
                 Notre première fonctionnalité a pour but de vous aider à choisir des coupes
                 de cheveux. De vous aider: à imaginer, à vous projeter et, surtout de
@@ -119,7 +124,9 @@
               <h4>Les coiffeurs</h4>
               <center><img src="/static/2.0/salon.jpg" alt="it's a classy hairdressing
               salon, you can see a row of chairs. The mood is hot. The main color
-              is maroon." height="300" width="98%"></center><br><br>
+              is maroon." height="300" width="98%" id="hairdresser_image"
+                onMouseOver="image1('hairdresser_image', 'hairdresser_image', '/static/2.0/salon2.png')";
+                onMouseOut="image2('hairdresser_image', 'hairdresser_image', '/static/2.0/salon.jpg')";></center><br><br>
               <div id="paragraphe">
                 La fonctionnalité "mon coiffeur" t'aide à trouver un
                 coiffeur près de chez toi. Mais aussi de consulter ces horaires
@@ -136,6 +143,7 @@
               #article_journal{
                 font-size:80%;
                 margin-top:-60px;
+                text-align:justify;
               }
             </style>
 
@@ -165,10 +173,13 @@
               <div id="la_mode">
                 <h3 id="mode_h2">La mode</h3>
                 <center><img src="/static/2.0/mode.jpg" alt="
-                we are in a London street. There are many people. the sun is reflected
-                on the facade. It should be around 4 to 6pm. Because there are so many people
-                so we can't situate it the morning. Some peoples have bag (like shopping bag)
-                so it's the end of journey." height="250" width="98%"/></center><br>
+                  we are in a London street. There are many people. the sun is reflected
+                  on the facade. It should be around 4 to 6pm. Because there are so many people
+                  so we can't situate it the morning. Some peoples have bag (like shopping bag)
+                  so it's the end of journey."
+                  height="250" width="98%" id="mode_image"
+                  onMouseOver="image1('mode_image', 'mode_image', '/static/2.0/mode22.jpg')";
+                  onMouseOut="image2('mode_image', 'mode_image', '/static/2.0/mode.jpg')";/></center><br>
                 <div id="paragraphe2">
                   La tendance du moment est régi par les personnes travaillant dans le milieu
                   de la mode et par les personnalités public qui les portes. Nous en sommes
@@ -186,7 +197,10 @@
 
             <div id="salle_de_gym">
               <h4>Les salles de Gym</h4>
-              <center><img src="/static/2.0/sport.jpg" alt="" height="260" width="98%"/></center><br>
+              <center><img src="/static/2.0/sport.jpg" alt=""
+                height="260" width="98%" id="gym_image"
+                onMouseOver="image1('gym_image', 'gym_image', '/static/2.0/horraire_sport.png')";
+                onMouseOut="image2('gym_image', 'gym_image', '/static/2.0/sport.jpg')";/></center><br>
               <br>
               <div id="paragraphe2">
                 Le sport est bénéfique et pour le corps et pour l'état émotionnel.
@@ -221,7 +235,11 @@
             
                 <div class="col-xs-12 col-md-12 col-lg-6">
                   <h4>Les Vêtements</h4>
-                  <img src="/static/2.0/vetement.jpg" alt="" id="vetement_image" height="250" width="100%"/><br><br>
+                  <img src="/static/2.0/vetement.jpg" alt="" id="vetement_image"
+                    height="250" width="100%" id="vetement_image"
+                    onMouseOver="image1('vetement_image', 'vetement_image', '/static/2.0/vetementvetement2.jpg')";
+                    onMouseOut="image2('vetement_image','vetement_image', '/static/2.0/vetementvetement.jpg')";
+                  /><br><br>
                 </div>
                 
                 <div class="col-xs-0 col-md-0 col-lg-1" >
@@ -236,7 +254,7 @@
                       chaque année, à chaque idée. S'en tenir informer est donc très difficile.
                       C'est pourquoi nous vous proposons de vous aider par notre application:
                       "Mes habits".
-                  </div>
+                  </div><br>
                 </div>
                   
             </div>
@@ -265,7 +283,28 @@
           </div>
         </div>
 
+        
 
+
+      <script>
+        function image1(image_bordure, image, path){
+          document.getElementById(image).src = path
+          document.getElementById(image_bordure).style.border = "5px solid transparent";
+          
+        };
+        function image2(image_bordure, image, path){
+          document.getElementById(image).src = path
+          document.getElementById(image_bordure).style.border = "";
+        };
+
+        
+        function image3(image){
+          document.getElementById(image).style.border = "5px solid transparent"; 
+        };
+        function image4(image){
+          document.getElementById(image).style.border = "";
+        };
+      </script>
 
 
 
@@ -505,14 +544,14 @@
   margin-right:3px;
 }
 #div_coiffure{
-  background:#ffe6e6;
+  background:#;
 }
 
 #les_coiffeurs_div{
-  background:#ffc266;
+  background:#;
 }
 #la_mode{
-  background:#ffc299;
+  background:#;
 }
 #paragraphe2{
   text-align:justify;
@@ -521,10 +560,10 @@
   margin-right:3px;
 }
 #salle_de_gym{
-  background:#80bfff;
+  background:#;
 }
 #vetement_row_background{
-  background:#99ff99;
+  background:#;
 }
 
 
@@ -952,9 +991,8 @@ function switch_picture2(image, src){
 
     
     #header11{
-       background:url("/static/2.0/0.jpg");
-       -webkit-background-size: cover;
-       background-size: cover;
+       background:#b3d9ff;
+
     }
     #sec{
       background:#white;
