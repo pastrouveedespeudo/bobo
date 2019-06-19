@@ -90,17 +90,33 @@
 
 
 
+
+            <style>
+              #image_coiffure_href{
+
+              }
+              #h_coiffure:hover{
+                color:#ff8080;
+              }
+            </style>
+
+
+
             <div id="div_coiffure">
 
-              <h4>Les coiffures</h4>
-              <center><img src="/static/v2/coiffure.jpg" 
-                alt="Picture of a male person. His balck hair flies. 
-                he wears red and orange fashion glasses. He smiles"
-                height="300" width="98%" id="haircut_picture"
-                onMouseOver="image1('haircut_picture', 'haircut_picture',
+              <a href="/photo/coupe" id="href_coiffure" title="Voir les coiffures">
+                <h4 id="h_coiffure">Les coiffures</h4>
+              </a>
+              <a href="/photo/coupe" id="image_coiffure_href" title="Voir les coiffeurs">
+                <center><img src="/static/v2/coiffure.jpg" 
+                  alt="Picture of a male person. His balck hair flies. 
+                  he wears red and orange fashion glasses. He smiles"
+                  height="300" width="98%" id="haircut_picture"
+                  onMouseOver="image1('haircut_picture', 'haircut_picture',
                                     '/static/v2/coiffure2.jpg')";
-                onMouseOut="image2('haircut_picture', 'haircut_picture',
+                  onMouseOut="image2('haircut_picture', 'haircut_picture',
                                     '/static/v2/coiffure.jpg')";/><center><br>
+              </a>
               <div id="paragraphe">
                 Notre première fonctionnalité a pour but de vous aider à choisir des coupes
                 de cheveux. De vous aider: à imaginer, à vous projeter et, surtout de
@@ -109,19 +125,34 @@
                 Stop, choisissez un filtre et sélectionnez une coupe ! Qu'elle soit courte
                 longue en noir et blanc ou en couleur mettez là en favoris. Prend ton écran
                 en photo et envois là à un coiffeur prés de chez toi en utilisant la fonctionnalité
-                mon coiffeur !
-              </div><br>
-            </div><br><br><br>
+                mon coiffeur !<br><br><br>
+                <center><a href="/photo/coupe" class="bouton1"
+                  title="Voir les coiffures">Voir les coiffures !</a></center>
+                </div>
+            </div><br><br>
 
 
+            <style>
+              #href_coiffeur{
 
+              }
+              #image_coiffeur_href{
+
+              }
+              
+            </style>
             <div id="les_coiffeurs_div">
-              <h4>Les coiffeurs</h4>
-              <center><img src="/static/v2/salon.jpg" alt="it's a classy hairdressing
-              salon, you can see a row of chairs. The mood is hot. The main color
-              is maroon." height="300" width="98%" id="hairdresser_image"
-                onMouseOver="image1('hairdresser_image', 'hairdresser_image', '/static/v2/salon2.png')";
-                onMouseOut="image2('hairdresser_image', 'hairdresser_image', '/static/v2/salon.jpg')";></center><br><br>
+              <a href="/photo/coiffure" id="href_coiffeur" title="Voir les coiffures">
+                <h4>Les coiffeurs</h4>
+              </a>
+              <a href="/photo/coiffure" id="image_coiffeur_href" title="Voir les coiffures"><center>
+                <img src="/static/v2/salon.jpg" alt="it's a classy hairdressing
+                  salon, you can see a row of chairs. The mood is hot. The main color
+                  is maroon." height="300" width="98%" id="hairdresser_image"
+                    onMouseOver="image1('hairdresser_image', 'hairdresser_image', '/static/v2/salon2.png')";
+                    onMouseOut="image2('hairdresser_image', 'hairdresser_image', '/static/v2/salon.jpg')";>
+                    </center><br><br>
+              </a>
               <div id="paragraphe">
                 La fonctionnalité "mon coiffeur" t'aide à trouver un
                 coiffeur près de chez toi. Mais aussi de consulter ces horaires
@@ -665,6 +696,7 @@ color: white;
 a.bouton1:hover {
 background: #ff8080; 
 }
+
 
 
 
