@@ -31,41 +31,110 @@
 
 <body id="page-top">
     
-
-{% include "navebarre_ui.html" %}
+<br><br>
+{% include "navebarre_coupe.html" %}
 {% block content %}
 {% endblock %}
 
 
 </body>
 
+<style>
+
+.container{
+  
+}
+
+#h1{
+  float:right;
+  margin-right:220px;
 
 
-<header class="masthead">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center justify-content-center text-center">
-      <br><br><br><br><br><br>
+}
+#h2{
+    float:right;
+    font-size:1em;
+    text-align:justify;
+    width:30%;
+    
+}
 
-       <div class="col-lg-10 align-self-end"><br><br>
-
-      <center><h1 style='color:black;font-family:"Comic Sans MS, Comic Sans, cursive";'>Essaie des coiffures !</h1></center><br>
-      <center><h2 style='color:black; font-style=justu'>Démarre la vidéo, appuie sur stop et essaie des coiffures.
-      Si tu l'aimes appuie sur j'aime cette coupe ! Dans mes services tu peux récupérer
-      tes magasins aux alentours selon TES horaires</h2></center>
-
-      <br><br><br><br><br><br><br><br>
+</style>
 
 
+<header style="height:120%;">
+  <div class="container">
+      <h1 id="h1"><strong>TITRE</strong></h1><br><br><br>
+      <h2 id="h2"><strong>
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      
+
+      </strong></h2><br><br><br><br><br>
+  
+      <h1 id="h1"<strong>TITRE</strong></h1><br><br><br>
+
+      <h2 id="h2"><strong>
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      </strong></h2>
+      
 </header>
+
+
+
 <script>
  var listeeeee = []
 </script>
-<header class="masthead" style='background:#343a40'>
 
+<style>
+  #fond{
+    float:right;
+    margin-right:140px;
+  }
+  #salon_de_coiffure{
+    margin-left:230px;
+  }
+
+</style>
+
+<script>
+  function put_background(){
+    document.getElementById('container_photo').style.background = "green";
+    shutdown();
+    document.getElementById('StartVideo').click()
+    
+  }
+
+
+</script>
+
+
+
+<header class="" id="container_photo">
+      <br>
+      <input type='button' value='Fond' id='fond' style='position:relative; z-index:2;'
+      onclick="put_background()">
+      
       <div class="col-lg-12 align-self-end">
-                  <center><h2 style='color:white;'>
-                    Essayons quelques choses
-                  </h2></center>
+          <center><h2 id="salon_de_coiffure" style='color:black;position:relative; z-index:1;'>
+              <strong>Notre salon de coiffure</strong>
+          </h2></center>
+          
+
+        
           <div class="container>
               <div class="row justify-content-center">
  
@@ -83,10 +152,9 @@
       <div class="container">
         <div class="row">
         
-          <div class="col-xs-12 col-md-12 col-lg-3">
+          <div class="col-xs-12 col-md-12 col-lg-4">
             <center>
-            <div margin-top:-30px; margin-left:-20px; height:380px; width:250px;'>
-            <br>
+            <div margin-top:-30px; margin-left:-20px; height:380px; width:250px;'><br>
             <input type='button' value='ajouter de la longueur?'
               style=" border:3px solid black"
               onclick='ajout_longueur()'/><br><br>
@@ -281,7 +349,7 @@
           
             {% if user.is_authenticated %}
             <br>
-                <center><p style='color:white;'><strong>Mes favoris</strong></p></center>
+                <center><p style='color:black;'><strong>Mes favoris</strong></p></center>
             {% else %}
                 <p><strong>Inscris toi ! et ajoute des favoris !</strong></p>
             {% endif %}
@@ -291,14 +359,14 @@
             </center>
           </div>
 
-          <div class="col-lg-6" id='vivideo'>
+          <div class="col-lg-5" id='vivideo'>
 
             <div id="basic" style="text-align:center; z-index: 4;">
-              <video class="videostream" autoplay style="z-index: 4; border:5px solid black;"></video>
+              <video class="videostream" autoplay style="z-index: 4; border:5px solid black;float:left;"></video>
               
               <center><div style='width:75%;'><br>
               {% if user.is_authenticated %}
-              <p><button class="capture-button" style='border:2px solid black;'>Start</button>&nbsp;&nbsp;
+              <p><button class="capture-button" id='StartVideo' style='border:2px solid black;'>Start</button>&nbsp;&nbsp;
               <button id="stop-button" style="border:2px solid black;">Stop</button></p>
               <p><button id="cssfilters-apply" style='border:2px solid black;'> Mettre en noir et blanc conseillé</button></p>
               {%else%}
@@ -332,7 +400,7 @@
           <div class="col-lg-3">
 
 
-          <center><strong><p style='color:white;'>Coupes</p></strong></center>
+          <center><strong><p style='color:black;'><strong>Coupes</strong></p></strong></center>
 
           <div>
           <center>
