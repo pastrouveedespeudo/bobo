@@ -1,20 +1,17 @@
-mettre les href
+faire le responsive
 
-refaire une navebarre
+mettre les href de navebarre menu coté
 
-commencer les autres pages sous formes cyllibiques comme hier
+faire le menu 
+
+mettre les input en autre input de la page vetement
+
 
 finir les textes la nuit j'ai pluss d'inspi
 
 réduire la police et les images poru le respsonsive 
 
-réfléchir a chaque mot
-
-faire tous les trucks du bas et ptetre qu'ils me la donneront... 
-
-enelr programme informatique tu parles de soumis puis de poupou et insc le mec est refais puis nan enfete c un mec a lunette
-
-corriger toutes les fautes parait qu'il y e na encore
+corriger toutes les fautes 
 
 t'as oublié map et database et botoom p1 p2
 
