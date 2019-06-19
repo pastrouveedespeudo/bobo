@@ -218,20 +218,27 @@
               </div><br><br><br>
 
 
+            <script>
+                function coul(element){
+                  document.getElementById(element).style.color = "#ff8080";
+                };
 
-            <style>
-              #titre_gym_href{
-     
-              }
-              #titre_gym_href:hover{
-                color:white;
-              }
+                function coul1(element){
+                  document.getElementById(element).style.color = "black";
 
-            </style>
+                };
+
+
+            </script>
+
+
+
 
             <div id="salle_de_gym">
-              <a href="/photo/coupe#CONTENEUR" id="titre_gym_href" title="Voir les salles !">
-                <h4>Les salles de Gym</h4>
+            
+              <a href="/photo/coupe#CONTENEUR" id="titre_gym_href" style="color:red;" title="Voir les salles !"
+                onMouseOver="coul('titre_gym')" onMouseOut="coul1('titre_gym')">
+                <h4 id="titre_gym">Les salles de Gym</h4>
               </a>
               <a href="/photo/coupe#CONTENEUR" id="image_gym_href" title="Voir les salles !">
                 <center><img src="/static/v2/sport.jpg" alt=""
@@ -252,8 +259,8 @@
                 <center><a href="/photo/coupe#CONTENEUR" class="bouton1"
                   title="Voir les salles !">Voir les salles de gym !</a></center>
               </div>
-            </div>
-            <br><br><br>
+              
+            </div><br><br><br>
 
 
               <div id="article">
@@ -703,6 +710,8 @@ My_profil      My_pollution
 #tendance_href:hover{
   color:#ff8080;
 }
+
+
 a.bouton1 {
 padding: 10px 30px; 
 background: #809fff; 
