@@ -1,6 +1,6 @@
 
     <link rel="stylesheet" type="text/css" href="/static/css/habit.css" media="all" />
-
+    
     <style>
         #titre{
             float:right;
@@ -46,9 +46,26 @@
         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
         aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        
+      </h2><br><br><br><br><br><br><br><br>
 
+
+      <h1 id="titre">Titre</h1><br><br><br>
+      <h2 id="resum_titre">
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
       </h2>
+
+
+
+
+
+
+      
       <br><br><br>
       <br><br><br>
       <br><br><br>
@@ -143,6 +160,8 @@
             font-size:1em;
 
         }
+        #no_shut_size,
+        #no_shut_tshirt,
         #no_shut_color_pantalon,
         #no_shut_color_hair{
             font-size:300%;
@@ -152,6 +171,8 @@
             
             
         }
+        #shut_size,
+        #shut_tshirt,
         #shut_color_pantalon,
         #shut_color_hair{
             font-size:300%;
@@ -183,6 +204,10 @@
             border:3px solid black;
             font-family:segoe print;
         }
+        #info_oups{
+            font-size:1em;
+        }
+        
       </style>
         
 
@@ -218,7 +243,13 @@
                     </center>
                 </div><br>
 
-                <div style='position:absolute; right: -100;'>
+                <div style='position:absolute; right: -100;width:200px;border:1px solid transparent;'>
+                
+                    <p id='info_oups'><strong><i>Appuyez sur votre couleur
+                        de cheveux, et choisissez une catégorie d'habit</i></strong></p>
+                    <br>
+
+                
                     <p id="p_hair_color"><strong>Les couleurs de cheveux</strong></p><br><br>
                     
                     <i class="fas fa-angle-right" id="shut_color_hair"
@@ -228,20 +259,15 @@
                     onclick="no_shutdown_info('input_color_hair', 'shut_color_hair', 'no_shut_color_hair')"></i>
                     <br><br><br>
 
-                    <div id="input_color_hair" style='float:right;margin-right:50px;display:none;' >
+                    <div id="input_color_hair" style='float:right;margin-right:50px;display:none;border:1px solid transparent;' >
                       <input type='button' id='brune' value='Brune' onclick='coul("brune")'><br><br>
                       <input type='button' id='blonde' value='Blonde' onclick='coul("blonde")'><br><br>
                       <input type='button' id='chatain' value='Chatain' onclick='coul("chatain")'><br><br>
                       <input type='button' id='rousse' value='Rousse' onclick='coul("rousse")'><br><br>
                       <input type='button' id='noire' value='Noire' onclick='coul("noire")'><br><br>
-                      <div id='couleur' style='display:none;'></div>
-                      <div id='info_mode'><br><br></div>
-                      <div id='recherche' style='display:none;' value=''></div>
-                      <div id='profil'></div>
-                      <div id ='ess'></div>
                     </div>
 
-    
+                
                     <p style='color:white;'><strong>Pantalon</strong></p>
 
                     <i class="fas fa-angle-right" id="shut_color_pantalon"
@@ -262,144 +288,83 @@
 
                          <input type='button' value='Toile' id='toile'
                             style="border:3px solid black;font-family:segoe print;"
-                            onclick='voir_toile()'>
+                            onclick='voir_toile()'><br><br>
                     </div>
                                                
-                </div>
+
+                
+                    <p style='color:white;'><strong>T-shirt</strong></p>
 
 
+                    <i class="fas fa-angle-left" id="no_shut_tshirt"
+                    onclick="no_shutdown_info('div_input_tshirt', 'shut_tshirt', 'no_shut_tshirt')"></i>
+                    
+                    <i class="fas fa-angle-right" id="shut_tshirt"
+                    onclick="shutdown_info('div_input_tshirt', 'shut_tshirt', 'no_shut_tshirt')"></i>
+                    <br><br><br>
+                    
 
-                                                   
-                                                                                                   
-                                              
-                                                        
-    
-                <br><br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br><br><br>
+                    <div id="div_input_tshirt" style='display:none;'>                                                    
+                        <input type='button' value='manche longue' id='longue'
+                            style=" border:3px solid black;font-family:segoe print;"
+                            onclick='voir_t_longue()'><br><br>
+                                                                                                                               
+                        <input type='button' value='manche courte' id='courte'
+                            style="border:3px solid black;font-family:segoe print;"
+                            onclick='voir_t_courte()'><br><br>
+                                                                         
+                                                                        
+                        <input type='button' value='laine' id='laine'
+                            style="border:3px solid black;font-family:segoe print;"
+                            onclick='voir_t_laine()'><br><br>
+                    </div>                                         
+            
+
+                    <p style='color:white;'><strong>Modifier la taille</strong></p>  
+
+                
+                    <i class="fas fa-angle-left" id="no_shut_size"
+                    onclick="no_shutdown_info('input_size_bro', 'shut_size', 'no_shut_size')"></i>
+                    
+                    <i class="fas fa-angle-right" id="shut_size"
+                    onclick="shutdown_info('input_size_bro', 'shut_size', 'no_shut_size')"></i>
+                    <br><br><br>
+
+
+                    <div id="input_size_bro" style='display:none;'>
+                      <input type='button' value='Ajouter de la longueur?' id="add1"
+                          onclick='ajout_longueur()'><br><br>
+                    
+          
+                      <input type='button' value='Ajouter de la largeur?' id="add2"
+                        onclick='ajout_largeur()'><br><br>
+                  
+               
+                      <input type='button' value='Enlever de la longueur?' id="no_add1""
+                        onclick='enlever_longueur()'><br><br>
+               
+              
+                      <input type='button' value='Enlever de la largeur?' id="no_add2""
+                        onclick='enlever_largeur()'><br><br>
+                   </div>
+
+
                 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-        <p id='info_oups'><strong><i>Appuyez sur votre couleur de cheveux, et choisissez une catégorie d'habit</i></strong></p>
-
-
-
-
-
-
-              <div class='container'><br>
-                  <div class = "row">
-                  
-                    <div class='col-xs-12 col-md-6 col-lg-3'><br>
-                        <input type='button' value='Ajouter de la longueur?' id="add1"
-                          onclick='ajout_longueur()'>
-                    </div>
-                    <div class='col-xs-12 col-md-6 col-lg-3'><br>
-                      <input type='button' value='Ajouter de la largeur?' id="add2"
-                        onclick='ajout_largeur()'>
-                    </div>
-                    <div class='col-xs-12 col-md-6 col-lg-3'><br> 
-                      <input type='button' value='Enlever de la longueur?' id="no_add1""
-                        onclick='enlever_longueur()'>
-                    </div>
-                    <div class='col-xs-12 col-md-6 col-lg-3'><br>
-                      <input type='button' value='Enlever de la largeur?' id="no_add2""
-                        onclick='enlever_largeur()'>&nbsp&nbsp
-                    </div>
                     
-                </div>
-              </div>
-           
+                </div>                                                                          
+                <br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br>
+            </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <i class="fas fa-angle-down" id="shut_color" onclick="shutdown()"></i><br><br>
-                    <i class="fas fa-angle-up" id="shut_color" onclick="shutdown()"></i><br><br>
-
-
-
-
-
-                    
-
-                 
-                </div>
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-                <i class="fas fa-angle-right" id="shut_color" onclick="shutdown()"></i><br><br>
-                <i class="fas fa-angle-left" id="shut_color" onclick="shutdown()"></i><br><br>
-                <!-- Tshirt Section -->
-                <div id='shirt_tshirt'>
-                  <div id='tshirt'>
-                     <br>
-                      <input type='button' value='t-shirt' onclick='voir_shirt()'><br><br>
-                 </div>
-                </div>
-              </div>
-
-
-         
-
-
+              <div id='couleur' style='display:none;'></div>
+              <div id='info_mode'><br><br></div>
+              <div id='recherche' style='display:none;' value=''></div>
+              <div id='profil'></div>
+              <div id ='ess'></div>
 
               <!-- Clothes Jean White Section -->
               <div class='container' id='habit_bas_blanc'>
@@ -638,7 +603,7 @@
       </section>
 
 
-
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <!-- Bootstrap core JavaScript -->
       <script src="/static/vendor/jquery/jquery.min.js"></script>
       <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -650,7 +615,7 @@
       <!-- Custom scripts for this template -->
       <script src="/static/js/creative.min.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-      <script type="text/javascript" src="/static/js/habit.js"></script>
+      <script type="text/javascript" src="/static/js/habit1.js"></script>
 
 
 
@@ -772,6 +737,7 @@ function ajout_largeur(){
   image.setAttribute('width', X);
   image.setAttribute('height',Y);
   LISTE1.push([b, X,Y]);
+  var d = document.getElementById(b).style.width = X;
   console.log(LISTE1[LISTE1.length-1])
   console.log(X,Y)
   
@@ -796,6 +762,7 @@ function enlever_longueur(){
   image.setAttribute('width', X);
   image.setAttribute('height',Y);
   LISTE1.push([b, X,Y]);
+  var d = document.getElementById(b).style.height = Y;
 
 };
 
@@ -818,6 +785,7 @@ function enlever_largeur(){
   image.setAttribute('width', X);
   image.setAttribute('height',Y);
   LISTE1.push([b, X,Y]);
+  var d = document.getElementById(b).style.width = X;
   
 };
     
@@ -906,7 +874,7 @@ function nom_image(id_im){
   var BAS = 'habit_bas_blanc'
   function coul(couleur){
 
-    document.getElementById('couleur').style.display = 'block';
+    
     document.getElementById('couleur').innerHTML = 'Vous etes donc ' + couleur;
 
     if(couleur == 'brune'){
@@ -923,10 +891,12 @@ function nom_image(id_im){
     }
     else if(couleur == 'noire'){
       document.getElementById('info_mode').innerHTML = 'Le haut blanc et le bas bleu !';
-    }
+    };
    
 
     var a = document.getElementById('couleur').innerHTML;
+    document.getElementById('couleur').style.display = 'none';
+    document.getElementById('info_mode').style.display = 'none';
    
   };
 
@@ -993,78 +963,6 @@ function nom_image(id_im){
           
       });
   });
-
-
-
-
-function voir_pantalon(){
-  
-
-  if(click % 2 == 0){
-
-    document.getElementById('pantalon_div').innerHTML = "<br><input type='button' value='Pantalon'" +
-                                                        'style="border:3px solid black;font-family:segoe print;"' +
-                                                         "onclick='voir_pantalon()'><br><br>" +
-                                                        "<div>"+
-                                                        "<input type='button' value='Salopette' id='salopette'"+
-                                                          'style=" border:3px solid black;font-family:segoe print;"'+
-                                                          "onclick='voir_salopette()'>&nbsp&nbsp" +
-                                                        "</div><br>" +
-                                                        "<div>" +
-                                                        "<input type='button' value='Jeans' id='jean'" +
-                                                          'style=" border:3px solid black;font-family:segoe print;"' +
-                                                          "onclick='voir_jean()'>" +
-                                                       "</div><br>" +
-                                                        "<div>" +
-                                                        "<input type='button' value='Toile' id='toile'" +
-                                                          'style=" border:3px solid black;font-family:segoe print;"' +
-                                                          "onclick='voir_toile()'>" +
-                                                        "</div><br>";
-
-    click += 1
-    }
-  else{
-    document.getElementById('pantalon_div').innerHTML = "<br><input type='button' value='Pantalon'" +
-                                                        'style="border:3px solid black;font-family:segoe print;"' +
-                                                         "onclick='voir_pantalon()'><br><br>";
-    click += 1
-  };
-};
-
-
-
-function voir_shirt(){
-
-  if(click2 % 2 == 0){
-
-    document.getElementById('tshirt').innerHTML = "<br><input type='button' value='tshirt'" +
-                                                        'style="border:3px solid black;font-family:segoe print;"' +
-                                                         "onclick='voir_shirt()'><br><br>" +
-                                                        "<div>"+
-                                                        "<input type='button' value='manche longue' id='longue'"+
-                                                          'style=" border:3px solid black;font-family:segoe print;"'+
-                                                          "onclick='voir_t_longue()'>&nbsp&nbsp" +
-                                                        "</div>" +
-                                                        "<div>" +
-                                                        "<input type='button' value='manche courte' id='courte'" +
-                                                          'style=" border:3px solid black;font-family:segoe print;"' +
-                                                          "onclick='voir_t_courte()'>" +
-                                                       "</div><br>" +
-                                                        "<div>" +
-                                                        "<input type='button' value='laine' id='laine'" +
-                                                          'style=" border:3px solid black;font-family:segoe print;"' +
-                                                          "onclick='voir_t_laine()'>" +
-                                                        "</div><br>";
-
-    click2 += 1
-    }
-  else{
-    document.getElementById('tshirt').innerHTML = "<br><input type='button' value='tshirt'" +
-                                                        'style="border:3px solid black;font-family:segoe print;"' +
-                                                         "onclick='voir_shirt()'><br><br>";
-    click2 += 1
-  };
-};
 
 
 
