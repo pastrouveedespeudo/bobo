@@ -142,7 +142,11 @@
   };
 
   function get_background(){
-    alert("coucou")
+    notshutdown();
+
+    document.getElementById('fond1').style.display = "none";
+    document.getElementById('fond').style.display = "inline";
+    document.getElementById('container_photo').style.background = 'none';
 
   }
 
