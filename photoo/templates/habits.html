@@ -207,6 +207,39 @@
         #info_oups{
             font-size:1em;
         }
+        #blonde,
+        #chatain,
+        #rousse,
+        #noire,
+        #brune{
+          border:3px solid black;
+          width:80px;
+        }
+        
+        #blonde:hover{
+            background:#424874;
+       
+        }
+        #chatain:hover{
+            background:#04724D;
+      
+        }
+        #rousse:hover{
+            background:#4F6272;
+      
+        }
+        #noire:hover{
+            background:#985F99;
+        
+        }
+        #brune:hover{
+          background:#DB5461;
+      
+        }
+
+
+
+
         
       </style>
         
@@ -256,15 +289,15 @@
                     onclick="no_shutdown_info('input_color_hair', 'shut_color_hair', 'no_shut_color_hair')"></i>
                     <br><br><br>
 
-                    <div id="input_color_hair" style='float:right;margin-right:50px;display:none;border:1px solid transparent;' >
-                      <input type='button' id='brune' value='Brune' onclick='coul("brune")'><br><br>
+                    <div id="input_color_hair" style='float:right;margin-right:50px;display:none;border:1px solid transparent;width:100px;' >
+                      <input type='button' id='brune' value="Brune" onclick='coul("brune")'><br><br>
                       <input type='button' id='blonde' value='Blonde' onclick='coul("blonde")'><br><br>
                       <input type='button' id='chatain' value='Chatain' onclick='coul("chatain")'><br><br>
                       <input type='button' id='rousse' value='Rousse' onclick='coul("rousse")'><br><br>
                       <input type='button' id='noire' value='Noire' onclick='coul("noire")'><br><br>
                     </div>
 
-                
+                    <div>
                     <p style='color:white;'><strong>Pantalon</strong></p>
 
                     <i class="fas fa-angle-right" id="shut_color_pantalon"
@@ -273,8 +306,8 @@
                     <i class="fas fa-angle-left" id="no_shut_color_pantalon"
                     onclick="no_shutdown_info('div_pantalon_menu', 'shut_color_pantalon', 'no_shut_color_pantalon')"></i>
                     <br><br><br>
-
-                    <div id="div_pantalon_menu" style='display:none;'>
+                    </div>
+                    <div id="div_pantalon_menu" style='display:none;width:100px;margin-left:50px;'>
                         <input type='button' value='Salopette' id='salopette'
                             style=" border:3px solid black;font-family:segoe print;"
                             onclick='voir_salopette()'><br><br>
@@ -289,6 +322,24 @@
                     </div>
                                                
 
+                    <style>
+
+
+                    
+                        #salopette:hover{
+                            background:#424874;
+                   
+                        }
+                        #jean:hover{
+                            background:red;
+                     
+                        }
+                        #toile:hover{
+                            background:lightblue;
+                   
+                        }
+
+                    </style>
                 
                     <p style='color:white;'><strong>T-shirt</strong></p>
 
@@ -317,10 +368,35 @@
                     </div>                                         
             
 
+                
+                    <style>
+                        #longue:hover{
+                            background:green;
+                    
+                        }
+                        #courte:hover{
+                            background:yellow;
+                       
+                        }
+                        #laine:hover{
+                            background:red;
+                        
+                        }
+
+                    </style>
+
+
+
+
+
+
+
+
+
                     <p style='color:white;'><strong>Modifier la taille</strong></p>  
 
                 
-                    <i class="fas fa-angle-left" id="no_shut_size"
+                    <i class="fas fa-angle-left" id="no_shut_size" 
                     onclick="no_shutdown_info('input_size_bro', 'shut_size', 'no_shut_size')"></i>
                     
                     <i class="fas fa-angle-right" id="shut_size"
@@ -329,24 +405,42 @@
 
 
                     <div id="input_size_bro" style='display:none;'>
-                      <input type='button' value='Ajouter de la longueur?' id="add1"
+                      <input type='button' value='Ajouter de la longueur?' id="add1" style='width:200px;'
                           onclick='ajout_longueur()'><br><br>
                     
           
-                      <input type='button' value='Ajouter de la largeur?' id="add2"
+                      <input type='button' value='Ajouter de la largeur?' id="add2" style='width:200px;'
                         onclick='ajout_largeur()'><br><br>
                   
                
-                      <input type='button' value='Enlever de la longueur?' id="no_add1""
+                      <input type='button' value='Enlever de la longueur?' id="no_add1" style='width:200px;'
                         onclick='enlever_longueur()'><br><br>
                
               
-                      <input type='button' value='Enlever de la largeur?' id="no_add2""
+                      <input type='button' value='Enlever de la largeur?' id="no_add2" style='width:200px;'
                         onclick='enlever_largeur()'><br><br>
                    </div>
 
 
-                
+                    <style>
+                        #add1:hover{
+                            background:magenta;
+             
+                        }
+                        #add2:hover{
+                            background:orange;
+                     
+                        }
+                        #no_add1:hover{
+                            background:red;
+                      
+                        }
+                        #no_add2:hover{
+                            background:gray;
+                    
+                        }
+                    </style>
+
 
 
                     
