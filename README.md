@@ -1,5 +1,7 @@
 faire le responsive
 
+enfete soit c ca qu'il faut faire soit jme fais chier pour rien lire des truks
+
 mettre les href de navebarre menu coté
 
 faire le menu 
