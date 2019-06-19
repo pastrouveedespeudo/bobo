@@ -92,7 +92,7 @@ def coupe(request):
             the_address = address_geo(gymm_map, gym_pays)#we search the address by scrapping
             
             try:
-                lat_long = city_geo(la_adresse)#and recup it with nominatim (with lat et long)
+                lat_long = city_geo(the_address)#and recup it with nominatim (with lat et long)
             except:
                 return HttpResponse("Oups nous n'avons rien trouvé")#if nothing is found we return it
 
