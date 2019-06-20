@@ -95,10 +95,10 @@ header.masthead {
 
                                             
       
-      <i><p>Voici les images sur lesquelles nous basons notre mode. Elles vous sont accessibles afin que vous puissiez puiser dans votre imagination</p></i><br><br>
+      <i><p id="yoyo">Voici les images sur lesquelles nous basons notre mode. Elles vous sont accessibles afin que vous puissiez puiser dans votre imagination</p></i><br><br>
       
-          <div class="container" id='container' style='display:none;'>
-            <div class="row">
+          <table class="container" id='container' style='display:none;'>
+            <div class="row" id="row">
 
                 {% for i in image_hab %}
 
@@ -130,10 +130,10 @@ header.masthead {
                 <script>
                     var vari = "{{i|slice:'2:3'}}";
                     var a= document.getElementById(vari).innerHTML = "<img src=" + "'" + "/static/bobo/" +
-                                                                     b() + "'" + "style='width:100px; height:100px;'><br>" +
+                                                                     b() + "'" + "width='100' height='100'><br>" +
                                                                      "<input type='image' src='/static/bobo/" + a() +
-                                                                     "'"+ "style='width:100px; height:250px;'" +
-                                                                     "id='"+ c()+ "'"+ "'><br>";
+                                                                     "'"+ "width='100' height='250'" +
+                                                                     "id='"+ String(c())+ "'"+ "'><br><br>";
                 </script>
 
               {% endfor %}
@@ -395,6 +395,211 @@ header.masthead {
   
 </script>
 
+<style>
+  
+@media screen and (min-width: 1500px) and (max-width:2000px) {
+  #container{
+    display:inline;
+    text-align:center;
 
+  }
+  
+  input{
+    width:80%;
+  }
+  img{
+    width:80%;
+  }
+  
+}
+
+
+@media screen and (min-width: 991px) and (max-width:1500px) {
+  #container{
+    display:inline;
+    text-align:center;
+
+  }
+  
+  input{
+    width:80%;
+  }
+  img{
+    width:80%;
+  }
+  
+}
+
+
+
+
+@media screen and (min-width: 767px) and (max-width:991px) {
+  #container{
+    display:inline;
+    text-align:center;
+
+  }
+  
+  input{
+    width:85%;
+    height:150;
+  }
+  img{
+    width:85%;
+    height:70;
+  }
+  
+}
+
+
+
+
+@media screen and (min-width: 575px) and (max-width:767px) {
+  #container{
+    display:inline;
+    text-align:center;
+
+  }
+  
+  input{
+    width:100%;
+    height:100;
+  }
+  img{
+    width:100%;
+    height:50;
+    
+  }
+}
+
+
+
+@media screen and (min-width: 560px) and (max-width:575px) {
+  input{
+    width:50px;;
+    height:100;
+
+    display: inline;
+  }
+  img{
+    width:50px;
+    height:50;
+    display: inline;
+    
+  }
+}
+
+
+
+
+@media screen and (min-width: 450px) and (max-width:560px) {
+  input{
+    width:50px;;
+    height:100;
+
+    display: inline;
+  }
+  img{
+    width:50px;
+    height:50;
+    display: inline;
+    
+  }
+  .col-sm{
+     width:60px;
+
+    }
+}
+
+
+
+@media screen and (min-width: 400px) and (max-width:450px) {
+  input{
+    width:50px;;
+    height:90;
+
+    display: inline;
+  }
+  img{
+    width:50px;
+    height:50;
+    display: inline;
+    
+  }
+  .col-sm{
+     width:120px;
+
+    }
+}
+
+
+
+
+
+@media screen and (min-width: 200px) and (max-width:400px) {
+  input{
+    width:50px;;
+    height:90;
+
+    display: inline;
+  }
+  img{
+    width:50px;
+    height:50;
+    display: inline;
+    
+  }
+  .col-sm{
+     width:120px;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+</style>
 
 
