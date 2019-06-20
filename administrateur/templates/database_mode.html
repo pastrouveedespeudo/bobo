@@ -40,7 +40,7 @@ header.masthead {
     
       <div class="col-lg-10 align-self-end">
 
-        <h1 style='color:black; font-family:amaze; font-size:5em;'>
+        <h1 style='color:black; font-family:amaze;' id="notre_mode">
           Notre mode ?
         </h1><br>
       </div>
@@ -95,7 +95,7 @@ header.masthead {
 
                                             
       
-      <i><p id="yoyo">Voici les images sur lesquelles nous basons notre mode. Elles vous sont accessibles afin que vous puissiez puiser dans votre imagination</p></i><br><br>
+      <i><p id="p_expert">Voici les images sur lesquelles nous basons notre mode. Elles vous sont accessibles afin que vous puissiez puiser dans votre imagination</p></i><br><br>
       
           <table class="container" id='container' style='display:none;'>
             <div class="row" id="row">
@@ -396,7 +396,68 @@ header.masthead {
 </script>
 
 <style>
+
+#p_expert{
+  font-size:1.5vw;
+}
   
+#notre_mode{
+  font-size:12vw;
+}
+
+
+.masthead{
+
+  height:80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 1500px) and (max-width:2000px) {
   #container{
     display:inline;
@@ -486,7 +547,13 @@ header.masthead {
     height:50;
     display: inline;
     
+    
   }
+  .col-sm{
+     width:60px;
+     margin-left:15px;
+
+    }
 }
 
 
@@ -507,6 +574,8 @@ header.masthead {
   }
   .col-sm{
      width:60px;
+     margin-left:10px;
+     
 
     }
 }
@@ -528,6 +597,7 @@ header.masthead {
   }
   .col-sm{
      width:120px;
+     
 
     }
 }
@@ -536,23 +606,76 @@ header.masthead {
 
 
 
-@media screen and (min-width: 200px) and (max-width:400px) {
+@media screen and (min-width: 380px) and (max-width:400px) {
   input{
-    width:50px;;
+    width:50px;
     height:90;
-
-    display: inline;
+    text-align:center;
   }
   img{
     width:50px;
     height:50;
-    display: inline;
+    
     
   }
   .col-sm{
+     margin-left:40px;
      width:120px;
-
+     
     }
+  .masthead{
+    height:50%;
+  }
+}
+
+
+
+
+@media screen and (min-width: 370px) and (max-width:380px) {
+  input{
+    width:50px;
+    height:90;
+    text-align:center;
+  }
+  img{
+    width:50px;
+    height:50;
+    
+    
+  }
+  .col-sm{
+     margin-left:40px;
+     width:120px;
+    }
+  .masthead{
+    height:50%;
+    
+  }
+}
+
+
+
+
+@media screen and (min-width: 350px) and (max-width:370px) {
+  input{
+    width:50px;
+    height:90;
+    text-align:center;
+  }
+  img{
+    width:50px;
+    height:50;
+    
+    
+  }
+  .col-sm{
+     margin-left:30px;
+     width:120px;
+    }
+  .masthead{
+    height:50%;
+    border:1px solid red;
+  }
 }
 
 
@@ -560,14 +683,27 @@ header.masthead {
 
 
 
-
-
-
-
-
-
-
-
+@media screen and (min-width: 300px) and (max-width:350px) {
+  input{
+    width:50px;
+    height:90;
+    text-align:center;
+  }
+  img{
+    width:50px;
+    height:50;
+    
+    
+  }
+  .col-sm{
+     margin-left:15px;
+     width:120px;
+    }
+  
+  .masthead{
+    height:50%;
+  }
+}
 
 
 
