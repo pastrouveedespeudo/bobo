@@ -1,5 +1,7 @@
 faire le responsive
 
+j'ai réver de malediction donc incs je sais que je vais regretter ce moment ^^
+
 enfete soit c ca qu'il faut faire soit jme fais chier pour rien lire des truks
 
 mettre les href de navebarre menu coté
