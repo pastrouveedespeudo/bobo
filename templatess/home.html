@@ -141,11 +141,14 @@
               }
               
             </style>
+
+            
             <div id="les_coiffeurs_div">
-              <a href="/photo/coiffure" id="href_coiffeur" title="Voir les coiffures">
-                <h4>Les coiffeurs</h4>
+              <a href="/photo/coupe#CONTENEUR" id="href_coiffeur" title="Voir les coiffeurs"
+                onMouseOver="coul('titre_coiffeurs')" onMouseOut="coul1('titre_coiffeurs')">
+                <h4 id='titre_coiffeurs'>Les coiffeurs</h4>
               </a>
-              <a href="/photo/coiffure" id="image_coiffeur_href" title="Voir les coiffures"><center>
+              <a href="/photo/coupe#CONTENEUR" id="image_coiffeur_href" title="Voir les coiffures"><center>
                 <img src="/static/v2/salon.jpg" alt="it's a classy hairdressing
                   salon, you can see a row of chairs. The mood is hot. The main color
                   is maroon." height="300" width="98%" id="hairdresser_image"
@@ -160,10 +163,12 @@
                 Tu n'as plus d'excuse pour ne plus prendre soin de toi, saisis
                 ta ville, visualise les informations, consulte la carte et prend
                 rendez-vous ! n'oublis pas d'essayer des coiffures et de te prendre en
-                photo pour que ton coiffeur soit au plus proche de tes attentes !
-                <br><br>
-             </div>
-            </div><br><br><br>
+                photo pour que ton coiffeur soit au plus proche de tes attentes !<br><br><br>
+                <center><a href="/photo/coupe#CONTENEUR" class="bouton1"
+                  title="Voir les coiffeurs">Voir les coiffeurs !
+                </a></center><br><br>
+             </div><br><br>
+            </div>
 
             <div id="article_journal">
               Être beau a bien des avantages de nos jours. Un
@@ -218,13 +223,34 @@
               </div><br><br><br>
 
 
+            <script>
+                function coul(element){
+                  document.getElementById(element).style.color = "#ff8080";
+                };
+
+                function coul1(element){
+                  document.getElementById(element).style.color = "black";
+
+                };
+
+
+            </script>
+
+
+
 
             <div id="salle_de_gym">
-              <h4>Les salles de Gym</h4>
-              <center><img src="/static/v2/sport.jpg" alt=""
-                height="260" width="98%" id="gym_image"
-                onMouseOver="image1('gym_image', 'gym_image', '/static/v2/horraire_sport.png')";
-                onMouseOut="image2('gym_image', 'gym_image', '/static/v2/sport.jpg')";/></center><br>
+            
+              <a href="/photo/coupe#CONTENEUR" id="titre_gym_href" style="color:red;" title="Voir les salles !"
+                onMouseOver="coul('titre_gym')" onMouseOut="coul1('titre_gym')">
+                <h4 id="titre_gym">Les salles de Gym</h4>
+              </a>
+              <a href="/photo/coupe#CONTENEUR" id="image_gym_href" title="Voir les salles !">
+                <center><img src="/static/v2/sport.jpg" alt=""
+                  height="260" width="98%" id="gym_image"
+                  onMouseOver="image1('gym_image', 'gym_image', '/static/v2/horraire_sport.png')";
+                  onMouseOut="image2('gym_image', 'gym_image', '/static/v2/sport.jpg')";/></center><br>
+              </a>
               <br>
               <div id="paragraphe2">
                 Le sport est bénéfique et pour le corps et pour l'état émotionnel.
@@ -234,10 +260,12 @@
                 de bonheur) ou en solo (vous permet de vous connaitre et de vous dépasser)
                 allez chercher une salle de gym la plus proche de chez vous
                 avec la fonctionnalité "Ma salle de gym". Nous vous fournissons leurs horaires
-                ainsi que leur coordonnée par une carte Google map.<br><br>
+                ainsi que leur coordonnée par une carte Google map.<br><br>              
+                <center><a href="/photo/coupe#CONTENEUR" class="bouton1"
+                  title="Voir les salles !">Voir les salles de gym !</a></center>
               </div>
-            </div>
-            <br><br><br>
+              
+            </div><br><br><br>
 
 
               <div id="article">
@@ -253,17 +281,21 @@
         
 
         
-        <div class="container">
+        <div class="container"><br>
           <center>
             <div class="row" id="vetement_row_background" style="width:100%;">
             
                 <div class="col-xs-12 col-md-12 col-lg-6">
-                  <h4>Les Vêtements</h4>
-                  <img src="/static/v2/vetementvetement.jpg" alt="" id="vetement_image"
+                  <a href="/photo/habits" title="Voir les vêtements"
+                  onMouseOver="coul('titre_vetements')" onMouseOut="coul1('titre_vetements')">
+                    <h4 id="titre_vetements">Les Vêtements</h4>
+                    </a>
+                  <a href="/photo/habits" title="Voir les vêtements">
+                    <img src="/static/v2/vetementvetement.jpg" alt="" id="vetement_image"
                     height="250" width="100%" id="vetement_image"
                     onMouseOver="image1('vetement_image', 'vetement_image', '/static/v2/vetementvetement2.jpg')";
-                    onMouseOut="image2('vetement_image','vetement_image', '/static/v2/vetementvetement.jpg')";
-                  /><br><br>
+                    onMouseOut="image2('vetement_image','vetement_image', '/static/v2/vetementvetement.jpg')";/>
+                  </a><br><br>
                 </div>
                 
                 <div class="col-xs-0 col-md-0 col-lg-1" >
@@ -277,8 +309,10 @@
                       La mode est en constante évolution et change à chaque génération,
                       chaque année, à chaque idée. S'en tenir informer est donc très difficile.
                       C'est pourquoi nous vous proposons de vous aider par notre application:
-                      "Mes habits".
-                  </div><br>
+                      "Mes habits".<br><br>
+                      <center><a href="/photo/habits" class="bouton1"
+                        title="Voir les vêtements">Voir les vêtements !
+                      </a></center>
                 </div>
                   
             </div>
@@ -681,13 +715,14 @@ My_profil      My_pollution
   text-align:justify;
 }
 
-
 #tendance_href{
   color:black;
 }
 #tendance_href:hover{
   color:#ff8080;
 }
+
+
 a.bouton1 {
 padding: 10px 30px; 
 background: #809fff; 
