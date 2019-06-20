@@ -104,18 +104,36 @@
 
         <script>
         
-            function shutdown_info(div, logo1, logo2){
+            function shutdown_info(div, logo1, logo2, div1, div2, div3, logo11, logo22, logo33){
                 document.getElementById(div).style.display = 'none';
                 document.getElementById(logo1).style.display = 'none';
                 document.getElementById(logo2).style.display = 'block';
+                
+                document.getElementById(div1).style.display = 'block';
+                document.getElementById(div2).style.display = 'block';
+                document.getElementById(div3).style.display = 'block';
+
+
+                document.getElementById(logo11).style.display = 'block';
+                document.getElementById(logo22).style.display = 'block';
+                document.getElementById(logo33).style.display = 'block';
 
             };
 
 
-            function no_shutdown_info(div, logo1, logo2){
+            function no_shutdown_info(div, logo1, logo2, div1, div2, div3, logo11, logo22, logo33){
                 document.getElementById(div).style.display = 'block';
                 document.getElementById(logo1).style.display = 'block';
                 document.getElementById(logo2).style.display = 'none';
+                
+                document.getElementById(div1).style.display = 'none';
+                document.getElementById(div2).style.display = 'none';
+                document.getElementById(div3).style.display = 'none';
+
+                document.getElementById(logo11).style.display = 'none';
+                document.getElementById(logo22).style.display = 'none';
+                document.getElementById(logo33).style.display = 'none';
+                
             };
 
 
@@ -200,7 +218,8 @@
         #p_hair_color{
             font-size:1em;
             color:white;
-            float:right; 
+            float:right;
+            width:200px;
         }
 
 
@@ -256,11 +275,12 @@
 
 
 
+
         
       </style>
         
 
-      <!-- Haircut Color Section -->
+
       <section style='width:100%;font-size:1.3vw;'>
         <div class="container text-center" style='width:100%;font-size:1.3vw;'>
           <div class="row justify-content-center">
@@ -279,10 +299,10 @@
 
 
                     <center>
-                      <div id="info_cloths_like_price"><br>
+                      <div id="info_cloths_like_price"style="width:auto;max-width:260px;"><br>
                           <strong><center><p id="nos_info_habits">Nos info habits</p></center></strong>
                           <div id='infofo'>
-                            <p id='mage'></p>
+                            <center><p id='mage' style='width:100%;'></p></center>
                             <p id='name'></p>
                             <p id='store'></p>
                             <p id='online'></p>
@@ -294,18 +314,24 @@
                     </center>
                 </div><br>
 
-                <div style='position:absolute; right: -100;width:200px;border:1px solid transparent;'>
+
+            <div style='position:relative;'>
+                <div style='position:absolute; right:-100;width:200px;margin-top:-50px;border:1px solid transparent;height:1000px;'>
                 
                     <p id="p_hair_color"><strong>Les couleurs de cheveux</strong></p><br><br>
                     
                     <i class="fas fa-angle-right" id="shut_color_hair"
-                    onclick="shutdown_info('input_color_hair', 'shut_color_hair', 'no_shut_color_hair')"></i>
+                    onclick="shutdown_info('input_color_hair', 'shut_color_hair', 'no_shut_color_hair',
+                                            'p_panta_p', 'tshirt_p_p', 'p_size_p',
+                                            'no_shut_color_pantalon', 'no_shut_tshirt', 'no_shut_size')"></i>
                     
                     <i class="fas fa-angle-left" id="no_shut_color_hair"
-                    onclick="no_shutdown_info('input_color_hair', 'shut_color_hair', 'no_shut_color_hair')"></i>
+                    onclick="no_shutdown_info('input_color_hair', 'shut_color_hair', 'no_shut_color_hair',
+                                              'p_panta_p', 'tshirt_p_p', 'p_size_p',
+                                              'no_shut_color_pantalon', 'no_shut_tshirt', 'no_shut_size')"></i>
                     <br><br><br>
 
-                    <div id="input_color_hair" style='float:right;margin-right:50px;display:none;border:1px solid transparent;width:100px;' >
+                    <div id="input_color_hair" style='float:right;margin-right:50px;display:none;border:10px solid transparent;width:100px;' >
                       <input type='button' id='brune' value="Brune" onclick='coul("brune")'><br><br>
                       <input type='button' id='blonde' value='Blonde' onclick='coul("blonde")'><br><br>
                       <input type='button' id='chatain' value='Chatain' onclick='coul("chatain")'><br><br>
@@ -314,13 +340,17 @@
                     </div>
 
                     <div>
-                    <p style='color:white;'><strong>Pantalon</strong></p>
+                    <p id="p_panta_p" style='color:white;'><strong>Pantalon</strong></p>
 
                     <i class="fas fa-angle-right" id="shut_color_pantalon"
-                    onclick="shutdown_info('div_pantalon_menu', 'shut_color_pantalon', 'no_shut_color_pantalon')"></i>
+                    onclick="shutdown_info('div_pantalon_menu', 'shut_color_pantalon', 'no_shut_color_pantalon',
+                                            'p_hair_color', 'tshirt_p_p', 'p_size_p',
+                                            'no_shut_size', 'no_shut_tshirt', 'no_shut_color_hair')"></i>
                     
                     <i class="fas fa-angle-left" id="no_shut_color_pantalon"
-                    onclick="no_shutdown_info('div_pantalon_menu', 'shut_color_pantalon', 'no_shut_color_pantalon')"></i>
+                    onclick="no_shutdown_info('div_pantalon_menu', 'shut_color_pantalon', 'no_shut_color_pantalon',
+                                            'p_hair_color', 'tshirt_p_p', 'p_size_p',
+                                            'no_shut_size', 'no_shut_tshirt', 'no_shut_color_hair')"></i>
                     <br><br><br>
                     </div>
                     <div id="div_pantalon_menu" style='display:none;width:100px;margin-left:50px;'>
@@ -357,14 +387,18 @@
 
                     </style>
                 
-                    <p style='color:white;'><strong>T-shirt</strong></p>
+                    <p id='tshirt_p_p' style='color:white;border:10px solid transparent;'><strong>T-shirt</strong></p>
 
 
                     <i class="fas fa-angle-left" id="no_shut_tshirt"
-                    onclick="no_shutdown_info('div_input_tshirt', 'shut_tshirt', 'no_shut_tshirt')"></i>
+                    onclick="no_shutdown_info('div_input_tshirt', 'shut_tshirt', 'no_shut_tshirt',
+                                                'p_hair_color', 'p_panta_p', 'p_size_p',
+                                                'no_shut_size', 'no_shut_color_pantalon', 'no_shut_color_hair')"></i>
                     
                     <i class="fas fa-angle-right" id="shut_tshirt"
-                    onclick="shutdown_info('div_input_tshirt', 'shut_tshirt', 'no_shut_tshirt')"></i>
+                    onclick="shutdown_info('div_input_tshirt', 'shut_tshirt', 'no_shut_tshirt',
+                                            'p_hair_color', 'p_panta_p', 'p_size_p',
+                                            'no_shut_size', 'no_shut_color_pantalon', 'no_shut_color_hair')"></i>
                     <br><br><br>
                     
 
@@ -409,14 +443,18 @@
 
 
 
-                    <p style='color:white;'><strong>Modifier la taille</strong></p>  
+                    <p id='p_size_p' style='color:white;border:10px solid transparent;'><strong>Modifier la taille</strong></p>  
 
                 
                     <i class="fas fa-angle-left" id="no_shut_size" 
-                    onclick="no_shutdown_info('input_size_bro', 'shut_size', 'no_shut_size')"></i>
+                    onclick="no_shutdown_info('input_size_bro', 'shut_size', 'no_shut_size',
+                                            'p_hair_color', 'p_panta_p', 'tshirt_p_p',
+                                            'no_shut_tshirt', 'no_shut_color_pantalon', 'no_shut_color_hair')"></i>
                     
                     <i class="fas fa-angle-right" id="shut_size"
-                    onclick="shutdown_info('input_size_bro', 'shut_size', 'no_shut_size')"></i>
+                    onclick="shutdown_info('input_size_bro', 'shut_size', 'no_shut_size',
+                                            'p_hair_color', 'p_panta_p', 'tshirt_p_p',
+                                            'no_shut_tshirt', 'no_shut_color_pantalon', 'no_shut_color_hair')"></i>
                     <br><br><br>
 
 
@@ -460,10 +498,12 @@
 
 
                     
-                </div>                                                                          
+                </div>
+            </div>
                 <br><br><br><br><br><br><br><br>
                 <br><br><br><br><br><br><br><br>
             </div>
+        
 
 
 
@@ -897,7 +937,7 @@ function enlever_largeur(){
 };
     
 
-liste_info_prix = [['bb1' ,'xxx', '<a href="" style="color:white;">www.xxx.fr</a>', '2550 euros', 'en stock', 'xxx', '<img src="/static/img/portfolio/vetement/femme/bas_blanc/1.png" style="height:200px>"'],
+liste_info_prix = [['bb1' ,'xxx', '<a href="" style="color:white;">www.xxx.fr</a>', '2550 euros', 'en stock', 'xxx', '<img src="/static/img/portfolio/vetement/femme/bas_blanc/1.png">'],
                    ['bb2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '5520 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/2.2.png style='height:200px'>"],
                    ['bb3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '280 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/3.png' style='height:200px'>"],
                    ['bb4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '25580 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/4.png' style='height:200px'>"],
@@ -1375,16 +1415,17 @@ input{
     background:url("/static/img/parquet1.jpg");
     border:3px solid black;
     border-radius:50px;
-    width:500px;
-    height:280px;'
+    width:auto;
+    height:auto;
+
 }
 #nos_info_habits{
     font-family:segoe print;
 }
 
 #mage{
-    float:right;
-    width:200px;
+    text-align:center;
+    width:auto;
 }
 #name{
     width:200px;
@@ -1451,6 +1492,31 @@ h3{
     border:3px solid black;
     border-radius:50px;
 }
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 0px) and (max-width:800px) {
+    #mage {
+    display:none;
+    }
+
+    #info_cloths_like_price{
+        width:50px;
+    }
+    
+  
+}
+
+
+
+
+
 
 
 
