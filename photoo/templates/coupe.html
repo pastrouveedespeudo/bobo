@@ -609,19 +609,19 @@
             </div>
 
             <input type='button' id='bout_fermer_longue' value='fermer' onclick='fermer1()'
-                style='display:none; border:3px solid black;'><br><br>
+                style='display:none; border:3px solid black;z-index:1;'><br><br>
                 
             <input type='button' id='bout_fermer_court' value='fermer' onclick='fermer2()'
-                style='display:none;border:3px solid black;''><br><br>
+                style='display:none;border:3px solid black;z-index:1;'><br><br>
                 
             <input type='button' id='bout_fermer_longue_coul' value='fermer' onclick='fermer3()'
-                style='display:none;border:3px solid black;''><br><br>
+                style='display:none;border:3px solid black;z-index:1;'><br><br>
                 
             <input type='button' id='bout_fermer_court_coul' value='fermer' onclick='fermer4()'
-                style='display:none;border:3px solid black;''><br><br>
+                style='display:none;border:3px solid black;z-index:1;'><br><br>
 
             <input type='button' id='bout_fermer_barbe' value='fermer' onclick='fermer5()'
-                style='display:none;border:3px solid black;''><br><br>     
+                style='display:none;border:3px solid black;z-index:1;'><br><br>     
 
             
           </center>
@@ -1337,53 +1337,91 @@
 
 
 
-media screen and (min-width: 700px) and (max-width:769px) {
 
-  #vivideo {
+
+
+@media screen and (min-width: 769px) and (max-width:770px) {
+  #vivideo{
     width:100px;
     margin-left:100px;
     margin-top:-200px;
-
   }
-  .videostream{
-    border:1px solid red;
-  }
-
   #the_inputs{
-    margin-top:-200px;
-    margin-left:-30px;
-    border:1px solid red;
-
+    margin-top:-150px;
+    margin-left:-10px;
   }
-
-
   #div_placement{
     margin-top:-200px;
-
   }
-
-
   #placement{
     margin-top:-2000px;
     width:150px;
     margin-left:120px;
-
-    
   }
   #StartVideo{
     margin-left:120px;
-
   }
-  #stop-button{
-     border:1px solid red;
+  #titre_salon{
+    margin-left:140px;
+    border:2px solid green;
   }
   #cssfilters-apply{
     margin-left:120px;
    
   }
+  #sauve{
+    margin-top:1000px;
+  }
+  #stop-button{
+  }
+  .videostream{
+    
+  }
+
+
+
+}
+
+
+
+
+
+@media screen and (min-width: 650px) and (max-width:769px) {
+  #vivideo{
+    margin-top:-1420px;
+    width:350px;
+    margin-left:100px;
+  }
+  #the_inputs{
+     margin-top:-200px;
+     margin-left:-250px;
+  }
+  #div_placement{
+    margin-top:-1300px;
+    margin-left:-300px;
+  }
+  #placement{
+    margin-top:-200px; 
+    width:150px;
+    margin-left:-200px;
+  }
+  #StartVideo{
+    margin-left:70px;
+  }
   #titre_salon{
-    margin-left:140px;
-    border:1px solid red;
+    margin-left:90px;
+  }
+
+  #cssfilters-apply{
+    margin-left:60px;
+   
+  }
+  #sauve{
+    margin-top:1000px;
+  }
+  #stop-button{
+  }
+  .videostream{
     
   }
 
@@ -1397,15 +1435,49 @@ media screen and (min-width: 700px) and (max-width:769px) {
 
 
 
+@media screen and (min-width: 560px) and (max-width:650px) {
+  #vivideo{
+    margin-top:-1420px;
+    width:350px;
+    margin-left:120px;
+  }
+  #the_inputs{
+     margin-top:-200px;
+     margin-left:-40%;
+  }
+  #div_placement{
+    margin-top:-1300px;
+    margin-left:-90%;
+ 
+  }
+  #placement{
+    margin-top:-200px; 
+    width:150px;
+    
+  }
+  #StartVideo{
+    margin-left:70px;
+  }
+  #titre_salon{
+    margin-left:90px;
+  }
+
+  #cssfilters-apply{
+    margin-left:60px;
+   
+  }
+  #sauve{
+    margin-top:1000px;
+  }
+  #stop-button{
+  }
+  .videostream{
+    
+  }
 
 
 
-
-
-
-
-
-
+}
 
 
 
