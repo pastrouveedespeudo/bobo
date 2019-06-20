@@ -68,7 +68,7 @@ header.masthead {
           
       <div id='interface'>
           <input type='button' value='voir la database' id='dadata' onclick='database()'><br><br>
-      </div><br><br><br>
+      </div>
 
       <div id='sure' style='display:none;'>
         <form method='POST' action='/administrateur/database_mode'>{% csrf_token %}
@@ -163,12 +163,12 @@ header.masthead {
                                                         
         <div id='im_vetement' style='display:none; float:left;'><img id='image_into_vetement' src=''
                                                               style='width:60px; height:100px'></div>
-        <br><br><br><br><br><br>
+    
         <div id='couleur_cheuveux' style='float:right;'></div>
         <div id='couleur_haut' style='float:left;'></div><br><br>
         <div id='couleur_bas' style='float:left;'></div>
         <div id='couleur_coupe' style='float:right;'></div>
-        <br><br><br><br><br><br><br><br>
+
         
     </div>
 
@@ -281,8 +281,7 @@ header.masthead {
 
       <center>Database sous forme SQL</center><br>
 
-      <center><div>Il y a {{brun}} brun, {{blond}} blond, {{chatain}} chatain</div></center><br><br><br><br>
-      
+      <center><div>Il y a {{brun}} brun, {{blond}} blond, {{chatain}} chatain</div></center>      
       
       <div id='is_save'>
         {% for i in final %}
@@ -299,10 +298,10 @@ header.masthead {
 
     </div>
   </section>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-  <div><br><br><img src='/static/img/portfolio/icone/my.png' width="50" height="50">My_Profil</div>
+
+
 
 
 
@@ -403,6 +402,7 @@ header.masthead {
   
 #notre_mode{
   font-size:12vw;
+  margin-top:-20%;
 }
 
 
@@ -674,7 +674,7 @@ header.masthead {
     }
   .masthead{
     height:50%;
-    border:1px solid red;
+    border:1px solid magenta;
   }
 }
 
@@ -707,6 +707,27 @@ header.masthead {
 
 
 
+@media screen and (min-width: 0px) and (max-width:350px) {
+  input{
+    width:50px;
+    height:90;
+    text-align:center;
+  }
+  img{
+    width:50px;
+    height:50;
+    border:1px solid red;
+    
+    
+  }
+  .col-sm{
+     margin-left:-5px;
+     width:60px;
+    }
+  .masthead{
+    height:50%;
+  }
+}
 
 
 
