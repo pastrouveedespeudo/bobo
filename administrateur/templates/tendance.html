@@ -94,7 +94,7 @@ header.masthead {
 
 
           <div class="col-lg-4" id="texte_tend">
-            <p id="texte_in_texte">
+            <p id="texte_in_texte" style='z-index:10;'>
               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -306,11 +306,13 @@ header.masthead {
       allowfullscreen="true;
       frameborder=0';
       overflow: hidden;
-      width:90%;
+      width:75%;
       height:500px;
+      z-index:10;inlineFrameExample
       }
     #div_iframe{
       background:url('/static/img/parquet1.jpg');
+      
 
     }
 </style>
@@ -382,6 +384,95 @@ header.masthead {
 
   }
 }
+
+
+
+@media screen and (min-width: 1300px) and (max-width:1920px) {
+  #inlineFrameExample {
+    width:75%;
+  }
+}
+
+@media screen and (min-width: 1250px) and (max-width:1300px) {
+  #inlineFrameExample {
+    width:85%;
+  }
+}
+
+@media screen and (min-width: 1240px) and (max-width:1250px) {
+  #inlineFrameExample {
+    width:85%;
+  }
+}
+
+
+@media screen and (min-width: 1150px) and (max-width:1240px) {
+  #inlineFrameExample {
+    border:10px solid magenta;
+    width:90%;
+  }
+}
+
+
+
+
+@media screen and (min-width: 1010px) and (max-width:1150px) {
+  #inlineFrameExample {
+    border:10px solid magenta;
+    width:100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -571,13 +662,12 @@ header.masthead {
 
 @media screen and (min-width: 1180px) and (max-width:1200px) {
   #texte_tend {
-    
-    margin-right:180px;
+    float:rigth;
+    margin-left:855px;
   }
   #h1_tendance{
-    float:right;
-    margin-right:390px;
-    width:200px;
+    float:left;
+    width:210px;
 
   }
 }
@@ -596,15 +686,40 @@ header.masthead {
     float:left;
     margin-left:710px;
     width:365px;
+    
 
   }
 }
 
 
-@media screen and (min-width: 1057px) and (max-width:1091px) {
+
+
+
+
+@media screen and (min-width: 1058px) and (max-width:1091px) {
   #texte_tend {
     float:left;
     margin-right:750px;
+
+  }
+  #h1_tendance{
+    float:left;
+    margin-left:700px;
+    width:360px;
+
+    
+    
+
+  }
+}
+
+
+
+
+@media screen and (min-width: 1057px) and (max-width:1058px) {
+  #texte_tend {
+    float:left;
+    margin-right:-100px;
 
   }
   #h1_tendance{
@@ -634,6 +749,7 @@ header.masthead {
     margin-left:640px;
     width:400px;
     font-size:1.8vw;
+    
 
     
 
@@ -648,16 +764,16 @@ header.masthead {
     float:left;
     margin-left:650px;
     font-size:1.4vw;
-    border:1px solid green;
+
     
-
-
   }
   #h1_tendance{
     float:left;
-    margin-left:640px;
+    margin-left:550px;
     width:400px;
     font-size:1.8vw;
+    
+    
 
   }
 }
@@ -676,9 +792,11 @@ header.masthead {
   }
   #h1_tendance{
     float:left;
-    margin-left:60%;
+    margin-left:51%;
     width:400px;
     font-size:1.8vw;
+
+    
   }
 }
 
@@ -698,6 +816,7 @@ header.masthead {
     margin-left:46%;
     width:400px;
     font-size:1.8vw;
+    
   }
 }
 
@@ -849,6 +968,47 @@ header.masthead {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1120px) and (max-width:2000px) {
+  #cart_h1{
+    margin-top:-10px;
+  }
+  #brun{
+    margin-top:-30px;
+  }
+  #blond{
+    margin-top:-60px;
+  }
+  #chatain{
+    margin-top:-60px;
+  }
+  #cart_color{
+    height:17%;
+    margin-left:-8%;
+    width:35%;
+    border:2px solid black;
+  }
+}
 
 
 
