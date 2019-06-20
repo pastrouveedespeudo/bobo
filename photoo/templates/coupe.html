@@ -74,6 +74,14 @@
     
 }
 
+#fond{
+ border:3px solid black;
+}
+#fond1{
+  display:none;
+  border:3px solid black;
+}
+
 
 
 
@@ -119,32 +127,18 @@
 </script>
 
 <style>
-  #fond1{
-    float:right;
-    margin-right:170px;
-    display:none;
-  }
-  #fond{
-    float:right;
-    margin-right:215px;
-  }
+
   #salon_de_coiffure{
     margin-left:230px;
   }
   #StartVideo{
-    float:left;
-    margin-left:115px;
-    margin-top:20px;
+
   }
   #stop-button{
-  margin-top:20px;
-  float:left;
-  margin-left:50px;
+
   }
   #cssfilters-apply{
-  margin-top:30px;
-  float:left;
-  margin-left:60px;
+
   }
   
 </style>
@@ -173,29 +167,13 @@
 </script>
 
 
-
-<header class="" id="container_photo">
-      <br>
-      <input type='button' value='Fond' id='fond' style='position:relative; z-index:2;border:3px solid black;'
-      onclick="put_background()">
-      
-      <input type='button' value='Enlever le fond' id='fond1' style='position:relative; z-index:2;border:3px solid black;'
-      onclick="get_background()">
-      
-      <div class="col-lg-12 align-self-end">
-          <center><h2 id="salon_de_coiffure" style='color:black;position:relative; z-index:1;'>
-              <strong>Notre salon de coiffure</strong>
-          </h2></center>
-          
-
-        
-          <div class="container>
-              <div class="row justify-content-center">
- 
-                </div>
-              </div>
-          </div>
-
+<style>
+  #salon_de_coiffure{
+    float:right;
+    }
+</style>
+<header class="" id="container_photo" style='margin-top:-200px;'>
+    
       <style>
         input{
             background:white;
@@ -203,27 +181,27 @@
           }
 
       </style>
-      <div class="container">
+      <div class="container" id="inputs_sizes">
         <div class="row">
         
-          <div class="col-xs-12 col-md-12 col-lg-4">
+          <div id="the_inputs" class="col-xs-1 col-md-1 col-lg-4">
             <center>
             <div margin-top:-30px; margin-left:-20px; height:380px; width:250px;'><br>
             <input type='button' value='ajouter de la longueur?'
               style=" border:3px solid black"
               onclick='ajout_longueur()'/><br><br>
             <input type='button' value='ajouter de la largeur?'
-              style=" border:3px solid black; text-align:center; width:200px;"
+              style=" border:3px solid black; text-align:center;"
               onclick='ajout_largeur()'/><br><br>
             <input type='button' value='enlever de la longueur?'
               style=" border:3px solid black;"
               onclick='enlever_longueur()'/><br><br>
             <input type='button' value='enlever de la largeur?'
-              style="border:3px solid black; text-align:center; width:200px;"
+              style="border:3px solid black; text-align:center;"
               onclick='enlever_largeur()'/><br><br>
             
             <center>
-              <div>{% csrf_token %}
+              <div id="saving_div">{% csrf_token %}
                 <input type="hidden" name="csrfmiddlewaretoken"
                   value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
                 <input type="hidden" name="csrfmiddlewaretoken"
@@ -236,12 +214,14 @@
                   <a class="btn btn-light btn-xl js-scroll-trigger">{% csrf_token %}
                 </form>{% csrf_token %}
               </div>
-            </center>
+            </center><br><br><br><br>
           </div>
 
             <div id='favoris' style='display:none;' value={{fav}}></div>
-              <div style='text-align:center'>
-                <div id="favdraggable" name="coucou" value='coupe1'
+              <div id="favorite_haircut" style='text-align:center'>
+
+              
+                <div id="favdraggable" name="coucou" value='coupe'
                   class="ui-widget-content"
                   onclick="nom_image('favdraggable', 200, 150)";
                     style='z-index: 1;'>
@@ -403,7 +383,7 @@
           
             {% if user.is_authenticated %}
             <br>
-                <center><p style='color:black;'><strong>Mes favoris</strong></p></center>
+                <center><p id="favorite_p" style='color:black;'><strong>Mes favoris</strong></p></center>
             {% else %}
                 <p><strong>Inscris toi ! et ajoute des favoris !</strong></p>
             {% endif %}
@@ -413,17 +393,24 @@
             </center>
           </div>
 
-          <div class="col-lg-5" id='vivideo'>
+          <div class="col-xs-5 col-md-5 col-lg-5" id='vivideo'>
 
-            <div id="basic" style="text-align:center; z-index: 4;">
-              <video class="videostream" autoplay style="z-index: 4; border:5px solid black;float:left;"></video>
-              
-              <div>
+            <div id="basic" style="text-align:center; z-index: 4;height:100%;">
+            
+             <h2 id="titre_salon" style='font-size:2vw;margin-top:-20%;'><strong>Notre salon de coiffure</strong></h2><br><br>
+
+             <video class="videostream" autoplay style="z-index: 4; border:5px solid black;"></video><br><br>
+
               {% if user.is_authenticated %}
               <button class="capture-button" id='StartVideo' style='border:2px solid black;'>Start</button>&nbsp;&nbsp;
               <button id="stop-button" style="border:2px solid black;">Stop</button></br>
-              
+              <br>
               <p><button id="cssfilters-apply" style='border:2px solid black;'> Mettre en noir et blanc conseillé</button>
+
+
+            
+            <div>
+
 
               
               {%else%}
@@ -454,15 +441,20 @@
         
 
 
-          <div class="col-lg-3">
+          <div class="col-xs-1 col-md-1 col-lg-3">
 
 
-          <center><strong><p style='color:black;'><strong>Coupes</strong></p></strong></center>
+          
 
-          <div>
+          <div id="div_placement">
           <center>
             <div id='placement'>
+            <center><strong><p id="p_coupe" style='color:black;'><strong>Coupes</strong></p></strong></center>
               <br>
+             <input type='button' value='Fond' id='fond'
+              onclick="put_background()">
+              <input type='button' value='Enlever le fond' id='fond1'
+              onclick="get_background()"><br><br>
               <input type='button' value='coupe longue' onclick='coupe_longue()' style='border:3px solid black;'><br><br>
               <input type='button' value='coupe courte' onclick='coupe_courte()' style='border:3px solid black;'><br><br>
               <input type='button' value='coupe couleur longue' onclick='coupe_longue_coul()' style='border:3px solid black;'><br><br>
@@ -470,8 +462,7 @@
               <input type='button' value='barbe' onclick='barbe()' style='border:3px solid black;'><br><br>
             </div>
 
-          <div>
-                
+          <div>  
             <div id="draggable19" class="ui-widget-content" value='coupe21'
             onclick="nom_image('coupe21', 250, 150)";
               style='z-index: 1; display:none;'>
@@ -1197,6 +1188,340 @@
 
 
 
+
+
+
+
+
+
+@media screen and (min-width: 940px) and (max-width:990px) {
+
+  
+  #vivideo {
+
+    width:100px;
+    margin-left:150px;
+  }
+  .videostream{
+    
+  }
+
+  #the_inputs{
+
+    margin-left:-30px;
+
+  }
+  #placement{
+    width:200px;
+
+    margin-left:150px;
+    margin-top:-1000px;
+  }
+  #StartVideo{
+    margin-left:120px;
+  }
+  #stop-button{
+
+  }
+  #cssfilters-apply{
+    margin-left:120px;
+  }
+  #titre_salon{
+    margin-left:140px;
+    border:1px solid green;
+  }
+
+
+}
+
+
+
+
+@media screen and (min-width: 870px) and (max-width:940px) {
+
+  #vivideo {
+
+    width:100px;
+    margin-left:150px;
+  }
+  .videostream{
+    
+  }
+
+  #the_inputs{
+
+    margin-left:-30px;
+
+  }
+  #placement{
+    width:200px;
+    margin-left:120px;
+    margin-top:-1000px;
+    border:1px solid green;
+  }
+  #StartVideo{
+    margin-left:120px;
+  }
+  #stop-button{
+
+  }
+  #cssfilters-apply{
+    margin-left:120px;
+  }
+  #titre_salon{
+    margin-left:140px;
+    border:1px solid green;
+  }
+
+
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 770px) and (max-width:870px) {
+  #vivideo {
+    width:100px;
+    margin-left:100px;
+    margin-top:-200px;
+
+  }
+  .videostream{
+    
+  }
+
+  #the_inputs{
+    margin-top:-200px;
+    margin-left:-30px;
+    border:1px solid blue;
+
+  }
+
+
+  #div_placement{
+    margin-top:-200px;
+
+  }
+
+
+  #placement{
+    margin-top:-2000px;
+    width:150px;
+    margin-left:120px;
+
+    
+  }
+  #StartVideo{
+    margin-left:120px;
+
+  }
+  #stop-button{
+ 
+  }
+  #cssfilters-apply{
+    margin-left:120px;
+   
+  }
+  #titre_salon{
+    margin-left:140px;
+    border:1px solid red;
+   
+  }
+
+
+}
+
+
+
+
+media screen and (min-width: 700px) and (max-width:769px) {
+
+  #vivideo {
+    width:100px;
+    margin-left:100px;
+    margin-top:-200px;
+
+  }
+  .videostream{
+    border:1px solid red;
+  }
+
+  #the_inputs{
+    margin-top:-200px;
+    margin-left:-30px;
+    border:1px solid red;
+
+  }
+
+
+  #div_placement{
+    margin-top:-200px;
+
+  }
+
+
+  #placement{
+    margin-top:-2000px;
+    width:150px;
+    margin-left:120px;
+
+    
+  }
+  #StartVideo{
+    margin-left:120px;
+
+  }
+  #stop-button{
+     border:1px solid red;
+  }
+  #cssfilters-apply{
+    margin-left:120px;
+   
+  }
+  #titre_salon{
+    margin-left:140px;
+    border:1px solid red;
+    
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #p_coupe,
+  button,
+  input{
+   font-size:1.1vw;
+  }
+
+  #div_placement{
+
+  }
+
+  #placement{
+   margin-top:-50px;
+  
+  }
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 1800px) and (max-width:2000px) {
   #h1 {
     font-size:2vw;
@@ -1212,6 +1537,9 @@
   }
   #h22{
    font-size:1.2vw;
+  }
+  #titre_responsive{
+    display:none;
   }
 }
 
@@ -1595,8 +1923,34 @@
    display:block;
 
   }
-}
+  #favorite_p,
+  #sauve,
+  #favorite_haircut{
+    display:none;
+  }
+  
+  #vivideo {
+    margin-top:-800px;
+    margin-left:-20px;
+  }
+  .videostream{
+    width:380px;
+  }
 
+  #the_inputs{
+    width:100px;
+    margin-top:200px;
+
+  }
+  #placement{
+    width:100px;
+    float:right;
+    margin-top:-400px;
+
+    
+  }
+
+}
 
 
 
