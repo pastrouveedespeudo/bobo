@@ -481,12 +481,550 @@
                 {% endfor %}
             {% endfor %}
 
-
-
-
       </div>
     </div>
   </div>
+  <style>
+    #coifcoif_recherche{
+      border:5px solid black;
+      border-radius: 20px; width:50%;
+      background:url("/static/img/parquet1.jpg");
+      box-shadow: 5px 5px 5px 5px;
+    }
+
+  </style>
+  <!-- Services Section -->
+  <section class="page-section" id="services" style='text-align:center'>
+
+
+    <div id='coifcoif' style='display:none;text-align:center;'>
+    
+      <br>
+
+      <center><div id="coifcoif_recherche">
+          
+          <br>
+          <div style='position: absolute; left: 50%;'>
+          <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou'
+              style='position:relative; display:none;left: -50%;'>
+          </div>
+          <br><br><br><br>
+
+          
+          <input type='text' id='coif1'
+                  style='text-align:center; border:3px solid black; width:70%'
+                   placeholder='Votre ville'>
+          <br><br>
+          
+          <center><input type='button' onclick='menuuu()' value='Retour au menu' style='border:2px solid black;'>&nbsp;&nbsp;&nbsp;
+          
+          <input type='button' id='coif2' value='valider' style='border:2px solid black;'></center><br>
+          <br><br><br><br>
+      </div>
+
+             
+    </div></center>
+
+    <style>
+      #gymgym_div_prestation{
+          border:5px solid black;
+          border-radius: 20px; width:50%;
+          background:url("/static/img/parquet1.jpg");
+          box-shadow: 5px 5px 5px 5px;
+      }
+
+    </style>
+    <div id='gymgym' style='display:none;text-align:center;'>
+    
+      <br>
+
+      <center><div id="gymgym_div_prestation">
+          
+          <br>
+          <div style='position: absolute; left: 50%;'>
+          <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou_gym'
+              style='position:relative; display:none;left: -50%;'>
+          </div>
+          <br><br><br><br>
+
+          
+          <input type='text' id='gym1'
+                  style='text-align:center; border:3px solid black; width:70%;'
+                   placeholder='Votre ville'>
+          <br><br>
+          
+          <center><input type='button' onclick='menuuu()' value='Retour au menu' style='border:2px solid black;'>&nbsp;&nbsp;&nbsp;
+          
+          <input type='button' id='gym2' value='valider' style='border:2px solid black;'></center><br>
+          <br><br><br><br>
+      </div>
+
+             
+    </div></center>
+
+
+
+    <div id='mapmap' style='text-align:center;display:none;'>
+    
+      <div class="container">
+        <center><h3 id='aucas_ou_coif'></h3></center>
+        <h3 id='coifcoifcoif' style='color:white;display:none;' id='info'>Nous avons trouvé quelques coiffeurs près de chez vous</h3><br><br>
+        
+        <p id='cons'style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m et
+        p.m signifient horraires du matin et de l'après-midi</i></p><br><br>
+
+      
+        <div class="row">
+
+            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
+
+            <div class="col-xs-4 col-md-4 col-lg-4"
+              id ='info1'
+              style='border:5px solid black;border-radius: 20px; 
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
+            
+            <div class="col-xs-4 col-md-4 col-lg-4"
+              id ='info2' style='border:5px solid black;border-radius: 20px;
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+
+        </div>
+        <br><br><br><br><br>
+        <div class="row">
+            
+  
+    
+            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
+
+            <div class="col-xs-1 col-md-4 col-lg-4"
+              id ='info3'
+              style='border:5px solid black;border-radius: 20px; 
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
+
+            <div class="col-xs-1 col-md-4 col-lg-4"
+              id ='info4' style='border:5px solid black;border-radius: 20px; 
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
+
+
+            
+        </div>
+            
+      </div>
+        
+      <center><input type='button' style='border:2px solid black;' value='Retour au menu' onclick='menu_map()'></center><br><br>
+ 
+    </div>
+    
+  </div>
+  </div>
+
+  
+  <div id='the_map' style='display:none;'>
+    <p id='oups'><h3><center></center></h3></p>
+    <br><br>
+    <center><div id='map'></div></center>
+    <br><br>
+    <center><input type='button' value='Retour au menu' style='border:2px solid black;' onclick='return_choice_coif()' id='button_lamap'></center>
+    <center><input type='button' value='Retour au menu' style='border:2px solid black;' onclick='return_choice_gym()' id='button_lamap_gym'></center>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+    <div id='mapmap_gym' style='text-align:center;display:none;'><br><br><br><br>
+    
+      <div class="container">
+        <center><h3 id='aucas_ou'></h3></center>
+        <h3 style='color:white;display:none;' id='info'>Nous avons trouvé quelques salles de gym près de chez vous</h3><br><br>
+        
+        <p style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m et
+        p.m signifient horraires du matin et de l'après-midi</i></p><br><br>
+
+      
+        <div class="row">
+
+            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
+
+            <div class="col-xs-4 col-md-4 col-lg-4"
+              id ='info1_gym'
+              style='border:5px solid black;border-radius: 20px; 
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
+            
+            <div class="col-xs-4 col-md-4 col-lg-4"
+              id ='info2_gym' style='border:5px solid black;border-radius: 20px;
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-1"></div>
+
+        </div><br><br>
+          
+        <div class="row">
+            
+  
+    
+            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
+
+            <div class="col-xs-1 col-md-4 col-lg-4"
+              id ='info3_gym'
+              style='border:5px solid black;border-radius: 20px; 
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
+
+            <div class="col-xs-1 col-md-4 col-lg-4"
+              id ='info4_gym' style='border:5px solid black;border-radius: 20px; 
+              height:450px; background:url("/static/img/parquet1.jpg");'>
+            </div>
+            
+            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
+
+
+            
+        </div><br><br><br>
+            
+      </div>
+        
+      <center><input type='button' style='border:2px solid black;' value='Retour au menu' onclick='menu_map()'></center><br><br>
+ 
+    </div>
+    
+    
+   
+  </div>
+  </div>
+
+
+
+<style>
+  #CONTENEUR{
+    background:url("/static/img/parquet1.jpg") no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width:80%;
+    border:2px solid black;
+
+  }
+
+</style>
+
+
+      <div  id="container2">
+        <div class="row" id="blackblack">
+          <div class="col-sm">
+            <h1 id="titre_re">Titre Un</h1><br>
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            
+          </div>
+          <div class="col-sm">
+            <h1 id="titre_re">Citation</h1><br>
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            <br><br>
+          </div>
+          
+          <div class="col-sm">
+          
+            <h1 id="titre_re">Titre deux</h1><br>
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            
+          </div>
+        </div>
+      </div><br><br>
+
+
+<style>
+@media screen and (min-width: 320px) and (max-width:374px) {
+  #blackblack{
+    text-align:center;
+    font-size:4vw;
+    display:none;
+  }
+  #titre_re{
+    font-size:35px;
+    display:none;
+  }
+  #coifcoif{
+    border:1px solid red;
+  }
+  #gymgym_div_prestation,
+  #coifcoif_recherche{
+    font-size:3vw;
+    width:290px;
+    padding-right:10px;
+    margin-left:-10px;
+  }
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container" id='CONTENEUR' style='font-size:1.3vw;border:2px solid blue;'>
+    <br><br>
+      <h2 class="text-center mt-0">Mes services</h2><br>
+      Cliquez sur une des images pour profiter des services.
+      <hr class="divider my-4">
+      <div class="row">
+
+
+      
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+          
+           <style>#im6{width:100px; height:100px;}</style>
+           
+           <img onclick="coiffeur()" src="/static/img/portfolio/icone/coiffeur.png"
+             onmouseover="stop('p_coif', 'im6', '/static/img/portfolio/icone/coiffeur2.png')"
+             onmouseout="start('p_coif', 'im6', '/static/img/portfolio/icone/coiffeur.png')"
+             id="im6">
+             
+            <h3 class="h4 mb-2">Coiffeurs</h3>
+            
+            <br>
+            
+     
+            <center><p id ='p_coif'  style='color:white; font-size:1em;display:none; position:absolute;left:0%;'>
+              Voir les coiffeurs les plus proches de chez moi
+            </p></center>
+            
+          </div>
+        
+        </div><br><br>
+
+        
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+           <style>#im4{width:100px; height:100px;}</style>
+           
+           <img onclick="gym()" src = "/static/img/portfolio/icone/gym.png"/
+             onmouseover="stop('p_gym', 'im4', '/static/img/portfolio/icone/gym2.png' )"
+             onmouseout="start('p_gym', 'im4', '/static/img/portfolio/icone/gym.png')"
+             id="im4">
+             
+            <h3 class="h4 mb-2" >Salle de gym</h3>
+            <br>
+            
+            <p id='p_gym' style='color:white; font-size:1em;display:²none; position:absolute;left:4%;'>
+              Les salles de gym les plus proches de chez moi
+            </p>
+    
+            
+          </div>
+        </div><br><br>
+
+      
+
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+           <style>#im7{width:100px; height:100px;}</style>
+           
+           <a href="/photo/habits"><img onclick="vetements()" src="/static/img/portfolio/icone/vetements.png"/
+             onmouseover="stop('p_habit', 'im7', '/static/img/portfolio/icone/vetements22.png')"
+             onmouseout="start('p_habit', 'im7', '/static/img/portfolio/icone/vetements.png')"
+             id="im7"></a>
+             
+            <h3 class="h4 mb-2">Essayer des vêtements</h3>
+            
+            <p id='p_habit' style='color:white; font-size:1em;display:none;
+                position:absolute;right:0%;'>
+
+            Essayer des habits sans faire la queue</p>
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+           <style>#im8{width:100px; height:100px;}</style>
+           <a href="/administrateur/tendance/">
+             <img onclick="dresshaircutbodyup()" src="/static/img/portfolio/icone/dresshaircutbodyup.png"/
+                 onmouseover="stop('p_tendance', 'im8','/static/img/portfolio/icone/dresshaircutbodyup2.png')"
+                 onmouseout="start('p_tendance', 'im8', '/static/img/portfolio/icone/dresshaircutbodyup.png')"
+             id="im8">
+           </a>
+            <h3 class="h4 mb-2">
+            Voir notre tendance</h3>
+            <p id='p_tendance'
+            style='color:white; font-size:1em;display:none; position:absolute;left:0%;'>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Voir la tendance de cet été pour être à jour</p>
+          </div>
+        </div>
+
+        
+      </div>
+      <br><br><br><br>
+    </div>
+
+
+
+
+  </section>
+
+
+  <input type='button' style='display:none;' id='bubuton' style='border:2px solid black;'>
+  <input type='button' style='display:none;' id='bubuton_gym' style='border:2px solid black;'>
+
+
+
+  <input type='button' value='a' id='declencheur1' style='display:none;'>
+  <input type='button' value='aa' id='declencheur2' style='display:none;'>
+  <input type='button' value='a' id='declencheur3' style='display:none;'>
+  <input type='button' value='aa' id='declencheur4' style='display:none;'>
+
+
+  <input type='button' value='a' id='declencheur_gym1' style='display:none;'>
+  <input type='button' value='aa' id='declencheur_gym2' style='display:none;'>
+  <input type='button' value='a' id='declencheur_gym3' style='display:none;'>
+  <input type='button' value='aa' id='declencheur_gym4' style='display:none;'>
+
+
+
+  <!-- Call to Action Section -->
+  <section>
+    <div class="container text-center">
+    
+        <h2 class="mb-4">
+          Abonne toi sur nos reseaux sociaux !
+        </h2>
+
+       <a href='https//:www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
+       <a href='https//:www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
+       <a href='https//:www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>
+                  
+    </div>
+  </section>
+
+
+
+  <!-- Contact Section -->
+  <section class="page-section" id="contact">
+    <div class="container">
+    
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0"><strong>Let's Get In Touch!</strong></h2>
+          <hr class="divider my-4">
+          <p  style='color:black;'>
+            <strong>Ready to start your next project with us?
+            Give us a call or send us an email and we
+            will get back to you as soon as possible!</strong>
+          </p>
+          
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+          <div><strong>+1 (202) 555-0149</strong></div>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+          <!-- Make sure to change the email address in anchor text AND the link below! -->
+          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
 
 
 
@@ -580,6 +1118,8 @@
   }
   #vivideo{
     font-size:10px;
+    height:700px;
+    border:1px solid red;
   }
   video{
     border:1px solid black;
