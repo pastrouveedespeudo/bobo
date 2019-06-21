@@ -1,3 +1,5 @@
+arrete de coder n'importe quoi focus sur le css
+
 Commencer la partie pollution et la finir
 
 faire le menu 
