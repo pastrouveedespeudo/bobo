@@ -21,7 +21,7 @@
        {% include "navebarre_coupe.html" %}
        {% block content %}
        {% endblock %}
-
+      <span id="menumenu">Menu</span>
       <div id="section1">
 
         <div id="les_textes">
@@ -50,6 +50,14 @@
     </div><br>
 
 <style>
+#logo{
+  position:static;
+  margin-top:-95px;
+}
+#menumenu{
+  margin-left:-80px;
+
+}
 #les_textes{
   margin-top:-70px;
 }
@@ -305,11 +313,11 @@
                       onclick="put_background()">
                       <input type='button' value='Enlever le fond' id='fond1'
                       onclick="get_background()"><br><br>
-                      <input type='button' value='coupe longue' onclick='coupe_longue()' style='border:3px solid black;'><br><br>
-                      <input type='button' value='coupe courte' onclick='coupe_courte()' style='border:3px solid black;'><br><br>
-                      <input type='button' value='coupe couleur longue' onclick='coupe_longue_coul()' style='border:3px solid black;'><br><br>
-                      <input type='button' value='coupe couleur courte' onclick='coupe_courte_coul()' style='border:3px solid black;'><br><br>
-                      <input type='button' value='barbe' onclick='barbe()' style='border:3px solid black;'><br><br>
+                      <input type='button' value='coupe longue' id='longue_but' onclick='coupe_longue()' style='border:3px solid black;'><br><br>
+                      <input type='button' value='coupe courte' id='coute_but' onclick='coupe_courte()' style='border:3px solid black;'><br><br>
+                      <input type='button' value='coupe couleur longue' id="longue_coul" onclick='coupe_longue_coul()' style='border:3px solid black;'><br><br>
+                      <input type='button' value='coupe couleur courte' id="courte_coul" onclick='coupe_courte_coul()' style='border:3px solid black;'><br><br>
+                      <input type='button' value='barbe' onclick='barbe()' id="barbe_button" style='border:3px solid black;'><br><br>
                   </div>
 
                   <div>  
@@ -496,6 +504,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqJf5bBiufgiWCK34KcdmPt4Zhsp4oRCc&callback=initMap"
   async defer></script>
 <script type="text/javascript" src="/static/js/coupe.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </html>
 
 
@@ -694,11 +703,40 @@
 
   }
   #div_placement{
-    width:180px;
+    width:120%;
     float:left;
     margin-left:-45px;
     font-size:11px;
-    margin-top:-110px;
+    margin-top:-10px;
+  }
+  #fond{
+    margin-right:-355px;
+  }
+  #fond1{
+    margin-right:-310px;
+  }
+  #longue_but{
+    float:left;
+    margin-left:20px;
+    margin-top:-40px;
+  }
+  #coute_but{
+    float:left;
+    margin-left:20px;
+    margin-top:-20px;
+  }
+  #longue_coul{
+    float:left;
+    margin-left:160px;
+    margin-top:-105px;
+  }
+  #courte_coul{
+    float:left;
+    margin-left:160px;
+    margin-top:-85px;
+  }
+  #barbe_button{
+    display:none;
   }
   #cssfilters-apply{
     margin-left:150px;
@@ -715,26 +753,18 @@
 
 @media screen and (min-width: 768px) and (max-width:1024px) {
   #section1{
-    height:120%;
+    height:140%;
     border:3px solid transparent;
-  }
-  #les_textes{
-    width:100%;
-    text-align:center;
-    
-  }
-  #resum_titre{
-    margin-left:60px;
-    float:none;
-    font-size:1em;
-    word-wrap: break-word
-    width:500px;
   }
   #MENU{
     display:none;
   }
-  #logo{
-    diplay:none;
+  #resum_titre{
+    margin-left:400px;
+    float:none;
+    font-size:17px;
+    word-wrap: break-word
+    width:500px;
   }
   #container_photo{
     font-size:1vw;
@@ -747,39 +777,126 @@
   }
   video{
     border:1px solid black;
-    width:60%;
+    width:70%;
     height:200px;
-    margin-left:150px;
+    margin-left:200px;
   }
   #whitewhite{
     width:150px;
     float:left;
-    margin-left:-25px;
-    font-size:10px;
+    margin-left:-10px;
+    font-size:12px;
     margin-top:-300px;
-
   }
   #div_placement{
     width:180px;
-    float:left;
-    margin-left:-45px;
-    font-size:11px;
-    margin-top:-110px;
-  }
-  #cssfilters-apply{
-    margin-left:150px;
-  }
-  #StartVideo{
-    margin-left:150px;
+    float:none;
+    margin-left:520px;
+    font-size:12px;
+    margin-top:-350px;
   }
   #p_coupe{
-    display:none;
+    font-size:15px;
+  }
+  #cssfilters-apply{
+    margin-left:265px;
+    font-size:9px;
+  }
+  #StartVideo{
+    margin-left:265px;
+    font-size:12px;
+  }
+  #stop-button{
+    font-size:12px;
+  }
+  #titre_salon{
+    margin-left:210px;
+    width:300px;
+    font-size:25px;
   }
 }
 
 
 
 
+@media screen and (min-width: 1024px) and (max-width:1440px) {
+  #section1{
+    height:100%;
+    border:3px solid transparent;
+  }
+  #MENU{
+    display:none;
+  }
+  #menumenu{
+    float:left;
+    margin-top:100px;
+    margin-left:-150px;
+    font-size:30px;
+  }
+  #les_textes{
+    margin-left:400px;
+    width:200px;;
+    height:600px;
+  }
+  #resum_titre{
+    margin-left:400px;
+    float:none;
+    font-size:20px;
+    word-wrap: break-word
+    width:500px;
+    height:450px;
+  }
+  #container_photo{
+    font-size:1vw;
+  }
+  h3{
+    font-size:20px;
+  }
+  #container_photo{
+    margin-top:-100px;
+    text-align:center;
+  }
+  #inputs_sizes{
+    text-align:center;
+  }
+  #vivideo{
+    margin-left:340px;
+    font-size:10px;
+    text-align:center;
+    border:3px solid transparent;
+  }
+  video{
+    border:1px solid black;
+    width:100%;
+    height:200px;
+  }
+  #whitewhite{
+    margin-left:-600px;
+    margin-top:-300px;
+    font-size:14px;
+  }
+  #div_placement{
+    margin-left:550px;
+    font-size:14px;
+    width:250px;
+    margin-top:-350px;
+  }
+  #p_coupe{
+    display:none;
+  }
+  #cssfilters-apply{
+    font-size:14px;
+  }
+  #StartVideo{
+    font-size:14px;
+  }
+  #stop-button{
+    font-size:14px;
+  }
+  #titre_salon{
+    font-size:20px;
+  }
+}
 
 
 
