@@ -1,64 +1,340 @@
-{% include "navebarre_pollu.html" %}
+{% include "navebarre_graphe.html" %}
 {% block content %}
 {% endblock %}
 
     <link rel="stylesheet" type="text/css" href="/static/css/graphe.css" media="all" />
 
     
-    <!-- Title Section -->
-    <header class="masthead">
-      <div class="container h-100">
-        <div class="row h-100 align-items-center justify-content-center text-center">
-          <div class="col-lg-10 align-self-end">
-            <h1>Nos graphiques !</h1><br>
-            <h2>Les graphiques permettent de visualiser la pollution selon les différentes conditions.
-              Bien sur, le combo de plusieurs conditions augmentent la pollution. Ici, vous n'avez
-              que les conditions isolées !
-              <br><br>Mais cela nous permet de nous faire une petite idée des attributs de la pollution.
-            </h2>
+    <style>
+      #lyon_button:hover,
+      #paris_button:hover,
+      #marseille_button:hover{
+        background:#ccccff;
+      }
+      #MENU{
+        display:none;
+      }
+      #marseille_button{
+        background-color: transparent;
+        border: 1px solid black;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+      #paris_button{
+        background-color: transparent;
+        border: 1px solid black;
+        color: black;
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+      #lyon_button{
+        background-color: transparent;
+        border: 1px solid black;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+      #graphes_min{
+        float:right;
+      }
+
+      #separate_line1,
+      #separate_line2,
+      #separate_line3{
+        height:2px;
+        width:25px;
+        background:black;
+      }
+      #p_ville1,
+      #p_ville2,
+      #p_ville3{
+        font-size:2vw;
+        text-align: center;
+      }
+
+      #marseille1,
+      #paris1,
+      #lyon1{
+        border:none;
+        background:transparent;
+      }
+      input{
+        border:none;
+        background:transparent;
+      }
+      #choix{
+        height:50px;
+      }
+      a{
+        color:black;
+        text-decoration:none;
+      }
+      a:hover{
+        color:black;
+      }
+    </style>
+
+
+      <br><br><br><br><br><br>
+      
+      <div class="container">
+        <div class="row">
+
+
+
+        
+          <div class="col-sm" id='p_ville1'>
+
+            <center><div id="info1" style='width:100px; height:50px;'></div></center>
+
+          
+            <center><div id='separate_line1'></div>
+
+            <input type='button' id='lyon1'
+              onmouseover="one('separate_line1', 'info1')"
+              onmouseout="two('separate_line1', 'info1')"
+              onclick='lyon()'
+              value='Lyon'></center>
+
+
+
+
+            
           </div>
-          <div class="col-lg-8 align-self-baseline">
-            <p class="text-white-75 font-weight-light mb-5"></p>
+          
+          <div class="col-sm" id='p_ville2'>
+
+            <center><div id="info2" style='width:200px; height:50px;'></div></center>
+            
+            <center><div id='separate_line2'></div>
+            
+            
+            <input type='button' id='marseille1'
+            onmouseover="one('separate_line2', 'info2')"
+              onmouseout="two('separate_line2', 'info2')"
+              onclick='marseille()'
+              value='Marseille'>
+            </p></center>
+
+            
           </div>
+
+
+          
+          <div class="col-sm" id='p_ville3'>
+
+
+            <center><div id="info3" style='width:100px; height:50px;'></div></center>
+
+      
+            <center><div id='separate_line3'></div>
+            
+            <input type='button' id='paris1'
+                onmouseover="one('separate_line3', 'info3')"
+                onmouseout="two('separate_line3', 'info3')"
+                onclick='paris()'
+                value='Paris'>
+            </p></center>
+
+            
+          </div>
+
+
+        
+
+          
         </div>
-      </div>
-    </header>
+
+        <div><br>
+
+        
+          <center><p id='choix'></p></center><br><br>
+
+          
 
 
 
-    <!-- Main Section -->
-    <section class="page-section bg-dark text-white" id='section_graphe'>
 
-      <p id="information_click"><i><strong>*Choisis une ville et clique sur une des conditions</strong></i></p>
-      <br>
-      <div class="row justify-content-center">
-        <input type='button' value='Graphique de Lyon' onclick='lyon()'>
-        <input type='button' value='Graphique de Paris' onclick='paris()'><br>
-        <input type='button' value='Graphique de Marseille' onclick='marseille()'>
-      </div><br>
+
       <div class="container text-center">
         <div class="row justify-content-center">
-            <input type='button' value='bouchon' onclick='graphe("plugs")'>&nbsp;&nbsp;
-            <input type='button' value='heure' onclick='graphe("hour")'>&nbsp;&nbsp;
-            <input type='button' value='manif' onclick='graphe("demonstration")'>&nbsp;&nbsp;
-            <input type='button' value='météo' onclick='graphe("weather")'>&nbsp;&nbsp;
-            <input type='button' value='population' onclick='graphe("population")'>&nbsp;&nbsp;
-            <input type='button' value='pression' onclick='graphe("pressure")'>&nbsp;&nbsp;
-            <input type='button' value='saison' onclick='graphe("season")'>&nbsp;&nbsp;
-            <input type='button' value='vent' onclick='graphe("wind")'>&nbsp;&nbsp;
-            <input type='button' value='weekend' onclick='graphe("weekend")'>&nbsp;&nbsp;
-            <input type='button' value='traffique' onclick='graphe("traffic")'> 
-        </div><br><br>
+        
+            <input type='button' id='bouchon' value='bouchon' onclick='graphe("plugs", "bouchon")'
+            onmouseover='hover("bouchon")' onmouseout='no_hover("bouchon")'>&nbsp;&nbsp;
 
+            
+            <input type='button' value='heure' id='heure' onclick='graphe("hour", "heure")'
+            onmouseover='hover("heure")' onmouseout='no_hover("heure")'>&nbsp;&nbsp;
 
-        <!-- Graphe Section -->
+            
+            <input type='button' value='manif' id='manif' onclick='graphe("demonstration", "manifestion")'
+            onmouseover='hover("manif")' onmouseout='no_hover("manif")'>&nbsp;&nbsp;
+
+            
+            <input type='button' value='météo' id="météo" onclick='graphe("weather", "météo")'
+            onmouseover='hover("météo")' onmouseout='no_hover("météo")'>&nbsp;&nbsp;
+
+            
+            <input type='button' value='population' id='pop' onclick='graphe("population", "population")'
+            onmouseover='hover("pop")' onmouseout='no_hover("pop")'>&nbsp;&nbsp;
+
+            
+            <input type='button' value='pression' id='pression' onclick='graphe("pressure", "pression")'
+            onmouseover='hover("pression")' onmouseout='no_hover("pression")'>&nbsp;&nbsp;
+
+            
+            <input type='button' value='saison' id='saison' onclick='graphe("season", "saison")'
+            onmouseover='hover("saison")' onmouseout='no_hover("saison")'>&nbsp;&nbsp;
+            
+            <input type='button' value='vent' id='vent' onclick='graphe("wind", "vent")'
+            onmouseover='hover("vent")' onmouseout='no_hover("vent")'>&nbsp;&nbsp;
+
+            
+            <input type='button' value='weekend' id='weekend' onclick='graphe("weekend", "weekend")'
+            onmouseover='hover("weekend")' onmouseout='no_hover("weekend")'>&nbsp;&nbsp;
+            
+            
+            <input type='button' value='traffique' id='traffique' onclick='graphe("traffic", "traffique")'
+            onmouseover='hover("traffique")' onmouseout='no_hover("traffique")'>&nbsp;&nbsp;
+            
+        </div><br>
+        <p id='savoir'><i></i></p><br>
         <center><div id='graphique1' class='col-xs-12 col-md-12 col-lg-8'></div></center>
-        <br><br><br><br>
-      </div><br><br>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+      <script>
+
+
+      function hover(div){
+        document.getElementById(div).style.background = "#ff8080";
+      };
+
+      function no_hover(div){
+        document.getElementById(div).style.background = "transparent";
+      };
+
+
+
+
+
+
+
+
+
+      function one(div, ville){
+        document.getElementById(div).style.background = "red";
+        if(ville == 'info1'){
+          document.getElementById(ville).innerHTML = 'LYON';
+        }
+        else if(ville == 'info2'){
+          document.getElementById(ville).innerHTML = 'MASYLLLIA';
+        }
+        else if(ville == 'info3'){
+          document.getElementById(ville).innerHTML = 'PARIS';
+        }
+
+      };
+      
+      function two(div, ville){
+        document.getElementById(div).style.background = "black";
+        document.getElementById(ville).innerHTML = '';
+      };
+
+
+
+      
+      </script>
+
+        
+        
+      
+    
+
+
+
+
+
+
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+
+
+
+
+
+      
+
     </section>
-
-
-
     <!-- Contact Section -->
     <section class="page-section" id="contact">
       <div class="container">
@@ -106,3 +382,93 @@
 
 </html>
 
+<script>
+//Global variable
+LISTE_AJAX = []
+LISTE_AJAX_TYPE_GRAPHE = []
+
+
+//we define the city to push into global array.
+//We define type of graphe we want too
+//and call to the views the city to search
+//by Ajax style
+
+//Choose Lyon city and graphe
+function lyon(){
+  document.getElementById('choix').innerHTML = 'Vous avez choisis Lyon'
+  document.getElementById('section_graphe').style.display = 'block';
+  LISTE_AJAX.push('lyon')
+};
+
+
+//Choose Paris city and graphe
+function paris(){
+  document.getElementById('choix').innerHTML = 'Vous avez choisis Paris'
+  document.getElementById('section_graphe').style.display = 'block';
+  LISTE_AJAX.push('paris')
+};
+
+
+//Choose Marseille city and graphe
+function marseille(){
+  document.getElementById('choix').innerHTML = 'Vous avez choisis Marseille'
+  document.getElementById('section_graphe').style.display = 'block';
+  LISTE_AJAX.push('marseille')
+  };
+
+
+//We call the city and graphe to back
+function graphe(legraphe, condition){
+
+
+  
+  var a = "<i><a href='#'>" + "En savoir plus sur la condition: " + condition + "</a></i>";
+
+  
+  document.getElementById('savoir').innerHTML = a;
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  LISTE_AJAX_TYPE_GRAPHE.push(legraphe)
+     document.getElementById('graphique1').innerHTML = '';
+     jQuery.ajax({
+       data:{
+           'csrfmiddlewaretoken': '{{csrf_token}}' , 
+           'city':LISTE_AJAX[LISTE_AJAX.length - 1],
+           'graph':LISTE_AJAX_TYPE_GRAPHE[LISTE_AJAX_TYPE_GRAPHE.length - 1]},
+
+       
+              type:"POST",
+              url:"/polution/graphe"
+          })
+          .done(function(data){
+              if (data.error){
+                  jQuery("#monCadreAlert").text(data.error);
+                  jQuery("#is_save");
+                  
+                  
+              }
+              else{
+                  jQuery("#is_save").html(data.data);
+                  jQuery("#monCadreAlert");
+             
+                  document.getElementById('graphique1').innerHTML = "<img src = '/static/popo/" +
+                                                                    data +
+                                                                    "'>"
+
+       };
+              
+   });
+};
+
+</script>
