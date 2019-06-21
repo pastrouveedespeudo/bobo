@@ -10,57 +10,61 @@
 
       <title>Magazine virtuel</title>
 
-      <!-- Font Awesome Icons -->
-      <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-      <!-- Google Fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-      <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
-      <!-- Plugin CSS -->
-      <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-      <!-- Theme CSS - Includes Bootstrap -->
-      <link href="/static/css/creative.min.css" rel="stylesheet">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-      <script type="text/javascript"></script>
       <link rel="stylesheet" type="text/css" href="/static/css/coupe.css" media="all" />
       
       
-    </head> 
+    </head>
 
-<body id="page-top">
-    
-<br><br>
-{% include "navebarre_coupe.html" %}
-{% block content %}
-{% endblock %}
+    <body>
 
+      <br><br>
+       {% include "navebarre_coupe.html" %}
+       {% block content %}
+       {% endblock %}
 
-</body>
+      <div id="section1">
+
+        <div id="les_textes">
+            <p id="resum_titre">
+              Titre<br>
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              <br><br><br><br>
+
+              Titre<br>
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            </p>
+        </div>
+
+    </div><br>
 
 <style>
-
-.container{
-  
+#les_textes{
+  margin-top:-70px;
 }
-
-
-#h2{
-    float:right;
-    font-size:1.3vw;
-    text-align:justify;
-    width:30%;
-    margin-right:5px;
-
+#resum_titre{
+  float:right;
+  width:50%;
+  padding-right:4%;
+  font-size:2vw;
 }
-#h1{
-    font-size:2.5vw;
+#section1{
+  height:100%;
 }
-
-
-
-
+.videostream{
+  z-index: 4;
+}
 #fond{
  border:3px solid black;
 }
@@ -68,1397 +72,417 @@
   display:none;
   border:3px solid black;
 }
-
-#les_textes{
-    font-size:1.3vw;
-    margin-right:50px;
-    float:right;
-
-    
- }
-
-@media screen and (min-width: 1000px) and (max-width:1100px) {
-  #h2{
-    font-size:1.4vw;
-    }
-}
-
-
-@media screen and (min-width: 500px) and (max-width:1000px) {
-  #h2{
-    margin-right:170px;
-    height:300px;
-    font-size:2.5vw;
-    }
-}
-
-
-@media screen and (min-width: 0px) and (max-width:500px) {
-  #h2{
-    height:300px;
-    font-size:10px;
-    }
-}
-
-
 </style>
 
+     <div id="container_photo">
+        <div class="container" id="inputs_sizes" >
+          <div class="row">
 
 
-   
-<header>
+           <div class="col-xs-8 col-md-8 col-lg-5" id='vivideo'>
 
-  
-  <div id="les_textes">
-  
-      
-      <h2 id="h2"><strong>
-      <h1 id="h1"><strong>TITRE</strong></h1><br>
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      <br><br><br><br>
-      <h1 id="h1"><strong>TITRE</strong></h1><br>
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      </strong></h2>
-
-
-      
-  </div>
-  
-</header>
-
-
-
-<script>
- var listeeeee = []
-</script>
-
-<style>
-
-  #salon_de_coiffure{
-    margin-left:230px;
-  }
-  #StartVideo{
-
-  }
-  #stop-button{
-
-  }
-  #cssfilters-apply{
-
-  }
-  
-</style>
-
-<script>
-  function put_background(){
-    document.getElementById('container_photo').style.background = '#ccccff';
-    shutdown();
-    document.getElementById('StartVideo').click();
-
-    document.getElementById('fond1').style.display = "inline";
-    document.getElementById('fond').style.display = "none";
-
-  };
-
-  function get_background(){
-    notshutdown();
-
-    document.getElementById('fond1').style.display = "none";
-    document.getElementById('fond').style.display = "inline";
-    document.getElementById('container_photo').style.background = 'none';
-
-  }
-
-
-</script>
-
-
-<style>
-  #salon_de_coiffure{
-    float:right;
-    }
-</style>
-
-
-      <br><br><br><br><br><br>
-      <br><br><br><br><br><br>
-      <br><br><br><br><br><br><br>
-      <br><br><br><br>
-
-
-
-    <style>
-
-
-
-
-        @media screen and (min-width: 770px) and (max-width:1000px) {
-            #titre_salon{
-                font-size:auto;
-            }
-            #p_coupe{
-                font-size:3vw;
-            }
-            #stop-button,
-            #StartVideo,
-            #cssfilters-apply,
-            #placement,
-            #the_inputs{
-                font-size:2vw;
-            }
-            #placement{
-                width:300px;
-                margin-top:50px;
-                width:210px;
-                margin-top:-100px;
-                margin-left:-20px;
-
-               
-            }
-            #whitewhite{
-                margin-left:-50px;
-                margin-top:20px;
-                height:200px;
-                border:1px solid red;
-
-            }
-            #sauve,
-            #favorite_haircut,
-            #favorite_p{
-                display:none;
-            }
-            #container2{
-                font-size:2vw;
-                text-align:center;
-                text-shadow:0.5px 0.5px black;
-            }
-            #h2{
-                font-size:2.3vw;
-                
-            }
-        }
-
-
-
-        @media screen and (min-width: 600px) and (max-width:770px) {
-            #titre_salon{
-                font-size:auto;
-            }
-            #p_coupe{
-                font-size:2.5vw;
-            }
-            #stop-button,
-            #StartVideo,
-            #cssfilters-apply,
-            #placement,
-            #the_inputs{
-                font-size:2.3vw;
-                
-            }
-            #the_inputs{
-                font-style:1vw;
-                margin-top:-60px;
-            }
-            #placement{
-                width:300px;
-                margin-top:50px;
-                width:210px;
-                margin-top:50px;
-                margin-left:-20px;
-
-               
-            }
-            #whitewhite{
-                margin-left:-50px;
-                margin-top:-60px;
-                height:200px;
-            }
-            #vivideo{
-                margin-top:20px;
-            }
-            #sauve,
-            #favorite_haircut,
-            #favorite_p{
-                display:none;
-            }
-            #container2{
-                font-size:2.2vw;
-                text-align:center;
-                text-shadow:0.5px 0.5px black;
-            }
-
-            
-        }
-
-
-
-
-
-
-        @media screen and (min-width: 380px) and (max-width:600px) {
-            #titre_salon{
-                font-size:auto;
-            }
-            #p_coupe{
-                font-size:2.7vw;
-            }
-            #stop-button,
-            #StartVideo,
-            #cssfilters-apply,
-            #placement,
-            #the_inputs{
-                font-size:3vw;
-                
-            }
-            #the_inputs{
-                font-style:1.6vw;
-                margin-top:-60px;
-            }
-            #placement{
-                width:300px;
-                margin-top:50px;
-                width:210px;
-                margin-top:50px;
-                margin-left:-20px;
-            }
-            #whitewhite{
-                margin-left:0px;
-                margin-top:-150px;
-                height:200px;
-            }
-            #vivideo{
-                margin-top:20px;
-            }
-            #sauve,
-            #favorite_haircut,
-            #favorite_p{
-                display:none;
-            }
-            #container2{
-                text-align:center;
-                font-size:3vw;
-                margin-top:-200px;
-            }
-            #les_textes{
-                margin-right:200px;
-                width:200px;
-            }
-            #h2{
-                font-size:3vw;
-            }
-            
-        }
-
-
-
-
-
-
-
-
-        @media screen and (min-width: 0px) and (max-width:380px) {
-            #favorite_haircut,
-            #favorite_p{
-                display:none;
-            }
-            #titre_salon,
-            #p_coupe{
-                font-size:9vw;
-                border:1px solid red;
-            }
-            #stop-button,
-            #StartVideo,
-            #cssfilters-apply,
-            #placement,
-            #the_inputs{
-                font-size:6vw;
-
-            }
-            #placement{
-                text-align:center;
-                margin-top:200px;
-                width:300px;
-            }
-            #vivideo{
-                margin-top:100px;
-                margin-left:10px;
-            }
-            #whitewhite{
-                text-align:center;
-                margin-left:15px;
-            }
-            #the_inputs{
-                text-align:center;
-            }
-            #les_textes{
-                margin-right:20px;
-                width:200px;
-            }
-            #h2{
-                font-size:3vw;
-                margin-left:-50px;
-            }
-            #container2{
-                text-align:center;
-                font-size:20vw;
-            }
-            #blackblack{
-                font-size:2vw;
-            }
-
-
-
-
-
-
-
-
-
-
-            
-        }
-
-    </style>
-
-
-    <div id="container_photo" style='margin-top:200px;font-size:1vw;'>
-    
-      <style>
-        input{
-            background:white;
-
-          }
-
-      </style>
-      <div class="container" id="inputs_sizes" >
-        <div class="row">
-        
-          <div id="the_inputs" class="col-xs-4 col-md-4 col-lg-4"style='border:1px solid transparent;'>
-            <center>
-            <div id="whitewhite" margin-top:-30px; margin-left:-20px; height:380px; width:250px;'><br>
-            <input type='button' value='ajouter de la longueur?'
-              style=" border:3px solid black"
-              onclick='ajout_longueur()'/><br><br>
-            <input type='button' value='ajouter de la largeur?'
-              style=" border:3px solid black; text-align:center;"
-              onclick='ajout_largeur()'/><br><br>
-            <input type='button' value='enlever de la longueur?'
-              style=" border:3px solid black;"
-              onclick='enlever_longueur()'/><br><br>
-            <input type='button' value='enlever de la largeur?'
-              style="border:3px solid black; text-align:center;"
-              onclick='enlever_largeur()'/><br><br>
-            
-            <center>
-              <div id="saving_div">{% csrf_token %}
-                <input type="hidden" name="csrfmiddlewaretoken"
-                  value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
-                <input type="hidden" name="csrfmiddlewaretoken"
-                  value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
-                <form id='jaime' method="POST" action='/photo/coupe'>{% csrf_token %}
-                  <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux" value=''>{% csrf_token %}
-                  <input type="hidden" name="coupe"
-                    value=LISTECOUPE>{% csrf_token %}<br>
-                  <input type="button" id='sauve' value="J'aime cette coupe" style='border:3px solid black;'
-                  <a class="btn btn-light btn-xl js-scroll-trigger">{% csrf_token %}
-                </form>{% csrf_token %}
-              </div>
-            </center><br><br><br><br>
-          </div>
-
-            <div id='favoris' style='display:none;' value={{fav}}></div>
-              <div id="favorite_haircut" style='text-align:center'>
-
+              <div id="basic" style="text-align:center; z-index: 4;">
               
-                <div id="favdraggable" name="coucou" value='coupe'
-                  class="ui-widget-content"
-                  onclick="nom_image('favdraggable', 200, 150)";
-                    style='z-index: 1;'>
-                    <img src="/static/img/portfolio/coupe/bbbbbbb.png"
-                      width='150' height='200'
-                      id="coupe111"
-                      style='display:none;'/>
-                </div>
-              
-                <div id="favdraggable3" class="ui-widget-content" value='coupe4'
-                  onclick="nom_image('favdraggable3', 150, 150)";
-                  style='z-index: 1;'>
-                    <img src="/static/img/portfolio/coupe/image849849849.png"
-                      width='150' height='150'
-                      id="coupe444"
-                      style='display:none;'/>
-                </div>
+               <h3 id="titre_salon"><strong>Notre salon de coiffure</strong></h3><br><br>
 
-                <div id="favdraggable4" class="ui-widget-content" value='coupe5'
-                  onclick="nom_image('favdraggable4', 150, 100)";
-                  style='z-index: 1;'>
-                    <img src="/static/img/portfolio/coupe/bbbbbbb.png"
-                      width='100' height='150'
-                      id="coupe555"
-                      style='display:none;'/>
-                </div>
-                
-         
-                <div id="favdraggable5" class="ui-widget-content" value='coupe6'
-                  onclick="nom_image('favdraggable5', 300, 130)";
-                  style='z-index: 1;'>
-                    <img src="/static/img/portfolio/coupe/1.5.png"
-                      width='130' height='300'
-                      id="coupe666"
-                      style='display:none;'/>
-                </div>
+               <video class="videostream" autoplay></video><br><br>
 
-                <div id="favdraggable6" class="ui-widget-content" value='coupe2'
-                  onclick="nom_image('favdraggable6', 300, 130)";
-                  style='z-index: 1;'>
-                    <img src="/static/img/portfolio/coupe/coucou3.png"
-                      width='130' height='300'
-                      id="coupe222"
-                      style='display:none;'/>
-                </div>
+                <button class="capture-button" id='StartVideo' style='border:2px solid black;'>Start</button>&nbsp;&nbsp;
+                <button id="stop-button" style="border:2px solid black;">Stop</button></br>
+                <br>
+                <p><button id="cssfilters-apply" style='border:2px solid black;'> Mettre en noir et blanc conseillé</button>
 
-                <div id="favdraggable7" class="ui-widget-content" value='coupe22'
-                onclick="nom_image('favdraggable7', 100, 70)";
-                style='z-index: 1;'>
-                    <img src="/static/img/portfolio/coupe/coucou22.png"
-                    width='70' height='100'
-                    id="coupe22447"
-                    style='display:none;'/>
-                </div>
-
-                <div id="favdraggable8" class="ui-widget-content" value='coupe8'
-                  onclick="nom_image('favdraggable8', 50, 70)";
-                  style='z-index: 1;'>
-                    <img src="/static/img/portfolio/coupe/coucou22.png"
-                      width='70' height='50'
-                      id="coupe888"style='display:none;'/>
-                </div>
-              
-                <div id="favdraggable9" class="ui-widget-content" value='coupe9'
-                  onclick="nom_image('favdraggable9', 160, 140)";
-                  style='z-index: 1;'>
-                    <img src="/static/img/portfolio/coupe/coif.png"
-                      width='140' height='160'
-                      id="coupe999"
-                      style='display:none;'/>
-                </div>
-           
-                <div id="favdraggable10" class="ui-widget-content" value='coupe12'
-                  onclick="nom_image('favdraggable10', 250, 150)";
-                  style='z-index: 1;'>
-                    <img src="/static/img/portfolio/coupe/aa.png"
-                      width='150' height='250'
-                      id="coupe12"
-                      style='display:none;'/>
-                </div>
-
-                <div id="favdraggable11" class="ui-widget-content" value='coupe13'
-                  onclick="nom_image('favdraggable11', 250, 150)";
-                  style='z-index: 1;'>
-                    <img src="/static/img/portfolio/coupe/aaaaa.png"
-                      width='150' height='250'
-                      id="coupe131313"
-                      style='display:none;'/>
-                </div>
-
-              <div id="favdraggable12" class="ui-widget-content"  value='coupe14'
-                onclick="nom_image('favdraggable12', 160, 100)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/bb.png"
-                    width='100' height='160'
-                    id="coupe141414"
-                    style='display:none;'/>
+              <div id="screenshot" style="text-align:center;" style='display:none;'>
+                <video class="videostream" autoplay style='display:none;'></video>
+                <img id="screenshot-img" style='display:none;'>
+                <p><button class="capture-button" style='display:none;'>Démarrer</button></p>
+                <p><button id="screenshot-button" disabled style='display:none;'> Take screenshot</button></p>
               </div>
-
-              <div id="favdraggable14" class="ui-widget-content"  value='coupe16'
-                onclick="nom_image('favdraggable14', 160, 100)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/bbbb.png"
-                    width='100' height='160'
-                    id="coupe161616"
-                    style='display:none;'/>
-              </div>
-
-              <div id="favdraggable15" class="ui-widget-content"  value='coupe17'
-                onclick="nom_image('favdraggable15', 250, 150)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/bbb.png"
-                    width='150' height='250'
-                    id="coupe171717"
-                    style='display:none;'/>
-              </div>
-
-              <div id="favdraggable16" class="ui-widget-content"  value='coupe18'
-                onclick="nom_image('favdraggable16', 160, 140)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/1.1.png"
-                    width='140' height='160'
-                    id="coupe181818"
-                    style='display:none;'/>
-              </div>
-
-              <div id="favdraggable17" class="ui-widget-content" value='coupe19'
-                onclick="nom_image('favdraggable17', 100, 110)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/1.2.png"
-                    width='110' height='100'
-                    id="coupe191919"
-                    style='display:none;'/>
-              </div>
-
-              <div id="favdraggable18" class="ui-widget-content" value='coupe20'
-                onclick="nom_image('favdraggable18', 250, 150)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/11.3.png"
-                    width='150' height='250'
-                    id="coupe202020"
-                    style='display:none;'/>
-              </div>
-
-              <div id="favdraggable19" class="ui-widget-content" value='coupe21'
-                onclick="nom_image('favdraggable19', 250, 150)";
-                style='z-index: 1;'>
-                  <img src="/static/img/portfolio/coupe/1.4.png"
-                    width='150' height='250'
-                    id="coupe212121"
-                    style='display:none;'/>
-              </div>
-
-
-
-              
-          </div>
-    
-          
-            {% if user.is_authenticated %}
-            <br>
-                <center><p id="favorite_p" style='color:black;'><strong>Mes favoris</strong></p></center>
-            {% else %}
-                <p><strong>Inscris toi ! et ajoute des favoris !</strong></p>
-            {% endif %}
-
-       
-
-            </center>
-          </div><br><br>
-
-
-          <style>
-            video {
-              width: 100%    !important;
-              height: 60% !important;
-            }
- 
-          </style>
-        
-            
-          <div class="col-xs-8 col-md-8 col-lg-5" id='vivideo' style='border:1px solid transparent;'>
-
-            <div id="basic" style="text-align:center; z-index: 4;height:100%;">
-            
-             <h2 id="titre_salon"><strong>Notre salon de coiffure</strong></h2><br><br>
-
-             <video class="videostream" autoplay style="z-index: 4; border:5px solid transparent;"></video><br><br>
-
-              {% if user.is_authenticated %}
-              <button class="capture-button" id='StartVideo' style='border:2px solid black;'>Start</button>&nbsp;&nbsp;
-              <button id="stop-button" style="border:2px solid black;">Stop</button></br>
-              <br>
-              <p><button id="cssfilters-apply" style='border:2px solid black;'> Mettre en noir et blanc conseillé</button>
-
-
-            
-            <div>
-
-
-              
-              {%else%}
-              Connectez-vous !
-              {%endif%}
-          
-              
-            
-            </div>
-            </div>
-
-            
-            <div id="screenshot" style="text-align:center;" style='display:none;'>
-              <video class="videostream" autoplay style='display:none;'></video>
-              <img id="screenshot-img" style='display:none;'>
-              <p><button class="capture-button" style='display:none;'>Démarrer</button></p>
-              <p><button id="screenshot-button" disabled style='display:none;'> Take screenshot</button></p></div>
 
               <div id="cssfilters" style="text-align:center;" style='display:none;'>
-              
+                
                 <video class="videostream" autoplay title="Click me to apply CSS Filters" alt="Click me to apply CSS Filters"
-                  style='display:none;'>
+                    style='display:none;'>
                 </video>
                 <p><button class="capture-button" style='display:none;'>Capture video</button><p>
                 <button id="cssfilters-apply" style='display:none;'>Mettre en noir et blanc (Recommandé)</button></p>
               </div>
           </div>
-        
+          
+          <div id="the_inputs" class="col-xs-4 col-md-4 col-lg-4"style='border:1px solid transparent;'>
+              <center>
+              <div id="whitewhite" margin-top:-30px; margin-left:-20px; height:380px; width:250px;'><br>
+              
+              <input type='button' value='ajouter de la longueur?'
+                style=" border:3px solid black"
+                onclick='ajout_longueur()'/><br><br>
+
+                
+              <input type='button' value='ajouter de la largeur?'
+                style=" border:3px solid black; text-align:center;"
+                onclick='ajout_largeur()'/><br><br>
+
+                
+              <input type='button' value='enlever de la longueur?'
+                style=" border:3px solid black;"
+                onclick='enlever_longueur()'/><br><br>
+
+                
+              <input type='button' value='enlever de la largeur?'
+                style="border:3px solid black; text-align:center;"
+                onclick='enlever_largeur()'/><br>
+              
+              <center>
+
+                <div id="saving_div">{% csrf_token %}
+                  <input type="hidden" name="csrfmiddlewaretoken"
+                    value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
+                  <input type="hidden" name="csrfmiddlewaretoken"
+                    value="ZAXPtCw1BrKyg5oMDsi3COYuAwppTIV0YgJNvN52C0RPowi7mvU4cAFVg2VgQTti">{% csrf_token %}
+                  <form id='jaime' method="POST" action='/photo/coupe'>{% csrf_token %}
+                    <input type="HIDDEN" id="coupedecheveux" name="coupedecheveux" value=''>{% csrf_token %}
+                  <input type="hidden" name="coupe"
+                    value=LISTECOUPE>{% csrf_token %}<br>
+                  <input type="button" id='sauve' value="J'aime cette coupe" style='border:3px solid black;'>
+                  {% csrf_token %}
+                  
+                  </form>{% csrf_token %}
+                </div>
+              </center><br><br><br><br>
+            </div>
+
+            <div id='favoris' style='display:none;' value={{fav}}></div>
+              <div id="favorite_haircut" style='text-align:center'>
+                  <div id="favdraggable" name="coucou" value='coupe'
+                    class="ui-widget-content"
+                    onclick="nom_image('favdraggable', 200, 150)";
+                      style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/bbbbbbb.png"
+                        width='150' height='200'
+                        id="coupe111"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable3" class="ui-widget-content" value='coupe4'
+                    onclick="nom_image('favdraggable3', 150, 150)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/image849849849.png"
+                        width='150' height='150'
+                        id="coupe444"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable4" class="ui-widget-content" value='coupe5'
+                    onclick="nom_image('favdraggable4', 150, 100)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/bbbbbbb.png"
+                        width='100' height='150'
+                        id="coupe555"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable5" class="ui-widget-content" value='coupe6'
+                    onclick="nom_image('favdraggable5', 300, 130)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/1.5.png"
+                        width='130' height='300'
+                        id="coupe666"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable6" class="ui-widget-content" value='coupe2'
+                    onclick="nom_image('favdraggable6', 300, 130)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/coucou3.png"
+                        width='130' height='300'
+                        id="coupe222"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable7" class="ui-widget-content" value='coupe22'
+                  onclick="nom_image('favdraggable7', 100, 70)";
+                  style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/coucou22.png"
+                      width='70' height='100'
+                      id="coupe22447"
+                      style='display:none;'/>
+                  </div>
+                  <div id="favdraggable8" class="ui-widget-content" value='coupe8'
+                    onclick="nom_image('favdraggable8', 50, 70)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/coucou22.png"
+                        width='70' height='50'
+                        id="coupe888"style='display:none;'/>
+                  </div>
+                  <div id="favdraggable9" class="ui-widget-content" value='coupe9'
+                    onclick="nom_image('favdraggable9', 160, 140)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/coif.png"
+                        width='140' height='160'
+                        id="coupe999"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable10" class="ui-widget-content" value='coupe12'
+                    onclick="nom_image('favdraggable10', 250, 150)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/aa.png"
+                        width='150' height='250'
+                        id="coupe12"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable11" class="ui-widget-content" value='coupe13'
+                    onclick="nom_image('favdraggable11', 250, 150)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/aaaaa.png"
+                        width='150' height='250'
+                        id="coupe131313"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable12" class="ui-widget-content"  value='coupe14'
+                    onclick="nom_image('favdraggable12', 160, 100)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/bb.png"
+                        width='100' height='160'
+                        id="coupe141414"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable14" class="ui-widget-content"  value='coupe16'
+                    onclick="nom_image('favdraggable14', 160, 100)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/bbbb.png"
+                        width='100' height='160'
+                        id="coupe161616"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable15" class="ui-widget-content"  value='coupe17'
+                    onclick="nom_image('favdraggable15', 250, 150)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/bbb.png"
+                        width='150' height='250'
+                        id="coupe171717"
+                        style='display:none;'/>
+                  </div>
+
+                  <div id="favdraggable16" class="ui-widget-content"  value='coupe18'
+                    onclick="nom_image('favdraggable16', 160, 140)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/1.1.png"
+                        width='140' height='160'
+                        id="coupe181818"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable17" class="ui-widget-content" value='coupe19'
+                    onclick="nom_image('favdraggable17', 100, 110)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/1.2.png"
+                        width='110' height='100'
+                        id="coupe191919"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable18" class="ui-widget-content" value='coupe20'
+                    onclick="nom_image('favdraggable18', 250, 150)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/11.3.png"
+                        width='150' height='250'
+                        id="coupe202020"
+                        style='display:none;'/>
+                  </div>
+                  <div id="favdraggable19" class="ui-widget-content" value='coupe21'
+                    onclick="nom_image('favdraggable19', 250, 150)";
+                    style='z-index: 1;'>
+                      <img src="/static/img/portfolio/coupe/1.4.png"
+                        width='150' height='250'
+                        id="coupe212121"
+                        style='display:none;'/>
+                  </div>
+                </div>
+            </div>
+      
+
+
+
 
 
           <div class="col-xs-2 col-md-2 col-lg-3" style='border:1px solid transparent;'>
+            <div id="div_placement">
+              <center>
+              
+                <div id='placement'>
+                  <center><strong><p id="p_coupe" style='color:black;'><strong>Coupes</strong></p></strong></center><br>
+                    
+                   <input type='button' value='Fond' id='fond'
+                    onclick="put_background()">
+                    <input type='button' value='Enlever le fond' id='fond1'
+                    onclick="get_background()"><br><br>
+                    <input type='button' value='coupe longue' onclick='coupe_longue()' style='border:3px solid black;'><br><br>
+                    <input type='button' value='coupe courte' onclick='coupe_courte()' style='border:3px solid black;'><br><br>
+                    <input type='button' value='coupe couleur longue' onclick='coupe_longue_coul()' style='border:3px solid black;'><br><br>
+                    <input type='button' value='coupe couleur courte' onclick='coupe_courte_coul()' style='border:3px solid black;'><br><br>
+                    <input type='button' value='barbe' onclick='barbe()' style='border:3px solid black;'><br><br>
+                </div>
+
+                <div>  
+                  <div id="draggable19" class="ui-widget-content" value='coupe21'
+                  onclick="nom_image('coupe21', 250, 150)";
+                    style='z-index: 1; display:none;'>
+                      <img src="/static/img/portfolio/coupe/1.4.png"
+                        width='150' height='250'
+                        id="coupe21"/>
+                  </div>
+                  <div id="draggable18" class="ui-widget-content" value='coupe20'
+                  onclick="nom_image('coupe20', 250, 150)";
+                      style='z-index: 1; display:none;'>
+                      <img src="/static/img/portfolio/coupe/11.3.png"
+                        width='150' height='250'
+                        id="coupe20"/>
+                  </div>
+                  <div id="draggable" name="coucou" value='coupe1'
+                    class="ui-widget-content"
+                    onclick="nom_image('coupe1', 200, 150)";
+                    style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/bbbbbbb.png"
+                          width='150' height='200'
+                          id="coupe1" />
+                    </div>
+                    <div id="draggable4" class="ui-widget-content" value='coupe5'
+                    onclick="nom_image('coupe5', 150, 100)";
+                    style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/bbbbbbb.png"
+                        width='100' height='150'
+                        id="coupe5" />
+                    </div>
+                    <div id="draggable15" class="ui-widget-content"  value='coupe17'
+                      onclick="nom_image('coupe17', 250, 150)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/bbb.png"
+                          width='150' height='250'
+                          id="coupe17"/>
+                    </div>
+                    <div id="draggable5" class="ui-widget-content" value='coupe6'
+                      onclick="nom_image('coupe6', 300, 130)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/1.5.png"
+                          width='130' height='300'
+                          id="coupe6"/>
+                    </div>
+                    <div id="draggable14" class="ui-widget-content"  value='coupe16'
+                      onclick="nom_image('coupe16', 160, 100)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/bbbb.png"
+                          width='100' height='160'
+                          id="coupe16"/>
+                    </div>
+                    <div id="draggable16" class="ui-widget-content"  value='coupe18'
+                      onclick="nom_image('coupe18', 160, 140)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/1.1.png"
+                          width='140' height='160'
+                          id="coupe18" />
+                    </div>
+                    <div id="draggable10" class="ui-widget-content" value='coupe12'
+                      onclick="nom_image('coupe12', 250, 150)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/aa.png"
+                          width='150' height='250'
+                          id="coupe12"/>
+                    </div>
+                    <div id="draggable11" class="ui-widget-content" value='coupe13'
+                      onclick="nom_image('coupe13', 250, 150)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/aaaaa.png"
+                          width='150' height='250'
+                          id="coupe13"/>
+                    </div>
+                    <div id="draggable6" class="ui-widget-content" value='coupe2'
+                      onclick="nom_image('coupe2', 300, 130)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/coucou3.png"
+                          width='130' height='300'
+                          id="coupe2"/>
+                    </div>
+                    <div id="draggable3" class="ui-widget-content" value='coupe4'
+                      onclick="nom_image('coupe4', 150, 150)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/image849849849.png"
+                          width='150' height='150'
+                          id="coupe4"/>
+                    </div>
+                    <div id="draggable9" class="ui-widget-content" value='coupe9'
+                      onclick="nom_image('coupe9', 160, 140)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/coif.png"
+                        width='140' height='160'
+                        id="coupe9"/>
+                    </div>
+                    <div id="draggable12" class="ui-widget-content"  value='coupe14'
+                      onclick="nom_image('coupe14', 160, 100)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/bb.png"
+                          width='100' height='160'
+                          id="coupe14"/>
+                    </div>
+                    <div id="draggable7" class="ui-widget-content" value='coupe22'
+                      onclick="nom_image('coupe22', 100, 70)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/coucou22.png"
+                          width='70' height='100'
+                          id="coupe22"/>
+                    </div>
+                    <div id="draggable8" class="ui-widget-content" value='coupe8'
+                      onclick="nom_image('coupe8', 50, 70)";
+                      style='z-index: 1; display:none;'>
+                        <img src="/static/img/portfolio/coupe/coucou22.png"
+                          width='70' height='50'
+                          id="coupe8"/>
+                    </div>
+                    <input type='button' id='bout_fermer_longue' value='fermer' onclick='fermer1()'
+                        style='display:none; border:3px solid black;z-index:1;'><br><br>
+                        
+                    <input type='button' id='bout_fermer_court' value='fermer' onclick='fermer2()'
+                        style='display:none;border:3px solid black;z-index:1;'><br><br>
+                        
+                    <input type='button' id='bout_fermer_longue_coul' value='fermer' onclick='fermer3()'
+                        style='display:none;border:3px solid black;z-index:1;'><br><br>
+                        
+                    <input type='button' id='bout_fermer_court_coul' value='fermer' onclick='fermer4()'
+                        style='display:none;border:3px solid black;z-index:1;'><br><br>
+
+                    <input type='button' id='bout_fermer_barbe' value='fermer' onclick='fermer5()'
+                        style='display:none;border:3px solid black;z-index:1;'><br><br>     
 
-
-        
-          <div id="div_placement">
-          <center>
-            <div id='placement'>
-            <center><strong><p id="p_coupe" style='color:black;'><strong>Coupes</strong></p></strong></center>
-              <br>
-             <input type='button' value='Fond' id='fond'
-              onclick="put_background()">
-              <input type='button' value='Enlever le fond' id='fond1'
-              onclick="get_background()"><br><br>
-              <input type='button' value='coupe longue' onclick='coupe_longue()' style='border:3px solid black;'><br><br>
-              <input type='button' value='coupe courte' onclick='coupe_courte()' style='border:3px solid black;'><br><br>
-              <input type='button' value='coupe couleur longue' onclick='coupe_longue_coul()' style='border:3px solid black;'><br><br>
-              <input type='button' value='coupe couleur courte' onclick='coupe_courte_coul()' style='border:3px solid black;'><br><br>
-              <input type='button' value='barbe' onclick='barbe()' style='border:3px solid black;'><br><br>
-            </div>
-
-          <div>  
-            <div id="draggable19" class="ui-widget-content" value='coupe21'
-            onclick="nom_image('coupe21', 250, 150)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/1.4.png"
-                  width='150' height='250'
-                  id="coupe21"/>
-            </div>
-
-            <div id="draggable18" class="ui-widget-content" value='coupe20'
-            onclick="nom_image('coupe20', 250, 150)";
-                style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/11.3.png"
-                  width='150' height='250'
-                  id="coupe20"/>
-            </div>
-
-          <div id="draggable" name="coucou" value='coupe1'
-            class="ui-widget-content"
-            onclick="nom_image('coupe1', 200, 150)";
-            style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/bbbbbbb.png"
-                  width='150' height='200'
-                  id="coupe1" />
-            </div>
-
-
-            <div id="draggable4" class="ui-widget-content" value='coupe5'
-            onclick="nom_image('coupe5', 150, 100)";
-            style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/bbbbbbb.png"
-                width='100' height='150'
-                id="coupe5" />
-            </div>
-
-            
-            <div id="draggable15" class="ui-widget-content"  value='coupe17'
-              onclick="nom_image('coupe17', 250, 150)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/bbb.png"
-                  width='150' height='250'
-                  id="coupe17"/>
-            </div>
-
-            <div id="draggable5" class="ui-widget-content" value='coupe6'
-              onclick="nom_image('coupe6', 300, 130)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/1.5.png"
-                  width='130' height='300'
-                  id="coupe6"/>
-            </div>
-
-
-
-
-            <div id="draggable14" class="ui-widget-content"  value='coupe16'
-              onclick="nom_image('coupe16', 160, 100)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/bbbb.png"
-                  width='100' height='160'
-                  id="coupe16"/>
-            </div>
-
-
-
-
-            
-            <div id="draggable16" class="ui-widget-content"  value='coupe18'
-              onclick="nom_image('coupe18', 160, 140)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/1.1.png"
-                  width='140' height='160'
-                  id="coupe18" />
-            </div>
-
-            <div id="draggable10" class="ui-widget-content" value='coupe12'
-              onclick="nom_image('coupe12', 250, 150)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/aa.png"
-                  width='150' height='250'
-                  id="coupe12"/>
-            </div>
-
-      
-            <div id="draggable11" class="ui-widget-content" value='coupe13'
-              onclick="nom_image('coupe13', 250, 150)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/aaaaa.png"
-                  width='150' height='250'
-                  id="coupe13"/>
-            </div>
-
-
-   
-            <div id="draggable6" class="ui-widget-content" value='coupe2'
-              onclick="nom_image('coupe2', 300, 130)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/coucou3.png"
-                  width='130' height='300'
-                  id="coupe2"/>
-            </div>
-
-
-            <div id="draggable3" class="ui-widget-content" value='coupe4'
-              onclick="nom_image('coupe4', 150, 150)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/image849849849.png"
-                  width='150' height='150'
-                  id="coupe4"/>
-            </div>
-
-     
-            <div id="draggable9" class="ui-widget-content" value='coupe9'
-              onclick="nom_image('coupe9', 160, 140)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/coif.png"
-                width='140' height='160'
-                id="coupe9"/>
-            </div>
-
-
-            <div id="draggable12" class="ui-widget-content"  value='coupe14'
-              onclick="nom_image('coupe14', 160, 100)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/bb.png"
-                  width='100' height='160'
-                  id="coupe14"/>
-            </div>
-
-
-            <div id="draggable7" class="ui-widget-content" value='coupe22'
-              onclick="nom_image('coupe22', 100, 70)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/coucou22.png"
-                  width='70' height='100'
-                  id="coupe22"/>
-            </div>
-
-            <div id="draggable8" class="ui-widget-content" value='coupe8'
-              onclick="nom_image('coupe8', 50, 70)";
-              style='z-index: 1; display:none;'>
-                <img src="/static/img/portfolio/coupe/coucou22.png"
-                  width='70' height='50'
-                  id="coupe8"/>
-            </div>
-
-            <input type='button' id='bout_fermer_longue' value='fermer' onclick='fermer1()'
-                style='display:none; border:3px solid black;z-index:1;'><br><br>
-                
-            <input type='button' id='bout_fermer_court' value='fermer' onclick='fermer2()'
-                style='display:none;border:3px solid black;z-index:1;'><br><br>
-                
-            <input type='button' id='bout_fermer_longue_coul' value='fermer' onclick='fermer3()'
-                style='display:none;border:3px solid black;z-index:1;'><br><br>
-                
-            <input type='button' id='bout_fermer_court_coul' value='fermer' onclick='fermer4()'
-                style='display:none;border:3px solid black;z-index:1;'><br><br>
-
-            <input type='button' id='bout_fermer_barbe' value='fermer' onclick='fermer5()'
-                style='display:none;border:3px solid black;z-index:1;'><br><br>     
-
-            
-          </center>
-
-          </div>
-        </div>    
-      </div>
-  
-
-      
-
-
-    <div class="container" >
-
-
-       <div class='col-sm-12'>
-       <center>
-          <form action='/photo/coupe' method='POST'>{% csrf_token %}
-
-              <input type='button' id='sauve' value='enregistrer la coupe'
-                style="border:3px solid black; display:none;"/>
-          
-          </form>
-      </center>
-    </div>
-
-
-
-    <style>
-    #titre_re{
-        font-size:1.3vw;
-    }
-
-    </style>
-
-
-
-
-      {% for i in coif %}
-          {% for j in i %}
-          
-          <script>
-             listeeeee.push('{{j}}')
-          </script>
-          
-          {% endfor %}
-      {% endfor %}
-
-</div>
-
-
-
-  <!-- Services Section -->
-  <section class="page-section" id="services" style='text-align:center'>
-
-
-    <div id='coifcoif' style='display:none;text-align:center;'>
-    
-      <br>
-
-      <center><div style='border:5px solid black;
-                    border-radius: 20px; width:50%;
-                    background:url("/static/img/parquet1.jpg");
-                    box-shadow: 5px 5px 5px 5px;'>
-          
-          <br>
-          <div style='position: absolute; left: 50%;'>
-          <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou'
-              style='position:relative; display:none;left: -50%;'>
-          </div>
-          <br><br><br><br>
-
-          
-          <input type='text' id='coif1'
-                  style='text-align:center; border:3px solid black; width:70%'
-                   placeholder='Votre ville'>
-          <br><br>
-          
-          <center><input type='button' onclick='menuuu()' value='Retour au menu' style='border:2px solid black;'>&nbsp;&nbsp;&nbsp;
-          
-          <input type='button' id='coif2' value='valider' style='border:2px solid black;'></center><br>
-          <br><br><br><br>
-      </div>
-
-             
-    </div></center>
-
-
-    <div id='gymgym' style='display:none;text-align:center;'>
-    
-      <br>
-
-      <center><div style='border:5px solid black;
-                          border-radius: 20px; width:50%;
-                          background:url("/static/img/parquet1.jpg");
-                          box-shadow: 5px 5px 5px 5px;'>
-          
-          <br>
-          <div style='position: absolute; left: 50%;'>
-          <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou_gym'
-              style='position:relative; display:none;left: -50%;'>
-          </div>
-          <br><br><br><br>
-
-          
-          <input type='text' id='gym1'
-                  style='text-align:center; border:3px solid black; width:70%;'
-                   placeholder='Votre ville'>
-          <br><br>
-          
-          <center><input type='button' onclick='menuuu()' value='Retour au menu' style='border:2px solid black;'>&nbsp;&nbsp;&nbsp;
-          
-          <input type='button' id='gym2' value='valider' style='border:2px solid black;'></center><br>
-          <br><br><br><br>
-      </div>
-
-             
-    </div></center>
-
-
-
-    <div id='mapmap' style='text-align:center;display:none;'>
-    
-      <div class="container">
-        <center><h3 id='aucas_ou_coif'></h3></center>
-        <h3 id='coifcoifcoif' style='color:white;display:none;' id='info'>Nous avons trouvé quelques coiffeurs près de chez vous</h3><br><br>
-        
-        <p id='cons'style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m et
-        p.m signifient horraires du matin et de l'après-midi</i></p><br><br>
-
-      
-        <div class="row">
-
-            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
-
-            <div class="col-xs-4 col-md-4 col-lg-4"
-              id ='info1'
-              style='border:5px solid black;border-radius: 20px; 
-              height:450px; background:url("/static/img/parquet1.jpg");'>
-            </div>
-            
-            <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
-            
-            <div class="col-xs-4 col-md-4 col-lg-4"
-              id ='info2' style='border:5px solid black;border-radius: 20px;
-              height:450px; background:url("/static/img/parquet1.jpg");'>
-            </div>
-            
-            <div class="col-xs-1 col-md-1 col-lg-1"></div>
-
-        </div>
-        <br><br><br><br><br>
-        <div class="row">
-            
-  
-    
-            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
-
-            <div class="col-xs-1 col-md-4 col-lg-4"
-              id ='info3'
-              style='border:5px solid black;border-radius: 20px; 
-              height:450px; background:url("/static/img/parquet1.jpg");'>
-            </div>
-            
-            <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
-
-            <div class="col-xs-1 col-md-4 col-lg-4"
-              id ='info4' style='border:5px solid black;border-radius: 20px; 
-              height:450px; background:url("/static/img/parquet1.jpg");'>
-            </div>
-            
-            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
-
-
-            
-        </div>
-            
-      </div>
-        
-      <center><input type='button' style='border:2px solid black;' value='Retour au menu' onclick='menu_map()'></center><br><br>
- 
-    </div>
-    
-  </div>
-  </div>
-
-  
-  <div id='the_map' style='display:none;'>
-    <p id='oups'><h3><center></center></h3></p>
-    <br><br>
-    <center><div id='map'></div></center>
-    <br><br>
-    <center><input type='button' value='Retour au menu' style='border:2px solid black;' onclick='return_choice_coif()' id='button_lamap'></center>
-    <center><input type='button' value='Retour au menu' style='border:2px solid black;' onclick='return_choice_gym()' id='button_lamap_gym'></center>
-    
-  </div>
-
-
-
-
-
-
-
-
-
-
-    <div id='mapmap_gym' style='text-align:center;display:none;'><br><br><br><br>
-    
-      <div class="container">
-        <center><h3 id='aucas_ou'></h3></center>
-        <h3 style='color:white;display:none;' id='info'>Nous avons trouvé quelques salles de gym près de chez vous</h3><br><br>
-        
-        <p style='margin-right:80%; display:none;margin-top:-10px;' id='p_am_pm'><i>* a.m et
-        p.m signifient horraires du matin et de l'après-midi</i></p><br><br>
-
-      
-        <div class="row">
-
-            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
-
-            <div class="col-xs-4 col-md-4 col-lg-4"
-              id ='info1_gym'
-              style='border:5px solid black;border-radius: 20px; 
-              height:450px; background:url("/static/img/parquet1.jpg");'>
-            </div>
-            
-            <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
-            
-            <div class="col-xs-4 col-md-4 col-lg-4"
-              id ='info2_gym' style='border:5px solid black;border-radius: 20px;
-              height:450px; background:url("/static/img/parquet1.jpg");'>
-            </div>
-            
-            <div class="col-xs-1 col-md-1 col-lg-1"></div>
-
-        </div><br><br>
-          
-        <div class="row">
-            
-  
-    
-            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
-
-            <div class="col-xs-1 col-md-4 col-lg-4"
-              id ='info3_gym'
-              style='border:5px solid black;border-radius: 20px; 
-              height:450px; background:url("/static/img/parquet1.jpg");'>
-            </div>
-            
-            <div class="col-xs-1 col-md-1 col-lg-2"></div><br>
-
-            <div class="col-xs-1 col-md-4 col-lg-4"
-              id ='info4_gym' style='border:5px solid black;border-radius: 20px; 
-              height:450px; background:url("/static/img/parquet1.jpg");'>
-            </div>
-            
-            <div class="col-xs-1 col-md-1 col-lg-1"></div><br>
-
-
-            
-        </div><br><br><br>
-            
-      </div>
-        
-      <center><input type='button' style='border:2px solid black;' value='Retour au menu' onclick='menu_map()'></center><br><br>
- 
-    </div>
-    
-    
-   
-  </div>
-  </div>
-
-
-
-    <style>
-      #CONTENEUR{
-        background:url("/static/img/parquet1.jpg") no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-
-
-        
-        width:80%;
-        border:2px solid black;
-
-      }
-
-
-    </style>
-    {% if user.is_authenticated %}
-
-
-    
-
-    
-
-      <div  id="container2">
-        <div class="row" id="blackblack">
-          <div class="col-sm">
-            <h1 id="titre_re">Titre Un</h1><br>
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            
-          </div>
-          <div class="col-sm">
-            <h1 id="titre_re">Citation</h1><br>
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            <br><br>
-          </div>
-          
-          <div class="col-sm">
-          
-            <h1 id="titre_re">Titre deux</h1><br>
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            
-          </div>
-        </div>
-      </div><br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    <div class="container" id='CONTENEUR' style='font-size:1.3vw;border:2px solid blue;'>
-    <br><br>
-      <h2 class="text-center mt-0">Mes services</h2><br>
-      Cliquez sur une des images pour profiter des services.
-      <hr class="divider my-4">
-      <div class="row">
-
-
-      
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-          
-           <style>#im6{width:100px; height:100px;}</style>
-           
-           <img onclick="coiffeur()" src="/static/img/portfolio/icone/coiffeur.png"
-             onmouseover="stop('p_coif', 'im6', '/static/img/portfolio/icone/coiffeur2.png')"
-             onmouseout="start('p_coif', 'im6', '/static/img/portfolio/icone/coiffeur.png')"
-             id="im6">
-             
-            <h3 class="h4 mb-2">Coiffeurs</h3>
-            
-            <br>
-            
-     
-            <center><p id ='p_coif'  style='color:white; font-size:1em;display:none; position:absolute;left:0%;'>
-              Voir les coiffeurs les plus proches de chez moi
-            </p></center>
-            
-          </div>
-        
-        </div><br><br>
-
-        
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im4{width:100px; height:100px;}</style>
-           
-           <img onclick="gym()" src = "/static/img/portfolio/icone/gym.png"/
-             onmouseover="stop('p_gym', 'im4', '/static/img/portfolio/icone/gym2.png' )"
-             onmouseout="start('p_gym', 'im4', '/static/img/portfolio/icone/gym.png')"
-             id="im4">
-             
-            <h3 class="h4 mb-2" >Salle de gym</h3>
-            <br>
-            
-            <p id='p_gym' style='color:white; font-size:1em;display:²none; position:absolute;left:4%;'>
-              Les salles de gym les plus proches de chez moi
-            </p>
-    
-            
-          </div>
-        </div><br><br>
-
-      
-
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im7{width:100px; height:100px;}</style>
-           
-           <a href="/photo/habits"><img onclick="vetements()" src="/static/img/portfolio/icone/vetements.png"/
-             onmouseover="stop('p_habit', 'im7', '/static/img/portfolio/icone/vetements22.png')"
-             onmouseout="start('p_habit', 'im7', '/static/img/portfolio/icone/vetements.png')"
-             id="im7"></a>
-             
-            <h3 class="h4 mb-2">Essayer des vêtements</h3>
-            
-            <p id='p_habit' style='color:white; font-size:1em;display:none;
-                position:absolute;right:0%;'>
-
-            Essayer des habits sans faire la queue</p>
-          </div>
-        </div>
-
-
-
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="mt-5">
-           <style>#im8{width:100px; height:100px;}</style>
-           <a href="/administrateur/tendance/">
-             <img onclick="dresshaircutbodyup()" src="/static/img/portfolio/icone/dresshaircutbodyup.png"/
-                 onmouseover="stop('p_tendance', 'im8','/static/img/portfolio/icone/dresshaircutbodyup2.png')"
-                 onmouseout="start('p_tendance', 'im8', '/static/img/portfolio/icone/dresshaircutbodyup.png')"
-             id="im8">
-           </a>
-            <h3 class="h4 mb-2">
-            Voir notre tendance</h3>
-            <p id='p_tendance'
-            style='color:white; font-size:1em;display:none; position:absolute;left:0%;'>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Voir la tendance de cet été pour être à jour</p>
-          </div>
-        </div>
-
-        
-      </div>
-      <br><br><br><br>
-    </div>
-
-
-    {%else%}
-
-      <center><h1><strong>Inscrivez-vous pour profiter des services !</strong></h1></center>
-      <br>
-      <h3><i>Trouvez votre salle de sports les plus proches, trouvez votre coiffeur le plus proche</i></h3>
-
-    {%endif%}
-
-
-    
-  </section>
-
-
-  <input type='button' style='display:none;' id='bubuton' style='border:2px solid black;'>
-  <input type='button' style='display:none;' id='bubuton_gym' style='border:2px solid black;'>
-
-
-
-  <input type='button' value='a' id='declencheur1' style='display:none;'>
-  <input type='button' value='aa' id='declencheur2' style='display:none;'>
-  <input type='button' value='a' id='declencheur3' style='display:none;'>
-  <input type='button' value='aa' id='declencheur4' style='display:none;'>
-
-
-  <input type='button' value='a' id='declencheur_gym1' style='display:none;'>
-  <input type='button' value='aa' id='declencheur_gym2' style='display:none;'>
-  <input type='button' value='a' id='declencheur_gym3' style='display:none;'>
-  <input type='button' value='aa' id='declencheur_gym4' style='display:none;'>
-
-
-
-  <!-- Call to Action Section -->
-  <section>
-    <div class="container text-center">
-    
-        <h2 class="mb-4">
-          Abonne toi sur nos reseaux sociaux !
-        </h2>
-
-       <a href='https//:www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
-       <a href='https//:www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
-       <a href='https//:www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>
                   
-    </div>
-  </section>
+                  </center>
+
+                </div>
+              </div>    
+            </div>
+
+
+           <div class="container" >
+
+
+               <div class='col-sm-12'>
+               <center>
+                  <form action='/photo/coupe' method='POST'>{% csrf_token %}
+
+                      <input type='button' id='sauve' value='enregistrer la coupe'
+                        style="border:3px solid black; display:none;"/>
+                  
+                  </form>
+              </center>
+           </div>
+
+          {% for i in coif %}
+              {% for j in i %}
+              
+              <script>
+                 listeeeee.push('{{j}}')
+              </script>
+              
+              {% endfor %}
+          {% endfor %}
 
 
 
-  <!-- Contact Section -->
-  <section class="page-section" id="contact">
-    <div class="container">
-    
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="mt-0"><strong>Let's Get In Touch!</strong></h2>
-          <hr class="divider my-4">
-          <p  style='color:black;'>
-            <strong>Ready to start your next project with us?
-            Give us a call or send us an email and we
-            will get back to you as soon as possible!</strong>
-          </p>
-          
-        </div>
+
       </div>
-      
-      <div class="row">
-        <div class="col-lg-4 ml-auto text-center">
-          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-          <div><strong>+1 (202) 555-0149</strong></div>
-        </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-          <!-- Make sure to change the email address in anchor text AND the link below! -->
-          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
-        </div>
-      </div>
     </div>
-  </section>
-
-
-
-
-
+  </div>
 
 
 
@@ -1496,34 +520,89 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <style>
-
-
-
-@media screen and (min-width: 1500px) and (max-width:2000px) {
-  # {
-    padding-top:20px;
-    font-size:1.3vw ;
+@media screen and (min-width: 320px) and (max-width:374px) {
+  #section1{
+    height:120%;
+    border:3px solid transparent;
+  }
+  #resum_titre{
+    float:none;
+    margin-left:10px;
+    font-size:1em;
+    word-wrap: break-word
+    width:100%;
+  }
+  #MENU{
+    display:none;
+  }
+  #logo{
+    diplay:none;
+  }
+  #container_photo{
+    font-size:1vw;
+  }
+  h3{
+    font-size:20px;
+  }
+  #vivideo{
+    font-size:10px;
+  }
+  video{
+    border:1px solid black;
+    width:100%;
+  }
+  #whitewhite{
+    width:140px;
+    float:left;
+    margin-left:-25px;
+  }
+  #div_placement{
+    width:150px;
+    float:right;
+    margin-right:-25px;
+  }
+  #p_coupe{
+    display:none;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media screen and (min-width: 375px) and (max-width:424px) {
+  #resum_titre{
+    clear:both;
+    font-size:3vw;
+    word-wrap: break-word
+    
+  }
+}
 </style>
 
 
@@ -1540,57 +619,22 @@
 
 
 
+<script>
+function put_background(){
+  document.getElementById('container_photo').style.background = '#ccccff';
+  shutdown();
+  document.getElementById('StartVideo').click();
 
+  document.getElementById('fond1').style.display = "inline";
+  document.getElementById('fond').style.display = "none";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+};
+function get_background(){
+  notshutdown();
+  document.getElementById('fond1').style.display = "none";
+  document.getElementById('fond').style.display = "inline";
+  document.getElementById('container_photo').style.background = 'none';
+};
+</script>
 
 
