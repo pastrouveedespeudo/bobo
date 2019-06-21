@@ -1,4 +1,4 @@
-arrete de coder n'importe quoi focus sur le css
+y'a 4 icones + lles social a changés c toujours les memes pages mais la cohésion ca c pour se dire ok mais sinon essais dapporter des truks a chaque pages au cas ou je serai biaisai la
 
 Commencer la partie pollution et la finir
 
