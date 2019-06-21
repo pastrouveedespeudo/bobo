@@ -83,16 +83,6 @@
 
 
       
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      
       
 
       
@@ -192,8 +182,6 @@
         }
         #info_p{
             color:white;
-            font-size:1em;
-
         }
         #no_shut_size,
         #no_shut_tshirt,
@@ -299,7 +287,7 @@
 
 
                     <center>
-                      <div id="info_cloths_like_price"style="width:auto;max-width:260px;"><br>
+                      <div id="info_cloths_like_price"style="width:auto;max-width:300px;min-height:80px;"><br>
                           <strong><center><p id="nos_info_habits">Nos info habits</p></center></strong>
                           <div id='infofo'>
                             <center><p id='mage' style='width:100%;'></p></center>
@@ -322,16 +310,33 @@
                     width:200px;
                     margin-top:-50px;
                     border:1px solid transparent;
-                    height:500px;'
+                    height:500px;
                     
 
                   }
-                @media screen and (min-width: 0px) and (max-width:10px) {
+                @media screen and (min-width: 0px) and (max-width:500px) {
                   #barre{
                     right:-200;
-                    border:2px solid green;
+                    font-size:3vw;
                   }
-
+                    #name,
+                    #store,
+                    #online,
+                    #price,
+                    #stock{
+                        font-size:3vw;
+                    }
+                    #CONTENEUR_INFO{
+                        font-size:3vw;
+                    }
+                    #nos_info_habits{
+                        font-size:3vw;
+                    }
+                    #les_textes{
+                        font-size:3vw;
+                        margin-right:-100px;
+                    }
+                    
                 }
 
                 
@@ -1581,9 +1586,7 @@ h3{
 
 
 @media screen and (min-width: 0px) and (max-width:800px) {
-    #mage {
-    display:none;
-    }
+
 
     #info_cloths_like_price{
         width:50px;
