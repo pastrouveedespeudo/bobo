@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-  <html lang="en">
+  <html lang="fr">
 
-
-    <!-- Section load CDN -->
+    <!-- Head section - Loading CDN -->
     <head>
-      <meta charset="utf-8">
+      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="">
-      <meta name="author" content="">
-
+      <meta name="jb" content="">
+      <br><br>
       <title>Magazine virtuel</title>
 
       <!-- Font Awesome Icons -->
@@ -20,175 +19,160 @@
 
       <!-- Plugin CSS -->
       <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="/static/css/home2.css">
 
       <!-- Theme CSS - Includes Bootstrap -->
       <link href="/static/css/creative.min.css" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-    </head> 
 
 
-    <!-- Body Section -->
-    <body id="page-top">
+      
+    </head>
 
-      <!-- Navebarre -->
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-        <div class="container">
+    <body>
 
+    
+    <style>
+      body {
+          background:url('/static/v2/polu.jpg') no-repeat fixed center;;
+          -webkit-background-size: cover;
+          background-size: cover;
+        }
+        #logo{
+            position:fixed;
+            float:left;
+            margin-left:10px;
+            margin-top:-90px;
+            
+        }
+        
+        #shut{
+            font-size:300%;
+    
+        }
+        #notshut{
+            font-size:300%;
+            display:none;
+        }
+    </style>
 
-          <!-- Left section - Fisrt logo -->
-          <img src="/static/img/portfolio/icone/my.png" id="my_prof"
-            alt="Smylet white with blacks bordures. It has two eyes (points) et one
-              smyle an arc-shaped line"
-            onMouseOver='mode_div3("myprofile_p", "my_prof")'
-            onMouseOut='mode_div4("myprofile_p", "black", "my_prof", "49px", "49px")'>
-          <a class="navbar-brand js-scroll-trigger" href="/photo/home_bobo">
-            <p id='myprofile_p'
-                onMouseOver='mode_div3("myprofile_p", "my_prof")'
-                onMouseOut='mode_div4("myprofile_p", "black", "my_prof","49px", "49px")'>
-              My_Profil
-            </p>
-         </a>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          
+        <img id="logo" src="/static/v2/logo2.png">
 
+        
+        <div style="float:left; margin-left:50px;z-index: 2; margin-top:-100px;position:fixed;" id="MENU">
+             <br><br><br><br><br><br><br>
+            <i class="fas fa-angle-right" id="notshut" onclick="notshutdown()" style="z-index: 1;position:static;"></i>
+            <i class="fas fa-angle-left" id="shut" onclick="shutdown()"></i><br><br>
 
-        <!-- Left Section - Second logo -->
-        <img src="/static/img/portfolio2/icone/indian.png" id="my"
-          alt="Indian face picture, like cartoon image"
-          onMouseOver='mode_div3("pol_logo", "my", 50,60)'
-          onMouseOut='mode_div4("pol_logo", "black", "my", "49px", "49px")'>
-        <a class="navbar-brand js-scroll-trigger" href="/polution/polution">
-          <p id='pol_logo'
-              onMouseOver='mode_div3("pol_logo", "my", 50,60)'
-              onMouseOut='mode_div4("pol_logo", "black", "my", "49px", "49px")'>
-            My_pollution
-          </p>
-        </a>
-
-
-        <button class="navbar-toggler navbar-toggler-right" type="button"
-          data-toggle="collapse" data-target="#navbarResponsive"
-          aria-controls="navbarResponsive" aria-expanded="false"
-          aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-
-        <!-- Right Section -->
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto my-2 my-lg-0">
-
-
-                <!-- Right Section - Fisrt logo -->
-                <center><li class="nav-item">
-                  <img id="im1" src="/static/img/portfolio2/icone/graphe.png"
-                    alt="graphic image or a fleche part up black edge white background"
-                    onMouseOver='change_image("im1", "/static/img/portfolio2/icone/superman.png",
-                    "p_graphe")'                       
-                    onMouseOut='change_image2("im1", "/static/img/portfolio2/icone/graphe.png",
-                    "p_graphe")'>
-                  <a class="nav-link js-scroll-trigger" href="/polution/graphe">
-                    <p id='p_graphe'
-                        onMouseOver='change_image("im1", "/static/img/portfolio2/icone/superman.png",
-                        "p_graphe")'                           
-                        onMouseOut='change_image2("im1", "/static/img/portfolio2/icone/graphe.png",
-                        "p_graphe")'>
-                      Nos graphes
-                    </p>
-                  </a>
-                </li></center>
+            
+            <div id='contain' style='position:absolute'>
+                <p id="menu"
+                    onMouseOver = "sous_menu1('menu', 'hrefmenu', '#91A8A4')"         
+                    onMouseOut = "sous_menu2('menu', 'hrefmenu')">
+                    <a href="" id="hrefmenu"><strong>Menu</strong></a>
+                </p>
                 
-
-                <!-- Right Section - Second logo -->
-                  <center><li class="nav-item">
-                    <img src="/static/img/portfolio2/icone/pol.png" id="im2"
-                        alt="wo hand hold a black edge pollution cloud"
-                        onMouseOver='change_image("im2", "/static/img/portfolio2/icone/baby.png",
-                        "p_donnée")'                   
-                        onMouseOut='change_image2("im2", "/static/img/portfolio2/icone/pol.png",
-                        "p_donnée")'>
-                      <a class="nav-link js-scroll-trigger" href="/polution/donnée">
-                        <p id='p_donnée'
-                            onMouseOver='change_image("im2", "/static/img/portfolio2/icone/baby.png",
-                            "p_donnée")'                     
-                            onMouseOut='change_image2("im2", "/static/img/portfolio2/icone/pol.png",
-                            "p_donnée")'>
-                          Nos données
-                        </p>
-                      </a>
-                  </li></center>
+            </div><br><br>
 
 
-                  <!-- Right Section - Third logo -->
-                  <center><li class="nav-item">
-                      <img src="/static/img/portfolio/icone/predict.png" id="im3"
-                          alt="image of a smiling child"
-                          onMouseOver='change_image("im3", "/static/img/portfolio2/icone/nuclear.png",
-                          "p_predict")'                        
-                          onMouseOut='change_image2("im3", "/static/img/portfolio2/icone/predict.png",
-                          "p_predict")'>
-                      <a class="nav-link js-scroll-trigger" href="/polution/prediction">
-                        <center><p id='p_predict'
-                            onMouseOver='change_image("im3", "/static/img/portfolio2/icone/nuclear.png",
-                            "p_predict")'                   
-                            onMouseOut='change_image2("im3", "/static/img/portfolio2/icone/predict.png",
-                            "p_predict")'>
-                           Nos moyennes
-                        </p></center>
-                      </a>
-                  </li></center>
+            <div id='contain1' style='position:absolute'>
+                <p id="sommaire"
+                    onMouseOver = "sous_menu1('sommaire', 'hrefsommaire', '#ECB8A5')"         
+                    onMouseOut = "sous_menu2('sommaire', 'hrefsommaire')">
+                    <a href="" id="hrefsommaire"><strong>Sommaire</strong></a>
+                </p>
+                
+            </div><br><br>
 
 
-                  <!-- Right Section - Fourth logo -->
-                  <center><li class="nav-item">
-                      <img src="/static/img/portfolio2/icone/pollution.png" id='info'
-                          alt="image of a candle symbol of black edge knowledge"
-                          onMouseOver='change_image("info", "/static/img/portfolio2/icone/lamp.png",
-                          "p_info")'                     
-                          onMouseOut='change_image2("info", "/static/img/portfolio2/icone/pollution.png",
-                          "p_info")'>
-                      <a class="nav-link js-scroll-trigger" href="/polution/info_pollu">
-                        <center><p id='p_info'
-                            onMouseOver='change_image("info", "/static/img/portfolio2/icone/lamp.png",
-                            "p_info")'
-                            onMouseOut='change_image2("info", "/static/img/portfolio2/icone/pollution.png",
-                            "p_info")'>
-                          Nos info
-                        </p></center>
-                      </a> 
-                  </li> </center>
 
-
-                  <!-- Right Section - fifth logo -->
-                  <center><li class="nav-item">
-                      <img src="/static/img/portfolio2/icone/fight.png" id='fight'
-                        alt="indian who is standing with a spear border black"
-                        onMouseOver='change_image("fight", "/static/img/portfolio2/icone/rain.png",
-                        "p_soluce")'
-                        onMouseOut='change_image2("fight", "/static/img/portfolio2/icone/fight.png",
-                        "p_soluce")'>
-                      <a class="nav-link js-scroll-trigger" href="/polution/machine_a_o">
-                        <center><p id='p_soluce'
-                            onMouseOver='change_image("fight", "/static/img/portfolio2/icone/rain.png",
-                            "p_soluce")'                   
-                            onMouseOut='change_image2("fight", "/static/img/portfolio2/icone/fight.png",
-                            "p_soluce")'>
-                          Notre méthode<br>miracle
-                        </p></center>
-                      </a>
-                  </li></center>
-
-              </ul>
+            <div id='contain2' style='position:absolute'>
+                <p id="menu1"
+                    onMouseOver = "sous_menu1('menu1', 'tendancee', 'green')"         
+                    onMouseOut = "sous_menu2('menu1', 'tendancee')">
+                    <a href="" id="tendancee"><strong>Tendances</strong></a>
+                </p>
+                
+            </div><br><br>
               
-          </div>
+
+            <div id='contain3' style='position:absolute'>
+            
+                <p id="menu2"
+                    onMouseOver = "sous_menu1('menu2', 'book', '#8DA1B9')"         
+                    onMouseOut = "sous_menu2('menu2', 'book')">
+                    <a href="" id="book"><strong>Book</strong></a>
+                </p>
+                    
+            </div><br><br>
+       
+
+            <div id='contain4' style='position:absolute'>
+                <p id="menu3"
+                    onMouseOver = "sous_menu1('menu3', 'reseaux', 'lightblue')"         
+                    onMouseOut = "sous_menu2('menu3', 'reseaux')">
+                    <a href="" id="reseaux"><strong>Réseaux</strong></a>
+                </p>
+                
+            </div><br><br>
+
+
+            <div id='contain5' style="position:absolute;">
+                <p id="menu4"
+                    onMouseOver = "sous_menu1('menu4', 'contacter', 'pink')"         
+                    onMouseOut = "sous_menu2('menu4', 'contacter')">
+                    <a href="" id="contacter"><strong>Contact</strong></a>
+                </p>
+            </div><br>
+
         </div>
-      </nav>
-    </body>
-</html>
+        
 
 
+    <script>
+        function sous_menu1(div, text, couleur1){
+            document.getElementById(div).style.width = '130%';
+            document.getElementById(div).style.background = couleur1;
+            document.getElementById(div).style.border = "1px solid";
+            document.getElementById(text).style.color = "white";
 
+        };
+        function sous_menu2(div, text){
+            document.getElementById(div).style.width = "100%";
+            document.getElementById(div).style.background = "transparent";
+            document.getElementById(div).style.border = "";
+            document.getElementById(text).style.color = "black";
+        };
+
+        function shutdown(){
+            document.getElementById('sommaire').style.display = "none";
+            document.getElementById('menu').style.display = "none";
+            document.getElementById('menu1').style.display = "none";
+            document.getElementById('menu2').style.display = "none";
+            document.getElementById('menu3').style.display = "none";
+            document.getElementById('menu4').style.display = "none";
+
+            document.getElementById('shut').style.display = "none";
+            document.getElementById('notshut').style.display = "block";
+       
+            
+           
+        };
+
+        function notshutdown(){
+            document.getElementById('sommaire').style.display = "block";
+            document.getElementById('menu').style.display = "block";
+            document.getElementById('menu1').style.display = "block";
+            document.getElementById('menu2').style.display = "block";
+            document.getElementById('menu3').style.display = "block";
+            document.getElementById('menu4').style.display = "block";
+
+            document.getElementById('shut').style.display = "block";
+            document.getElementById('notshut').style.display = "none";
+        };
+
+
+    </script>
 
 
 
@@ -196,378 +180,339 @@
 
 
 <style>
-  #p_soluce,
-  #p_info,
-  #p_predict,
-  #p_donnée,
-  #p_graphe{
+
+
+#tendancee{
     color:black;
+}
+
+#book{
+    color:black;
+}
+
+#reseaux{
+    color:black;
+}
+
+#contacter{
+    color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#titre_menu{
+    font-size:2em;
+}
+#menu1{
+    font-size:1.2em;
+}
+
+#menu2{
+    font-size:1.2em;
+}
+
+#menu3{
+    font-size:1.2em;
+}
+
+#menu4{
+    font-size:1.2em;
+}
+
+
+
+#menu{
+    font-size:1.2em;
+}
+
+#sommaire{
+    font-size:1.2em;
+}
+
+
+
+a:hover{
+    text-decoration: none;
+    color:white;
+}
+
+
+
+#hrefsommaire{
+    color:black;
+    
+}
+#hreftendance{
+    color:black;
+}
+
+#hrefcoiffure{
+    color:black;
+}
+
+#hrefcoiffeur{
+    color:black;
+}
+
+#hrefgym{
+    color:black;
+}
+
+#hrefhabit{
+    color:black;
+}
+
+#hrefsommaire{
+    color:black;
+}
+
+#hrefmenu{
+    color:black;
+}
+
+
+
+#hrefsommaire:hover{
+    color:white;
+}
+#hreftendance:hover{
+    color:white;
+}
+
+#hrefcoiffure:hover{
+    color:white;
+}
+
+#hrefcoiffeur:hover{
+    color:white;
+}
+
+#hrefgym:hover{
+    color:white;
+}
+
+#hrefhabit:hover{
+    color:white;
+}
+
+
+#hrefmenu:hover{
+    color:white;
+}
+
+#hrefsommaire:hover{
+    color:white;
+}
+
+
+
+
+
+
+@media screen and (min-width: 1500px) and (max-width:2000px) {
+  #MENU {
+    padding-top:20px;
+    font-size:1.3vw ;
   }
- </style>
+}
+
+
+@media screen and (min-width: 1000px) and (max-width:1499px) {
+  #MENU {
+
+    padding-top:10px;
+    font-size:1.3vw ;
+  }
+}
 
 
 
+@media screen and (min-width: 850px) and (max-width:999px) {
+  #MENU {
+    padding-top:10px;
+    font-size:1.3vw;
+    
+  }
+}
 
+@media screen and (min-width: 500px) and (max-width:850px) {
+  #MENU {
+    padding-top:30px;
+    font-size:1.3vw;
+    
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-
-    function change_image(id, source, text){
-      document.getElementById(id).src = source;
-      document.getElementById(text).style.color = '#330000';
-    };
-
-
-    function change_image2(id, source, text){
-      document.getElementById(id).src = source;
-      document.getElementById(text).style.color = 'black';
-    };
-
-
-  
-</script>
-
-
-
-<script>
-  function mode_div3(div, image){
-    document.getElementById(image).style.width = '70px';
-    document.getElementById(image).style.height = '70px';
-    document.getElementById(div).style.color = '#330000';
+@media screen and (min-width: 450px) and (max-width:500px) {
+  #MENU {
+    padding-top:45px;
+    font-size:1.3vw;
+    
  
-  };
-  function mode_div4(div, color, image, largeur, hauteur){
-    document.getElementById(image).style.width = largeur;
-    document.getElementById(image).style.height = hauteur;
-    document.getElementById(div).style.color = 'black';
-  };
+  }
+}
 
 
 
-</script>
+@media screen and (min-width: 400px) and (max-width:450px) {
+  #MENU {
+    padding-top:45px;
+    font-size:1.3vw;
+    
+
+  }
+}
+
+
+@media screen and (min-width: 350px) and (max-width:400px) {
+  #MENU {
+    padding-right:-100px;
+    padding-top:80px;
+    font-size:1.3vw;
+
+
+  }
+}
+
+
+@media screen and (min-width: 200px) and (max-width:350px) {
+  #MENU {
+    padding-right:-100px;
+    padding-top:60px;
+    font-size:1.3vw;
+
+
+  }
+}
 
 
 
-<style>
-#mainNav {
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  background-color: rgb(255, 255, 255);
-  -webkit-transition: background-color 0.2s ease;
-  transition: background-color 0.2s ease;
-}
-#mainNav .navbar-brand {
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
-  color: #fff;
-}
-#mainNav .navbar-nav .nav-item .nav-link {
-  color: #6c757d;
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 0.75rem 0;
-}
-#mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
-  color: #fff;
-}
-#mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #fff !important;
-}
-@media (min-width: 992px) {
-  #mainNav {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    background-color: transparent;
-  }
-  #mainNav .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
-  }
-  #mainNav .navbar-brand:hover {
-    color: #fff;
-  }
-  #mainNav .navbar-nav .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.7);
-    padding: 0 1rem;
-  }
-  #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #fff;
-  }
-  #mainNav .navbar-nav .nav-item:last-child .nav-link {
-    padding-right: 0;
-  }
-  #mainNav.navbar-scrolled {
-    -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    background-color: #444e55;
-  }
-  #mainNav.navbar-scrolled .navbar-brand {
-    color: #212529;
-  }
-  #mainNav.navbar-scrolled .navbar-brand:hover {
-    color: #f4623a;
-  }
-  #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
-    color: #212529;
-  }
-  #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
-    color: #f4623a;
+@media screen and (min-width: 1100px) and (max-width:2000px) {
+  #logo {
+    margin-left:5px;
   }
 }
+
+
+@media screen and (min-width: 970px) and (max-width:1100px) {
+  #logo {
+    margin-left:30px;
+  }
+}
+
+
+
+@media screen and (min-width: 850px) and (max-width:970px) {
+  #logo {
+    margin-top:-80px;
+    margin-left:30px;
+    
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width:850px) {
+  #logo {
+    margin-top:-70px;
+    margin-left:40px;
+    width:15%;
+    border:1px solid magenta;
+  }
+  #inlineFrameExample{
+    height:370px;
+    width:350px;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width:600px) {
+  #logo {
+    margin-top:-60px;
+    margin-left:40px;
+    width:10%;
+    border:1px solid blue;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width:400px) {
+  #logo {
+    margin-top:-55px;
+    margin-left:45px;
+    width:20%;
+    border:1px solid red;
+  }
+  #inlineFrameExample{
+    height:400px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
 </style>
 
 
 
-        <style>
-        header.masthead {
-          padding-top: 10rem;
-          padding-bottom: calc(10rem - 72px);
-          background: -webkit-gradient(linear, left top, left bottom, from(rgba(92, 77, 66, 0.8)), to(rgba(92, 77, 66, 0.8))), url("/static/img/fond2.jpg");
-          background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("/static/img/fond2.jpg");
-          background-position: center;
-          background-repeat: no-repeat;url
-          background-attachment: scroll;
-          background-size: cover;
-        }
-        </style>
-
-
-        <style>#my_prof{height:50px; height:50px;margin-left:-10px;}</style>
-        <style>#my{width:50px;height:50px; position: absolute;margin-left:185px;}</style>
-        
-        <style>
-          #momode{width:65px; height:50px; margin-left:20px;}
-          #my_prof{color:black; position: absolute;}
-          #myprofile_p{color:black;margin-left:55px;}
-          #pol_logo{color:black;}
-
-
-
-        
-          @media screen and (min-width: 780px) and (max-width:992px) {
-            #my {
-              margin-left:360px;
-              margin-top: -300px;
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-
-          @media screen and (min-width: 774px) and (max-width:780px) {
-            #my {
-              margin-left:360px;
-              margin-top: -300px;
-              
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-
-          @media screen and (min-width: 770px) and (max-width:775px) {
-            #my {
-              margin-left:360px;
-              margin-top: -300px;
-              
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-
-          @media screen and (min-width: 765px) and (max-width:770px) {
-            #my {
-              margin-left:360px;
-              margin-top: -300px;
-
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-
-          @media screen and (min-width: 768px) and (max-width:769px) {
-            #my {
-              margin-left:360px;
-              margin-top: -300px;
-      
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-
-        
-          @media screen and (min-width: 760px) and (max-width:768px) {
-            #my {
-              margin-left:250px;
-              margin-top: -300px;
-              
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-          @media screen and (min-width: 740px) and (max-width:760px) {
-            #my {
-              margin-left:250px;
-              margin-top: -300px;
-              
-              
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-
-          @media screen and (min-width: 570px) and (max-width:740px) {
-            #my {
-              margin-left:230px;
-              margin-top: -300px;
-              
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-
-          @media screen and (min-width: 550px) and (max-width:570px) {
-            #my {
-              margin-left:210px;
-              margin-top: -300px;
-              
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-          @media screen and (min-width: 530px) and (max-width:550px) {
-            #my {
-              margin-left:210px;
-              margin-top: -300px;
-              
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-          
-
-          @media screen and (min-width: 520px) and (max-width:530px) {
-            #my {
-              margin-left:200px;
-              margin-top: -300px;
-              
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-
-
-          @media screen and (min-width: 510px) and (max-width:520px) {
-            #my {
-              margin-left:190px;
-              margin-top: -300px;
-              
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-
-          @media screen and (min-width: 507px) and (max-width:510px) {
-            #my {
-              margin-left:190px;
-              margin-top: -300px;
-              
-            }
-            #my_prof{
-              margin-top: -300px;
-          
-            }
-            
-          }
-
-
-          @media screen and (min-width: 0px) and (max-width:506px) {
-            #my {
-              margin-left:240px;
-              margin-top: -320px;
-            }
-            #my_prof{
-              margin-top: -320px;
-          
-            }
-            
-          }
-
-
-       
-    </style>
-
-        <style>#im1{width:50px;height:50px;margin-left:20px;}</style>
-        <style>#coif_nav{width:50px; height:50px; margin-left:25px;}</style>
-        <style>#im2{width:50px;height:50px;margin-left:20px;}</style>
-        <style>#im3{width:70px; height:60px; margin-left:30px;margin-top:-10px;}</style>
-        <style>#im4{width:50px;height:50px;margin-left:40px;}</style>
-        <style>#h{font:Serif; color:white;}</style>
-        <style>#im6{width:100px; height:100px;}</style>
-        <style>#fight{width:50px; height:50px; margin-left:18px;}</style>
-        <style>#info{width:50px; height:50px; margin-left:15px;}</style>
-        <style>#autre{margin-left:-965px;margin-top:-100px;}</style>
-        <style>#h{font:Serif; color:white;}</style>
 
 
 
@@ -582,4 +527,12 @@
 
 
 
-        
+
+
+
+
+
+
+
+
+
