@@ -1,4 +1,4 @@
-{% include "navebarre_pollu.html" %}
+{% include "navebarre_prediction.html" %}
 {% block content %}
 {% endblock %}
 
@@ -6,53 +6,185 @@
 <link rel="stylesheet" type="text/css" href="/static/css/prediction.css" media="all" />
 
 
-  <!-- Title Section -->
-  <header class="masthead" id='sec'>
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10 align-self-end">
-          <h1>Nos prévisions !</h1><br>
-          <h2 style="color:black;font-family:"cursive";">
-            Nous vous proposons une prédiction en temps réel du taux de pollution à Marseille, Paris et Lyon.
-            Allez voir son mode de fonctionnement en fin de page !
-          </h2>
-        </div>
-        <div class="col-lg-8 align-self-baseline">
-        <p class="text-white-75 font-weight-light mb-5"></p>
-      </div>
-    </div>
-  </header>
-
 
   <!-- Prediction Section -->
-  <section class="page-section bg-dark text-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-12 text-center">
-          <h2 class="text-white mt-0"></h2>
-          <p>Clique sur un bouton, et nous te donnerons notre taux d'AQI ou indice de qualité de l'air selon de
-            ces trois villes ci-dessous. Bien sûr notre estimation est très loin de la réalité à un taux d'erreur de
-            plus ou moins 10 AQI.</p><br><br>
-        <input type='button' value='lyon' id='lyon'>
-        <input type='button' value='paris' id='paris'>
-        <input type='button' value='marseille' id='marseille'>
-        <br><br>
+  <div>
+
+
+
+<style>
+      #lyon_button:hover,
+      #paris_button:hover,
+      #marseille_button:hover{
+        background:#ccccff;
+      }
+      #MENU{
+        display:none;
+      }
+      #marseille_button{
+        background-color: transparent;
+        border: 1px solid black;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+      #paris_button{
+        background-color: transparent;
+        border: 1px solid black;
+        color: black;
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+      #lyon_button{
+        background-color: transparent;
+        border: 1px solid black;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+      #graphes_min{
+        float:right;
+      }
+      #separate_line1,
+      #separate_line2,
+      #separate_line3{
+        height:2px;
+        width:25px;
+        background:black;
+      }
+      #p_ville1,
+      #p_ville2,
+      #p_ville3{
+        font-size:2vw;
+        text-align: center;
+      }
+      #marseille1,
+      #paris1,
+      #lyon1{
+        border:none;
+        background:transparent;
+      }
+      input{
+        border:none;
+        background:transparent;
+      }
+      #choix{
+        height:50px;
+      }
+      a{
+        color:black;
+        text-decoration:none;
+      }
+      a:hover{
+        color:black;
+      }
+      a:visited{
+        
+      }
+    </style>
+
+
+      <br><br><br><br><br><br>
+      
+      <div class="container">
+        <div class="row">
+
+
+
+    
+          <div class="col-sm" id='p_ville1'>
+
+            <center><div id="info1" style='width:100px; height:50px;'></div></center>
+
+          
+            <center><div id='separate_line1'></div>
+
+            <input type='button' id='lyon'
+              onmouseover="one('separate_line1', 'info1')"
+              onmouseout="two('separate_line1', 'info1')"
+              value='Lyon'></center>
+
+
+
+
+            
+          </div>
+          
+          <div class="col-sm" id='p_ville2'>
+
+            <center><div id="info2" style='width:200px; height:50px;'></div></center>
+            
+            <center><div id='separate_line2'></div>
+            
+            
+            <input type='button' id='marseille'
+            onmouseover="one('separate_line2', 'info2')"
+              onmouseout="two('separate_line2', 'info2')"
+              value='Marseille'>
+            </p></center>
+
+            
+          </div>
+
+
+          
+          <div class="col-sm" id='p_ville3'>
+
+
+            <center><div id="info3" style='width:100px; height:50px;'></div></center>
+
+      
+            <center><div id='separate_line3'></div>
+            
+            <input type='button' id='paris'
+                onmouseover="one('separate_line3', 'info3')"
+                onmouseout="two('separate_line3', 'info3')"
+                value='Paris'>
+            </p></center>
+
+            
+          </div>
+         </div>
+
+   
+        <br>
         <p id='choix'></p>
-        <br><br>
         <p id='chargement' style='display:none'><img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80'></p>
         <div id='pred'></div>
-      </div>
-    </div>
-  </section>
+
+          
+        </div>
+
+        <div><br>
 
 
-  <!-- Separate Section for visual aspect -->
-  <div id="separate"><br><br><br></div>
+
+
+  </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  
+
+
+ 
 
 
 
   <!-- Explication Section -->
-  <section class="page-section bg-dark text-white">
+  <style>
+    #section_info{
+      width:700px;
+  }
+  </style>
+  <center>
+  <section class="page-section bg-dark text-white" id='section_info'>
     <div class="container">
       <h2 class="text-center mt-0" style='color:black;'>Nos Prévoyances</h2>
       <br><br>
@@ -87,11 +219,9 @@
         </div>
       </div>
     </div>
-  </section>
+  </section></center><br><br>
 
 
-  <!-- Separate Section for visual aspect -->
-  <div id="separate"><br><br><br></div>
 
 
 
@@ -161,8 +291,199 @@
 
 
 
+<script>
+
+      function one(div, ville){
+        document.getElementById(div).style.background = "red";
+        if(ville == 'info1'){
+          document.getElementById(ville).innerHTML = 'LYON';
+        }
+        else if(ville == 'info2'){
+          document.getElementById(ville).innerHTML = 'MASYLLLIA';
+        }
+        else if(ville == 'info3'){
+          document.getElementById(ville).innerHTML = 'PARIS';
+        }
+      };
+      
+      function two(div, ville){
+        document.getElementById(div).style.background = "black";
+        document.getElementById(ville).innerHTML = '';
+      };
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+//Here we call database and analysa2.py for lyon
+
+jQuery("#lyon").on("click", function(e){
+
+    //we "raise" the pred div, display you choose lyon city
+    //and display the loading logo
+
+    document.getElementById('pred').innerHTML = ""
+    document.getElementById('choix').innerHTML = 'Vous avez choisis Lyon';
+    document.getElementById('chargement').style.display = "block";
+
+    jQuery.ajax({
+        data:{
+            'lyon':'lyon',
+        },
+        type:"POST",
+        url:"/polution/prediction"
+    })
+    .done(function(data){
+        if (data.error){
+            jQuery("#monCadreAlert").text(data.error);
+            jQuery("#is_save"); 
+        }
+        else{
+            jQuery("#is_save").html(data.data);
+            jQuery("#monCadreAlert");
+
+            document.getElementById('chargement').style.display = "none";      
+            
+            if (data == "pas de donn\u00e9e"){
+                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
+            }
+            else{
+              
+              document.getElementById('pred').innerHTML = '<br><br>' +
+                                                          'Nous pensons que le taux de polution est de: '+
+                                                          '<strong>' +
+                                                          data +
+                                                          ' AQI</strong>';
+            };      
+        };
+        
+    });
+});
+
+
+
+
+//Here we call database and analysa2.py for paris
+jQuery("#paris").on("click", function(e){
+
+
+    //we "raise" the pred div, display you choose paris city
+    //and display the loading logo
+    document.getElementById('choix').innerHTML = 'Vous avez choisis Paris';
+    document.getElementById('chargement').style.display = "block";
+    document.getElementById('pred').innerHTML = ""
+    
+    jQuery.ajax({
+        data:{
+            'paris':'paris',
+        },
+        type:"POST",
+        url:"/polution/prediction"
+    })
+    .done(function(data){
+        if (data.error){
+            jQuery("#monCadreAlert").text(data.error);
+            jQuery("#is_save"); 
+        }
+        else{
+            jQuery("#is_save").html(data.data);
+            jQuery("#monCadreAlert");
+
+            document.getElementById('chargement').style.display = "none";
+            
+          if (data == "pas de donn\u00e9e"){
+                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
+            }
+            else{
+            document.getElementById('pred').innerHTML = '<br><br>' +
+                                                        'Nous pensons que le taux de polution est de : '+
+                                                        '<strong>' +
+                                                        data +
+                                                        '</strong>';
+
+            };            
+        };
+    });
+});
+
+
+
+
+//Here we call database and analysa2.py for marseille
+jQuery("#marseille").on("click", function(e){
+
+
+    //we "raise" the pred div, display you choose marseille city
+    //and display the loading logo
+    document.getElementById('choix').innerHTML = 'Vous avez choisis Marseille';
+    document.getElementById('chargement').style.display = "block";
+    document.getElementById('pred').innerHTML = ""
+    
+    jQuery.ajax({
+        data:{
+            'marseille':'marseille',
+        },
+        type:"POST",
+        url:"/polution/prediction"
+    })
+    .done(function(data){
+        if (data.error){
+            jQuery("#monCadreAlert").text(data.error);
+            jQuery("#is_save"); 
+        }
+        else{
+            jQuery("#is_save").html(data.data);
+            jQuery("#monCadreAlert");
+            
+            document.getElementById('chargement').style.display = "none";
+            
+          if (data == "pas de donn\u00e9e"){
+                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
+            }
+
+            else{
+              document.getElementById('pred').innerHTML = '<br><br>' +
+                                                        'Nous pensons que le taux de polution est de : '+
+                                                        '<strong>' +
+                                                        data +
+                                                        '</strong>';
+            };            
+        }; 
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+</script>
 
 
 
