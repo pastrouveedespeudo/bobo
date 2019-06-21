@@ -189,8 +189,8 @@
         #no_shut_color_hair{
             font-size:300%;
             color:white;
-            float:right;
-            margin-right:80px;
+            right:100;
+            position:absolute;
             
             
         }
@@ -200,9 +200,10 @@
         #shut_color_hair{
             font-size:300%;
             color:white;
-            float:right;
-            margin-right:80px;
-            display:none;  
+            right:100;
+            position:absolute;
+            display:none;²
+
         }
         #p_hair_color{
             font-size:1em;
@@ -306,22 +307,19 @@
               <style>
                 #barre{
                     position:absolute;
-                    right:-100;
+                    right:-10;
                     width:200px;
-                    margin-top:-50px;
-                    border:1px solid transparent;
+                    margin-top:50px;
                     height:500px;
-                    
-
                   }
-
-
 
                 @media screen and (min-width: 1500px) and (max-width:2000px) {
                   #barre{
-                    margin-right:-200px;
-                    border:1px solid red;
-                  }
+                    clear:right;
+                    margin-right:20px;
+                    font-size:1vw;
+    
+                   }
                     #name,
                     #store,
                     #online,
@@ -333,15 +331,99 @@
                         font-size:vw;
                     }
                     #nos_info_habits{
-                        font-size:vw;
+                        font-size:1vw;
                     }
                     #les_textes{
-                        font-size:vw;
+                        font-size:1vw;
                         margin-right:200px;
                     }
                     
                 }
 
+
+
+                @media screen and (min-width: 990px) and (max-width:1000px) {
+                  #barre{
+                    right:10;
+                    font-size:1.3vw;
+                    
+                    
+                    }
+                  #responsive_cont{
+                        display:none;
+                    }
+                }
+
+
+                @media screen and (min-width: 950px) and (max-width:990px) {
+                  #barre{
+                    right:-100;
+                    font-size:1.3vw;
+                    
+                    }
+                  #responsive_cont{
+                        display:none;
+                    }
+                }
+
+                @media screen and (min-width: 800px) and (max-width:950px) {
+                  #barre{
+                    right:-100;
+                    font-size:1.3vw;
+                    border:1px solid red;
+                    
+                    }
+                  #responsive_cont{
+                        display:none;
+                    }
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                @media screen and (min-width: 500px) and (max-width:800px) {
+                  #barre{
+                    right:-200;
+                    font-size:3vw;
+                    display:none;
+                    }
+                    #name,
+                    #store,
+                    #online,
+                    #price,
+                    #stock{
+                        font-size:3vw;
+                    }
+                    #CONTENEUR_INFO{
+                        font-size:3vw;
+                        
+                    }
+                    #nos_info_habits{
+                        font-size:3vw;
+                    }
+                    #les_textes{
+                        font-size:3vw;
+                        margin-right:-100px;
+                    }
+                    #page-top{
+                        overflow-x: hidden;
+
+                    }
+
+                    
+    
+                    
+                }
 
 
 
@@ -354,7 +436,8 @@
                   #barre{
                     right:-200;
                     font-size:3vw;
-                  }
+                    display:none;
+                    }
                     #name,
                     #store,
                     #online,
@@ -364,6 +447,7 @@
                     }
                     #CONTENEUR_INFO{
                         font-size:3vw;
+                        
                     }
                     #nos_info_habits{
                         font-size:3vw;
@@ -372,6 +456,12 @@
                         font-size:3vw;
                         margin-right:-100px;
                     }
+                    #page-top{
+                        overflow-x: hidden;
+
+                    }
+                    
+    
                     
                 }
 
@@ -380,7 +470,7 @@
             
                 <div id="barre">
 
-                
+         
                     <p id="p_hair_color"><strong>Les couleurs de cheveux</strong></p><br><br>
                     
                     <i class="fas fa-angle-right" id="shut_color_hair"
@@ -401,6 +491,8 @@
                       <input type='button' id='rousse' value='Rousse' onclick='coul("rousse")'><br><br>
                       <input type='button' id='noire' value='Noire' onclick='coul("noire")'><br><br>
                     </div>
+            
+
 
                     <div>
                     <p id="p_panta_p" style='color:white;'><strong>Pantalon</strong></p>
@@ -503,9 +595,6 @@
 
 
 
-
-
-
                     <p id='p_size_p' style='color:white;border:10px solid transparent;'><strong>Modifier la taille</strong></p>  
 
                 
@@ -564,9 +653,19 @@
                 </div>
          
                 <br><br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br>
             </div>
-        
+
+
+
+
+            
+
+
+
+
+
+
 
 
 
@@ -782,6 +881,214 @@
         </div>
       </div>
     </section>
+
+            <div class="container" id="responsive_cont">
+            <div class="row">
+
+
+
+                <style>
+
+                    #shut_tshirt2,
+                    #shut_size2,
+                    #shut_color_pantalon2,
+                    #shut_color_hair2{
+                        font-size:200%;
+                        color:white;
+                        display:none;
+                        
+                    }
+
+                    #no_shut_tshirt2,
+                    #no_shut_size2,
+                    #no_shut_color_pantalon2,
+                    #no_shut_color_hair2{
+                        font-size:200%;
+                        color:white;
+                       
+                    }
+
+
+                <script>
+       
+                        
+
+
+                </script>
+
+
+
+                    
+                </style>
+                
+                <div class="col-sm col-xs-12" style='text-align:center;'>
+
+                 <p id="p_hair_color2" style='color:white;'><strong>Les couleurs de cheveux</strong></p>
+                    
+
+
+                    <i class="fas fa-angle-right" id="shut_color_hair2"
+                    onclick="shutdown_info('input_color_hair2', 'shut_color_hair2', 'no_shut_color_hair2',
+                                            'p_panta_p2', 'tshirt_p_p2', 'p_size_p2',
+                                            'no_shut_color_pantalon2', 'no_shut_tshirt2', 'no_shut_size2')"></i>
+                    
+                    <i class="fas fa-angle-left" id="no_shut_color_hair2"
+                    onclick="no_shutdown_info('input_color_hair2', 'shut_color_hair2', 'no_shut_color_hair2',
+                                              'p_panta_p2', 'tshirt_p_p2', 'p_size_p2',
+                                              'no_shut_color_pantalon2', 'no_shut_tshirt2', 'no_shut_size2')"></i>
+               
+
+                    <div id="input_color_hair2" style='display:none;'>
+                      <input type='button' id='brune' value="Brune" onclick='coul("brune")'>
+                      <input type='button' id='blonde' value='Blonde' onclick='coul("blonde")'>
+                      <input type='button' id='chatain' value='Chatain' onclick='coul("chatain")'>
+                      <input type='button' id='rousse' value='Rousse' onclick='coul("rousse")'>
+                      <input type='button' id='noire' value='Noire' onclick='coul("noire")'>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col-sm col-xs-12" style='text-align:center;'>
+                    <p id="p_panta_p2" style='color:white;'><strong>Pantalon</strong></p>
+
+                    <i class="fas fa-angle-right" id="shut_color_pantalon2"
+                    onclick="shutdown_info('div_pantalon_menu2', 'shut_color_pantalon2', 'no_shut_color_pantalon2',
+                                            'p_hair_color2', 'tshirt_p_p2', 'p_size_p2',
+                                            'no_shut_size2', 'no_shut_tshirt2', 'no_shut_color_hair2')"></i>
+                    
+                    <i class="fas fa-angle-left" id="no_shut_color_pantalon2"
+                    onclick="no_shutdown_info('div_pantalon_menu2', 'shut_color_pantalon2', 'no_shut_color_pantalon2',
+                                            'p_hair_color2', 'tshirt_p_p2', 'p_size_p2',
+                                            'no_shut_size2', 'no_shut_tshirt2', 'no_shut_color_hair2')"></i>
+                    
+       
+              
+                    <div id="div_pantalon_menu2" style='display:none;text-align:center;'>
+                        <input type='button' value='Salopette' id='salopette'
+                            style=" border:3px solid black;font-family:segoe print;"
+                            onclick='voir_salopette()'><br><br>
+
+                         <input type='button' value='Jeans' id='jean' 
+                            style="border:3px solid black;font-family:segoe print;"
+                            onclick='voir_jean()'><br><br>
+
+                         <input type='button' value='Toile' id='toile'
+                            style="border:3px solid black;font-family:segoe print;"
+                            onclick='voir_toile()'></center><br><br>
+                    </div><br>
+            
+                </div>
+
+
+
+
+
+
+
+
+                    <div class="col-sm col-xs-12" style='text-align:center;'>
+                         <p id='tshirt_p_p2' style='color:white;border:10px solid transparent;'><strong>T-shirt</strong></p>
+
+
+                            <i class="fas fa-angle-left" id="no_shut_tshirt2"
+                            onclick="no_shutdown_info('div_input_tshirt2', 'shut_tshirt2', 'no_shut_tshirt2',
+                                                        'p_hair_color2', 'p_panta_p2', 'p_size_p2',
+                                                        'no_shut_size2', 'no_shut_color_pantalon2', 'no_shut_color_hair2')"></i>
+                            
+                            <i class="fas fa-angle-right" id="shut_tshirt2"
+                            onclick="shutdown_info('div_input_tshirt2', 'shut_tshirt2', 'no_shut_tshirt2',
+                                                        'p_hair_color2', 'p_panta_p2', 'p_size_p2',
+                                                        'no_shut_size2', 'no_shut_color_pantalon2', 'no_shut_color_hair2')"></i>
+                 
+                            
+
+                            <div id="div_input_tshirt2" style='display:none;'>                                                    
+                                <input type='button' value='manche longue' id='longue'
+                                    style=" border:3px solid black;font-family:segoe print;"
+                                    onclick='voir_t_longue()'><br><br>
+                                                                                                                                       
+                                <input type='button' value='manche courte' id='courte'
+                                    style="border:3px solid black;font-family:segoe print;"
+                                    onclick='voir_t_courte()'><br><br>
+                                                                                 
+                                                                                
+                                <input type='button' value='laine' id='laine'
+                                    style="border:3px solid black;font-family:segoe print;"
+                                    onclick='voir_t_laine()'><br><br>
+                            </div>                                         
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    <div class="col-sm col-xs-12" style='text-align:center;'>
+
+                    <p id='p_size_p2' style='color:white;'><strong>Modifier la taille</strong></p>  
+
+                
+                    <i class="fas fa-angle-left" id="no_shut_size2" 
+                    onclick="no_shutdown_info('input_size_bro2', 'shut_size2', 'no_shut_size2',
+                                            'p_hair_color2', 'p_panta_p2', 'tshirt_p_p2',
+                                            'no_shut_tshirt2', 'no_shut_color_pantalon2', 'no_shut_color_hair2')"></i>
+                    
+                    <i class="fas fa-angle-right" id="shut_size2"
+                    onclick="shutdown_info('input_size_bro2', 'shut_size2', 'no_shut_size2',
+                                            'p_hair_color2', 'p_panta_p2', 'tshirt_p_p2',
+                                            'no_shut_tshirt2', 'no_shut_color_pantalon2', 'no_shut_color_hair2')"></i>
+                 
+
+
+                    <div id="input_size_bro2" style='display:none;'>
+                      <input type='button' value='Ajouter de la longueur?' id="add1" style='width:200px;'
+                          onclick='ajout_longueur()'><br><br>
+                    
+          
+                      <input type='button' value='Ajouter de la largeur?' id="add2" style='width:200px;'
+                        onclick='ajout_largeur()'><br><br>
+                  
+               
+                      <input type='button' value='Enlever de la longueur?' id="no_add1" style='width:200px;'
+                        onclick='enlever_longueur()'><br><br>
+               
+              
+                      <input type='button' value='Enlever de la largeur?' id="no_add2" style='width:200px;'
+                        onclick='enlever_largeur()'><br><br>
+                   </div>
+                </div>
+
+
+
+
+
+
+
+
+                
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1687,3 +1994,4 @@ h3{
 
 
  
+
