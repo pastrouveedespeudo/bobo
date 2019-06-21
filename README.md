@@ -1,21 +1,22 @@
-y'a aussi le responsive top... non jdirais désolé je savais pas... 
-
-j'ai réver de malediction donc incs je sais que je vais regretter ce moment ^^
-
-enfete soit c ca qu'il faut faire soit jme fais chier pour rien lire des truks
-
-mettre les href de navebarre menu coté
+Commencer la partie pollution et la finir
 
 faire le menu 
 
-mettre les input en autre input de la page vetement
+y'a les input de retour menu coupe (map)
 
+y'a le menu pour les gros ecran (truk coté)
 
-finir les textes la nuit j'ai pluss d'inspi
+y'a le menu a faire  (page noire)
 
-réduire la police et les images poru le respsonsive 
+y'a la page d'accueille repsonsive(faut juste étirer les images (le fond)
+
+y'a le cron qui marche plus
+
+Finir tous les textes
 
 corriger toutes les fautes 
+
+enlever tous les border
 
 t'as oublié map et database et botoom p1 p2
 
