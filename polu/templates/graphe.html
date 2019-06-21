@@ -82,6 +82,9 @@
       a:hover{
         color:black;
       }
+      a:visited{
+        
+      }
     </style>
 
 
@@ -163,14 +166,29 @@
           
 
 
-
+      <style>
+        #heure,
+        #manif,
+        #météo,
+        #pop,
+        #pression,
+        #saison,
+        #vent,
+        #weekend,
+        #traffique,
+        #bouchon{
+          width:100px;
+          height:30px;
+          
+        }
+      </style>
 
 
       <div class="container text-center">
         <div class="row justify-content-center">
         
             <input type='button' id='bouchon' value='bouchon' onclick='graphe("plugs", "bouchon")'
-            onmouseover='hover("bouchon")' onmouseout='no_hover("bouchon")'>&nbsp;&nbsp;
+            onmouseover='hover("bouchon")' onmouseout='no_hover("bouchon")'>&nbsp;&nbsp;&nbsp;
 
             
             <input type='button' value='heure' id='heure' onclick='graphe("hour", "heure")'
@@ -215,6 +233,117 @@
 
 
 
+      <style>
+        #texte{
+          margin-top:500px;
+        }
+      </style>
+      <div id='texte'>
+
+    
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                titre<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                
+              </div>
+              <div class="col-sm">
+                titre<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </div>
+              <div class="col-sm">
+                titre<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </div>
+            </div>
+          </div>
+
+
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                titre<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </div>
+              <div class="col-sm">
+                titre<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </div>
+              <div class="col-sm">
+                titre<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </div>
+            </div>
+          </div><br>
+
+
+          <div class="container">
+            <div class="row">
+            
+              <div class="col-sm">
+                titre<br>
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              </div>
+              
+
+            <div class="col-sm"></div>
+            <div class="col-sm"></div>
+
+              
+            </div>
+          </div>
+
+    </div>
 
 
 
@@ -229,12 +358,7 @@
 
 
 
-
-
-
-
-
-      </div>
+      
 
         
     </div>
@@ -264,11 +388,11 @@
 
 
       function hover(div){
-        document.getElementById(div).style.background = "#ff8080";
+        document.getElementById(div).style.border = "1px solid black";
       };
 
       function no_hover(div){
-        document.getElementById(div).style.background = "transparent";
+        document.getElementById(div).style.border = "transparent";
       };
 
 
