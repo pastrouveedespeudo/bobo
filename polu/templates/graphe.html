@@ -6,6 +6,9 @@
     
     
     <style>
+      #menumenu{
+        display:none;
+      }
       #lyon_button:hover,
       #paris_button:hover,
       #marseille_button:hover{
@@ -85,6 +88,12 @@
       a:visited{
         
       }
+      #information_click{
+        height:40px;
+      }
+      #p_ville1{
+       
+      }
     </style>
 
 
@@ -92,11 +101,14 @@
       <div id="section_graphe">
 
       <div>
+      <span id='menumenu'>Menu</span>
       <div class="container">
+      <br><br>
+      <p id="information_click"><i><strong>*Choisis une ville et clique sur une des conditions</strong></i></p>
         <div class="row">
 
-          <p id="information_click"><i><strong>*Choisis une ville et clique sur une des conditions</strong></i></p>
-          <br><br>
+          
+     
         
           <div class="col-sm" id='p_ville1'>
 
@@ -186,7 +198,7 @@
       </style>
 
 
-      <div class="container text-center">
+      <div class="container text-center" id='inputs'>
         <div class="row justify-content-center">
         
             <input type='button' id='bouchon' value='bouchon' onclick='graphe("plugs", "bouchon")'
@@ -443,16 +455,22 @@
 
 
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
 
 
 
@@ -508,6 +526,16 @@
 
 </html>
 
+
+
+
+
+
+
+
+
+
+
 <script>
 //Global variable
 LISTE_AJAX = []
@@ -548,23 +576,11 @@ function graphe(legraphe, condition){
 
 
   
-  var a = "<i><a href='#'>" + "En savoir plus sur la condition: " + condition + "</a></i>";
+  var a = "<i><a href='#' id='sav'>" + "En savoir plus sur la condition: " + condition + "</a></i>";
 
   
   document.getElementById('savoir').innerHTML = a;
 
-
-
-
-
-
-
-
-
-
-
-
-  
   LISTE_AJAX_TYPE_GRAPHE.push(legraphe)
      document.getElementById('graphique1').innerHTML = '';
      jQuery.ajax({
@@ -588,7 +604,7 @@ function graphe(legraphe, condition){
                   jQuery("#is_save").html(data.data);
                   jQuery("#monCadreAlert");
              
-                  document.getElementById('graphique1').innerHTML = "<img src = '/static/popo/" +
+                  document.getElementById('graphique1').innerHTML = "<img id='dia' src = '/static/popo/" +
                                                                     data +
                                                                     "'>"
 
@@ -598,3 +614,107 @@ function graphe(legraphe, condition){
 };
 
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+@media screen and (min-width: 320px) and (max-width:375px) {
+ #MENU{
+    display:none;
+ }
+ #logo{
+    display:none;
+ }
+ #menumenu{
+    margin-left:30px;
+    display:block;
+    color:white;
+    margin-top:-150px;
+ }
+ #information_click{
+    width:300px;
+    height:50px;
+    margin-left:15px;
+    color:white;
+    font-size:10px;
+ }
+ #p_ville2,
+ #p_ville3,
+ #p_ville1{
+    font-size:10vw;
+    height:80px;
+ }
+ #info3,
+ #info2,
+ #info1{
+    display:none;
+    width:20px;
+ }
+ #choix{
+    margin-top:-40px;
+    color:white;
+    font-size:3.5vw;
+ }
+ #savoir{
+    font-size:3.5vw;
+ }
+ #sav{
+    color:white;
+ }
+ #graphique1{
+    text-align:center;
+ }
+ #dia{
+    width:300px;
+    margin-left:-40px;
+ }
+ #texte{
+    margin-top:100px;
+    font-size:4.5vw;
+ }
+  
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
