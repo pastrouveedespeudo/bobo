@@ -4,13 +4,22 @@
 
   <link rel="stylesheet" type="text/css" href="/static/css/donnée.css" media="all" />
 
+<style>
+  #texte1{
+    width:500px;
+    height:200px;
+    float:right;
+    margin-right:-500px;
+  }
+  #titre2{
+    width:100px;
+  }
 
+</style>
 <header>
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-
-
-        <div style="width:500px;height:200px;float:right;margin-right:-500px;">
+    <div id='sec1'>
+    
+        <div id='texte1'>
           <h1>Notre carte du vent</h1><br>
           aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
           aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -26,8 +35,10 @@
          
      
           
-        </div>
-        <div class="col-lg-8 align-self-baseline">
+    </div>
+
+    
+        <div id="titre2">
           Titre<br>
           aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
           aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -39,59 +50,48 @@
           aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
           aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
           aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          
-  
-          
         </div>
+
+        
       </div>
     </div>
+
   </header><br><br>
 
+  <style>
 
-
+  </style>
+  
   <!-- Data Section -->
-  <section>
+  <center>
+  <div id='section_ninja'>
 
-    <p id="info_aqi">
-      <i>*AQI signifie indice de qualité de l'air<br> par la mesure de l'O3, le SO2, le NO2 et PM10.</i>
-    </p><br>
-    <p id="info_dollard"><i>*le cours du dollars et le taux de vente du diesel<br>
-      représentent le taux de présence des voitures diesel en circulation</i>
-    </p><br>
-    <p id="info_pop"><i>*Population active de 16-59 ans</i>
-    </p><br>
 
+    <div id="les_info">
+      <p id="info_aqi">
+        <i>*AQI signifie indice de qualité de l'air<br> par la mesure de l'O3, le SO2, le NO2 et PM10.</i>
+      </p><br>
+      <p id="info_dollard"><i>*le cours du dollars et le taux de vente du diesel<br>
+        représentent le taux de présence des voitures diesel en circulation</i>
+      </p><br>
+      <p id="info_pop"><i>*Population active de 16-59 ans</i>
+      </p><br>
+    </div>
 
     <!-- Data Section City-->
-    <div class="container">
+    <div class="container" id='cities'>
       <div class="row justify-content-center">
         <div class="col-lg-12 text-center">
-        <div class="row">
+        <div class="row" id='row1'>
 
           <!-- Input Section Lyon-->
           <div class="col-lg-3 col-sm-5 col-md-5" id="Lyon"><br>
             <h5>Taux de pollution de particules fines à<br>Lyon</h5><br><br>
-            <center><strong><h5 id='lyon_pol'>{{lyon}}</h5>AQI</strong></center><br><br>
+            <center><strong><h5 id='lyon_pol'>{{lyon}}</h5>AQI</strong></center><br>
             <center><input type='button' value='Voir les données' onclick='donnee_lyon()'></center><br>
+
           </div>
 
-          <!-- Input Section Paris-->
-          <div class="col-lg-3 col-sm-5 col-md-5" id="Paris"><br>                   
-              <h5>Taux de pollution de particules fines à<br>Paris</h5><br><br>
-              <center><strong><h5 id='paris_pol'>{{paris}}</h5>AQI</strong></center><br><br>
-              <center><input type='button' value='Voir les données' onclick='donnee_paris()'></center><br>
-          </div>
-
-
-          <!-- Input Section Marseille-->
-          <div class="col-lg-3 col-sm-5 col-md-5" id="Marseille"><br>
-              
-              <h5>Taux de pollution de particules fines à Marseille</h5><br><br>
-              <center><strong><h5 id='marseille_pol'>{{marseille}}</h5>AQI</strong></center><br><br>
-              <center><input type='button' value='Voir les données' onclick='donnee_marseille()'></center> 
-          </div>
-
-       </div><br><br>
 
 
       <!-- Input Section Lyon Number 1 -->
@@ -185,32 +185,54 @@
          <br><br>
          <input type='button' value='fermer' onclick='fermer()'>
 
-        
-          <br><br><br><br>
-          <div style='float:left;'><i>Donnée fournis par openweathermap :
-          <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
-          </a></i></div><br>
+          <div id='info_donnée'>
+          
+            <br><br><br><br>
+            <div style='float:left;'><i>Donnée fournis par openweathermap :
+            <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
+            </a></i></div><br>
 
-          <div style='float:left;'>
-          <i>Classement de 1 a 7 des villes les plus polluée :</i>
-          <a href="http://www.linternaute.com/ville/c-ville-pollution-de-l-air"
-           style='color:black;'><i>Internaute</a></i></div><br>
+            <div style='float:left;'>
+            <i>Classement de 1 a 7 des villes les plus polluée :</i>
+            <a href="http://www.linternaute.com/ville/c-ville-pollution-de-l-air"
+             style='color:black;'><i>Internaute</a></i></div><br>
 
 
-          <div style='float:left;'><i>Classement des sites industriels les plus pollués : 
-          </i><a href="https://www.greenunivers.com/2009/05/quinze-sites-industriels-plus-pollueurs-de-france-6981/"
-          style='color:black;'><i>Grenunivers</a></i></div><br>
+            <div style='float:left;'><i>Classement des sites industriels les plus pollués : 
+            </i><a href="https://www.greenunivers.com/2009/05/quinze-sites-industriels-plus-pollueurs-de-france-6981/"
+            style='color:black;'><i>Grenunivers</a></i></div><br>
 
-          <div style='float:left;'><i>Manifestation à lyon : </i>
-          <a href="https://www.onlymoov.com/trafic/" style='color:black;'><i>onlymoov</a></i></div><br>
+            <div style='float:left;'><i>Manifestation à lyon : </i>
+            <a href="https://www.onlymoov.com/trafic/" style='color:black;'><i>onlymoov</a></i></div><br>
 
-          <div style='float:left;'><i>Bouchons à lyon : </i>
-          <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
-            style='color:black;'><i>moncoyote</a></i></div><br>
+            <div style='float:left;'><i>Bouchons à lyon : </i>
+            <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
+              style='color:black;'><i>moncoyote</a></i></div><br>  
+    
+            <div style='float:left;'><i>Pollution onnées issuent de <a href='http://www.airlab.solutions/fr'
+            style='color:black;'>plumairlab
+            </a></i> 
+            </div>
+            </div>
 
+          
       </div>
 
-        <!-- Input Section Paris Number 1 -->
+
+
+
+          <!-- Input Section Paris-->
+          <div class="col-lg-3 col-sm-5 col-md-5" id="Paris"><br>                   
+              <h5>Taux de pollution de particules fines à<br>Paris</h5><br><br>
+              <center><strong><h5 id='paris_pol'>{{paris}}</h5>AQI</strong></center><br>
+              <center><input type='button' value='Voir les données' onclick='donnee_paris()'></center><br>
+          </div>
+
+
+
+
+
+       <!-- Input Section Paris Number 1 -->
         <div id='info2' style='display:none;'>
         <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
           <div class="row">
@@ -302,6 +324,8 @@
         <br><br>
         <input type='button' value='fermer' onclick='fermer()'>
           <br><br><br><br>
+
+        <div id='info_donnée'>
           <div style='float:left;'><i>Donnée fournis par openweathermap :
           <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
           </a></i></div><br>
@@ -322,8 +346,47 @@
           <div style='float:left;'><i>Bouchons à Paris : </i>
           <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
             style='color:black;'><i>moncoyote</a></i></div><br>
+
+          <div style='float:left;'><i>Pollution onnées issuent de <a href='http://www.airlab.solutions/fr'
+          style='color:black;'>plumairlab
+          </a></i> 
+          </div>
+          </div>
+
+
+        
       </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- Input Section Marseille-->
+          <div class="col-lg-3 col-sm-5 col-md-5" id="Marseille"><br>
+              
+              <h5>Taux de pollution de particules fines à Marseille</h5><br><br>
+              <center><strong><h5 id='marseille_pol'>{{marseille}}</h5>AQI</strong></center><br>
+              <center><input type='button' value='Voir les données' onclick='donnee_marseille()'></center> 
+          </div>
 
 
       <!-- Input Section Marseille Number 1 -->
@@ -417,7 +480,8 @@
           <!-- Input Section Marseille Number 4 -->
           <br><br>
           <input type='button' value='fermer' onclick='fermer()'>
-
+          
+          <div id='info_donnée'>
           <br><br><br><br>
           <div style='float:left;'><i>Donnée fournis par openweathermap :
           <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
@@ -439,24 +503,32 @@
           <div style='float:left;'><i>Bouchons à Paris : </i>
           <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
             style='color:black;'><i>moncoyote</a></i></div><br>
+    
+          <div style='float:left;'><i>Pollution onnées issuent de <a href='http://www.airlab.solutions/fr'
+          style='color:black;'>plumairlab
+          </a></i> 
+          </div>
+          </div>
+
 
       </div>
       
+  </div><br><br>
+</center>
 
-
-      <!-- Airplum Section -->
-      <br><br><br><br><br><br>
-      <div style='float:left;'><i>Données issuent de <a href='http://www.airlab.solutions/fr'
-          style='color:black;'>plumairlab
-          </a></i> 
-      </div>
+   
+      
 
     </div>
   </section>
-
+  <style>
+    #separate{
+      width:700px;
+    }
+  </style>
   <center>
   <!-- Separate Section for visual aspect -->
-  <div id="separate" style="width:700px;"><br><br>
+  <div id="separate"><br><br>
 
 
    <!-- Map Section redirect to Map -->
@@ -535,6 +607,283 @@
 
 
 
+<style>
+
+#MENU{
+  display:none;
+}
+#logo{
+  display:none;
+}
+
+@media screen and (min-width: 320px) and (max-width:375px) {
+  #MENU{
+    display:none;
+  }
+  #logo{
+    display:none;
+  }
+  #sec1{
+    height:350px;
+  }
+  #texte1{
+    width:200px;
+    float:left;
+    margin-left:8%;
+    color:black;
+    text-shadow: 1px 1px black;
+    font-size:4vw;
+  }
+  #titre2{
+    margin-left:10%;
+    color:black;
+    text-shadow: 1px 1px black;
+  }
+  #les_info{
+    font-size:4vw;
+  }
+  #section_ninja{
+    float:none;
+    float:clear;
+    text-align:center;
+    width:140%;
+  }
+  #row1{
+    height:100%;
+  }
+  #lyon_pol{
+    margin-top:-80px;
+  }
+  #Lyon{
+    font-size:8vw;
+    width:400px;
+  }
+  #paris_pol{
+    margin-top:-80px;
+  }
+  #Paris{
+    font-size:8vw;
+    width:400px;
+  }
+  #marseille_pol{
+    margin-top:-80px;
+  }
+  #Marseille{
+    font-size:8vw;
+    width:400px;
+  }
+  .col-sm{
+    font-size:8vw;
+  }
+  #cities{
+    float:none;
+    width:100%;
+  }
+  input{
+    font-size:8vw;
+  }
+  #info_donnée{
+    font-size:8vw;
+    color:white;
+    text-shadow: 1px 1px black;
+  }
+  #separate{
+    width:100%;
+    float:none;
+    margin-top:50px;
+  }
+}
+
+
+
+@media screen and (min-width: 375px) and (max-width:425px) {
+  #MENU{
+    display:none;
+  }
+  #logo{
+    display:none;
+  }
+  #sec1{
+    height:350px;
+  }
+  #texte1{
+    float:left;
+    width:200px;
+    margin-left:5%;
+    color:black;
+    text-shadow: 1px 1px black;
+    font-size:3vw;
+    width:90%;
+
+  }
+  #titre2{
+    margin-left:7%;
+    color:black;
+    text-shadow: 1px 1px black;
+
+  }
+  #les_info{
+    font-size:4vw;
+  }
+  #section_ninja{
+    float:none;
+    float:clear;
+    text-align:center;
+    width:140%;
+  }
+  #row1{
+    height:100%;
+  }
+  }
+  #lyon_pol{
+    margin-top:-100px;
+   
+  }
+  #Lyon{
+    font-size:8vw;
+    width:400px;
+  }
+  #paris_pol{
+    margin-top:-80px;
+  }
+  #Paris{
+    font-size:8vw;
+    width:400px;
+  }
+  #marseille_pol{
+    margin-top:-80px;
+  }
+  #Marseille{
+    font-size:8vw;
+    width:400px;
+  }
+  .col-sm{
+    font-size:8vw;
+  }
+  #cities{
+    float:none;
+    width:100%;
+  }
+  input{
+    font-size:8vw;
+  }
+  #info_donnée{
+    font-size:8vw;
+    color:white;
+    text-shadow: 1px 1px black;
+  }
+
+  #separate{
+    margin-left:20%;
+    width:100%;
+    float:none;
+    margin-top:50px;
+  }
+}
+
+
+
+
+
+@media screen and (min-width: 426px) and (max-width:768px) {
+  #MENU{
+    display:none;
+  }
+  #logo{
+    display:none;
+  }
+  #sec1{
+    height:350px;
+    border:1px solid red;
+  }
+  #texte1{
+    float:left;
+    width:200px;
+    margin-left:5%;
+    color:black;
+    text-shadow: 1px 1px black;
+    font-size:3vw;
+    height:200px;
+    border:1px solid red;
+
+    
+  }
+  #titre2{
+    margin-left:7%;
+    color:black;
+    text-shadow: 1px 1px black;
+
+  }
+  #les_info{
+    font-size:4vw;
+  }
+  #section_ninja{
+    float:none;
+    float:clear;
+    text-align:center;
+    width:140%;
+  }
+  #row1{
+    height:100%;
+  }
+  #lyon_pol{
+    margin-top:-100px;
+   
+  }
+  #Lyon{
+    font-size:8vw;
+    width:400px;
+  }
+  #paris_pol{
+    margin-top:-80px;
+  }
+  #Paris{
+    font-size:8vw;
+    width:400px;
+  }
+  #marseille_pol{
+    margin-top:-80px;
+  }
+  #Marseille{
+    font-size:8vw;
+    width:400px;
+  }
+  .col-sm{
+    font-size:8vw;
+  }
+  #cities{
+    float:none;
+    width:100%;
+  }
+  input{
+    font-size:8vw;
+  }
+  #info_donnée{
+    font-size:8vw;
+    color:white;
+    text-shadow: 1px 1px black;
+  }
+
+  #separate{
+    margin-left:20%;
+    width:100%;
+    float:none;
+    margin-top:50px;
+    border:1px solid red;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
 
 
 
