@@ -10,22 +10,23 @@
   h1{
     color:black;
     font-family:"cursive";
-  };
+  }
   h2{
     color:black;
     font-family:"cursive";
-  };
-
+  }
+  #input_text{
+    text-align:center;
+    border:2px solid black;
+  }
 </style>
 
 
   <!-- Masthead -->
   <header>
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
+    <div id='textes'>
 
-
-        <div style="width:500px;height:200px;float:right;margin-right:-500px;">
+        <div id='texte1'>
           <h1>Notre carte du vent</h1><br>
           aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
           aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -42,7 +43,8 @@
      
           
         </div>
-        <div class="col-lg-8 align-self-baseline">
+        
+        <div id='texte2'class="col-lg-8 align-self-baseline">
           Titre<br>
           aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
           aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -88,9 +90,9 @@
 
           
           <div id="map"></div><br><br>
-          <div class='container'>
-          <input type='text' placeholder='Placez une ville' style='text-align:center;border:2px solid black;'
-              id='input_text'>
+          <div class='container' id='inputs'>
+          <input type='text' placeholder='Placez une ville'
+              id='input_text'><br><br>
           
           <input type='button' value='valider' id='button_valider' style='border:2px solid black;'>
   
@@ -409,13 +411,23 @@
     
       <h2 class="text-center mt-0">Notre carte</h2><br><br>
 
+      <style>
+        #un{
 
+        }
+        #deux{
+
+        }
+        #trois{
+          margin:auto;
+        }
+      </style>
       <div class="row">
 
-        <div class="col-lg-4 col-md-6 text-center" style='margin:auto;'>
+        <div id="trois" class="col-xs-12 col-md-4 col-lg-4 text-center">
           <strong>Son fonctionement</strong>
           <br><br>
-          <p style='color:white'>Afin de la pouvoir visualiser le vent depuis notre carte google map.
+          <p style='color:black'>Afin de la pouvoir visualiser le vent depuis notre carte google map.
           Nous nous servons de plusieurs sources.<br><br>
           
           La première est un site web sur la météo sur lequel nous prenons le sens du vent
@@ -433,10 +445,11 @@
           <span style='float:left; color:black;'><i>*https://www.google.fr/maps/</i></span><br>
     
         </div>
+
      
 
 
-        <div class="col-lg-4 col-md-6 text-center">
+        <div id="un" class="col-xs-6 col-md-4 col-lg-4 text-center">
           <strong>Son Interet</strong><br><br>
           
           <p style='color:black'>La pollution est transportable par les airs.
@@ -446,10 +459,10 @@
           Nous pouvons donc voir la pollution et son déplacement.</p>
         </div>
 
-        <div class="col-lg-4 col-md-6 text-center">
+        <div id="deux" class="col-xs-6 col-md-4 col-lg-4  text-center">
           <strong>Son utilisation</strong><br><br>
 
-          <p style='color:#808080'>Entrez une ville de France, laissez charger,
+          <p style='color:#black'>Entrez une ville de France, laissez charger,
           et regardez !
           <br><br> Appuyer sur stop arrete le processus. Les marqueures ne seront pas
           réinitialisés.
@@ -463,7 +476,7 @@
         
       
     </div>
-  </section></center><br><br>
+  </section></center><br><br><br><br>
 
 
 
@@ -500,6 +513,33 @@
                     
     </div>
   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -563,3 +603,262 @@
 
 
 </html>
+
+
+
+
+
+<style>
+
+
+
+
+@media screen and (min-width: 320px) and (max-width:375px) {
+  #logo{
+    display:none;
+  }
+  #MENU{
+    display:none;
+  }
+  #textes{
+    margin-left:10px;
+    font-size:4vw;
+  }
+  #texte1{
+    text-align:center;
+    font-size:5vw;
+    word-wrap: break-word;
+  }
+  #texte2{
+    margin-top:20px;
+    text-align:center;
+    font-size:5vw;
+    
+  }
+  #inputs{
+    font-size:4.5vw;
+  }
+  #section_info{
+    font-size:4.5vw;
+    width:320px;
+    height:1500px;
+  }
+  #input_text{
+    width:250px;
+  }
+}
+
+
+@media screen and (min-width: 375px) and (max-width:425px) {
+  #logo{
+    display:none;
+  }
+  #MENU{
+    display:none;
+  }
+  #textes{
+    margin-left:10px;
+    font-size:3vw;
+  }
+  #texte1{
+    text-align:center;
+    font-size:5vw;
+    word-wrap: break-word;
+  }
+  #texte2{
+    margin-top:20px;
+    text-align:center;
+    font-size:5vw;
+    
+  }
+  #inputs{
+    font-size:4vw;
+  }
+  #section_info{
+    font-size:4vw;
+    width:370px;
+    height:1500px;
+  }
+  #input_text{
+    width:300px;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width:768px) {
+  #logo{
+    display:none;
+  }
+  #MENU{
+    display:none;
+  }
+  #textes{
+    margin-left:10px;
+    font-size:4vw;
+  }
+  #texte1{
+    text-align:center;
+    font-size:3vw;
+    word-wrap: break-word;
+  }
+  #texte2{
+    margin-top:20px;
+    text-align:center;
+    font-size:3vw;
+    
+  }
+  #inputs{
+    font-size:3vw;
+  }
+  #section_info{
+    font-size:3vw;
+    width:400px;
+    height:2000px;
+    text-align:justify;
+  }
+  #input_text{
+    width:80%;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width:991px) {
+  #logo{
+    display:none;
+  }
+  #MENU{
+    display:none;
+  }
+  #textes{
+    margin-left:10px;
+    font-size:3vw;
+  }
+  #texte1{
+    text-align:center;
+    font-size:2vw;
+    word-wrap: break-word;
+  }
+  #texte2{
+    margin-top:20px;
+    text-align:center;
+    font-size:2vw;
+    
+  }
+  #inputs{
+    font-size:2vw;
+  }
+  #section_info{
+    font-size:2vw;
+    width:760px;
+    height:2000px;
+    text-align:justify;
+  }
+}
+
+@media screen and (min-width: 991px) and (max-width:1024px) {
+  #logo{
+    display:none;
+  }
+  #MENU{
+    display:none;
+  }
+  #textes{
+    margin-left:10px;
+    font-size:3vw;
+  }
+  #texte1{
+    font-size:2vw;
+    word-wrap: break-word;
+    margin-left:500px;
+    width:400px;
+  }
+  #texte2{
+    margin-top:20px;
+    text-align:center;
+    font-size:2vw;
+    
+    
+  }
+  #inputs{
+    font-size:1.5vw;
+  }
+  #input_text{
+    width:300px;
+  }
+  #section_info{
+    font-size:2vw;
+    width:990px;
+    height:1000px;
+    text-align:justify;
+  }
+
+}
+
+
+@media screen and (min-width: 1200px) and (max-width:1500px) {
+  #logo{
+    display:none;
+  }
+  #MENU{
+    display:none;
+  }
+  #textes{
+    margin-left:10px;
+    border:1px solid transparent;
+  }
+  #texte1{
+    width:600px;
+    text-align:center;
+    float:right;
+    margin-right:150px;
+  }
+  #texte2{
+    width:200px;
+    margin-left:150px;
+    margin-top:400px;
+  }
+  #inputs{
+    font-size:1vw;
+  }
+  #input_text{
+    width:300px;
+  }
+  #section_info{
+    font-size:1vw;
+    width:990px;
+    height:1000px;
+    text-align:justify;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
