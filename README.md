@@ -1,14 +1,10 @@
-y'a 4 icones + lles social a changés c toujours les memes pages mais la cohésion ca c pour se dire ok mais sinon essais dapporter des truks a chaque pages au cas ou je serai biaisai la
+onmouse over onmousout c tout ce que chai faire pffffff
 
-Commencer la partie pollution et la finir
 
-faire le menu 
 
 y'a les input de retour menu coupe (map)
 
 y'a le menu pour les gros ecran (truk coté)
-
-y'a le menu a faire  (page noire)
 
 y'a la page d'accueille repsonsive(faut juste étirer les images (le fond)
 
