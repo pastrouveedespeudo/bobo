@@ -16,6 +16,8 @@ y'a le cron qui marche plus
 
 Finir tous les textes
 
+le fond (coupe) se met sur les textes (qui sont un peu gros)
+
 corriger toutes les fautes 
 
 enlever tous les border
