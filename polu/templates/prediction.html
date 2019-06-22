@@ -5,6 +5,54 @@
 
 <link rel="stylesheet" type="text/css" href="/static/css/prediction.css" media="all" />
 
+  <style>
+    #text{
+      float:right;
+      margin-right:250px;
+      width:200px;
+    }
+    #conteneur{
+      margin-top:450px;
+    }
+    #choix{
+      text-align:center;
+      font-size:20px;
+    }
+    #pred{
+      text-align:center;
+      font-size:20px;
+    }
+  </style>
+
+
+
+
+  <div id='text'>
+    <h1>La prédiction</h1><br>
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    
+    
+    
+  </div>
+  
 
 
   <!-- Prediction Section -->
@@ -95,17 +143,13 @@
 
       <br><br><br><br><br><br>
       
-      <div class="container">
+      <div class="container" id="conteneur">
         <div class="row">
 
-
-
-    
           <div class="col-sm" id='p_ville1'>
 
             <center><div id="info1" style='width:100px; height:50px;'></div></center>
 
-          
             <center><div id='separate_line1'></div>
 
             <input type='button' id='lyon'
@@ -114,10 +158,16 @@
               value='Lyon'></center>
 
 
-
-
-            
           </div>
+
+
+
+
+
+
+
+
+
           
           <div class="col-sm" id='p_ville2'>
 
@@ -158,7 +208,7 @@
    
         <br>
         <p id='choix'></p>
-        <p id='chargement' style='display:none'><img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80'></p>
+        <center><p id='chargement' style='display:none'><img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80'></p></center>
         <div id='pred'></div>
 
           
@@ -283,6 +333,328 @@
 
 
 </html>
+
+
+
+<style>
+@media screen and (min-width: 320px) and (max-width:374px) {
+  #conteneur{
+    margin-top:-300px;
+    margin-top:50px;
+  }
+  #p_ville3,
+  #p_ville2,
+  #p_ville1{
+    font-size:50px;
+    height:150px;
+  }
+  #info1,
+  #info2,
+  #info3{
+    display:none;
+  }
+  #separate_line2,
+  #separate_line3,
+  #separate_line1{
+    width:50px;
+  }
+  #text{
+    float:none;
+    margin-left:280px;
+    font-size:6vw;
+  }
+  #choix{
+    font-size:30px;
+    margin-left:15%;
+    width:400px;
+  }
+  #chargement{
+    text-align:center;
+  }
+  #pred{
+    margin-left:10%;
+    font-size:30px;
+    width:600px;
+    text-align:center;
+  }
+  #section_info{
+    font-size:8vw;
+  }
+}
+
+
+
+@media screen and (min-width: 375px) and (max-width:424px) {
+  #conteneur{
+    margin-top:-300px;
+    margin-top:50px;
+  }
+  #p_ville3,
+  #p_ville2,
+  #p_ville1{
+    font-size:50px;
+    height:150px;
+  }
+  #info1,
+  #info2,
+  #info3{
+    display:none;
+  }
+  #separate_line2,
+  #separate_line3,
+  #separate_line1{
+    width:50px;
+  }
+  #text{
+    float:none;
+    margin-left:280px;
+    font-size:5vw;
+  }
+  #choix{
+    font-size:30px;
+    margin-left:15%;
+    width:400px;
+  }
+  #chargement{
+    text-align:center;
+  }
+  #pred{
+    margin-left:10%;
+    font-size:30px;
+    width:600px;
+    text-align:center;
+  }
+  #section_info{
+    font-size:8vw;
+  }
+}
+
+
+
+
+
+
+@media screen and (min-width: 425px) and (max-width:506px) {
+  #conteneur{
+    margin-top:50px;
+  }
+  #p_ville3,
+  #p_ville2,
+  #p_ville1{
+    font-size:30px;
+    height:150px;
+    margin-left:-100px;
+  }
+  #info1,
+  #info2,
+  #info3{
+    display:none;
+  }
+  #separate_line2,
+  #separate_line3,
+  #separate_line1{
+    width:50px;
+  }
+  #text{
+    float:none;
+    margin-left:200px;
+    font-size:4vw;
+  }
+  #choix{
+    font-size:30px;
+    margin-left:15%;
+    width:400px;
+  }
+  #chargement{
+    text-align:center;
+  }
+  #pred{
+    margin-left:10%;
+    font-size:30px;
+    width:600px;
+    text-align:center;
+  }
+  #section_info{
+    font-size:8vw;
+  }
+}
+
+
+@media screen and (min-width: 507px) and (max-width:575px) {
+  #conteneur{
+    margin-top:-300px;
+    margin-top:40px;
+  }
+  #p_ville3,
+  #p_ville2,
+  #p_ville1{
+    font-size:35px;
+    height:150px;
+    margin-left:-100px;
+  }
+  #info1,
+  #info2,
+  #info3{
+    display:none;
+  }
+  #separate_line2,
+  #separate_line3,
+  #separate_line1{
+    width:50px;
+  }
+  #text{
+    float:none;
+    margin-left:250px;
+    font-size:3.5vw;
+  }
+  #choix{
+    font-size:30px;
+    margin-left:15%;
+    width:400px;
+  }
+  #chargement{
+    text-align:center;
+  }
+  #pred{
+    margin-left:10%;
+    font-size:30px;
+    width:600px;
+    text-align:center;
+  }
+  #section_info{
+    font-size:vw;
+  }
+}
+
+
+
+@media screen and (min-width: 575px) and (max-width:800px) {
+  #conteneur{
+    width:600px;
+    margin-left:10%;
+    margin-top:50px;
+  }
+  #p_ville3,
+  #p_ville2,
+  #p_ville1{
+    font-size:35px;
+    text-align:center;
+    width:500px;
+    
+
+  }
+  #info1,
+  #info2,
+  #info3{
+    display:none;
+  }
+  #separate_line2,
+  #separate_line3,
+  #separate_line1{
+    width:50px;
+  }
+  #text{
+    float:none;
+    margin-left:300px;
+    font-size:3vw;
+  }
+  #choix{
+    text-align:center;
+    font-size:20px;
+  }
+  #chargement{
+    text-align:center;
+  }
+  #pred{
+    font-size:20px;
+    text-align:center;
+    margin-top:-20px;
+  }
+  #section_info{
+    font-size:2vw;
+  }
+}
+
+
+@media screen and (min-width: 801px) and (max-width:1000px) {
+  #conteneur{
+    margin-top:50px;
+    width:100%;
+    margin-left:20%;
+  }
+  #p_ville3,
+  #p_ville2,
+  #p_ville1{
+    font-size:35px;
+    text-align:center;
+    width:800px;
+    
+  }
+  #info1,
+  #info2,
+  #info3{
+  }
+  #separate_line2,
+  #separate_line3,
+  #separate_line1{
+    width:50px;
+  }
+  #text{
+    float:none;
+    margin-left:650px;
+    font-size:2.5vw;
+  }
+  #choix{
+    font-size:20px;
+    text-align:center;
+  }
+  #chargement{
+    text-align:center;
+  }
+  #pred{
+    font-size:20px;
+    text-align:center;
+    margin-top:-20px;
+  }
+  #section_info{
+    text-align:center;
+    font-size:2vw;
+    margin-left:20%;
+  }
+}
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -460,25 +832,6 @@ jQuery("#marseille").on("click", function(e){
         }; 
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
