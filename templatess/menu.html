@@ -31,24 +31,28 @@
         <div>
             <h1>Menu</h1>
             <div class="container">
-                <div id="parcours" style='color:white'></div>
+                <div id="parcours" style='color:white;height:20px;'></div>
             </div>
             
             <div class="container">
               <div class="row">
-                <div id="un" class="col-sm">
+                <div id="one" class="col-sm">
+                
                   <center><span id="Site"><u>Site</u></span><br></center>
+                  
                   <p id="Sommaire" class="sommaire"
                   onmouseover="un('Sommaire')" onmouseout="deux('Sommaire')">
                   
                   Sommaire</p>
                   <p id="Mode" class="Mode"
-                  onmouseover="un('Mode')" onmouseout="deux('Mode')">
-                  Rubrique Mode</p>
+                      onmouseover="un('Mode')" onmouseout="deux('Mode')">
+                      Rubrique Mode
+                  </p>
                   
                   <p id="Pollution" class="Pollution"
-                  onmouseover="un('Pollution')" onmouseout="deux('Pollution')">
-                  Rubrique Pollution</p>
+                      onmouseover="un('Pollution')" onmouseout="deux('Pollution')">
+                      Rubrique Pollution
+                  </p>
                   
                   <p id="Contact" class="Contact"
                   onmouseover="un('Contact')" onmouseout="deux('Contact')">
@@ -57,8 +61,81 @@
                   <p id="Mention" class="Mention"
                   onmouseover="un('Mention')" onmouseout="deux('Mention')">
                   Mentions Légales</p>
+
+                  <center><div id="separate"></div></center>
+
+
+                  <div>
+                  <center><span id="Pollution"><u>Pollution</u></span><br></center>
+                  
+                  <p id="info" class="info"
+                  onmouseover="un('info')" onmouseout="deux('info')">
+                  Les informations Pollution</p>
+                  
+                  <p id="graph" class="graph"
+                      onmouseover="un('graph')" onmouseout="deux('graph')">
+                      Les Graphiques
+                  </p>
+                  
+                  <p id="données" class="données"
+                      onmouseover="un('données')" onmouseout="deux('données')">
+                      Les données Pollutions
+                  </p>
+                  
+                  <p id="predi" class="predi"
+                  onmouseover="un('predi')" onmouseout="deux('predi')">
+                  Les prédictions</p>
+                  
+                  <p id="carte" class="carte"
+                  onmouseover="un('carte')" onmouseout="deux('carte')">
+                  La carte du vent</p>
+
+                  <p id="solution" class="solution"
+                  onmouseover="un('solution')" onmouseout="deux('solution')">
+                  La Solution</p>
+                  </div>
+
+
+                  <div>
+                  <center><span id="mode"><u>Mode</u></span><br></center>
+                  
+                  <p id="coupe" class="coupe"
+                  onmouseover="un('coupe')" onmouseout="deux('coupe')">
+                  Les coupes de cheveux</p>
+                  
+                  <p id="coiffeurs" class="coiffeurs"
+                      onmouseover="un('coiffeurs')" onmouseout="deux('coiffeurs')">
+                      Les Coiffeurs
+                  </p>
+                  
+                  <p id="gym" class="gym"
+                      onmouseover="un('gym')" onmouseout="deux('gym')">
+                      Les salles de Gym
+                  </p>
+                  
+                  <p id="habit" class="habit"
+                  onmouseover="un('habit')" onmouseout="deux('habit')">
+                  Les habits</p>
+
+                  </div>
+
+
+                  
                 </div>
-                <div id="barre"></div> 
+
+
+
+
+
+
+
+                
+                <div id="barre"></div>
+
+
+
+
+                
                 <div id="deux" class="col-sm">
                   <center><span><u>Page</u></h1></span>
                 </div>
@@ -86,6 +163,7 @@
 
 
 
+                  
 <script>
     function un(div){
         document.getElementById(div).style.color = "red";
@@ -93,14 +171,20 @@
     };
     function deux(div){
         document.getElementById(div).style.color = "white";
-        document.getElementById('parcours').innerHMTL = "";
-    }
-    
+    };
+
 </script>
 
 
 
 <style>
+
+    #separate{
+        width:50px;
+        height:1px;
+        background:white;
+    }
+
     body{
         background:black;
         color:white;
