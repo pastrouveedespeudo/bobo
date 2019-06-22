@@ -109,7 +109,7 @@ def diagram_plugs(data_no, data_little, data_means,
     plt.bar(range(6), [data_no, data_little, data_means,
                        data_great, data_large_enough,
                         data_super_large],
-                        width = 0.1, color = 'red',
+                        width = 0.1, color = 'black',
                        yerr = [er_no, er_little, er_means,
                               er_great, er_large_enough,
                               er_super_large],
@@ -124,14 +124,14 @@ def diagram_plugs(data_no, data_little, data_means,
     plt.ylabel('Taux de pollution en AQI')
     plt.title("Taux de pollution selon les bouchons")
 
-
     nouveau = new()
     print(nouveau)
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.clf()               #we empty the cache
     plt.close()
     
     shutil.move(nouveau, '/app/static/popo')    #Move graph to popo file
+    #shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
     return nouveau
 
 
