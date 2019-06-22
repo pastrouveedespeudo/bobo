@@ -1,6 +1,8 @@
-onmouse over onmousout c tout ce que chai faire pffffff
+# tu trouves ca horrible pcque ty as associé toutes les emotions négative + le sommeil et tu vois tes pages avec totues les bordures en vrai c pas si moche ! te reste un jour !
 
+soit menu gauche + noir soit menu menu noir pour responsif -> pour toutes les pages
 
+mettre les href du menu
 
 y'a les input de retour menu coupe (map)
 
@@ -30,7 +32,9 @@ finir de tout commenter parti python mtn
 
 documenter le github et finir les truk mais avant faire popo et remplir la database
 
-#finir les textes et info_polu et machine a eau
+finir machine a o
+
+faire la video
 
 mettre des pages 404 et 505
 
