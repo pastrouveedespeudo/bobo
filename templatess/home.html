@@ -435,26 +435,14 @@
               
             <div class="col-xs-0 col-md-0 col-lg-4" >
               <br>
-              <h4>Nos données sur la pollution</h4>
-              <img src="/static/v2/données.jpg" alt="" height="250" width="450"/><br><br>
-                              
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-
-                <br><br>
-
-
-              <h4>Notre carte des Vents</h4>
-              <img src="/static/v2/vent.jpg" alt="" height="250" width="450"/><br><br>
+              <a href="/polution/donnée" title="Voir les données !">
+                <h4 id="donnée"
+                onMouseOver="coul('donnée')" onMouseOut="coul1('donnée')">
+                Nos données sur la pollution</h4>
+              </a>
+              <a href="/polution/donnée" title="Voir les données !">
+                <img src="/static/v2/données.jpg" alt="" height="250" width="450"/><br><br>
+              </a>            
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -466,7 +454,35 @@
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br><br>
+                <center><a href="/polution/donnée" class="bouton1"
+                  title="Voir les données">Voir les données !
+                </a></center><br>
+
                 
+                <br><br>
+
+              <a href="/direction/map" title="Voir la carte !">
+                <h4 id="titre_vent"
+                onMouseOver="coul('titre_vent')" onMouseOut="coul1('titre_vent')">
+                Notre carte des Vents</h4>
+              </a>
+              <a href="/direction/map" title="Voir la carte !">
+                <img src="/static/v2/vent.jpg" alt="" height="250" width="450"/><br><br>
+              </a>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br><br>
+                <center><a href="/direction/map" class="bouton1"
+                  title="Voir la carte">Voir la carte !
+                </a></center><br>
             </div>
 
             
@@ -475,8 +491,14 @@
 
             
             <div class="col-xs-0 col-md-0 col-lg-5">
-              <h4>Nos Pré-voyances</h4>
-              <img src="/static/v2/prédiction.jpg" alt="" height="250" width="450"/><br><br>
+              <a href="/polution/prédiction" title="Voir nos prédictions">
+                <h4 id="titre_predi"
+                onMouseOver="coul('titre_predi')" onMouseOut="coul1('titre_predi')">
+                Nos Pré-voyances</h4>
+              </a>
+              <a href="/polution/prediction" title="Voir nos prédictions">
+                <img src="/static/v2/prédiction.jpg" alt="" height="250" width="450"/><br><br>
+              </a>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
@@ -487,9 +509,11 @@
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
                 ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br><br><br>
+                ccccccccccccccaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br><br>
 
-
+                <center><a href="/polution/prediction" class="bouton1"
+                  title="Voir les prédictions">Voir les prédictions !
+                </a></center><br>
 
                 <div id="article3">
 
@@ -565,8 +589,14 @@
             
               <div class="col-xs-12 col-md-12 col-lg-6">
                 <br>
-                <h4>Notre Solution</h4><br>
-                <img src="/static/v2/pluie.jpg" alt="" height="250" width="400"/>
+                <a href="/polution/machine_a_o">
+                  <h4 id="titre_solution"
+                  onMouseOver="coul('titre_solution')" onMouseOut="coul1('titre_solution')">
+                  Notre Solution</h4><br>
+                </a>
+                <a href="/polution/machine_a_o">
+                  <img src="/static/v2/pluie.jpg" alt="" height="250" width="400"/>
+                </a>
               </div>
               
               <div class="col-xs-12 col-md-12 col-lg-6">
@@ -578,6 +608,12 @@
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                <br><br><br>
+                <center><a href="/polution/machine_a_o" class="bouton1"
+                  title="Voir la solution">Voir la solution !
+                </a></center><br>
+
+                
               </div>
 
           </div>
