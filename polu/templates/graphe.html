@@ -91,9 +91,6 @@
       #information_click{
         height:40px;
       }
-      #p_ville1{
-       
-      }
     </style>
 
 
@@ -112,7 +109,7 @@
         
           <div class="col-sm" id='p_ville1'>
 
-            <center><div id="info1" style='width:100px; height:50px;'></div></center>
+            <center><div id="info1" style='width:200px; height:50px; font-size:3vw;'></div></center>
 
           
             <center><div id='separate_line1'></div>
@@ -131,7 +128,7 @@
           
           <div class="col-sm" id='p_ville2'>
 
-            <center><div id="info2" style='width:200px; height:50px;'></div></center>
+            <center><div id="info2" style='width:300px; height:50px;'></div></center>
             
             <center><div id='separate_line2'></div>
             
@@ -151,7 +148,7 @@
           <div class="col-sm" id='p_ville3'>
 
             
-            <center><div id="info3" style='width:100px; height:50px;'></div></center>
+            <center><div id="info3" style='width:200px; height:50px;'></div></center>
 
       
             <center><div id='separate_line3'></div>
@@ -184,17 +181,19 @@
         #heure,
         #manif,
         #météo,
-        #pop,
         #pression,
         #saison,
         #vent,
         #weekend,
         #traffique,
+        #pop,
         #bouchon{
           width:100px;
           height:30px;
-          
         }
+
+
+        
       </style>
 
 
@@ -217,7 +216,7 @@
             onmouseover='hover("météo")' onmouseout='no_hover("météo")'>&nbsp;&nbsp;
 
             
-            <input type='button' value='population' id='pop' onclick='graphe("population", "population")'
+            <input type='button' value='popu.' id='pop' onclick='graphe("population", "population")'
             onmouseover='hover("pop")' onmouseout='no_hover("pop")'>&nbsp;&nbsp;
 
             
@@ -258,7 +257,7 @@
           <div class="container">
             <div class="row">
               <div class="col-sm">
-                titre<br>
+                titre1<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -270,18 +269,7 @@
                 
               </div>
               <div class="col-sm">
-                titre<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-              </div>
-              <div class="col-sm">
-                titre<br>
+                titre2<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -297,17 +285,6 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-sm">
-                titre<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-              </div>
               <div class="col-sm">
                 titre<br>
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -350,8 +327,6 @@
               </div>
               
 
-            <div class="col-sm"></div>
-            <div class="col-sm"></div>
 
               
             </div>
@@ -685,6 +660,305 @@ function graphe(legraphe, condition){
  }
   
 }
+
+
+
+@media screen and (min-width: 375px) and (max-width:425px) {
+ #MENU{
+    display:none;
+ }
+ #logo{
+    display:none;
+ }
+ #menumenu{
+    margin-left:30px;
+    display:block;
+    color:white;
+    margin-top:-150px;
+ }
+ #information_click{
+    width:300px;
+    height:50px;
+    margin-left:15px;
+    color:white;
+    font-size:10px;
+ }
+ #p_ville2,
+ #p_ville3,
+ #p_ville1{
+    font-size:10vw;
+    height:80px;
+ }
+ #info3,
+ #info2,
+ #info1{
+    display:none;
+    width:20px;
+ }
+ #choix{
+    margin-top:-40px;
+    color:white;
+    font-size:3.5vw;
+ }
+ #savoir{
+    font-size:3.5vw;
+ }
+ #sav{
+    color:white;
+ }
+ #graphique1{
+    text-align:center;
+ }
+ #dia{
+    width:300px;
+    margin-left:-40px;
+ }
+ #texte{
+    margin-top:100px;
+    font-size:4.5vw;
+ }
+  
+}
+
+
+
+
+
+@media screen and (min-width: 425px) and (max-width:625px) {
+ #MENU{
+    display:none;
+ }
+ #logo{
+    display:none;
+ }
+ #menumenu{
+    margin-left:30px;
+    display:block;
+    color:white;
+    margin-top:-150px;
+ }
+ #information_click{
+    width:300px;
+    height:50px;
+    margin-left:15px;
+    color:white;
+    font-size:12px;
+ }
+ #p_ville2,
+ #p_ville3,
+ #p_ville1{
+    font-size:6vw;
+    height:80px;
+ }
+ #info3,
+ #info2,
+ #info1{
+    display:none;
+    width:20px;
+ }
+ #choix{
+    margin-top:-30px;
+    color:white;
+    font-size:3.5vw;
+ }
+ #savoir{
+    font-size:3.5vw;
+ }
+ #sav{
+    color:white;
+ }
+ #graphique1{
+    text-align:center;
+ }
+ #dia{
+    width:400px;
+    margin-left:-20px;
+ }
+ #texte{
+    margin-top:100px;
+    font-size:4vw;
+    color:black;
+    margin-left:30px;
+ }
+  
+}
+
+@media screen and (min-width: 626px) and (max-width:766px) {
+ #MENU{
+    display:none;
+ }
+ #logo{
+    display:none;
+ }
+ #menumenu{
+    margin-left:30px;
+    display:block;
+    color:white;
+    margin-top:-150px;
+ }
+ #information_click{
+    width:300px;
+    height:50px;
+    margin-left:15px;
+    color:white;
+    font-size:10px;
+ }
+ #p_ville2,
+ #p_ville3,
+ #p_ville1{
+    font-size:5vw;
+    height:80px;
+ }
+ #info3,
+ #info2,
+ #info1{
+    display:none;
+    width:20px;
+ }
+ #choix{
+    margin-top:20px;
+    color:white;
+    font-size:3vw;
+ }
+ #savoir{
+    font-size:2vw;
+ }
+ #sav{
+    color:white;
+ }
+ #graphique1{
+    text-align:center;
+ }
+ #dia{
+    width:500px;
+    text-align:center;
+ }
+ #texte{
+    font-size:3.5vw;
+ }
+  
+}
+
+
+@media screen and (min-width: 768px) and (max-width:1024px) {
+ #MENU{
+    display:none;
+ }
+ #logo{
+    display:none;
+ }
+ #menumenu{
+    margin-left:30px;
+    display:block;
+    color:white;
+    margin-top:-150px;
+ }
+ #information_click{
+    width:300px;
+    height:50px;
+    margin-left:15px;
+    color:white;
+    font-size:12px;
+ }
+ #p_ville2,
+ #p_ville3,
+ #p_ville1{
+    font-size:5vw;
+    height:80px;
+ }
+ #info3,
+ #info2,
+ #info1{
+    display:none;
+    width:20px;
+ }
+ #choix{
+    margin-top:-10px;
+    color:white;
+    font-size:2vw;
+ }
+ #savoir{
+    font-size:1.5vw;
+ }
+ #sav{
+    color:white;
+ }
+ #graphique1{
+    text-align:center;
+ }
+ #dia{
+    width:600px;
+    margin-left:-20px;
+ }
+ #texte{
+    text-align:center;
+    margin-top:300px;
+    font-size:3vw;
+    color:black;
+ }
+  
+}
+
+
+@media screen and (min-width: 1024px){
+ #MENU{
+    display:none;
+ }
+ #logo{
+    display:none;
+ }
+ #menumenu{
+    margin-left:50px;
+    display:block;
+    color:white;
+    margin-top:-150px;
+    font-size:2vw;
+ }
+ #information_click{
+    width:600px;
+    height:50px;
+    margin-left:15px;
+    color:white;
+    font-size:20px;
+ }
+ #p_ville2,
+ #p_ville3,
+ #p_ville1{
+    margin-top:20px;
+    font-size:3vw;
+    height:80px;
+ }
+ #inputs{
+    font-size:20px;
+ }
+ #choix{
+    color:white;
+    font-size:2vw;
+    margin-top:50px;
+ }
+ #savoir{
+    font-size:1vw;
+    height:100px;
+ }
+ #sav{
+    color:white;
+ }
+ #graphique1{
+    text-align:center;
+ }
+ #dia{
+    width:700px;
+ }
+ #texte{
+    margin-top:500px;
+    font-size:1.6vw;
+    margin-left:110px;
+ }
+  
+}
+
+
+
 
 </style>
 
