@@ -1,3 +1,5 @@
+"ne pas sendormir" ca marche jamais couché c dnigue ca yavait que celle la de pas responsive jcrois
+
 faire un dossier pour les menu et barre 
 
 enlever tous les br et mettre des padding-top
