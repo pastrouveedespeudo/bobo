@@ -1,4 +1,4 @@
-{% include "navebarre_graphe.html" %}
+{% include "menu_gauche_graphe.html" %}
 {% block content %}
 {% endblock %}
 
@@ -13,9 +13,6 @@
       #paris_button:hover,
       #marseille_button:hover{
         background:#ccccff;
-      }
-      #MENU{
-        display:none;
       }
       #marseille_button{
         background-color: transparent;
@@ -424,7 +421,19 @@
 
 
 
-
+  <!-- Call to Action Section -->
+  <section>
+    <div class="container text-center" id="reso">
+    
+        <h2 class="mb-4">
+          Abonne toi sur nos reseaux sociaux !
+        </h2>
+       <a href='https//:www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
+       <a href='https//:www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
+       <a href='https//:www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>
+                  
+    </div>
+  </section>
 
 
 
@@ -440,6 +449,7 @@
 
 
     
+
 
 
 
@@ -913,18 +923,13 @@ function graphe(legraphe, condition){
 
 
 @media screen and (min-width: 1024px){
- #MENU{
-    display:none;
- }
- #logo{
-    display:none;
- }
  #menumenu{
     margin-left:50px;
     display:block;
     color:white;
     margin-top:-150px;
     font-size:2vw;
+    display:none;
  }
  #information_click{
     width:600px;
