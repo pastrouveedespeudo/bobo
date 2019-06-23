@@ -1,5 +1,7 @@
 "ne pas sendormir" ca marche jamais couché c dnigue ca yavait que celle la de pas responsive jcrois
 
+ok faire les textes et si tu reperes des trucks fais les
+
 faire un dossier pour les menu et barre 
 
 enlever tous les br et mettre des padding-top
