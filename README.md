@@ -1,3 +1,7 @@
+barre menu y'en a deux qui senelve pas
+
+machine a o et données (image)
+
 home faire le truk avec les images pollution
 
 soit menu gauche + noir soit menu menu noir pour responsif -> pour toutes les pages
