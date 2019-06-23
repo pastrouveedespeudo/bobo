@@ -28,102 +28,83 @@
 
 
 
-    <style>
-      body {
-          background:url('/static/v2/tendance1.jpg') no-repeat fixed center;;
-          -webkit-background-size: cover;
-          background-size: cover;
-        }
-        #logo{
-            position:fixed;
-            float:left;
-            margin-left:10px;
-            margin-top:-90px;
-            
-        }
-        
-        #shut{
-            font-size:300%;
-    
-        }
-        #notshut{
-            font-size:300%;
-            display:none;
-        }
-    </style>
-    
+    <img id="logo" src="/static/v2/logo2.png">
 
-
-        <img id="logo" src="/static/v2/logo2.png">
+    
+    <div style="float:left; margin-left:50px;z-index: 2; margin-top:-100px;position:fixed;" id="MENU">
+         <br><br><br><br><br><br><br>
+        <i class="fas fa-angle-right" id="notshut" onclick="notshutdown()" style="z-index: 1;position:static;"></i>
+        <i class="fas fa-angle-left" id="shut" onclick="shutdown()"></i><br><br>
 
         
-        <div style="float:left; margin-left:50px;z-index: 2; margin-top:-100px;position:fixed;" id="MENU">
-             <br><br><br><br><br><br><br>
-            <i class="fas fa-angle-right" id="notshut" onclick="notshutdown()" style="z-index: 1;position:static;"></i>
-            <i class="fas fa-angle-left" id="shut" onclick="shutdown()"></i><br><br>
-
+        <div id='contain' style='position:absolute'>
+            <p id="menu"
+                onMouseOver = "sous_menu1('menu', 'hrefmenu', '#91A8A4')"         
+                onMouseOut = "sous_menu2('menu', 'hrefmenu')">
+                <a href="/administrateur/navebarre_admin2" id="hrefmenu"><strong>Menu</strong></a>
+            </p>
             
-            <div id='contain' style='position:absolute'>
-                <p id="menu"
-                    onMouseOver = "sous_menu1('menu', 'hrefmenu', '#91A8A4')"         
-                    onMouseOut = "sous_menu2('menu', 'hrefmenu')">
-                    <a href="/administrateur/navebarre_admin2" id="hrefmenu"><strong>Menu</strong></a>
-                </p>
-                
-            </div><br><br>
+        </div><br><br>
 
 
-            <div id='contain1' style='position:absolute'>
-                <p id="sommaire"
-                    onMouseOver = "sous_menu1('sommaire', 'hrefsommaire', '#ECB8A5')"         
-                    onMouseOut = "sous_menu2('sommaire', 'hrefsommaire')">
-                    <a href="" id="hrefsommaire"><strong>Sommaire</strong></a>
-                </p>
-                
-            </div><br><br>
-
-
-
-            <div id='contain2' style='position:absolute'>
-                <p id="menu1"
-                    onMouseOver = "sous_menu1('menu1', 'tendancee', 'green')"         
-                    onMouseOut = "sous_menu2('menu1', 'tendancee')">
-                    <a href="" id="tendancee"><strong>Tendances</strong></a>
-                </p>
-                
-            </div><br><br>
-              
-
-            <div id='contain3' style='position:absolute'>
+        <div id='contain1' style='position:absolute'>
+            <p id="sommaire"
+                onMouseOver = "sous_menu1('sommaire', 'hrefsommaire', '#ECB8A5')"         
+                onMouseOut = "sous_menu2('sommaire', 'hrefsommaire')">
+                <a href="/" id="hrefsommaire"><strong>Sommaire</strong></a>
+            </p>
             
-                <p id="menu2"
-                    onMouseOver = "sous_menu1('menu2', 'book', '#8DA1B9')"         
-                    onMouseOut = "sous_menu2('menu2', 'book')">
-                    <a href="" id="book"><strong>Book</strong></a>
-                </p>
-                    
-            </div><br><br>
-       
+        </div><br><br>
 
-            <div id='contain4' style='position:absolute'>
-                <p id="menu3"
-                    onMouseOver = "sous_menu1('menu3', 'reseaux', 'lightblue')"         
-                    onMouseOut = "sous_menu2('menu3', 'reseaux')">
-                    <a href="" id="reseaux"><strong>Réseaux</strong></a>
-                </p>
+
+
+        <div id='contain2' style='position:absolute'>
+            <p id="menu1"
+                onMouseOver = "sous_menu1('menu1', 'tendancee', 'green')"         
+                onMouseOut = "sous_menu2('menu1', 'tendancee')">
+                <a href="/administrateur/tendance#section_mode" id="tendancee"><strong>Tendances</strong></a>
+            </p>
+            
+        </div><br><br>
+          
+
+        <div id='contain3' style='position:absolute'>
+        
+            <p id="menu2"
+                onMouseOver = "sous_menu1('menu2', 'book', '#8DA1B9')"         
+                onMouseOut = "sous_menu2('menu2', 'book')">
+                <a href="/administrateur/tendance#inlineFrameExample" id="book"><strong>Book</strong></a>
+            </p>
                 
-            </div><br><br>
+        </div><br><br>
+   
+
+        <div id='contain4' style='position:absolute'>
+            <p id="menu3"
+                onMouseOver = "sous_menu1('menu3', 'reseaux', 'lightblue')"         
+                onMouseOut = "sous_menu2('menu3', 'reseaux')">
+                <a href="/administrateur/tendance#botttom" id="reseaux"><strong>Réseaux</strong></a>
+            </p>
+            
+        </div><br><br>
 
 
-            <div id='contain5' style="position:absolute;">
-                <p id="menu4"
-                    onMouseOver = "sous_menu1('menu4', 'contacter', 'pink')"         
-                    onMouseOut = "sous_menu2('menu4', 'contacter')">
-                    <a href="" id="contacter"><strong>Contact</strong></a>
-                </p>
-            </div><br>
+        <div id='contain5' style="position:absolute;">
+            <p id="menu4"
+                onMouseOver = "sous_menu1('menu4', 'contacter', 'pink')"         
+                onMouseOut = "sous_menu2('menu4', 'contacter')">
+                <a href="/administrateur/home#my_project" id="contacter"><strong>Contact</strong></a>
+            </p>
+        </div><br>
 
-        </div>
+    </div>
+
+
+
+
+
+
+
         
 
 
@@ -175,9 +156,28 @@
 
 
 
-
-
 <style>
+body {
+  background:url('/static/v2/tendance1.jpg') no-repeat fixed center;;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+#logo{
+    position:fixed;
+    float:left;
+    margin-left:10px;
+    margin-top:-90px;
+    
+}
+
+#shut{
+    font-size:300%;
+
+}
+#notshut{
+    font-size:300%;
+    display:none;
+}
 
 
 #tendancee{
