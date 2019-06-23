@@ -1,3 +1,7 @@
+faire un dossier pour les menu et barre 
+
+enlever tous les br et mettre des padding-top
+
 barre menu y'en a deux qui senelve pas
 
 machine a o et données (image)
