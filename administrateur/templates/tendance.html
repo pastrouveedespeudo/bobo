@@ -3,8 +3,6 @@
 {% endblock %}
 
 
-
-
 <style>
 #debut{
     z-index:10;
@@ -23,11 +21,9 @@ h1{
 
 <header>
     <div id="fond_tendance">
-        <div class="row h-100 align-items-center justify-content-center text-center">
+    
 
 
-
-              <div class="col-lg-4" id="texte_tend">
                  <p id="debut">
                     <h1>La tendance du moment
                     <i class="fas fa-angle-up" id="text_icone_texte"
@@ -59,43 +55,29 @@ h1{
 </header>
 
 
-<body>
-
-    <section>
-        <!-- First Separate Blue Section for visual aspect -->
-        <div>
-            <br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br>
-        </div>
-    </section>
-
+<body> 
 
 
     <section id='section_mode'>
-      <div class="container text-center">
-        <center>
-          <div id="cart_color">
-            <br>
-            <center><h1 id="cart_h1">Notre tendance</h1></center><br>
+      <div id="cont_cart">
+
+        
+          <center><div id="cart_color">
+            <center><h1 id="cart_h1">Notre tendance</h1></center>
             <center>
-              <div id='brun'></div><br><br>
-              <div id='blond'></div><br><br>
+              <div id='brun'></div>
+              <div id='blond'></div>
               <div id='chatain'></div>
               <br>
             </center>
-          </div>
-        </center>
+          </div></center>
+   
       </div>
     </section>
 
-    <section>
-        <!-- Second Separate Blue Section for visual aspect -->
-        <div id=''>
-          <br><br><br><br><br>
-        </div>
-    </section>
 
-    <section>
+
+    <section id="iframe_section">
         <!-- Iframe from an other page. Give feeling to consult a book -->
         <div id="">
           <center>
@@ -190,12 +172,9 @@ h1{
 #cart_h1{
     color:black; font-family:segoe script
 }
-
 #cart_color{
     background:url('/static/img/parquet1.jpg');
-    width:45%;
     border:2px solid black;
-    margin-left:-100px;
 }
 #brun,
 #blond,
@@ -558,172 +537,103 @@ h2{
     margin-left:550px;
     width:400px;
     font-size:1.8vw;
+  }
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 320px) and (max-width:375px) {
+    #fond_tendance{
+        position:absolute;
+        width:100%;
+    }
+    #debut{
+        text-align:center;
+    }
+    #texte_in_texte{
+        font-size:4vw;
+        width:100%;
+        text-align:center;
+    }
+    #text_icone_texte{
+        display:none;
+    }
+    h1{
+        font-size:20px;
+        text-align:center;
+    }
+    #MENU{
+        display:none;
+    }
+    #logo{
+        diplay:none;
+    }
+    #section_mode{
+        padding-top:80%;
+        width:100%;
+        text-align:center;
+    }
+    #cont_cart{
+        text-align:center;
+        width:100%;
+    }
+    #cart_color{
+        height:auto;
+        width:200px;
+        text-align:center;
+    }
+    #cart_h1{
+        padding-top:25px;
+        font-size:15px;
+        margin-top:-10px;
+    }
+    #brun{
+        font-size:15px;
+    }
+    #blond{
+        font-size:15px;
+    }
+    #chatain{
+        font-size:15px;
+    }
+    #iframe_section{
+        padding-top:20px;
+    }
+    #inlineFrameExample{
+        height:200px;
+        text-align:center;
+    }
+    input{
+        width:50px;
+        height:90;
+        text-align:center;
+    }
+    img{
+        width:50px;
+        height:70;
+    }
+    .col-sm{
+     margin-left:15px;
+     width:120px;
+    }
+    .masthead{
+        height:100%;
+    }
+    #p_expert{
+        font-size:10px;
+    }
+
+
+
+
+
+
     
-    
-
-  }
-}
-
-
-
-
-@media screen and (min-width: 760px) and (max-width:980px) {
-  #texte_tend {
-    float:left;
-    margin-left:500px;
-    font-size:1.4vw;
-    width:300px;
-    word-wrap: break-word;
-    text-align:justify;
-  }
-  #h1_tendance{
-    float:left;
-    margin-left:51%;
-    width:400px;
-    font-size:1.8vw;
-
-    
-  }
-}
-
-
-
-@media screen and (min-width: 490px) and (max-width:760px) {
-  #texte_tend {
-    float:left;
-    margin-left:320px;
-    font-size:1.4vw;
-    width:200px;
-    word-wrap: break-word;
-    text-align:justify;
-  }
-  #h1_tendance{
-    float:left;
-    margin-left:46%;
-    width:400px;
-    font-size:1.8vw;
-    
-  }
-}
-
-
-@media screen and (min-width: 380px) and (max-width:490px) {
-  #texte_tend {
-    float:left;
-    margin-left:230px;
-    font-size:1.4vw;
-    width:100px;
-    word-wrap: break-word;
-    text-align:justify;
-  }
-  #h1_tendance{
-    float:left;
-    margin-left:30%;
-    width:400px;
-    font-size:1.8vw;
-  }
-
-}
-
-
-
-@media screen and (min-width: 320px) and (max-width:380px) {
-  #texte_tend {
-    float:left;
-    margin-left:130px;
-    font-size:1.4vw;
-    width:100px;
-    word-wrap: break-word;
-    text-align:justify;
-  }
-  #h1_tendance{
-    float:left;
-    margin-left:16%;
-    width:400px;
-    font-size:1.8vw;
-  }
-}
-
-
-
-@media screen and (min-width: 250px) and (max-width:320px) {
-  #texte_tend {
-    float:left;
-    margin-left:0px;
-    font-size:1.4vw;
-    width:100px;
-    word-wrap: break-word;
-    text-align:justify;
-  }
-  #h1_tendance{
-    float:left;
-    margin-left:1%;
-    width:400px;
-    font-size:1.8vw;
-  }
-}
-
-@media screen and (min-width: 200px) and (max-width:250px) {
-  #texte_tend {
-    float:left;
-    margin-left:0px;
-    font-size:1.4vw;
-    width:80px;
-    word-wrap: break-word;
-    text-align:justify;
-  }
-  #h1_tendance{
-    float:left;
-    margin-left:1%;
-    width:400px;
-    font-size:1.8vw;
-  }
-}
-
-
-@media screen and (min-width: 1120px) and (max-width:2000px) {
-  #cart_h1{
-    margin-top:-10px;
-  }
-  #brun{
-    margin-top:-30px;
-  }
-  #blond{
-    margin-top:-60px;
-  }
-  #chatain{
-    margin-top:-60px;
-  }
-  #cart_color{
-    height:17%;
-    margin-left:-8%;
-    width:35%;
-    border:2px solid black;
-  }
-}
-
-
-
-
-@media screen and (min-width: 320px) and (max-width:500px) {
-  #cart_h1{
-    margin-top:-10px;
-  }
-  #brun{
-    margin-top:-30px;
-  }
-  #blond{
-    margin-top:-60px;
-  }
-  #chatain{
-    margin-top:-60px;
-  }
-  #cart_color{
-    height:17%;
-    margin-left:-8%;
-    width:35%;
-    border:2px solid green;
-  }
 }
 
 
@@ -731,44 +641,10 @@ h2{
 
 
 
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-width: 320px) and (max-width:380px) {
+@media screen and (min-width: 376px) and (max-width:580px) {
   #fond_tendance{
     width:150px;
     text-align:center;
-    margin-left:35%;
-    
-  }
-  #texte_tend{
-    width:150px;
-    text-align:center;
-  }
-  #texte_in_texte{
-    word-wrap: break-word;
-    width:150px;
-    margin-left:auto;
-  }
-}
-
-
-@media screen and (min-width: 380px) and (max-width:580px) {
-  #fond_tendance{
-    width:150px;
-    text-align:center;
-    margin-left:30%;
-    
-  }
-  #texte_tend{
-    width:150px;
   }
   #texte_in_texte{
     word-wrap: break-word;
@@ -779,125 +655,74 @@ h2{
 
 
 @media screen and (min-width: 580px) and (max-width:780px) {
-  #fond_tendance{
-    width:150px;
-    text-align:center;
-    margin-left:30%;
-  }
-  #texte_tend{
-    width:250px;
-  }
-  #texte_in_texte{
-    word-wrap: break-word;
-    width:300px;
-    margin-left:auto;
-  }
-}
-
-
-@media screen and (min-width: 300px) and (max-width:320px) {
-  #cart_h1{
-    margin-top:-10px;
-  }
-  #brun{
-    margin-top:-30px;
-  }
-  #blond{
-    margin-top:-60px;
-  }
-  #chatain{
-    margin-top:-60px;
-  }
-  #cart_color{
-    height:100px;
-    margin-left:-22%;
-    width:80px;
-  }
-  #fond_tendance{
-    width:150px;
-    text-align:center;
-    margin-left:60%;
-    
-  }
-  #texte_tend{
-    width:150px;
-    text-align:center;
-  }
-  #texte_in_texte{
-    text-align:center;
-    word-wrap: break-word;
-    width:100px;
-  }
+    #fond_tendance{
+        width:150px;
+        text-align:center;
+        margin-left:30%;
+    }
+    #texte_tend{
+        width:250px;
+    }
+    #texte_in_texte{
+        word-wrap: break-word;
+        width:300px;
+        margin-left:auto;
+    }
+    h1{
+        font-size:20px;
+    }
+    #cont_cart{
+        text-align:center;
+    }
+    #cart_color{
+        text-align:center;
+        height:auto;
+        width:200px;
+    }
+    #cart_h1{
+        font-size:15px;
+        margin-top:-10px;
+    }
+    #brun{
+        font-size:15px;
+    }
+    #blond{
+        font-size:15px;
+    }
+    #chatain{
+        font-size:15px;
+    }
+    #inlineFrameExample{
+        height:320px;
+        width:320px;
+    }
 }
 
 
 
 
 
-@media screen and (min-width: 260px) and (max-width:300px) {
-  #cart_h1{
-    margin-top:-10px;
-  }
-  #brun{
-    margin-top:-30px;
-  }
-  #blond{
-    margin-top:-60px;
-  }
-  #chatain{
-    margin-top:-60px;
-  }
-  #cart_color{
-    height:100px;
-    margin-left:-15%;
-    width:80px;
-  }
+
+
+
+
+  
 }
 
 
 
 
-@media screen and (min-width: 250px) and (max-width:260px) {
-  #cart_h1{
-    margin-top:-10px;
-  }
-  #brun{
-    margin-top:-30px;
-  }
-  #blond{
-    margin-top:-60px;
-  }
-  #chatain{
-    margin-top:-60px;
-  }
-  #cart_color{
-    height:100px;
-    margin-left:0px;
-    width:75px;
-  }
-}
 
 
 
 
-@media screen and (min-width: 200px) and (max-width:250px) {
-  #cart_h1{
-    margin-top:-10px;
-  }
-  #brun{
-    margin-top:-30px;
-  }
-  #blond{
-    margin-top:-60px;
-  }
-  #chatain{
-    margin-top:-60px;
-  }
-  #cart_color{
-    height:100px;
-    margin-left:10px;
-  }
-}
+
+
+
+
+
+
+
 
 
 
