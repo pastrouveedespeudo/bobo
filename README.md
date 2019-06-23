@@ -1,4 +1,4 @@
-# tu trouves ca horrible pcque ty as associé toutes les emotions négative + le sommeil et tu vois tes pages avec totues les bordures en vrai c pas si moche ! te reste un jour !
+home faire le truk avec les images pollution
 
 soit menu gauche + noir soit menu menu noir pour responsif -> pour toutes les pages
 
