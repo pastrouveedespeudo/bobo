@@ -37,86 +37,106 @@
             <div class="container">
               <div class="row">
                 <div id="one" class="col-sm">
-                
-                  <center><span id="Site"><u>Site</u></span><br></center>
-                  
-                  <p id="Sommaire" class="sommaire"
-                  onmouseover="un('Sommaire')" onmouseout="deux('Sommaire')">
-                  
-                  Sommaire</p>
-                  <p id="Mode" class="Mode"
-                      onmouseover="un('Mode')" onmouseout="deux('Mode')">
-                      Rubrique Mode
-                  </p>
-                  
-                  <p id="Pollution" class="Pollution"
-                      onmouseover="un('Pollution')" onmouseout="deux('Pollution')">
-                      Rubrique Pollution
-                  </p>
-                  
-                  <p id="Contact" class="Contact"
-                  onmouseover="un('Contact')" onmouseout="deux('Contact')">
-                  Contact</p>
-                  
-                  <p id="Mention" class="Mention"
-                  onmouseover="un('Mention')" onmouseout="deux('Mention')">
-                  Mentions Légales</p>
+
+
+                  <div id='site_section'>
+                      <center><span id="Site"><u>Site</u></span><br></center>
+                      
+                      <p id="Sommaire" class="sommaire"
+                      onmouseover="un('Sommaire')" onmouseout="deux('Sommaire')">
+                      
+                      Sommaire</p>
+                      <p id="Mode" class="Mode"
+                          onmouseover="un('Mode')" onmouseout="deux('Mode')"
+                          onclick="mode()">
+                          Rubrique Mode
+                      </p>
+                      
+                      <p id="Pollution" class="Pollution"
+                          onmouseover="un('Pollution')" onmouseout="deux('Pollution')"
+                          onclick="pollution()">
+                          Rubrique Pollution
+                      </p>
+                      
+                      <p id="Contact" class="Contact"
+                      onmouseover="un('Contact')" onmouseout="deux('Contact')">
+                      Contact</p>
+                      
+                      <p id="Mention" class="Mention"
+                      onmouseover="un('Mention')" onmouseout="deux('Mention')">
+                      Mentions Légales</p>
+                </div>
 
                   <center><div id="separate"></div></center>
+                  
 
+                  <div id='pollution_section'>
+                      <center><span id="Pollution"><u>Pollution</u></span><br></center>
 
-                  <div>
-                  <center><span id="Pollution"><u>Pollution</u></span><br></center>
-                  
-                  <p id="info" class="info"
-                  onmouseover="un('info')" onmouseout="deux('info')">
-                  Les informations Pollution</p>
-                  
-                  <p id="graph" class="graph"
-                      onmouseover="un('graph')" onmouseout="deux('graph')">
-                      Les Graphiques
-                  </p>
-                  
-                  <p id="données" class="données"
-                      onmouseover="un('données')" onmouseout="deux('données')">
-                      Les données Pollutions
-                  </p>
-                  
-                  <p id="predi" class="predi"
-                  onmouseover="un('predi')" onmouseout="deux('predi')">
-                  Les prédictions</p>
-                  
-                  <p id="carte" class="carte"
-                  onmouseover="un('carte')" onmouseout="deux('carte')">
-                  La carte du vent</p>
+                      <p id="informations" class="informations"
+                      onmouseover="un('informations')" onmouseout="deux('informations')">
+                      Les informations Pollution</p>
 
-                  <p id="solution" class="solution"
-                  onmouseover="un('solution')" onmouseout="deux('solution')">
-                  La Solution</p>
+                      <p id="données" class="données"
+                          onmouseover="un('données')" onmouseout="deux('données')">
+                          Les données Pollutions
+                      </p>
+                      
+                      <p id="graphiques" class="graphiques"
+                          onmouseover="un('graphiques')" onmouseout="deux('graphiques')">
+                          Les Graphiques
+                      </p>
+                      
+                      <p id="prédictions" class="predi"
+                      onmouseover="un('predi')" onmouseout="deux('predi')">
+                      Les prédictions</p>
+                      
+                      <p id="carte" class="carte"
+                      onmouseover="un('carte')" onmouseout="deux('carte')">
+                      La carte du vent</p>
+
+                      <p id="solution" class="solution"
+                      onmouseover="un('solution')" onmouseout="deux('solution')">
+                      La Solution</p>
+                    
+                
+                      <p id="retour1" class="retour1"
+                      onmouseover="un('retour1')" onmouseout="deux('retour1')"
+                      style='color:white;'
+                      onclick="retour()">
+                      Retour</p>
+
+                      <center><div id="separate_pollution"></div></center>
                   </div>
 
+                  
+                  <div id='mode_section'>
+                      <center><span id="mode"><u>Mode</u></span><br></center>
+                      
+                      <p id="coupe" class="coupe"
+                      onmouseover="un('coupe')" onmouseout="deux('coupe')">
+                      Les coupes de cheveux</p>
+                      
+                      <p id="coiffeurs" class="coiffeurs"
+                          onmouseover="un('coiffeurs')" onmouseout="deux('coiffeurs')">
+                          Les Coiffeurs
+                      </p>
+                      
+                      <p id="gym" class="gym"
+                          onmouseover="un('gym')" onmouseout="deux('gym')">
+                          Les salles de Gym
+                      </p>
+                      
+                      <p id="habit" class="habit"
+                      onmouseover="un('habit')" onmouseout="deux('habit')">
+                      Les habits</p>
 
-                  <div>
-                  <center><span id="mode"><u>Mode</u></span><br></center>
-                  
-                  <p id="coupe" class="coupe"
-                  onmouseover="un('coupe')" onmouseout="deux('coupe')">
-                  Les coupes de cheveux</p>
-                  
-                  <p id="coiffeurs" class="coiffeurs"
-                      onmouseover="un('coiffeurs')" onmouseout="deux('coiffeurs')">
-                      Les Coiffeurs
-                  </p>
-                  
-                  <p id="gym" class="gym"
-                      onmouseover="un('gym')" onmouseout="deux('gym')">
-                      Les salles de Gym
-                  </p>
-                  
-                  <p id="habit" class="habit"
-                  onmouseover="un('habit')" onmouseout="deux('habit')">
-                  Les habits</p>
+                      <p id="retour2" class="retour2"
+                      onmouseover="un('retour2')" onmouseout="deux('retour2')"
+                      onclick="retour()">
+                      Retour</p>
 
+                      <center><div id="separate_mode"></div></center>
                   </div>
 
 
@@ -172,13 +192,64 @@
     function deux(div){
         document.getElementById(div).style.color = "white";
     };
+    function pollution(){
+        document.getElementById('site_section').style.display = "none";
+        document.getElementById('pollution_section').style.display = "block";
+        document.getElementById('separate').style.display = "none";
+    }
+    function mode(){
+        document.getElementById('site_section').style.display = "none";
+        document.getElementById('mode_section').style.display = "block";
+        document.getElementById('separate').style.display = "none";
 
+    }
+    function retour(){
+        document.getElementById('site_section').style.display = "block";
+        document.getElementById('mode_section').style.display = "none";
+        document.getElementById('separate').style.display = "block";
+        document.getElementById('pollution_section').style.display = "none";
+    }
 </script>
 
 
 
 <style>
 
+    #coupe{
+        color:white;
+        padding-top:50px;
+    }
+    #informations{
+        padding-top:50px;
+    }
+    #coiffeurs,
+    #gym,
+    #habit,
+    #retour2,
+    #informations{
+        color:white;
+    }
+    #graphiques{
+        color:white;
+    }
+    #données{
+        color:white;
+    }
+    #prédictions{
+        color:white;
+    }
+    #carte{
+        color:white;
+    }
+    #solution{
+        color:white;
+    }
+    #pollution_section,
+    #mode_section{
+        display:none;
+    }
+    #separate_mode,
+    #separate_pollution,
     #separate{
         width:50px;
         height:1px;
@@ -222,6 +293,10 @@
         color:white;
     }
     #Mention{
+        color:white;
+    }
+    #retour,
+    #retour1{
         color:white;
     }
 
