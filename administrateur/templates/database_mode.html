@@ -40,7 +40,7 @@ header.masthead {
     
       <div class="col-lg-10 align-self-end">
 
-        <h1 style='color:black; font-family:amaze;' id="notre_mode">
+        <h1 id="notre_mode">
           Notre mode ?
         </h1><br>
       </div>
@@ -391,21 +391,18 @@ header.masthead {
 
       
   };
-  
+
 </script>
 
 <style>
 
-#p_expert{
-  font-size:1.5vw;
-}
   
 #notre_mode{
-  font-size:12vw;
   margin-top:-20%;
+  color:black;
+  font-family:amaze;
+  font-size:80px;
 }
-
-
 .masthead{
 
   height:80%;
@@ -682,7 +679,11 @@ header.masthead {
 
 
 
-@media screen and (min-width: 300px) and (max-width:350px) {
+
+
+
+
+@media screen and (min-width: 0px) and (max-width:319px) {
   input{
     width:50px;
     height:90;
@@ -691,31 +692,6 @@ header.masthead {
   img{
     width:50px;
     height:50;
-    
-    
-  }
-  .col-sm{
-     margin-left:15px;
-     width:120px;
-    }
-  
-  .masthead{
-    height:50%;
-  }
-}
-
-
-
-@media screen and (min-width: 0px) and (max-width:350px) {
-  input{
-    width:50px;
-    height:90;
-    text-align:center;
-  }
-  img{
-    width:50px;
-    height:50;
-    border:1px solid red;
     
     
   }
@@ -724,7 +700,10 @@ header.masthead {
      width:60px;
     }
   .masthead{
-    height:50%;
+    height:100%;
+  }
+  #row{
+    text-align:center;
   }
 }
 
