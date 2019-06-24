@@ -1,6 +1,4 @@
-4  menu -> rajouter tendance // tendance rajouter
-
-5 - menu responsif
+#revisionnage de toutes les pages si un truk celle la a fond
 
 5 - javais oublié habit la finir
 
