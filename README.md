@@ -1,4 +1,14 @@
-tendance en 1200 le texte
+#j- 7.5
+
+1-information -> 2h
+
+2-bug visuel -> 3.5h
+
+3-responsive -> 5h
+
+(4a-enlever les inputs des image_mode 4b-faire bottom) -> 1h + 2h + 30(responsive)
+
+
 
 faire un bottom
 
