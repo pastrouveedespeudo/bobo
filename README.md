@@ -1,5 +1,7 @@
 #revisionnage de toutes les pages si un truk celle la a fond
 
+page home responsive
+
 5 - javais oublié habit la finir
 
 6 - finir a fond coupe pour ce soir
