@@ -1,73 +1,43 @@
-#j- 7.5
+4  menu -> rajouter tendance // tendance rajouter
 
-1-information -> 2h
-
-2-bug visuel -> 3.5h
-
-3-responsive -> 5h
-
-4  menu -> rajouter tendance // tendance rajouter menu responsif
+5 - menu responsif
 
 5 - javais oublié habit la finir
 
-6-finir a fond coupe pour ce soir
+6 - finir a fond coupe pour ce soir
 
 7 - dissoc les js et css de tendance et pollu et elles sont ok
 
-
-
+8 - Finir tous les textes
 
 faire un bottom
 
-ok faire les textes et si tu reperes des trucks fais les
+finir machine a o
 
-faire un dossier pour les menu et barre 
+-  home faire le truk avec les images pollution
 
-enlever tous les br et mettre des padding-top
+8-finir de mettre les statics et pollution dans le nouveau reposi
 
-
-
-
-
-home faire le truk avec les images pollution
-
-soit menu gauche + noir soit menu menu noir pour responsif -> pour toutes les pages
-
-
-
-
-
-
-
-
+9 - redéfinir les routes des gabarits (botoom, menu)
 
 y'a le cron qui marche plus
 
-Finir tous les textes
-
-le fond (coupe) se met sur les textes (qui sont un peu gros)
-
-corriger toutes les fautes 
-
-
-
 t'as oublié map et database et botoom p1 p2
 
-faire les tests ca ok c cool
+faire les tests
 
-tout mettre en anglais le js mtn et fin python ca c chiant MAIS REFACTORé en mm temps
+tout mettre en anglais le js
 
-mettre toutes les sites que t'as utiliser en bas de page et dans mentions legales
+REFACTORé
 
-finir de tout commenter parti python mtn
-
-documenter le github et finir les truk mais avant faire popo et remplir la database
-
-finir machine a o
+finir de tout commenter parti python 
 
 faire la video
 
 mettre des pages 404 et 505
+
+faire mention légale
+
 
 
 
@@ -84,9 +54,6 @@ mettre des pages 404 et 505
  http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html
 
 
-#tendance == OK
-
-#info_pollu == OK
 
 
 
