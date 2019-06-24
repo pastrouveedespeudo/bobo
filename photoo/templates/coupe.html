@@ -529,15 +529,25 @@
           </div>
           <br><br><br><br>
 
-          
-          <input type='text' id='coif1'
-                  style='text-align:center; border:3px solid black; width:70%'
-                   placeholder='Votre ville'>
+            <style>
+                #coif1{
+                    text-align:center;
+                   border:3px solid black;
+                   width:70%
+                }
+                #coif2{
+                    border:2px solid black;
+                }
+                #input_coif2{
+                    border:2px solid black;
+                }
+            </style>
+          <input type='text' id='coif1' placeholder='Votre ville'>
           <br><br>
           
-          <center><input type='button' onclick='menuuu()' value='Retour au menu' style='border:2px solid black;'>&nbsp;&nbsp;&nbsp;
+          <center><input type='button' id="input_coif2" onclick='menuuu()' value='Retour au menu'>&nbsp;&nbsp;&nbsp;
           
-          <input type='button' id='coif2' value='valider' style='border:2px solid black;'></center><br>
+          <input type='button' id='coif2' value='valider'></center><br>
           <br><br><br><br>
       </div>
 
@@ -1426,6 +1436,74 @@
   }
   
 }
+
+
+
+@media screen and (min-width: 500px) and (max-width:692px) {
+    #coif1{
+       margin-top:-30px;
+       display: block;
+        
+    }
+    #coif2{
+       margin-top:-10px;
+       display: inline-block;
+        
+    }
+    #coifcoif_recherche{
+        font-size:2.5vw;
+    }
+    #input_coif2{
+       display: inline-block;
+    }
+    #gymgym_div_prestation{
+        font-size:2.5vw;
+    }
+    #gym1{
+       margin-top:-30px;
+       display: block;
+    }
+    #gym2{
+       margin-top:-10px;
+       display: inline-block;
+    }
+    
+}
+
+
+
+@media screen and (min-width: 693px) and (max-width:767px) {
+    #coif1{
+       margin-top:-60px;
+       display: block;
+        
+    }
+    #coif2{
+       margin-top:-50px;
+       display: inline-block;
+        
+    }
+    #coifcoif_recherche{
+        font-size:2vw;
+    }
+    #input_coif2{
+       display: inline-block;
+    }
+    #gymgym_div_prestation{
+        font-size:2vw;
+    }
+    #gym1{
+       margin-top:-60px;
+       display: block;
+    }
+    #gym2{
+       margin-top:-50px;
+       display: inline-block;
+    }
+}
+
+
+
 
 
 
