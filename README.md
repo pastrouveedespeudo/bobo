@@ -10,6 +10,12 @@
 
 5 - javais oublié habit la finir
 
+6-finir a fond coupe pour ce soir
+
+7 - dissoc les js et css de tendance et pollu et elles sont ok
+
+
+
 
 faire un bottom
 
@@ -76,6 +82,21 @@ mettre des pages 404 et 505
 #https://github.com/python/cpython/tree/master/Tools/pynche
 
  http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html
+
+
+#tendance == OK
+
+#info_pollu == OK
+
+
+
+
+
+
+
+
+
+
 
 
 # récupérer macguyvert dans les fichiers supprimer avec un logiciel 
