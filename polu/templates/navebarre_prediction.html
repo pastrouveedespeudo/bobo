@@ -1,4 +1,4 @@
-{% include "menu_pollu.html" %}
+            {% include "menu_pollu.html" %}
             {% block content %}
             {% endblock %}
 
@@ -8,8 +8,8 @@
               <center><span><u>Page</u></h1></span>
 
                       <a href="/polution/prediction#marseille">
-                          <p id="prédictions" class="prédictions"
-                              onmouseover="un('prédictions')" onmouseout="deux('prédictions')">
+                          <p id="prédiction" class="prédiction"
+                              onmouseover="un('prédiction')" onmouseout="deux('prédiction')">
                               Les prédictions
                           </p>
                       </a>
@@ -59,10 +59,10 @@
     a:hover{
         text-decoration: none;
     }
-    #prédictions{
+    #prédiction{
         padding-top:50px;
     }
-    #prédictions,
+    #prédiction,
     #Explications,
     #Gym,
     #retour2,
