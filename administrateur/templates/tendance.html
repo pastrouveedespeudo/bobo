@@ -3,31 +3,7 @@
 {% endblock %}
 
 
-<style>
-#debut{
-    z-index:10;
-    width:400px;
 
-}
-#texte_in_texte{
-    width:400px;
-    text-align:justify;
-}
-h1{
-    font-size:2vw;
-    width:100%;
-}
-#menu_rep{
-    display:none;
-}
-a{
-    color:black;
-}
-a:hover{
-    color:white;
-}
-
-</style>
 
 
 <header>
@@ -40,32 +16,24 @@ a:hover{
                       onclick="text_shut()"></i>
                     <i class="fas fa-angle-down" id="text_icone_ouvrir" onclick="open_it_bro()"></i>
                     </h1>
-                  <div id ="texte_in_texte">
+                    <div id ="texte_in_texte">
                       Les vetements sont l'oeuvre d'une erreur
                       pour les uns, un atout pour les autres,
                       un signe de distinction, de séparation;
                       nous vous proposons de voir les coloris
                       de la mode actuelle.<br>
                       Ne soyez pas conforme aux règles ! Sans pour
-                      autant vous en affranchir !
-                      
-                      
-                      
-                      
-                  </div>
-                  
-                </p>
-              </div>
-
-            
-        
-
-          <div id='latendance'></div>
+                      autant vous en affranchir ! 
+                    </div>
+                 </p>
+                 
+        </div>      
+        <div id='latendance'></div>
             
 
-        </div>
-      </div>
+    </div>
 </header>
+
 
 
 <body> 
@@ -228,11 +196,12 @@ h2{
     }
     #debut{
         text-align:center;
+        width:200px;
     }
     #texte_in_texte{
         font-size:4vw;
-        width:100%;
-        text-align:center;
+        width:200px;
+        text-align:justify;
         font-weight: bold;
         color:black;
     }
@@ -292,7 +261,7 @@ h2{
         text-align:center;
     }
     img{
-        width:50px;
+        width:500px;
         height:70;
     }
     #notre_mode{
@@ -315,6 +284,12 @@ h2{
       -webkit-background-size: cover;
       background-size: cover;
     }
+    #fond_tendance{
+        position:absolute;
+    }
+    #titre1{
+        font-size:8vw;
+    }
 }
 
 
@@ -333,7 +308,7 @@ h2{
     }
     #texte_in_texte{
         font-size:4vw;
-        width:100%;
+        width:100px;
         text-align:center;
         
     }
@@ -413,6 +388,10 @@ h2{
       -webkit-background-size: cover;
       background-size: cover;
     }
+    #titre1{
+        font-size:8vw;
+    }
+    
 }
 
 
@@ -609,6 +588,9 @@ h2{
       background:url('/static/v2/tendance_resp.jpg') no-repeat fixed center;
       -webkit-background-size: cover;
       background-size: cover;
+    }
+    #titre1{
+        font-size:5vw;
     }
 }
 
@@ -811,6 +793,7 @@ h2{
     #fond_tendance{
         width:400px;
         margin-left:500px;
+        position:absolute;
     }
     #debut{
         text-align:center;
@@ -899,6 +882,7 @@ h2{
     #fond_tendance{
         width:400px;
         margin-left:750px;
+        position:absolute;
     }
     #debut{
         text-align:center;
@@ -984,6 +968,7 @@ h2{
         display:none;
     }
     #fond_tendance{
+        position:absolute;
         width:445px;
         margin-left:800px;
     }
@@ -1061,6 +1046,31 @@ h2{
     }
 }
 
+
+</style>
+<style>
+#debut{
+    z-index:10;
+    width:400px;
+
+}
+#texte_in_texte{
+    width:400px;
+    text-align:justify;
+}
+h1{
+    font-size:2vw;
+    width:100%;
+}
+#menu_rep{
+    display:none;
+}
+a{
+    color:black;
+}
+a:hover{
+    color:white;
+}
 
 </style>
 
