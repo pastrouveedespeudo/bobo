@@ -6,9 +6,7 @@
 
 3-responsive -> 5h
 
-(4a-enlever les inputs des image_mode 4b-faire bottom) -> 1h + 2h + 30(responsive)
-
-5 - jarrive pas a modifier la taille des images de database mode (input -> image)
+4  menu -> rajouter tendance // tendance rajouter menu responsif
 
 
 
