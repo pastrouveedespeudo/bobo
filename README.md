@@ -1,10 +1,10 @@
 #revisionnage de toutes les pages si un truk celle la a fond
 
+#en gros toutes les fonctions qui dépassent au max 30 lignes faire d'autres petites fonctions en gros y'a que bobo qui sera dure a comprendre go faire bottom c rapide et simple
+
 page home responsive
 
 5 - javais oublié habit la finir
-
-6 - finir a fond coupe pour ce soir
 
 7 - dissoc les js et css de tendance et pollu et elles sont ok
 
@@ -20,7 +20,7 @@ finir machine a o
 
 9 - redéfinir les routes des gabarits (botoom, menu)
 
-y'a le cron qui marche plus
+le cron marche plus
 
 t'as oublié map et database et botoom p1 p2
 
