@@ -3,10 +3,10 @@ import requests
 from bs4 import *
 
 
-from .gym_config import GYM
-from .gym_config import PATH_CITY
-from .gym_config import AGENT
-from .gym_config import PATH_SCHEDULE
+from .GYM_CONFIG import GYM
+from .GYM_CONFIG import PATH_CITY
+from .GYM_CONFIG import AGENT
+from .GYM_CONFIG import PATH_SCHEDULE
 
 
 def big_city_gym(city):
