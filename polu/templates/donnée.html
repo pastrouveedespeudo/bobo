@@ -67,7 +67,7 @@
           <div class="row" id='row1'>
 
             <!-- Input Section Lyon-->
-            <div class="col-lg-3 col-sm-12 col-md-12" id="Lyon"><br>
+            <div class="col-lg-3 col-sm-4 col-md-3" id="Lyon"><br>
               <h5>Taux de pollution de particules fines à<br>Lyon</h5><br><br>
               <center><strong><h5 id='lyon_pol'>{{lyon}}</h5>AQI</strong></center><br>
               <center><input type='button' id='voir_lyon' value='Voir les données' onclick='donnee_lyon()'></center><br>
@@ -205,7 +205,7 @@
 
           
           <!-- Input Section Paris-->
-          <div class="col-lg-3 col-sm-12 col-md-12" id="Paris"><br>                   
+          <div class="col-lg-3 col-sm-4 col-md-3" id="Paris"><br>                   
               <h5>Taux de pollution de particules fines à<br>Paris</h5><br><br>
               <center><strong><h5 id='paris_pol'>{{paris}}</h5>AQI</strong></center><br>
               <center><input type='button' id='voir_paris' value='Voir les données' onclick='donnee_paris()'></center><br>
@@ -364,7 +364,7 @@
 
 
           <!-- Input Section Marseille-->
-          <div class="col-lg-3 col-sm-12 col-md-12" id="Marseille"><br>
+          <div class="col-lg-3 col-sm-4 col-md-3" id="Marseille"><br>
               
               <h5>Taux de pollution de particules fines à Marseille</h5><br><br>
               <center><strong><h5 id='marseille_pol'>{{marseille}}</h5>AQI</strong></center><br>
@@ -1416,74 +1416,34 @@
   #sec1{
     height:350px;
   }
-  #info2,
-  #info3,
-  #info1{
-    width:60%;
-  }
   #texte1{
     float:left;
     width:200px;
     margin-left:5%;
     color:black;
     text-shadow: 1px 1px black;
-    font-size:3.5vw;
+    font-size:3vw;
     width:90%;
   }
   #les_info{
-    font-size:4.5vw;
+    font-size:2vw;
     padding-top:150px;
   }
   #section_ninja{
     float:none;
     float:clear;
     text-align:center;
-    width:140%;
-  }
-  #row1{
-    height:100%;
-  }
-  #lyon_pol{
-    margin-top:-50px;
-  }
-  #Lyon{
-    font-size:5vw;
-    width:400px;
-  }
-  #paris_pol{
-    margin-top:-50px;
-  }
-  #Paris{
-    font-size:5vw;
-    width:400px;
-  }
-  #marseille_pol{
-    margin-top:-50px;
-  }
-  #Marseille{
-    font-size:5vw;
-    width:400px;
-  }
-  .col-sm{
-    font-size:5vw;
-  }
-  #cities{
-    float:none;
-    width:100%;
   }
   input{
-    font-size:5vw;
+    font-size:2vw;
   }
   #info_donnée{
-    font-size:5vw;
+    font-size:2vw;
     color:white;
     text-shadow: 1px 1px black;
   }
   #separate{
-    margin-left:20%;
-    width:100%;
     float:none;
-    margin-top:50px;
   }
 }
 
@@ -1499,56 +1459,23 @@
   #sec1{
     height:350px;
   }
-  #row1{
-    height:1500px;
-  }
   #texte1{
     float:left;
     width:200px;
     margin-left:5%;
     color:black;
     text-shadow: 1px 1px black;
-    font-size:3vw;
+    font-size:2vw;
+  }
+  h1{
+    font-size:5vw;
   }
   #les_info{
     font-size:2.5vw;
     padding-top:150px;
   }
   #section_ninja{
-    float:none;
-    float:clear;
     text-align:center;
-    width:140%;
-  }
-  #lyon_pol{
-    margin-top:-100px;
-  }
-  #Lyon{
-    font-size:5vw;
-  }
-  #paris_pol{
-    margin-top:-100px;
-  }
-  #Paris{
-    font-size:5vw;
-    width:400px;
-  }
-  #marseille_pol{
-    margin-top:-100px;
-  }
-  #Marseille{
-    font-size:5vw;
-    width:400px;
-  }
-  #info_donnée{
-    display:none;
-  }
-  .col-sm{
-    font-size:3vw;
-  }
-  #cities{
-    float:none;
-    width:200%;
   }
   input{
     font-size:2.5vw;
@@ -1559,10 +1486,7 @@
     text-shadow: 1px 1px black;
   }
   #separate{
-    margin-left:20%;
-    width:100%;
     float:none;
-    margin-top:50px;
   }
 }
 
@@ -1587,58 +1511,29 @@
     margin-left:5%;
     color:black;
     text-shadow: 1px 1px black;
-    font-size:3vw;
+    font-size:2vw;
   }
   #les_info{
-    font-size:2.5vw;
+    font-size:2vw;
     padding-top:150px;
   }
   #section_ninja{
-    float:none;
-    float:clear;
     text-align:center;
-    width:140%;
-  }
-  #lyon_pol{
-    margin-top:-130px;
-  }
-  #Lyon{
-    font-size:5vw;
-  }
-  #paris_pol{
-    margin-top:-130px;
-  }
-  #Paris{
-    font-size:5vw;
-    width:400px;
-  }
-  #marseille_pol{
-    margin-top:-130px;
-  }
-  #Marseille{
-    font-size:5vw;
-    width:400px;
-  }
-  .col-sm{
-    font-size:3vw;
-  }
-  #cities{
-    float:none;
-    width:200%;
   }
   input{
-    font-size:2.5vw;
+    font-size:2vw;
   }
   #info_donnée{
-    font-size:3vw;
+    font-size:2vw;
     color:white;
     text-shadow: 1px 1px black;
   }
   #separate{
-    margin-left:20%;
-    width:100%;
     float:none;
     margin-top:50px;
+  }
+  #h1{
+    font-size:2vw;
   }
 }
 
@@ -1659,69 +1554,31 @@
   #sec1{
     height:350px;
   }
-  #row1{
-    height:1200px;
-  }
   #texte1{
     float:left;
     width:200px;
     margin-left:5%;
     color:black;
     text-shadow: 1px 1px black;
-    font-size:3vw;
+    font-size:2vw;
   }
   #les_info{
-    font-size:2.5vw;
+    font-size:2vw;
     padding-top:200px;
   }
   #section_ninja{
     float:none;
     float:clear;
     text-align:center;
-    width:140%;
-  }
-  #lyon_pol{
-    margin-top:-130px;
-  }
-  #Lyon{
-    font-size:5vw;
-    width:500px;
-  }
-  #paris_pol{
-    margin-top:-130px;
-  }
-  #Paris{
-    font-size:5vw;
-    width:400px;
-  }
-  #marseille_pol{
-    margin-top:-130px;
-  }
-  #Marseille{
-    font-size:5vw;
-    width:400px;
-  }
-  .col-sm{
-    font-size:3vw;
-  }
-  #cities{
-    float:none;
-    width:200%;
   }
   input{
-    font-size:2.5vw;
+    font-size:2vw;
   }
   #info_donnée{
     font-size:3vw;
     color:white;
     text-shadow: 1px 1px black;
     display:none;
-  }
-  #separate{
-    margin-left:20%;
-    width:100%;
-    position:static;
-    margin-top:550px;
   }
 }
 
@@ -1739,67 +1596,31 @@
   #sec1{
     height:350px;
   }
-  #row1{
-    height:1200px;
-  }
   #texte1{
     float:left;
     width:200px;
     margin-left:5%;
     color:black;
     text-shadow: 1px 1px black;
-    font-size:3vw;
+    font-size:2vw;
   }
   #les_info{
-    font-size:2.5vw;
+    font-size:2vw;
     padding-top:200px;
   }
   #section_ninja{
     float:none;
     float:clear;
     text-align:center;
-    width:140%;
   }
-  #lyon_pol{
-    margin-top:-130px;
-  }
-  #Lyon{
-    font-size:5vw;
-  }
-  #paris_pol{
-    margin-top:-130px;
-  }
-  #Paris{
-    font-size:5vw;
-    width:400px;
-  }
-  #marseille_pol{
-    margin-top:-130px;
-  }
-  #Marseille{
-    font-size:5vw;
-    width:400px;
-  }
-  .col-sm{
-    font-size:3vw;
-  }
-  #cities{
-    float:none;
-    width:200%;
-  }
+
   input{
-    font-size:2.5vw;
+    font-size:1.5vw;
   }
   #info_donnée{
     font-size:3vw;
     color:white;
     text-shadow: 1px 1px black;
-  }
-  #separate{
-    margin-left:20%;
-    width:100%;
-    float:none;
-    margin-top:50px;
   }
 }
 
@@ -1823,51 +1644,20 @@
     font-size:2vw;
   }
   #les_info{
-    font-size:2.5vw;
+    font-size:1.5vw;
     padding-top:200px;
   }
   #section_ninja{
     float:none;
     float:clear;
     text-align:center;
-    width:140%;
-  }
-  #lyon_pol{
-    width:400px;
-  }
-  #Lyon{
-    font-size:2vw;
-    margin-top:-50px;
-  }
-  #paris_pol{
-    width:400px;
-  }
-  #Paris{
-    font-size:2vw;
-    width:400px;
-  }
-  #marseille_pol{
-    width:400px;
-  }
-  #Marseille{
-    font-size:2vw;
-    width:400px;
-  }
-  .col-sm{
-    font-size:3vw;
-  }
-  #cities{
-    float:none;
-    width:200%;
   }
   #info_donnée{
-    font-size:3vw;
+    font-size:1.5vw;
     color:white;
     text-shadow: 1px 1px black;
   }
   #separate{
-    margin-left:20%;
-    width:100%;
     float:none;
     margin-top:50px;
   }
@@ -1882,13 +1672,13 @@
   #texte1{
     float:left;
     width:200px;
-    margin-left:5%;
+    margin-left:50%;
     color:black;
     text-shadow: 1px 1px black;
-    font-size:2vw;
+    font-size:1.5vw;
   }
   #les_info{
-    font-size:2.5vw;
+    font-size:1.5vw;
     padding-top:200px;
   }
   #info1,
@@ -1900,34 +1690,6 @@
     float:none;
     float:clear;
     text-align:center;
-    width:140%;
-  }
-  #lyon_pol{
-    width:400px;
-  }
-  #Lyon{
-    font-size:2vw;
-  }
-  #paris_pol{
-    width:400px;
-  }
-  #Paris{
-    font-size:2vw;
-    width:400px;
-  }
-  #marseille_pol{
-    width:400px;
-  }
-  #Marseille{
-    font-size:2vw;
-    width:400px;
-  }
-  .col-sm{
-    font-size:2vw;
-  }
-  #cities{
-    float:none;
-    width:200%;
   }
   #info_donnée{
     font-size:3vw;
@@ -1935,8 +1697,6 @@
     text-shadow: 1px 1px black;
   }
   #separate{
-    margin-left:20%;
-    width:100%;
     float:none;
     margin-top:50px;
   }
@@ -1948,61 +1708,30 @@
 
 
 @media screen and (min-width: 1200px) and (max-width:1400px) {
-
   #sec1{
     height:350px;
   }
   #texte1{
     float:left;
     width:200px;
-    margin-left:5%;
+    margin-left:70%;
     color:black;
     text-shadow: 1px 1px black;
     font-size:1vw;
-    border:1px solid red;
   }
   #les_info{
-    font-size:2.5vw;
-    padding-top:500px;
-    border:1px solid red;
+    font-size:1.5vw;
+    padding-top:150px;
   }
   #info1,
   #info2,
   #info3{
-    font-size:2.5vw;
+    font-size:2vw;
   }
   #section_ninja{
     float:none;
     float:clear;
     text-align:center;
-    width:140%;
-  }
-  #lyon_pol{
-    width:400px;
-  }
-  #Lyon{
-    font-size:2vw;
-  }
-  #paris_pol{
-    width:400px;
-  }
-  #Paris{
-    font-size:2vw;
-    width:400px;
-  }
-  #marseille_pol{
-    width:400px;
-  }
-  #Marseille{
-    font-size:2vw;
-    width:400px;
-  }
-  .col-sm{
-    font-size:2vw;
-  }
-  #cities{
-    float:none;
-    width:200%;
   }
   #info_donnée{
     font-size:3vw;
@@ -2010,8 +1739,6 @@
     text-shadow: 1px 1px black;
   }
   #separate{
-    margin-left:20%;
-    width:100%;
     float:none;
     margin-top:50px;
   }
