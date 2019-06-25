@@ -1,7 +1,5 @@
 #revisionnage de toutes les pages si un truk celle la a fond
 
-bon ben finir le p8... jaurai jamais de diplome jcrois ^^
-
 #sur la page coupe y'a l'icone du memnu en blanc
 
 #en gros toutes les fonctions qui dépassent au max 30 lignes faire d'autres petites fonctions en gros y'a que bobo qui sera dure a comprendre go faire bottom c rapide et simple
