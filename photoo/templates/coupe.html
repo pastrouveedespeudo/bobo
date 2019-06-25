@@ -81,22 +81,22 @@
                           
                           <input type='button' value='ajouter de la longueur?'
                             style=" border:3px solid black"
-                            onclick='ajout_longueur()'/><br><br>
+                            onclick='ajout_longueur()' id="input1"/><br><br>
 
                             
                           <input type='button' value='ajouter de la largeur?'
                             style=" border:3px solid black; text-align:center;"
-                            onclick='ajout_largeur()'/><br><br>
+                            onclick='ajout_largeur()' id="input2" /><br><br>
 
                             
                           <input type='button' value='enlever de la longueur?'
                             style=" border:3px solid black;"
-                            onclick='enlever_longueur()'/><br><br>
+                            onclick='enlever_longueur()' id="input3" /><br><br>
 
                             
                           <input type='button' value='enlever de la largeur?'
                             style="border:3px solid black; text-align:center;"
-                            onclick='enlever_largeur()'/><br>
+                            onclick='enlever_largeur()' id="input4" /><br>
                           
                           <center>
 
@@ -460,8 +460,8 @@
             Lavez les à l'eau tiède ! et utilisez un 
             après-shampoing. Cela permet de mieux les
             brosser et "favorise la fermeture des 
-            écailles"
-            <i>http://www.madmoizelle.com/conseils-beaute-soin-cheveux-337708</i>
+            écailles"<br>
+            http://www.madmoizelle.com/conseils-beaute-soin-cheveux-337708
             
             <br><br>
             
@@ -781,6 +781,18 @@
 
 
 <style>
+#cssfilters-apply{
+    font-weight:bold;
+}
+#StartVideo{
+    font-weight:bold;
+}
+#stop-button{
+    font-weight:bold;
+}
+blackblack{
+    font-weight:bold;
+}
 #container_photo{
     padding-top:250px;
 }
@@ -1353,13 +1365,6 @@
   #les_textes{
     text-align:center;
   }
-  #resum_titre{
-    margin-left:60px;
-    float:none;
-    font-size:1em;
-    word-wrap: break-word
-    width:300px;
-  }
   #MENU{
     display:none;
   }
@@ -1454,6 +1459,111 @@
   #button_lamap_gym,
   #button_lamap{
      font-size:2vw;
+  }
+}
+
+
+
+@media screen and (min-width: 487px) and (max-width:542px) {
+  #resum_titre{
+    margin-left:150px;
+    float:none;
+    font-size:1em;
+    width:350px;
+    text-align:justify;
+  }
+}
+
+
+@media screen and (min-width: 543px) and (max-width:566px) {
+  #resum_titre{
+    margin-left:200px;
+    float:none;
+    font-size:1em;
+    width:350px;
+    text-align:justify;
+  }
+}
+
+
+@media screen and (min-width: 567px) and (max-width:611px) {
+  #resum_titre{
+    margin-left:225px;
+    float:none;
+    font-size:1em;
+    width:350px;
+    text-align:justify;
+  }
+}
+
+
+@media screen and (min-width: 611px) and (max-width:650px) {
+  #resum_titre{
+    margin-left:260px;
+    float:none;
+    font-size:1em;
+    width:350px;
+    text-align:justify;
+  }
+}
+
+@media screen and (min-width: 651px) and (max-width:735px) {
+  #resum_titre{
+    margin-left:300px;
+    float:none;
+    font-size:1em;
+    width:350px;
+    text-align:justify;
+  }
+}
+
+
+@media screen and (min-width: 735px) and (max-width:800px) {
+  #resum_titre{
+    margin-left:350px;
+    float:none;
+    font-size:1em;
+    width:350px;
+    text-align:justify;
+  }
+}
+
+
+@media screen and (min-width: 801px) and (max-width:992px) {
+  #resum_titre{
+    margin-left:55%;
+    float:none;
+    font-size:1em;
+    width:350px;
+    text-align:justify;
+  }
+}
+
+@media screen and (min-width: 993px) and (max-width:1024px) {
+  #resum_titre{
+    margin-left:65%;
+    float:none;
+    font-size:1em;
+    width:350px;
+    text-align:justify;
+  }
+}
+
+
+
+
+@media screen and (min-width: 1025px) and (max-width:1440px) {
+  #resum_titre{
+    float:right;
+    width:50%;
+    padding-right:4%;
+    font-size:2vw;
+    margin-left:400px;
+    float:none;
+    font-size:20px;
+    word-wrap: break-word
+    height:450px;
+    text-align:justify;
   }
 }
 
@@ -1564,11 +1674,41 @@
 }
 
 
+@media screen and (min-width: 768px) and (max-width:991px) {
+  #whitewhite{
+    width:150px;
+    float:left;
+    margin-left:-10px;
+    font-size:12px;
+    margin-top:-300px;
+  }
+}
 
+@media screen and (min-width: 992px) and (max-width:1023px) {
+  #whitewhite{
+    font-size:12px;
+    margin-top:-300px;
+    width:200px;
+  }
+  #input4,
+  #input3,
+  #input2,
+  #jaime,
+  #input1{
+        margin-left:-350px;
+    }
+}
 
-
-
-
+@media screen and (min-width: 1024px) and (max-width:1024px) {
+  #whitewhite{
+    width:150px;
+    float:left;
+    margin-left:-10px;
+    font-size:12px;
+    margin-top:-300px;
+  }
+}
+    
 @media screen and (min-width: 768px) and (max-width:1024px) {
   #section1{
     height:140%;
@@ -1579,13 +1719,6 @@
   }
   #logo{
     display:none;
-  }
-  #resum_titre{
-    margin-left:400px;
-    float:none;
-    font-size:17px;
-    word-wrap: break-word
-    width:500px;
   }
   #container_photo{
     font-size:1vw;
@@ -1601,13 +1734,6 @@
     width:70%;
     height:200px;
     margin-left:200px;
-  }
-  #whitewhite{
-    width:150px;
-    float:left;
-    margin-left:-10px;
-    font-size:12px;
-    margin-top:-300px;
   }
   #div_placement{
     width:180px;
@@ -1693,18 +1819,6 @@
     height:600px;
     padding-top:40px;
     font-size:2vw;
-  }
-  #resum_titre{
-    float:right;
-    width:50%;
-    padding-right:4%;
-    font-size:2vw;
-    margin-left:400px;
-    float:none;
-    font-size:20px;
-    word-wrap: break-word
-    height:450px;
-    text-align:justify;
   }
   #container_photo{
     font-size:1vw;
