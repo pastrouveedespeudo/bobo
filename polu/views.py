@@ -71,7 +71,7 @@ def polution(request):
     return render(request, 'polution.html')
 
 
-@csrf_exempt
+
 def donnée(request):
     """Here we call all API recup data, and display it on HTML page
     We need exception in case there are error from ur script (for call API)"""
@@ -352,7 +352,7 @@ def machine_a_o(request):
     
     return render(request, 'machine_a_o.html')
 
-@csrf_exempt
+
 def prediction(request):
     """Our predict page. By Ajax call
     We recup this cities and ask database by aide_analysa.py
@@ -384,7 +384,7 @@ def prediction(request):
 
 
 
-@csrf_exempt
+
 def graphe(request):
     """Graphic page. Here we ask database by Ajax call
     for each conditions by function who begin
