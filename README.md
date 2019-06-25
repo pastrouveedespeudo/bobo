@@ -1,16 +1,6 @@
-#revisionnage de toutes les pages si un truk celle la a fond  ---> demain
+#coupe et données t'as chié
 
-#essaie de finir vetement que ce soit parfait
-
-#sur la page coupe y'a l'icone du memnu en blanc  ---> demain
-
-mrde je sais plus si j'ai mis un truk important...
-
-#en gros toutes les fonctions qui dépassent au max 30 lignes faire d'autres petites fonctions en gros y'a que bobo qui sera dure a comprendre go faire bottom c rapide et simple
-
-csrfmiddlewaretoken:'{{ csrf_token }}' ---> demain
-
-<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+#une fois cest deux fini dissoc le js et le css comme ca tu poruras faire un dernier réparage
 
 <footer>
     <!-- Bottom Section number 2 -->
@@ -21,13 +11,18 @@ csrfmiddlewaretoken:'{{ csrf_token }}' ---> demain
     </div>
 </footer>  
 
-mettre les bottoms sur chaques truks ---> demain
+#mettre tous les bottoms
+
+#essaie de finir vetement que ce soit parfait
+
+#en gros toutes les fonctions qui dépassent au max 30 lignes faire d'autres petites fonctions en gros y'a que bobo qui sera dure a comprendre go faire bottom c rapide et simple
+
+csrfmiddlewaretoken:'{{ csrf_token }}' ---> demain
+
+<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+
 
 page home responsive
-
-5 - javais oublié habit la finir
-
-7 - dissoc les js et css de tendance et pollu et elles sont ok
 
 8 - Finir tous les textes
 
