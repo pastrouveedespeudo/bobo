@@ -830,6 +830,7 @@ blackblack{
   #blackblack{
     text-align:center;
     font-size:4vw;
+    width:100%;
   }
   #titre_re{
     font-size:35px;
@@ -883,9 +884,8 @@ blackblack{
 
 @media screen and (min-width: 425px) and (max-width:768px) {
   #blackblack{
-    text-align:center;
     font-size:4vw;
-    margin-left:20px;
+    width:100%;
   }
   #titre_re{
     font-size:35px;
@@ -914,6 +914,7 @@ blackblack{
   #blackblack{
     text-align:center;
     font-size:2vw;
+    width:100%;
   }
   #titre_re{
     font-size:35px;
@@ -1207,6 +1208,10 @@ blackblack{
 
 
 <style>
+#container_photo{
+    width:100%;
+}
+
 @media screen and (min-width: 320px) and (max-width:374px) {
   #text_top{
     padding-top:50px;
@@ -1280,8 +1285,6 @@ blackblack{
   #button_lamap{
      font-size:2vw;
   }
-
-  
 }
 
 @media screen and (min-width: 375px) and (max-width:424px) {
@@ -1441,6 +1444,7 @@ blackblack{
   }
   #blackblack{
     font-size:3vw;
+    width:100%;
   }
   #aide{
     font-size:20px;
@@ -1459,6 +1463,12 @@ blackblack{
   #button_lamap_gym,
   #button_lamap{
      font-size:2vw;
+  }
+  #reso{
+    border:1px solid red;
+  }
+  #CONTENEUR{
+    border:1px solid red;
   }
 }
 
@@ -1697,6 +1707,9 @@ blackblack{
   #input1{
         margin-left:-350px;
     }
+  #fond{
+    display:none;
+  }
 }
 
 @media screen and (min-width: 1024px) and (max-width:1024px) {
@@ -1707,6 +1720,10 @@ blackblack{
     font-size:12px;
     margin-top:-300px;
   }
+  #fond{
+    display:none;
+  }
+
 }
     
 @media screen and (min-width: 768px) and (max-width:1024px) {
@@ -1722,6 +1739,7 @@ blackblack{
   }
   #container_photo{
     font-size:1vw;
+    text-align:center;
   }
   h3{
     font-size:20px;
@@ -1802,6 +1820,14 @@ blackblack{
 }
 
 
+@media screen and (min-width: 1025px) and (max-width:1200px) {
+  #fond{
+    display:none;
+  }
+}
+
+  
+
 @media screen and (min-width: 1025px) and (max-width:1440px) {
   #section1{
     height:100%;
@@ -1827,7 +1853,7 @@ blackblack{
     font-size:20px;
   }
   #container_photo{
-    margin-top:-100px;
+    margin-top:100px;
     text-align:center;
   }
   #inputs_sizes{
@@ -2062,6 +2088,7 @@ blackblack{
 
 
 
+
 </style>
 
 
@@ -2094,7 +2121,6 @@ function get_background(){
   document.getElementById('fond').style.display = "inline";
   document.getElementById('container_photo').style.background = 'none';
 };
-
 
 
 
