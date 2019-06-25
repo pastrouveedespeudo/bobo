@@ -1,21 +1,23 @@
-#revisionnage de toutes les pages si un truk celle la a fond
+#revisionnage de toutes les pages si un truk celle la a fond  ---> demain
 
-#sur la page coupe y'a l'icone du memnu en blanc
+#sur la page coupe y'a l'icone du memnu en blanc  ---> demain
+
+mrde je sais plus si j'ai mis un truk important...
 
 #en gros toutes les fonctions qui dépassent au max 30 lignes faire d'autres petites fonctions en gros y'a que bobo qui sera dure a comprendre go faire bottom c rapide et simple
 
-csrfmiddlewaretoken:'{{ csrf_token }}'
+csrfmiddlewaretoken:'{{ csrf_token }}' ---> demain
 
-<footer>
+<afooter>
     <!-- Bottom Section number 2 -->
-    <div id='botttom'> 
+    <div id='botttom'>                  ---> demain
       {% include "bottom_page2.html" %}
       {% block content2 %}
       {% endblock content2%}
     </div>
-</footer>
+<a/footer>
 
-mettre les bottoms sur chaques truks
+mettre les bottoms sur chaques truks ---> demain
 
 page home responsive
 
