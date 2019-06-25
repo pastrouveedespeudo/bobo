@@ -6,7 +6,7 @@ import numpy as np
 import os
 import shutil
 from .function_graph import moyenne
-from .fonction_graphe import new
+from .function_graph import new
 
 
 def visu_traffic(city):
@@ -64,7 +64,7 @@ def diagram_traffic(data_regular_day, data_deaparture,
 
     
     plt.bar(range(2), [data_regular_day, data_deaparture],
-                        width = 0.1, color = 'red',
+                        width = 0.1, color = 'black',
                        yerr = [er_regular_day, er_deaparture],
                         ecolor = 'black', capsize = 10)
                 
@@ -78,7 +78,7 @@ def diagram_traffic(data_regular_day, data_deaparture,
 
     nouveau = new()
     
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.clf()
     plt.close()
     
