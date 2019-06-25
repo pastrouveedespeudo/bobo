@@ -20,12 +20,10 @@ from .coupe_dico import DICO_COIF
 
 from .analysis.database import *
 
+
 from .views_functions import the_colors_function
 
-try:
-    from static.bobo.tendance import *
-except:
-    pass
+
 
 
 
@@ -275,17 +273,6 @@ def habits(request):
             color = color.split()
             color = color[-1]
 
-            liste = dataaa()
-            liste1 = i_into_i(liste)
-            liste2 = unification(liste1)
-            liste3 = suppression_en_trop(liste2)
-            liste6 = re_elment_de_liste(liste3)
-            liste7 = mise_en_dico(liste6)
-            liste8 = determination_couleur(liste7)
-            liste9 = les_tendances_couleurs(liste8)
-            liste10 = analyse_tendance(liste9)
-
-    
             coul_analyse_haut, coul_analyse_bas = the_colors_function(color)
 
 
