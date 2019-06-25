@@ -1,13 +1,22 @@
-vite vite par contre quand ca sera parfait, j'ai trop hate de faire pep 8 or not pep 8 et un genre de detecteur pts par pts puis pts par voisin de 5 !!!!!! mais parfait ! pose faut pas un pet de trav pcque... le type va se faire chier y va se balader dans le css et ....
+vérifier coupe
+
+vérifier une derniere fois toutes les pages
+
+oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est pour coiffeur
 
 #une fois cest deux fini dissoc le js et le css comme ca tu poruras faire un dernier réparage
 
 #en gros toutes les fonctions qui dépassent au max 30 lignes faire d'autres petites fonctions en gros y'a que bobo qui sera dure a comprendre go faire bottom c rapide et simple
 
+google traduction
 
+background transparent des graggables
 
 <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
 
+#my_project page home
+
+mettre une conclusion a la fin
 
 page home responsive
 
@@ -29,7 +38,7 @@ mettre des pages 404 et 505
 
 faire mention légale
 
-
+commentaire section coiffure
 
 csrfmiddlewaretoken:'{{ csrf_token }}'
 
@@ -61,3 +70,9 @@ csrfmiddlewaretoken:'{{ csrf_token }}'
 
 # ranger tout les github en les clonnant
 
+
+
+
+
+section coiffure,
+section gym le 25 juin a 20h47 (VO linux/developpement) 
