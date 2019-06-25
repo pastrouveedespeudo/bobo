@@ -65,7 +65,7 @@ def diagram_demonstration(data_demons, data_no_demons,
 
     
     plt.bar(range(2), [data_demons, data_no_demons],
-                        width = 0.1, color = 'red',
+                        width = 0.1, color = 'black',
                        yerr = [error_demons, error_no_demons],
                         ecolor = 'black', capsize = 10)
                 
@@ -79,7 +79,7 @@ def diagram_demonstration(data_demons, data_no_demons,
     
     nouveau = new()
     
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.clf()
     shutil.move(nouveau, '/app/static/popo')
     return nouveau
