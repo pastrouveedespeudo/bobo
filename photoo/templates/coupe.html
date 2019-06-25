@@ -1112,23 +1112,15 @@ blackblack{
 
 
 
-  <!-- Call to Action Section -->
-  <section>
-    <div class="container text-center">
-    
-        <h2 class="mb-4">
-          Abonne toi sur nos reseaux sociaux !
-        </h2>
-
-       <a href='https//:www.facebook.fr'><img src = "/static/img/portfolio/icone/facebook.png"/ id="im10"></a>
-       <a href='https//:www.twitter.fr'><img src = "/static/img/portfolio/icone/twitter.png"/ id="im11"></a>
-       <a href='https//:www.snapchat.fr'><img src = "/static/img/portfolio/icone/snap.png"/ id="im12"></a>
-                  
-    </div>
-  </section>
 
 
-
+  <style>
+    #reso{
+        position:absolute;
+        padding-bottom:0px;
+        width:100%;
+    }
+  </style>
   <!-- Contact Section -->
   <section class="page-section" id="reso">
     <div>
@@ -1138,7 +1130,7 @@ blackblack{
     </div>
   </section>
 
-
+</body>
 
 
 
@@ -1356,7 +1348,10 @@ blackblack{
   #button_lamap{
      font-size:2vw;
   }
-  
+  reso{
+   bottom:0px;
+   position:absolute;
+  }
 }
 
 
@@ -1463,12 +1458,6 @@ blackblack{
   #button_lamap_gym,
   #button_lamap{
      font-size:2vw;
-  }
-  #reso{
-    border:1px solid red;
-  }
-  #CONTENEUR{
-    border:1px solid red;
   }
 }
 
@@ -1646,6 +1635,11 @@ blackblack{
         margin-top:-20px;
     }
 }
+
+
+
+
+
 
 @media screen and (min-width: 768px) and (max-width:1020px) {
     #coif1{
@@ -2071,8 +2065,12 @@ blackblack{
 
 
 
-
-
+@media screen and (min-width: 995px) and (max-width:1200px) {
+    #reso{
+        width:995px;
+        border:1px solid red;
+    }
+}
 
 
 
