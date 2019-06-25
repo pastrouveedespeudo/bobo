@@ -66,7 +66,7 @@ def diagram_weekend(data_weekend, data_no_weekend,
 
 
     plt.bar(range(2), [data_weekend, data_no_weekend],
-                        width = 0.1, color = 'red',
+                        width = 0.1, color = 'black',
                        yerr = [er_weekend, er_no_weekend],
                         ecolor = 'black', capsize = 10)
                 
@@ -80,7 +80,7 @@ def diagram_weekend(data_weekend, data_no_weekend,
     
     nouveau = new()
     
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.clf()
     plt.close()
     shutil.move(nouveau, '/app/static/popo')
