@@ -90,7 +90,7 @@ def diagram_hour(point, no_point,
     
 
     
-    plt.bar(range(2), [point, no_point], width = 0.1, color = 'red',
+    plt.bar(range(2), [point, no_point], width = 0.1, color = 'black',
            yerr = [error_point, error_no_point],
             ecolor = 'black', capsize = 10)
     
@@ -102,7 +102,7 @@ def diagram_hour(point, no_point,
 
     nouveau = new()
     
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.close()
     
     shutil.move(nouveau, '/app/static/popo')
