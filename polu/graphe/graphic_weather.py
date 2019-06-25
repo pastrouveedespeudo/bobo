@@ -74,7 +74,7 @@ def diagram_weather(data_good_weather, data_cloud, data_rain,
 
     
     plt.bar(range(3), [data_good_weather, data_cloud, data_rain],
-                        width = 0.1, color = 'red',
+                        width = 0.1, color = 'black',
                        yerr = [er_good_weather, er_cloud, er_rain],
                         ecolor = 'black', capsize = 10)
                 
@@ -89,7 +89,7 @@ def diagram_weather(data_good_weather, data_cloud, data_rain,
     nouveau = new()
 
     
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.clf()
     shutil.move(nouveau, '/app/static/popo')
 
