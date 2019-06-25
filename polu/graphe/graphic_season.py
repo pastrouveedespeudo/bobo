@@ -75,7 +75,7 @@ def diagram_season(data_spring, data_summer, data_winter, data_autumn,
 
     plt.bar(range(4), [data_spring, data_summer, data_winter,
                        data_autumn],
-                        width = 0.1, color = 'red',
+                        width = 0.1, color = 'black',
                        yerr = [er_sping, er_summer, er_winter,
                               er_autumn],
                         ecolor = 'black', capsize = 10)
@@ -91,7 +91,7 @@ def diagram_season(data_spring, data_summer, data_winter, data_autumn,
 
     nouveau = new()
     
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.clf()
     plt.close()
     
