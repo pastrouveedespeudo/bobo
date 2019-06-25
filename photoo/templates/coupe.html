@@ -1154,6 +1154,18 @@ blackblack{
 </html>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
   {% for i in coif %}
       for(var c = 0; c <= {{coif|length}}*4 - 1; c+=4){
@@ -2338,6 +2350,7 @@ jQuery("#sauve").on("click", function(e){
   jQuery.ajax({
       data:{
           'product':String(LISTE1[LISTE1.length -1]),
+          csrfmiddlewaretoken:'{{ csrf_token }}'
       },
       type:"POST",
       url:"/photo/coupe"
@@ -2662,6 +2675,7 @@ LISTE = []
   jQuery.ajax({
       data:{
           'hairdresser':a,
+          csrfmiddlewaretoken:'{{ csrf_token }}'
       },
       type:"POST",
       url:"/photo/coupe"
@@ -2888,6 +2902,7 @@ jQuery("#gym2").on("click", function(e){
   jQuery.ajax({
       data:{
           'gymnastic':a,
+          csrfmiddlewaretoken:'{{ csrf_token }}'
       },
       type:"POST",
       url:"/photo/coupe"
@@ -3112,6 +3127,7 @@ jQuery("#gym2").on("click", function(e){
           data:{
               'buttony':String(LISTE[0]),
               'country':b,
+              csrfmiddlewaretoken:'{{ csrf_token }}'
 
           },
           type:"POST",
@@ -3188,6 +3204,7 @@ jQuery("#gym2").on("click", function(e){
           data:{
               'buttony':String(LISTE[8]),
               'country':b,
+              csrfmiddlewaretoken:'{{ csrf_token }}'
           },
           type:"POST",
           url:"/photo/coupe"
@@ -3259,6 +3276,7 @@ jQuery("#gym2").on("click", function(e){
           data:{
               'buttony':String(LISTE[16]),
               'country':b,
+              csrfmiddlewaretoken:'{{ csrf_token }}'
               
        
           },
@@ -3334,7 +3352,8 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
                'buttony':String(LISTE[24]),
-               'country':b, 
+               'country':b,
+               csrfmiddlewaretoken:'{{ csrf_token }}'
               
        
           },
@@ -3416,7 +3435,8 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
                'buttony_gym':String(LISTE_GYM[0]),
-               'country_gym':b, 
+               'country_gym':b,
+               csrfmiddlewaretoken:'{{ csrf_token }}'
               
        
           },
@@ -3491,7 +3511,8 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
                'buttony_gym':String(LISTE_GYM[8]),
-               'country_gym':b, 
+               'country_gym':b,
+               csrfmiddlewaretoken:'{{ csrf_token }}'
               
        
           },
@@ -3563,7 +3584,8 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
                'buttony_gym':String(LISTE_GYM[16]),
-               'country_gym':b, 
+               'country_gym':b,
+               csrfmiddlewaretoken:'{{ csrf_token }}'
               
        
           },
@@ -3636,7 +3658,8 @@ jQuery("#gym2").on("click", function(e){
       jQuery.ajax({
           data:{
                'buttony_gym':String(LISTE_GYM[24]),
-               'country_m':b, 
+               'country_m':b,
+               csrfmiddlewaretoken:'{{ csrf_token }}'
               
        
           },
