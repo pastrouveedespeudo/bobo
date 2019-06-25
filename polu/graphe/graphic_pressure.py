@@ -68,7 +68,7 @@ def diagram_pressure(data_strong, data_low, data_normal,
 
     
     plt.bar(range(3), [data_strong, data_low, data_normal],
-                        width = 0.1, color = 'red',
+                        width = 0.1, color = 'black',
                        yerr = [er_strong, er_low, er_normal],
                         ecolor = 'black', capsize = 10)
 
@@ -82,7 +82,7 @@ def diagram_pressure(data_strong, data_low, data_normal,
     
     nouveau = new()
     print(nouveau)
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.clf()
     plt.close()
     
