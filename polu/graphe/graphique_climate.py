@@ -6,10 +6,10 @@ import numpy as np
 import pylab
 import psycopg2
 import numpy as np
-from .fonction_graphe import moyenne
+from .function_graph import moyenne
 import os
 import shutil
-from .fonction_graphe import new
+from .function_graph import new
 
 def visuuu_climat(ville):
     
@@ -108,7 +108,7 @@ def diagramme_climattt(donnée_inf_zero, donnée_zero_dix,
                         donnée_onze_vingt,
                         donnée_vingtun_trente, donnée_trente_un_quarante,
                         donnée_supp_quarante],
-                        width = 0.1, color = 'red',
+                        width = 0.1, color = 'black',
                        yerr = [er_inf_zero, er_zero_dix, er_onze_vingt,
                               er_vingtun_trente, er_assez_trente_un_quarante,
                               er_supp_quarante],
@@ -125,7 +125,7 @@ def diagramme_climattt(donnée_inf_zero, donnée_zero_dix,
 
     nouveau = new()
     
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.clf()
     plt.close()
     
