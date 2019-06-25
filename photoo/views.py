@@ -1,5 +1,3 @@
-
-#Django Stuff
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse
@@ -9,10 +7,8 @@ from django.views.decorators.gzip import gzip_page
 from django.http import StreamingHttpResponse
 from django.middleware.gzip import GZipMiddleware
 
-
 import os
 import cv2
-
 
 from accounts.models import Accounts
 
@@ -24,12 +20,12 @@ from .coupe_dico import DICO_COIF
 
 from .analysis.database import *
 
+from .views_functions import the_colors_function
+
 try:
     from static.bobo.tendance import *
 except:
     pass
-
-
 
 
 
@@ -61,15 +57,11 @@ def coupe(request):
     
     no_choice = 'no_choice'
     
-   
-    #here we look if the user has favorites,
-    #if yes we return true with fav variable
 
     try:
         fav = '' 
         current_user = request.user
-        #from photo.py
-        favorites_haircut = displaying_favorite_haircut(current_user)
+        favorites_haircut = displaying_favorite_haircut(current_user)#from photo.py
         if favorites_haircut:
             fav = True
     except:
@@ -83,36 +75,41 @@ def coupe(request):
         search = request.POST.get('coupedecheveux')
         saving = request.POST.get('product')
 
-        map_hairdresser = request.POST.get('buttony')#city for hairdresser
-        number_hairdresser = request.POST.get('numero_coiffeur')#number phone for hairdresser
-        vivile = request.POST.get('country')#city for hairdresser map
-        haircut_style = request.POST.get('hairdresser')#this is request for a hairdress
+        map_hairdresser = request.POST.get('buttony')
+        number_hairdresser = request.POST.get('numero_coiffeur')
+        vivile = request.POST.get('country')
+        haircut_style = request.POST.get('hairdresser')
 
-        gymm = request.POST.get('gymnastic')#this is request for a gym
-        gymm_map = request.POST.get('buttony_gym')#this is country for map gym
-        gym_pays = request.POST.get('country_gym')#this is country for search gym
+        gymm = request.POST.get('gymnastic')
+        gymm_map = request.POST.get('buttony_gym')
+        gym_pays = request.POST.get('country_gym')
 
 
         MY_HAIRDRESSER = []
+
+
         
-        if gymm_map:#if user call the gym card
-            the_address = address_geo(gymm_map, gym_pays)#we search the address by scrapping
+        if gymm_map:
+            the_address = address_geo(gymm_map, gym_pays)
             
             try:
-                lat_long = city_geo(the_address)#and recup it with nominatim (with lat et long)
+                lat_long = city_geo(the_address)
             except:
-                return HttpResponse("Oups nous n'avons rien trouvé")#if nothing is found we return it
+                return HttpResponse("Oups nous n'avons rien trouvé")
 
-            data = str(lat_long[0]) + ' ' + str(lat_long[1])#if no exception, we traiting data for js code
-            #we add a space 
+            data = str(lat_long[0]) + ' ' + str(lat_long[1])
+
      
             if data == ' ' or data == '':
-                return HttpResponse("Oups nous n'avons rien trouvé")#for sure we return again an exception
+                return HttpResponse("Oups nous n'avons rien trouvé")
             
-            return HttpResponse(data)#if no exception, we return data on page
+            return HttpResponse(data)
 
 
-        if gymm:#if user call the gym location
+
+
+        if gymm:
+            
             gym_list = []
 
             the_cities = big_city_gym(gymm)
@@ -129,6 +126,9 @@ def coupe(request):
             
 
             return HttpResponse(gym_list)
+
+
+
 
 
         c = 0
@@ -266,14 +266,9 @@ def habits(request):
         if image_to_vet:
             current_user = request.user
 
-
-            
-            return render(request, 'habits.html', {'image_to_vet':image_to_vet,
-                                                   'user':current_user})
-
-
-        if draggable:
-            pass
+            return render(request, 'habits.html',
+                          {'image_to_vet':image_to_vet,
+                           'user':current_user})
 
         if color:
 
@@ -291,18 +286,7 @@ def habits(request):
             liste10 = analyse_tendance(liste9)
 
     
-            if color == 'blonde':
-                coul_analyse_haut = liste10[1][0]
-                coul_analyse_bas = liste10[1][1]
-                 
-            elif color == 'brune' or couleur == 'noire':
-                coul_analyse_haut = liste10[0][0]
-                coul_analyse_bas = liste10[0][1]
-
-            elif color == 'chatain' or couleur == 'rousse':
-                
-                coul_analyse_haut = liste10[2][0]
-                coul_analyse_bas = liste10[2][1]
+            coul_analyse_haut, coul_analyse_bas = the_colors_function(color)
 
 
             return HttpResponse((coul_analyse_haut,' ', coul_analyse_bas))
