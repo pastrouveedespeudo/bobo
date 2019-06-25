@@ -2141,7 +2141,7 @@ function nom_image(id_im){
      
       jQuery.ajax({
           data:{
-              'csrfmiddlewaretoken': 'vrS3jiKMco5HjUgoQlNOQtDEUWWnq0Dg9jqGC5ECVvtI5mWHXmWtvrZBN09F9AMP' , 
+              csrfmiddlewaretoken:'{{ csrf_token }}',
               'a':a,
               'b':b
           },
