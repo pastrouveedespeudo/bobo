@@ -1,3 +1,5 @@
+vite vite par contre quand ca sera parfait, j'ai trop hate de faire pep 8 or not pep 8 et un genre de detecteur pts par pts puis pts par voisin de 5 !!!!!! mais parfait ! pose faut pas un pet de trav pcque... le type va se faire chier y va se balader dans le css et ....
+
 #une fois cest deux fini dissoc le js et le css comme ca tu poruras faire un dernier réparage
 
 #en gros toutes les fonctions qui dépassent au max 30 lignes faire d'autres petites fonctions en gros y'a que bobo qui sera dure a comprendre go faire bottom c rapide et simple
