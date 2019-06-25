@@ -38,6 +38,13 @@ from .magasins.hairdresser import *
 from .magasins.address import *
 from .magasins.gym import *
 
+def navebarre_coupe(request):
+    """Here we return a home html respons"""
+    return render(request, 'navebarre_coupe.html')
+
+def navebarre_habits(request):
+    """Here we return a home html respons"""
+    return render(request, 'navebarre_habits.html')
 
 def home_bobo(request):
     """Here we return a home html respons"""
@@ -47,7 +54,7 @@ def home(request):
     """Here we return a home html respons"""
     return render(request, 'home.html')
 
-@csrf_exempt
+
 def coupe(request):
     """this is the interraction between
     the view and the template hair"""
@@ -247,7 +254,7 @@ def coupe(request):
 
 
 
-@csrf_exempt
+
 def habits(request):
 
     if request.method == "POST":
