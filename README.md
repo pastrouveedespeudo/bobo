@@ -1,5 +1,7 @@
 #revisionnage de toutes les pages si un truk celle la a fond  ---> demain
 
+#essaie de finir vetement que ce soit parfait
+
 #sur la page coupe y'a l'icone du memnu en blanc  ---> demain
 
 mrde je sais plus si j'ai mis un truk important...
@@ -8,14 +10,16 @@ mrde je sais plus si j'ai mis un truk important...
 
 csrfmiddlewaretoken:'{{ csrf_token }}' ---> demain
 
-<afooter>
+<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+
+<footer>
     <!-- Bottom Section number 2 -->
     <div id='botttom'>                  ---> demain
       {% include "bottom_page2.html" %}
       {% block content2 %}
       {% endblock content2%}
     </div>
-<a/footer>
+</footer>  
 
 mettre les bottoms sur chaques truks ---> demain
 
