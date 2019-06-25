@@ -172,8 +172,8 @@
 
 
 
-                          <div>  
-                                                       <div id="draggable19" class="ui-widget-content" value='coupe21'
+                          <div id="coucoupe">  
+                            <div id="draggable19" class="ui-widget-content" value='coupe21'
                             onclick="nom_image('coupe21', 250, 150)";
                               style='z-index: 1; display:none;'>
                                 <img src="/static/img/portfolio/coupe/1.4.png"
@@ -1131,17 +1131,11 @@ blackblack{
     #reso{
         position:absolute;
         padding-bottom:0px;
-        width:100%;
+
     }
   </style>
   <!-- Contact Section -->
-  <section class="page-section" id="reso">
-    <div>
-      {% include "bottom_page2.html" %}
-      {% block content2 %}
-      {% endblock content2%}
-    </div>
-  </section>
+
 
 </body>
 
@@ -1274,7 +1268,9 @@ blackblack{
   #div_placement{
     width:150px;
     float:right;
-    margin-right:-25px;
+    margin-right:-10px;
+    font-size:3.5vw;
+    margin-top:-250px;
   }
   #p_coupe{
     display:none;
@@ -1301,6 +1297,9 @@ blackblack{
   #button_lamap_gym,
   #button_lamap{
      font-size:2vw;
+  }
+  #blackblack{
+    margin-top:250px;
   }
 }
 
@@ -1350,6 +1349,7 @@ blackblack{
     width:180px;
     float:right;
     margin-right:-25px;
+    margin-top:-250px;
     font-size:11px;
   }
   #p_coupe{
@@ -1377,6 +1377,9 @@ blackblack{
    bottom:0px;
    position:absolute;
   }
+  #blackblack{
+    margin-top:250px;
+  } 
 }
 
 
@@ -1483,6 +1486,15 @@ blackblack{
   #button_lamap_gym,
   #button_lamap{
      font-size:2vw;
+  }
+  #coucoupe{
+    border:1px solid red;
+    width:200px;
+    float:left;
+    margin-top:-250px;
+  }
+  #blackblack{
+    margin-top:500px;
   }
 }
 
@@ -1742,7 +1754,6 @@ blackblack{
   #fond{
     display:none;
   }
-
 }
     
 @media screen and (min-width: 768px) and (max-width:1024px) {
@@ -1811,6 +1822,9 @@ blackblack{
   #button_lamap{
      font-size:2vw;
   }
+  #blackblack{
+    margin-top:500px;
+  }
   
 }
 
@@ -1847,7 +1861,7 @@ blackblack{
 
   
 
-@media screen and (min-width: 1025px) and (max-width:1440px) {
+@media screen and (min-width: 1025px) and (max-width:1199px) {
   #section1{
     height:100%;
     border:3px solid transparent;
@@ -1859,11 +1873,12 @@ blackblack{
     position:fixed;
   }
   #les_textes{
-    margin-left:400px;
+    margin-left:300px;
     width:800px;
     height:600px;
     padding-top:40px;
     font-size:2vw;
+
   }
   #container_photo{
     font-size:1vw;
@@ -1895,13 +1910,10 @@ blackblack{
     font-size:14px;
   }
   #div_placement{
-    margin-left:550px;
+    margin-left:800px;
     font-size:14px;
     width:250px;
     margin-top:-350px;
-  }
-  #p_coupe{
-    display:none;
   }
   #cssfilters-apply{
     font-size:14px;
@@ -1931,7 +1943,113 @@ blackblack{
   #button_lamap{
      font-size:2vw;
   }
+  #blackblack{
+    margin-top:500px;
+  }
 }
+
+
+
+
+@media screen and (min-width: 1200px) and (max-width:11600px) {
+  #section1{
+    height:100%;
+    border:3px solid transparent;
+  }
+  #menumenu{
+    display:none;
+  }
+  #logo{
+    position:fixed;
+  }
+  #les_textes{
+    margin-left:300px;
+    width:800px;
+    height:600px;
+    padding-top:40px;
+    font-size:2vw;
+
+  }
+  #container_photo{
+    font-size:1vw;
+  }
+  h3{
+    font-size:20px;
+  }
+  #container_photo{
+    margin-top:100px;
+    text-align:center;
+  }
+  #inputs_sizes{
+    text-align:center;
+  }
+  #vivideo{
+    margin-left:340px;
+    font-size:10px;
+    text-align:center;
+    border:3px solid transparent;
+  }
+  video{
+    border:1px solid black;
+    width:100%;
+    height:200px;
+  }
+  #whitewhite{
+    margin-left:-600px;
+    margin-top:-300px;
+    font-size:14px;
+  }
+  #div_placement{
+    margin-left:870px;
+    font-size:14px;
+    width:250px;
+    margin-top:-350px;
+  }
+  #cssfilters-apply{
+    font-size:14px;
+  }
+  #StartVideo{
+    font-size:14px;
+  }
+  #stop-button{
+    font-size:14px;
+  }
+  #titre_salon{
+    font-size:20px;
+  }
+  #gifou{
+    width:80;
+    height:80;
+  }
+  #menu_res{
+    display:none;
+  }
+  #gifou_gym{
+    width:50px;
+    height:50px;
+    margin-left:10px;
+  }
+  #button_lamap_gym,
+  #button_lamap{
+     font-size:2vw;
+  }
+  #blackblack{
+    margin-top:500px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
