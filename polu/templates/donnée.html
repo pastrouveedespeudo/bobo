@@ -59,15 +59,16 @@
       <p id="info_pop"><i>*Population active de 16-59 ans</i>
       </p><br>
     </div>
+    
 
     <!-- Data Section City-->
     <div class="container" id='cities'>
-      <div class="row justify-content-center">
-        <div class="col-lg-12 text-center">
+      <div>
+        <div class="col-lg-12 col-md-12 col-xs-12 text-center">
           <div class="row" id='row1'>
 
             <!-- Input Section Lyon-->
-            <div class="col-lg-3 col-sm-4 col-md-3" id="Lyon"><br>
+            <div class="col-lg-3 col-sm-7 col-md-3" id="Lyon"><br>
               <h5>Taux de pollution de particules fines à<br>Lyon</h5><br><br>
               <center><strong><h5 id='lyon_pol'>{{lyon}}</h5>AQI</strong></center><br>
               <center><input type='button' id='voir_lyon' value='Voir les données' onclick='donnee_lyon()'></center><br>
@@ -205,7 +206,7 @@
 
           
           <!-- Input Section Paris-->
-          <div class="col-lg-3 col-sm-4 col-md-3" id="Paris"><br>                   
+          <div class="col-lg-3 col-sm-7 col-md-3" id="Paris"><br>                   
               <h5>Taux de pollution de particules fines à<br>Paris</h5><br><br>
               <center><strong><h5 id='paris_pol'>{{paris}}</h5>AQI</strong></center><br>
               <center><input type='button' id='voir_paris' value='Voir les données' onclick='donnee_paris()'></center><br>
@@ -364,7 +365,7 @@
 
 
           <!-- Input Section Marseille-->
-          <div class="col-lg-3 col-sm-4 col-md-3" id="Marseille"><br>
+          <div class="col-lg-3 col-sm-7 col-md-3" id="Marseille"><br>
               
               <h5>Taux de pollution de particules fines à Marseille</h5><br><br>
               <center><strong><h5 id='marseille_pol'>{{marseille}}</h5>AQI</strong></center><br>
@@ -1371,24 +1372,32 @@
     width:90%;
   }
   #les_info{
-    font-size:2vw;
-    padding-top:150px;
+    padding-top:100px;
+    font-size:3vw;
   }
   #section_ninja{
     float:none;
     float:clear;
     text-align:center;
   }
+  #row1{
+    height:100%;
+  }
+  #cities{
+    float:none;
+  }
   input{
-    font-size:2vw;
+    font-size:3vw;
   }
   #info_donnée{
-    font-size:2vw;
+    font-size:5vw;
     color:white;
     text-shadow: 1px 1px black;
   }
   #separate{
     float:none;
+    margin-top:50px;
+    width:80%;
   }
 }
 
@@ -1432,6 +1441,7 @@
   }
   #separate{
     float:none;
+    width:80%;
   }
 }
 
