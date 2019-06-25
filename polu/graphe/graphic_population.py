@@ -66,7 +66,7 @@ def diagram_population(data_lyon, data_paris, data_marseille,
               er_lyon, er_paris, er_marseille, save):
 
     plt.bar(range(3), [data_lyon, data_paris, data_marseille],
-                        width = 0.1, color = 'red',
+                        width = 0.1, color = 'black',
                        yerr = [er_lyon, er_paris, er_marseille],
                         ecolor = 'black', capsize = 10)
                 
@@ -80,7 +80,7 @@ def diagram_population(data_lyon, data_paris, data_marseille,
 
     nouveau = new()
     
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.clf()
     shutil.move(nouveau, '/app/static/popo')
 
