@@ -5,8 +5,8 @@ import psycopg2
 import numpy as np
 import os
 import shutil
-from .fonction_graphe import moyenne
-from .fonction_graphe import new
+from .function_graph import moyenne
+from .function_graph import new
 
 def visu():
     
@@ -59,7 +59,7 @@ def diagramme(donnée_lyon, donnée_paris, donnée_marseille,
 
 
     plt.bar(range(3), [donnée_lyon, donnée_paris, donnée_marseille],
-                        width = 0.1, color = 'red',
+                        width = 0.1, color = 'black',
                        yerr = [er_lyon, er_paris, er_marseille],
                         ecolor = 'black', capsize = 10)
                 
@@ -73,7 +73,7 @@ def diagramme(donnée_lyon, donnée_paris, donnée_marseille,
     
     nouveau = new()
         
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.clf()
     plt.close()
     shutil.move(save, '/app/static/popo')
