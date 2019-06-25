@@ -77,7 +77,7 @@ def diagram_wind(data_very_strong, data_strong, data_means, data_low,
 
     plt.bar(range(4), [data_very_strong, data_strong,
                        data_means, data_low],
-                        width = 0.1, color = 'red',
+                        width = 0.1, color = 'black',
                        yerr = [er_data_very_strong, er_data_strong,
                                er_data_means, er_data_low],
                         ecolor = 'black', capsize = 10)
@@ -92,7 +92,7 @@ def diagram_wind(data_very_strong, data_strong, data_means, data_low,
     
     nouveau = new()
     
-    plt.savefig(nouveau)
+    plt.savefig(nouveau, transparent=True)
     plt.clf()
     plt.close()
     
