@@ -3,28 +3,33 @@ import urllib.request
 from bs4 import *
 import datetime
 
+from CONFIG import CLE
+from CONFIG import PATH_PARTICLE_RATE
 
-CLE = '5a72ceae1feda40543d5844b2e04a205'
+from CONFIG import HEURE_POINT_WEEK
+from CONFIG import PRESSURE_PATH
+from CONFIG import WEATHER_PATH
+from CONFIG import CLIMATE_PATH
+from CONFIG import POLLUTING_POLE
+from CONFIG import PATH_WIKI
 
 
 def particle_rate(city):
-    """we search particule rate"""
-    
-    liste = []
+    """we search particule rate from plumelabs"""
+
     nb = []
+    liste = []
 
-    #Using BS4
-    path = "https://air.plumelabs.com/fr/live/{}".format(city)
-    r = requests.get(path)
-    page = r.content
-    soup = BeautifulSoup(page, "html.parser")
-    propriete = soup.find_all("div", {'class':'report__pi-number'})
+    path = PATH_PARTICLE_RATE.format(city)
+    request = requests.get(path)
+    page = request.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    Property = soup_html.find_all("div", {'class':'report__pi-number'})
 
-    #Get text from html page
-    for i in propriete:
+
+    for i in Property:
         liste.append(i.get_text())
 
-    #Get the number of pollute
     for i in liste:
         for j in i:
             try:
@@ -42,11 +47,13 @@ def particle_rate(city):
     return polution
 
 
+
+
 def pressure_city(city):
     """we search pressure"""
 
     #Call API openweathermap
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(city,CLE)
+    localisation = PRESSURE_PATH.format(city,CLE)
     r = requests.get(localisation)
     data=r.json()
 
@@ -59,7 +66,7 @@ def weather_city(city, data_ask):
     """we search weather"""
 
     #Call API openweathermap
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(city,CLE)
+    localisation = WEATHER_PATH.format(city,CLE)
     r = requests.get(localisation)
     data=r.json()
 
@@ -89,7 +96,7 @@ def climate_city(city):
     """we search climate"""
 
     #Call API openweathermap
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(city,CLE)
+    localisation = CLIMATE_PATH.format(city,CLE)
     r = requests.get(localisation)
     data=r.json()
 
@@ -143,21 +150,6 @@ def traffic(city):
 
     hour = hour + 2
 
-    hour_point_week = [7,8,9,16,17,18,19]
-
-    deaparture = [(2,1), (5,1), (9,2), (16,2), (22,2),(23,2),
-                      (1,3),(2,3),(8,3),(9,3),
-                      (19,4),(22,4),(26,4),(27,4),(28,4),
-                      (4,5),(5,5),(29,5),(30,5),
-                      (5,6),(6,6),(7,6),(10,6),(28,6),
-                      (5,7),(6,7),(7,7),(12,7),(13,7),(14,7),(19,7),(20,7),(21,7),(26,7),(27,7),(28,7),
-                      (2,8),(3,8),(4,8),(9,8),(10,8),(11,8),(16,8),(17,8),(18,8),(19,8),(23,8),(24,8),(25,8),(30,8),(31,8),
-                      (1,9),
-                      (18,10),(25,10),(26,10),(31,10),
-                      (3,11),(8,11),(11,11),
-                      (20,12),(21,12),(22,12),(24,12),(27,12),(28,12)
-        ]
-
 
     dep = ""
     point = ""
@@ -165,7 +157,7 @@ def traffic(city):
     no_point = ""
 
     #if matching departure == yes
-    for i in deaparture:
+    for i in DEAPARTURE:
         if (day, month) == i :
             dep = 'Oui'
 
@@ -174,7 +166,7 @@ def traffic(city):
             dep = 'Non'
             
 
-    for i in hour_point_week:
+    for i in HEURE_POINT_WEEK:
 
         if i == hour:
             point = 'Oui'
@@ -242,19 +234,10 @@ def industrial_area(city):
 
     site = ''
     
-    polluting_pole = ['Nord',
-                    'Bouches-du-Rhône',
-                    'Moselle',
-                    'Seine-Maritime',
-                    'Loire-Atlantique',
-                    'Haute-Normandie',
-                    'Meurthe-et-Moselle',
-                    'Seine-Maritime',
-                    'Rhône'
-                    ]
+
 
     #BS4 stuff
-    path = "https://fr.wikipedia.org/wiki/{}".format(city) 
+    path = PATH_WIKI.format(city) 
     r = requests.get(path)
     page = r.content
     soup = BeautifulSoup(page, "html.parser")
@@ -262,7 +245,7 @@ def industrial_area(city):
     Property = str(Property)
    
     #If city matching with polluting_pole we return yes
-    for i in polluting_pole:
+    for i in POLLUTING_POLE:
         a = str(Property).find(str(i))
         if a > 0:
             site = 'oui'
