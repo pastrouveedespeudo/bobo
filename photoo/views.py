@@ -12,13 +12,7 @@ import cv2
 
 from accounts.models import Accounts
 
-from .photo import *
-from .photo import displaying_favorite_haircut
-
 from .coupe_dico import DICO_COIF
-
-from .analysis.database import *
-
 
 from .views_functions import the_colors_function
 from .views_functions import gymm_map_function
@@ -67,7 +61,7 @@ def coupe(request):
 
 
         if gymm_map:
-
+            
             #We call gymm_map_function from views_function
             data = gymm_map_function(gymm_map, gym_pays)
             return HttpResponse(data)
@@ -94,11 +88,7 @@ def coupe(request):
             return HttpResponse(data)
 
 
-
-
-
     return render(request, 'coupe.html')
-
 
 
 
