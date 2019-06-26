@@ -1,4 +1,14 @@
+verifier la map couffeur et gym
+
 vérifier coupe
+
+coupe le logo de chargement grandis le cadre
+
+map onclick map href #mamapgym
+
+coupe est encore trop grande en 1200
+
+effacer les import unecessary
 
 vérifier une derniere fois toutes les pages
 
