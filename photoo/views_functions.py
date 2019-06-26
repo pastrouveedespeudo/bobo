@@ -10,10 +10,9 @@
 #they are functions
 #who trait picture
 
-try:
-    from static.bobo.tendance import la_tendance
-except:
-    pass
+
+from .tendance_file.analysis_database.tendance import la_tendance
+
 
 
 from .magasins.address import *
@@ -30,11 +29,11 @@ def the_colors_function(color):
         coul_analyse_haut = liste10[1][0]
         coul_analyse_bas = liste10[1][1]
          
-    elif color == 'brune' or couleur == 'noire':
+    elif color == 'brune' or color == 'noire':
         coul_analyse_haut = liste10[0][0]
         coul_analyse_bas = liste10[0][1]
 
-    elif color == 'chatain' or couleur == 'rousse':
+    elif color == 'chatain' or color == 'rousse':
         
         coul_analyse_haut = liste10[2][0]
         coul_analyse_bas = liste10[2][1]
