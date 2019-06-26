@@ -1,11 +1,10 @@
 import psycopg2
+import importlib
 
 from .CONFIG import DATABASE
 from .CONFIG import USER
 from .CONFIG import HOST
 from .CONFIG import PASSWORD
-from .CONFIG import LISTE1
-from .CONFIG import LISTE5
 
 from .coupe_analysis import recup2
 
@@ -34,6 +33,14 @@ def dataaa():
 
 def i_into_i(liste):
     """Here we clean list from dataaa()"""
+
+    LISTE1 = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],]
     
     counter = 0
     counter1 = 0
@@ -108,7 +115,18 @@ def suppression_en_trop(liste2):
 def re_elment_de_liste(liste4):
     """here we sort our data by list list,
     indeed we have mixed up and down data"""
-    
+
+
+    LISTE5 = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              [],[],[],[],[],[],[],[],[],[],[],[],[],[],[],
+              ]
+
     counter = 0
     for i in liste4:
         
@@ -132,7 +150,7 @@ def re_elment_de_liste(liste4):
 
         else:
             liste6.append(i)
-            
+
     return liste6
 
 
