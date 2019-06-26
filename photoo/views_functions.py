@@ -1,5 +1,4 @@
-"""Here we cut code
-from the weight"""
+"""here we try to lighten the views in code"""
 
 #We trying or pass because
 #it's a function who calling the database
@@ -22,6 +21,9 @@ try:
     from static.bobo.tendance import analyse_tendance  
 except:
     pass
+
+
+from .magasins.address import *
 
 
 
@@ -51,3 +53,25 @@ def the_colors_function(color):
         coul_analyse_bas = liste10[2][1]
 
     return coul_analyse_haut, coul_analyse_bas
+
+
+
+
+def gymm_map_function(gymm_map, gym_pays):
+
+    the_address = address_geo(gymm_map, gym_pays)
+    lat_long = city_geo(the_address)
+
+    if lat_long == "Oups nous n'avons rien trouvé":
+        return lat_long
+
+    else:
+        data = str(lat_long[0]) + ' ' + str(lat_long[1])
+        return data
+
+
+
+
+
+
+
