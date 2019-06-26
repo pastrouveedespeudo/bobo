@@ -95,6 +95,15 @@ def coupe(request):
 
 
 
+
+
+    return render(request, 'coupe.html')
+
+
+
+
+
+
 def habits(request):
     """Here we calling function of views_functions
     we define the mode from informations
