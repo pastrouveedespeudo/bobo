@@ -1,0 +1,1203 @@
+{% include "menu_gauche.html" %}
+{% block content %}
+{% endblock %}
+
+<div id="menu_rep"><a href="/administrateur/navebarre_admin2">Menu</a></div>
+
+<header>
+    <section id="top_text">
+        <div id="fond_tendance"> 
+            <div id ="texte_in_texte">
+                <h1 id="titre1">La tendance du moment</h1><br>
+                       
+                  Les vetements sont l'oeuvre d'une erreur
+                  pour les uns, un atout pour les autres,
+                  un signe de distinction, de séparation;
+                  nous vous proposons de voir les coloris
+                  de la mode actuelle.<br>
+                  Ne soyez pas conforme aux règles ! Sans pour
+                  autant vous en affranchir ! 
+            </div>    
+        </div>      
+        <div id='latendance'></div>
+    </section>
+</header>
+
+
+
+
+
+<body> 
+
+
+    <section id='section_mode'>
+      <center><div id="cart_color">
+
+        <center><h1 id="cart_h1">Notre tendance</h1></center>
+        
+        <center>
+          <div id='brun'></div>
+          <div id='blond'></div>
+          <div id='chatain'></div>
+          <br>
+        </center>
+            
+       
+      </div></center>
+    </section>
+
+
+
+
+
+
+    <section id="iframe_section">
+        <!-- Iframe from an other page. Give feeling to consult a book -->
+        <div id="">
+          <center>
+            <iframe id="inlineFrameExample"
+                title="Inline Frame Example"
+                src="/photo/database_mode">
+            </iframe>
+          </center>
+        </div>
+    </section>
+
+
+</body>
+
+<footer>
+    <!-- Bottom Section number 2 -->
+    <div id='botttom'> 
+      {% include "bottom_page2.html" %}
+      {% block content2 %}
+      {% endblock content2%}
+    </div>
+</footer>
+
+
+
+
+
+<style>
+
+
+#text_icone_texte{
+  font-size:100%;
+}
+#text_icone_ouvrir{
+  font-size:100%;
+  display:none;
+}
+#h1_tendance{
+  color:black;
+  margin-left:820px;
+  font-size:2em;
+}
+#inlineFrameExample{
+  border:2px solid black;
+  style='border:none;
+  scrolling:no;
+  allowfullscreen="true;
+  frameborder=0';
+  overflow: hidden;
+  width:75%;
+  height:500px;
+  z-index:10;
+}
+#div_iframe{
+  background:url('/static/img/parquet1.jpg');
+}
+
+#autre{
+    margin-left:-965px;
+    margin-top:-100px;
+}
+#h{
+    font:Serif;
+    color:white;
+}
+#database,
+#tendance{
+  color:white;
+  background:url('/static/img/parquet1.jpg');
+  border: none;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+#cart_h1{
+    color:black; font-family:segoe script
+}
+#cart_color{
+    background:url('/static/img/parquet1.jpg');
+    border:2px solid black;
+}
+
+#brun,
+#blond,
+#chatain{
+    font-size:1.5vw;
+}
+#cart_h1{
+    font-size:2vw;
+}
+h1{
+    color:black;
+    font-family:"recursive";
+}
+h2{
+    color:black;
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width:374px) {
+    #menu_rep{
+        display:block;
+        margin-left:5%;
+        padding-bottom:20px;
+    }
+    #fond_tendance{
+        text-align:center;
+    }
+    #texte_in_texte{
+        text-align:center;
+        color:black;
+    }
+    #text_icone_texte{
+        display:none;
+    }
+    h1{
+        font-size:20px;
+        text-align:center;
+        color:black;
+    }
+    #MENU{
+        display:none;
+    }
+    #logo{
+        display:none;
+    }
+    #section_mode{
+        padding-top:80%;
+        width:100%;
+        text-align:center;
+    }
+    #cart_color{
+        margin-top:50px;
+        height:auto;
+        width:200px;
+    }
+    #cart_h1{
+        padding-top:25px;
+        font-size:2px;
+        margin-top:-10px;
+    }
+    #brun{
+        font-size:15px;
+    }
+    #blond{
+        font-size:15px;
+    }
+    #chatain{
+        font-size:15px;
+    }
+    #iframe_section{
+        padding-top:80px;
+    }
+    #inlineFrameExample{
+        height:250px;
+        text-align:center;
+    }
+    input{
+        width:50px;
+        height:90;
+        text-align:center;
+    }
+    img{
+        width:500px;
+        height:70;
+    }
+    #notre_mode{
+        font-size:20px;
+        
+    }
+    .col-sm{
+         margin-left:15px;
+         width:120px;
+    }
+    .masthead{
+        font-size:5vw;
+    }
+    body{
+      background:url('/static/v2/tendance_resp.jpg') no-repeat fixed center;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    #fond_tendance{
+        position:absolute;
+    }
+    #titre1{
+        font-size:8vw;
+    }
+    #botttom{
+        margin-top:100px;
+    }
+}
+
+
+
+@media screen and (min-width: 375px) and (max-width:425px) {
+    #menu_rep{
+        display:block;
+        margin-left:5%;
+    }
+    #fond_tendance{
+        position:absolute;
+        margin-left:10%;
+    }
+    #debut{
+        text-align:center;
+    }
+    #texte_in_texte{
+        font-size:3vw;
+        width:250px;
+        text-align:center;
+        
+    }
+    #text_icone_texte{
+        display:none;
+    }
+    h1{
+        font-size:20px;
+        text-align:center;
+    }
+    #MENU{
+        display:none;
+    }
+    #logo{
+        display:none;
+    }
+    #section_mode{
+        padding-top:80%;
+        width:100%;
+        text-align:center;
+    }
+    #cart_color{
+        margin-top:50px;
+        height:auto;
+        width:200px;
+    }
+    #cart_h1{
+        padding-top:25px;
+        font-size:15px;
+        margin-top:-10px;
+    }
+    #brun{
+        font-size:15px;
+    }
+    #blond{
+        font-size:15px;
+    }
+    #chatain{
+        font-size:15px;
+    }
+    #iframe_section{
+        padding-top:80px;
+    }
+    #inlineFrameExample{
+        height:250px;
+        text-align:center;
+    }
+    input{
+        width:50px;
+        height:90;
+        text-align:center;
+    }
+    img{
+        width:50px;
+        height:70;
+    }
+    .col-sm{
+     margin-left:15px;
+     width:120px;
+    }
+    .masthead{
+        height:100%;
+    }
+    #notre_mode{
+        font-size:10vw;
+    }
+    #p_expert{
+        font-size:10px;
+        font-style: italic;
+    }
+    body{
+      background:url('/static/v2/tendance_resp.jpg') no-repeat fixed center;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    #titre1{
+        font-size:8vw;
+    }
+    #botttom{
+        margin-top:100px;
+    }
+    
+    
+}
+
+
+@media screen and (min-width: 425px) and (max-width:500px) {
+    #menu_rep{
+        display:block;
+        margin-left:5%;
+    }
+    #fond_tendance{
+        position:absolute;
+        margin-left:10%;
+    }
+    #debut{
+        text-align:center;
+    }
+    #texte_in_texte{
+        font-size:3vw;
+        width:250px;
+        text-align:center;
+        margin-left:140px;
+        
+    }
+    #text_icone_texte{
+        display:none;
+    }
+    h1{
+        font-size:20px;
+        text-align:center;
+    }
+    #MENU{
+        display:none;
+    }
+    #logo{
+        display:none;
+    }
+    #section_mode{
+        padding-top:80%;
+        width:100%;
+        text-align:center;
+    }
+    #cart_color{
+        height:auto;
+        width:300px;
+        text-align:center;
+    }
+    #cart_h1{
+        padding-top:25px;
+        font-size:15px;
+        margin-top:-10px;
+    }
+    #brun{
+        font-size:15px;
+    }
+    #blond{
+        font-size:15px;
+    }
+    #chatain{
+        font-size:15px;
+    }
+    #iframe_section{
+        padding-top:80px;
+    }
+    #inlineFrameExample{
+        height:250px;
+        text-align:center;
+    }
+    input{
+        width:50px;
+        height:90;
+        text-align:center;
+    }
+    img{
+        width:50px;
+        height:90;
+    }
+    .col-sm{
+     margin-left:15px;
+     width:120px;
+    }
+    .masthead{
+        height:100%;
+    }
+    #notre_mode{
+        font-size:10vw;
+    }
+    #p_expert{
+        font-size:10px;
+        font-style: italic;
+    }
+    body{
+      background:url('/static/v2/tendance_resp.jpg') no-repeat fixed center;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    #botttom{
+        margin-top:100px;
+    }
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 500px) and (max-width:700px) {
+    #menu_rep{
+        display:block;
+        margin-left:5%;
+    }
+    #fond_tendance{
+        position:absolute;
+        margin-left:10%;
+    }
+    #debut{
+        text-align:center;
+    }
+    #texte_in_texte{
+        font-size:3vw;
+        width:280px;
+        text-align:center;
+        margin-left:140px;
+        
+    }
+    #text_icone_texte{
+        display:none;
+    }
+    h1{
+        font-size:20px;
+        text-align:center;
+    }
+    #MENU{
+        display:none;
+    }
+    #logo{
+        display:none;
+    }
+    #section_mode{
+        padding-top:60%;
+        width:100%;
+        text-align:center;
+    }
+    #cart_color{
+        height:auto;
+        width:300px;
+        margin-top:150px;
+        text-align:center;
+    }
+    #cart_h1{
+        padding-top:25px;
+        font-size:15px;
+        margin-top:-10px;
+    }
+    #brun{
+        font-size:15px;
+    }
+    #blond{
+        font-size:15px;
+    }
+    #chatain{
+        font-size:15px;
+    }
+    #iframe_section{
+        padding-top:90px;
+    }
+    #inlineFrameExample{
+        height:250px;
+        text-align:center;
+    }
+    input{
+        width:50px;
+        height:90;
+        text-align:center;
+    }
+    img{
+        width:50px;
+        height:110;
+    }
+    .col-sm{
+     margin-left:15px;
+     width:120px;
+    }
+    .masthead{
+        height:100%;
+    }
+    #notre_mode{
+        font-size:10vw;
+    }
+    #p_expert{
+        font-size:10px;
+        font-style: italic;
+    }
+    body{
+      background:url('/static/v2/tendance_resp.jpg') no-repeat fixed center;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    #titre1{
+        font-size:5vw;
+    }
+    #botttom{
+        margin-top:100px;
+    }
+}
+
+
+@media screen and (min-width: 700px) and (max-width:900px) {
+    #menu_rep{
+        display:block;
+        margin-left:5%;
+    }
+    #fond_tendance{
+        position:absolute;
+        margin-left:8%;
+    }
+    #debut{
+        text-align:center;
+    }
+    #texte_in_texte{
+        font-size:2.5vw;
+        width:300px;
+        text-align:center;
+        margin-left:200px;
+        
+    }
+    #text_icone_texte{
+        display:none;
+    }
+    h1{
+        font-size:30px;
+        text-align:center;
+    }
+    #MENU{
+        display:none;
+    }
+    #logo{
+        display:none;
+    }
+    #section_mode{
+        padding-top:60%;
+        width:100%;
+        text-align:center;
+    }
+    #cont_cart{
+        text-align:center;
+        width:100%;
+    }
+    #cart_color{
+        height:auto;
+        width:300px;
+        text-align:center;
+    }
+    #cart_h1{
+        padding-top:25px;
+        font-size:15px;
+        margin-top:-10px;
+    }
+    #brun{
+        font-size:15px;
+    }
+    #blond{
+        font-size:15px;
+    }
+    #chatain{
+        font-size:15px;
+    }
+    #iframe_section{
+        padding-top:90px;
+    }
+    #inlineFrameExample{
+        height:250px;
+        text-align:center;
+    }
+    input{
+        width:50px;
+        height:90;
+        text-align:center;
+    }
+    img{
+        width:50px;
+        height:110;
+    }
+    .col-sm{
+     margin-left:15px;
+     width:120px;
+    }
+    .masthead{
+        height:100%;
+    }
+    #notre_mode{
+        font-size:10vw;
+    }
+    #p_expert{
+        font-size:10px;
+        font-style: italic;
+    }
+    body{
+      background:url('/static/v2/tendance_resp.jpg') no-repeat fixed center;
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+    #botttom{
+        margin-top:200px;
+    }
+    
+    
+}
+
+
+
+@media screen and (min-width: 900px) and (max-width:1100px) {
+    #menu_rep{
+        display:block;
+        margin-left:5%;
+        display:none;
+    }
+    #fond_tendance{
+        width:400px;
+        margin-left:50%;
+        position:absolute;
+    }
+    #debut{
+        text-align:center;
+    }
+    #texte_in_texte{
+        font-size:1.7vw;
+        width:100%;
+    }
+    h1{
+        font-size:20px;
+        text-align:center;
+    }
+    #section_mode{
+        padding-top:60%;
+        width:100%;
+        text-align:center;
+    }
+    #cont_cart{
+        text-align:center;
+        width:100%;
+    }
+    #cart_color{
+        height:450px;
+        width:350px;
+        text-align:center;
+        margin-top:-100px;
+    }
+    #cart_h1{
+        padding-top:45px;
+        font-size:25px;
+        margin-top:-10px;
+    }
+    #brun{
+        font-size:20px;
+        padding-top:45px;
+    }
+    #blond{
+        font-size:15px;
+        padding-top:25px;
+    }
+    #chatain{
+        font-size:15px;
+        padding-top:25px;
+    }
+    #iframe_section{
+        padding-top:90px;
+    }
+    #inlineFrameExample{
+        height:250px;
+        text-align:center;
+    }
+    input{
+        width:50px;
+        height:90;
+        text-align:center;
+    }
+    img{
+        width:50px;
+        height:110;
+    }
+    .col-sm{
+     margin-left:15px;
+     width:120px;
+    }
+    .masthead{
+        height:100%;
+    }
+    #notre_mode{
+        font-size:10vw;
+    }
+    #p_expert{
+        font-size:10px;
+        font-style: italic;
+    }
+    #botttom{
+        margin-top:200px;
+    }
+}
+
+
+
+
+
+@media screen and (min-width: 1100px) and (max-width:1300px) {
+    #menu_rep{
+        display:block;
+        margin-left:5%;
+        display:none;
+    }
+    #fond_tendance{
+        width:400px;
+        margin-left:680px;
+        position:absolute;
+    }
+    #texte_in_texte{
+        font-size:1.5vw;
+        width:100%;
+    }
+    h1{
+        font-size:20px;
+        text-align:center;
+    }
+    #section_mode{
+        width:100%;
+        text-align:center;
+    }
+    #cart_color{
+        height:550px;
+        width:400px;
+        margin-top:500px;
+        margin-right:350px;
+    }
+    #cart_h1{
+        padding-top:45px;
+        font-size:25px;
+        margin-top:-10px;
+    }
+    #brun{
+        font-size:20px;
+        padding-top:45px;
+    }
+    #blond{
+        font-size:20px;
+        padding-top:25px;
+    }
+    #chatain{
+        font-size:20px;
+        padding-top:25px;
+    }
+    #iframe_section{
+        padding-top:200px;
+    }
+    #inlineFrameExample{
+        height:550px;
+        text-align:center;
+    }
+    input{
+        width:50px;
+        height:90;
+        text-align:center;
+    }
+    img{
+        width:50px;
+        height:110;
+    }
+    .col-sm{
+     margin-left:15px;
+     width:120px;
+    }
+    .masthead{
+        height:100%;
+    }
+    #notre_mode{
+        font-size:10vw;
+    }
+    #p_expert{
+        font-size:10px;
+        font-style: italic;
+    }
+    #botttom{
+        margin-top:200px;
+    }
+}
+
+
+
+
+@media screen and (min-width: 1300px) and (max-width:1500px) {
+    #menu_rep{
+        display:block;
+        margin-left:5%;
+        display:none;
+    }
+    #fond_tendance{
+        position:absolute;
+        width:445px;
+        margin-left:800px;
+    }
+    #debut{
+        text-align:center;
+    }
+    
+    #texte_in_texte{
+        font-size:1.3vw;
+        width:400px;
+        float:right;   
+    }
+    h1{
+        font-size:34px;
+        width:100%;
+        text-align:center;
+    }
+    #section_mode{
+        padding-top:60%;
+        width:100%;
+        text-align:center;
+    }
+    #cont_cart{
+        text-align:center;
+        width:100%;
+    }
+    #cart_color{
+        height:570px;
+        width:400px;
+        margin-right:250px;
+        margin-top:-300px;
+    }
+    #cart_h1{
+        padding-top:45px;
+        font-size:25px;
+        margin-top:-10px;
+    }
+    #brun{
+        font-size:25px;
+        padding-top:45px;
+    }
+    #blond{
+        font-size:25px;
+        padding-top:25px;
+    }
+    #chatain{
+        font-size:25px;
+        padding-top:25px;
+    }
+    #iframe_section{
+        padding-top:300px;
+    }
+    #inlineFrameExample{
+        height:550px;
+        text-align:center;
+    }
+    input{
+        width:50px;
+        height:90;
+        text-align:center;
+    }
+    img{
+        width:50px;
+        height:110;
+    }
+    .col-sm{
+     margin-left:15px;
+     width:120px;
+    }
+    .masthead{
+        height:100%;
+    }
+    #p_expert{
+        font-size:10px;
+        font-style: italic;
+    }
+    #botttom{
+        margin-top:500px;
+    }
+}
+
+
+</style>
+<style>
+#texte_in_texte{
+    text-align:justify;
+}
+
+a{
+    color:black;
+}
+a:hover{
+    color:white;
+}
+
+</style>
+
+
+
+
+
+<script>
+
+  //This functions are a result from a mistake.
+  //Indeed, before we gave possibility to
+  //choose to watch one database (women or men)
+  //with input like (do you want watch database ? yes women ? men ?)
+  // so here we action this input who are now invisible.
+
+  // ---> Evenement Function <---
+
+  function data(){
+    document.location.href="/photo/database_mode/"
+  };
+
+  function tendance(){
+    document.getElementById('latendance').innerHTML = '<br><h3>La tendance du moment selon : </h3>';
+    document.getElementById('section').style.display = 'block';
+    document.getElementById('botttom').style.display = 'none';
+  };
+
+  function decodeHtml(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  };
+
+
+  var a = decodeHtml("{{liste10|slice:'1'}}");
+  var b = decodeHtml("{{liste10|slice:'1:2'}}");
+  var c = decodeHtml("{{liste10|slice:'2:3'}}");
+  
+  a = a.slice(3,-4)
+  b = b.slice(3,-4)
+  c = c.slice(3,-4)
+
+  function enelve(lettre){
+    liste = ""
+    for(var i = 0; i < lettre.length; i ++){
+      if (lettre[i] == "'"){
+      }
+      else if(lettre[i] == ","){
+        liste += " et "
+      }
+      else{
+        liste += lettre[i]
+      }
+    }
+    return liste
+  };
+
+  a = enelve(a)
+  b = enelve(b)
+  c = enelve(c)
+
+  document.getElementById('brun').innerHTML = "<center><strong>Brune :</strong>&nbsp;&nbsp;&nbsp;</center>" +
+                                              "<center><p style='font-family:amaze, segoe print, segoe script; font-size:2em;'>" + a + "</p></center>";
+
+                                                
+  document.getElementById('blond').innerHTML = "<center><strong>Blonde :</strong>" +
+                                                "&nbsp;&nbsp;&nbsp;<p style='font-family:amaze,segoe print, segoe script; font-size:2em;'>" + b + "</p></center>";
+
+                                                  
+  document.getElementById('chatain').innerHTML = "<center><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chatain :" +
+                                                  "</strong>&nbsp;&nbsp;&nbsp;<p style='font-family:amaze, segoe print, segoe script;font-size:2em;'>" + c + "</p></center>";
+
+
+  function text_shut(){
+    document.getElementById('texte_in_texte').style.display = "none";
+    document.getElementById('text_icone_texte').style.display = "none";
+    document.getElementById('text_icone_ouvrir').style.display = "inline-block";
+  };
+
+  function open_it_bro(){
+    document.getElementById('texte_in_texte').style.display = "block";
+    document.getElementById('text_icone_texte').style.display = "inline-block";
+    document.getElementById('text_icone_ouvrir').style.display = "none";
+  };
+</script>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<style>
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

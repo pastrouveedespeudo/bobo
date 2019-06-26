@@ -1,0 +1,102 @@
+            {% include "menu_admin.html" %}
+            {% block content %}
+            {% endblock %}
+
+
+
+            <div id="deux" class="col-sm">
+              <center><span><u>Page</u></h1></span>
+
+                      <a href="/photo/tendance#section_mode"><p id="tendance" class="tendance"
+                      onmouseover="un('tendance')" onmouseout="deux('tendance')">
+                      La Tendance</p>
+                      
+                      <a href="/photo/tendance#inlineFrameExample">
+                          <p id="Book" class="Book"
+                              onmouseover="un('Book')" onmouseout="deux('Book')">
+                              Le book</p>
+                      </a>
+                      
+                      <p id="Retour" class="Retour"
+                          onmouseover="un('Retour')" onmouseout="deux('Retour')"
+                          onclick="retour_page('/photo/tendance')">
+                          Retour
+                      </p>
+                      
+                      <center><div id="separate_page"></div></center>
+
+
+
+
+
+              
+            </div>
+
+            
+          </div>
+        </div>
+        
+    </div>
+
+
+</body>
+
+
+
+
+
+
+
+
+<style>
+    a:hover{
+        text-decoration: none;
+    }
+    #tendance{
+        padding-top:50px;
+    }
+    #tendance,
+    #Book,
+    #habit,
+    #retour2,
+    #Retour{
+        color:white;
+    }
+    #separate_page{
+        width:50px;
+        height:1px;
+        background:white;
+    }
+
+    #retour_page{
+        color:white;
+    }
+
+
+
+        
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
