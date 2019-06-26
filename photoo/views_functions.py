@@ -10,9 +10,9 @@
 #they are functions
 #who trait picture
 
+import os
 
 from .tendance_file.analysis_database.tendance import la_tendance
-
 
 
 from .magasins.address import *
@@ -20,6 +20,40 @@ from .magasins.gym import *
 from .magasins.hairdresser import *
 
 
+def database_mode_function():
+    try:
+        os.chdir('/app/static/bobo')
+    except:
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+
+
+    liste = os.listdir()
+
+    liste1 = []
+    theliste1 = []
+
+    for i in liste:
+        theliste1.append(i)
+
+    theliste1 = sorted(theliste1)
+
+    counter = 0
+    for i in theliste1:
+        try:
+            liste1.append((str(theliste1[counter]),
+                           str(theliste1[counter + 1]),
+                           int(str(counter) + str(counter))))
+            counter += 2
+        except:
+            pass
+
+    return liste1
+
+
+def tendance_function():
+    
+    liste10 = la_tendance()
+    return liste10
 
 def the_colors_function(color):
 
