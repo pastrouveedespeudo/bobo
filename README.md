@@ -1,3 +1,5 @@
+ATTENTION dans le truk final, c'est le SOUP local qui est mis pour coiff et gym
+
 verifier la map couffeur et gym
 
 nettoyer tous les favoris de habits et coupe
