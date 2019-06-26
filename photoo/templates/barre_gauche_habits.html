@@ -106,7 +106,7 @@
             </div><br><br>
               
 
-            <div id='contain6' style='position:absolute'>
+            <div id='contain3' style='position:absolute'>
                 <p id="menu2"
                     onMouseOver = "sous_menu1('menu2', 'reseaux', '#91A8A4')"         
                     onMouseOut = "sous_menu2('menu2', 'reseaux')">
@@ -115,7 +115,7 @@
                 </p>
             </div><br><br>
 
-            <div id='contain5'>
+            <div id='contain4'>
                 <p id="menu3"
                     onMouseOver = "sous_menu1('menu3', 'contacter', '#91A8A4')"         
                     onMouseOut = "sous_menu2('menu3', 'contacter')">
@@ -145,20 +145,18 @@
 
         function shutdown(){
             document.getElementById('sommaire').style.display = "none";
-            document.getElementById('menu').style.display = "none";
+            document.getElementById('menu_in_menu').style.display = "none";
             document.getElementById('menu1').style.display = "none";
             document.getElementById('menu2').style.display = "none";
             document.getElementById('menu3').style.display = "none";
             document.getElementById('shut').style.display = "none";
             document.getElementById('notshut').style.display = "block";
-       
-            
            
         };
 
         function notshutdown(){
             document.getElementById('sommaire').style.display = "block";
-            document.getElementById('menu').style.display = "block";
+            document.getElementById('menu_in_menu').style.display = "block";
             document.getElementById('menu1').style.display = "block";
             document.getElementById('menu2').style.display = "block";
             document.getElementById('menu3').style.display = "block";
@@ -346,7 +344,7 @@ a:hover{
 @media screen and (min-width: 1500px) and (max-width:2000px) {
   #MENU {
     padding-top:20px;
-    font-size:1.3vw ;
+    font-size:1.4vw ;
   }
 }
 
