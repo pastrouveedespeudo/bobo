@@ -1,8 +1,12 @@
-ATTENTION dans le truk final, c'est le SOUP local qui est mis pour coiff et gym
+ATTENTION dans le truk final, c'est le SOUP local qui est mis pour coiff et gym(github)
+
+pollu views(+dépendance) et tendance file 
+
+refaire les href
 
 verifier la map couffeur et gym
 
-nettoyer tous les favoris de habits et coupe
+nettoyer tous les favoris de habits
 
 vérifier coupe
 
@@ -28,10 +32,6 @@ oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est p
 
 #une fois cest deux fini dissoc le js et le css comme ca tu poruras faire un dernier réparage
 
-#en gros toutes les fonctions qui dépassent au max 30 lignes faire d'autres petites fonctions en gros y'a que bobo qui sera dure a comprendre go faire bottom c rapide et simple
-
-google traduction
-
 background transparent des graggables
 
 <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
@@ -48,10 +48,6 @@ finir machine a o
 
 -  home faire le truk avec les images pollution
 
-9 - redéfinir les routes des gabarits (botoom, menu)
-
-le cron marche plus
-
 faire les tests <- j'ai trop hate !
 
 faire la video
@@ -59,8 +55,6 @@ faire la video
 mettre des pages 404 et 505
 
 faire mention légale
-
-commentaire section coiffure
 
 csrfmiddlewaretoken:'{{ csrf_token }}'
 
