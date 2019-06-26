@@ -1,6 +1,12 @@
 verifier la map couffeur et gym
 
+nettoyer tous les favoris de habits et coupe
+
 vérifier coupe
+
+coupe les service en petit c pas centré
+
+coupe draggable bien les pos en 1200 + favoris
 
 coupe le logo de chargement grandis le cadre
 
@@ -11,6 +17,10 @@ coupe est encore trop grande en 1200
 effacer les import unecessary
 
 vérifier une derniere fois toutes les pages
+
+mettre les pages des admin dans les appli
+
+-> refaire les url concernées
 
 oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est pour coiffeur
 
