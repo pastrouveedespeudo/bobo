@@ -40,7 +40,7 @@ finir machine a o
 
 le cron marche plus
 
-faire les tests
+faire les tests <- j'ai trop hate !
 
 faire la video
 
