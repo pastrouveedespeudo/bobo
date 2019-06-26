@@ -12,6 +12,7 @@ import cv2
 
 from .views_functions import the_colors_function
 from .views_functions import tendance_function
+from .views_functions import database_mode_function
 
 from .views_functions import gymm_map_function
 from .views_functions import gymm_function
@@ -131,51 +132,17 @@ def habits(request):
 
 
 
-
-
-
 def database_mode(request):
-
-    try:
-        os.chdir('/app/static/bobo')
-    except:
-        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
-
-
-    liste = os.listdir()
-
-    liste1 = []
-    liste11 = []
-    theliste1 = []
-
-
-    for i in liste:
-        theliste1.append(i)
-
-    theliste1 = sorted(theliste1)
-
-
-    c = 0
-    for i in theliste1:
-        try:
-            liste1.append((str(theliste1[c]), str(theliste1[c+1]), int(str(c) + str(c))))
-            c+=2
-        except:
-            pass
-       
-
-    print(liste1)
-
+    """Here we return the pictures from our database"""
+    
+    liste1 = database_mode_function()
     return render(request, "database_mode.html", {'image_hab':liste1})
 
 
 def tendance(request):
-    
-
+    """Here we return the mode"""
     
     liste10 = tendance_function
-
-
     return render(request, "tendance.html", {'liste10':liste10})
 
 
