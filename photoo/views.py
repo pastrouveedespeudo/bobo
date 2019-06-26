@@ -10,16 +10,18 @@ from django.middleware.gzip import GZipMiddleware
 import os
 import cv2
 
-from accounts.models import Accounts
-
-from .coupe_dico import DICO_COIF
-
 from .views_functions import the_colors_function
+from .views_functions import tendance_function
+
 from .views_functions import gymm_map_function
 from .views_functions import gymm_function
 from .views_functions import haircut_style_function
 from .views_functions import map_hairdresser_function
+ 
 
+def navebarre_admin2(request):
+    """Here we return a home html respons"""
+    return render(request, 'navebarre_admin2.html')
 
 def navebarre_coupe(request):
     """Here we return a home html respons"""
@@ -130,6 +132,51 @@ def habits(request):
 
 
 
+
+
+def database_mode(request):
+
+    try:
+        os.chdir('/app/static/bobo')
+    except:
+        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
+
+
+    liste = os.listdir()
+
+    liste1 = []
+    liste11 = []
+    theliste1 = []
+
+
+    for i in liste:
+        theliste1.append(i)
+
+    theliste1 = sorted(theliste1)
+
+
+    c = 0
+    for i in theliste1:
+        try:
+            liste1.append((str(theliste1[c]), str(theliste1[c+1]), int(str(c) + str(c))))
+            c+=2
+        except:
+            pass
+        
+
+    print(liste1)
+
+    return render(request, "database_mode.html", {'image_hab':liste1})
+
+
+def tendance(request):
+    
+
+    
+    liste10 = tendance_function
+
+
+    return render(request, "tendance.html", {'liste10':liste10})
 
 
 
