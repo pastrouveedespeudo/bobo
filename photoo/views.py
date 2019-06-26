@@ -162,7 +162,7 @@ def database_mode(request):
             c+=2
         except:
             pass
-        
+       
 
     print(liste1)
 
