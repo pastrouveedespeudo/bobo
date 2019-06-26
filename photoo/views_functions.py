@@ -24,6 +24,8 @@ except:
 
 
 from .magasins.address import *
+from .magasins.gym import *
+from .magasins.hairdresser import *
 
 
 
@@ -58,7 +60,10 @@ def the_colors_function(color):
 
 
 def gymm_map_function(gymm_map, gym_pays):
-
+    """here we retrieve the name of the
+    gym sought by the user and
+    seek his address"""
+    
     the_address = address_geo(gymm_map, gym_pays)
     lat_long = city_geo(the_address)
 
@@ -68,6 +73,81 @@ def gymm_map_function(gymm_map, gym_pays):
     else:
         data = str(lat_long[0]) + ' ' + str(lat_long[1])
         return data
+
+
+
+def gymm_function(gymm):
+    
+    gym_list = []
+
+    the_cities = big_city_gym(gymm)
+    
+    for i in the_cities:
+        if len(gym_list) == 4:
+            return gym_list
+            
+        a = schedule_gym(i, gymm)
+
+        if a != []:
+            gym_list.append([i, a, ""])
+
+    return gym_list
+
+
+
+def haircut_style_function(haircut_style):
+    
+    coif = []
+  
+    the_hairdressers = cities(haircut_style)
+    
+    for i in the_hairdressers: 
+        schedule1 = schedule_hair(i, haircut_style)
+
+        if [schedule1] == [] or schedule1 == []\
+           or schedule1 == "" or schedule1 == " "\
+           or schedule1 == None:
+            the_hairdressers.remove(i)
+            
+        else:
+            coif.append([i, schedule1, ""])
+            the_hairdressers.remove(i)
+
+    return coif
+
+
+def map_hairdresser_function(map_hairdresser, vivile):
+    
+    the_address = address_geo(map_hairdresser, vivile)
+    
+    lat_long = city_geo(the_address)
+    if lat_long == "Oups nous n'avons rien trouvé":
+        data =  "Oups nous n'avons rien trouvé"
+        
+    else:
+        data = str(lat_long[0]) + ' ' + str(lat_long[1])
+    
+    return data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
