@@ -9,15 +9,16 @@
     
         <div id='texte1'>
           <h1>Notre carte du vent</h1><br>
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          Vous vous demandez quelles sont les causes de la
+          pollution de l'air? les voitures,
+          les cheminées des usines, le beau temps;
+          Nous n'avons pas pu tout mettre mais saviez vous que
+          les chantiers, les tempetes de sable,
+          la pression atmosphérique,
+          les incendies, les erruptions volcaniques la mode... en sont
+          la cause.<br>
+          Vous vivez à Paris, Marseille ou Paris ?
+          Voici quelques données qui pourraient vous etre utiles.
         </div>
 
           
@@ -30,24 +31,50 @@
     #cities{
       text-align:center;
     }
+
   </style>
-  
-  <!-- Data Section -->
-  <center>
-  <div id='section_ninja'>
+
+
+
+
+
+  <div id='section_ninja' >
 
 
     <div id="les_info">
-      <p id="info_aqi">
+ 
+      <p id="info_aqi" style="margin:auto;">
         <i>*AQI signifie indice de qualité de l'air<br> par la mesure de l'O3, le SO2, le NO2 et PM10.</i>
       </p><br>
-      <p id="info_dollard"><i>*le cours du dollars et le taux de vente du diesel<br>
+      <p id="info_dollard" style="margin:auto;"><i>*le cours du dollars et le taux de vente du diesel<br>
         représentent le taux de présence des voitures diesel en circulation</i>
       </p><br>
-      <p id="info_pop"><i>*Population active de 16-59 ans</i>
+      <p id="info_pop" style="margin:auto;"><i>*Population active de 16-59 ans</i>
       </p><br>
-    </div>
     
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Data Section City-->
     <div class="container" id='cities'>
@@ -56,7 +83,7 @@
           <div class="row" id='row1'>
 
             <!-- Input Section Lyon-->
-            <div class="col-lg-3 col-sm-7 col-md-3" id="Lyon"><br>
+            <div class="col-lg-3 col-sm-4 col-md-3" id="Lyon"><br>
               <h5>Taux de pollution de particules fines à<br>Lyon</h5><br><br>
               <center><strong><h5 id='lyon_pol'>{{lyon}}</h5>AQI</strong></center><br>
               <center><input type='button' id='voir_lyon' value='Voir les données' onclick='donnee_lyon()'></center><br>
@@ -66,7 +93,7 @@
 
             <!-- Input Section Lyon Number 1 -->
             <center>
-             <div id='info1' style='display:none;'>
+             <div id='info1' style='display:none; border:2px solid green;'>
               <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
                 <div class="row">
                   <div class="col-sm">
@@ -154,7 +181,7 @@
 
             <!-- Input Section Lyon Number 4 -->
              <br><br>
-             <input type='button' value='fermer' onclick='fermer()'>
+             <center><input type='button' value='fermer' onclick='fermer()'></center>
 
               <div id='info_donnée'>
               
@@ -192,9 +219,12 @@
 
 
 
+
+
+
           
           <!-- Input Section Paris-->
-          <div class="col-lg-3 col-sm-7 col-md-3" id="Paris"><br>                   
+          <div class="col-lg-3 col-sm-4 col-md-3" id="Paris"><br>                   
               <h5>Taux de pollution de particules fines à<br>Paris</h5><br><br>
               <center><strong><h5 id='paris_pol'>{{paris}}</h5>AQI</strong></center><br>
               <center><input type='button' id='voir_paris' value='Voir les données' onclick='donnee_paris()'></center><br>
@@ -294,10 +324,11 @@
         
         <!-- Input Section Paris Number 4 -->
         <br><br>
-        <input type='button' value='fermer' onclick='fermer()'>
+        <div id="info_donnée">
+        <center><input type='button' value='fermer' onclick='fermer()'></center>
           <br><br><br><br>
 
-        <div id='info_donnée'>
+
           <div style='float:left;'><i>Donnée fournis par openweathermap :
           <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
           </a></i></div><br>
@@ -324,6 +355,7 @@
           </a></i> 
           </div>
           </div>
+      
 
 
         
@@ -353,7 +385,7 @@
 
 
           <!-- Input Section Marseille-->
-          <div class="col-lg-3 col-sm-7 col-md-3" id="Marseille"><br>
+          <div class="col-lg-3 col-sm-4 col-md-3" id="Marseille"><br>
               
               <h5>Taux de pollution de particules fines à Marseille</h5><br><br>
               <center><strong><h5 id='marseille_pol'>{{marseille}}</h5>AQI</strong></center><br>
@@ -451,9 +483,10 @@
 
           <!-- Input Section Marseille Number 4 -->
           <br><br>
-          <input type='button' value='fermer' onclick='fermer()'>
-          
           <div id='info_donnée'>
+          <center><input type='button' value='fermer' onclick='fermer()'></center>
+          
+          
           <br><br><br><br>
           <div style='float:left;'><i>Donnée fournis par openweathermap :
           <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
@@ -494,8 +527,8 @@
 
     </style>
    <!-- Input Section Lyon Number 1 -->
-       <div id='info1'>
-        <div class="container" style='background:url("/static/img/parquet1.jpg"); border:2px solid black;'>
+       <div id='info1' >
+        <div class="container" style='background:url("/static/img/parquet1.jpg");'>
           <div class="row">
             <div class="col-sm">
               <span style='color:black;'>Météo</span><br>{{weather_lyon}}<br>
@@ -582,7 +615,7 @@
 
         <!-- Input Section Lyon Number 4 -->
          <br><br>
-         <input type='button' value='fermer' onclick='fermer()'>
+         <center><input type='button' value='fermer' onclick='fermer()'></center>
 
         
           <br><br><br><br>
@@ -699,7 +732,7 @@
         
         <!-- Input Section Paris Number 4 -->
         <br><br>
-        <input type='button' value='fermer' onclick='fermer()'>
+        <center><input type='button' value='fermer' onclick='fermer()'></center>
           <br><br><br><br>
           <div style='float:left;'><i>Donnée fournis par openweathermap :
           <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
@@ -815,7 +848,8 @@
 
           <!-- Input Section Marseille Number 4 -->
           <br><br>
-          <input type='button' value='fermer' onclick='fermer()'>
+          <div id="info_donnée">
+          <center><input type='button' value='fermer' onclick='fermer()'></center>
 
           <br><br><br><br>
           <div style='float:left;'><i>Donnée fournis par openweathermap :
@@ -838,7 +872,7 @@
           <div style='float:left;'><i>Bouchons à Paris : </i>
           <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
             style='color:black;'><i>moncoyote</a></i></div><br>
-
+        </div>
       </div>
       
   </div><br><br>
@@ -942,7 +976,7 @@
 
             <!-- Input Section Lyon Number 4 -->
              <br><br>
-             <input type='button' value='fermer' onclick='fermer()'>
+             <center><input type='button' value='fermer' onclick='fermer()'></center>
 
               <div id='info_donnée'>
               
@@ -1068,7 +1102,8 @@
         
         <!-- Input Section Paris Number 4 -->
         <br><br>
-        <input type='button' value='fermer' onclick='fermer()'>
+        <div id='info_donnée'>
+        <center><input type='button' value='fermer' onclick='fermer()'></center>
           <br><br><br><br>
           <div style='float:left;'><i>Donnée fournis par openweathermap :
           <a href="https://openweathermap.org/" style='color:black;'> <i>openweathermap</i>
@@ -1090,6 +1125,7 @@
           <div style='float:left;'><i>Bouchons à Paris : </i>
           <a href="https://www.moncoyote.com/fr/info-trafic-lyon.html"
             style='color:black;'><i>moncoyote</a></i></div><br>
+        </div>
       </div>
 
     </div>
@@ -1117,7 +1153,8 @@
       <br><br>
   </div>
   <br><br><br><br><br><br><br><br><br>
- 
+  </div>
+
 
 
 
@@ -1153,6 +1190,13 @@
 
 
 <style>
+#notshut,
+#shut{
+    color:black;
+}
+#info_donnée{
+    text-align:center;
+}
 #no_respon_paris,
 #no_respon_lyon{
     display:none;
@@ -1185,6 +1229,9 @@ margin-right:-500px;
   #sec1{
     height:350px;
   }
+  #info3{
+    padding-top:40px;
+  }
   #texte1{
     width:250px;
     float:left;
@@ -1194,6 +1241,8 @@ margin-right:-500px;
     word-wrap: break-word;
     height:auto;
     font-size:4vw;
+    text-align:justify;
+    font-size:4.5vw;
     
   }
   h1{
@@ -1202,19 +1251,18 @@ margin-right:-500px;
   #les_info{
     padding-top:250px;
     font-size:4vw;
+    text-align:center;
+
+
   }
   #section_ninja{
     float:none;
-    float:clear;
     text-align:center;
+
   }
   #row1{
     height:100%;
     text-align:center;
-  }
-  #lyon_pol{
-    height:50px;
-    margin-top:-100px;
   }
   #Lyon{
     font-size:5vw;
@@ -1225,14 +1273,11 @@ margin-right:-500px;
   #Paris{
     font-size:5vw;
   }
-  #marseille_pol{
-
-  }
   #Marseille{
     font-size:5vw;
   }
   .col-sm{
-    font-size:8vw;
+    font-size:4vw;
   }
   #cities{
     float:none;
@@ -1241,12 +1286,12 @@ margin-right:-500px;
     font-size:5vw;
   }
   #info_donnée{
-    font-size:5vw;
+    font-size:4vw;
     color:white;
     text-shadow: 1px 1px black;
   }
   #separate{
-    width:80%;
+    width:100%;
     float:none;
     margin-top:50px;
   } 
@@ -1268,7 +1313,10 @@ margin-right:-500px;
   #info3,
   #info1{
     width:70%;
-  } 
+  }
+  #info3{
+    padding-top:40px;
+  }
   #texte1{
     float:left;
     width:200px;
@@ -1277,18 +1325,12 @@ margin-right:-500px;
     text-shadow: 1px 1px black;
     font-size:5vw;
     width:90%;
-
+    text-align:justify;
   }
-  #titre2{
-    margin-top:40px;
-    margin-left:7%;
-    color:black;
-    text-shadow: 1px 1px black;
-    font-size:5vw;
 
-  }
   #les_info{
     font-size:4.5vw;
+    padding-top:250px;
 
   }
   #section_ninja{
@@ -1327,21 +1369,24 @@ margin-right:-500px;
   }
   #cities{
     float:none;
-    width:100%;
+    width:140%;
+    margin:auto;
   }
   input{
     font-size:5vw;
   }
   #info_donnée{
-    font-size:5vw;
+    font-size:4vw;
     color:white;
     text-shadow: 1px 1px black;
   }
   #separate{
-    margin-left:20%;
     width:100%;
     float:none;
     margin-top:50px;
+  }
+  #reso{
+    width:140%;
   }
 }
 
@@ -1387,7 +1432,7 @@ margin-right:-500px;
     font-size:3vw;
   }
   #info_donnée{
-    font-size:5vw;
+    font-size:3vw;
     color:white;
     text-shadow: 1px 1px black;
   }
@@ -1396,6 +1441,39 @@ margin-right:-500px;
     margin-top:50px;
     width:80%;
   }
+  .col-sm{
+    font-size:3vw;
+  }
+  #info3{
+    padding-top:40px;
+  }
+  #lyon_pol{
+    margin-top:-80px;
+   
+  }
+  #Lyon{
+    font-size:5vw;
+    width:300px;
+  }
+  #paris_pol{
+    margin-top:-80px;
+  }
+  #Paris{
+    font-size:5vw;
+    width:300px;
+  }
+  #marseille_pol{
+    margin-top:-80px;
+  }
+  #Marseille{
+    font-size:5vw;
+    width:300px;
+  }
+  .col-sm{
+    font-size:5vw;
+  }
+
+  
 }
 
 
@@ -1412,7 +1490,7 @@ margin-right:-500px;
   }
   #texte1{
     float:left;
-    width:200px;
+    width:300px;
     margin-left:5%;
     color:black;
     text-shadow: 1px 1px black;
@@ -1429,10 +1507,10 @@ margin-right:-500px;
     text-align:center;
   }
   input{
-    font-size:2.5vw;
+    font-size:2vw;
   }
   #info_donnée{
-    font-size:3vw;
+    font-size:2.5vw;
     color:white;
     text-shadow: 1px 1px black;
   }
@@ -1440,6 +1518,10 @@ margin-right:-500px;
     float:none;
     width:80%;
   }
+  #info3{
+    padding-top:40px;
+  }
+  
 }
 
 
@@ -1459,7 +1541,7 @@ margin-right:-500px;
   }
   #texte1{
     float:left;
-    width:200px;
+    width:500px;
     margin-left:5%;
     color:black;
     text-shadow: 1px 1px black;
@@ -1481,11 +1563,16 @@ margin-right:-500px;
     text-shadow: 1px 1px black;
   }
   #separate{
-    float:none;
+    text-align:center;
     margin-top:50px;
+    width:100%;
+    
   }
   #h1{
     font-size:2vw;
+  }
+  #info3{
+    padding-top:40px;
   }
 }
 
@@ -1508,7 +1595,7 @@ margin-right:-500px;
   }
   #texte1{
     float:left;
-    width:200px;
+    width:500px;
     margin-left:5%;
     color:black;
     text-shadow: 1px 1px black;
@@ -1524,10 +1611,13 @@ margin-right:-500px;
     text-align:center;
   }
   input{
-    font-size:2vw;
+    font-size:1.5vw;
+  }
+  #info3{
+    padding-top:40px;
   }
   #info_donnée{
-    font-size:3vw;
+    font-size:2.5vw;
     color:white;
     text-shadow: 1px 1px black;
     display:none;
@@ -1550,7 +1640,7 @@ margin-right:-500px;
   }
   #texte1{
     float:left;
-    width:200px;
+    width:500px;
     margin-left:5%;
     color:black;
     text-shadow: 1px 1px black;
@@ -1565,12 +1655,11 @@ margin-right:-500px;
     float:clear;
     text-align:center;
   }
-
   input{
     font-size:1.5vw;
   }
   #info_donnée{
-    font-size:3vw;
+    font-size:1.5vw;
     color:white;
     text-shadow: 1px 1px black;
   }
@@ -1589,7 +1678,7 @@ margin-right:-500px;
   }
   #texte1{
     float:left;
-    width:200px;
+    width:500px;
     margin-left:5%;
     color:black;
     text-shadow: 1px 1px black;
@@ -1613,6 +1702,9 @@ margin-right:-500px;
     float:none;
     margin-top:50px;
   }
+  input{
+    font-size:1.5vw;
+  }
 }
 
 
@@ -1623,7 +1715,7 @@ margin-right:-500px;
   }
   #texte1{
     float:left;
-    width:200px;
+    width:500px;
     margin-left:50%;
     color:black;
     text-shadow: 1px 1px black;
@@ -1634,9 +1726,12 @@ margin-right:-500px;
     padding-top:200px;
   }
   #info1,
-  #info2,
-  #info3{
+  #info2{
     font-size:2.5vw;
+  }
+  #info3{
+    font-size:1.4vw;
+    padding-top:40px;
   }
   #section_ninja{
     float:none;
@@ -1644,7 +1739,7 @@ margin-right:-500px;
     text-align:center;
   }
   #info_donnée{
-    font-size:3vw;
+    font-size:1.5vw;
     color:white;
     text-shadow: 1px 1px black;
   }
@@ -1665,8 +1760,8 @@ margin-right:-500px;
   }
   #texte1{
     float:left;
-    width:200px;
-    margin-left:70%;
+    width:500px;
+    margin-left:50%;
     color:black;
     text-shadow: 1px 1px black;
     font-size:1vw;
@@ -1676,9 +1771,12 @@ margin-right:-500px;
     padding-top:150px;
   }
   #info1,
-  #info2,
-  #info3{
+  #info2{
     font-size:2vw;
+  }
+  #info3{
+    font-size:1.2vw;
+    padding-top:40px;
   }
   #section_ninja{
     float:none;
@@ -1686,7 +1784,7 @@ margin-right:-500px;
     text-align:center;
   }
   #info_donnée{
-    font-size:3vw;
+    font-size:1vw;
     color:white;
     text-shadow: 1px 1px black;
   }
@@ -1710,20 +1808,27 @@ margin-right:-500px;
   #texte1{
     float:left;
     width:500px;
-    margin-left:15%;
+    margin-left:20%;
     color:black;
     text-shadow: 1px 1px black;
     font-size:1vw;
+    text-align:justify;
   }
   #info1,
-  #info2,
+  #info2{
+    font-size:2.7vw;
+    text-align:center;
+  }
   #info3{
-    font-size:2.5vw;
+    font-size:1.2vw;
+    padding-top:50px;
   }
   #info_donnée{
-    font-size:3vw;
+    float:none;
+    font-size:1vw;
     color:white;
     text-shadow: 1px 1px black;
+    width:100%;
   }
   #separate{
     float:none;
@@ -1732,6 +1837,9 @@ margin-right:-500px;
   #info1,
   #info2{
     display:none;
+  }
+  #section_ninja{
+    text-align:center;
   }
 }
 
