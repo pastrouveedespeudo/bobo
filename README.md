@@ -1,8 +1,14 @@
+refaire les href
+
+puis coupe et efface tout ca
+
+essais coupe avec navigation privée + heroku pour etre sur
+
 ATTENTION dans le truk final, c'est le SOUP local qui est mis pour coiff et gym(github)
 
 pollu views(+dépendance) et tendance file 
 
-refaire les href
+donnée marseille trop gros
 
 verifier la map couffeur et gym
 
