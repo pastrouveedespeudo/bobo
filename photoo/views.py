@@ -48,19 +48,7 @@ def coupe(request):
     """this is the interraction between
     the view and the template hair"""
     
-    no_choice = 'no_choice'
-    
 
-    try:
-        fav = '' 
-        current_user = request.user
-        favorites_haircut = displaying_favorite_haircut(current_user)#from photo.py
-        if favorites_haircut:
-            fav = True
-    except:
-        pass
-
- 
     if request.method == "POST":
 
         #
@@ -92,7 +80,6 @@ def coupe(request):
             return HttpResponse(gym_list)
 
 
-
         if haircut_style:
 
             #We call haircut_style_function from views_function
@@ -101,67 +88,10 @@ def coupe(request):
 
         
         if map_hairdresser:
+            
             #We call map_hairdresser_function from views_function
             data = map_hairdresser_function(map_hairdresser, vivile)
             return HttpResponse(data)
-
-
-
-
-        liste_enre = [[],[],[]]
-        c = 0
-        if saving:
-            for i in saving:
-                if i == ',':
-                    c+=1
-                else:
-                    liste_enre[c].append(i)
-
-            
-            coupe_fav(current_user, "".join(liste_enre[0]),
-                      "".join(liste_enre[1]),
-                      "".join(liste_enre[2]))
-            
-
-        if search:
-            for key, value in DICO_COIF.items():
-                pass
-            
-            return render(request, 'habits.html', {'recherche':recherche})
-
-
-
-        
-        if image:
-            no_choice = ''
-            current_user = request.user
-            
-            try:
-                if fav == True:
-                    return render(request, 'coupe.html', {'image':image, 'user':current_user,
-                                                          'coif':favorites_haircut})
-                else:
-                    return render(request, 'coupe.html', {'image':image, 'user':current_user,
-                                                          'fav':fav})
-                
-            except:
-                return render(request, 'coupe.html', {'image':image, 'user':current_user})
-
-
-    try:
-        if fav == True:
-            return render(request, 'coupe.html', {'no_choice':no_choice,
-                                                  'coif':favorites_haircut})
-
-        else:
-            return render(request, 'coupe.html', {'image':image, 'user':current_user,
-                                                          'fav':fav})
-        
-    except:
-        return render(request, 'coupe.html', {'no_choice':no_choice})
-
-
-
 
 
 
@@ -174,8 +104,8 @@ def habits(request):
     if request.method == "POST":
         
         color = request.POST.get('a')
-        draggable = request.POST.get('b')
         image_to_vet = request.POST.get('posting2')
+
 
         if image_to_vet:
             current_user = request.user
