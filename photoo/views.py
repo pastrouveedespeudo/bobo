@@ -14,7 +14,6 @@ from accounts.models import Accounts
 
 from .photo import *
 from .photo import displaying_favorite_haircut
-from .coupenom import *
 
 from .coupe_dico import DICO_COIF
 
@@ -22,15 +21,11 @@ from .analysis.database import *
 
 
 from .views_functions import the_colors_function
+from .views_functions import gymm_map_function
+from .views_functions import gymm_function
+from .views_functions import haircut_style_function
+from .views_functions import map_hairdresser_function
 
-
-
-
-
-#Section searching hairdresser, gym
-from .magasins.hairdresser import *
-from .magasins.address import *
-from .magasins.gym import *
 
 def navebarre_coupe(request):
     """Here we return a home html respons"""
@@ -68,13 +63,13 @@ def coupe(request):
  
     if request.method == "POST":
 
+        #
         image = request.POST.get('posting')
         haircut = request.POST.get('coupe')
         search = request.POST.get('coupedecheveux')
         saving = request.POST.get('product')
 
         map_hairdresser = request.POST.get('buttony')
-        number_hairdresser = request.POST.get('numero_coiffeur')
         vivile = request.POST.get('country')
         haircut_style = request.POST.get('hairdresser')
 
@@ -83,116 +78,33 @@ def coupe(request):
         gym_pays = request.POST.get('country_gym')
 
 
-        MY_HAIRDRESSER = []
-
-
-        
         if gymm_map:
-            the_address = address_geo(gymm_map, gym_pays)
-            
-            try:
-                lat_long = city_geo(the_address)
-            except:
-                return HttpResponse("Oups nous n'avons rien trouvé")
 
-            data = str(lat_long[0]) + ' ' + str(lat_long[1])
-
-     
-            if data == ' ' or data == '':
-                return HttpResponse("Oups nous n'avons rien trouvé")
-            
+            #We call gymm_map_function from views_function
+            data = gymm_map_function(gymm_map, gym_pays)
             return HttpResponse(data)
 
 
-
-
         if gymm:
-            
-            gym_list = []
 
-            the_cities = big_city_gym(gymm)
-            
-            for i in the_cities:
-                
-                if len(gym_list) == 4:
-                    return HttpResponse(gym_list)
-                    
-                a = schedule_gym(i, gymm)
-
-                if a != []:
-                    gym_list.append([i, a, ""])
-            
-
+            #We call gymm_function from views_function
+            gym_list = gymm_function(gymm)
             return HttpResponse(gym_list)
 
 
 
-
-
-        c = 0
         if haircut_style:
 
-            coif = []
-          
-            the_hairdressers = cities(haircut_style)
-
-            MY_HAIRDRESSER.extend(the_hairdressers)
-
-            for i in MY_HAIRDRESSER:
-                
-                schedule1 = schedule_hair(i, haircut_style)
- 
-             
-                if [schedule1] == [] or schedule1 == []\
-                   or schedule1 == "" or schedule1 == " "\
-                   or schedule1 == None:
-                    MY_HAIRDRESSER.remove(i)
-                    
-                else:
-                    coif.append([i, schedule1, ""])
-                    MY_HAIRDRESSER.remove(i)
-
-
+            #We call haircut_style_function from views_function
+            coif = haircut_style_function(haircut_style)
             return HttpResponse(coif)
- 
-
-        if number_hairdresser and vivile:
-            liste = []
-
-            coif = ''
-            for i in number_hairdresser:
-                if i == ',':
-                    liste.append(coif)
-                    coif = ''
-                else:
-                    coif += i
-                    
-            liste.append(coif)
-                
-
-
-            num  = []
-            for i in liste:
-                a = numero(i, vivile)
-                num.append([a])
-
-            return HttpResponse(num)
-
 
         
         if map_hairdresser:
-            the_address = address_geo(map_hairdresser, vivile)
-            try:
-                lat_long = city_geo(the_address)
-            except:
-                return HttpResponse('Oups nous n\'avons rien trouvé')
-
-            data = str(lat_long[0]) + ' ' + str(lat_long[1])
-            
-            if data == ' ' or data == '':
-                return HttpResponse('Oups nous n\'avons rien trouvé')
-
+            #We call map_hairdresser_function from views_function
+            data = map_hairdresser_function(map_hairdresser, vivile)
             return HttpResponse(data)
+
 
 
 
@@ -254,7 +166,11 @@ def coupe(request):
 
 
 def habits(request):
-
+    """Here we calling function of views_functions
+    we define the mode from informations
+    from database.
+    After traiting image"""
+    
     if request.method == "POST":
         
         color = request.POST.get('a')
@@ -274,7 +190,6 @@ def habits(request):
             color = color[-1]
 
             coul_analyse_haut, coul_analyse_bas = the_colors_function(color)
-
 
             return HttpResponse((coul_analyse_haut,' ', coul_analyse_bas))
 
