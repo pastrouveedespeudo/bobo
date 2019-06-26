@@ -19,21 +19,27 @@ from .graph.graphic_wind import *
 from .graph.graphic_weekend import *
 from .graph.graphic_population import *
 
-from.polu_ana.polution.traitement_de_donnée import recuperation_data
-from.polu_ana.polution.traitement_de_donnée import condition
-
-from .polu_ana.polution.database2 import *
-from .data_site.pollution import *
-
-from .data_site.fertilizer import period_fertilizer
-from .data_site.diesel import recup_tag, course_dollars
-from .data_site.eruption import eruption
-from .data_site.fire import fire_city
-from .data_site.day_night import night_day
-from .data_site.polenne import polenne
 
 from .prediction_site.analysa2 import *
 
+from .views_function import data_function_particle
+from .views_function import data_function_weather
+from .views_function import data_function_wind
+from .views_function import data_function_temperature
+from .views_function import data_function_season
+from .views_function import data_function_departure
+from .views_function import data_function_day
+from .views_function import data_function_ranking
+from .views_function import data_function_pole
+from .views_function import data_function_pressure
+from .views_function import data_function_demonstration
+from .views_function import function_data_socio
+from .views_function import function_data_plugs
+from .views_function import function_data_erup
+from .views_function import function_data_dollars
+from .views_function import function_data_fire
+from .views_function import function_data_ferti
+from .views_function import function_data_periode
 
 
 def home(request):
@@ -76,269 +82,84 @@ def donnée(request):
     """Here we call all API recup data, and display it on HTML page
     We need exception in case there are error from ur script (for call API)"""
     
-##    #First block particle data
-##    try:
-##        data_lyon = particle_rate('lyon')
-##        data_paris = particle_rate('paris')
-##        data_marseille = particle_rate('marseille')
-##    except:
-##        data_lyon = "No data"
-##        data_paris = "No data"
-##        data_marseille = "No data"  
-##
-##
-##    #Second block Weather, Wind data
-##    try:
-##        weather_lyon = weather_city('lyon', 'météo')
-##        wind_lyon = weather_city('lyon', 'vent')
-##        weather_paris = weather_city('paris', 'météo')
-##        wind_paris = weather_city('paris', 'vent')
-##        weather_marseille = weather_city('marseille', 'météo')
-##        wind_marseille = weather_city('marseille', 'vent')
-##        
-##    except:
-##        weather_lyon = "No data"
-##        wind_lyon = "No data"
-##        weather_paris = "No data"
-##        wind_paris = "No data"
-##        weather_marseille = "No data"
-##        wind_marseille = "No data"  
-##
-##
-##    #Third block Temperature,
-##    #Current season data
-##    try:
-##        temperature_lyon = climate_city('lyon')
-##        temperature_paris = climate_city('paris')
-##        temperature_marseille = climate_city('marseille')
-##        current_season =  season()
-##    except:
-##        temperature_lyon = "No data"
-##        temperature_paris = "No data"
-##        temperature_marseille = "No data"
-##        current_season = "No data"  
-##
-##                                    
-##    #Fourth block traffic
-##    #and Regular day data
-##    try:
-##        traffic_lyon = traffic('lyon')
-##        departure_lyon = traffic_lyon[0] 
-##        hour_point_lyon = traffic_lyon[1]
-##        hour_point_paris = hour_point_lyon
-##        regular_day_lyon = traffic_lyon[2] 
-##        hour_point_marseille = hour_point_lyon
-##
-##        if hour_point_marseille == 'oui':
-##            no_point_lyon = 'non'
-##            no_point_paris = 'non'
-##            no_point_marseille = 'non'
-##        else:
-##            no_point_lyon = 'oui'
-##            no_point_paris = 'oui'
-##            no_point_marseille = 'oui'
-##
-##    except:
-##        traffic_lyon = "No data"
-##        departure_lyon = "No data"
-##        hour_point_lyon = "No data"
-##        hour_point_paris = "No data"
-##        regular_day_lyon = "No data"
-##        hour_point_marseille = "No data"    
-##                                            
-##
-##    #Fifty block regular day
-##    #Traffic and  data
-##    try:
-##        regular_day_paris = regular_day_lyon
-##        regular_day_marseille = regular_day_lyon
-##        departure_paris = departure_lyon
-##        departure_marseille = departure_lyon
-##        traffic_paris = traffic('paris')
-##        traffic_marseille = traffic('marseille')
-##        
-##    except:
-##        regular_day_paris = "No data"
-##        regular_day_marseille = "No data"
-##        departure_paris = "No data"
-##        traffic_paris = "No data"
-##        departure_marseille = "No data"
-##        traffic_paris = "No data"
-##        traffic_marseille = "No data"   
-##                                        
-##
-##    #Sixty bloc Day or Weekend data
-##    try:
-##        day = habit()
-##        weekend = ''
-##        if day == 'jour_semaine':
-##            day = 'semaine'
-##            weekend = 'non'
-##        else:
-##            day = 'week end'
-##            weekend = 'oui'
-##    except:
-##        day = "No data"     
-##
-##
-##    #Seventy bloc Ranking data, Pole and
-##    #Demonstration data
-##    try:
-##        ranking_lyon = city_ranking_pollute('lyon')
-##        ranking_paris = city_ranking_pollute('paris')
-##        ranking_marseille = city_ranking_pollute('marseille')
-##        pole_lyon = industrial_area('lyon')
-##        pole_paris = industrial_area('paris')
-##        pole_marseille = industrial_area('marseille')
-##        pressure_lyon = pressure_city('lyon')
-##        pressure_paris = pressure_city('paris')
-##        pressure_marseille = pressure_city('marseille')
-##        demonstration_lyon = exceptional_activity('lyon')
-##        demonstration_paris = exceptional_activity('paris')
-##        demonstration_marseille = exceptional_activity('marseille')
-##        
-##    except:
-##        ranking_lyon = "No data"
-##        ranking_paris = "No data"
-##        ranking_marseille = "No data"
-##        pole_lyon = "No data"
-##        pole_paris = "No data"
-##        pole_marseille = "No data"
-##        pressure_lyon = "No data"
-##        pressure_paris = "No data"
-##        pressure_marseille = "No data"
-##        demonstration_lyon = "No data"
-##        demonstration_paris = "No data"
-##        demonstration_marseille = "No data"
-##
-##                                
-##    #Heighty block Socio, Plugs, Diesel
-##    #Dollars and Eruption data                        
-##    try:
-##        socio_lyon = socio('lyon')
-##        socio_paris = socio('paris')
-##        socio_marseille = socio('marseille')
-##        plugs_lyon = plugs('lyon')
-##        plugs_paris = plugs('paris')
-##
-##
-##        errup = eruption()
-##        if errup == 'oui':
-##            pass
-##        else:
-##            errup = 'non'
-##        
-##        diesel = recup_tag()
-##        dollars = course_dollars()
-##
-##    except:
-##        socio_lyon = "No data"
-##        socio_paris = "No data"
-##        socio_marseille = "No data"
-##        plugs_lyon = "No data"
-##        plugs_paris = "No data"
-##        errup = "No data"
-##        diesel = "No data"
-##        dollars = "No data" 
-##
-##
-##    #Ninth bloc Fire, Periode, And Po data
-##    try:
-##        fire_lyon = fire_city('lyon')
-##        
-##        if fire_lyon == 'oui':
-##            fire_lyon = 'oui'
-##        else:
-##            fire_lyon = 'non'
-##        
-##        fire_marseille = fire_city('marseille')
-##        
-##        if fire_marseille == 'oui':
-##            fire_marseille = 'oui'
-##        else:
-##            fire_marseille = 'non'
-##            
-##        fire_paris = fire_city('paris')
-##        if fire_paris == 'oui':
-##            fire_paris = 'oui'
-##        else:
-##            fire_paris = 'non'
-##
-##        fertilizer = period_fertilizer()
-##        periode = night_day()
-##        po_lyon = polenne('lyon')
-##        po_marseille = polenne('marseille')
-##        po_paris = polenne('paris')
-##
-##    except:
-##        fire_lyon = "No data"
-##        fire_marseille = "No data"
-##        fire_paris = "No data"
-##        fertilizer = "No data"
-##        periode = "No data"
-##        po_lyon = "No data"
-##        po_marseille = "No data"
-##        po_paris = "No data"
-##                    
-##
-##    #Return it !
-##    return render(request, 'donnée.html', {'lyon':data_lyon,
-##                                           'paris':data_paris,
-##                                           'marseille':data_marseille,
-##                                           'weather_lyon':weather_lyon,
-##                                           'weather_marseille':weather_marseille,
-##                                           'weather_paris':weather_paris,
-##                                           'wind_lyon':wind_lyon,
-##                                           'wind_paris':wind_paris,
-##                                           'wind_marseille':wind_marseille,
-##                                           'temperature_lyon':round(temperature_lyon),
-##                                           'temperature_paris':round(temperature_paris),
-##                                           'temperature_marseille':round(temperature_marseille),
-##                                           'current_season':current_season,
-##                                           'departure_lyon':departure_lyon,
-##                                           'hour_point_lyon':hour_point_lyon,
-##                                           'regular_day_lyon':regular_day_lyon,
-##                                           'no_point_lyon':no_point_lyon,
-##                                           'departure_paris':departure_paris,
-##                                           'hour_point_paris':hour_point_paris,
-##                                           'regular_day_marseille':regular_day_marseille,
-##                                           'no_point_marseille':no_point_marseille,
-##                                           'departure_paris':departure_paris,
-##                                           'hour_point_paris':hour_point_paris,
-##                                           'regular_day_paris':regular_day_paris,
-##                                           'no_point_paris':no_point_paris,
-##                                           'weekend':weekend,
-##                                           'week_day':day,
-##                                           'ranking_lyon':ranking_lyon,
-##                                           'ranking_paris':ranking_paris,
-##                                           'ranking_marseille':ranking_marseille,
-##                                           'pole_lyon':pole_lyon,
-##                                           'pole_paris':pole_paris,
-##                                           'pole_marseille':pole_marseille,
-##                                           'pressure_lyon':pressure_lyon,
-##                                           'pressure_paris':pressure_paris,
-##                                           'pressure_marseille':pressure_marseille,
-##                                           'demonstration_lyon':demonstration_lyon,
-##                                           'demonstration_paris':demonstration_paris,
-##                                           'demonstration_marseille':demonstration_marseille,
-##                                           'socio_lyon':socio_lyon,
-##                                           'socio_marseille':socio_marseille,
-##                                           'socio_paris':socio_paris,
-##                                           'plugs_lyon':plugs_lyon,
-##                                           'plugs_paris':plugs_paris,
-##                                           'eruption':errup,
-##                                           'diesel':diesel,
-##                                           'dollars':dollars,
-##                                           'fire_lyon':fire_lyon,
-##                                           'fire_marseille':fire_marseille,
-##                                           'fire_paris':fire_paris,
-##                                           'fertilizer':fertilizer,
-##                                           'periode':periode,
-##                                           'po_lyon':po_lyon,
-##                                           'po_paris':po_paris,
-##                                           'po_marseille':po_marseille})
-##
-##                        
+    particle =  data_function_particle()
+    weather = data_function_weather()
+    wind = data_function_wind()
+    temperature = data_function_temperature()
+    season = data_function_season()
+    deaparture = data_function_departure()
+    day = data_function_day()
+    rank = data_function_ranking()
+    pressure = data_function_pressure()
+    demonstration = data_function_demonstration()
+    socio = function_data_socio()
+    plugs = function_data_plugs()
+    erup = function_data_erup()
+    dollars = function_data_dollars()
+    fire = function_data_fire()
+    fertilizer = function_data_ferti()
+    periode = function_data_periode()
+    pole = data_function_pole()
+
+
+    
+    return render(request, 'donnée.html', {'lyon':particle[0],
+                                           'paris':particle[1],
+                                           'marseille':particle[2],
+                                           'weather_lyon':weather[0],
+                                           'weather_marseille':weather[1],
+                                           'weather_paris':weather[2],
+                                           'wind_lyon':wind[0],
+                                           'wind_paris':wind[1],
+                                           'wind_marseille':wind[2],
+                                           'temperature_lyon':round(temperature[0]),
+                                           'temperature_paris':round(temperature[1]),
+                                           'temperature_marseille':round(temperature[2]),
+                                           'current_season':season,
+                                           'departure_lyon':deaparture[0],
+                                           'hour_point_lyon':deaparture[1],
+                                           'regular_day_lyon':deaparture[2],
+                                           'no_point_lyon':deaparture[3],
+                                           'departure_marseille':deaparture[0],
+                                           'hour_point_paris':deaparture[1],
+                                           'regular_day_marseille':deaparture[2],
+                                           'no_point_marseille':deaparture[3],
+                                           'departure_paris':deaparture[0],
+                                           'hour_point_marseille':deaparture[1],
+                                           'regular_day_paris':deaparture[2],
+                                           'no_point_paris':deaparture[3],
+                                           'weekend':day[0],
+                                           'week_day':day[1],
+                                           'ranking_lyon':rank[0],
+                                           'ranking_paris':rank[1],
+                                           'ranking_marseille':rank[2],
+                                           'pole_lyon':pole[0],
+                                           'pole_paris':pole[1],
+                                           'pole_marseille':pole[2],
+                                           'pressure_lyon':pressure[0],
+                                           'pressure_paris':pressure[1],
+                                           'pressure_marseille':pressure[2],
+                                           'demonstration_lyon':demonstration[0],
+                                           'demonstration_paris':demonstration[1],
+                                           'demonstration_marseille':demonstration[2],
+                                           'socio_lyon':socio[0],
+                                           'socio_marseille':socio[2],
+                                           'socio_paris':socio[1],
+                                           'plugs_lyon':plugs[0],
+                                           'plugs_paris':plugs[1],
+                                           'eruption':erup,
+                                           'diesel':dollars[0],
+                                           'dollars':dollars[1],
+                                           'fire_lyon':fire[0],
+                                           'fire_marseille':fire[1],
+                                           'fire_paris':fire[2],
+                                           'fertilizer':fertilizer,
+                                           'periode':periode[0],
+                                           'po_lyon':periode[1],
+                                           'po_paris':periode[2],
+                                           'po_marseille':periode[3]})
+
+                        
     return render(request, 'donnée.html')
 
 
