@@ -1,3 +1,7 @@
+"""We call data from database
+we recuperate all data from one condition
+and create a matplolib graph"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab
@@ -9,12 +13,18 @@ import shutil
 from .function_graph import moyenne
 from .function_graph import new
 
+from .CONFIG import DATABASE
+from .CONFIG import HOST
+from .CONFIG import USER
+from .CONFIG import PASSWORD
+
 def visu_season(city):
+    """Here we call database for take season"""
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696') 
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
 
     cursor = conn.cursor()
     
@@ -32,6 +42,7 @@ def visu_season(city):
 
 
 def treatment_season(data_season):
+    """We split it into list who corresponding to data"""
 
     spring = []
     summer = []
@@ -53,7 +64,7 @@ def treatment_season(data_season):
         elif i[0] == 'automne':
             autumn.append(int(i[1])) 
 
-
+    #We make an average
     data = len(spring) + len(summer) + len(winter) + len(autumn)
     print(data)
     
@@ -72,7 +83,7 @@ def treatment_season(data_season):
 def diagram_season(data_spring, data_summer, data_winter, data_autumn,
               er_sping, er_summer, er_winter, er_autumn, save):
 
-
+    """We create a graph and return it"""
     plt.bar(range(4), [data_spring, data_summer, data_winter,
                        data_autumn],
                         width = 0.1, color = 'black',
