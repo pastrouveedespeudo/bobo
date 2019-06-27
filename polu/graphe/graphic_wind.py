@@ -1,3 +1,7 @@
+"""We call data from database
+we recuperate all data from one condition
+and create a matplolib graph"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab
@@ -8,12 +12,18 @@ import shutil
 from .function_graph import moyenne
 from .function_graph import new
 
+from .CONFIG import DATABASE
+from .CONFIG import HOST
+from .CONFIG import USER
+from .CONFIG import PASSWORD
+
 def visu_wind(city):
+    """Here we call database for take wind"""
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696') 
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
 
     cursor = conn.cursor()
     
@@ -31,7 +41,8 @@ def visu_wind(city):
 
 
 def treatment_wind(data_wind):
-
+    """We split it into list who corresponding to data"""
+    
     very_strong = []
     strong = []
     means = []
@@ -54,7 +65,8 @@ def treatment_wind(data_wind):
 
         elif i[0] == 'faible':
             low.append(int(i[1]))
- 
+
+    #We make an average
     data = len(very_strong) + len(strong) + len(means) + len(low)
     print(data)
     
@@ -74,7 +86,7 @@ def diagram_wind(data_very_strong, data_strong, data_means, data_low,
               er_data_very_strong, er_data_strong,
                  er_data_means, er_data_low, save):
 
-
+    """We create a graph and return it"""
     plt.bar(range(4), [data_very_strong, data_strong,
                        data_means, data_low],
                         width = 0.1, color = 'black',
