@@ -1,3 +1,7 @@
+"""We call data from database
+we recuperate all data from one condition
+and create a matplolib graph"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab
@@ -8,13 +12,19 @@ import shutil
 from .function_graph import moyenne
 from .function_graph import new
 
+from .CONFIG import DATABASE
+from .CONFIG import HOST
+from .CONFIG import USER
+from .CONFIG import PASSWORD
+
 
 def visu_traffic(city):
+    """Here we call database for take traffic"""
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696') 
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
 
     cursor = conn.cursor()
     
@@ -32,6 +42,7 @@ def visu_traffic(city):
 
 
 def treatment_traffic(data_traffic):
+    """We split it into list who corresponding to data"""
     
     deaparture = []
     regular_day = []
@@ -52,6 +63,7 @@ def treatment_traffic(data_traffic):
     data = len(deaparture) + len(regular_day)
     print(data)
 
+    #We make an average
     data_regular_day = moyenne(regular_day)
     data_deaparture = moyenne(deaparture)
 
@@ -61,7 +73,7 @@ def treatment_traffic(data_traffic):
 def diagram_traffic(data_regular_day, data_deaparture,
               er_regular_day, er_deaparture, save):
 
-
+    """We create a graph and return it"""
     
     plt.bar(range(2), [data_regular_day, data_deaparture],
                         width = 0.1, color = 'black',
