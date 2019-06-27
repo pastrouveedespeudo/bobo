@@ -306,7 +306,7 @@
   <section id="textes_transition">
       <div  id="container2">
         <div class="row" id="blackblack">
-          <div class="col-sm">
+          <div class="col-sm" style='text-align:justify;'>
             <h1 id="titre_re">Prenez soin de vos cheveux !</h1><br>
             Que votre coupe de cheveux soit
             "bouclée, raide comme des baguettes ou colorée"
@@ -382,7 +382,7 @@
           <br>
           <div style='position: absolute; left: 50%;'>
           <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou'
-              style='position:relative; display:none;left: -50%;'>
+              style='position:relative; display:block;left: -50%;'>
           </div>
           <br><br><br><br>
 
@@ -418,9 +418,17 @@
           background:url("/static/img/parquet1.jpg");
           box-shadow: 5px 5px 5px 5px;
       }
-      #gifou_gym{
-        display:none;
-      }
+        #gym1{
+            text-align:center;
+           border:3px solid black;
+           width:100%
+        }
+        #gym2{
+            border:2px solid black;
+        }
+        #input_coif2{
+            border:2px solid black;
+        }
 
     </style>
     <div id='gymgym' style='display:none;text-align:center;'>
@@ -429,13 +437,14 @@
 
       <center><div id="gymgym_div_prestation">
           
-          <br>
+     
          
-          <center>
-          <img src='/static/img/portfolio/icone/chargement1.gif' id='gifou_gym'>
-          </center>
-       
-          <br><br><br><br>
+          <div style='position: absolute; left: 50%;'>
+          
+            <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou_gym'
+              style='position:relative; display:none;left: -50%;'>
+         </div>
+          <br><br><br><br><br>
 
           
           <input type='text' id='gym1'
@@ -862,18 +871,14 @@ blackblack{
            <style>#im6{width:100px; height:100px;}</style>
            
            <img onclick="coiffeur()" src="/static/img/portfolio/icone/coiffeur.png"
-             onmouseover="stop('p_coif', 'im6', '/static/img/portfolio/icone/coiffeur2.png')"
-             onmouseout="start('p_coif', 'im6', '/static/img/portfolio/icone/coiffeur.png')"
+             onmouseover="stop('im6', '/static/img/portfolio/icone/coiffeur2.png')"
+             onmouseout="start('im6', '/static/img/portfolio/icone/coiffeur.png')"
              id="im6">
              
             <h3 class="h4 mb-2">Coiffeurs</h3>
             
             <br>
-            
-     
-            <center><p id ='p_coif'  style='color:white; font-size:1em;display:none; position:absolute;left:0%;'>
-              Voir les coiffeurs les plus proches de chez moi
-            </p></center>
+
             
           </div>
         
@@ -885,18 +890,14 @@ blackblack{
            <style>#im4{width:100px; height:100px;}</style>
            
            <img onclick="gym()" src = "/static/img/portfolio/icone/gym.png"/
-             onmouseover="stop('p_gym', 'im4', '/static/img/portfolio/icone/gym2.png' )"
-             onmouseout="start('p_gym', 'im4', '/static/img/portfolio/icone/gym.png')"
+             onmouseover="stop('im4', '/static/img/portfolio/icone/gym2.png' )"
+             onmouseout="start('im4', '/static/img/portfolio/icone/gym.png')"
              id="im4">
              
             <h3 class="h4 mb-2" >Salle de gym</h3>
             <br>
             
-            <p id='p_gym' style='color:white; font-size:1em;display:²none; position:absolute;left:4%;'>
-              Les salles de gym les plus proches de chez moi
-            </p>
-    
-            
+ 
           </div>
         </div><br><br>
 
@@ -907,16 +908,12 @@ blackblack{
            <style>#im7{width:100px; height:100px;}</style>
            
            <a href="/photo/habits"><img onclick="vetements()" src="/static/img/portfolio/icone/vetements.png"/
-             onmouseover="stop('p_habit', 'im7', '/static/img/portfolio/icone/vetements22.png')"
-             onmouseout="start('p_habit', 'im7', '/static/img/portfolio/icone/vetements.png')"
+             onmouseover="stop('im7', '/static/img/portfolio/icone/vetements22.png')"
+             onmouseout="start('im7', '/static/img/portfolio/icone/vetements.png')"
              id="im7"></a>
              
             <h3 class="h4 mb-2">Essayer des vêtements</h3>
-            
-            <p id='p_habit' style='color:white; font-size:1em;display:none;
-                position:absolute;right:0%;'>
 
-            Essayer des habits sans faire la queue</p>
           </div>
         </div>
 
@@ -925,18 +922,15 @@ blackblack{
         <div class="col-lg-3 col-md-6 text-center">
           <div class="mt-5">
            <style>#im8{width:100px; height:100px;}</style>
-           <a href="/administrateur/tendance/">
+           <a href="/photo/tendance/">
              <img onclick="dresshaircutbodyup()" src="/static/img/portfolio/icone/dresshaircutbodyup.png"/
-                 onmouseover="stop('p_tendance', 'im8','/static/img/portfolio/icone/dresshaircutbodyup2.png')"
-                 onmouseout="start('p_tendance', 'im8', '/static/img/portfolio/icone/dresshaircutbodyup.png')"
+                 onmouseover="stop('im8','/static/img/portfolio/icone/dresshaircutbodyup2.png')"
+                 onmouseout="start('im8', '/static/img/portfolio/icone/dresshaircutbodyup.png')"
              id="im8">
            </a>
             <h3 class="h4 mb-2">
             Voir notre tendance</h3>
-            <p id='p_tendance'
-            style='color:white; font-size:1em;display:none; position:absolute;left:0%;'>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Voir la tendance de cet été pour être à jour</p>
+
           </div>
         </div>
 
@@ -978,7 +972,25 @@ blackblack{
 
     }
   </style>
-  <!-- Contact Section -->
+
+
+
+<footer>
+    <!-- Bottom Section number 2 -->
+    <div id='bottom'> 
+      {% include "bottom_page2_photo.html" %}
+      {% block content2 %}
+      {% endblock content2%}
+    </div>
+</footer>
+
+
+
+
+
+
+
+
 
 
 </body>
@@ -1122,15 +1134,11 @@ blackblack{
   #aide{
     font-size:10px;
   }
+  #gifou_gym,
   #gifou{
     width:40px;
     height:40px;
     margin-left:10px;
-  }
-  #gifou_gym{
-    width:40px;
-    height:40px;
-    text-align:center;
   }
   #menu_res{
     margin-left:40px;
@@ -1235,6 +1243,10 @@ blackblack{
   #les_textes{
     text-align:center;
   }
+  #gifou_gym{
+    height:50px;
+    width:50px;
+  }
   #MENU{
     display:none;
   }
@@ -1322,11 +1334,6 @@ blackblack{
   #menu_res{
     margin-left:50px;
   }
-  #gifou_gym{
-    width:40px;
-    height:40px;
-    margin-left:10px;
-  }
   #button_lamap_gym,
   #button_lamap{
      font-size:2vw;
@@ -1339,6 +1346,9 @@ blackblack{
   }
   #blackblack{
     margin-top:500px;
+  }
+  #bottom{
+    margin-top:100px;
   }
 }
 
@@ -1469,6 +1479,7 @@ blackblack{
     #gymgym_div_prestation{
         font-size:2.5vw;
     }
+    #gifou_gym,
     #gifou{
         margin-top:-20px;
     }
@@ -1519,7 +1530,17 @@ blackblack{
 
 
 
+@media screen and (min-width: 768px) and (max-width:1020px) {
 
+  #coifcoif{
+    text-align:center;
+    width:100%;
+  }
+  #gifou{
+    margin-left:55%;
+  }
+
+}
 
 
 @media screen and (min-width: 768px) and (max-width:1020px) {
@@ -1556,6 +1577,7 @@ blackblack{
     #gifou_gym{
         margin-top:-20px;
     }
+    
 }
 
 
@@ -1566,6 +1588,9 @@ blackblack{
     margin-left:-10px;
     font-size:12px;
     margin-top:-300px;
+  }
+  #gifou_gym{
+    margin-left:30%;
   }
 }
 
@@ -1660,7 +1685,6 @@ blackblack{
   #gifou_gym{
     width:80px;
     height:80px;
-    text-align:center;
   }
   #button_lamap_gym,
   #button_lamap{
@@ -1668,7 +1692,12 @@ blackblack{
   }
   #blackblack{
     margin-top:500px;
+    font-size:1.5vw;
   }
+  #bottom{
+    margin-top:100px;
+  }
+  
   
 }
 
@@ -1722,7 +1751,6 @@ blackblack{
     height:600px;
     padding-top:40px;
     font-size:2vw;
-
   }
   #container_photo{
     font-size:1vw;
@@ -1790,12 +1818,16 @@ blackblack{
   #blackblack{
     margin-top:500px;
   }
+  #bottom{
+    width:110%;
+    margin-top:300px;
+  }
 }
 
 
 
 
-@media screen and (min-width: 1200px) and (max-width:11600px) {
+@media screen and (min-width: 1200px) and (max-width:1300px) {
   #section1{
     height:100%;
     border:3px solid transparent;
@@ -1811,8 +1843,7 @@ blackblack{
     width:800px;
     height:600px;
     padding-top:40px;
-    font-size:2vw;
-
+    font-size:20px;
   }
   #container_photo{
     font-size:1vw;
@@ -1821,7 +1852,7 @@ blackblack{
     font-size:20px;
   }
   #container_photo{
-    margin-top:100px;
+    margin-top:500px;
     text-align:center;
   }
   #inputs_sizes{
@@ -1861,6 +1892,7 @@ blackblack{
   #titre_salon{
     font-size:20px;
   }
+  #gifou_gym,
   #gifou{
     width:80;
     height:80;
@@ -1868,11 +1900,96 @@ blackblack{
   #menu_res{
     display:none;
   }
-  #gifou_gym{
-    width:50px;
-    height:50px;
-    margin-left:10px;
+  #button_lamap_gym,
+  #button_lamap{
+     font-size:2vw;
   }
+  #blackblack{
+    margin-top:500px;
+  }
+  #bottom{
+    margin-top:300px;
+  }
+}
+
+
+
+
+
+@media screen and (min-width: 1300px) and (max-width:1400px) {
+  #section1{
+    height:100%;
+    border:3px solid transparent;
+  }
+  #menumenu{
+    display:none;
+  }
+  #logo{
+    position:fixed;
+  }
+  #les_textes{
+    margin-left:400px;
+    width:800px;
+    height:600px;
+    padding-top:40px;
+    font-size:20px;
+  }
+  #container_photo{
+    font-size:1vw;
+  }
+  h3{
+    font-size:20px;
+  }
+  #container_photo{
+    margin-top:500px;
+    text-align:center;
+  }
+  #inputs_sizes{
+    text-align:center;
+  }
+  #vivideo{
+    margin-left:340px;
+    font-size:10px;
+    text-align:center;
+    border:3px solid transparent;
+  }
+  video{
+    border:1px solid black;
+    width:100%;
+    height:200px;
+  }
+  #whitewhite{
+    margin-left:-600px;
+    margin-top:-300px;
+    font-size:14px;
+  }
+  #div_placement{
+    margin-left:870px;
+    font-size:14px;
+    width:250px;
+    margin-top:-350px;
+  }
+  #cssfilters-apply{
+    font-size:14px;
+  }
+  #StartVideo{
+    font-size:14px;
+  }
+  #stop-button{
+    font-size:14px;
+  }
+  #titre_salon{
+    font-size:20px;
+  }
+  #gifou_gym,
+  #gifou{
+    width:80;
+    height:80;
+  }
+  #menu_res{
+    display:none;
+  }
+
   #button_lamap_gym,
   #button_lamap{
      font-size:2vw;
@@ -1885,14 +2002,171 @@ blackblack{
 
 
 
+@media screen and (min-width: 1400px) and (max-width:1500px) {
+  #section1{
+    height:50%;
+    border:3px solid transparent;
+  }
+  #menumenu{
+    display:none;
+  }
+  #logo{
+    position:fixed;
+  }
+  #les_textes{
+    margin-left:500px;
+    width:800px;
+    height:600px;
+    padding-top:40px;
+    font-size:20px;
+  }
+  #container_photo{
+    font-size:1vw;
+  }
+  h3{
+    font-size:20px;
+  }
+  #container_photo{
+    text-align:center;
+  }
+  #inputs_sizes{
+    text-align:center;
+  }
+  #vivideo{
+    margin-left:340px;
+    font-size:10px;
+    text-align:center;
+    border:3px solid transparent;
+  }
+  video{
+    border:1px solid black;
+    width:100%;
+    height:200px;
+  }
+  #whitewhite{
+    margin-left:-600px;
+    margin-top:-300px;
+    font-size:14px;
+  }
+  #div_placement{
+    margin-left:870px;
+    font-size:14px;
+    width:250px;
+    margin-top:-350px;
+  }
+  #cssfilters-apply{
+    font-size:14px;
+  }
+  #StartVideo{
+    font-size:14px;
+  }
+  #stop-button{
+    font-size:14px;
+  }
+  #titre_salon{
+    font-size:20px;
+  }
+  #gifou_gym{
+    width:85;
+    height:80;
+  }
+  #gifou{
+    width:80;
+    height:80;
+  }
+  #menu_res{
+    display:none;
+  }
+  #button_lamap_gym,
+  #button_lamap{
+     font-size:2vw;
+  }
+  #blackblack{
+    margin-top:500px;
+  }
+}
 
 
-
-
-
-
-
-
+@media screen and (min-width: 1500px) and (max-width:1600px) {
+  #section1{
+    height:80%;
+    border:3px solid transparent;
+  }
+  #menumenu{
+    display:none;
+  }
+  #logo{
+    position:fixed;
+  }
+  #les_textes{
+    margin-left:800px;
+    width:600px;
+    height:600px;
+    padding-top:40px;
+    font-size:25px;
+  }
+  #container_photo{
+    font-size:2vw;
+  }
+  h3{
+    font-size:30px;
+  }
+  #container_photo{
+    text-align:center;
+  }
+  #inputs_sizes{
+    text-align:center;
+  }
+  #vivideo{
+    margin-left:380px;
+    font-size:20px;
+    text-align:center;
+    border:3px solid transparent;
+  }
+  video{
+    border:1px solid black;
+    width:100%;
+    height:400px;
+  }
+  #whitewhite{
+    margin-left:-600px;
+    margin-top:-500px;
+    font-size:20px;
+  }
+  #div_placement{
+    margin-left:870px;
+    font-size:17px;
+    width:250px;
+    margin-top:-550px;
+  }
+  #cssfilters-apply{
+    font-size:20px;
+  }
+  #StartVideo{
+    font-size:20px;
+  }
+  #stop-button{
+    font-size:20px;
+  }
+  #titre_salon{
+    font-size:35px;
+  }
+  #gifou_gym,
+  #gifou{
+    width:80;
+    height:80;
+  }
+  #menu_res{
+    display:none;
+  }
+  #button_lamap_gym,
+  #button_lamap{
+     font-size:2vw;
+  }
+  #blackblack{
+    margin-top:500px;
+  }
+}
 
 
 
@@ -1951,7 +2225,33 @@ blackblack{
 
 @media screen and (min-width: 476px) and (max-width:600px) {
     #gym1{
-       margin-top:-50px;
+       display: block;
+    }
+    #gym2{
+       display: inline-block;
+    }
+    #gifou_gym{
+        margin-top:20px;
+    }
+}
+
+
+@media screen and (min-width: 600px) and (max-width:660px) {
+    #gym1{
+       display: block;
+    }
+    #gym2{
+       display: inline-block;
+    }
+    #gifou_gym{
+        margin-top:20px;
+    }
+}
+
+
+@media screen and (min-width: 660px) and (max-width:760px) {
+    #gym1{
+       margin-top:-20px;
        display: block;
     }
     #gym2{
@@ -1959,79 +2259,62 @@ blackblack{
        display: inline-block;
     }
     #gifou_gym{
-        width:40;
-        heighft:40;
+        margin-top:20px;
     }
 }
 
 
-@media screen and (min-width: 600px) and (max-width:660px) {
+
+@media screen and (min-width: 761px) and (max-width:767px) {
+    #gifou_gym{
+        margin-top:5px;
+    }
+}
+
+@media screen and (min-width: 770px) and (max-width:999px) {
     #gym1{
-       margin-top:-60px;
+       margin-top:-20px;
        display: block;
     }
     #gym2{
+       margin-top:-20px;
+       display: inline-block;
+    }
+    #gifou_gym{
+        margin-top:20px;
+        margin-left:110px;
+    }
+}
+
+
+
+
+@media screen and (min-width: 1000px) and (max-width:1020px) {
+    #gym1{
+       margin-top:-60px;
+
+    }
+    #gym2{
+       margin-top:-20px;
+    }
+    #gifou_gym{
+        margin-top:10px;
+        margin-left:110px;
+    }
+}
+
+
+@media screen and (min-width: 1021px) and (max-width:1024px) {
+    #gym1{
        margin-top:-30px;
-       display: inline-block;
-    }
-    #gifou_gym{
-        width:50;
-        heighft:50;
-    }
-}
 
-
-@media screen and (min-width: 660px) and (max-width:760px) {
-    #gym1{
-       margin-top:-60px;
-       display: block;
-    }
-    #gym2{
-       margin-top:-30px;
-       display: inline-block;
-    }
-    #gifou_gym{
-        width:50;
-        heighft:50;
-    }
-}
-
-
-
-
-
-
-
-@media screen and (min-width: 1000px) and (max-width:1040px) {
-    #gym1{
-       margin-top:-100px;
-       display: block;
     }
     #gym2{
        margin-top:-60px;
-       display: inline-block;
     }
     #gifou_gym{
-        width:50;
-        heighft:50;
-    }
-}
-
-
-
-
-@media screen and (min-width: 1000px) and (max-width:1040px) {
-    #gym1{
-       margin-top:-100px;
-       display: block;
-    }
-    #gym2{
-       margin-top:-60px;
-       display: inline-block;
-    }
-    #gifou_gym{
-        width:50;
-        heighft:50;
+        margin-top:10px;
+        margin-left:110px;
     }
 }
 
@@ -2124,11 +2407,6 @@ blackblack{
   #menu_res{
     margin-left:50px;
     font-weight:bold;
-  }
-  #gifou_gym{
-    width:80px;
-    height:80px;
-    text-align:center;
   }
   #button_lamap_gym,
   #button_lamap{
@@ -3798,15 +4076,12 @@ jQuery("#gym2").on("click", function(e){
 
 
 
-    function stop(div, im, im_src){
-   
-      document.getElementById(div).style.display = 'block';
+    function stop(im, im_src){
       document.getElementById(im).src = im_src
 
     };
 
-    function start(div, im, im_src){
-      document.getElementById(div).style.display = 'none';
+    function start(im, im_src){
       document.getElementById(im).src = im_src
     };
 
