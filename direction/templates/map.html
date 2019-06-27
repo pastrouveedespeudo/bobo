@@ -2,9 +2,11 @@
 {% block content %}
 {% endblock %}
 
-
+    
   <header>
     <title>Map functionality is a script for follow the wind.</title>
+    <input type='button' id="menu_res" value="Menu"
+        onclick="location.href = '/direction/navebarre_vent'">
     <div id='textes'>
         <div id='texte1'>
           <h1>Notre carte du vent</h1><br>
@@ -204,6 +206,11 @@
 
 
   <script>
+
+    function redirection(){
+
+    }
+  
     function traitement(data){
 
       var LISTE = [[],[],[],[]];
@@ -370,6 +377,14 @@
       width:1000px;
       height:650px;      
     }
+    #menu_res{
+        margin:20px;
+        background:none;
+        border:none;
+        display:none;
+    }
+
+    
   </style>
   <center>
   <!-- Services Section -->
@@ -542,6 +557,9 @@
   #input_text{
     width:250px;
   }
+  #menu_res{
+    display:block;
+  }
 }
 
 
@@ -578,7 +596,13 @@
   #input_text{
     width:300px;
   }
+  #menu_res{
+    display:block;
+  }
+  
 }
+
+
 
 @media screen and (min-width: 425px) and (max-width:768px) {
   #logo{
@@ -614,6 +638,9 @@
   #input_text{
     width:80%;
   }
+  #menu_res{
+    display:block;
+  }
 }
 
 
@@ -647,6 +674,9 @@
     width:760px;
     height:2000px;
     text-align:justify;
+  }
+  #menu_res{
+    display:block;
   }
 }
 
@@ -685,6 +715,9 @@
     width:990px;
     height:1000px;
     text-align:justify;
+  }
+  #menu_res{
+    display:block;
   }
 
 }
