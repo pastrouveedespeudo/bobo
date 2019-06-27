@@ -1,6 +1,5 @@
-import os
-import cv2
-import json
+"""We recup fertilizer data for site web"""
+
 import requests
 import datetime
 import urllib.request
