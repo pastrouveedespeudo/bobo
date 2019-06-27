@@ -1,68 +1,85 @@
-import os
-import cv2
-import json
+"""BS4, requests, datatime 16/04/2019"""
+
+
+
+
 import requests
-import datetime
+
 import urllib.request
 from bs4 import *
-from colour import Color
 
 
 
-PATH_PARIS = 'https://weather.com/fr-FR/forecast/allergy/l/1975528fb7e3553b7eacfe7ac89b421986bb9949c2506b144b4e228d57da124b'
-PATH_LYON = 'https://weather.com/fr-FR/forecast/allergy/l/7615c204059d6d10382d733bf8dc1718bcac1e82e2f2cf66e6842581ca9360c2'
-PATH_MARSEILLE = 'https://weather.com/fr-FR/forecast/allergy/l/97adc36f89aa35486ece34380b006f2c946ef82fad53a58954c33e39e23948fe'
+from .CONFIG import PATH_PARIS_POLENNE
+from .CONFIG import PATH_LYON_POLENNE
+from .CONFIG import PATH_MARSEILLE_POLENNE
+from .CONFIG import COMPA_POELENNE
 
 
-def polenne(ville):
-
-    ville = ville.lower()
-
-    if ville == 'lyon':
-        path = PATH_LYON
-
-    elif ville == 'paris':
-        path = PATH_PARIS
-        
-    elif ville == 'marseille':
-        path = PATH_MARSEILLE
+def path_function(city):
+    """Here we define the path"""
     
+    city = city.lower()
 
-    r = requests.get(path)
+    path = ''
+    
+    if city == 'lyon':
+        path = PATH_LYON_POLENNE
+
+    elif city == 'paris':
+        path = PATH_PARIS_POLENNE
+        
+    elif city == 'marseille':
+        path = PATH_MARSEILLE_POLENNE
+
+    return path 
 
 
-    page = r.content
-    soup = BeautifulSoup(page, "html.parser")
+def soup_function(city):
+    """Soup and BS4 call"""
+    
+    #path_function()
+    path = path_function(city)
 
-    propriete = soup.find_all("div")
+    request_html = requests.get(path)
+    page = request_html.content
+    soup_html = BeautifulSoup(page, "html.parser")
+    Property = soup_html.find_all("div")
+
 
     liste = []
-    liste.append(str(propriete))
-    a = str(liste).find('Confort de respiration:')
+    liste.append(str(Property))
+    
+    finding = str(liste).find('Confort de respiration:')
+    liste = liste[0][finding:finding + 200]
 
-    liste = liste[0][a:a+200]
+    return liste
 
-    mot = ''
-    compa = '<div class="styles__allergyMsg__qual__yaxvL" classname="styles__allergyMsg__qual__yaxvL"'
+def polenne(city):
+    """we are looking for the rate of polenne"""
 
+    #soup_function()
+    liste = soup_function(city)
+
+    word = ''
     liste2 = []
-
-
+    oContinuer = ''
+    
     for i in liste:
         if i == '>':
-            if mot == compa:
-                mot = ''
-                a = True
+            if word == COMPA_POELENNE:
+                word = ''
+                oContinuer = True
             else:
-                mot =  ''
+                word =  ''
 
-        elif a == True:
+        elif oContinuer == True:
             if i == '<':
-                a = False
+                oContinuer = False
             liste2.append(i)
         else:
-            mot += i
-        
+            word += i
+
     return "".join(liste2[:-1])
 
 
