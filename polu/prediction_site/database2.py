@@ -1,14 +1,19 @@
 import psycopg2
 
+from .CONFIG import DATABASE
+from .CONFIG import USER
+from .CONFIG import HOST
+from .CONFIG import PASSWORD
+
 
 def creation_table():
 
 
 
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                            user='pwtfmpvfpsujtw',
-                            host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                            password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -328,10 +333,10 @@ def creation_table():
 def insertion_voisin_vent_pollution(nom_ville,  direction_vent, force_vent,
                                     pollution, heure_donnée, date):
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -351,10 +356,11 @@ def insertion_voisin_vent_pollution(nom_ville,  direction_vent, force_vent,
 
 
 def insertion_angrais(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -369,10 +375,11 @@ def insertion_angrais(i,  donnée, date, heure, particule):
 
 
 def insertion_saison(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -386,10 +393,11 @@ def insertion_saison(i,  donnée, date, heure, particule):
 
 
 def insertion_diesel(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -403,10 +411,11 @@ def insertion_diesel(i,  donnée, date, heure, particule):
 
 
 def insertion_eruption(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -422,10 +431,11 @@ def insertion_eruption(i,  donnée, date, heure, particule):
 
 
 def insertion_nuit_jour(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -439,10 +449,11 @@ def insertion_nuit_jour(i,  donnée, date, heure, particule):
 
 
 def insertion_trafique_circulation(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -456,10 +467,11 @@ def insertion_trafique_circulation(i,  donnée, date, heure, particule):
 
 
 def insertion_heure_de_pointe(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -474,10 +486,11 @@ def insertion_heure_de_pointe(i,  donnée, date, heure, particule):
 
 
 def insertion_habitude(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -492,10 +505,11 @@ def insertion_habitude(i,  donnée, date, heure, particule):
 
 
 def insertion_bouchon(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -512,10 +526,11 @@ def insertion_bouchon(i,  donnée, date, heure, particule):
 
 
 def insertion_activité_execptionnelle(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -529,10 +544,11 @@ def insertion_activité_execptionnelle(i,  donnée, date, heure, particule):
 
 
 def insertion_habitant(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -545,10 +561,11 @@ def insertion_habitant(i,  donnée, date, heure, particule):
     conn.commit()
 
 def insertion_industrie(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -562,10 +579,11 @@ def insertion_industrie(i,  donnée, date, heure, particule):
 
 
 def insertion_polenne(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -579,10 +597,11 @@ def insertion_polenne(i,  donnée, date, heure, particule):
 
 
 def insertion_france(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -596,10 +615,11 @@ def insertion_france(i,  donnée, date, heure, particule):
 
 
 def insertion_météo(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -614,10 +634,11 @@ def insertion_météo(i,  donnée, date, heure, particule):
 
 
 def insertion_vent(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -631,10 +652,11 @@ def insertion_vent(i,  donnée, date, heure, particule):
 
 
 def insertion_pression(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -647,10 +669,11 @@ def insertion_pression(i,  donnée, date, heure, particule):
     conn.commit()
 
 def insertion_température(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -665,10 +688,11 @@ def insertion_température(i,  donnée, date, heure, particule):
 
 
 def insertion_incendie(i,  donnée, date, heure, particule):
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
 
     
     cursor = conn.cursor()
@@ -687,10 +711,10 @@ def insertion_incendie(i,  donnée, date, heure, particule):
 
 def clean_data():
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
     
     cursor = conn.cursor()
     
@@ -704,10 +728,10 @@ def clean_data():
 
 def clean_data2():
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
     
     cursor = conn.cursor()
     
@@ -722,10 +746,10 @@ def clean_data2():
 
 def clean_data3():
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
     
     cursor = conn.cursor()
     
@@ -739,10 +763,10 @@ def clean_data3():
 
 def clean_data4():
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
     
     cursor = conn.cursor()
     
@@ -755,10 +779,10 @@ def clean_data4():
 
 def visualisation(ville):
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
     cursor = conn.cursor()
 
     cursor.execute("""SELECT date, heure_donnée,
@@ -783,11 +807,10 @@ def visualisation(ville):
 
 def visualisation_without_time(ville):
 
-    
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
     
     cursor = conn.cursor()
     
@@ -813,11 +836,12 @@ def recuperate_particle(ville, pression, météo, vent, climat,
                       saison, ville_pollué, REGION_INDUSTRIEL_POLLUEE,
                       POPULATION_ACTIVE_HABITANT, TRAFIQUE, HEURE,
                       WEEKEND, BOUCHON, ACTIVITE_EXEPTIONNELLE):
+
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD)
     
     cursor = conn.cursor()
 
