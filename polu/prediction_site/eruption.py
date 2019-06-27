@@ -1,89 +1,82 @@
-import os
-import cv2
-import json
 import requests
-import datetime
 import urllib.request
 from bs4 import *
+import datetime
 
+from .CONFIG import MONTH_DICO_EN
 
-
-def eruption():
-
-        
+def date():
+    
     date = datetime.datetime.now()
+
+    day = date.day
+    month = date.month
+    year = date.year
+
+    month = str(month)   
+    year = str(year)  
+
+                        
+    this_month = ''
+    for key, value in MONTH_DICO_EN.items():
+                                    
+        if str(month) == key:                          
+            this_month = value
+
+            
+    return day, this_month, year
+
+def soup_search():
     
-    
-    mois = date.month
-    année = date.year
-
-    
-    mois = str(mois)
-    année = str(année)
-
-
-
-    dico = {'1':'January', '2':'February', '3':'March','4':'April','5':'May','6':'June',
-            '7':'July','8':'August','9':'September','10':'October','11':'November','12':'December'}
-
-    le_mois = ''
-
-    for cle, valeur in dico.items():
-        if str(mois) == cle:
-            le_mois = valeur
-
-
     path = "https://www.volcanodiscovery.com/fr/volcanoes/today.html"
-
     r = requests.get(path)
-
     page = r.content
-
     soup = BeautifulSoup(page, "html.parser")
+    Property = soup.find_all("div", {"class":"ln"}) 
+                                                    
+    liste = []
+    liste.append(str(Property))
 
     
-    propriete = soup.find_all("div", {"class":"ln"})
-
-    liste = []
-
-    liste.append(str(propriete))
-
-
-    #print(liste)
+def eruption():
+    """Here we get eruption during the last week"""
+        
+    day, this_month, year = date()
+    liste = soup_search()
 
     liste2 = []
+    for i in range(7):      
 
-    for i in range(7):
-
-        jour = date.day
-        jour = str(jour-i)
-
-        a_chercher = jour +' '+le_mois + ' ' + année
-        a_chercher1 = le_mois + ' ' + jour + ' ' + année
-
+        day = int(day)
+        day = day - i
+        day = str(day) 
         
-        a_chercher2 = jour+'-'+mois+'-'+année
-        a_chercher3 = jour+'-'+le_mois+'-'+année
-        a_chercher4 = le_mois + ' ' + jour + ', ' + année
+        to_search = day +' '+ this_month + ' ' + year        
+        to_search1 = this_month + ' ' + day + ' ' + year
+        to_search2 = day + '-' + this_month + '-' +year
+        to_search3 = day + '-' + this_month + '-' + year
+        to_search4 = this_month + ' ' + day + ', ' + year
 
+        finding1 = str(liste).find(str(to_search))    
+        finding2 = str(liste).find(str(to_search1))
+        finding3 = str(liste).find(str(to_search2))
+        finding4 = str(liste).find(str(to_search3))
+        finding5 = str(liste).find(str(to_search4))
 
-        a = str(liste).find(str(a_chercher))
-        b = str(liste).find(str(a_chercher1))
-        c = str(liste).find(str(a_chercher2))
-        d = str(liste).find(str(a_chercher3))
-        e = str(liste).find(str(a_chercher4))
-
-        if a >= 0 or b >= 0 or c >=0 or d >= 0 or e >=0:
-            jour = str(jour) + ' ' + mois
-            liste2.append(jour)
+        if finding1 >= 0 or\
+           finding2 >= 0 or\
+           finding3 >=0 or\
+           finding4 >= 0 or\
+           finding5 >=0: 
+            day = str(day) + ' ' + this_month
+            liste2.append(day)
 
 
     if liste2 != []:
         return 'oui'
     
 
-    
-
+print(eruption())
 
 
 
