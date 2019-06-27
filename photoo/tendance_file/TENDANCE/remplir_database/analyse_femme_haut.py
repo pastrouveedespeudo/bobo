@@ -283,32 +283,23 @@ def pré_visualisation_donnée(table):
     return liste
 
 
-    
-def traitement():
-    
 
-    try:
-        os.chdir('/app/static/bobo')
-    except:
-        os.chdir(r'C:\Users\jeanbaptiste\bobo\bobo\static\bobo')
-        
+def function_traitement():
+    """Here we call database
+    for see if we have news pictures."""
+
+    os.chdir('/app/static/bobo')
     liste = os.listdir()
-    print(liste)
-    liste2 = ['analysa.py', 'analyse_femme_haut.py', 'bobo.txt',
-              'config.py', 'constante.py', 'conteneur.py', 'coul.py',
-              'coupe_analysis.py', 'database.py', 'ess.py', 'mode_analyse.py',
-              'mode_w_data.py', 'palettecouleur.py', 'palettecouleur_coiffure.py',
-              'traitement_bas1.jpg', 'traitement_haut.jpg', '__pycache__', 'tendance.py']
-
+    
     element = pré_visualisation_donnée('bobo1')
     element2 = pré_visualisation_donnée('bobo1_coiffure')
     
     for i in element:
-        liste2.append(i[1])
+        LISTE2.append(i[1])
     for i in element2:
-        liste2.append(i[1])
+        LISTE2.append(i[1])
 
-    set1 = set(liste2)
+    set1 = set(LISTE2)
     set2 = set(liste)
 
     liste3 = []
@@ -320,52 +311,47 @@ def traitement():
     for b in set2 :
         if not(b in set1):
             liste3.append(b)
+    return liste3
 
+
+def traitement():
+    """Here we insert picture of body and
+    haircuts into database with them colors"""
     
+    liste3 = function_traitement()
+
     print(sorted(liste3),'000000000LISTE3')
 
 
     for i in sorted(liste3):    
         print(i)
-        if i == '__pycache__' or i == 'analyse_femme_haut.py' or\
-           i == 'constante.py' or i == 'coul.py' or\
-           i == 'palettecouleur.py' or i == 'palettecouleur_coiffure.py' or\
-           i=='bobo.txt' or i== 'traitement_haut.jpg' or i == "traitement_bas1.jpg" or\
-           i == 'config.py' or i == 'constante.py' or i =='coul.py' or i == 'database.py' or\
-           i == 'palettecouleur.py' or i =='palettecouleur_coiffure.py' or i=='tendance.py':
-            pass
+
+        nom = i[-5:-4]
+
+        if nom == 'a':
+            
+            mask_bas(i)
+            
+            resize('traitement_bas1.jpg', 'traitement_bas1.jpg')
+            bas = couleur_habit('traitement_bas1.jpg')
+
+
+            mask_haut(i)
+            resize('traitement_haut.jpg', 'traitement_haut.jpg')
+            
+            haut = couleur_habit('traitement_haut.jpg')
+            
+
+            insertion_info(i, 'féminin', haut[1], bas[1],
+                           haut[0], bas[0])
+
+
+        elif nom == 'b':
         
-        else:
+            coiffure = couleur_cheveux(i)
+            print(coiffure)
+            ccoiffure(i, coiffure)
 
-            nom = i[-5:-4]
-
-            
-            if nom == 'a':
-                
-                mask_bas(i)
-                
-                resize('traitement_bas1.jpg', 'traitement_bas1.jpg')
-                bas = couleur_habit('traitement_bas1.jpg')
-
-
-                mask_haut(i)
-                resize('traitement_haut.jpg', 'traitement_haut.jpg')
-                
-                haut = couleur_habit('traitement_haut.jpg')
-                
-
-                insertion_info(i, 'féminin', haut[1], bas[1],
-                               haut[0], bas[0])
-
-
-            elif nom == 'b':
-            
-                coiffure = couleur_cheveux(i)
-                print(coiffure)
-                ccoiffure(i, coiffure)
-
-
-                                         
 
 
 
