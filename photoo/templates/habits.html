@@ -1,4 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/static/css/habit.css" media="all" />
+
+
+    
     
     <style>
         #titre{
@@ -49,6 +52,7 @@
 
     <!-- Body Section -->
     <body id="page-top">
+
         
        <!-- Navebarre Section -->
         {% include "barre_gauche_habits.html" %}
@@ -101,7 +105,7 @@
           </p>
      
       </div>
-         <br><br><br><br><br>
+     
 
 
 
@@ -310,8 +314,9 @@
                 @media screen and (min-width: 1500px) and (max-width:2000px) {
                   #barre{
                     clear:right;
-                    margin-right:20px;
+                    margin-right:-100px;
                     font-size:1vw;
+                    
                    }
                     #name,
                     #store,
@@ -336,10 +341,48 @@
                     
                     
                 }
-                @media screen and (min-width: 1000px) and (max-width:1500px) {
+
+
+
+                @media screen and (min-width: 1377px) and (max-width:1500px) {
                   #barre{
-                    right:10;
+                    margin-right:-350px;
                     font-size:1.3vw;
+                    }
+                  #responsive_cont{
+                        display:none;
+                    }
+                }
+
+
+                @media screen and (min-width: 1301px) and (max-width:1377px) {
+                  #barre{
+                    margin-right:-50px;
+                    font-size:1.3vw;
+                    
+                    }
+                  #responsive_cont{
+                        display:none;
+                    }
+                }
+
+                @media screen and (min-width: 1099px) and (max-width:1300px) {
+                  #barre{
+                    margin-right:-30px;
+                    font-size:1.3vw;
+                    
+                    }
+                  #responsive_cont{
+                        display:none;
+                        
+                    }
+                }
+                
+                @media screen and (min-width: 1000px) and (max-width:1099px) {
+                  #barre{
+                    font-size:1.3vw;
+                    margin-right:10px;
+                    
                     }
                   #responsive_cont{
                         display:none;
@@ -349,6 +392,7 @@
                   #barre{
                     right:-100;
                     font-size:1.3vw;
+                    
                     }
                   #responsive_cont{
                         display:none;
@@ -359,6 +403,7 @@
                   #barre{
                     right:10;
                     font-size:1.3vw;
+                    
                     }
                   #responsive_cont{
                         display:none;
@@ -980,6 +1025,13 @@
 
 
 
+  <section class="page-section" id="reso">
+    <div>
+      {% include "bottom_page2_photo.html" %}
+      {% block content2 %}
+      {% endblock content2%}
+    </div>
+  </section>
 
 
             
@@ -992,58 +1044,6 @@
 
 
 
-
-
-      <!-- Call to Action Section -->
-      <section class="page-section bg-dark text-white" id="reso">
-        <div class="container text-center">
-          <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
-                     
-            <a href=""><i class="fab fa-facebook-square" id="fb"></i></a>
-            <a href=""><i class="fab fa-twitter-square" id="tw"></i></a>
-            <a href=""><i class="fab fa-snapchat-square" id="sn"></i></a>
-                        
-        </div>
-      </section>
-
-
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-      <!-- Bootstrap core JavaScript -->
-      <script src="/static/vendor/jquery/jquery.min.js"></script>
-      <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-      <!-- Plugin JavaScript -->
-      <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
-      <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-      <!-- Custom scripts for this template -->
-      <script src="/static/js/creative.min.js"></script>
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
-      <!-- Contact Section -->
-      <section class="page-section" id="contact" style='background:white;'>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-              <h2 class="mt-0">Let's Get In Touch!</h2>
-              <hr class="divider my-4">
-              <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 ml-auto text-center">
-              <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-              <div>+1 (202) 555-0149</div>
-            </div>
-            <div class="col-lg-4 mr-auto text-center">
-              <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-              <!-- Make sure to change the email address in anchor text AND the link below! -->
-              <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
-            </div>
-          </div>
-        </div>
-      </section>
 
 </body>
 
@@ -1087,8 +1087,6 @@
 
 
 <style>
-
-
 
 
 
@@ -1248,7 +1246,7 @@ h3{
     }
     #resum_titre{
         width:100%;
-        font-size:15px;
+        font-size:10px;
         text-align:center;
         float:none;
         
@@ -1263,20 +1261,20 @@ h3{
         
     }
     #responsive_cont{
-        font-size:5vw;
+        font-size:3.5vw;
         margin-top:30px;
         
     }
     #info_oups{
-        font-size:5vw;
+        font-size:3vw;
         padding-top:10px;
         
     }
     #sizing_res{
-        font-size:5vw;
+        font-size:3vw;
     }
     #reso{
-        margin-top:500px;
+        margin-top:300px;
     }
     #nos_info_habits{
         font-size:5vw;
@@ -1285,14 +1283,14 @@ h3{
         display:block;
         font-size:4vw;
         color:white;
-        margin-left:15px;
+        margin-left:30px;
         margin-top:10px;
     }
 }
 
 
 
-@media screen and (min-width: 375px) and (max-width:425px) {
+@media screen and (min-width: 375px) and (max-width:424px) {
     #MENU{
         display:none;
     }
@@ -1343,7 +1341,7 @@ h3{
         font-size:4vw;
     }
     #reso{
-        width:100%;
+        width:120%;
         text-align:center;
     }
 
@@ -1369,7 +1367,6 @@ h3{
         font-size:3.5vw;
         text-align:center;
         float:none;
-        
     }
     span{
         float:none;
@@ -1378,7 +1375,6 @@ h3{
     }
     #titre_section{
         text-align:center;
-        
     }
     #responsive_cont{
         padding-top:500px;
@@ -1388,13 +1384,9 @@ h3{
     #info_oups{
         font-size:2.5vw;
         padding-top:10px;
-        
     }
     #sizing_res{
         font-size:3vw;
-    }
-    #reso{
-        margin-top:500px;
     }
     #nos_info_habits{
         font-size:3vw;
@@ -1415,44 +1407,11 @@ h3{
         margin-left:30px;
         margin-top:15px;
     }
-    
-}
-
-
-@media screen and (min-width: 425px) and (max-width:577px) {
-    #barre{
-        display:block;
-        font-size:2.5vw;
-    }
-}
-
-
-@media screen and (min-width: 577px) and (max-width:600px) {
-    #barre{
-        display:block;
-        font-size:2.5vw;
-    }
-}
-
-
-
-@media screen and (min-width: 601px) and (max-width:700px) {
-    #barre{
-        display:block;
-        font-size:2.5vw;
-        margin-top:300px;
-        margin-right:-20%;
-    }
-}
-
-
-@media screen and (min-width: 700px) and (max-width:768px) {
-    #barre{
-        display:block;
-        font-size:2.5vw;
-        margin-top:300px;
-        margin-right:-30%;
-    }
+    #reso{
+        margin-top:200px;
+        width:137%;
+        text-align:center;
+    } 
 }
 
 
@@ -1470,6 +1429,9 @@ h3{
     }
     #logo{
         display:none;
+    }
+    header{
+        height:600px;
     }
     #les_textes{
         width:100%;
@@ -1526,7 +1488,11 @@ h3{
         margin-left:30px;
         margin-top:15px;
     }
-    
+    #reso{
+        margin-top:400px;
+        width:147.5%;
+        text-align:center;
+    } 
 }
 
 
@@ -1569,7 +1535,8 @@ h3{
     #info_oups{
         font-size:2.5vw;
         padding-top:150px;
-        margin-left:150px;
+        width:400px;
+        margin-left:20px;
         
     }
     #sizing_res{
@@ -1625,6 +1592,100 @@ h3{
 
 
 
+</style>
+
+
+
+
+
+
+
+
+<style>
+
+
+@media screen and (min-width: 425px) and (max-width:530px) {
+    #reso{
+        width:100%;
+        min-width:100%;
+        min-height:100%;
+        margin:0;
+        padding:0;
+        margin-top:500px;
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 425px) and (max-width:577px) {
+    #barre{
+        display:block;
+        font-size:2.5vw;
+    }
+}
+
+
+@media screen and (min-width: 577px) and (max-width:600px) {
+    #barre{
+        display:block;
+        font-size:2.5vw;
+    }
+}
+
+
+
+@media screen and (min-width: 601px) and (max-width:700px) {
+    #barre{
+        display:block;
+        font-size:2.5vw;
+        margin-top:300px;
+        margin-right:-20%;
+    }
+}
+
+
+@media screen and (min-width: 700px) and (max-width:768px) {
+    #barre{
+        display:block;
+        font-size:2.5vw;
+        margin-top:300px;
+        margin-right:-30%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 768px) and (max-width:900px) {
     #menu_res{
         display:none;
@@ -1639,8 +1700,6 @@ h3{
     #logo{
         display:block;
     }
-
-    
 }
 
 
@@ -1658,9 +1717,7 @@ h3{
     }
     #logo{
         display:block;
-    }
-
-    
+    }    
 }
 
 
@@ -1682,7 +1739,6 @@ h3{
   
 }
 
-</style>
 
 
 
@@ -1691,73 +1747,9 @@ h3{
 
 
 
-<style>
-
-
-@media screen and (min-width: 425px) and (max-width:530px) {
-    #reso{
-        width:145.5%;
-    }
-    #contact{
-        width:145.5%;
-    }
-}
-
-@media screen and (min-width: 530px) and (max-width:556px) {
-    #reso{
-        width:145.5%;
-    }
-    #contact{
-        width:145.5%;
-    }
-}
 
 
 
-
-@media screen and (min-width: 556px) and (max-width:800px) {
-    #reso{
-        width:136%;
-    }
-    #contact{
-        width:136%;
-    }
-}
-
-
-@media screen and (min-width: 800px) and (max-width:1000px) {
-    #reso{
-        width:106%;
-        margin-top:250px;
-    }
-    #contact{
-        width:106%;
-    }
-}
-
-
-
-@media screen and (min-width: 1000px) and (max-width:1100px) {
-    #reso{
-        width:106%;
-        margin-top:300px;
-    }
-    #contact{
-        width:106%;
-    }
-}
-
-
-
-@media screen and (min-width: 1100px) and (max-width:1300px) {
-    #reso{
-        width:106%;
-        margin-top:300px;
-    }
-    #contact{
-        width:106%;
-    }
-}
 
 
 
@@ -1766,6 +1758,7 @@ h3{
 i{
     color:white;
 }
+
 
 
 @media screen and (min-width: 0px) and (max-width:374px) {
@@ -1862,7 +1855,116 @@ i{
 </style>
 
 
-
+<style>
+#1, #2,#3,#4,#5,#6,#7,#8,#9,
+#10, #11,#22,#33,#44,#55,
+#66, #77, #88 { width: 0px; height: 0px;}
+input{
+  border:1px solid black;
+}
+@media screen and (min-width: 768px) and (max-width:991px) {
+  #shirt_tshirt {
+    margin-left:10%;
+  }
+  #pantaloune {
+    margin-left:-7.5%;
+  }
+}
+@media screen and (min-width: 0px) and (max-width:767px) {
+  #tshirt {
+    
+    margin-right:9%;
+    margin-top:450%;
+  }
+  #pantaloune {
+    margin-left:-16%;
+    margin-top:127%;
+  }
+}
+#clothes_section{
+    width:101%;
+    text-align:center;
+}
+#info_cloths_like_price{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+    width:auto;
+    height:auto;
+}
+#nos_info_habits{
+    font-family:segoe print;
+}
+#mage{
+    text-align:center;
+    width:auto;
+}
+#name{
+    width:200px;
+}
+#store{
+    width:200px;
+}
+#price,
+#stock,
+#online{
+    width:200px;
+}
+#infofo{
+    text-align:left;
+    padding-left:50px;
+}
+#shirt_tshirt{
+    margin-left:82%;
+    margin-top:-350px;
+    width:150px;
+    position:absolute;
+}
+#tshirt{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+    font-family:segoe print;
+}
+#info_div_container{
+    background:url("/static/img/parquet1.jpg");
+    border:2px solid black;
+    border-radius:50px;
+}
+#add1,
+#add2,
+#no_add1,
+#no_add2{
+    border:3px solid black;
+}
+#draggable{
+   width:0px; 
+   height:0px;
+}
+h1{
+    color:black;
+    font-family:"Comic Sans MS, Comic Sans, cursive";
+}
+h2{
+    color:black;
+    font-style:justify;
+}
+h3{
+    color:black;
+}
+#Color_hair{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+}
+@media screen and (min-width: 0px) and (max-width:800px) {
+    #info_cloths_like_price{
+        width:50px;
+    }
+    
+  
+}
+</style>
 
 
 
@@ -2337,116 +2439,7 @@ function voir_t_laine(){
 
 
 
-<style>
-#1, #2,#3,#4,#5,#6,#7,#8,#9,
-#10, #11,#22,#33,#44,#55,
-#66, #77, #88 { width: 0px; height: 0px;}
-input{
-  border:1px solid black;
-}
-@media screen and (min-width: 768px) and (max-width:991px) {
-  #shirt_tshirt {
-    margin-left:10%;
-  }
-  #pantaloune {
-    margin-left:-7.5%;
-  }
-}
-@media screen and (min-width: 0px) and (max-width:767px) {
-  #tshirt {
-    
-    margin-right:9%;
-    margin-top:450%;
-  }
-  #pantaloune {
-    margin-left:-16%;
-    margin-top:127%;
-  }
-}
-#clothes_section{
-    width:101%;
-    text-align:center;
-}
-#info_cloths_like_price{
-    background:url("/static/img/parquet1.jpg");
-    border:3px solid black;
-    border-radius:50px;
-    width:auto;
-    height:auto;
-}
-#nos_info_habits{
-    font-family:segoe print;
-}
-#mage{
-    text-align:center;
-    width:auto;
-}
-#name{
-    width:200px;
-}
-#store{
-    width:200px;
-}
-#price,
-#stock,
-#online{
-    width:200px;
-}
-#infofo{
-    text-align:left;
-    padding-left:50px;
-}
-#shirt_tshirt{
-    margin-left:82%;
-    margin-top:-350px;
-    width:150px;
-    position:absolute;
-}
-#tshirt{
-    background:url("/static/img/parquet1.jpg");
-    border:3px solid black;
-    border-radius:50px;
-    font-family:segoe print;
-}
-#info_div_container{
-    background:url("/static/img/parquet1.jpg");
-    border:2px solid black;
-    border-radius:50px;
-}
-#add1,
-#add2,
-#no_add1,
-#no_add2{
-    border:3px solid black;
-}
-#draggable{
-   width:0px; 
-   height:0px;
-}
-h1{
-    color:black;
-    font-family:"Comic Sans MS, Comic Sans, cursive";
-}
-h2{
-    color:black;
-    font-style:justify;
-}
-h3{
-    color:black;
-}
-#Color_hair{
-    background:url("/static/img/parquet1.jpg");
-    border:3px solid black;
-    border-radius:50px;
-}
-@media screen and (min-width: 0px) and (max-width:800px) {
-    #info_cloths_like_price{
-        width:50px;
-    }
-    
-  
-}
-</style>
+
 
 
 
