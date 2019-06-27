@@ -1,20 +1,25 @@
+"""Here we call
+weather, wind and pressure functions
+for site web"""
+
+
 import requests
+import datetime
 import urllib.request
 from bs4 import *
-import datetime
 
 from .CONFIG import CLE_OPEN
-from .CONFIG import PATH_TEMP
-from .CONFIG import PATH_WEATHER
-from .CONFIG import PATH_WIND
-from .CONFIG import PATH_PRESSURE
+from .CONFIG import WEATHER_PATH
+from .CONFIG import PRESSURE_PATH
+
 
 def recuperation_donnée_météo(lieu):
-
-
-    localisation = PATH_WEATHER.format(lieu, CLE_OPEN)
+    """We recuperate weather with API"""
+    
+    localisation = WEATHER_PATH.format(lieu, CLE_OPEN)
     r = requests.get(localisation)
     data=r.json()
+
 
     méteo = data['weather'][0]['main']
 
@@ -30,10 +35,10 @@ def recuperation_donnée_météo(lieu):
     elif méteo == "Clear":
         return 'beau_temps'
 
-
 def vent(lieu):
-
-    localisation = PATH_WIND.format(lieu, CLE_OPEN)
+    """We recuperate wind with API"""
+    
+    localisation = WEATHER_PATH.format(lieu, CLE_OPEN)
     r = requests.get(localisation)
     data=r.json()
 
@@ -43,27 +48,26 @@ def vent(lieu):
     except:
         pass
 
+    
     vent = data['wind']['speed']
+
 
     if vent <= 3 :
         return 'faible'
         
-    elif vent <= 6 and\
-         vent > 3:
+    elif vent <= 6 and vent > 3:
         return 'moyen fort'
 
-    elif vent <= 8 and\
-         vent > 6:
+    elif vent <= 8 and vent > 6:
         return 'fort'
 
     elif vent >= 8:
         return 'tres fort'
 
-
-
 def pression(lieu):
+    """We recuperate pressure with API"""
 
-    localisation = PATH_PRESSURE.format(lieu, CLE_OPEN)
+    localisation = WEATHER_PATH.format(lieu, CLE_OPEN)
     r = requests.get(localisation)
     data=r.json()
     
@@ -82,6 +86,7 @@ def pression(lieu):
     else:
         return 'normale'
 
+    
 
 
 
