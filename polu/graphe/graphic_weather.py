@@ -1,3 +1,7 @@
+"""We call data from database
+we recuperate all data from one condition
+and create a matplolib graph"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab
@@ -9,12 +13,19 @@ import shutil
 from .function_graph import new
 from .function_graph import *
 
+from .CONFIG import DATABASE
+from .CONFIG import HOST
+from .CONFIG import USER
+from .CONFIG import PASSWORD
+
+
 def visu_weater(city):
+    """Here we call database for take weather"""
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')  
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
 
     cursor = conn.cursor()
     
@@ -33,6 +44,8 @@ def visu_weater(city):
 
 
 def treatement_weather(data_weather):
+    """We split it into list who corresponding to data"""
+    
     good_weather = []
     cloud = []
     rain = []
@@ -57,6 +70,7 @@ def treatement_weather(data_weather):
     data = len(good_weather) + len(cloud) + len(rain)
     print(data)
 
+    #We make an average
     data_good_weather = moyenne(good_weather)
     data_cloud = moyenne(cloud)
     data_rain = moyenne(rain)
@@ -71,7 +85,7 @@ def treatement_weather(data_weather):
 def diagram_weather(data_good_weather, data_cloud, data_rain,
               er_good_weather, er_cloud, er_rain, save):
 
-
+    """We create a graph and return it"""
     
     plt.bar(range(3), [data_good_weather, data_cloud, data_rain],
                         width = 0.1, color = 'black',
