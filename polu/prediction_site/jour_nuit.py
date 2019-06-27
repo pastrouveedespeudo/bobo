@@ -1,3 +1,6 @@
+"""Here we look if it's during the day or the night
+for site web"""
+
 import datetime
 
 def nuit_jour():
@@ -28,4 +31,4 @@ def nuit_jour():
     return non_nuit
 
     
-nuit_jour()
+
