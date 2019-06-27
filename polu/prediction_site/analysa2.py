@@ -34,11 +34,11 @@ def predi_analysa2(ville):
         c = saison()
         condition.append(c)
        
-        d = recup_balise()
+        d = recup_tag()
         condition.append(d)
       
-        e = eruption()
-        condition.append(e)
+##        e = eruption()
+##        condition.append(e)
      
         g = nuit_jour()
         condition.append(g)
@@ -61,14 +61,14 @@ def predi_analysa2(ville):
         q = habitant(i)
         condition.append(q)
       
-        n = industrie(i)
-        condition.append(n)
+##        n = industrie(i)
+##        condition.append(n)
 
-        o = polenne(i)
-        condition.append(o)
+        #o = polenne(i)
+        #condition.append(o)
 
-        l = france(i)
-        condition.append(l)
+##        l = france(i)
+##        condition.append(l)
       
         h = recuperation_donnée_météo(i)
         condition.append(h)
@@ -82,8 +82,8 @@ def predi_analysa2(ville):
         b = recuperation_donnée_température(i)
         condition.append(b)
      
-        f = incendie(i)
-        condition.append(f)
+##        f = incendie(i)
+##        condition.append(f)
 
         
     print(condition)
