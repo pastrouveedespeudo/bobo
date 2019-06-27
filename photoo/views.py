@@ -24,6 +24,7 @@ def navebarre_admin2(request):
     """Here we return a home html respons"""
     return render(request, 'navebarre_admin2.html')
 
+
 def navebarre_coupe(request):
     """Here we return a home html respons"""
     return render(request, 'navebarre_coupe.html')
@@ -141,7 +142,7 @@ def database_mode(request):
 
 def tendance(request):
     """Here we return the mode"""
-    
+
     liste10 = tendance_function
     return render(request, "tendance.html", {'liste10':liste10})
 
