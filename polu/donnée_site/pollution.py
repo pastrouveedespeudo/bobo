@@ -12,6 +12,8 @@ from CONFIG import WEATHER_PATH
 from CONFIG import CLIMATE_PATH
 from CONFIG import POLLUTING_POLE
 from CONFIG import PATH_WIKI
+from CONFIG import DEAPARTURE
+
 
 
 def particle_rate(city):
@@ -25,7 +27,6 @@ def particle_rate(city):
     page = request.content
     soup_html = BeautifulSoup(page, "html.parser")
     Property = soup_html.find_all("div", {'class':'report__pi-number'})
-
 
     for i in Property:
         liste.append(i.get_text())
@@ -65,12 +66,10 @@ def pressure_city(city):
 def weather_city(city, data_ask):
     """we search weather"""
 
-    #Call API openweathermap
     localisation = WEATHER_PATH.format(city,CLE)
     r = requests.get(localisation)
     data=r.json()
 
-    #get from json content
     if data_ask == 'vent':
         wind = data['wind']['speed']
         return wind
@@ -80,7 +79,6 @@ def weather_city(city, data_ask):
 
         data = ''
 
-        #Translate it to fr
         if weather == 'Clouds' or weather == 'Mist':
             data = 'Nuageux'
         elif weather == 'Rain' or weather == 'Thunderstorm'\
@@ -134,11 +132,10 @@ def season():
         return 'automne'
 
 
-def traffic(city):
-    """we search traffic"""
 
-    #Get the departure thank for bison futé
-    #and get hours points.
+def traffic_function():
+    
+
     date = datetime.datetime.now()
     
     day = date.day
@@ -150,13 +147,19 @@ def traffic(city):
 
     hour = hour + 2
 
+    return day, month, year, hour
+
+def traffic(city):
+    """we search traffic"""
+
+    day, month, year, hour = traffic_function()
 
     dep = ""
     point = ""
     normal = ""
     no_point = ""
 
-    #if matching departure == yes
+ 
     for i in DEAPARTURE:
         if (day, month) == i :
             dep = 'Oui'
@@ -165,7 +168,6 @@ def traffic(city):
             normal = 'Oui'
             dep = 'Non'
             
-
     for i in HEURE_POINT_WEEK:
 
         if i == hour:
@@ -173,11 +175,10 @@ def traffic(city):
             no_point = 'Non'
             break
 
-    #if matching point == yes
+
     if point == '':
         point = 'Non'
         no_point = 'Oui'
-
 
 
     return dep, point, normal, no_point
@@ -244,7 +245,7 @@ def industrial_area(city):
     Property = soup.find('table',attrs={"class":u"infobox_v2"})
     Property = str(Property)
    
-    #If city matching with polluting_pole we return yes
+
     for i in POLLUTING_POLE:
         a = str(Property).find(str(i))
         if a > 0:
@@ -256,24 +257,19 @@ def industrial_area(city):
 
 
 
-
 def traffic_lyon_request(path):
     """we search demonstration Lyon"""
     
-    liste = []
-    #We searching a tag from html page
     r = requests.get(path)
     page = r.content
     soup = BeautifulSoup(page, "html.parser")
     Property = soup.find('div',attrs={"class":u"news"})
 
-    #We trying to find this words for the circulation
+
     trafic = str(Property).find(str("circulation"))
     trafic1 = str(Property).find(str("dense"))
     trafic2 = str(Property).find(str("très dense"))
 
-
-    #We trying to find this words for demonstration
     manif = str(Property).find(str("Manifestation"))
     manif1 = str(Property).find(str("manifestation"))
 
@@ -283,29 +279,11 @@ def traffic_lyon_request(path):
     else:
         return 'non pas manifestation'
 
-    news = [str(Property)]
-    number = news[0][160:165]
-    number2 = []
-    for i in number:
-        
-        try:
-            i = int(i)
-            number2.append(i)
 
-        except:
-            pass
 
+
+def traffic_paris_function_request(path):
     
-def traffic_paris_request(path):
-    """we search demonstration Paris"""
-
-    
-    semaine = {'lundi':0, 'mardi':1, 'mercredi':2, 'jeudi':3, 'vendredi':4, 'samedi':5,
-               'dimanche':6}
-
-    liste = [[],[]]
-
-    #We using bs4
     date = datetime.datetime.now()
     day = date.day
     day_week = date.weekday()
@@ -318,16 +296,22 @@ def traffic_paris_request(path):
     soup = BeautifulSoup(page, "html.parser")
 
     Property = soup.find_all("table")
-   
+
 
     for i in Property:
         date = soup.find('span',attrs={"class":u"wday"})
     
+    return Property, date, day, day_week
 
 
+def traffic_paris_function_reuqest1(path):
+    
+    Property, date, day, day_week = traffic_paris_function_request(path)
+   
     date = str(date)
+    the_day  = ''
 
-    #from this site we searching demonstration during the week
+    
     monday = str(date).find("lundi")
     tuesday = str(date).find("mardi")
     wednesday = str(date).find("mercredi")
@@ -336,25 +320,31 @@ def traffic_paris_request(path):
     saturday = str(date).find("samedi")
     sunday = str(date).find("dimanche")
 
-    #we recup into variable demonstrations
     if monday > 0 :
-        a = 0
+        the_day = 0
     if tuesday > 0 :
-        a = 1
+        the_day = 1
     if wednesday > 0 :
-        a = 2
+        the_day = 2
     if thursday > 0 :
-        a = 3
+        the_day = 3
     if friday > 0 :
-        a = 4
+        the_day = 4
     if saturday > 0 :
-        a = 5
+        the_day = 5
     if sunday > 0 :
-        a = 6
+        the_day = 6
 
     numero_mois = [date]
     numero_mois = numero_mois[0][23:42]
 
+    return numero_mois, the_day, date, day, day_week
+
+    
+def traffic_paris_request(path):
+    """we search demonstration Paris"""
+
+    numero_mois, the_day, date, day, day_week = traffic_paris_function_reuqest1(path)
 
     num = []
    
@@ -366,10 +356,7 @@ def traffic_paris_request(path):
         except:
             pass
 
-    
-    #We matching current day and demonstration on agenda and
-    #return it
-    if a == day_week and num[0] == day:
+    if the_day == day_week and num[0] == day:
         return 'il y a une manifestation'
     else:
         return 'non pas manifestation'
@@ -380,65 +367,19 @@ def traffic_paris_request(path):
 def traffic_marseille_request(path):
     """we search demonstration Marseille"""
 
-    #Same techic cf  traffic_paris_request
-    r = requests.get(path)
+    numero_mois, the_day, date, day, day_week = traffic_paris_function_reuqest1(path)
 
-    date = datetime.datetime.now()
-    day = date.day
-    day_week = date.weekday()
-    
-    
-    page = r.content
-    soup = BeautifulSoup(page, "html.parser")
-
-    date = soup.find('div',attrs={"class":u"ml-agenda-date-page"})
+    num = []
    
-    date = str(date)
-    
-    a = 0
-    monday = str(date).find("lundi")
-    tuesday = str(date).find("mardi")
-    wednesday = str(date).find("mercredi")
-    thursday = str(date).find("jeudi")
-    friday = str(date).find("vendredi")
-    saturday = str(date).find("samedi")
-    sunday = str(date).find("dimanche")
-    
-    if monday > 0 :
-        a = 0
-    if tuesday > 0 :
-        a = 1
-    if wednesday > 0 :
-        a = 2
-    if thursday > 0 :
-        a = 3
-    if friday > 0 :
-        a = 4
-    if saturday > 0 :
-        a = 5
-    if sunday > 0 :
-        a = 6
+    for i in numero_mois:
+        try:
+            i = int(i)
+            num.append(i)
+            
+        except:
+            pass
 
-
-    number = soup.find('div',attrs={"class":u"ml-agenda-date-page"})
-    #print(numero)
-    number = str(number)
-    number = number[20:]
-    
-    try:
-        number = int(number)
-    except:
-        liste = []
-        number = str(number)
-
-        for i in number:
-            try:
-                i = int(i)
-                liste.append(i)
-            except:
-                pass
-    #print(a)
-    if a == day_week and liste[0] == day:
+    if the_day == day_week and num[0] == day:
         return 'il y a une manifestation'
     else:
         return 'non pas manifestation'
@@ -449,21 +390,21 @@ def exceptional_activity(city):
     
     if city == "lyon":
         path = "https://www.onlymoov.com/trafic/"
-        a = traffic_lyon_request(path)
+        finding = traffic_lyon_request(path)
 
-        return a
+        return finding
 
     elif city == "paris":
         path = "https://paris.demosphere.net/manifestations-paris"
-        a = traffic_paris_request(path)
+        finding = traffic_paris_request(path)
 
-        return a
+        return finding
 
     elif city == "marseille":
         path = "https://mars-infos.org/spip.php?page=agenda"
-        a = traffic_marseille_request(path)
+        finding = traffic_marseille_request(path)
 
-        return a
+        return finding
 
 
 
@@ -487,31 +428,39 @@ def socio(city):
 
 
 
-def plugs(city):
-    """From this site web we get plugs into this city"""
+
+
+
+
+
+
+def function_plugs_lyon(city):
     
-    if city == "lyon":
-        path = "https://www.moncoyote.com/fr/info-trafic-{}.html".format(city)
-      
-        r = requests.get(path)
+    path = "https://www.moncoyote.com/fr/info-trafic-{}.html".format(city)
+  
+    r = requests.get(path)
 
-        km = ''
+    km = ''
 
-        #BS4 Stuff
-        page = r.content
-        soup = BeautifulSoup(page, "html.parser")
-        Property = soup.find("span", {'class':'font38 green'})
+    page = r.content
+    soup = BeautifulSoup(page, "html.parser")
+    Property = soup.find("span", {'class':'font38 green'})
+    liste = []
+    print(Property)
+
+    return Property
+
+def plugs_lyon(city):
+
         liste = []
-        print(Property)
-
-        #Into this tag we searching
-        #str who K is present for Km
+        
+        Property = function_plugs_lyon(city)
+        
         for i in Property:
             for j in i:
                 if j == 'K' or j == 'k':
                     km = True
-        
-        
+
         try:
             for i in Property:
                 for j in i:
@@ -524,9 +473,7 @@ def plugs(city):
                     except:
                         pass
 
-            #If we have found this Km
-            #We trying to translate str to float for
-            #plugs
+
             liste = "".join(liste)
 
             try:
@@ -546,40 +493,56 @@ def plugs(city):
 
 
 
-    #Same technic cf Lyon
-    elif city == "paris":
+def plugs_paris():
     
-        path = "http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html#"
+    path = "http://www.sytadin.fr/sys/barometre_courbe_cumul.jsp.html#"
 
-        r = requests.get(path)
+    r = requests.get(path)
 
-        liste = []
+    liste = []
 
-        page = r.content
-        soup = BeautifulSoup(page, "html.parser")
+    page = r.content
+    soup = BeautifulSoup(page, "html.parser")
 
-        liste.append(str(soup))
-        plug = liste[0][1870:1890]
-        plug = str(plug)
+    liste.append(str(soup))
+    plug = liste[0][1870:1890]
+    plug = str(plug)
 
-        kmplug = []
-        liste = []
-        for i in plug:
-            try:
-                i = int(i)
-                kmplug.append(str(i))
-            except:
-                pass
-
-        kmplug = "".join(kmplug)
-        
+    kmplug = []
+    liste = []
+    
+    for i in plug:
         try:
-            kmplug = int(kmplug)
+            i = int(i)
+            kmplug.append(str(i))
+            
         except:
             pass
-        b = kmplug
-           
-        return b
+
+    kmplug = "".join(kmplug)
+
+    try:
+        kmplug = int(kmplug)
+    except:
+        pass
+    
+    b = kmplug
+       
+    return b
+
+def plugs(city):
+    """From this site web we get plugs into this city"""
+    
+    if city == "lyon":
+        plugs1 = plugs_lyon(city)
+        return plugs1
+
+
+
+    elif city == "paris":
+        plugs2 = plugs_paris()
+        return plugs2
+
 
 
 
