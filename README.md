@@ -1,5 +1,9 @@
 finir le python,
 
+comprend pk y'a aucune donnée qui match y'en a pourtant des 100 enes
+
+erruption linux
+
 PADDING, margin les textes coupes
 
 une fois python faire le js olalalal dis toi que c comme python avec des arcs
