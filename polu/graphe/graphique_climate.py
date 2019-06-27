@@ -1,3 +1,7 @@
+"""We call data from database
+we recuperate all data from one condition
+and create a matplolib graph"""
+
 import matplotlib
 matplotlib.use('Agg')
 
@@ -11,12 +15,19 @@ import os
 import shutil
 from .function_graph import new
 
+
+from .CONFIG import DATABASE
+from .CONFIG import HOST
+from .CONFIG import USER
+from .CONFIG import PASSWORD
+
 def visuuu_climat(ville):
+    """Here we call database for take climate"""
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696') 
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
 
     cursor = conn.cursor()
     
@@ -34,7 +45,7 @@ def visuuu_climat(ville):
 
 
 def traitementtt_climat(donnée):
-
+    """We split it into list who corresponding to data"""
 
     inf_zero = [10]
     zero_dix = [10]
@@ -69,6 +80,8 @@ def traitementtt_climat(donnée):
 
         print(i)
 
+    
+    #We make an average
     data = len(inf_zero) + len(zero_dix) + len(onze_vingt) + len(vingtun_trente) + len(trente_un_quarante) + len(supp_quarante)
     print(data)
     
@@ -103,7 +116,7 @@ def diagramme_climattt(donnée_inf_zero, donnée_zero_dix,
                       er_vingtun_trente, er_assez_trente_un_quarante,
                       er_supp_quarante, save):
 
-
+    """We create a graph and return it"""
     plt.bar(range(6), [donnée_inf_zero, donnée_zero_dix,
                         donnée_onze_vingt,
                         donnée_vingtun_trente, donnée_trente_un_quarante,
