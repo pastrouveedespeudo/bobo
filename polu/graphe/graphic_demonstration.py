@@ -1,3 +1,7 @@
+"""We call data from database
+we recuperate all data from one condition
+and create a matplolib graph"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab
@@ -9,12 +13,20 @@ import shutil
 from .function_graph import moyenne
 from .function_graph import new
 
+from .CONFIG import DATABASE
+from .CONFIG import HOST
+from .CONFIG import USER
+from .CONFIG import PASSWORD
+
+
 def visu_demonstration(city):
-    
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')  
+    """Here we call database for take demonstration"""
+
+
+    conn = psycopg2.connect(database=DATABASE,
+                             user=USER,
+                             host=HOST,
+                             password=PASSWORD)  
 
     cursor = conn.cursor()
     
@@ -32,6 +44,8 @@ def visu_demonstration(city):
 
 
 def treatement_demonstration(data_demonstration):
+    """We split it into list who corresponding to data"""
+    
     demonstration = []
     no_demonstration = []
     
@@ -50,7 +64,7 @@ def treatement_demonstration(data_demonstration):
     data = len(demonstration) + len(no_demonstration)
     print(data)
 
-
+    #We make an average
     data_demon = moyenne(demonstration)
     data_no_demon = moyenne(no_demonstration)
 
@@ -62,7 +76,7 @@ def treatement_demonstration(data_demonstration):
 def diagram_demonstration(data_demons, data_no_demons,
               error_demons, error_no_demons, save):
 
-
+    """We create a graph and return it"""
     
     plt.bar(range(2), [data_demons, data_no_demons],
                         width = 0.1, color = 'black',
