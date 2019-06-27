@@ -1,161 +1,226 @@
-{% include "barre_gauche_prediction.html" %}
-{% block content %}
-{% endblock %}
+
+<link rel="stylesheet" type="text/css" href="/static/css/habit.css" media="all" />
 
 
-<link rel="stylesheet" type="text/css" href="/static/css/prediction.css" media="all" />
-
-  <style>
-    #text{
-      float:right;
-      margin-right:250px;
-      width:200px;
-    }
-    #conteneur{
-      margin-top:450px;
-    }
-    #choix{
-      text-align:center;
-      font-size:20px;
-    }
-    #pred{
-      text-align:center;
-      font-size:20px;
-    }
-  </style>
-
-
-
-
-  <div id='text'>
-    <h1>La prédiction</h1><br>
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     
     
+    <!-- Body Section -->
+    <body id="page-top">
+
+        
+       <!-- Navebarre Section -->
+        <!DOCTYPE html>
+  <html lang="fr">
+
+    <!-- Head section - Loading CDN -->
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="jb" content="">
+      <br><br>
+      <title>Magazine virtuel</title>
+
+      <!-- Font Awesome Icons -->
+      <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+      <!-- Plugin CSS -->
+      <link href="/static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="/static/css/home2.css">
+
+      <!-- Theme CSS - Includes Bootstrap -->
+      <link href="/static/css/creative.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+      <link rel="stylesheet" type="text/css" href="/static/css/habit.css" media="all" />
+     
+
+
+      
+    </head>
+
+    <body>
+
     
-  </div>
-  
+    <style>
+      body {
+          background:url('/static/v2/magasins.jpg') no-repeat fixed center;
+          -webkit-background-size: cover;
+          background-size: cover;
+        }
+        #logo{
+            position:fixed;
+            float:left;
+            margin-left:10px;
+            margin-top:-50px;
+            
+        }
+        
+        #shut{
+            font-size:300%;
+            color:white;
+            
+    
+        }
+        #notshut{
+            font-size:300%;
+            display:none;
+            color:white;
+        }
+        #MENU{
+            float:left;
+            margin-left:50px;
+            position:fixed;
+        }
+    </style>
+
+        <img id="logo" src="/static/v2/logo2.png">
+
+        
+        <div id="MENU">
+            <i class="fas fa-angle-right" id="notshut" onclick="notshutdown()" style="z-index: 1;position:static;"></i>
+            <i class="fas fa-angle-left" id="shut" onclick="shutdown()"></i>
+
+            <br><br>
+            <div id='contain' style='position:absolute'>
+                <p id="menu_in_menu"
+                    onMouseOver = "sous_menu1('menu_in_menu', 'hrefmenu', '#91A8A4')"         
+                    onMouseOut = "sous_menu2('menu_in_menu', 'hrefmenu')">
+                    <a href="/photo/navebarre_habits" id="hrefmenu"><strong>Le Menu</strong></a>
+                </p>
+                
+            </div><br><br>
 
 
-  <!-- Prediction Section -->
-  <div>
+            <div id='contain1' style='position:absolute'>
+                <p id="sommaire"
+                    onMouseOver = "sous_menu1('sommaire', 'hrefsommaire', '#91A8A4')"         
+                    onMouseOut = "sous_menu2('sommaire', 'hrefsommaire')">
+                    <a href="/" id="hrefsommaire"><strong>Le Sommaire</strong></a>
+                </p>
+                
+            </div><br><br>
+
+
+
+            <div id='contain2' style='position:absolute'>
+                <p id="menu1"
+                    onMouseOver = "sous_menu1('menu1', 'tendancee', '#91A8A4')"         
+                    onMouseOut = "sous_menu2('menu1', 'tendancee')">
+                    <a href="/photo/habits#nos_info_habits" id="tendancee"><strong>
+                    Les vetements</strong></a>
+                </p>
+                
+            </div><br><br>
+              
+
+            <div id='contain3' style='position:absolute'>
+                <p id="menu2"
+                    onMouseOver = "sous_menu1('menu2', 'reseaux', '#91A8A4')"         
+                    onMouseOut = "sous_menu2('menu2', 'reseaux')">
+                    <a href="/photo/habits#reso" id="reseaux"><strong>
+                    Nos réseaux</strong></a>
+                </p>
+            </div><br><br>
+
+            <div id='contain4'>
+                <p id="menu3"
+                    onMouseOver = "sous_menu1('menu3', 'contacter', '#91A8A4')"         
+                    onMouseOut = "sous_menu2('menu3', 'contacter')">
+                    <a href="/#my_project" id="contacter"><strong>
+                    Nous contacter</strong></a>
+                </p>
+            </div><br>
+
+        </div>
+        
+
+
+    <script>
+        function sous_menu1(div, text, couleur1){
+            document.getElementById(div).style.width = '130%';
+            document.getElementById(div).style.background = couleur1;
+            document.getElementById(div).style.border = "1px solid";
+            document.getElementById(text).style.color = "black";
+
+        };
+        function sous_menu2(div, text){
+            document.getElementById(div).style.width = '100%';
+            document.getElementById(div).style.background = "transparent";
+            document.getElementById(div).style.border = "";
+            document.getElementById(text).style.color = "white";
+        };
+
+        function shutdown(){
+            document.getElementById('sommaire').style.display = "none";
+            document.getElementById('menu_in_menu').style.display = "none";
+            document.getElementById('menu1').style.display = "none";
+            document.getElementById('menu2').style.display = "none";
+            document.getElementById('menu3').style.display = "none";
+            document.getElementById('shut').style.display = "none";
+            document.getElementById('notshut').style.display = "block";
+           
+        };
+
+        function notshutdown(){
+            document.getElementById('sommaire').style.display = "block";
+            document.getElementById('menu_in_menu').style.display = "block";
+            document.getElementById('menu1').style.display = "block";
+            document.getElementById('menu2').style.display = "block";
+            document.getElementById('menu3').style.display = "block";
+            document.getElementById('shut').style.display = "block";
+            document.getElementById('notshut').style.display = "none";
+        };
+
+
+    </script>
+
+
+
 
 
 
 <style>
-      #lyon_button:hover,
-      #paris_button:hover,
-      #marseille_button:hover{
-        background:#ccccff;
-      }
-      #marseille_button{
-        background-color: transparent;
-        border: 1px solid black;
-        color: black;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-      }
-      #paris_button{
-        background-color: transparent;
-        border: 1px solid black;
-        color: black;
-        padding: 12px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-      }
-      #lyon_button{
-        background-color: transparent;
-        border: 1px solid black;
-        color: black;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-      }
-      #graphes_min{
-        float:right;
-      }
-      #separate_line1,
-      #separate_line2,
-      #separate_line3{
-        height:2px;
-        width:25px;
-        background:black;
-      }
-      #p_ville1,
-      #p_ville2,
-      #p_ville3{
-        font-size:2vw;
-        text-align: center;
-      }
-      #marseille1,
-      #paris1,
-      #lyon1{
-        border:none;
-        background:transparent;
-      }
-      input{
-        border:none;
-        background:transparent;
-      }
-      #choix{
-        height:50px;
-      }
-      a{
-        color:black;
-        text-decoration:none;
-      }
-      a:hover{
-        color:black;
-      }
-      a:visited{
-        
-      }
-    </style>
 
 
-      <br><br><br><br><br><br>
-      
-      <div class="container" id="conteneur">
-        <div class="row">
+#tendancee{
+    color:white;
 
-          <div class="col-sm" id='p_ville1'>
+}
 
-            <center><div id="info1" style='width:100px; height:50px;'></div></center>
+#book{
+    color:white;
 
-            <center><div id='separate_line1'></div>
+}
 
-            <input type='button' id='lyon'
-              onmouseover="one('separate_line1', 'info1')"
-              onmouseout="two('separate_line1', 'info1')"
-              value='Lyon'></center>
+#reseaux{
+    color:white;
 
+}
 
-          </div>
+#contacter{
+    color:white;
+
+}
+
+#salle{
+    color:white;
+
+}
+
+#hrefmenu{
+    color:white;
+
+}
+
+#hrefsommaire{
+    color:white;
+
+    
+}
 
 
 
@@ -165,415 +230,1500 @@
 
 
 
-          
-          <div class="col-sm" id='p_ville2'>
+#titre_menu{
+    font-size:1.5em;
+}
+#menu1{
+    font-size:1em;
+}
 
-            <center><div id="info2" style='width:200px; height:50px;'></div></center>
-            
-            <center><div id='separate_line2'></div>
-            
-            
-            <input type='button' id='marseille'
-            onmouseover="one('separate_line2', 'info2')"
-              onmouseout="two('separate_line2', 'info2')"
-              value='Marseille'>
-            </p></center>
+#menu2{
+    font-size:1em;
+}
 
-            
-          </div>
+#menu3{
+    font-size:1em;
+}
 
+#menu4{
+    font-size:1em;
+}
 
-          
-          <div class="col-sm" id='p_ville3'>
+#menu6{
+    font-size:1em;
+}
 
 
-            <center><div id="info3" style='width:100px; height:50px;'></div></center>
+#menu{
+    font-size:1em;
+}
 
-      
-            <center><div id='separate_line3'></div>
-            
-            <input type='button' id='paris'
-                onmouseover="one('separate_line3', 'info3')"
-                onmouseout="two('separate_line3', 'info3')"
-                value='Paris'>
-            </p></center>
+#sommaire{
+    font-size:1em;
+}
 
-            
-          </div>
-         </div>
 
-   
-        <br>
-        <p id='choix'></p>
-        <center><p id='chargement' style='display:none'><img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80'></p></center>
-        <div id='pred'></div>
 
-          
-        </div>
-
-        <div><br>
+a:hover{
+    text-decoration: none;
+    color:white;
+}
 
 
 
 
-  </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  
+#hreftendance{
+    color:white;
+;
+}
+
+#hrefcoiffure{
+    color:white;
+}
+
+#hrefcoiffeur{
+    color:white;
+}
+
+#hrefgym{
+    color:white;
+}
+
+#hrefhabit{
+    color:white;
+}
+
+#hrefsommaire{
+    color:white;
+}
 
 
- 
+
+#hrefsommaire:hover{
+    color:white;
+}
+#hreftendance:hover{
+    color:black;
+}
+
+#hrefcoiffure:hover{
+    color:black;
+}
+
+#hrefcoiffeur:hover{
+    color:black;
+}
+
+#hrefgym:hover{
+    color:black;
+}
+
+#hrefhabit:hover{
+    color:black;
+}
+
+
+#hrefmenu:hover{
+    color:black;
+}
+
+#hrefsommaire:hover{
+    color:black;
+}
 
 
 
-  <!-- Explication Section -->
-  <style>
-    #section_info{
-      width:700px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1500px) and (max-width:2000px) {
+  #MENU {
+    margin-top:150px;
+    font-size:1.4vw ;
   }
-  </style>
-  <center>
-  <section class="page-section bg-dark text-white" id='section_info'>
-    <div class="container">
-      <h2 class="text-center mt-0" style='color:black;'>Nos Prévoyances</h2>
-      <br><br>
-      <div class="row">
-        <div class="col-lg-8 col-md-6 text-center" id="resumText">
-         <h3>Son fonctionnement</h3>
-         <br>
-         <p id="resum">Afin de faire notre prévoyance nous avons récupéré à partir de différentes sources
-         plusieurs informations que vous pouvez voir sous la rubrique sos données.<br><br>
-         Chaque jour et à chaque heure par une tache cron nous avons alimenté notre base de données.
-         Nous récupérons alors chaque condition en temps réel lorsque vous appuyez sur une des entrées.
-         Nous les comparons à notre base de données. Faisons ressortir toutes les situations identiques
-         à la situation présente et récupérons les données de pollution lui associé.
-         Puis en faisons une moyenne.</p>
-        </div>
-        <div class="col-lg-8 col-md-6 text-center" id="resumText">
-        <br><br>
-         <h3>Son interet</h3>
-         <br>
-         <p id="resum">Par cela nous pouvons vous tenir informé du taux de pollution dans ces villes. Mais aussi
-         de pouvoir comprendre d'où vient la pollution/<br><br>
-         Bien sur, nos données peuvent être fausse et ne sont pas complètes.</p>
-        </div>
-        <div class="col-lg-8 col-md-6 text-center" id="resumText">
-         <br><br>
-         <h3>Son amélioration</h3>
-         <br>
-         <p id="resum">Bien sur, nos prédictions ne semblent pas être fiables.
-         Par le manque de données et de connaissance en pollution et en développement.<br><br>
-         Nous avons tenté une approche où l'on coterait chaque condition mais nous n'avons pas assez
-         de données pour le moment.</p>
+}
+
+
+
+@media screen and (min-width: 1201px) and (max-width:1500px) {
+    #logo {
+        margin-top:-30px;
+        margin-left:30px;
+    }
+    
+  #MENU {
+    padding-top:150px;
+    font-size:1.3vw;
+  }
+}
+
+
+
+
+@media screen and (min-width: 1000px) and (max-width:1200px) {
+    #logo {
+        margin-top:-30px;
+        margin-left:30px;
+    }
+    
+  #MENU {
+    padding-top:110px;
+    font-size:1.3vw;
+    
+  }
+}
+
+
+
+@media screen and (min-width: 850px) and (max-width:999px) {
+    #logo {
+        margin-top:-30px;
+        margin-left:30px;
+    }
+    
+  #MENU {
+    padding-top:150px;
+    font-size:1.3vw;
+    
+  }
+}
+
+
+
+
+
+@media screen and (min-width: 801px) and (max-width:850px) {
+    #logo {
+        margin-top:-30px;
+        margin-left:30px;
+    }
+    #MENU{
+        margin-top:100px;
+    }
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width:800px) {
+    #logo {
+        margin-top:-30px;
+        margin-left:30px;
+    }
+    #MENU{
+        margin-top:100px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
+
+      <!-- Title Section -->
+      <header>
+
+
+      
+        <input type='button' value='Menu' id="menu_res">
+
+     <style>
+        #les_textes{
+            font-size:1.3vw;
+            margin-right:50px;
+            height:100%;
+         }
+     </style>
+
+
+
+      <div id="les_textes">
+
+          
+          <p id="resum_titre">
+            <span style='float:left;'>Titre</span><br>
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            <br><br><br><br>
+
+
+          
+          
+            <span style='float:left;'>Titre</span><br>
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          </p>
+     
+      </div>
+     
+
+
+
+
+
+
+      
+      
+
+      
+      </header>
+
+
+
+
+
+
+        <script>
+        
+            function shutdown_info(div, logo1, logo2, div1, div2, div3, logo11, logo22, logo33){
+                document.getElementById(div).style.display = 'none';
+                document.getElementById(logo1).style.display = 'none';
+                document.getElementById(logo2).style.display = 'block';
+                
+                document.getElementById(div1).style.display = 'block';
+                document.getElementById(div2).style.display = 'block';
+                document.getElementById(div3).style.display = 'block';
+                document.getElementById(logo11).style.display = 'block';
+                document.getElementById(logo22).style.display = 'block';
+                document.getElementById(logo33).style.display = 'block';
+            };
+            function no_shutdown_info(div, logo1, logo2, div1, div2, div3, logo11, logo22, logo33){
+                document.getElementById(div).style.display = 'block';
+                document.getElementById(logo1).style.display = 'block';
+                document.getElementById(logo2).style.display = 'none';
+                
+                document.getElementById(div1).style.display = 'none';
+                document.getElementById(div2).style.display = 'none';
+                document.getElementById(div3).style.display = 'none';
+                document.getElementById(logo11).style.display = 'none';
+                document.getElementById(logo22).style.display = 'none';
+                document.getElementById(logo33).style.display = 'none';
+                
+            };
+        </script>
+
+
+
+
+
+
+
+
+
+      <style>
+        #notshut_color{
+            width:300%;
+            float:right;
+            color:white;
+        }
+        #shut_color{
+            font-size:300%;
+            float:right;
+            color:white;
+        }
+        #info_oups{
+            color:white;
+            font-size:1.3vw;
+            text-shadow:1px 1px black;
+        }
+        #shut_info{
+            font-size:250%;
+            color:white;
+            display:none;
+        }
+        #no_shut_info{
+            font-size:300%;
+            color:white;
+            
+        }
+        #info_p{
+            color:white;
+        }
+        #no_shut_size,
+        #no_shut_tshirt,
+        #no_shut_color_pantalon,
+        #no_shut_color_hair{
+            font-size:300%;
+            color:white;
+            right:100;
+            position:absolute;
+            
+            
+        }
+        #shut_size,
+        #shut_tshirt,
+        #shut_color_pantalon,
+        #shut_color_hair{
+            font-size:300%;
+            color:white;
+            right:100;
+            position:absolute;
+            display:none;²
+        }
+        #p_hair_color{
+            font-size:1em;
+            color:white;
+            float:right;
+            width:200px;
+        }
+        #pantaloune{
+            float:right; 
+            height:100px;
+            width:100px;
+        }
+        #pantalon_div{
+            background:url("/static/img/parquet1.jpg");
+            border:3px solid black;
+            border-radius:50px;
+            width:150px;
+            margin-left:20%;
+        }
+        #Pantalon{
+            border:3px solid black;
+            font-family:segoe print;
+        }
+        #info_oups{
+            font-size:1em;
+        }
+        #blonde,
+        #chatain,
+        #rousse,
+        #noire,
+        #brune{
+          border:3px solid black;
+          width:80px;
+        }
+        
+        #blonde:hover{
+            background:#424874;
+       
+        }
+        #chatain:hover{
+            background:#04724D;
+      
+        }
+        #rousse:hover{
+            background:#4F6272;
+      
+        }
+        #noire:hover{
+            background:#985F99;
+        
+        }
+        #brune:hover{
+          background:#DB5461;
+      
+        }
+        
+      </style>
+        
+    
+
+      <section style='font-size:1.3vw;'>
+        <div class="container text-center" style='font-size:1.3vw;'>
+          <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+
+                <div style='height:100px;'>
+                    <div id="CONTENEUR_INFO">
+                        <p id='info_oups'><strong><i>Appuyez sur votre couleur
+                        de cheveux, et choisissez une catégorie d'habit</i></strong></p><br><br>
+                        <p id='info_p'><strong>Les informations des habits</strong></p>
+                        <i class="fas fa-angle-down" id="shut_info"
+                        onclick="no_shutdown_info('info_cloths_like_price', 'no_shut_info', 'shut_info')"></i>
+                        <i class="fas fa-angle-up" id="no_shut_info"
+                        onclick="shutdown_info('info_cloths_like_price', 'no_shut_info' , 'shut_info')"></i>
+                    </div>
+
+
+                    <center>
+                      <div id="info_cloths_like_price"style="width:auto;max-width:300px;min-height:80px;"><br>
+                          <strong><center><p id="nos_info_habits">Nos info habits</p></center></strong>
+                          <div id='infofo'>
+                            <center><p id='mage' style='width:100%;'></p></center>
+                            <p id='name'></p>
+                            <p id='store'></p>
+                            <p id='online'></p>
+                            <p id='price'></p>
+                            <p id='stock'></p>
+                          </div>
+                      </div><br>
+                     
+                    </center>
+                </div><br>
+
+
+              <style>
+                #barre{
+                    position:absolute;
+                    right:-10;
+                    width:200px;
+                    margin-top:50px;
+                    height:500px;
+                  }
+                @media screen and (min-width: 1500px) and (max-width:2000px) {
+                  #barre{
+                    clear:right;
+                    margin-right:-100px;
+                    font-size:1vw;
+                    
+                   }
+                    #name,
+                    #store,
+                    #online,
+                    #price,
+                    #stock{
+                        font-size:vw;
+                    }
+                    #CONTENEUR_INFO{
+                        font-size:vw;
+                    }
+                    #nos_info_habits{
+                        font-size:1vw;
+                    }
+                    #les_textes{
+                        font-size:1vw;
+                        margin-right:200px;
+                    }
+                    #responsive_cont{
+                        display:none;
+                    }
+                    
+                    
+                }
+
+
+
+                @media screen and (min-width: 1377px) and (max-width:1500px) {
+                  #barre{
+                    margin-right:-350px;
+                    font-size:1.3vw;
+                    }
+                  #responsive_cont{
+                        display:none;
+                    }
+                }
+
+
+                @media screen and (min-width: 1301px) and (max-width:1377px) {
+                  #barre{
+                    margin-right:-50px;
+                    font-size:1.3vw;
+                    
+                    }
+                  #responsive_cont{
+                        display:none;
+                    }
+                }
+
+                @media screen and (min-width: 1099px) and (max-width:1300px) {
+                  #barre{
+                    margin-right:-30px;
+                    font-size:1.3vw;
+                    
+                    }
+                  #responsive_cont{
+                        display:none;
+                        
+                    }
+                }
+                
+                @media screen and (min-width: 1000px) and (max-width:1099px) {
+                  #barre{
+                    font-size:1.3vw;
+                    margin-right:10px;
+                    
+                    }
+                  #responsive_cont{
+                        display:none;
+                    }
+                }
+                @media screen and (min-width: 950px) and (max-width:990px) {
+                  #barre{
+                    right:-100;
+                    font-size:1.3vw;
+                    
+                    }
+                  #responsive_cont{
+                        display:none;
+                    }
+ 
+                }
+                @media screen and (min-width: 990px) and (max-width:1000px) {
+                  #barre{
+                    right:10;
+                    font-size:1.3vw;
+                    
+                    }
+                  #responsive_cont{
+                        display:none;
+                    }
+                }
+                @media screen and (min-width: 950px) and (max-width:990px) {
+                  #barre{
+                    right:-100;
+                    font-size:1.3vw;
+                    }
+                  #responsive_cont{
+                        display:none;
+                    }
+ 
+                }
+                @media screen and (min-width: 800px) and (max-width:950px) {
+                  #barre{
+                    right:-100;
+                    font-size:1.3vw;
+                  }
+                  #responsive_cont{
+                        display:none;
+                  }
+                }
+                @media screen and (min-width: 500px) and (max-width:800px) {
+                  #barre{
+                    display:none;
+                    }
+                    #name,
+                    #store,
+                    #online,
+                    #price,
+                    #stock{
+                        font-size:3vw;
+                    }
+                    #CONTENEUR_INFO{
+                        font-size:3vw;  
+                    }
+                    #nos_info_habits{
+                        font-size:3vw;
+                    }
+                    #les_textes{
+                        font-size:3vw;
+                        margin-right:-100px;
+                    }
+                    #page-top{
+                        overflow-x: hidden;
+                    }
+                }
+                  
+                @media screen and (min-width: 0px) and (max-width:500px) {
+                  #barre{
+                    display:none;
+                    }
+                    #name,
+                    #store,
+                    #online,
+                    #price,
+                    #stock{
+                        font-size:3vw;
+                    }
+                    #CONTENEUR_INFO{
+                        font-size:3vw;
+                    }
+                    #nos_info_habits{
+                        font-size:3vw;
+                    }
+                    #les_textes{
+                        font-size:3vw;
+                        margin-right:-100px;
+                    }
+                    #page-top{
+                        overflow-x: hidden;
+                    }
+                }
+
+
+
+                
+                #titre{
+                    float:right;
+                    margin-right:260px;
+                    color:white;
+                    text-shadow:1px 1px black;
+                }
+                
+                #resum_titre{
+                    float:right;
+                    margin-right:50px;
+                    color:white;
+                    font-size:1.2em;
+                    width:300px;
+                    text-align:center;
+                    text-shadow:1px 1px black;
+                }
+                @media screen and (min-width: 990px) and (max-width:1000px) {
+                  #resum_titre{
+                    right:10;
+                    font-size:1.6vw;
+                    }
+                }
+                @media screen and (min-width: 750px) and (max-width:800px) {
+                  #resum_titre{
+                    margin-right:150;
+                    font-size:1.6vw;
+                    }
+                }
+                @media screen and (min-width: 0px) and (max-width:750px) {
+                #menu_res{
+                    background:transparent;
+                    border:transparent;
+                    color:white;
+                }
+                #menu_res:hover{
+                    border:1px solid black;
+                }
+
+
+                
+              </style>
+            
+                <div id="barre">
+
+         
+                    <p id="p_hair_color"><strong>Les couleurs de cheveux</strong></p><br><br>
+                    
+                    <i class="fas fa-angle-right" id="shut_color_hair"
+                    onclick="shutdown_info('input_color_hair', 'shut_color_hair', 'no_shut_color_hair',
+                                            'p_panta_p', 'tshirt_p_p', 'p_size_p',
+                                            'no_shut_color_pantalon', 'no_shut_tshirt', 'no_shut_size')"></i>
+                    
+                    <i class="fas fa-angle-left" id="no_shut_color_hair"
+                    onclick="no_shutdown_info('input_color_hair', 'shut_color_hair', 'no_shut_color_hair',
+                                              'p_panta_p', 'tshirt_p_p', 'p_size_p',
+                                              'no_shut_color_pantalon', 'no_shut_tshirt', 'no_shut_size')"></i>
+                    <br><br><br><br>
+
+                    <div id="input_color_hair" style='float:right;margin-right:50px;display:none;border:10px solid transparent;width:100px;' >
+                      <input type='button' id='brune' value="Brune" onclick='coul("brune")'><br><br>
+                      <input type='button' id='blonde' value='Blonde' onclick='coul("blonde")'><br><br>
+                      <input type='button' id='chatain' value='Chatain' onclick='coul("chatain")'><br><br>
+                      <input type='button' id='rousse' value='Rousse' onclick='coul("rousse")'><br><br>
+                      <input type='button' id='noire' value='Noire' onclick='coul("noire")'><br><br>
+                    </div>
+            
+
+
+                    <div>
+                    <p id="p_panta_p" style='color:white;'><strong>Pantalon</strong></p>
+
+                    <i class="fas fa-angle-right" id="shut_color_pantalon"
+                    onclick="shutdown_info('div_pantalon_menu', 'shut_color_pantalon', 'no_shut_color_pantalon',
+                                            'p_hair_color', 'tshirt_p_p', 'p_size_p',
+                                            'no_shut_size', 'no_shut_tshirt', 'no_shut_color_hair')"></i>
+                    
+                    <i class="fas fa-angle-left" id="no_shut_color_pantalon"
+                    onclick="no_shutdown_info('div_pantalon_menu', 'shut_color_pantalon', 'no_shut_color_pantalon',
+                                            'p_hair_color', 'tshirt_p_p', 'p_size_p',
+                                            'no_shut_size', 'no_shut_tshirt', 'no_shut_color_hair')"></i>
+                    <br><br><br>
+                    </div>
+                    <div id="div_pantalon_menu" style='display:none;width:100px;margin-left:50px;'>
+                        <input type='button' value='Salopette' id='salopette'
+                            style=" border:3px solid black;font-family:segoe print;"
+                            onclick='voir_salopette()'><br><br>
+
+                         <input type='button' value='Jeans' id='jean' 
+                            style="border:3px solid black;font-family:segoe print;"
+                            onclick='voir_jean()'><br><br>
+
+                         <input type='button' value='Toile' id='toile'
+                            style="border:3px solid black;font-family:segoe print;"
+                            onclick='voir_toile()'><br><br>
+                    </div>
+                                               
+
+                    <style>
+                    
+                        #salopette:hover{
+                            background:#424874;
+                   
+                        }
+                        #jean:hover{
+                            background:red;
+                     
+                        }
+                        #toile:hover{
+                            background:lightblue;
+                   
+                        }
+                    </style>
+                
+                    <p id='tshirt_p_p' style='color:white;border:10px solid transparent;'><strong>T-shirt</strong></p>
+
+
+                    <i class="fas fa-angle-left" id="no_shut_tshirt"
+                    onclick="no_shutdown_info('div_input_tshirt', 'shut_tshirt', 'no_shut_tshirt',
+                                                'p_hair_color', 'p_panta_p', 'p_size_p',
+                                                'no_shut_size', 'no_shut_color_pantalon', 'no_shut_color_hair')"></i>
+                    
+                    <i class="fas fa-angle-right" id="shut_tshirt"
+                    onclick="shutdown_info('div_input_tshirt', 'shut_tshirt', 'no_shut_tshirt',
+                                            'p_hair_color', 'p_panta_p', 'p_size_p',
+                                            'no_shut_size', 'no_shut_color_pantalon', 'no_shut_color_hair')"></i>
+                    <br><br><br>
+                    
+
+                    <div id="div_input_tshirt" style='display:none;'>                                                    
+                        <input type='button' value='manche longue' id='longue'
+                            style=" border:3px solid black;font-family:segoe print;"
+                            onclick='voir_t_longue()'><br><br>
+                                                                                                                               
+                        <input type='button' value='manche courte' id='courte'
+                            style="border:3px solid black;font-family:segoe print;"
+                            onclick='voir_t_courte()'><br><br>
+                                                                         
+                                                                        
+                        <input type='button' value='laine' id='laine'
+                            style="border:3px solid black;font-family:segoe print;"
+                            onclick='voir_t_laine()'><br><br>
+                    </div>                                         
+            
+
+                
+                    <style>
+                        #longue:hover{
+                            background:green;
+                    
+                        }
+                        #courte:hover{
+                            background:yellow;
+                       
+                        }
+                        #laine:hover{
+                            background:red;
+                        
+                        }
+                    </style>
+
+
+
+
+
+
+                    <p id='p_size_p' style='color:white;border:10px solid transparent;'><strong>Modifier la taille</strong></p>  
+
+                
+                    <i class="fas fa-angle-left" id="no_shut_size" 
+                    onclick="no_shutdown_info('input_size_bro', 'shut_size', 'no_shut_size',
+                                            'p_hair_color', 'p_panta_p', 'tshirt_p_p',
+                                            'no_shut_tshirt', 'no_shut_color_pantalon', 'no_shut_color_hair')"></i>
+                    
+                    <i class="fas fa-angle-right" id="shut_size"
+                    onclick="shutdown_info('input_size_bro', 'shut_size', 'no_shut_size',
+                                            'p_hair_color', 'p_panta_p', 'tshirt_p_p',
+                                            'no_shut_tshirt', 'no_shut_color_pantalon', 'no_shut_color_hair')"></i>
+                    <br><br><br>
+
+
+                    <div id="input_size_bro" style='display:none;'>
+                      <input type='button' value='Ajouter de la longueur?' id="add1" style='width:200px;'
+                          onclick='ajout_longueur()'><br><br>
+                    
+          
+                      <input type='button' value='Ajouter de la largeur?' id="add2" style='width:200px;'
+                        onclick='ajout_largeur()'><br><br>
+                  
+               
+                      <input type='button' value='Enlever de la longueur?' id="no_add1" style='width:200px;'
+                        onclick='enlever_longueur()'><br><br>
+               
+              
+                      <input type='button' value='Enlever de la largeur?' id="no_add2" style='width:200px;'
+                        onclick='enlever_largeur()'><br><br>
+                   </div>
+
+
+                    <style>
+                        #add1:hover{
+                            background:magenta;
+             
+                        }
+                        #add2:hover{
+                            background:orange;
+                     
+                        }
+                        #no_add1:hover{
+                            background:red;
+                      
+                        }
+                        #no_add2:hover{
+                            background:gray;
+                    
+                        }
+                    </style>
+
+
+
+                    
+                </div>
+         
+                <br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br>
+            </div>
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+              <div id='couleur' style='display:none;'></div>
+              <div id='info_mode'><br><br></div>
+              <div id='recherche' style='display:none;' value=''></div>
+              <div id='profil'></div>
+              <div id ='ess'></div>
+
+              <!-- Clothes Jean White Section -->
+              <div class='container' id='habit_bas_blanc'>
+                <div class='row'>
+
+                    <div id='1' onclick='nom_image("bb1")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/1.png' width='200' height ='250' id='bb1'
+                      style='display:none;'>
+                    </div>
+                    <div id='2' onclick='nom_image("bb2")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/2.2.png' width='200' height ='300' id='bb2'
+                      style='display:none;'>
+                    </div>
+                    <div id='3' onclick='nom_image("bb3")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/3.png'  width='250' height ='300' id='bb3'
+                      style='display:none;'>
+                    </div>
+                    <div id='4' onclick='nom_image("bb4")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/4.png'  width='240' height ='300' id='bb4'
+                      style='display:none;'>
+                    </div>
+                    <div id='5' onclick='nom_image("bb5")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/5.png'  width='250' height ='300' id='bb5'
+                      style='display:none;'>
+                    </div>
+                    <div id='6' onclick='nom_image("bb6")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/6.png'  width='250' height ='250' id='bb6'
+                      style='display:none;'>
+                    </div>
+                    <div id='7' onclick='nom_image("bb7")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/7.png'  width='200' height ='300' id='bb7'
+                      style='display:none;'>
+                    </div>
+                    <div id='8' onclick='nom_image("bb8")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/8.png'  width='300' height ='250' id='bb8'
+                      style='display:none;'>
+                    </div>
+                    <div id='9' onclick='nom_image("bb9")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/9.png'  width='200' height ='250' id='bb9'
+                      style='display:none;'>
+                    </div>
+                    <div id='10' onclick='nom_image("bb10")'>
+                    <img src='/static/img/portfolio/vetement/femme/bas_blanc/10.png'  width='300' height ='250' id='bb10'
+                      style='display:none;'>
+                    </div>
+
+                </div>
+              </div>
+
+
+              <!-- Clothes Jean Blue Section -->
+              <div class='container' id='habit_bas_bleu'>
+                <div class='row'>
+
+                    <div id='11' onclick='nom_image("bbl1")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/1.png' width='150' height='250' id='bbl1'
+                        style='display:none;'>
+                    </div>
+                    <div id='22' onclick='nom_image("bbl2")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/2.png' width='150' height='250' id='bbl2'
+                        style='display:none;'>
+                    </div>
+                    <div id='33' onclick='nom_image("bbl3")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/3.png' width='190' height='250' id='bbl3'
+                        style='display:none;'>
+                    </div>
+                    <div id='44' onclick='nom_image("bbl4")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/4.png' width='190' height='250' id='bbl4'
+                        style='display:none;'>
+                    </div>
+                    <div id='55'onclick='nom_image("bbl5")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/5.png' width='150' height='250' id='bbl5'
+                        style='display:none;'>
+                    </div>
+                    <div id='66' onclick='nom_image("bbl6")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/6.png' width='150' height='250' id='bbl6'
+                        style='display:none;'>
+                    </div>
+
+                    <div id='77' onclick='nom_image("bbl17")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/7.png' width='150' height='250' id='bbl17'
+                        style='display:none;'>
+                    </div>
+                    <div id='88' onclick='nom_image("bbl8")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/8.png' width='150' height='250' id='bbl8'
+                        style='display:none;'>
+                    </div>
+                    <div id='1010' onclick='nom_image("bbl10")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/10.png' width='150' height='250' id='bbl10'
+                      style='display:none;'>
+                    </div>
+                    <div id='1111' onclick='nom_image("bbl11")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/11.png' width='150' height='250' id='bbl11'
+                        style='display:none;'>
+                    </div>
+                    <div id='1212' onclick='nom_image("bbl12")'>
+                      <img src='/static/img/portfolio/vetement/femme/bas_bleu/12.png' width='150' height='250' id='bbl12'
+                        style='display:none;'>
+                    </div>
+
+                </div>
+              </div>
+
+              <!-- Clothes Tshirt White Section -->
+              <div class='container' id='habit_haut_blanc'>
+                  <div class='row'>
+              
+                  <div id='111' onclick='nom_image("hb1")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/1.png' width='150' height='200' id='hb1'
+                    style='display:none;'>
+                  </div>
+                  <div id='222' onclick='nom_image("hb2")'> 
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/2.png' width='150' height='200' id='hb2'
+                    style='display:none;'>
+                  </div>
+                  <div id='333' onclick='nom_image("hb3")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/3.png' width='150' height='200' id='hb3'
+                    style='display:none;'>
+                  </div>
+                  <div id='444' onclick='nom_image("hb4")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/4.png' width='150' height='200' id='hb4'
+                    style='display:none;'>
+                  </div>
+                  <div id='555' onclick='nom_image("hb5")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/5.png' width='150' height='200' id='hb5'
+                    style='display:none;'>
+                  </div>
+                  <div id='666' onclick='nom_image("hb7")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/6.png' width='150' height='200' id='hb7'
+                    style='display:none;'>
+                  </div>
+                  <div id='777' onclick='nom_image("hb8")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/7.png' width='150' height='200' id='hb8'
+                    style='display:none;'>
+                  </div>
+                  <div id='999' onclick='nom_image("hb9")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/9.png' width='150' height='200' id='hb9'
+                    style='display:none;'>
+                  </div>
+                  <div id='101010' onclick='nom_image("hb10")'>
+                  <img src='/static/img/portfolio/vetement/femme/haut_blanc/10.png' width='150' height='200' id='hb10'
+                    style='display:none;'>
+                  </div>
+
+                </div>
+              </div>
+
+
+              <!-- Clothes Tshirt Blue Section -->
+              <div class='container' id='habit_haut_gris'>
+                  <div class='row'>
+                    
+                    <div id='1111' onclick='nom_image("hg1")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/1.png' width='150' height='200' id='hg1'
+                        style='display:none;'>
+                    </div>
+                    <div id='2222' onclick='nom_image("hg2")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/2.png' width='150' height='200' id='hg2'
+                        style='display:none;'>
+                    </div>
+                    <div id='3333' onclick='nom_image("hg3")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/3.png' width='150' height='200' id='hg3'
+                        style='display:none;'>
+                    </div>
+                    <div id='4444' onclick='nom_image("hg4")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/4.png' width='150' height='200' id='hg4'
+                      style='display:none;'>
+                    </div>
+                    <div id='5555' onclick='nom_image("hg5")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/5.png' width='150' height='200' id='hg5'
+                      style='display:none;'>
+                    </div>
+                    <div id='6666' onclick='nom_image("hg6")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/6.png' width='150' height='200' id='hg6'
+                        style='display:none;'>
+                    </div>
+                    <div id='7777' onclick='nom_image("hg7")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/7.png' width='150' height='200' id='hg7'
+                      style='display:none;'>
+                    </div>
+                    <div id='8888' onclick='nom_image("hg8")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/8.png' width='150' height='200' id='hg8'
+                        style='display:none;'>
+                    </div>
+                    <div id='9999' onclick='nom_image("hg9")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/9.png' width='150' height='200' id='hg9'
+                        style='display:none;'>
+                    </div>
+                    <div id='10101010' onclick='nom_image("hg10")'>
+                      <img src='/static/img/portfolio/vetement/femme/haut_gris/10.png' width='150' height='200' id='hg10'
+                        style='display:none;'>
+                    </div>
+
+                </div>
+              </div>
+                  
+                      
+              <div id='image'></div>
+                      
+              <div id="1"><div>
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                      
+          </div>
         </div>
       </div>
-    </div>
-  </section></center><br><br>
+    </section>
+
+            <div class="container" id="responsive_cont">
+            <div class="row">
+
+
+
+                <style>
+                    #shut_tshirt2,
+                    #shut_size2,
+                    #shut_color_pantalon2,
+                    #shut_color_hair2{
+                        font-size:200%;
+                        color:white;
+                        display:none;
+                        
+                    }
+                    #no_shut_tshirt2,
+                    #no_shut_size2,
+                    #no_shut_color_pantalon2,
+                    #no_shut_color_hair2{
+                        font-size:200%;
+                        color:white;
+                       
+                    }
+                <script>
+       
+                        
+                </script>
+                    
+                </style>
+                
+                <div class="col-sm col-xs-12" style='text-align:center;'>
+                 <p id="p_hair_color2" style='color:white;'><strong>Les couleurs de cheveux</strong></p>
+                    <i class="fas fa-angle-right" id="shut_color_hair2"
+                    onclick="shutdown_info('input_color_hair2', 'shut_color_hair2', 'no_shut_color_hair2',
+                                            'p_panta_p2', 'tshirt_p_p2', 'p_size_p2',
+                                            'no_shut_color_pantalon2', 'no_shut_tshirt2', 'no_shut_size2')"></i>
+                    <i class="fas fa-angle-left" id="no_shut_color_hair2"
+                    onclick="no_shutdown_info('input_color_hair2', 'shut_color_hair2', 'no_shut_color_hair2',
+                                              'p_panta_p2', 'tshirt_p_p2', 'p_size_p2',
+                                              'no_shut_color_pantalon2', 'no_shut_tshirt2', 'no_shut_size2')"></i>
+                    <div id="input_color_hair2" style='display:none;'>
+                      <input type='button' id='brune' value="Brune" onclick='coul("brune")'>
+                      <input type='button' id='blonde' value='Blonde' onclick='coul("blonde")'>
+                      <input type='button' id='chatain' value='Chatain' onclick='coul("chatain")'>
+                      <input type='button' id='rousse' value='Rousse' onclick='coul("rousse")'>
+                      <input type='button' id='noire' value='Noire' onclick='coul("noire")'>
+                    </div>
+                </div>
+                <div class="col-sm col-xs-12" style='text-align:center;'>
+                    <p id="p_panta_p2" style='color:white;'><strong>Pantalon</strong></p>
+                    <i class="fas fa-angle-right" id="shut_color_pantalon2"
+                    onclick="shutdown_info('div_pantalon_menu2', 'shut_color_pantalon2', 'no_shut_color_pantalon2',
+                                            'p_hair_color2', 'tshirt_p_p2', 'p_size_p2',
+                                            'no_shut_size2', 'no_shut_tshirt2', 'no_shut_color_hair2')"></i>
+                    <i class="fas fa-angle-left" id="no_shut_color_pantalon2"
+                    onclick="no_shutdown_info('div_pantalon_menu2', 'shut_color_pantalon2', 'no_shut_color_pantalon2',
+                                            'p_hair_color2', 'tshirt_p_p2', 'p_size_p2',
+                                            'no_shut_size2', 'no_shut_tshirt2', 'no_shut_color_hair2')"></i>
+                    <div id="div_pantalon_menu2" style='display:none;text-align:center;'>
+                        <input type='button' value='Salopette' id='salopette'
+                            style=" border:3px solid black;font-family:segoe print;"
+                            onclick='voir_salopette()'><br><br>
+                         <input type='button' value='Jeans' id='jean' 
+                            style="border:3px solid black;font-family:segoe print;"
+                            onclick='voir_jean()'><br><br>
+                         <input type='button' value='Toile' id='toile'
+                            style="border:3px solid black;font-family:segoe print;"
+                            onclick='voir_toile()'></center><br><br>
+                    </div>
+                </div>
+                    <div class="col-sm col-xs-12" style='text-align:center;'>
+                         <p id='tshirt_p_p2' style='color:white;'><strong>T-shirt</strong></p>
+                            <i class="fas fa-angle-left" id="no_shut_tshirt2"
+                            onclick="no_shutdown_info('div_input_tshirt2', 'shut_tshirt2', 'no_shut_tshirt2',
+                                                        'p_hair_color2', 'p_panta_p2', 'p_size_p2',
+                                                        'no_shut_size2', 'no_shut_color_pantalon2', 'no_shut_color_hair2')"></i>
+                            <i class="fas fa-angle-right" id="shut_tshirt2"
+                            onclick="shutdown_info('div_input_tshirt2', 'shut_tshirt2', 'no_shut_tshirt2',
+                                                        'p_hair_color2', 'p_panta_p2', 'p_size_p2',
+                                                        'no_shut_size2', 'no_shut_color_pantalon2', 'no_shut_color_hair2')"></i>
+                            <div id="div_input_tshirt2" style='display:none;'>                                                    
+                                <input type='button' value='manche longue' id='longue'
+                                    style=" border:3px solid black;font-family:segoe print;"
+                                    onclick='voir_t_longue()'><br><br>                                                                                                   
+                                <input type='button' value='manche courte' id='courte'
+                                    style="border:3px solid black;font-family:segoe print;"
+                                    onclick='voir_t_courte()'><br><br>                                             
+                                <input type='button' value='laine' id='laine'
+                                    style="border:3px solid black;font-family:segoe print;"
+                                    onclick='voir_t_laine()'><br><br>
+                            </div>                                         
+                    </div>
+                    <div class="col-sm col-xs-12" style='text-align:center;'>
+                        <p id='p_size_p2' style='color:white;'><strong>Modifier la taille</strong></p>  
+                        <i class="fas fa-angle-left" id="no_shut_size2" 
+                        onclick="no_shutdown_info('input_size_bro2', 'shut_size2', 'no_shut_size2',
+                                                'p_hair_color2', 'p_panta_p2', 'tshirt_p_p2',
+                                                'no_shut_tshirt2', 'no_shut_color_pantalon2', 'no_shut_color_hair2')"></i>
+                        <i class="fas fa-angle-right" id="shut_size2"
+                        onclick="shutdown_info('input_size_bro2', 'shut_size2', 'no_shut_size2',
+                                                'p_hair_color2', 'p_panta_p2', 'tshirt_p_p2',
+                                                'no_shut_tshirt2', 'no_shut_color_pantalon2', 'no_shut_color_hair2')"></i>
+                     
+                        <div id="input_size_bro2" style='display:none;'>
+                          <input type='button' value='Ajouter de la longueur?' id="add1" style='width:200px;'
+                              onclick='ajout_longueur()'><br><br>
+                        
+                          <input type='button' value='Ajouter de la largeur?' id="add2" style='width:200px;'
+                            onclick='ajout_largeur()'><br><br>
+                      
+                   
+                          <input type='button' value='Enlever de la longueur?' id="no_add1" style='width:200px;'
+                            onclick='enlever_longueur()'><br><br>
+                   
+                  
+                          <input type='button' value='Enlever de la largeur?' id="no_add2" style='width:200px;'
+                            onclick='enlever_largeur()'><br><br>
+                       </div>
+                </div>
+                
+                </div>
+            </div>
+
+
+
 
 
   <section class="page-section" id="reso">
     <div>
-      {% include "bottom_page_pollution2.html" %}
-      {% block content2 %}
-      {% endblock content2%}
+      
+
+  <section class="page-section bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
+        <a href=""><i class="fab fa-facebook-square" id="fb"></i></a>
+        <a href=""><i class="fab fa-twitter-square" id="tw"></i></a>
+        <a href=""><i class="fab fa-snapchat-square" id="sn"></i></a>              
     </div>
   </section>
 
 
+  <section class="page-section" id="contact" style="background:white;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Let's Get In Touch!</h2>
+          <hr class="divider my-4">
+          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+          <div>+1 (202) 555-0149</div>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+          <!-- Make sure to change the email address in anchor text AND the link below! -->
+          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</body>
+  <!-- Footer -->
+  <footer class="bg-light py-5">
+    <div class="container">
+      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/static/js/creative.min.js"></script>
+
+
+
+
+
+
+
+
+
+
 
 
 </html>
 
 
 
+
+
+
+
 <style>
-#reso{
-    padding:0;
-}
-@media screen and (min-width: 320px) and (max-width:374px) {
-  #conteneur{
-    margin-top:-300px;
-    margin-top:50px;
-  }
-  #p_ville3,
-  #p_ville2,
-  #p_ville1{
-    font-size:50px;
-    height:150px;
-  }
-  #info1,
-  #info2,
-  #info3{
-    display:none;
-  }
-  #separate_line2,
-  #separate_line3,
-  #separate_line1{
-    width:50px;
-  }
-  #text{
-    float:none;
-    margin-left:280px;
-    font-size:6vw;
-  }
-  #choix{
-    font-size:30px;
-    margin-left:15%;
-    width:400px;
-  }
-  #chargement{
-    text-align:center;
-  }
-  #pred{
-    margin-left:10%;
-    font-size:30px;
-    width:600px;
-    text-align:center;
-  }
-  #section_info{
-    font-size:8vw;
-  }
+
+i{
+    color:white;
 }
 
 
+@media screen and (min-width: 0px) and (max-width:374px) {
+    #fb{
+        font-size:50px;
+        width:250px;
+    }
+    #tw{
+        font-size:50px;
+        width:250px;
+    }
+    #sn{
+        font-size:50px;
+        width:250px;
+        border:1px soldi red;
+    }    
+    .mb-4{
+        font-size:5vw;     
+    }
+    #h2{
+      font-size:2vw;     
+    }
+}
 
-@media screen and (min-width: 375px) and (max-width:424px) {
-  #conteneur{
-    margin-top:-300px;
-    margin-top:50px;
-  }
-  #p_ville3,
-  #p_ville2,
-  #p_ville1{
-    font-size:50px;
-    height:150px;
-  }
-  #info1,
-  #info2,
-  #info3{
-    display:none;
-  }
-  #separate_line2,
-  #separate_line3,
-  #separate_line1{
-    width:50px;
-  }
-  #text{
-    float:none;
-    margin-left:280px;
-    font-size:5vw;
-  }
-  #choix{
-    font-size:30px;
-    margin-left:15%;
-    width:400px;
-  }
-  #chargement{
-    text-align:center;
-  }
-  #pred{
-    margin-left:10%;
-    font-size:30px;
-    width:600px;
-    text-align:center;
-  }
-  #section_info{
-    font-size:8vw;
-  }
+@media screen and (min-width: 374px) and (max-width:800px) {
+    #fb{
+        font-size:100px;
+        width:300px;
+    }
+    #tw{
+        font-size:100px;
+        width:300px;
+    }
+    #sn{
+        font-size:100px;
+        width:300px;
+    }    
+    .mb-4{
+        font-size:5vw;
+    }
+}
+
+
+@media screen and (min-width: 800px) and (max-width:1000px) {
+    #fb{
+        font-size:100px;
+        width:300px;
+    }
+    #tw{
+        font-size:100px;
+        width:300px;
+    }
+    #sn{
+        font-size:100px;
+        width:300px;
+    }    
+    .mb-4{
+        font-size:3vw;
+        
+    }
 }
 
 
 
-
-
-
-@media screen and (min-width: 425px) and (max-width:506px) {
-  #conteneur{
-    margin-top:50px;
-  }
-  #p_ville3,
-  #p_ville2,
-  #p_ville1{
-    font-size:30px;
-    height:150px;
-    margin-left:-100px;
-  }
-  #info1,
-  #info2,
-  #info3{
-    display:none;
-  }
-  #separate_line2,
-  #separate_line3,
-  #separate_line1{
-    width:50px;
-  }
-  #text{
-    float:none;
-    margin-left:200px;
-    font-size:4vw;
-  }
-  #choix{
-    font-size:30px;
-    margin-left:15%;
-    width:400px;
-  }
-  #chargement{
-    text-align:center;
-  }
-  #pred{
-    margin-left:10%;
-    font-size:30px;
-    width:600px;
-    text-align:center;
-  }
-  #section_info{
-    font-size:8vw;
-  }
+@media screen and (min-width: 1000px) and (max-width:1500px) {
+    #fb{
+        font-size:150px;
+        width:300px;
+    }
+    #tw{
+        font-size:150px;
+        width:300px;
+    }
+    #sn{
+        font-size:150px;
+        width:300px;
+    }    
+    .mb-4{
+        font-size:3vw;
+        
+    }
 }
 
-
-@media screen and (min-width: 507px) and (max-width:575px) {
-  #conteneur{
-    margin-top:-300px;
-    margin-top:40px;
-  }
-  #p_ville3,
-  #p_ville2,
-  #p_ville1{
-    font-size:35px;
-    height:150px;
-    margin-left:-100px;
-  }
-  #info1,
-  #info2,
-  #info3{
-    display:none;
-  }
-  #separate_line2,
-  #separate_line3,
-  #separate_line1{
-    width:50px;
-  }
-  #text{
-    float:none;
-    margin-left:250px;
-    font-size:3.5vw;
-  }
-  #choix{
-    font-size:30px;
-    margin-left:15%;
-    width:400px;
-  }
-  #chargement{
-    text-align:center;
-  }
-  #pred{
-    margin-left:10%;
-    font-size:30px;
-    width:600px;
-    text-align:center;
-  }
-  #section_info{
-    font-size:vw;
-  }
-}
-
-
-
-@media screen and (min-width: 575px) and (max-width:800px) {
-  #conteneur{
-    width:600px;
-    margin-left:10%;
-    margin-top:50px;
-  }
-  #p_ville3,
-  #p_ville2,
-  #p_ville1{
-    font-size:35px;
-    text-align:center;
-    width:500px;
-    
-
-  }
-  #info1,
-  #info2,
-  #info3{
-    display:none;
-  }
-  #separate_line2,
-  #separate_line3,
-  #separate_line1{
-    width:50px;
-  }
-  #text{
-    float:none;
-    margin-left:300px;
-    font-size:3vw;
-  }
-  #choix{
-    text-align:center;
-    font-size:20px;
-  }
-  #chargement{
-    text-align:center;
-  }
-  #pred{
-    font-size:20px;
-    text-align:center;
-    margin-top:-20px;
-  }
-  #section_info{
-    font-size:2vw;
-  }
-}
-
-
-@media screen and (min-width: 801px) and (max-width:1000px) {
-  #conteneur{
-    margin-top:50px;
-    width:100%;
-    margin-left:20%;
-  }
-  #p_ville3,
-  #p_ville2,
-  #p_ville1{
-    font-size:35px;
-    text-align:center;
-    width:800px;
-    
-  }
-  #info1,
-  #info2,
-  #info3{
-  }
-  #separate_line2,
-  #separate_line3,
-  #separate_line1{
-    width:50px;
-  }
-  #text{
-    float:none;
-    margin-left:650px;
-    font-size:2.5vw;
-  }
-  #choix{
-    font-size:20px;
-    text-align:center;
-  }
-  #chargement{
-    text-align:center;
-  }
-  #pred{
-    font-size:20px;
-    text-align:center;
-    margin-top:-20px;
-  }
-  #section_info{
-    text-align:center;
-    font-size:2vw;
-    margin-left:20%;
-  }
+@media screen and (min-width: 1501px){
+    #fb{
+        font-size:150px;
+        width:400px;
+    }
+    #tw{
+        font-size:150px;
+        width:400px;
+    }
+    #sn{
+        font-size:150px;
+        width:400px;
+    }    
+    .mb-4{
+        font-size:3vw;
+        
+    }
 }
 
 
@@ -606,6 +1756,842 @@
 
 
 
+      
+      
+    </div>
+  </section>
+
+
+            
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+#reso{
+    padding:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#menu_res{
+    display:none;
+}
+
+
+#1, #2,#3,#4,#5,#6,#7,#8,#9,
+#10, #11,#22,#33,#44,#55,
+#66, #77, #88 { width: 0px; height: 0px;}
+input{
+  border:1px solid black;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width:991px) {
+  #shirt_tshirt {
+    margin-left:10%;
+  }
+  #pantaloune {
+    margin-left:-7.5%;
+  }
+}
+
+
+@media screen and (min-width: 0px) and (max-width:767px) {
+
+  #tshirt {
+    
+    margin-right:9%;
+    margin-top:450%;
+  }
+  #pantaloune {
+
+    margin-left:-16%;
+    margin-top:127%;
+  }
+}
+
+
+
+#clothes_section{
+    width:101%;
+    text-align:center;
+}
+
+#info_cloths_like_price{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+    width:auto;
+    height:auto;
+
+}
+#nos_info_habits{
+    font-family:segoe print;
+}
+
+#mage{
+    text-align:center;
+    width:auto;
+}
+#name{
+    width:200px;
+}
+#store{
+    width:200px;
+}
+#price,
+#stock,
+#online{
+    width:200px;
+}
+#infofo{
+    text-align:left;
+    padding-left:50px;
+}
+
+
+#shirt_tshirt{
+    margin-left:82%;
+    margin-top:-350px;
+    width:150px;
+    position:absolute;
+}
+#tshirt{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+    font-family:segoe print;
+}
+
+#info_div_container{
+    background:url("/static/img/parquet1.jpg");
+    border:2px solid black;
+    border-radius:50px;
+}
+
+#add1,
+#add2,
+#no_add1,
+#no_add2{
+    border:3px solid black;
+}
+
+#draggable{
+   width:0px; 
+   height:0px;
+}
+
+
+h1{
+    color:black;
+    font-family:"Comic Sans MS, Comic Sans, cursive";
+}
+h2{
+    color:black;
+    font-style:justify;
+}
+h3{
+    color:black;
+}
+#Color_hair{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 320px) and (max-width:375px) {
+    #MENU{
+        display:none;
+    }
+    #logo{
+        display:none;
+    }
+    #les_textes{
+        width:100%;
+    }
+    #resum_titre{
+        width:100%;
+        font-size:10px;
+        text-align:center;
+        float:none;
+        
+    }
+    span{
+        float:none;
+        width:100%;
+        text-align:center;
+    }
+    #titre_section{
+        text-align:center;
+        
+    }
+    #responsive_cont{
+        font-size:3.5vw;
+        margin-top:30px;
+        border:1px solid red;
+        
+    }
+    #info_oups{
+        font-size:3vw;
+        padding-top:10px;
+        
+    }
+    #sizing_res{
+        font-size:3vw;
+    }
+    #reso{
+        margin-top:300px;
+    }
+    #nos_info_habits{
+        font-size:5vw;
+    }
+    #menu_res{
+        display:block;
+        font-size:4vw;
+        color:white;
+        margin-left:30px;
+        margin-top:10px;
+    }
+    #barre{
+        display:none;
+    }
+}
+
+
+
+@media screen and (min-width: 375px) and (max-width:424px) {
+    #MENU{
+        display:none;
+    }
+    #logo{
+        display:none;
+    }
+    #les_textes{
+        width:100%;
+    }
+    #resum_titre{
+        width:100%;
+        font-size:4.5vw;
+        text-align:center;
+        float:none;
+    }
+    span{
+        float:none;
+        width:100%;
+        text-align:center;
+    }
+    #titre_section{
+        text-align:center;
+        
+    }
+    #responsive_cont{
+        padding-top:200px;
+        font-size:4vw;
+        border:1px solid trasparent;
+    }
+    #info_oups{
+        font-size:3.5vw;
+        padding-top:10px;
+        
+    }
+    #sizing_res{
+        font-size:4vw;
+    }
+    #reso{
+        margin-top:500px;
+    }
+    #nos_info_habits{
+        font-size:4vw;
+    }
+    input{
+        font-size:3vw;
+    }
+    #menu_res{
+        font-size:4vw;
+    }
+    #reso{
+        width:120%;
+        text-align:center;
+    }
+
+  
+}
+
+
+
+
+@media screen and (min-width: 425px) and (max-width:600px) {
+    #MENU{
+        display:none;
+    }
+    #logo{
+        display:none;
+    }
+    #les_textes{
+        margin-left:200px;
+    }
+    #resum_titre{
+        width:100%;
+        font-size:3.5vw;
+        text-align:center;
+        float:none;
+    }
+    span{
+        float:none;
+        width:100%;
+        text-align:center;
+    }
+    #titre_section{
+        text-align:center;
+    }
+    #responsive_cont{
+        font-size:2.5vw;
+    }
+    #info_oups{
+        font-size:2.5vw;
+        padding-top:10px;
+    }
+    #sizing_res{
+        font-size:3vw;
+    }
+    #nos_info_habits{
+        font-size:3vw;
+    }
+    input{
+        font-size:2.5vw;
+    }
+    #p_hair_color2{
+        width:100%;
+    }
+    #infoinfoinfo{
+        margin-top:200px;
+    }
+    #menu_res{
+        display:block;
+        font-size:3vw;
+        color:white;
+        margin-left:30px;
+        margin-top:15px;
+    }
+    #reso{
+        margin-top:200px;
+        width:137%;
+        text-align:center;
+    } 
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 600px) and (max-width:768px) {
+    #MENU{
+        display:none;
+    }
+    #logo{
+        display:none;
+    }
+    header{
+        height:600px;
+    }
+    #les_textes{
+        margin-left:100px;
+    }
+    #resum_titre{
+        font-size:2.5vw;
+        text-align:center;
+        float:none;
+        
+    }
+    span{
+        float:none;
+        width:100%;
+        text-align:center;
+    }
+    #titre_section{
+        text-align:center;
+        
+    }
+    #responsive_cont{
+        font-size:2.5vw;
+        border:1px solid red;
+    }
+    #p_hair_color2{
+        margin-top:-20px;
+    }
+    #info_oups{
+        font-size:2.5vw;
+        padding-top:150px;
+        
+    }
+    #sizing_res{
+        font-size:3vw;
+    }
+    #reso{
+        margin-top:500px;
+    }
+    #nos_info_habits{
+        font-size:3vw;
+    }
+    input{
+        font-size:2.5vw;
+    }
+    #p_hair_color2{
+        width:100%;
+    }
+    #infoinfoinfo{
+        margin-top:200px;
+    }
+    #menu_res{
+        display:block;
+        font-size:3vw;
+        color:white;
+        margin-left:30px;
+        margin-top:15px;
+        
+    }
+    #reso{
+        margin-top:400px;
+        text-align:center;
+    }
+    #barre{
+        display:none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+<style>
+
+
+@media screen and (min-width: 425px) and (max-width:530px) {
+    #reso{
+        width:100%;
+        min-width:100%;
+        min-height:100%;
+        margin:0;
+        padding:0;
+        margin-top:500px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 768px) and (max-width:900px) {
+    #menu_res{
+        display:none;
+        font-size:2vw;
+        color:white;
+        margin-left:30px;
+        margin-top:15px;
+    }
+    #MENU{
+        display:block;
+    }
+    #logo{
+        display:block;
+    }
+}
+
+
+
+@media screen and (min-width: 900px) and (max-width:1200px) {
+    #menu_res{
+        display:none;
+        font-size:2vw;
+        color:white;
+        margin-left:30px;
+        margin-top:15px;
+    }
+    #MENU{
+        display:block;
+    }
+    #logo{
+        display:block;
+    }    
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1300px) and (max-width:1500px) {
+    #reso{
+        margin-top:250px;
+    }
+    #menu_res{
+        display:none;
+    }
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+i{
+    color:white;
+}
+
+
+
+@media screen and (min-width: 0px) and (max-width:374px) {
+    #fb{
+        font-size:50px;
+        width:300px;   
+    }
+    #tw{
+        font-size:50px;
+        width:300px;
+    }
+    #sn{
+        font-size:50px;
+        width:300px;
+    }    
+    .mb-4{
+        font-size:5vw;
+        
+    }
+}
+
+@media screen and (min-width: 374px) and (max-width:800px) {
+    #fb{
+        font-size:100px;
+        width:300px;
+    }
+    #tw{
+        font-size:100px;
+        width:300px;
+    }
+    #sn{
+        font-size:100px;
+        width:300px;
+    }    
+    .mb-4{
+        font-size:5vw;
+        
+    }
+}
+
+
+@media screen and (min-width: 800px) and (max-width:1000px) {
+    #fb{
+        font-size:100px;
+        width:300px;
+    }
+    #tw{
+        font-size:100px;
+        width:300px;
+    }
+    #sn{
+        font-size:100px;
+        width:300px;
+    }    
+    .mb-4{
+        font-size:3vw;
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1000px) and (max-width:1500px) {
+    #fb{
+        font-size:150px;
+        width:300px;
+    }
+    #tw{
+        font-size:150px;
+        width:300px;
+    }
+    #sn{
+        font-size:150px;
+        width:300px;
+    }    
+    .mb-4{
+        font-size:3vw;
+        
+    }
+}
+
+
+
+
+
+
+
+</style>
+
+
+<style>
+#1, #2,#3,#4,#5,#6,#7,#8,#9,
+#10, #11,#22,#33,#44,#55,
+#66, #77, #88 { width: 0px; height: 0px;}
+input{
+  border:1px solid black;
+}
+@media screen and (min-width: 768px) and (max-width:991px) {
+  #shirt_tshirt {
+    margin-left:10%;
+  }
+  #pantaloune {
+    margin-left:-7.5%;
+  }
+}
+@media screen and (min-width: 0px) and (max-width:767px) {
+  #tshirt {
+    
+    margin-right:9%;
+    margin-top:450%;
+  }
+  #pantaloune {
+    margin-left:-16%;
+    margin-top:127%;
+  }
+}
+#clothes_section{
+    width:101%;
+    text-align:center;
+}
+#info_cloths_like_price{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+    width:auto;
+    height:auto;
+}
+#nos_info_habits{
+    font-family:segoe print;
+}
+#mage{
+    text-align:center;
+    width:auto;
+}
+#name{
+    width:200px;
+}
+#store{
+    width:200px;
+}
+#price,
+#stock,
+#online{
+    width:200px;
+}
+#infofo{
+    text-align:left;
+    padding-left:50px;
+}
+#shirt_tshirt{
+    margin-left:82%;
+    margin-top:-350px;
+    width:150px;
+    position:absolute;
+}
+#tshirt{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+    font-family:segoe print;
+}
+#info_div_container{
+    background:url("/static/img/parquet1.jpg");
+    border:2px solid black;
+    border-radius:50px;
+}
+#add1,
+#add2,
+#no_add1,
+#no_add2{
+    border:3px solid black;
+}
+#draggable{
+   width:0px; 
+   height:0px;
+}
+h1{
+    color:black;
+    font-family:"Comic Sans MS, Comic Sans, cursive";
+}
+h2{
+    color:black;
+    font-style:justify;
+}
+h3{
+    color:black;
+}
+#Color_hair{
+    background:url("/static/img/parquet1.jpg");
+    border:3px solid black;
+    border-radius:50px;
+}
+@media screen and (min-width: 0px) and (max-width:800px) {
+    #info_cloths_like_price{
+        width:50px;
+    }
+    
+  
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -617,182 +2603,475 @@
 
 
 <script>
-
-      function one(div, ville){
-        document.getElementById(div).style.background = "red";
-        if(ville == 'info1'){
-          document.getElementById(ville).innerHTML = 'LYON';
-        }
-        else if(ville == 'info2'){
-          document.getElementById(ville).innerHTML = 'MASYLLLIA';
-        }
-        else if(ville == 'info3'){
-          document.getElementById(ville).innerHTML = 'PARIS';
-        }
-      };
-      
-      function two(div, ville){
-        document.getElementById(div).style.background = "black";
-        document.getElementById(ville).innerHTML = '';
-      };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Here we call database and analysa2.py for lyon
-
-jQuery("#lyon").on("click", function(e){
-
-    //we "raise" the pred div, display you choose lyon city
-    //and display the loading logo
-
-    document.getElementById('pred').innerHTML = ""
-    document.getElementById('choix').innerHTML = 'Vous avez choisis Lyon';
-    document.getElementById('chargement').style.display = "block";
-
-    jQuery.ajax({
-        data:{
-            'lyon':'lyon',
-            csrfmiddlewaretoken:'{{ csrf_token }}'
-        },
-        type:"POST",
-        url:"/polution/prediction"
-    })
-    .done(function(data){
-        if (data.error){
-            jQuery("#monCadreAlert").text(data.error);
-            jQuery("#is_save"); 
-        }
-        else{
-            jQuery("#is_save").html(data.data);
-            jQuery("#monCadreAlert");
-
-            document.getElementById('chargement').style.display = "none";      
-            
-            if (data == "pas de donn\u00e9e"){
-                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
-            }
-            else{
+LISTE_RESIZE = []
+LISTE_RESIZE_TAILLE_HAUTEUR = []
+LISTE_RESIZE_TAILLE_LARGEUR = []
+LISTE1 = []
+LISTE_INFO_COULEUR = []
+var click = 0;
+var click2 = 0;
+var click_salopette = 0;
+var click_jean = 0;
+var click_toile = 0;
+var click_t_longue = 0;
+var click_t_courte = 0;
+var click_t_laine = 0;
+$( function() {
+        $("#1, #2, #3, #4, #5, #6, #7, #8, #9, #10, #profil").draggable();
+   });
+  $( function() {
+    $("#11, #22, #33, #44, #55, #66, #77, #88, #99, #1010, #1111, #1212").draggable();
+  });
+  $( function() {
+     $("#111, #222, #333, #444, #555, #666, #777, #888, #999, #101010").draggable();
+  });
+ $( function() {
+     $("#1111, #2222, #3333, #4444, #5555, #6666, #7777, #8888, #9999, #10101010").draggable();
+});
+function ajout_longueur(){
+  
+  var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+  
+  console.log(LISTE_RESIZE[LISTE_RESIZE.length -1])
+  
+  var b = document.getElementById(a).id
+  console.log(b, 'b')
+  
+  var c = '#' + b
+  console.log(c)
+  var image = document.querySelector(c);
+  var X = image.getAttribute("width");
+  X = parseInt(X) ;
+  console.log(X)
+  var Y = image.getAttribute("height"); 		
+  Y = parseInt(Y) ;
+  console.log(Y)
+  
+  X += 0 ; 
+  Y += 5 ;
+  image.setAttribute('width', X);
+  image.setAttribute('height',Y);
+  var d = document.getElementById(b).style.height = Y;
+  document.getElementById(b).style.width = X;
+  
+  LISTE1.push([b, X,Y]);
+};
+function ajout_largeur(){
+  
+  var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+  var b = document.getElementById(a).id
+  var c = '#' + b
+  var image = document.querySelector(c);
+  var X = image.getAttribute("width");
+  X = parseInt(X) ;
+  var Y = image.getAttribute("height"); 		
+  Y = parseInt(Y) ;
+ 
+  X += 5 ; 
+  Y += 0 ;
+  image.setAttribute('width', X);
+  image.setAttribute('height',Y);
+  LISTE1.push([b, X,Y]);
+  var d = document.getElementById(b).style.width = X;
+  console.log(LISTE1[LISTE1.length-1])
+  console.log(X,Y)
+  
+};
+function enlever_longueur(){
+  var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+  var b = document.getElementById(a).id
+  var c = '#' + b
+  var image = document.querySelector(c);
+  var X = image.getAttribute("width");
+  X = parseInt(X) ;
+  var Y = image.getAttribute("height"); 		
+  Y = parseInt(Y) ;
+ 
+  X += 0 ; 
+  Y -= 5 ;
+  image.setAttribute('width', X);
+  image.setAttribute('height',Y);
+  LISTE1.push([b, X,Y]);
+  var d = document.getElementById(b).style.height = Y;
+};
+function enlever_largeur(){
+  var a = LISTE_RESIZE[LISTE_RESIZE.length -1]
+  var b = document.getElementById(a).id
+  var c = '#' + b
+  var image = document.querySelector(c);
+  var X = image.getAttribute("width");
+  X = parseInt(X) ;
+  var Y = image.getAttribute("height"); 		
+  Y = parseInt(Y) ;
+ 
+  X -= 5 ; 
+  Y += 0 ;
+  image.setAttribute('width', X);
+  image.setAttribute('height',Y);
+  LISTE1.push([b, X,Y]);
+  var d = document.getElementById(b).style.width = X;
+  
+};
+    
+liste_info_prix = [['bb1' ,'xxx', '<a href="" style="color:white;">www.xxx.fr</a>', '2550 euros', 'en stock', 'xxx', '<img src="/static/img/portfolio/vetement/femme/bas_blanc/1.png">'],
+                   ['bb2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '5520 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/2.2.png style='height:200px'>"],
+                   ['bb3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '280 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/3.png' style='height:200px'>"],
+                   ['bb4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '25580 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/4.png' style='height:200px'>"],
+                   ['bb5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '280 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/5.png' style='height:200px'>"],
+                   ['bb6' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '290 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/6.png'> style='height:200px'>"],
+                   ['bb7' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/7.png' style='height:200px'>"],
+                   ['bb8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/8.png' style='height:200px'>"],
+                   ['bb9' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '290 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/9.png' style='height:200px'>"],
+                   ['bb10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '23660 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_blanc/10.png style='height:200px'>"],
+                   ['bbl1' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/1.png' style='height:200px'>"],
+                   ['bbl2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '280 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/2.png' style='height:200px'>"],
+                   ['bbl3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '47 euros', 'en stock', 'xxx', " <img src='/static/img/portfolio/vetement/femme/bas_bleu/3.png' style='height:200px'>"],
+                   ['bbl4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '240 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/4.png' style='height:200px'>"],
+                   ['bbl5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '274874 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/5.png' style='height:200px'>"],
+                   ['bbl6' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '26848 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/6.png' style='height:200px'>"],
+                   ['bbl17' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2048 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/7.png' style='height:200px'>"],
+                   ['bbl8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2064548 euros', 'en stock', 'xxx', " <img src='/static/img/portfolio/vetement/femme/bas_bleu/8.png' style='height:200px'>"],
+                   ['bbl10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2588 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/10.png' style='height:200px'>"],
+                   ['bbl11' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '255 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/11.png' style='height:200px'>"],
+                   ['bbl12' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '550 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/bas_bleu/12.png' style='height:200px'>"],
+                   ['hb1' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2088 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/1.png' style='height:200px'>"],
+                   ['hb2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2000 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/2.png' style='height:200px'>"],
+                   ['hb3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2155 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/3.png' style='height:200px'>"],
+                   ['hb4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2015 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/4.png' style='height:200px'>"],
+                   ['hb5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '20789 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/5.png' style='height:200px'>"],
+                   ['hb7' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2121 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/6.png' style='height:200px'>"],
+                   ['hb8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '1987 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/7.png' style='height:200px'>"],
+                   ['hb9' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '231 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/9.png' style='height:200px'>"],
+                   ['hb10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '890 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_blanc/10.png' style='height:200px'>"],
+                   ['hg1' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '17 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/1.png' style='height:200px'>"],
+                   ['hg2' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '202102 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/2.png' style='height:200px'>"],
+                   ['hg3' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '2084 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/3.png' style='height:200px'>"],
+                   ['hg4' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '200 euros', 'épuisé', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/4.png' style='height:200px'>"],
+                   ['hg5' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '23 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/5.png' style='height:200px'>"],
+                   ['hg6' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '15 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/6.png' style='height:200px'>"],
+                   ['hg7' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '17 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/7.png' style='height:200px'>"],
+                   ['hg8' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '18 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/8.png' style='height:200px'>"],
+                   ['hg9' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '19 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/9.png' style='height:200px'>"],
+                   ['hg10' ,'xxx', '<a href="" style="color:white;">www.my_profil.com</a>', '21 euros', 'en stock', 'xxx', "<img src='/static/img/portfolio/vetement/femme/haut_gris/10.png' style='height:200px'>"],
+                   ]
+function inf(image){
+for(var i = 0; i < liste_info_prix.length; i ++){
+  if(image == liste_info_prix[i][0]){
+ 
+    document.getElementById('name').innerHTML = 'Nom: ' + liste_info_prix[i][5]
+    document.getElementById('store').innerHTML = 'Magasin: ' + liste_info_prix[i][1]
+    document.getElementById('online').innerHTML = 'En ligne: ' + liste_info_prix[i][2]
+    document.getElementById('price').innerHTML = 'Prix: ' + liste_info_prix[i][3]
+    document.getElementById('stock').innerHTML =  'En stock: ' + liste_info_prix[i][4]
+    document.getElementById('mage').innerHTML =  liste_info_prix[i][6]
+  }
+}
+};
+function nom_image(id_im){
+  console.log(id_im)
+  var a = document.getElementById(id_im).height;
+  var b = document.getElementById(id_im).width;
+  
+  LISTE_RESIZE.push(id_im)
+  LISTE1.push([id_im, a, b])
+  
+  console.log(LISTE_RESIZE)
+  console.log(LISTE1)
+  inf(id_im)
+};
+  var HAUT = 'habit_bas_blanc'
+  var BAS = 'habit_bas_blanc'
+  function coul(couleur){
+    
+    document.getElementById('couleur').innerHTML = 'Vous etes donc ' + couleur;
+    if(couleur == 'brune'){
+      document.getElementById('info_mode').innerHTML = 'Le haut blanc et le bas bleu !'
+    }
+    else if(couleur == 'blonde'){
+      document.getElementById('info_mode').innerHTML = 'Le haut gris et le bas bleu !';
+    }
+    else if(couleur == 'chatain'){
+      document.getElementById('info_mode').innerHTML = 'Le haut blanc et le bas blanc !';
+    } 
+    else if(couleur == 'rousse'){
+      document.getElementById('info_mode').innerHTML = 'Le haut blanc et le bas blanc !';
+    }
+    else if(couleur == 'noire'){
+      document.getElementById('info_mode').innerHTML = 'Le haut blanc et le bas bleu !';
+    };
+   
+    var a = document.getElementById('couleur').innerHTML;
+    document.getElementById('couleur').style.display = 'none';
+    document.getElementById('info_mode').style.display = 'none';
+   
+  };
+  jQuery("#brune, #blonde, #chatain, #rousse, #noire").on("click", function(e){
+    
+    var a = document.getElementById('couleur').innerHTML;
+    var b = document.getElementById('recherche').innerHTML;
+    
+    
+    document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une catégorie d'habit</i></strong></p>"
+    
+    
+     e.preventDefault();
+     
+      jQuery.ajax({
+          data:{
+              csrfmiddlewaretoken:'XdpNu6Dzes1qNNkk9u3frFyIaZSwm2hjDszx7u26KFt1TBqNKqyeNhVv8gvsfBi9',
+              'a':a,
+              'b':b
+          },
+          type:"POST",
+          url:"/photo/habits"
+      })
+      .done(function(data){
+          if (data.error){
+              jQuery("#monCadreAlert").text(data.error);
+              jQuery("#is_save");
               
-              document.getElementById('pred').innerHTML = '<br><br>' +
-                                                          'Nous pensons que le taux de polution est de: '+
-                                                          '<strong>' +
-                                                          data +
-                                                          ' AQI</strong>';
-            };      
-        };
-        
-    });
-});
-
-
-
-
-//Here we call database and analysa2.py for paris
-jQuery("#paris").on("click", function(e){
-
-
-    //we "raise" the pred div, display you choose paris city
-    //and display the loading logo
-    document.getElementById('choix').innerHTML = 'Vous avez choisis Paris';
-    document.getElementById('chargement').style.display = "block";
-    document.getElementById('pred').innerHTML = ""
+              
+          }
+          else{
+              jQuery("#habit").html(data.data);
+              jQuery("#monCadreAlert");
+              console.log(data);
+              liste1 = [[],[]]
+              var c = 0;
+              for(var i = 0; i < data.length; i ++){
+          
+                liste1[c].push(data[i])
+                if(data[i] == ' '){
+                    c += 1
+                  }
+                }
+              var haut = 'habit_haut_' + liste1[0].join('').slice(0,-1)
+              var bas = 'habit_bas_' + liste1[1].join('')
+              HAUT = haut
+              BAS = bas
+              
+              console.log(liste1[liste1.length - 1].join(''))
+              console.log(liste1[liste1.length - 2].join(''))
+              LISTE_INFO_COULEUR.push(liste1[liste1.length - 1].join(''))
+              LISTE_INFO_COULEUR.push(liste1[liste1.length - 2].join(''))
+            
+          };
+          
+      });
+  });
+function voir_t_longue(){
+  
+  document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une catégorie d'habit</i></strong></p>"
+  if(LISTE_INFO_COULEUR == ''){
+        document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>S\u00e9lectionnez une couleur de cheveux</i></strong></p>"
+        click_t_longue -= 1
+  };
+  click_t_longue += 1
+  liste_t_longue_blanche = ['hb9']
+  liste_t_longue_gris = ['hg7', 'hg5', 'hg4']
+  
+  
+  if(click_t_longue % 2 == 1){
+    if (LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 1] == 'blanc '){
+      for (var i = 0; i < liste_t_longue_blanche.length; i ++){
+        document.getElementById(liste_t_longue_blanche[i]).style.display = 'block';
+      }
+    }
+    else if(LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 1] == 'gris '){
+      for (var i = 0; i < liste_t_longue_gris.length; i ++){
+        document.getElementById(liste_t_longue_gris[i]).style.display = 'block';
+      }
+    } 
+  }
+  
+  else if(click_t_longue % 2 == 0){
+    if (LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 1] == 'blanc '){
+      for (var i = 0; i < liste_t_longue_blanche.length; i ++){ 
+        document.getElementById(liste_t_longue_blanche[i]).style.display = 'none';
+      }
+    }
+    else if(LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 1] == 'gris '){
+      for (var i = 0; i < liste_t_longue_gris.length; i ++){ 
+        document.getElementById(liste_t_longue_gris[i]).style.display = 'none';
+      } 
+    }
+  }
+  
+};
+function voir_t_courte(){
+  
+  document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une cat\u00e9gorie d'habit</i></strong></p>"
+  if(LISTE_INFO_COULEUR == ''){
+        document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>S\u00e9lectionnez une couleur de cheveux</i></strong></p>"
+        click_t_courte -= 1
+  };
+  click_t_courte += 1
+  liste_t_courte = ['hb3','hb4', 'hb5', 'hb7', 'hb8','hb2']
+  liste_t_courte_gris = ['hg1', 'hg2', 'hg3', 'hg6', 'hg10', 'hg9', 'hg8']
+  if(click_t_courte % 2 == 1){
+    if (LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 1] == 'blanc '){
+      for (var i = 0; i < liste_t_courte.length; i ++){
+        document.getElementById(liste_t_courte[i]).style.display = 'block';
+      }
+    }
+    else if(LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 1] == 'gris '){
+      for (var i = 0; i < liste_t_courte_gris.length; i ++){
+        document.getElementById(liste_t_courte_gris[i]).style.display = 'block';
+      }
+    } 
+  }
+  
+  else if(click_t_longue % 2 == 0){
+    if (LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 1] == 'blanc '){
+      for (var i = 0; i < liste_t_courte.length; i ++){ 
+        document.getElementById(liste_t_courte[i]).style.display = 'none';
+      }
+    }
+    else if(LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 1] == 'gris '){
+      for (var i = 0; i < liste_t_courte_gris.length; i ++){ 
+        document.getElementById(liste_t_courte_gris[i]).style.display = 'none';
+      } 
+    }
+  }
+};
+function voir_t_laine(){
+  
+  document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une cat\u00e9gorie d'habit</i></strong></p>"
+  if(LISTE_INFO_COULEUR == ''){
+        document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>S\u00e9lectionnez une couleur de cheveux</i></strong></p>"
+        click_t_laine -= 1
+  };
+  click_t_laine += 1
+  liste_t_laine = ['hb1','hb10']
+  if(click_t_laine % 2 == 1){
+    if (LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 1] == 'blanc '){
+      for (var i = 0; i < liste_t_laine.length; i ++){
+        document.getElementById(liste_t_laine[i]).style.display = 'block';
+      }
+    }
+    else if(LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 2] == 'gris '){
+      for (var i = 0; i < liste_t_longue_blanche.length; i ++){
+        document.getElementById(liste_t_longue_blanche[i]).style.display = 'block';
+      }
+    } 
+  }
+  
+  else if(click_t_laine % 2 == 0){
+    for (var i = 0; i < liste_t_laine.length; i ++){
+      document.getElementById(liste_t_laine[i]).style.display = 'none';
+      document.getElementById(liste_t_longue_blanche[i]).style.display = 'none';
+    }
+  }
+};
+  function voir_salopette(){
+    document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une cat\u00e9gorie d'habit</i></strong></p>"
     
-    jQuery.ajax({
-        data:{
-            'paris':'paris',
-            csrfmiddlewaretoken:'{{ csrf_token }}'
-        },
-        type:"POST",
-        url:"/polution/prediction"
-    })
-    .done(function(data){
-        if (data.error){
-            jQuery("#monCadreAlert").text(data.error);
-            jQuery("#is_save"); 
-        }
-        else{
-            jQuery("#is_save").html(data.data);
-            jQuery("#monCadreAlert");
-
-            document.getElementById('chargement').style.display = "none";
-            
-          if (data == "pas de donn\u00e9e"){
-                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
-            }
-            else{
-            document.getElementById('pred').innerHTML = '<br><br>' +
-                                                        'Nous pensons que le taux de polution est de : '+
-                                                        '<strong>' +
-                                                        data +
-                                                        '</strong>';
-
-            };            
-        };
-    });
-});
-
-
-
-
-//Here we call database and analysa2.py for marseille
-jQuery("#marseille").on("click", function(e){
-
-
-    //we "raise" the pred div, display you choose marseille city
-    //and display the loading logo
-    document.getElementById('choix').innerHTML = 'Vous avez choisis Marseille';
-    document.getElementById('chargement').style.display = "block";
-    document.getElementById('pred').innerHTML = ""
+    if(LISTE_INFO_COULEUR == ''){
+      document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>S\u00e9lectionnez une couleur de cheveux</i></strong></p>"
+      click_salopette += -1
+    };
     
-    jQuery.ajax({
-        data:{
-            'marseille':'marseille',
-            csrfmiddlewaretoken:'{{ csrf_token }}'
-        },
-        type:"POST",
-        url:"/polution/prediction"
-    })
-    .done(function(data){
-        if (data.error){
-            jQuery("#monCadreAlert").text(data.error);
-            jQuery("#is_save"); 
+    if(LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 2] == 'blanc'){
+      document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>Nous ne disposons pas de salopette blanche</i></strong></p>"
+    };
+    click_salopette += 1
+    if(click_salopette % 2 == 1){
+      if (LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 2] == 'bleu'){
+        document.getElementById('bbl10').style.display = 'block';
+      }
+    }
+    else if(click_salopette % 2 == 0){
+      document.getElementById('bbl10').style.display = 'none';
+    
+   }
+  };
+  function voir_jean(){
+    
+    document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une cat\u00e9gorie d'habit</i></strong></p>"
+    
+    if(LISTE_INFO_COULEUR == ''){
+      document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>S\u00e9lectionnez une couleur de cheveux</i></strong></p>"
+      click_jean -= 1
+    };
+    click_jean += 1
+    
+    liste_jean_bleu = ['bbl1', 'bbl2','bbl6','bbl17', 'bbl8', 'bbl11', 'bbl12', 'bbl4']
+    
+    liste_jean_blanc = ['bb1', 'bb2', 'bb6','bb5', 'bb8', 'bb9', 'bb10']
+    if(click_jean % 2 == 1){
+      if (LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 2] == 'bleu'){
+        for (var i = 0; i < liste_jean_bleu.length; i ++){
+          document.getElementById(liste_jean_bleu[i]).style.display = 'block';
         }
-        else{
-            jQuery("#is_save").html(data.data);
-            jQuery("#monCadreAlert");
-            
-            document.getElementById('chargement').style.display = "none";
-            
-          if (data == "pas de donn\u00e9e"){
-                document.getElementById('pred').innerHTML = "<br><br><strong>pas de donn\u00e9e</strong>";
-            }
-
-            else{
-              document.getElementById('pred').innerHTML = '<br><br>' +
-                                                        'Nous pensons que le taux de polution est de : '+
-                                                        '<strong>' +
-                                                        data +
-                                                        '</strong>';
-            };            
-        }; 
-    });
-});
-
-
-
-      
+      }
+      else if(LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 2] == 'blanc'){
+        for (var i = 0; i < liste_jean_blanc.length; i ++){
+          document.getElementById(liste_jean_blanc[i]).style.display = 'block';
+        }
+      } 
+    }
+    
+    else if(click_jean % 2 == 0){
+      for (var i = 0; i < liste_jean_bleu.length; i ++){
+        document.getElementById(liste_jean_bleu[i]).style.display = 'none';
+        document.getElementById(liste_jean_blanc[i]).style.display = 'none';
+      }
+    }
+  };
+  function voir_toile(){
+    document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>Appuyer sur votre couleur de cheveux, et choississez une cat\u00e9gorie d'habit</i></strong></p>"
+    if(LISTE_INFO_COULEUR == ''){
+      document.getElementById('info_oups').innerHTML = "<p id='info_oups'><strong><i>S\u00e9lectionnez une couleur de cheveux</i></strong></p>"
+      click_toile -= 1
+    };
+    click_toile += 1
+    
+    liste_toile_bleu = ['bbl3','bbl5','bbl9']
+    liste_toile_blanc = ['bb3', 'bb4', 'bb7']
+    
+    
+    if(click_toile % 2 == 1){
+      if (LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 2] == 'bleu'){
+        for (var i = 0; i < liste_toile_bleu.length; i ++){
+          document.getElementById(liste_toile_bleu[i]).style.display = 'block';
+        }
+      }
+      else if(LISTE_INFO_COULEUR[LISTE_INFO_COULEUR.length - 2] == 'blanc'){
+        for (var i = 0; i < liste_toile_blanc.length; i ++){
+          document.getElementById(liste_toile_blanc[i]).style.display = 'block';
+        }
+      } 
+    }
+    
+    else if(click_toile % 2 == 0){
+      for (var i = 0; i < liste_toile_bleu.length; i ++){
+        document.getElementById(liste_toile_bleu[i]).style.display = 'none';
+        document.getElementById(liste_toile_blanc[i]).style.display = 'none';
+      }
+    }
+  };
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
