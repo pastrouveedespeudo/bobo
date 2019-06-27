@@ -36,19 +36,26 @@ POLLUTING_POLE = ['Nord',
 
 PATH_WIKI = "https://fr.wikipedia.org/wiki/{}"
 
+PATH_PARIS_POLENNE = 'https://weather.com/fr-FR/forecast/allergy/l/1975528fb7e3553b7eacfe7ac89b421986bb9949c2506b144b4e228d57da124b'
+PATH_LYON_POLENNE = 'https://weather.com/fr-FR/forecast/allergy/l/7615c204059d6d10382d733bf8dc1718bcac1e82e2f2cf66e6842581ca9360c2'
+PATH_MARSEILLE_POLENNE = 'https://weather.com/fr-FR/forecast/allergy/l/97adc36f89aa35486ece34380b006f2c946ef82fad53a58954c33e39e23948fe'
+COMPA_POELENNE = '<div class="styles__allergyMsg__qual__yaxvL" classname="styles__allergyMsg__qual__yaxvL"'
+
+
+PATH_LYON_FIRE = 'https://www.lyoncapitale.fr/?s=incendie'
+PATH_MARSEILLE_FIRE = 'https://www.20minutes.fr/search?q=incendie+marseille'
+PATH_PARIS_FIRE = 'https://www.20minutes.fr/search?q=incendie+paris'
+
+
+MONTH_DICO = {'1':'janvier','2':'fevrier','3':'mars','4':'avril',
+              '5':'mai','6':'juin','7':'juillet','8':'août',
+              '9':'septembre','10':'octobre','11':'novembre','12':'decembre'}
 
 
 
 
-
-
-
-
-
-
-
-
-
+MONTH_DICO_EN = {'1':'January', '2':'February', '3':'March','4':'April','5':'May','6':'June',
+                '7':'July','8':'August','9':'September','10':'October','11':'November','12':'December'}
 
 
 
