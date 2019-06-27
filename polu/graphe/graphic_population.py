@@ -1,3 +1,7 @@
+"""We call data from database
+we recuperate all data from one condition
+and create a matplolib graph"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab
@@ -8,12 +12,18 @@ import shutil
 from .function_graph import moyenne
 from .function_graph import new
 
+from .CONFIG import DATABASE
+from .CONFIG import HOST
+from .CONFIG import USER
+from .CONFIG import PASSWORD
+
 def visu_population():
+    """Here we call database for take population"""
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696') 
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
 
     cursor = conn.cursor()
     
@@ -28,7 +38,8 @@ def visu_population():
 
 
 def treatement_population(data_population):
-
+    """We split it into list who corresponding to data"""
+    
     lyon = []
     paris = []
     marseille = []
@@ -50,6 +61,7 @@ def treatement_population(data_population):
             
         print(i)
 
+    #We make an average
     data = len(lyon) + len(paris) + len(marseille)
     data_lyon = moyenne(lyon)
     data_paris = moyenne(paris)
@@ -64,6 +76,8 @@ def treatement_population(data_population):
 
 def diagram_population(data_lyon, data_paris, data_marseille,
               er_lyon, er_paris, er_marseille, save):
+
+    """We create a graph and return it"""
 
     plt.bar(range(3), [data_lyon, data_paris, data_marseille],
                         width = 0.1, color = 'black',
