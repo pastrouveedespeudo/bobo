@@ -48,13 +48,9 @@ def incendie(ville):
 
         liste.append(str(propriete))
         daate = str(jour) + ' ' + str(mois) + ' ' + str(année)
-        #print(daate)
 
         a = str(liste).find(str(daate))
-        #print(a)
-        #print(liste[0][a-200:a+100])
 
-        
     elif ville == 'paris':
         path = PATH_PARIS
     elif ville == 'marseille':
