@@ -1,58 +1,36 @@
-refaire les href
+finir le python,
 
-puis coupe et efface tout ca
+PADDING, margin les textes coupes
 
-essais coupe avec navigation privée + heroku pour etre sur
+une fois python faire le js olalalal dis toi que c comme python avec des arcs
 
 ATTENTION dans le truk final, c'est le SOUP local qui est mis pour coiff et gym(github)
 
 pollu views(+dépendance) et tendance file 
 
-donnée marseille trop gros
-
 verifier la map couffeur et gym
-
-nettoyer tous les favoris de habits
 
 vérifier coupe
 
-coupe les service en petit c pas centré
-
-coupe draggable bien les pos en 1200 + favoris
+coupe draggable bien les pos en 1200 
 
 coupe le logo de chargement grandis le cadre
 
-map onclick map href #mamapgym
-
-coupe est encore trop grande en 1200
-
-effacer les import unecessary
-
-vérifier une derniere fois toutes les pages
-
-mettre les pages des admin dans les appli
-
--> refaire les url concernées
+vérifier une encore toutes les pages
 
 oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est pour coiffeur
-
-#une fois cest deux fini dissoc le js et le css comme ca tu poruras faire un dernier réparage
 
 background transparent des graggables
 
 <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
 
-#my_project page home
+#my_project page home + conclu page home responsive ome faire le truk avec les images pollution
 
-mettre une conclusion a la fin
-
-page home responsive
 
 8 - Finir tous les textes
 
 finir machine a o
 
--  home faire le truk avec les images pollution
 
 faire les tests <- j'ai trop hate !
 
@@ -96,5 +74,4 @@ csrfmiddlewaretoken:'{{ csrf_token }}'
 
 
 
-section coiffure,
-section gym le 25 juin a 20h47 (VO linux/developpement) 
+ca sté classe mais ca sert a rien
