@@ -27,6 +27,9 @@
         border:transparent;
         display:none;
     }
+    #text{
+        text-align:justify;
+    }
   </style>
 
 
@@ -34,25 +37,20 @@
     
   <div id='text'>
     <h1>La prédiction</h1><br>
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+    Nous récupérons: les bouchons de la ville,
+    le temps, le taux de polenne, les incendies,
+    les eruptions, la température, le temps,
+    la situation de la pollution actuelle
+    de la ville, ses sites industrielles,
+    sa population active, la situation journalière,
+    le jour de la semaine, les heures de pointes,
+    le diesel et les manifestations. Par ce
+    condensé de donnée, nous récupérons la
+    condition du moment présent et
+    nous la comparons à nos données.<br>
+    Ainsi nous faisons la moyenne de toutes
+    les données en base de donnée et
+    estimons le taux de pollution.
     
     
     
@@ -319,8 +317,8 @@
   }
   #text{
     float:none;
-    font-size:3vw;
-    text-align:center;
+    font-size:4vw;
+    text-align:justify;
     margin-left:80px;
   }
   #paris,
@@ -394,8 +392,10 @@
   }
   #text{
     float:none;
-    margin-left:200px;
-    font-size:2vw;
+    margin-top:80px;
+    margin-left:50px;
+    font-size:3vw;
+    width:250px;
   }
   #choix{
     font-size:10px;
@@ -408,7 +408,7 @@
   #pred{
     margin-left:10%;
     font-size:30px;
-    width:200px;
+    width:100px;
     text-align:center;
   }
   #section_info{
@@ -429,6 +429,10 @@
   }
   #reso{
     width:100%;
+  }
+  h1{
+    font-size:6vw;
+    width:50px;
   }
 
   
@@ -462,8 +466,10 @@
   }
   #text{
     float:none;
-    margin-left:200px;
-    font-size:2vw;
+    margin-left:50px;
+    font-size:3vw;
+    width:250px;
+    margin-top:50px;
   }
   #choix{
     font-size:30px;
@@ -526,8 +532,9 @@
   }
   #text{
     float:none;
-    margin-left:250px;
-    font-size:2vw;
+    margin-left:150px;
+    font-size:3vw;
+    width:300px;
   }
   #choix{
     font-size:30px;
@@ -634,7 +641,6 @@
   #conteneur{
     margin-top:50px;
     width:100%;
-    margin-left:20%;
   }
   #p_ville3,
   #p_ville2,
@@ -642,7 +648,6 @@
     font-size:30px;
     text-align:center;
     width:250px;
-    
   }
   #info1,
   #info2,
@@ -655,8 +660,9 @@
   }
   #text{
     float:none;
-    margin-left:450px;
+    margin-left:350px;
     font-size:2vw;
+    width:300px;
   }
   #choix{
     font-size:20px;
@@ -730,13 +736,17 @@
 
 
 @media screen and (min-width: 1001px){
-  #p_ville3,
-  #p_ville2,
-  #p_ville1{
-    margin-top:150px;
-    
-  }
+    #text{
+      float:right;
+      margin-right:150px;
+      width:500px;
+    }
+
 }
+
+
+
+
 
 
 </style>
