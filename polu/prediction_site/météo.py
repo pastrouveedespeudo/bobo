@@ -1,38 +1,39 @@
-import os
-import cv2
-import json
 import requests
-import datetime
 import urllib.request
 from bs4 import *
-from colour import Color
-from PIL import Image, ImageDraw, ImageChops
+import datetime
 
-
+from .CONFIG import CLE_OPEN
+from .CONFIG import PATH_TEMP
+from .CONFIG import PATH_WEATHER
+from .CONFIG import PATH_WIND
+from .CONFIG import PATH_PRESSURE
 
 def recuperation_donnée_météo(lieu):
 
-    clé = '5a72ceae1feda40543d5844b2e04a205'
-    
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,clé)
+
+    localisation = PATH_WEATHER.format(lieu, CLE_OPEN)
     r = requests.get(localisation)
     data=r.json()
 
-
     méteo = data['weather'][0]['main']
 
-    if méteo == "Rain" or méteo == 'Thunderstorm':
+    if méteo == "Rain" or\
+       méteo == 'Thunderstorm':
         return 'pluie'
-    elif méteo == "Clouds" or méteo == 'Mist' or méteo == 'Haze':
+    
+    elif méteo == "Clouds" or\
+         méteo == 'Mist' or\
+         méteo == 'Haze':
         return 'nuageux'
+    
     elif méteo == "Clear":
         return 'beau_temps'
 
+
 def vent(lieu):
 
-    clé = '5a72ceae1feda40543d5844b2e04a205'
-    
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,clé)
+    localisation = PATH_WIND.format(lieu, CLE_OPEN)
     r = requests.get(localisation)
     data=r.json()
 
@@ -42,28 +43,27 @@ def vent(lieu):
     except:
         pass
 
-    
     vent = data['wind']['speed']
-
 
     if vent <= 3 :
         return 'faible'
         
-    elif vent <= 6 and vent > 3:
+    elif vent <= 6 and\
+         vent > 3:
         return 'moyen fort'
 
-    elif vent <= 8 and vent > 6:
+    elif vent <= 8 and\
+         vent > 6:
         return 'fort'
 
     elif vent >= 8:
         return 'tres fort'
 
+
+
 def pression(lieu):
 
-    
-    clé = '5a72ceae1feda40543d5844b2e04a205'
-    
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,clé)
+    localisation = PATH_PRESSURE.format(lieu, CLE_OPEN)
     r = requests.get(localisation)
     data=r.json()
     
@@ -73,16 +73,15 @@ def pression(lieu):
     pression = data['main']['pressure']
 
     
-    if pression >= 1030:#anti
+    if pression >= 1030:
         return 'forte'
 
     elif pression <= 1013:
-        return 'faible'#depression
+        return 'faible'
 
     else:
         return 'normale'
 
-    
 
 
 
