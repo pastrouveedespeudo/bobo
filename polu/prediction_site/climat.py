@@ -1,14 +1,17 @@
+"""This is file for prediction site web
+We'll mesure temperature and the current season"""
+
 import requests
 import datetime
 import urllib.request
 from bs4 import *
 
-from .CONFIG import CLE_OPEN
+from .CONFIG import *
 
 
 
 def recuperation_donnée_température(lieu):
-
+    """We recuperate the temperature"""
     
     localisation = PATH_TEMP.format(lieu,CLE_OPEN)
 
@@ -35,7 +38,8 @@ def recuperation_donnée_température(lieu):
 
 
 def saison():
-    
+    """We recuperate the season"""
+
     date = datetime.datetime.now()
     mois = date.month
     jour = date.day
