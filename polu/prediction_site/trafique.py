@@ -212,7 +212,28 @@ def plugs_paris():
     
     b = kmplug
        
-    return b
+    if b == 0 or\
+       b == 0.0:
+        return 'non'
+
+    elif b > 0  and\
+         b <= 5:
+        return 'petit'
+
+    elif b > 5 and\
+         b <= 9:
+        return 'moyen'
+
+    elif b > 9 and\
+         b <= 15:
+        return 'grand'
+
+    elif b > 15 and\
+         b <= 20:
+        return 'assez grand' 
+
+    elif b > 20:
+        return 'tres grand' 
 
 def bouchons(city):
     """From this site web we get plugs into this city"""
