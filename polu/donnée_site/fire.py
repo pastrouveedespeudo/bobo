@@ -1,5 +1,3 @@
-"""Bs4, request, str find 16/04/2019"""
-
 
 import requests
 import urllib.request
@@ -23,6 +21,7 @@ def date():
 
     return day, month, year
 
+
 def soup_lyon():
     """We searchinf fire for lyon"""
     
@@ -45,6 +44,7 @@ def soup_lyon():
     else:
         return 'non'
 
+
 def soup_request(path):
     """We call all div"""
     
@@ -57,6 +57,7 @@ def soup_request(path):
     liste.append(str(Property))
 
     return liste
+
 
 def search_date(path):
     """Here we search 
