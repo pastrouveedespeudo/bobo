@@ -1,3 +1,5 @@
+js
+
 coupe draggable bien les pos en 1200 
 
 oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est pour coiffeur
@@ -5,6 +7,8 @@ oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est p
 background transparent des graggables
 
 #my_project page home + conclu page home responsive ome faire le truk avec les images pollution
+
+ranger page
 
 Finir tous les textes
 
