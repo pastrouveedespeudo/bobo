@@ -1,33 +1,23 @@
-import os
-import cv2
-import json
 import requests
 import datetime
 import urllib.request
 from bs4 import *
-from colour import Color
-from PIL import Image, ImageDraw, ImageChops
 
-
+from .CONFIG import CLE_OPEN
 
 
 
 def recuperation_donnée_température(lieu):
 
     
-    clé = '5a72ceae1feda40543d5844b2e04a205'
-    
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,clé)
+    localisation = PATH_TEMP.format(lieu,CLE_OPEN)
 
-    r = requests.get(localisation)
+    requests_html = requests.get(localisation)
 
-    data=r.json()
+    data = requests_html.json()
 
     température = data['main']['temp']
     température = température - 273.15
-
-    
-    #print(str(round(température)) + ' Celsius')
 
     if température < 0:
         return '> 0'
@@ -42,14 +32,14 @@ def recuperation_donnée_température(lieu):
     elif température >= 40:
         return '41>'
 
+
+
 def saison():
     
     date = datetime.datetime.now()
     mois = date.month
     jour = date.day
 
-   
-    
     if mois == 12 or mois == 1\
        or mois == 2:
         return 'hiver'
