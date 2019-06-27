@@ -1,6 +1,9 @@
+"""We call data from database
+we recuperate all data from one condition
+and create a matplolib graph"""
+
 import matplotlib
 matplotlib.use('Agg')
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab
@@ -12,16 +15,18 @@ import shutil
 from .function_graph import moyenne
 from .function_graph import new
 
-
+from .CONFIG import DATABASE
+from .CONFIG import HOST
+from .CONFIG import USER
+from .CONFIG import PASSWORD
 
 def visu_plugs(city):
     """We ask database about plugs"""
     
-    conn = psycopg2.connect(database='datu8fkornnndh',
-                             user='pwtfmpvfpsujtw',
-                             host='ec2-46-137-188-105.eu-west-1.compute.amazonaws.com',
-                             password='e260133d94ee203ca0d3d7f0ccbc37d20b27b63b06841ca37a4e42eaf9ef5696')
-
+    conn = psycopg2.connect(database=DATABASE,
+                            user=USER,
+                            host=HOST,
+                            password=PASSWORD) 
     cursor = conn.cursor()
     
     sql = ("""SELECT BOUCHON, nombre_particule FROM bouchon
@@ -74,6 +79,8 @@ def treatment_plugs(data_plugs):
     data = len(no) + len(little) + len(means) + len(great)+ len(large_enough)+ len(super_large)
     print(data)
     
+    #We make an average
+    
     data_no = moyenne(no)
 
     data_little = moyenne(little)
@@ -103,7 +110,7 @@ def diagram_plugs(data_no, data_little, data_means,
               er_great, er_large_enough,
               er_super_large, save):
 
-    """We siplay it into a matplotlab graph"""
+    """We create a graph and return it"""
     
     
     plt.bar(range(6), [data_no, data_little, data_means,
@@ -130,8 +137,8 @@ def diagram_plugs(data_no, data_little, data_means,
     plt.clf()               #we empty the cache
     plt.close()
     
-    shutil.move(nouveau, '/app/static/popo')    #Move graph to popo file
-    #shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
+    #shutil.move(nouveau, '/app/static/popo')    #Move graph to popo file
+    shutil.move(nouveau, r'C:\Users\jeanbaptiste\bobo\bobo\static\popo')
     return nouveau
 
 
