@@ -1,8 +1,10 @@
-finir le python,
+finir le python -> faire le truk coupe et apres finir le reste ce soir
 
-comprend pk y'a aucune donnée qui match y'en a pourtant des 100 enes
+faire les pages
 
-erruption linux
+
+
+en meme temps si tu met pas exactement la meme chose... par contre c du refactoring de tout un dossier qui vient detre keni....
 
 PADDING, margin les textes coupes
 
