@@ -1,3 +1,9 @@
+remplir database 
+
+gros 1h a te focus et amettre des bordeur de partout c pas grave bouge !
+
+Finir tous les textes
+
 js
 
 coupe draggable bien les pos en 1200 
@@ -10,7 +16,7 @@ background transparent des graggables
 
 ranger page
 
-Finir tous les textes
+
 
 finir machine a o
 
