@@ -5,110 +5,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        
-
-
       <!-- Title Section -->
       <header>
 
@@ -1117,8 +1013,24 @@
       {% include "bottom_page2_photo.html" %}
       {% block content2 %}
       {% endblock content2%}
+      
     </div>
 </footer>
+<!-- Bootstrap core JavaScript -->
+<script src="/static/vendor/jquery/jquery.min.js"></script>
+<script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="/static/js/creative.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqJf5bBiufgiWCK34KcdmPt4Zhsp4oRCc&callback=initMap"
+  async defer></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</html>
 
 
 
@@ -2339,7 +2251,7 @@ function nom_image(id_im){
      
       jQuery.ajax({
           data:{
-              csrfmiddlewaretoken:'XdpNu6Dzes1qNNkk9u3frFyIaZSwm2hjDszx7u26KFt1TBqNKqyeNhVv8gvsfBi9',
+              csrfmiddlewaretoken:'{{ csrf_token }}',
               'a':a,
               'b':b
           },
