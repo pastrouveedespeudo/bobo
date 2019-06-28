@@ -1,24 +1,26 @@
 {% include "barre_gauche_coupe.html" %}
 {% block content %}
 {% endblock %}
+
+
+
 <style>
   #menu_res{
     border:none;
     background:none;
   }
-  body{
-    margin:0px;
-    }
 
 </style>
 
 
-    <input type='button' id="menu_res" value="Menu" onclick="redirection()">
+
+
+    <input type='button' id="menu_res" value="Menu" onclick="redirection()"><br><br>
     
     <section id="text_top">
 
-
-                <p id="resum_titre">
+       
+           
                   Les coupes de cheveux ont beaucoup de
                   significations et d'importance.<br><br>Les cheveux longs
                   servent à plaire à tous le monde (mais attention à la longueur !).
@@ -35,65 +37,67 @@
                   <br>Nous vous proposons de pouvoir
                   vous voir avec différentes coiffures 
                   et ainsi faire VOTRE mode !
-                </p>
-           
+            
+         
+        
 
     </section>
 
-    <style>
+   <style>
                    
         @media screen and (min-width: 320px) and (max-width:374px) {
             #MENU, #logo{
                 display: none;
             }
-            #resum_titre{
-                text-align: justify;
-                margin: 10px;
-                font-weight: bold;
-            }
-        }
-        
-
-        @media screen and (min-width: 375px) and (max-width:425px) {
-            #MENU, #logo{
-                display: none;
+            #text_top{
+                width:50%;
+                border:1px solid green;
             }
             #resum_titre{
-                text-align: justify;
-                margin: 10px;
-                font-weight: bold;
-                width:100%;
+                font-size:10px;
+                width:10px;
             }
+                
         }
-
-
-
 
     </style>
 
 
-    <style>
-        #basic{
-            z-index: 4;
-        }
 
-    </style>
 
-    <section id="the_picture_section">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <setion id="the_picture_section">
     
         <div id="container_photo">
-              <div class="row">
+ 
+              <div class="row" style='width:100%;border:1px solid red;'>
 
 
-                   <div class="col-xs-8 col-md-6 col-lg-6" id='basic'>
-                   
-                           <h3><strong>Notre salon de coiffure</strong></h3><br><br>
+
+                   <div class="col-sm-12 col-md-6 col-lg-6" id='basic'>
+           
+                      
+                           <h3 id="titre_salon"><strong>Notre salon de coiffure</strong></h3><br><br>
                            <video class="videostream" autoplay></video><br><br>
 
-                           <button class="capture-button" id='StartVideo' style='border:2px solid black;'>Start</button>&nbsp;&nbsp;
-
-                            <button id="stop-button" style="border:2px solid black;">Stop</button></br><br>
-                            
+                            <button class="capture-button" id='StartVideo' style='border:2px solid black;'>Start</button>&nbsp;&nbsp;
+                            <button id="stop-button" style="border:2px solid black;">Stop</button></br>
+                            <br>
                             <p><button id="cssfilters-apply" style='border:2px solid black;'> Mettre en noir et blanc conseillé</button>
 
                             <div id="screenshot" style="text-align:center;" style='display:none;'>
@@ -102,40 +106,61 @@
                               <p><button class="capture-button" style='display:none;'>Démarrer</button></p>
                               <p><button id="screenshot-button" disabled style='display:none;'> Take screenshot</button></p>
                             </div>
+
                             <div id="cssfilters" style="text-align:center;" style='display:none;'>
+                        
                                 <video class="videostream" autoplay title="Click me to apply CSS Filters" alt="Click me to apply CSS Filters"
-                                 style='display:none;'>
+                                    style='display:none;'>
                                 </video>
                                 <p><button class="capture-button" style='display:none;'>Capture video</button><p>
                                 <button id="cssfilters-apply" style='display:none;'>Mettre en noir et blanc (Recommandé)</button></p>
                             </div>
-                    </div>
-
+                      </div>
 
 
                     <style>
-                                   
                         @media screen and (min-width: 320px) and (max-width:374px) {
                             #basic{
                                 width:100%;
                                 text-align:center;
                             }
-                            video{
+                            
+                            #resum_titre{
                                 width: 100%;
-                                text-align:center;
-                              
+                                text-align:justify;
+                                margin:15px;
+                            }
+                            .videostream{
+                                width:100%;
+                            }
+                            .grayscale{
+                                width:100%;
+                            }
+                            h3{
+                                font-size:20px;
                             }
                         }
+                            
 
+
+
+                            
 
                     </style>
 
 
 
-                  
-                    <div id="the_inputs" class="col-sm-12 col-md-3 col-lg-3">
-                  
 
+
+
+
+
+
+                  
+                      <div id="the_inputs" class="col-sm-12 col-md-3 col-lg-3"style='border:1px solid transparent;'>
+                          <center>
+                          
+                          
                           <input type='button' value='ajouter de la longueur?'
                             style=" border:3px solid black"
                             onclick='ajout_longueur()' id="input1"/><br><br>
@@ -159,210 +184,53 @@
                     </div>
 
 
-              
-                    <style>
-                                   
-                        @media screen and (min-width: 320px) and (max-width:374px) {
-                            #the_inputs{
-                                width:100%;
-                                text-align:center;
-                            }
-                        }
-
-
-                    </style>
+                 
+           
+            
 
 
 
 
 
 
-                    <div class="col-sm-12 col-md-3 col-lg-3" id="placement">
-       
+                    <div class="col-sm-12 col-md-3 col-lg-3" style='border:1px solid transparent;' id="div_placement">
+            
+                        <center>
+                        
+                          <div id='placement'>
                             <center><strong><p id="p_coupe" style='color:black;'><strong>Coupes</strong></p></strong></center><br>
                               
                              <input type='button' value='Fond' id='fond'
                               onclick="put_background()">
-                              
                               <input type='button' value='Enlever le fond' id='fond1'
                               onclick="get_background()"><br><br>
-                              
-                              <input type='button' value='coupe longue' id='longue_but'
-                              onclick='coupe_longue()' style='border:3px solid black;'><br><br>
-                              
-                              <input type='button' value='coupe courte' id='coute_but'
-                              onclick='coupe_courte()' style='border:3px solid black;'><br><br>
-                              
-                              <input type='button' value='coupe couleur longue' id="longue_coul"
-                              onclick='coupe_longue_coul()' style='border:3px solid black;'><br><br>
-                              
-                              <input type='button' value='coupe couleur courte' id="courte_coul"
-                              onclick='coupe_courte_coul()' style='border:3px solid black;'><br><br>
-                              
-                              <input type='button' value='barbe' onclick='barbe()'
-                              id="barbe_button" style='border:3px solid black;'><br><br>
-                              
-                        </div>
-
-                              <div class="col-sm-12 col-md-12 col-lg-12" id="close">
-                                  <center><input type='button' id='bout_fermer_longue' value='fermer' onclick='fermer1()'
-                                      style='display:none; border:3px solid black;z-index:1;'></center><br><br>
-                                      
-                                  <center><input type='button' id='bout_fermer_court' value='fermer' onclick='fermer2()'
-                                      style='display:none;border:3px solid black;z-index:1;'></center><br><br>
-                                      
-                                  <center><input type='button' id='bout_fermer_longue_coul' value='fermer' onclick='fermer3()'
-                                      style='display:none;border:3px solid black;z-index:1;'></center><br><br>
-                                      
-                                  <center><input type='button' id='bout_fermer_court_coul' value='fermer' onclick='fermer4()'
-                                      style='display:none;border:3px solid black;z-index:1;'></center><br><br>
-
-                                  <center><input type='button' id='bout_fermer_barbe' value='fermer' onclick='fermer5()'
-                                      style='display:none;border:3px solid black;z-index:1;'></center><br><br>
-                             </div>
-
-                        
-                    </div>    
-                </div>
-            </section>
-
-
-
-
-                    <style>
-                    
-                        #fond{
-                         border:3px solid black;
-                        }
-                        #fond1{
-                          display:none;
-                          border:3px solid black;
-                        }  
-
- 
-                        @media screen and (min-width: 320px) and (max-width:374px) {
-                            #placement{
-                                width:100%;
-                                text-align:center;
-                            }
-                            #p_coupe{
-                                display:none;
-                            }
-                            #close{
-                                text-align:center;
-                            }
-                        }
-
-
-                    </style>
-
-
-
-
-
-
-
-
-            {% for i in coif %}
-                {% for j in i %}
-                
-                <script>
-                   listeeeee.push('{{j}}')
-                </script>
-                
-                {% endfor %}
-            {% endfor %}
-
-
-
-
-
-
-
-
-
-
-
-
-                  <section id="textes_transition">
-                  
-               
-                        <div class="row" id="text_transi">
-                        
-                          <div class="col-sm-12 col-md-4 col-lg-4" id="txt1">
-
-                            <p id='text'>
-                            <h1 id="titre_re">Prenez soin de vos cheveux !</h1><br>
-                            Que votre coupe de cheveux soit
-                            "bouclée, raide comme des baguettes ou colorée"
-                            n'utilisez pas n'importe quel shampoing. Adaptez
-                            le à votre style de cheveux.<br>
-                            Ne les lavez pas trop souvent, cela permet
-                            les enduire de graisse et donc de les protéger !
-                            Lavez les à l'eau tiède ! et utilisez un 
-                            après-shampoing. Cela permet de mieux les
-                            brosser et "favorise la fermeture des 
-                            écailles"<br>
-                            http://www.madmoizelle.com/<br>conseils-beaute-soin-cheveux-337708
-                            </p>
-                            
+                              <input type='button' value='coupe longue' id='longue_but' onclick='coupe_longue()' style='border:3px solid black;'><br><br>
+                              <input type='button' value='coupe courte' id='coute_but' onclick='coupe_courte()' style='border:3px solid black;'><br><br>
+                              <input type='button' value='coupe couleur longue' id="longue_coul" onclick='coupe_longue_coul()' style='border:3px solid black;'><br><br>
+                              <input type='button' value='coupe couleur courte' id="courte_coul" onclick='coupe_courte_coul()' style='border:3px solid black;'><br><br>
+                              <input type='button' value='barbe' onclick='barbe()' id="barbe_button" style='border:3px solid black;'><br><br>
                           </div>
 
 
-                          
-                          <div class="col-sm-12 col-md-4 col-lg-4" id="txt2">
+                              <input type='button' id='bout_fermer_longue' value='fermer' onclick='fermer1()'
+                                  style='display:none; border:3px solid black;z-index:1;'><br><br>
+                                  
+                              <input type='button' id='bout_fermer_court' value='fermer' onclick='fermer2()'
+                                  style='display:none;border:3px solid black;z-index:1;'><br><br>
+                                  
+                              <input type='button' id='bout_fermer_longue_coul' value='fermer' onclick='fermer3()'
+                                  style='display:none;border:3px solid black;z-index:1;'><br><br>
+                                  
+                              <input type='button' id='bout_fermer_court_coul' value='fermer' onclick='fermer4()'
+                                  style='display:none;border:3px solid black;z-index:1;'><br><br>
 
-                            <p id='text'>
-                            <h1 id="titre_re">Citation</h1><br>
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br><br>
-                            </p>
-                            
-                          
+                              <input type='button' id='bout_fermer_barbe' value='fermer' onclick='fermer5()'
+                                  style='display:none;border:3px solid black;z-index:1;'><br><br>    
+                            </center>
+
                           </div>
-
-                          
-                          <div class="col-sm-12 col-md-4 col-lg-4" id="txt3">
-                          
-                            <p id='text'>
-                            <h1 id="titre_re">Titre deux</h1><br>
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                            </p>
-                            
-                         </div>
-
-                          
-                        </div>
-                        
-                      </div>
-                      
+                        </div>    
+                    </div>
                 </section>
 
 
@@ -370,29 +238,245 @@
 
 
 
-                <style>
 
 
-                    @media screen and (min-width: 320px) and (max-width:374px) {
-                        #text_transi{
-                            width:100%;
-   
-                        }
-                        #txt1, #txt2, #txt3{
-                            text-align:center;
-                        }
-                        #text{
-                            text-align:justify;
-                            font-weight:bold
-                        }
-                        h1{
-                            font-size: 19px;
-                            text-align:center;
-                        }
-                    }
 
 
-                </style>
+
+
+
+
+
+
+                          <div id="coucoupe">  
+                            <div id="draggable19" class="ui-widget-content" value='coupe21'
+                            onclick="nom_image('coupe21', 250, 150)";
+                              style='z-index: 1; display:none;'>
+                                <img src="/static/img/portfolio/coupe/1.4.png"
+                                  width='150' height='250'
+                                  id="coupe21"/>
+                            </div>
+                            <div id="draggable18" class="ui-widget-content" value='coupe20'
+                            onclick="nom_image('coupe20', 250, 150)";
+                                style='z-index: 1; display:none;'>
+                                <img src="/static/img/portfolio/coupe/11.3.png"
+                                  width='150' height='250'
+                                  id="coupe20"/>
+                            </div>
+                            <div id="draggable" name="coucou" value='coupe1'
+                              class="ui-widget-content"
+                              onclick="nom_image('coupe1', 200, 150)";
+                              style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/bbbbbbb.png"
+                                    width='150' height='200'
+                                    id="coupe1" />
+                              </div>
+                              <div id="draggable4" class="ui-widget-content" value='coupe5'
+                              onclick="nom_image('coupe5', 150, 100)";
+                              style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/bbbbbbb.png"
+                                  width='100' height='150'
+                                  id="coupe5" />
+                              </div>
+                              <div id="draggable15" class="ui-widget-content"  value='coupe17'
+                                onclick="nom_image('coupe17', 250, 150)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/bbb.png"
+                                    width='150' height='250'
+                                    id="coupe17"/>
+                              </div>
+                              <div id="draggable5" class="ui-widget-content" value='coupe6'
+                                onclick="nom_image('coupe6', 300, 130)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/1.5.png"
+                                    width='130' height='300'
+                                    id="coupe6"/>
+                              </div>
+                              <div id="draggable14" class="ui-widget-content"  value='coupe16'
+                                onclick="nom_image('coupe16', 160, 100)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/bbbb.png"
+                                    width='100' height='160'
+                                    id="coupe16"/>
+                              </div>
+                              <div id="draggable16" class="ui-widget-content"  value='coupe18'
+                                onclick="nom_image('coupe18', 160, 140)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/1.1.png"
+                                    width='140' height='160'
+                                    id="coupe18" />
+                              </div>
+                              <div id="draggable10" class="ui-widget-content" value='coupe12'
+                                onclick="nom_image('coupe12', 250, 150)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/aa.png"
+                                    width='150' height='250'
+                                    id="coupe12"/>
+                              </div>
+                              <div id="draggable11" class="ui-widget-content" value='coupe13'
+                                onclick="nom_image('coupe13', 250, 150)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/aaaaa.png"
+                                    width='150' height='250'
+                                    id="coupe13"/>
+                              </div>
+                              <div id="draggable6" class="ui-widget-content" value='coupe2'
+                                onclick="nom_image('coupe2', 300, 130)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/coucou3.png"
+                                    width='130' height='300'
+                                    id="coupe2"/>
+                              </div>
+                              <div id="draggable3" class="ui-widget-content" value='coupe4'
+                                onclick="nom_image('coupe4', 150, 150)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/image849849849.png"
+                                    width='150' height='150'
+                                    id="coupe4"/>
+                              </div>
+                              <div id="draggable9" class="ui-widget-content" value='coupe9'
+                                onclick="nom_image('coupe9', 160, 140)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/coif.png"
+                                  width='140' height='160'
+                                  id="coupe9"/>
+                              </div>
+                              <div id="draggable12" class="ui-widget-content"  value='coupe14'
+                                onclick="nom_image('coupe14', 160, 100)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/bb.png"
+                                    width='100' height='160'
+                                    id="coupe14"/>
+                              </div>
+                              <div id="draggable7" class="ui-widget-content" value='coupe22'
+                                onclick="nom_image('coupe22', 100, 70)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/coucou22.png"
+                                    width='70' height='100'
+                                    id="coupe22"/>
+                              </div>
+                              <div id="draggable8" class="ui-widget-content" value='coupe8'
+                                onclick="nom_image('coupe8', 50, 70)";
+                                style='z-index: 1; display:none;'>
+                                  <img src="/static/img/portfolio/coupe/coucou22.png"
+                                    width='70' height='50'
+                                    id="coupe8"/>
+                              </div>
+
+
+
+
+
+
+
+            
+
+      </div>
+    </div>
+  </div>
+
+  <section id="textes_transition">
+      <div  id="container2">
+      
+        <div class="row" style='width:90%;'>
+        
+          <div class="col-sm-12 col-md-4 col-lg-4" style='text-align:justify;' id="blackblack">
+
+
+
+          
+            <h1 id="titre_re">Prenez soin de vos cheveux !</h1><br>
+            Que votre coupe de cheveux soit
+            "bouclée, raide comme des baguettes ou colorée"
+            n'utilisez pas n'importe quel shampoing. Adaptez
+            le à votre style de cheveux.<br>
+            Ne les lavez pas trop souvent, cela permet
+            les enduire de graisse et donc de les protéger !
+            Lavez les à l'eau tiède ! et utilisez un 
+            après-shampoing. Cela permet de mieux les
+            brosser et "favorise la fermeture des 
+            écailles"<br>
+            http://www.madmoizelle.com/conseils-beaute-soin-cheveux-337708
+            
+            <br><br>
+            
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-4" style='text-align:justify;'>
+            <h1 id="titre_re">Citation</h1><br>
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            <br><br>
+          </div>
+          
+          <div class="col-sm-12 col-md-4 col-lg-4" style='text-align:justify;'>
+          
+            <h1 id="titre_re">Titre deux</h1><br>
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            
+          </div>
+        </div>
+      </div><br><br>
+    </section>
+
+
+
+    <style>
+        @media screen and (min-width: 320px) and (max-width:374px) {
+            #textes_transition{
+                width:94%;
+                text-align:center;
+                font-size:2vw;
+                border:1px solid blue;
+            }
+            
+            #blackblack{
+                width: 100%;
+                text-align:center;
+            }
+            #titre_re{
+                font-size:2vw;
+                text-align:center;
+            }
+        }
+            
+
+
+
+            
+
+    </style>
+
+
+
+
+
 
 
 
@@ -407,161 +491,99 @@
 
 
   
-
-          <section class="page-section" id="services" style='text-align:center'>
-
-
-
-                <div id='coifcoif' style='display:none;text-align:center;'>
-                
-                          <div id="coifcoif_recherche"><br>
-                              
-                              
-                            <div style='position: absolute; left: 50%;'>
-                            
-                            <center><img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou'
-                                  style='position:relative; display:block;left: -50%;'></center>
-                                  
-                            </div><br><br><br><br>
-                              
-                              
-                            <input type='text' id='coif1' placeholder='Votre ville'><br><br>
-                              
-                              
-                            <center><input type='button' id="input_coif2" onclick='menuuu()' value='Retour au menu'>&nbsp;&nbsp;&nbsp;
-                              
-                            <input type='button' id='coif2' value='valider'></center><br><br><br><br><br>
-                              
-                         </div>
+  <!-- Services Section -->
+  <section class="page-section" id="services" style='text-align:center'>
 
 
-                </div>
-
-
-
-
-
-
-
-                <style>
-                
-                    #coifcoif_recherche{
-                      border:5px solid black;
-                      border-radius: 20px;
-                      background:url("/static/img/parquet1.jpg");
-                      box-shadow: 5px 5px 5px 5px;
-                    }
-                    #coif1{
-                       text-align:center;
-                       border:3px solid black;
-                       width:70%
-                    }
-                    #coif2{
-                        border:2px solid black;
-                    }
-                    #input_coif2{
-                        border:2px solid black;
-                    }
-
-
-
-                    @media screen and (min-width: 320px) and (max-width:374px) {
-                        #coifcoif{
-                            width:100%;
-                            text-align:center;
-                        }
-                    }
-
-
-                </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div id='coifcoif' style='display:none;text-align:center;'>
     
-                <div id='gymgym' style='display:none;text-align:center;'><br>
-            
-              
+      <br>
 
-                     <div id="gymgym_div_prestation">
-                  
-                              <div style='position: absolute; left: 50%;'>
-                      
-                                  <center><img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou_gym'
-                                      style='position:relative; display:block;left: -50%;'></center>
-                                  
-                              </div><br><br><br><br><br>
-                      
+      <center><div id="coifcoif_recherche">
+          
+          <br>
+          <div style='position: absolute; left: 50%;'>
+          <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou'
+              style='position:relative; display:block;left: -50%;'>
+          </div>
+          <br><br><br><br>
 
-                      
-                              <input type='text' id='gym1'
-                                  style='text-align:center; border:3px solid black; width:70%;'
-                                  placeholder='Votre ville'><br><br>
-                         
-                      
-                              <center><input type='button' onclick='menuuu()' value='Retour au menu' style='border:2px solid black;'>&nbsp;&nbsp;&nbsp;
-                              <input type='button' id='gym2' value='valider' style='border:2px solid black;'></center><br><br><br><br><br>
+            <style>
+                #coif1{
+                    text-align:center;
+                   border:3px solid black;
+                   width:70%
+                }
+                #coif2{
+                    border:2px solid black;
+                }
+                #input_coif2{
+                    border:2px solid black;
+                }
+            </style>
+          <input type='text' id='coif1' placeholder='Votre ville'>
+          <br><br>
+          
+          <center><input type='button' id="input_coif2" onclick='menuuu()' value='Retour au menu'>&nbsp;&nbsp;&nbsp;
+          
+          <input type='button' id='coif2' value='valider'></center><br>
+          <br><br><br><br>
+      </div>
 
-                 
-                    </div>
+             
+    </div></center>
 
-                     
-                </div>
+    <style>
+      #gymgym_div_prestation{
+          border:5px solid black;
+          border-radius: 20px; width:50%;
+          background:url("/static/img/parquet1.jpg");
+          box-shadow: 5px 5px 5px 5px;
+      }
+        #gym1{
+            text-align:center;
+           border:3px solid black;
+           width:100%
+        }
+        #gym2{
+            border:2px solid black;
+        }
+        #input_coif2{
+            border:2px solid black;
+        }
 
+    </style>
+    <div id='gymgym' style='display:none;text-align:center;'>
+    
+      <br>
 
+      <center><div id="gymgym_div_prestation">
+          
+     
+         
+          <div style='position: absolute; left: 50%;'>
+          
+            <img src='/static/img/portfolio/icone/chargement1.gif' width='80' height='80' id='gifou_gym'
+              style='position:relative; display:none;left: -50%;'>
+         </div>
+          <br><br><br><br><br>
 
+          
+          <input type='text' id='gym1'
+                  style='text-align:center; border:3px solid black; width:70%;'
+                   placeholder='Votre ville'>
+          <br><br>
+          
+          <center><input type='button' onclick='menuuu()' value='Retour au menu' style='border:2px solid black;'>&nbsp;&nbsp;&nbsp;
+          
+          <input type='button' id='gym2' value='valider' style='border:2px solid black;'></center><br>
+          <br><br><br><br>
+      </div>
 
+             
+    </div></center>
 
-                <style>
-                       #gymgym_div_prestation{
-                          border:5px solid black;
-                          border-radius: 20px; width:50%;
-                          background:url("/static/img/parquet1.jpg");
-                          box-shadow: 5px 5px 5px 5px;
-                        }
-                        #gym1{
-                            text-align:center;
-                            border:3px solid black;
-                            width:70%
-                        }
-                        #gym2{
-                            border:2px solid black;
-                        }
-                        #input_coif2{
-                            border:2px solid black;
-                        }
-
-                        @media screen and (min-width: 320px) and (max-width:374px) {
-                            #gymgym{
-                                width:100%;
-                                text-align:center;
-
-                            }
-                            #gymgym_div_prestation{
-                                width:100%;
-                            }
-                        }
-
-
-
-                </style>
-
-
-
-
-
-
-
+  
 
     <div id='mapmap' style='text-align:center;display:none;'>
     
@@ -735,14 +757,62 @@
 
 </style>
 <style>
+#coifcoif_recherche{
+  border:5px solid black;
+  border-radius: 20px; width:50%;
+  background:url("/static/img/parquet1.jpg");
+  box-shadow: 5px 5px 5px 5px;
+}
+
+</style>
 
 
 
+<style>
+#cssfilters-apply{
+    font-weight:bold;
+}
+#StartVideo{
+    font-weight:bold;
+}
+#stop-button{
+    font-weight:bold;
+}
+blackblack{
+    font-weight:bold;
+}
+#container_photo{
+    padding-top:250px;
+}
+#logo{
+  position:static;
+  margin-top:-95px;
+}
+#menumenu{
+  margin-left:-80px;
+}
+#section1{
+  height:100%;
+}
+.videostream{
+  z-index: 4;
+}
+#fond{
+ border:3px solid black;
+}
+#fond1{
+  display:none;
+  border:3px solid black;
+}
 
+#CONTENEUR{
+    background:url("/static/img/parquet1.jpg") no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width:80%;
+    border:2px solid black;
 
-
-
-
+}
 
 
 
@@ -788,114 +858,95 @@
 
 
 
-
-
     <style>
       #CONTENEUR{
-        background:url("/static/img/parquet1.jpg") no-repeat;
-        -webkit-background-size: cover;
-        background-size: cover;
-        width:80%;
-        border:2px solid black;
+        font-size:1.3vw;
       }
-
     </style>
 
 
-
-    <div class="container" id='CONTENEUR'><br><br>
-    
+    <div class="container" id='CONTENEUR'>
+    <br><br>
       <h2 class="text-center mt-0">Mes services</h2><br>
-      
       <p id="aide">Cliquez sur une des images pour profiter des services.</p>
-      
       <hr class="divider my-4">
-      
-          <div class="row">
-
-
-              
-                <div class="col-lg-3 col-md-6 text-center">
-
-
-                      <div class="mt-5">
-                  
-                           <style>#im6{width:100px; height:100px;}</style>
-                   
-                           <img onclick="coiffeur()" src="/static/img/portfolio/icone/coiffeur.png"
-                             onmouseover="stop('im6', '/static/img/portfolio/icone/coiffeur2.png')"
-                             onmouseout="start('im6', '/static/img/portfolio/icone/coiffeur.png')"
-                             id="im6">
-                     
-                            <h3 class="h4 mb-2">Coiffeurs</h3><br>
-
-                      </div>
-                
-                </div><br><br>
-
-
-
-
-                <div class="col-lg-3 col-md-6 text-center">
-                
-                  <div class="mt-5">
-                  
-                   <style>#im4{width:100px; height:100px;}</style>
-                   
-                   <img onclick="gym()" src = "/static/img/portfolio/icone/gym.png"/
-                     onmouseover="stop('im4', '/static/img/portfolio/icone/gym2.png' )"
-                     onmouseout="start('im4', '/static/img/portfolio/icone/gym.png')"
-                     id="im4">
-                     
-                    <h3 class="h4 mb-2" >Salle de gym</h3>
-                    <br>
-                    
-         
-                  </div>
-                </div><br><br>
-
-
-
-
+      <div class="row">
 
 
       
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+          
+           <style>#im6{width:100px; height:100px;}</style>
+           
+           <img onclick="coiffeur()" src="/static/img/portfolio/icone/coiffeur.png"
+             onmouseover="stop('im6', '/static/img/portfolio/icone/coiffeur2.png')"
+             onmouseout="start('im6', '/static/img/portfolio/icone/coiffeur.png')"
+             id="im6">
+             
+            <h3 class="h4 mb-2">Coiffeurs</h3>
+            
+            <br>
 
-                <div class="col-lg-3 col-md-6 text-center">
-                  <div class="mt-5">
-                   <style>#im7{width:100px; height:100px;}</style>
-                   
-                   <a href="/photo/habits"><img onclick="vetements()" src="/static/img/portfolio/icone/vetements.png"/
-                     onmouseover="stop('im7', '/static/img/portfolio/icone/vetements22.png')"
-                     onmouseout="start('im7', '/static/img/portfolio/icone/vetements.png')"
-                     id="im7"></a>
-                     
-                    <h3 class="h4 mb-2">Essayer des vêtements</h3>
-
-                  </div>
-                </div>
-
-
-
-                <div class="col-lg-3 col-md-6 text-center">
-                  <div class="mt-5">
-                   <style>#im8{width:100px; height:100px;}</style>
-                   <a href="/photo/tendance/">
-                     <img onclick="dresshaircutbodyup()" src="/static/img/portfolio/icone/dresshaircutbodyup.png"/
-                         onmouseover="stop('im8','/static/img/portfolio/icone/dresshaircutbodyup2.png')"
-                         onmouseout="start('im8', '/static/img/portfolio/icone/dresshaircutbodyup.png')"
-                     id="im8">
-                   </a>
-                    <h3 class="h4 mb-2">
-                    Voir notre tendance</h3>
-
-                  </div>
-                </div>
+            
+          </div>
+        
+        </div><br><br>
 
         
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+           <style>#im4{width:100px; height:100px;}</style>
+           
+           <img onclick="gym()" src = "/static/img/portfolio/icone/gym.png"/
+             onmouseover="stop('im4', '/static/img/portfolio/icone/gym2.png' )"
+             onmouseout="start('im4', '/static/img/portfolio/icone/gym.png')"
+             id="im4">
+             
+            <h3 class="h4 mb-2" >Salle de gym</h3>
+            <br>
+            
+ 
           </div>
+        </div><br><br>
+
+      
+
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+           <style>#im7{width:100px; height:100px;}</style>
+           
+           <a href="/photo/habits"><img onclick="vetements()" src="/static/img/portfolio/icone/vetements.png"/
+             onmouseover="stop('im7', '/static/img/portfolio/icone/vetements22.png')"
+             onmouseout="start('im7', '/static/img/portfolio/icone/vetements.png')"
+             id="im7"></a>
+             
+            <h3 class="h4 mb-2">Essayer des vêtements</h3>
+
+          </div>
+        </div>
+
+
+
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+           <style>#im8{width:100px; height:100px;}</style>
+           <a href="/photo/tendance/">
+             <img onclick="dresshaircutbodyup()" src="/static/img/portfolio/icone/dresshaircutbodyup.png"/
+                 onmouseover="stop('im8','/static/img/portfolio/icone/dresshaircutbodyup2.png')"
+                 onmouseout="start('im8', '/static/img/portfolio/icone/dresshaircutbodyup.png')"
+             id="im8">
+           </a>
+            <h3 class="h4 mb-2">
+            Voir notre tendance</h3>
+
+          </div>
+        </div>
+
+        
       </div>
-    </div><br><br><br><br>
+      <br><br><br><br>
+    </div>
 
 
 
@@ -903,21 +954,49 @@
   </section>
 
 
-      <input type='button' style='display:none;' id='bubuton' style='border:2px solid black;'>
-      <input type='button' style='display:none;' id='bubuton_gym' style='border:2px solid black;'>
+  <input type='button' style='display:none;' id='bubuton' style='border:2px solid black;'>
+  <input type='button' style='display:none;' id='bubuton_gym' style='border:2px solid black;'>
 
 
 
-      <input type='button' value='a' id='declencheur1' style='display:none;'>
-      <input type='button' value='aa' id='declencheur2' style='display:none;'>
-      <input type='button' value='a' id='declencheur3' style='display:none;'>
-      <input type='button' value='aa' id='declencheur4' style='display:none;'>
+  <input type='button' value='a' id='declencheur1' style='display:none;'>
+  <input type='button' value='aa' id='declencheur2' style='display:none;'>
+  <input type='button' value='a' id='declencheur3' style='display:none;'>
+  <input type='button' value='aa' id='declencheur4' style='display:none;'>
 
 
-      <input type='button' value='a' id='declencheur_gym1' style='display:none;'>
-      <input type='button' value='aa' id='declencheur_gym2' style='display:none;'>
-      <input type='button' value='a' id='declencheur_gym3' style='display:none;'>
-      <input type='button' value='aa' id='declencheur_gym4' style='display:none;'>
+  <input type='button' value='a' id='declencheur_gym1' style='display:none;'>
+  <input type='button' value='aa' id='declencheur_gym2' style='display:none;'>
+  <input type='button' value='a' id='declencheur_gym3' style='display:none;'>
+  <input type='button' value='aa' id='declencheur_gym4' style='display:none;'>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -943,120 +1022,6 @@
 
 
 
-                          <div id="coucoupe">  
-                            <div id="draggable19" class="ui-widget-content" value='coupe21'
-                            onclick="nom_image('coupe21', 250, 150)";
-                              style='z-index: 1; display:none;'>
-                                <img src="/static/img/portfolio/coupe/1.4.png"
-                                  width='150' height='250'
-                                  id="coupe21"/>
-                            </div>
-                            <div id="draggable18" class="ui-widget-content" value='coupe20'
-                            onclick="nom_image('coupe20', 250, 150)";
-                                style='z-index: 1; display:none;'>
-                                <img src="/static/img/portfolio/coupe/11.3.png"
-                                  width='150' height='250'
-                                  id="coupe20"/>
-                            </div>
-                            <div id="draggable" name="coucou" value='coupe1'
-                              class="ui-widget-content"
-                              onclick="nom_image('coupe1', 200, 150)";
-                              style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/bbbbbbb.png"
-                                    width='150' height='200'
-                                    id="coupe1" />
-                              </div>
-                              <div id="draggable4" class="ui-widget-content" value='coupe5'
-                              onclick="nom_image('coupe5', 150, 100)";
-                              style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/bbbbbbb.png"
-                                  width='100' height='150'
-                                  id="coupe5" />
-                              </div>
-                              <div id="draggable15" class="ui-widget-content"  value='coupe17'
-                                onclick="nom_image('coupe17', 250, 150)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/bbb.png"
-                                    width='150' height='250'
-                                    id="coupe17"/>
-                              </div>
-                              <div id="draggable5" class="ui-widget-content" value='coupe6'
-                                onclick="nom_image('coupe6', 300, 130)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/1.5.png"
-                                    width='130' height='300'
-                                    id="coupe6"/>
-                              </div>
-                              <div id="draggable14" class="ui-widget-content"  value='coupe16'
-                                onclick="nom_image('coupe16', 160, 100)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/bbbb.png"
-                                    width='100' height='160'
-                                    id="coupe16"/>
-                              </div>
-                              <div id="draggable16" class="ui-widget-content"  value='coupe18'
-                                onclick="nom_image('coupe18', 160, 140)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/1.1.png"
-                                    width='140' height='160'
-                                    id="coupe18" />
-                              </div>
-                              <div id="draggable10" class="ui-widget-content" value='coupe12'
-                                onclick="nom_image('coupe12', 250, 150)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/aa.png"
-                                    width='150' height='250'
-                                    id="coupe12"/>
-                              </div>
-                              <div id="draggable11" class="ui-widget-content" value='coupe13'
-                                onclick="nom_image('coupe13', 250, 150)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/aaaaa.png"
-                                    width='150' height='250'
-                                    id="coupe13"/>
-                              </div>
-                              <div id="draggable6" class="ui-widget-content" value='coupe2'
-                                onclick="nom_image('coupe2', 300, 130)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/coucou3.png"
-                                    width='130' height='300'
-                                    id="coupe2"/>
-                              </div>
-                              <div id="draggable3" class="ui-widget-content" value='coupe4'
-                                onclick="nom_image('coupe4', 150, 150)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/image849849849.png"
-                                    width='150' height='150'
-                                    id="coupe4"/>
-                              </div>
-                              <div id="draggable9" class="ui-widget-content" value='coupe9'
-                                onclick="nom_image('coupe9', 160, 140)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/coif.png"
-                                  width='140' height='160'
-                                  id="coupe9"/>
-                              </div>
-                              <div id="draggable12" class="ui-widget-content"  value='coupe14'
-                                onclick="nom_image('coupe14', 160, 100)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/bb.png"
-                                    width='100' height='160'
-                                    id="coupe14"/>
-                              </div>
-                              <div id="draggable7" class="ui-widget-content" value='coupe22'
-                                onclick="nom_image('coupe22', 100, 70)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/coucou22.png"
-                                    width='70' height='100'
-                                    id="coupe22"/>
-                              </div>
-                              <div id="draggable8" class="ui-widget-content" value='coupe8'
-                                onclick="nom_image('coupe8', 50, 70)";
-                                style='z-index: 1; display:none;'>
-                                  <img src="/static/img/portfolio/coupe/coucou22.png"
-                                    width='70' height='50'
-                                    id="coupe8"/>
-                              </div>
 
 
 
@@ -1071,22 +1036,226 @@
 
 
 
-                <footer>
-                    <!-- Bottom Section number 2 -->
-                    <div id='reso'> 
-                      {% include "bottom_page2_photo.html" %}
-                      {% block content2 %}
-                      {% endblock content2%}
-                    </div>
-                </footer>
 
 
-                <style>
-                    #reso{
-                        width:100%;
-                    }
 
-                </style>
+<footer>
+    <!-- Bottom Section number 2 -->
+    <div id='bottom'> 
+      
+
+  <section class="page-section bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">Abonne toi sur nos reseaux sociaux !</h2>
+        <a href=""><i class="fab fa-facebook-square" id="fb"></i></a>
+        <a href=""><i class="fab fa-twitter-square" id="tw"></i></a>
+        <a href=""><i class="fab fa-snapchat-square" id="sn"></i></a>              
+    </div>
+  </section>
+
+
+  <section class="page-section" id="contact" style="background:white;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Let's Get In Touch!</h2>
+          <hr class="divider my-4">
+          <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 ml-auto text-center">
+          <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+          <div>+1 (202) 555-0149</div>
+        </div>
+        <div class="col-lg-4 mr-auto text-center">
+          <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+          <!-- Make sure to change the email address in anchor text AND the link below! -->
+          <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-light py-5">
+    <div class="container">
+      <div class="small text-center text-muted">Copyright &copy; 2019 - Start Bootstrap</div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="/static/js/creative.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+
+<style>
+
+i{
+    color:white;
+}
+
+
+@media screen and (min-width: 0px) and (max-width:374px) {
+    #fb{
+        font-size:50px;
+        width:250px;
+    }
+    #tw{
+        font-size:50px;
+        width:250px;
+    }
+    #sn{
+        font-size:50px;
+        width:250px;
+        border:1px soldi red;
+    }    
+    .mb-4{
+        font-size:5vw;     
+    }
+    #h2{
+      font-size:2vw;     
+    }
+}
+
+@media screen and (min-width: 374px) and (max-width:800px) {
+    #fb{
+        font-size:100px;
+        width:300px;
+    }
+    #tw{
+        font-size:100px;
+        width:300px;
+    }
+    #sn{
+        font-size:100px;
+        width:300px;
+    }    
+    .mb-4{
+        font-size:5vw;
+    }
+}
+
+
+@media screen and (min-width: 800px) and (max-width:1000px) {
+    #fb{
+        font-size:100px;
+        width:300px;
+    }
+    #tw{
+        font-size:100px;
+        width:300px;
+    }
+    #sn{
+        font-size:100px;
+        width:300px;
+    }    
+    .mb-4{
+        font-size:3vw;
+        
+    }
+}
+
+
+
+@media screen and (min-width: 1000px) and (max-width:1500px) {
+    #fb{
+        font-size:150px;
+        width:300px;
+    }
+    #tw{
+        font-size:150px;
+        width:300px;
+    }
+    #sn{
+        font-size:150px;
+        width:300px;
+    }    
+    .mb-4{
+        font-size:3vw;
+        
+    }
+}
+
+@media screen and (min-width: 1501px){
+    #fb{
+        font-size:150px;
+        width:400px;
+    }
+    #tw{
+        font-size:150px;
+        width:400px;
+    }
+    #sn{
+        font-size:150px;
+        width:400px;
+    }    
+    .mb-4{
+        font-size:3vw;
+        
+    }
+}
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+    </div>
+</footer>
+
 
 
 
@@ -1132,20 +1301,6 @@
 
 
 
-<script>
-  {% for i in coif %}
-      for(var c = 0; c <= {{coif|length}}*4 - 1; c+=4){
-
-          console.log(listeeeee[c], listeeeee[c + 1], listeeeee[c + 2], listeeeee[c + 3])
-     
-          var url = "<img src='/static/img/portfolio/coupe/"  + listeeeee[c + 1] + "'" +  "height=" + "'" + listeeeee[c + 3] + "'"
-                      + "width=" + "'" +  listeeeee[c + 2] + "' />"
-          console.log(url)
-    
-          var a = document.getElementById(listeeeee[c]).innerHTML = url; 
-       };
-  {% endfor %}
-</script>
 
 
 
@@ -1177,13 +1332,6 @@
 
 
 
-<style>
-
-html, body {
- margin:0;
- padding:0;
- }
-</style>
 
 
 
@@ -1193,9 +1341,21 @@ html, body {
 
 
 
-</body>
 
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2934,5 +3094,4 @@ function ya(){
 
 
 </script>
-
 
