@@ -1,3 +1,7 @@
+ok mtn:
+
+finir les texte y'a encore des truk blanc, tous est responsif, faire les texte, dissoc js ect
+
 remplir database 
 
 gros 1h a te focus et amettre des bordeur de partout c pas grave bouge !
