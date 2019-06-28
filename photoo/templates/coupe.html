@@ -16,11 +16,11 @@
 
 
     <input type='button' id="menu_res" value="Menu" onclick="redirection()"><br><br>
-    
+    <center>
     <section id="text_top">
 
        
-          <center>
+       
           Les coupes de cheveux ont beaucoup de
           significations et d'importance.<br><br>Les cheveux longs
           servent à plaire à tous le monde (mais attention à la longueur !).
@@ -37,13 +37,13 @@
           <br>Nous vous proposons de pouvoir
           vous voir avec différentes coiffures 
           et ainsi faire VOTRE mode !
-          </center>
+        
             
          
         
 
     </section>
-
+    </center>
    <style>
                    
         @media screen and (min-width: 320px) and (max-width:374px) {
@@ -55,6 +55,7 @@
             }
             #resum_titre{
                 font-size:10px;
+                margin:10px;
             }
                 
         }
@@ -81,11 +82,83 @@
             }
             #resum_titre{
                 font-size:10px;
+                font-weight:bold;
+                text-align:justify;
             }
                 
         }
         
+        @media screen and (min-width: 551px) and (max-width:650px) {
+            #MENU, #logo{
+                display: none;
+            }
+            #text_top{
+                width: 70%;
+                float: left;
+                margin-left:30px;
+                height: 100%;
+                font-weight: bold;
+                text-align: justify;
+            }       
+        }
 
+
+        @media screen and (min-width: 650px) and (max-width:767px) {
+            #MENU, #logo{
+                display: none;
+            }
+            #text_top{
+                width: 70%;
+                float: left;
+                margin-left:30px;
+                height: 100%;
+                font-weight: bold;
+                text-align: justify;
+            }       
+        }
+
+        @media screen and (min-width: 767px) and (max-width:850px) {
+            #MENU, #logo{
+                display: none;
+            }
+            #text_top{
+                width: 70%;
+                float: left;
+                margin-left:30px;
+                height: 100%;
+                font-weight: bold;
+                text-align: justify;
+            }       
+        }
+        @media screen and (min-width: 850px) and (max-width:1000px) {
+            #MENU, #logo{
+                display: none;
+            }
+            #text_top{
+                width: 50%;
+                float: right;
+                margin-right:30px;
+                height: 100%;
+                font-weight: bold;
+                text-align: justify;
+            }       
+        }
+
+        @media screen and (min-width: 1000px) and (max-width:1200px) {
+            #MENU, #logo{
+                display: none;
+            }
+            #text_top{
+                width: 50%;
+                float: right;
+                margin-right:30px;
+                height: 100%;
+                font-weight: bold;
+                text-align: justify;
+            }       
+        }
+
+        
     </style>
 
 
@@ -118,7 +191,7 @@
 
 
                    
-                   <div class="col-sm-12 col-md-6 col-lg-6">
+                   <div class="col-sm-12 col-md-5 col-lg-6" id="basic_in">
            
                       
                            <h3 id="titre_salon"><strong>Notre salon de coiffure</strong></h3><br><br>
@@ -232,8 +305,178 @@
                                 width:100%;
                             }
                         }
+                        
+                        @media screen and (min-width: 551px) and (max-width:650px) {
+                            #basic{
+                                margin-top:250px;
+                                width:100%;
+                                text-align:center;
 
+                            }
                             
+                            #resum_titre{
+                                width: 100%;
+                                text-align:justify;
+                                margin:15px;
+                            }
+                            .videostream{
+                                width:100%;
+                                text-align:center;
+                            }
+                            .grayscale{
+                                width:100%;
+                            }
+                            h3{
+                                font-size:20px;
+                            }
+                            video{
+                                text-align:center;
+                                width:100%;
+                            }
+                        }
+                        
+                        @media screen and (min-width: 650px) and (max-width:767px) {
+                            #basic{
+                                margin-top:250px;
+                                width:100%;
+                                text-align:center;
+
+                            }
+                            
+                            #resum_titre{
+                                width: 100%;
+                                text-align:justify;
+                                margin:15px;
+                            }
+                            .videostream{
+                                width:100%;
+                                text-align:center;
+                            }
+                            .grayscale{
+                                width:100%;
+                            }
+                            h3{
+                                font-size:20px;
+                            }
+                            video{
+                                text-align:center;
+                                width:100%;
+                            }
+                        }
+
+
+                        @media screen and (min-width: 767px) and (max-width:850px) {
+                            #basic{
+                                margin-top:250px;
+                                width:100%;
+                                text-align:center;
+
+                            }
+                            #resum_titre{
+                                width: 100%;
+                                text-align:justify;
+                                margin:15px;
+                                margin:auto;
+                            }
+                            .videostream{
+                                width:100%;
+                                text-align:center;
+                            }
+                            .grayscale{
+                                width:100%;
+                            }
+                            h3{
+                                font-size:20px;
+                                width:100%;
+                            }
+                            video{
+                                text-align:center;
+                                width:100%;
+                            }
+                            #basic_in{
+                                width:100%;
+                                text-align:center;
+                                float:none;
+                                margin:auto;
+                            }
+                        }
+                        @media screen and (min-width: 850px) and (max-width:1000px) {
+                            #basic{
+                                margin-top:250px;
+                                width:100%;
+                                text-align:center;
+
+                            }
+                            #resum_titre{
+                                width: 100%;
+                                text-align:justify;
+                                margin:15px;
+                                margin:auto;
+                            }
+                            .videostream{
+                                width:100%;
+                                text-align:center;
+                            }
+                            .grayscale{
+                                width:100%;
+                            }
+                            h3{
+                                font-size:20px;
+                                width:100%;
+                            }
+                            video{
+                                text-align:center;
+                                width:100%;
+                            }
+                            #basic_in{
+                                width:100%;
+                                text-align:center;
+                                float:none;
+                                margin:auto;
+                            }
+                        }
+                        @media screen and (min-width: 1000px) and (max-width:1200px) {
+                            #basic{
+                                margin-top:250px;
+                                width:100%;
+                                text-align:center;
+
+                            }
+                            #resum_titre{
+                                width: 100%;
+                                text-align:justify;
+                                margin:15px;
+                                margin:auto;
+                            }
+                            .videostream{
+                                width:100%;
+                                text-align:center;
+                            }
+                            .grayscale{
+                                width:100%;
+                            }
+                            h3{
+                                font-size:20px;
+                                width:100%;
+                            }
+                            video{
+                                text-align:center;
+                                width:100%;
+                            }
+                            #basic_in{
+                                width:100%;
+                                text-align:center;
+                                float:none;
+                                margin:auto;
+                            }
+                        }
+
+
+
+
+
+
+
 
                     </style>
 
@@ -246,7 +489,7 @@
 
 
                   
-                      <div id="the_inputs" class="col-sm-12 col-md-3 col-lg-3"style='border:1px solid transparent;'>
+                      <div id="the_inputs" class="col-sm-6 col-md-3 col-lg-3">
                           <center>
                           
                           
@@ -276,18 +519,43 @@
                  
            
                     <style>
-                        @media screen and (min-width: 320px) and (max-width:374px) {
-                            #{
-                             
+                        @media screen and (min-width: 551px) and (max-width:650px) {
+                            #the_inputs{    
+                                 width:50%;
+                                 margin-top:50px;
 
                             }
 
                         }
-                            
+                        @media screen and (min-width: 650px) and (max-width:767px) {
+                            #the_inputs{    
+                                 width:50%;
+                                 margin-top:50px;
 
+                            }
 
+                        }
+                        @media screen and (min-width: 767px) and (max-width:850px) {
+                            #the_inputs{    
+                                 float:left;
+                                 margin-top:-400px;
+                            }
 
-                            
+                        }
+                        @media screen and (min-width: 850px) and (max-width:1000px) {
+                            #the_inputs{    
+                                 float:left;
+                                 margin-top:-400px;
+                            }
+
+                        }
+                        @media screen and (min-width: 1000px) and (max-width:1200px) {
+                            #the_inputs{    
+                                 float:left;
+                                 margin-top:-400px;
+                            }
+
+                        }   
 
                     </style>
 
@@ -304,7 +572,7 @@
 
 
 
-                    <div class="col-sm-12 col-md-3 col-lg-3" style='border:1px solid transparent;' id="div_placement">
+                    <div class="col-sm-6 col-md-3 col-lg-3" id="div_placement">
             
                         <center>
                         
@@ -379,7 +647,52 @@
 
                         }
 
-                            
+                        @media screen and (min-width: 551px) and (max-width:650px) {
+                            #p_coupe{
+                                 display:none;  
+                            }
+                            #div_placement{
+                                width:50%;
+                                float:right;
+                                margin-top:-200px;;
+                            }
+
+                        }
+                        @media screen and (min-width: 650px) and (max-width:767px) {
+                            #p_coupe{
+                                 display:none;  
+                            }
+                            #div_placement{
+                                width:50%;
+                                float:right;
+                                margin-top:-200px;;
+                            }
+
+                        }
+                        @media screen and (min-width: 767px) and (max-width:850px) {
+                            #div_placement{
+                                float:right;
+                                margin-right:20px;
+                                margin-top:-450px;
+                            }
+
+                        }
+                        @media screen and (min-width: 850px) and (max-width:1000px) {
+                            #div_placement{
+                                float:right;
+                                margin-right:20px;
+                                margin-top:-450px;
+                            }
+
+                        }
+                        @media screen and (min-width: 1000px) and (max-width:1200px) {
+                            #div_placement{
+                                float:right;
+                                margin-right:20px;
+                                margin-top:-450px;
+                            }
+
+                        }
 
                     </style>
 
@@ -540,6 +853,44 @@
                         #coucoupe{
                              height:300px;
                         }
+                    }
+                    @media screen and (min-width: 551px) and (max-width:650px) {
+                        #coucoupe{
+                             height:250px;
+                             margin-top:150px;
+                             text-align:center;
+                        }
+                    }
+                    @media screen and (min-width: 650px) and (max-width:767px) {
+                        #coucoupe{
+                             height:250px;
+                             margin-top:150px;
+                             text-align:center;
+                        }
+                    }
+                    @media screen and (min-width: 767px) and (max-width:850px) {
+                        #coucoupe{
+                             height:250px;
+                             margin-top:150px;
+                             text-align:center;
+                        }
+                    }
+                    @media screen and (min-width: 850px) and (max-width:1000px) {
+                        #coucoupe{
+                             height:270px;
+                             margin-top:150px;
+                             text-align:center;
+                        }
+                    }
+                    @media screen and (min-width: 1000px) and (max-width:1200px) {
+                        #coucoupe{
+                             height:270px;
+                             margin-top:150px;
+                             text-align:center;
+                        }
+                    }
+                    
+                        
                 </style>
 
 
@@ -592,7 +943,7 @@
             <br><br>
             
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-4" style='text-align:justify;'>
+          <div class="col-sm-12 col-md-4 col-lg-4" style='text-align:justify;' id="blackblack1">
             <h1 id="titre_re">Citation</h1><br>
             aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
             aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -612,7 +963,7 @@
             <br><br>
           </div>
           
-          <div class="col-sm-12 col-md-4 col-lg-4" style='text-align:justify;'>
+          <div class="col-sm-12 col-md-4 col-lg-4" style='text-align:justify;' id="blackblack2">
           
             <h1 id="titre_re">Titre deux</h1><br>
             aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -697,7 +1048,111 @@
                 text-align:center;
             }
         }
+        @media screen and (min-width: 550px) and (max-width:650px) {
+            #textes_transition{
+                width:100%;
+                text-align:center;
+                font-size:2.5vw;
+                font-weight:bold;
+                margin-top:50px;
+            }
             
+            #blackblack{
+                width: 100%;
+                text-align: center;
+            }
+            #titre_re{
+                font-size:3.5vw;
+                text-align:center;
+            }
+        }
+
+        
+        @media screen and (min-width: 650px) and (max-width:767px) {
+            #textes_transition{
+                width:100%;
+                text-align:center;
+                font-size:2vw;
+                font-weight:bold;
+                margin-top:50px;
+            }
+            
+            #blackblack{
+                width: 100%;
+                text-align: center;
+            }
+            #titre_re{
+                font-size:4vw;
+                text-align:center;
+            }
+        }   
+        @media screen and (min-width: 767px) and (max-width:850px) {
+            #textes_transition{
+                width:100%;
+                text-align:center;
+                font-size:2vw;
+                font-weight:bold;
+                margin-top:50px;
+            }
+            
+            #titre_re{
+                font-size:4vw;
+                text-align:center; 
+            }
+            #blackblack,
+            #blackblack1,
+            #blackblack2{
+                word-wrap: break-word;
+                border:1px solid white;
+                
+            }
+            
+        }   
+
+        @media screen and (min-width: 850px) and (max-width:1000px) {
+            #textes_transition{
+                width:100%;
+                text-align:center;
+                font-size:2vw;
+                font-weight:bold;
+                margin-top:50px;
+            }
+            
+            #titre_re{
+                font-size:4vw;
+                text-align:center; 
+            }
+            #blackblack,
+            #blackblack1,
+            #blackblack2{
+                word-wrap: break-word;
+                border:1px solid white;
+                
+            }
+            
+        }   
+
+        @media screen and (min-width: 1000px) and (max-width:1200px) {
+            #textes_transition{
+                width:100%;
+                text-align:center;
+                font-size:2vw;
+                font-weight:bold;
+                margin-top:50px;
+            }
+            
+            #titre_re{
+                font-size:2vw;
+                text-align:center; 
+            }
+            #blackblack,
+            #blackblack1,
+            #blackblack2{
+                word-wrap: break-word;
+                font-size:1.2vw;
+                width:100%;
+            }
+        }   
 
     </style>
 
@@ -778,6 +1233,9 @@
                         #coifcoif{
                             width:100%;
                         }
+                        #CONTENEUR{
+                            width:80%;
+                        }
                     }
                     @media screen and (min-width: 375px) and (max-width:425px) {
                         #coifcoif_recherche{
@@ -795,8 +1253,56 @@
                         #coifcoif{
                             width:100%;
                         }
+                        #CONTENEUR{
+                            width:80%;
+                        }
+                    }
+                    @media screen and (min-width: 551px) and (max-width:650px) {
+                        #coifcoif_recherche{
+                            width:80%;
+                        }
+                        #coifcoif{
+                            width:100%;
+                        }
+                        #CONTENEUR{
+                            width:80%;
+                        }
+                    }
+                    @media screen and (min-width: 650px) and (max-width:767px) {
+                        #coifcoif_recherche{
+                            width:80%;
+                        }
+                        #coifcoif{
+                            width:100%;
+                        }
+                        #CONTENEUR{
+                            width:50%;
+                        }
+                    }
+                    @media screen and (min-width: 767px) and (max-width:850px) {
+                        #coifcoif_recherche{
+                            width:80%;
+                        }
+                        #coifcoif{
+                            width:100%;
+                        }
+                        #CONTENEUR{
+                            width:60%;
+                        }
+                    }
+                    @media screen and (min-width: 850px) and (max-width:1000px) {
+                        #coifcoif_recherche{
+                            width:80%;
+                        }
+                        #coifcoif{
+                            width:100%;
+                        }
+                        #CONTENEUR{
+                            width:100%;
+                        }
                     }
                     
+                        
                 </style>
 
 
@@ -889,6 +1395,39 @@
                         }
                 }
 
+                @media screen and (min-width: 551px) and (max-width:650px) {
+                        #gymgym_div_prestation{
+                            width:80%;
+                        }
+                        #coifcoif{
+                            width:100%;
+                        }
+                }
+                @media screen and (min-width: 650px) and (max-width:767px) {
+                        #gymgym_div_prestation{
+                            width:80%;
+                        }
+                        #coifcoif{
+                            width:100%;
+                        }
+                }
+                @media screen and (min-width: 767px) and (max-width:850px) {
+                        #gymgym_div_prestation{
+                            width:80%;
+                        }
+                        #coifcoif{
+                            width:100%;
+                        }
+                }
+
+                @media screen and (min-width: 850px) and (max-width:1000px) {
+                        #gymgym_div_prestation{
+                            width:80%;
+                        }
+                        #coifcoif{
+                            width:100%;
+                        }
+                }
 
 
             </style>
@@ -1131,7 +1670,6 @@ blackblack{
     background:url("/static/img/parquet1.jpg") no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
-    width:80%;
     border:2px solid black;
 
 }
