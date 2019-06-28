@@ -498,7 +498,6 @@
 
             <div id="article4">
 
-              <h4>Article</h4>
               <h4><strong>Sur la mode
               La mode a des conséquences déstructrices.
               Elle est la seconde cause de pollution dans le monde.
@@ -565,23 +564,20 @@
 
 
 
-    </div>
-  </div>
-</header>  
 
 
 
-
-
-
-    <!-- Portfolio section. We present our project on a slider (left-right-speed 10) -->  
     <section class="page-section bg-dark text-white" style='margin-top:350px;'>
+
+                                                      
       <div class='container'>
         <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-4" id='bg1'>
-            <center><h2>Nos autres projets</h2></center>
+                                                      
+          <div class="col-xs-12 col-sm-12 col-md-12" id='bg1'>
+                                                      
+            <center><h2 id="my_project">Nos autres projets</h2></center>
             <br>
-            <div id='bg11'>
+            <div>
               <marquee direction="right" id='marc'scrollamount="10" height="210">
                 <a href="https://github.com/pastrouveedespeudo/mot_fonction">
                   <img src='/static/img/phrase.png' onmouseover="stop('im4')" onmouseout="start()"
@@ -622,47 +618,48 @@
               </marquee>
               <br>
             </div>
-            <p id='status'></p>
-            <div id='description'></div>
+            <p id='status'>
+            <center><div id='description'></p></div></center>
+            
           </div>
-          <br>
 
-          
 
-        <!-- Portfolio Openclassrooms section. We present our OC project and we alert that our projects start with project -->  
+        
+
+      </div>
+    </div>    <br><br>
+
+
+        <center>
         <div class='row'>
 
-        <div class="col-xs-12 col-sm-12 col-md-3" id='bg4'></div>
-        <br>
-        <div class="col-xs-12 col-sm-12 col-md-3" id='bg4'></div>
-        <br>
-        <div class="col-xs-12 col-sm-12 col-md-4" id='bg3'>
+        <div class="col-xs-12 col-sm-12 col-md-12" style='border:1px solid maroon;'>
           <br><br> 
           <center><h4>Nos projets Openclassrooms</h4></center>
           <br>
+                                                      
           <a href='https://github.com/pastrouveedespeudo'>
-            <center><img src='/static/img/oc.jpg' onclick='alert("Nos projets OC commencent par projet")' id="oc_alert"
+            <center><img src='/static/img/oc.jpg' onclick='alert("Nos projets OC commencent par projet")' id="oc_image"
               alt="Logo Openclassrooms background white, black writting">
             </center>
           </a>
-          <br>
-        </div><br>
-      </div>
-    </div>    
-    <br>
 
-<a href="https://fr.freepik.com/photos-vecteurs-libre/fond">Fond PSD créé par graphictwister - fr.freepik.com</a>
-<a href="https://fr.freepik.com/photos-vecteurs-libre/fond">Fond vecteur créé par coolvector - fr.freepik.com</a>
+        </div>
+      </center>
 
 
-  <footer>
-      <!-- Bottom Section number 2 -->
-      <div id='bottom' style='padding:0;'> 
-        {% include "bottom_page2.html" %}
-        {% block content2 %}
-        {% endblock content2%}
-      </div>
-  </footer>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -686,7 +683,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <style>
+#description{
+  height:200px;
+  text-align:justify;
+  width:400px;
+}
+#status{
+  height:50px;
+}
+h3{
+  color:black;
+}
 #paragraphe{
   text-align:justify;
   font-size:50%;
@@ -773,7 +801,9 @@ background: #ff8080;
     width:80%;
     
   }
-
+i{
+  color:black;
+}
 #article4,
 #article2{
   display:none;
