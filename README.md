@@ -1,14 +1,21 @@
-ok mtn:
+ok demain faire les page 404
+
+regler ce probleme de @font chai pas quoi
+
+reduire les bottom
+
+chercher les bug
+
+commencer a réduire le js
 
 finir les texte y'a encore des truk blanc, tous est responsif, faire les texte, dissoc js ect
 
-remplir database 
+habits ca deborde le cadre habit info
 
-gros 1h a te focus et amettre des bordeur de partout c pas grave bouge !
 
 Finir tous les textes
 
-js
+
 
 coupe draggable bien les pos en 1200 
 
@@ -19,7 +26,6 @@ background transparent des graggables
 #my_project page home + conclu page home responsive ome faire le truk avec les images pollution
 
 ranger page
-
 
 
 finir machine a o
