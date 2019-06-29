@@ -2,20 +2,27 @@ import requests
 from bs4 import *
 from math import *
 
+from .CONFIG import PATH_SUPERFICIE
 
-def superficie_ville(ville):
 
-    path = 'https://www.google.com/search?ei=wjnsXOzeIZCAjLsPm62CgAo&q={}+superficie&oq={}+superficie'
-    path = path.format(ville, ville)
-    print(path)
+def function_superficie_ville(ville):
+    """We calling the page with bs4"""
     
-    r = requests.get(path)
-    page = r.content
-    
-    soup = BeautifulSoup(page, "html.parser")
-    
-    propriete = soup.find_all("div")
+    path = PATH_SUPERFICIE.format(ville, ville)
 
+    request_html = requests.get(path)
+    page = request_html.content
+    
+    soup_html = BeautifulSoup(page, "html.parser")
+    
+    propriete = soup_html.find_all("div")
+
+    return propriete
+
+
+def function_superficie_ville1(propriete):
+    """Here we seach km² and recup the int before it"""
+    
     liste = []
 
     for i in propriete:
@@ -24,7 +31,7 @@ def superficie_ville(ville):
     kilometre_carre = ''
     
     for i in liste:
-        print(i)
+        #print(i)
         number = ''
         numbe = ''
         
@@ -50,6 +57,17 @@ def superficie_ville(ville):
     c+=1
     print(number)
 
+    return number
+
+
+def superficie_ville(ville):
+    """Now we transforme the , to . and
+    make it float"""
+
+    propriete = function_superficie_ville(ville)
+    number = function_superficie_ville1(propriete)
+
+ 
     number_final = ''
     c2 = 0
     
@@ -74,14 +92,12 @@ def superficie_ville(ville):
             if number_final[0] == '.':
                 number_final = float(number_final[1:])
         except:
-            print(number_final)
             number_final = 20.0
             
-    print(number_final)
     return number_final
 
 
-#superficie_ville("Leucate+Languedoc-Roussillon")
+
 
 
 
