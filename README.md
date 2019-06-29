@@ -1,16 +1,18 @@
-bah merde ca nik tout le site jcrois au pire on dit technique pour faire de la pluie contre la pollu !
-
-faire mention légale 
+farie les textes
 
 oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est pour coiffeur <- obj
 
-chercher les bug
-
-commencer a réduire le js
-
 habits ca deborde le cadre habit info
 
-ranger page
+
+réduire le js
+
+faire mention légale 
+
+
+refaire tous les dossier et se transporter vers prjet final
+
+chercher les bug
 
 faire les tests
 
