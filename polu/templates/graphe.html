@@ -175,10 +175,6 @@
 
 
       <style>
-        #shut,
-        #notshut{
-            color:black;
-        }
         #heure,
         #manif,
         #météo,
@@ -258,80 +254,54 @@
           <div class="container">
             <div class="row">
               <div class="col-sm">
-                titre1<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                
+                Il y a plusieurs consitions qui régissent
+                la polution. Nous vous proposons de voir
+                ces conditions via des graphes parmi les 3
+                villes de Lyon, Paris et Marseille.
+                Nous pouvons par exemple constater par
+                exemple à Lyon la pollution est plus faible
+                durant les épisodes de pluie et pendant les jour de week end.
+                                
               </div>
               <div class="col-sm">
-                titre2<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                Nous remarquons aussi que la ville la 
+                plus grande amoindris la pollution.
+                <br><br>
+                Nous voyons cependant plusieurs données
+                contres-intuitives. Les très grands bouchons 
+                n'augmente pas la pollution. Que les heures de pointes
+                non plus ne les incrémentent pas.
               </div>
             </div>
           </div>
 
-
+        
           <div class="container">
             <div class="row">
+
               <div class="col-sm">
-                titre<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                On peut constater qu'à Marseille, les manifestations
+                engendrent de la pollution, et que la pluie
+                à l'inverse la fait baisser.<br><br>
+                A paris nous voyons que le weekend augmente
+                la pollution, et que le beau temps aussi.
+
               </div>
-              <div class="col-sm">
-                titre<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              <div class="col-sm"><br>
+                Nous ne pensons pas à la fiabilité de
+                ces données car une condition prise toute
+                seule n'est pas très significatifs.
+                Nous ne pensons pas non plus pouvoir les
+                expliquer.
+                <br>Nous manquons de donnée et de connaissance
+                en pollution en circulation, en sociologie ect...
+                Mais nous espérons etre dans le juste !
+
               </div>
+
             </div>
           </div><br>
 
-
-          <div class="container">
-            <div class="row">
-            
-              <div class="col-sm">
-                titre<br>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-              </div>
-              
-
-
-              
-            </div>
-          </div>
 
     </div>
 </div>
@@ -467,7 +437,7 @@ function graphe(legraphe, condition){
 
 
   
-  var a = "<i><a href='#' id='sav'>" + "En savoir plus sur la condition: " + condition + "</a></i>";
+  var a = "<i><a href='/polution/info_pollu' id='sav'>" + "En savoir plus sur la condition: " + condition + "</a></i>";
 
   
   document.getElementById('savoir').innerHTML = a;
@@ -520,6 +490,10 @@ function graphe(legraphe, condition){
 
 
 <style>
+#shut,
+#notshut{
+    color:black;
+}
 #reso{
     padding-top:150px;
 }
