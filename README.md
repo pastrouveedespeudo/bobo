@@ -1,14 +1,23 @@
+faire mention légale
+
+finir machine a o
+
+finir les texte
+
 reduire les bottom
 
 chercher les bug
 
 commencer a réduire le js
 
-finir les texte y'a encore des truk blanc, tous est responsif, faire les texte, dissoc js ect
+
+
+
+
 
 habits ca deborde le cadre habit info
 
-Finir tous les textes
+
 
 oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est pour coiffeur
 
@@ -16,13 +25,13 @@ oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est p
 
 ranger page
 
-finir machine a o
+
 
 faire les tests
 
 faire la video
 
-faire mention légale
+
 
 
 
