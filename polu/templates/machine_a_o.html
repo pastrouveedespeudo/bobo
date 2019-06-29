@@ -4,146 +4,206 @@
 
   <link rel="stylesheet" type="text/css" href="/static/css/pollution.css" media="all" />
   
-  <!-- Title Section -->
-  <header>
+
+
+              <input type='button' id="menu_res" value="Menu"
+                  onclick="document.location.href='/polution/navebarre_soluce'"/>
+
+              
+              <header>
+
+                  <center>
+                  
+                  <section id='section_info'>
+
+                        <p id='texte'>
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        </p>
+                        
+                  </section>
+                  </center><br><br>
+
+
+
+              </header>
 
 
 
 
- <style>
-    #section_info{
-      width:1000px;
-    }
-    #menu_res{
-        background:none;
-        border:none;
-        color:white;
-    }
-  </style>
-
-  
-  <center>
-
-  <section id='section_info'>
-    <input type='button' id="menu_res" value="Menu"/>
-    <div class="container" id="cont">
-    
-      <h2 class="text-center mt-0">Notre carte</h2><br><br>
 
 
-      <div class="row" id="soluce">
-
-        <div class="col-lg-4 col-md-8 text-center" style='margin:auto;'>
-          <strong>Son Explication</strong>
-          <br><br>
-          <p id="paragraph1" style='color:white'>Afin de la pouvoir visualiser le vent depuis notre carte google map.
-          Nous nous servons de plusieurs sources.<br><br>
-          
-          La première est un site web sur la météo sur lequel nous prenons le sens du vent
-          par identification de la ville et du code postal que nous prenons sur Wikipédial.<br><br>
-          
-          Ensuite nous utilisons le service de google map afin de pouvoir afficher la carte.
-          <brAfin de pouvoir utiliser cette map, nous utilisons des coordonées GPS par
-          Nominatim Geocoder. Et utilisons Google pour récupérer la superficie de la ville pour
-          calculer les nouvelles coordonées.</p><br><br><br>
-
-    
-        </div>
-     
+            <style>
 
 
-        <div class="col-lg-4 col-md-8 text-center">
-          <strong>Son Interet</strong><br><br>
-          
-          <p id="paragraph2" style='color:white'>La pollution est transportable par les airs.
-          De ce fait le vent la transporte. Nous pensons que cet carte permet de pouvoir savoir
-          si le vent nous amène ou nous enelève la pollution et de pouvoir par une simple visualisation
-          constater le mouvement du vent et donc de la pollution.<br><br>
-          Nous pouvons donc voir la pollution et son déplacement.</p>
-        </div>
 
-        <div class="col-lg-4 col-md-8 text-center">
-          <strong>Sa limite</strong><br><br>
+                    #section_info{
+                      width:1000px;
+                    }
+                    #menu_res{
+                        background:none;
+                        border:none;
+                        color:white;
+                    }
 
-          <p id="paragraph3" style='color:white'>Entrez une ville de France, laissez charger,
-          et regardez !
-          <br><br> Appuyer sur stop arrete le processus. Les marqueures ne seront pas
-          réinitialisés.
 
-          </p>
-        </div>
-
+                    @media screen and (min-width: 320px) and (max-width:374px) {
+                        #logo, #MENU{
+                            display:none;
+                        }
+                        #section_info{
+                            width:100%;
+                            text-align:center;
+                        }
+                        #para{
+                            width:100%;
+                        }
+                        #texte{
+                            width:100%;
+                        }
+            
         
-      </div>
-
-        
-    </div>
-  </section></center><br><br>
+                    }
+                
+            </style>
 
 
 
 
-
-  </header>
   
   <body>
-
   
-  <center>
-
-  <section id="les_video">
-
-
-    <div class="container" style='text-align:center;'>
-
-      <div class="row">
-
-    
-        <div class="col-lg-12 col-md-12 col-xs-12">
-            Un reportage sur les machines à pluie au Canada<br>
-            <video controls preload="metadata" loop poster="">
-                <src="">
-            </video>
-            
-        </div><br><br>
-
-        <div class="col-lg-12 col-md-12 col-xs-12">
-
-            Une vidéo de la nasa<br>
-            <video controls preload="metadata" loop poster="">
-                <src="">
-
-            </video>
- 
-        </div><br><br>
+  
+              <center>
+              
+              <section id="les_video">
 
 
-
-        <div class="col-lg-12 col-md-12 col-xs-12">
-
-            <video controls preload="metadata" loop poster="">
-                <src="">
-            </video>
-
-            
-        </div>
-     
-
-
-        
-      </div>
-    </div>
+                <div class="container" style='text-align:center;'>
+                  <div class="row">
 
 
 
 
+
+                
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+
+                    
+                        Un reportage sur les machines à pluie au Canada<br>
+
+
+                        <center>
+                            <video controls preload="metadata" loop poster="" id="video1">
+                                <src="https://www.youtube.com/watch?v=J-X08eBB-mA">
+                                <i>Mobicos</i>
+                            </video>
+                        </center><br><br><br><br><br><br><br><br>
+
+                        
+                    </div>
+
+
+
+
+            <style>
+
+                    @media screen and (min-width: 320px) and (max-width:374px) {
+                        #les_video{
+                            width:100%;
+                        }
+                        #video1{
+                            display:none;
+                        }
+
+                    }
+                
+            </style>
 
 
 
 
 
 
-</section></center>
+
+
+
+
+
+
+
+
+
+
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+
+                        Une vidéo de la nasa<br>
+                        <center>
+                        <video controls preload="metadata" loop poster="" id="video2">
+                            <src="https://www.dailymotion.com/video/xj815l">
+                            <i>Mobicos</i>
+                        </video>
+                        </center><br><br><br><br><br><br><br><br>
+             
+                    </div>
+
+
+
+
+
+
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+
+
+
+                    <iframe id="inlineFrameExample1"
+                        title="Inline Frame Example"
+                        src="https://www.rtbf.be/info/societe/detail_des-avions-faiseurs-de-pluie-pour-chasser-la-pollution-a-bangkok?id=10118779">
+                    </iframe><br><br><br><br><br><br>
+
+                    
+
+
+
+
+                    <iframe id="inlineFrameExample2"
+                        title="Inline Frame Example"
+                        width="300"
+                        height="200"
+                        src="https://www.bfmtv.com/mediaplayer/video/en-thailande-une-pluie-artificielle-contre-la-pollution-1131972.html">
+                    </iframe>
+
+
+
+
+                        
+                        
+                       <br>
+                       
+                    </div>
+                 
+
+
+                    
+                  </div>
+                </div>
+
+
+
+            </section>
+            </center>
 
 
 
@@ -227,10 +287,6 @@
 
   
 
-
-
-
-
     <div id="reso">
         {% include "bottom_page_pollution2.html" %}
         {% block content2 %}
@@ -246,232 +302,6 @@
 
 
 
-<style>
-@media screen and (min-width: 320px) and (max-width:374px) {
-    #logo,
-    #MENU{
-        display:none;
-    }
-    #menu_res{
-        float:left;
-        margin-left:10px;
-        font-size:50px;
-    }
-    #paragraph1{
-        font-size:40px;
-        padding-top:10px;
-    }
-    #paragraph2{
-        font-size:40px;
-    }
-    #paragraph3{
-        font-size:40px;
-    }
-    #texte3,
-    #texte2,
-    #texte1{
-        text-align:center;
-    }
-    #les_video{
-        padding-top:50px;
-        width:1000px;
-        text-align:center;
-        display:inline-block;
-    }
-    video{
-        width:100%;
-    }
-    #container_text{
-        width:1000px;
-    }
-    #texte3,
-    #texte2,
-    #texte1{
-        padding-top:50px;
-        text-align:center;
-        font-size:40px;
-    }
-}
-
-@media screen and (min-width: 375px) and (max-width:425px) {
-    #logo,
-    #MENU{
-        display:none;
-    }
-    #menu_res{
-        float:left;
-        margin-left:10px;
-        font-size:50px;
-    }
-    #paragraph1{
-        font-size:30px;
-        padding-top:10px;
-    }
-    #paragraph2{
-        font-size:30px;
-    }
-    #paragraph3{
-        font-size:30px;
-    }
-    #texte3,
-    #texte2,
-    #texte1{
-        text-align:center;
-    }
-    #les_video{
-        padding-top:50px;
-        width:1000px;
-        text-align:center;
-        display:inline-block;
-    }
-    video{
-        width:100%;
-    }
-    #container_text{
-        width:1000px;
-    }
-    #texte3,
-    #texte2,
-    #texte1{
-        padding-top:50px;
-        text-align:center;
-        font-size:30px;
-    }
-}
-
-
-@media screen and (min-width: 425px) and (max-width:725px) {
-    #logo,
-    #MENU{
-        display:none;
-    }
-    #menu_res{
-        float:left;
-        margin-left:10px;
-        font-size:30px;
-    }
-    #paragraph1{
-        text-align:center;
-        font-size:20px;
-        width:100%;
-        padding-top:10px;
-    }
-    #paragraph2{
-        font-size:20px;
-    }
-    #paragraph3{
-        font-size:20px;
-    }
-    #texte3,
-    #texte2,
-    #texte1{
-        text-align:center;
-    }
-    #les_video{
-        padding-top:50px;
-        width:1000px;
-        text-align:center;
-        display:inline-block;
-    }
-    video{
-        width:70%;
-    }
-    #texte3,
-    #texte2,
-    #texte1{
-        padding-top:50px;
-        text-align:center;
-        font-size:30px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-width: 1300px) and (max-width:1500px) {
-    #menu_res{
-        float:left;
-        margin-left:10px;
-        font-size:30px;
-    }
-    #paragraph1{
-        text-align:center;
-        font-size:20px;
-        width:100%;
-        padding-top:10px;
-    }
-    #paragraph2{
-        font-size:20px;
-    }
-    #paragraph3{
-        font-size:20px;
-    }
-    #texte3,
-    #texte2,
-    #texte1{
-        text-align:center;
-    }
-    #les_video{
-        padding-top:50px;
-        width:1000px;
-        text-align:center;
-        display:inline-block;
-    }
-    video{
-        width:70%;
-    }
-    #texte3,
-    #texte2,
-    #texte1{
-        padding-top:50px;
-        text-align:center;
-        font-size:20px;
-    }
-    #menu_res{
-        visibility:hidden;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-    
-</style>
 
 
 
