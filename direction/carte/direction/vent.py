@@ -3,12 +3,16 @@ import requests
 from bs4 import *
 from math import *
 
+from .CONFIG import CLE
+from .CONFIG import PATH_VENT
+from .CONFIG import PATH_POSTAL
+from .CONFIG import PATH_VENT_DEUX
+from .CONFIG import VENT_DEUX_RECHERCHE
 
 def le_vent(lieu):
 
-    clé = '5a72ceae1feda40543d5844b2e04a205'
     
-    localisation = "http://api.openweathermap.org/data/2.5/weather?q={0},fr&appid={1}".format(lieu,clé)
+    localisation = PATH_VENT.format(lieu, CLE)
     r = requests.get(localisation)
     data=r.json()
 
@@ -16,34 +20,34 @@ def le_vent(lieu):
     vent = data['wind']['speed']
     deg = data['wind']['deg']
 
-    #print(vent, deg)
     return vent, deg
 
 
 
-
-
-
-
-
-
-def code_postal(lieu):
-    path = 'http://code.postal.fr/code-postal-{}'
-    path = path.format(lieu)
+def function_code_postal(lieu):
     
-    r = requests.get(path)
-    page = r.content
+    path = PATH_POSTAL.format(lieu)
     
-    soup = BeautifulSoup(page, "html.parser")
+    request_html = requests.get(path)
+    page = request_html.content
     
-    propriete = soup.find_all("h2")
-
+    soup_html = BeautifulSoup(page, "html.parser")
+    
+    propriete = soup_html.find_all("h2")
 
     liste = []
     liste.append(propriete)
 
+    return liste
+
+
+def code_postal(lieu):
+
+    liste = function_code_postal(lieu)
+    
     code = ''
     liste_code = []
+    
     for i in liste[0]:
         for j in i:
             for k in j:
@@ -63,47 +67,11 @@ def code_postal(lieu):
     return liste_code[0]
 
 
+
+def function_vent_deux(mot):
     
-def vent_deux(lieu):
-    path = 'https://www.lameteoagricole.net/meteo-heure-par-heure/{}-{}.html'
-
-    
-    code = code_postal(lieu)
-    
-    path = path.format(lieu, code)
-    print(path)
-   
-    
-    r = requests.get(path)
-    page = r.content
-    
-    soup = BeautifulSoup(page, "html.parser")
-    
-    propriete = soup.find_all("td", {"class":"td_corps_meteo"})
-
-
-    liste = []
-    liste.append(propriete)
-
-
-      
-    liste1 = []
-    mot = ''
-    c = 0
-    for i in liste:
-        for j in i:
-            a = str(j).find('<td class="td_corps_meteo" width="63"><img alt="direction du vent - ')
-            if a >= 0:
-                for k in j:
-                    for l in k:
-                        mot += l
-                break
-            
-    print(mot)
-
-
     if mot == 'N':
-        return '' 'nord'
+        return 'nord'
     elif mot == 'NNE':
         return 'nordnordest' 
     elif mot == 'NE':
@@ -135,44 +103,36 @@ def vent_deux(lieu):
     elif mot == 'NNO':
         return 'nordnordouest'
 
-
-
-
     
-#print(vent_deux('anger'))
+def vent_deux(lieu):
 
+    code = code_postal(lieu)
+    path = PATH_VENT_DEUX.format(lieu, code)
 
+    request_html = requests.get(path)
+    page = request_html.content
+    
+    soup_html = BeautifulSoup(page, "html.parser")
+    
+    propriete = soup_html.find_all("td", {"class":"td_corps_meteo"})
 
+    liste = []
+    liste.append(propriete)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#le_vent('crest')
-#a = vent_deux('valence')
-#print(a)
-#code_postal('aouste sur sye')
-
-
-
-
-
-
-
-
+      
+    liste1 = []
+    mot = ''
+    c = 0
+    for i in liste:
+        for j in i:
+            a = str(j).find(VENT_DEUX_RECHERCHE)
+            if a >= 0:
+                for k in j:
+                    for l in k:
+                        mot += l
+                break
+            
+    situation = function_vent_deux(mot)
+    return situation
 
 
