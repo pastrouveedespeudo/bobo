@@ -1,8 +1,6 @@
+ben ca marche !!!!!!! en taihiland ils le font deja finir machine a o faire les texte et prendre tous les liens et les mettre
+
 faire mention légale 
-
-finir machine a o 
-
-finir les texte 
 
 reduire les bottom 
 
