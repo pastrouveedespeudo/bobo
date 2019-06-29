@@ -1,31 +1,22 @@
-faire mention légale
+faire mention légale 
 
-finir machine a o
+finir machine a o 
 
-finir les texte
+finir les texte 
 
-reduire les bottom
+reduire les bottom 
+
+oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est pour coiffeur <- obj
+
+finir direction python
 
 chercher les bug
 
 commencer a réduire le js
 
-
-
-
-
-
 habits ca deborde le cadre habit info
 
-
-
-oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est pour coiffeur
-
-#my_project page home + conclu page home responsive ome faire le truk avec les images pollution
-
 ranger page
-
-
 
 faire les tests
 
