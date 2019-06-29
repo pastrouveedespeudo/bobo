@@ -18,6 +18,7 @@ def new():
 
     liste_new = []
     liste = os.listdir('/app/static/popo')
+
     for i in liste:
         
         try:
