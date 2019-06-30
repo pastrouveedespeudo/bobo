@@ -1,4 +1,4 @@
-tinnnnnn sté trop classe j'ai tout refais a cause d'un oublie de link css grrrrrrr coupe_haut coupe_bas a la place de menu barre latérale
+oh nannnnnnnnnnnnnn j'ai laisser les templates
 
 #demain les test par contre la c perieux tenfou copie les nouvelles pages
 
