@@ -1,20 +1,18 @@
-oh nannnnnnnnnnnnnn j'ai laisser les templates
+refaire direction, finir pollution, mettre tous les balises bien, et mettre le js <- ce soir
 
-#demain les test par contre la c perieux tenfou copie les nouvelles pages
+demain faire les tests
 
-farie le dernier textes 
+mardi matin faire le dernier texte + 
 
-oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est pour coiffeur <- obj
+oups nous navons rien trouvé map 2 fois le bouton retour menu un des deux est pour coiffeur +
 
-habits ca deborde le cadre habit info
-
-réduire le js
+habits ca deborde le cadre habit info +
 
 faire mention légale 
 
-chercher les bug
 
-faire les tests
+
+
 
 
 
