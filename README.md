@@ -1,4 +1,4 @@
-refaire direction, finir pollution, mettre tous les balises bien, et mettre le js <- ce soir
+refaire direction, finir pollution, mettre tous les balises bien, et mettre le js + refaire toutes les dirctions  <- ce soir
 
 demain faire les tests
 
